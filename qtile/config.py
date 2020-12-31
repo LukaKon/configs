@@ -123,6 +123,12 @@ keys = [
         lazy.spawn("texstudio"),
         desc="start texstudio",
     ),
+    Key(
+        [mod],
+        "s",
+        lazy.spawn("steam"),
+        desc="start Steam",
+    ),
     # RESIZE UP, DOWN, LEFT, RIGHT
     Key(
         [mod, "control"],
