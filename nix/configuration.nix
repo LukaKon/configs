@@ -242,6 +242,9 @@
                     # btrfs snapshots
                     sb = "python /home/lk/scripts/snapshot.py";
 
+                    # backup config files to git
+                    cong = "python /home/lk/scripts/git_conf.py";
+
                     # rsync
                     # data
                     #rdata = "cd && rsync -rav --exclude=".snapshots" data/ ssh
