@@ -8,7 +8,10 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      #./hdd.nix
+      ./environment.nix
+      ./hdd.nix
+      ./nixpkgs.nix
+      ./users.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -37,16 +40,16 @@
           nameservers = ["37.8.214.2" "31.11.202.254"];
 		};
 
-  fileSystems."/home/lk/data" = {
-					device = "/dev/disk/by-uuid/71bff5ad-3209-4d8f-8ead-65733cfb4b88";
-					fsType = "btrfs";
-					options = ["subvol=@data"]; 
-  				};
-  fileSystems."/home/lk/vm" = {
-					device = "/dev/disk/by-uuid/9f74f59d-add9-42b6-926d-a959fbcfd97f";
-					fsType = "btrfs";
-					options = ["subvol=@vm"]; 
-  				};
+#  fileSystems."/home/lk/data" = {
+#					device = "/dev/disk/by-uuid/71bff5ad-3209-4d8f-8ead-65733cfb4b88";
+#					fsType = "btrfs";
+#					options = ["subvol=@data"]; 
+#  				};
+#  fileSystems."/home/lk/vm" = {
+#					device = "/dev/disk/by-uuid/9f74f59d-add9-42b6-926d-a959fbcfd97f";
+#					fsType = "btrfs";
+#					options = ["subvol=@vm"]; 
+#  				};
 
   # Set your time zone.
   time.timeZone = "Europe/Warsaw";
@@ -84,173 +87,170 @@
                 opengl.driSupport32Bit = true;
               };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.lk = {
-                    isNormalUser = true;
-                    home = "/home/lk";
-                    description = "lko";
-                    extraGroups = [ "wheel" "networkmanager" "dialout" "vboxusers" "docker"]; 
-                    shell = pkgs.zsh;
-			packages = with pkgs;
-                                [
-                                  # text editor
-                                  neovim
-                                  ranger
-                                  ueberzug
-
-                                  # Python
-                                  tk
-                                  jupyter
-                                  
-                                  # C++
-                                  #gcc
-                                  #cmake
-                                  #clang
-                                  
-                                  exercism
-
-                                  # IDE
-                                  vscode
-                                  #vscodium
-                                  arduino
-                                  #kdevelop
-                                  #kdev-python
-                                  jetbrains.pycharm-community
-                                  #monodevelop
-
-                                  # LaTeX
-                                  texlive.combined.scheme-full 
-                                  texstudio
-                                  
-                                  # snipping screen
-                                  #flameshot  - not working
-
-                                  # docker
-                                  docker-compose
-                                  
-                                  # dotnet
-                                  #mono
-                                  dotnet-sdk_3
-                                  #dotnetCorePackages.sdk_3_0
-                                  #dotnetCorePackages.netcore_3_1
-
-                                  # games
-                                  steam
-
-                                ];
-		};
+#  users.users.lk = {
+#                    isNormalUser = true;
+#                    home = "/home/lk";
+#                    description = "lko";
+#                    extraGroups = [ "wheel" "networkmanager" "dialout" "vboxusers" "docker"]; 
+#                    shell = pkgs.zsh;
+#			packages = with pkgs;
+#                                [
+#                                  # text editor
+#                                  neovim
+#                                  ranger
+#                                  ueberzug
+#
+#                                  # Python
+#                                  tk
+#                                  jupyter
+#                                  
+#                                  # C++
+#                                  #gcc
+#                                  #cmake
+#                                  #clang
+#                                  
+#                                  exercism
+#
+#                                  # IDE
+#                                  vscode
+#                                  #vscodium
+#                                  arduino
+#                                  #kdevelop
+#                                  #kdev-python
+#                                  jetbrains.pycharm-community
+#                                  #monodevelop
+#
+#                                  # LaTeX
+#                                  texlive.combined.scheme-full 
+#                                  texstudio
+#                                  
+#                                  # snipping screen
+#                                  #flameshot  - not working
+#
+#                                  # docker
+#                                  docker-compose
+#                                  
+#                                  # dotnet
+#                                  #mono
+#                                  dotnet-sdk_3
+#                                  #dotnetCorePackages.sdk_3_0
+#                                  #dotnetCorePackages.netcore_3_1
+#
+#                                  # games
+#                                  steam
+#
+#                                ];
+#		};
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment={
-                systemPackages = with pkgs;
-                                           [
-                                            # monitoring
-                                            bmon
-                                            htop
-                                            nvtop
-                                            iotop
-                                            lm_sensors
-
-                                            # terminal
-                                            #termite
-                                            alacritty
-
-                                            nix
-
-                                            vim
-                                            zsh
-                                            fzf
-                                            xsel  # for copying
-                                            clipmenu  # for copying
-                                            mc
-                                            pciutils
-                                            unzip
-                                            
-                                            #snapper # for managing btrfs snapshots
-
-                                            # graphics
-                                            blender
-                                            darktable
-                                            gimp
-                                            krita
-
-                                            # www
-                                            firefox
-                                            geckodriver
-
-                                            # office
-                                            libreoffice
-
-                                            # video conference
-                                            #zoom-us
-                                            teams
-                                            skype
-
-                                            gnome3.gnome-keyring
-                                            gnome3.seahorse
-
-                                            firmwareLinuxNonfree
-                                            microcodeIntel
-
-                                            wget
-                                            curl
-                                            git
-                                            rsync
-                                            tree
-                                            
-                                            # media
-                                            feh # picture viewer
-                                            mpv # video player
-                                            libdvdcss # plugin to play cd/dvd in mpv
-                                            moc  # music player
-                                            
-                                            psutils
-
-                                            python37Packages.pip
-                                            python37Packages.autopep8
-                                            python37Packages.flake8
-                                            python37Packages.colorama
-                                            
-                                            ###
-
-                                            doas
-                                        ];
-		variables = {
-                      EDITOR = "nvim";
-                      VISUAL = "nvim";
-                  };
-    shellAliases = {
-                    # git
-                    gs = "git status";
-                    ga = "git add";
-                    gc = "git commit";
-                    gp = "git push";
-                    
-                    # term
-                    susp = "systemctl suspend";
-                    reboot = "doas reboot";
-
-                    # nix
-                    upnix = "sudo nix-channel --update && nix-env -u";
-                    rebuild = "sudo nixos-rebuild switch";
-                    upos = "sudo nixos-rebuild switch --upgrade";
-
-                    # btrfs snapshots
-                    sb = "python /home/lk/scripts/snapshot.py";
-
-                    # backup config files to git
-                    cong = "python /home/lk/scripts/git_conf.py";
-
-                    # rsync
-                    # data
-                    #rdata = "cd && rsync -rav --exclude=".snapshots" data/ ssh
-                    #lk@192.168.0.2:/volume2/homes/lk/Drive/pliki/";
-                };
-	};
+#  environment={
+#                systemPackages = with pkgs;
+#                                           [
+#                                            # monitoring
+#                                            bmon
+#                                            htop
+#                                            nvtop
+#                                            iotop
+#                                            lm_sensors
+#
+#                                            # terminal
+#                                            #termite
+#                                            alacritty
+#
+#                                            nix
+#
+#                                            vim
+#                                            zsh
+#                                            fzf
+#                                            xsel  # for copying
+#                                            clipmenu  # for copying
+#                                            mc
+#                                            pciutils
+#                                            unzip
+#                                            
+#                                            #snapper # for managing btrfs snapshots
+#
+#                                            # graphics
+#                                            blender
+#                                            darktable
+#                                            gimp
+#                                            krita
+#
+#                                            # www
+#                                            firefox
+#                                            geckodriver
+#
+#                                            # office
+#                                            libreoffice
+#
+#                                            # video conference
+#                                            #zoom-us
+#                                            teams
+#                                            skype
+#
+#                                            gnome3.gnome-keyring
+#                                            gnome3.seahorse
+#
+#                                            firmwareLinuxNonfree
+#                                            microcodeIntel
+#
+#                                            wget
+#                                            curl
+#                                            git
+#                                            rsync
+#                                            tree
+#                                            
+#                                            # media
+#                                            feh # picture viewer
+#                                            mpv # video player
+#                                            libdvdcss # plugin to play cd/dvd in mpv
+#                                            moc  # music player
+#                                            
+#                                            psutils
+#
+#                                            python37Packages.pip
+#                                           # python37Packages.autopep8
+#                                           # python37Packages.flake8
+#                                           # python37Packages.colorama
+#                                            
+#                                            ###
+#
+#                                            doas
+#                                        ];
+#		variables = {
+#                      EDITOR = "nvim";
+#                      VISUAL = "nvim";
+#                  };
+#    shellAliases = {
+#                    # git
+#                    gs = "git status";
+#                    ga = "git add";
+#                    gc = "git commit";
+#                    gp = "git push";
+#                    
+#                    # term
+#                    susp = "systemctl suspend";
+#                    reboot = "doas reboot";
+#
+#                    # nix
+#                    upnix = "sudo nix-channel --update && nix-env -u";
+#                    rebuild = "sudo nixos-rebuild switch";
+#                    upos = "sudo nixos-rebuild switch --upgrade";
+#
+#                    # btrfs snapshots
+#                    sb = "python /home/lk/scripts/snapshot.py";
+#
+#                    # backup config files to git
+#                    cong = "python /home/lk/scripts/git_conf.py";
+#
+#                    # rsync
+#                    # data
+#                    #rdata = "cd && rsync -rav --exclude=".snapshots" data/ ssh
+#                    #lk@192.168.0.2:/volume2/homes/lk/Drive/pliki/";
+#                };
+#	};
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -380,120 +380,120 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  nixpkgs = {
-              config={
-                      allowUnfree = true;
-                      # pulseaudio = true;
-                      packageOverrides = pkgs: rec {
-                      neovim = pkgs.neovim.override {
-                                      vimAlias = true;
-                                      withPython = true;
-                                      configure = {
-                                              packages.myVimPackage = with
-                                              pkgs.vimPlugins;
-                                              {
-                                                  start = [
-                                                            commentary
-                                                            vim-airline-themes
-                                                            vim-airline
-                                                            fzf-vim
-                                                            tabular
-                                                            syntastic
-                                                            vim-nix
-                                                            neomake
-                                                            neoformat
-                                                            gitgutter
-                                                            coc-python
-                                                            "github:tomasr/molokai"
-                                                            # Better Comments
-                                                            "tpope/vim-commentary"
-                                                            # Change dates fast
-                                                            "tpope/vim-speeddating"
-                                                            # Convert binary, hex, etc..
-                                                            "glts/vim-radical"
-                                                            # Repeat stuff
-                                                            "tpope/vim-repeat"
-                                                            # Text Navigation
-                                                            "unblevable/quick-scope"
-                                                            # highlight all matches under cursor
-                                                            "RRethy/vim-illuminate"
-                                                            # Better syntax support
-                                                            "sheerun/vim-polyglot"
-                                                            # Auto pairs for '(' '[' '{'
-                                                            "jiangmiao/auto-pairs"
-                                                            # Rainbow brackets
-                                                            "luochen1990/rainbow"
-                                                            # Start screen
-                                                            "mhinz/vim-startify"
-                                                            #"LnL7/vim-nix"
-                                                          ];
-                                          opt = [];
-                                      };
-                                      customRC = ''
-                                          set tw=80
-
-                                          set iskeyword+=-                     	" treat dash separated words as a word text object"
-                                          set formatoptions-=cro                  " Stop newline continution of comments
-
-                                          syntax enable                           " Enables syntax highlighing
-                                          set hidden                              " Required to keep multiple buffers open multiple buffers
-                                          set nowrap                              " Display long lines as just one line
-                                          set whichwrap+=<,>,[,],h,l
-                                          set encoding=utf-8                      " The encoding displayed
-                                          set pumheight=10                        " Makes popup menu smaller
-                                          set fileencoding=utf-8                  " The encoding written to file
-                                          set ruler              			        " Show the cursor position all the time
-                                          set cmdheight=2                         " More space for displaying messages
-                                          set mouse=a                             " Enable your mouse
-                                          set splitbelow                          " Horizontal splits will automatically be below
-                                          set splitright                          " Vertical splits will automatically be to the right
-                                          set t_Co=256                            " Support 256 colors
-                                          set conceallevel=0                      " So that I can see `` in markdown files
-                                          set tabstop=4                           " Insert 2 spaces for a tab
-                                          set shiftwidth=4                        " Change the number of space characters inserted for indentation
-                                          set smarttab                            " Makes tabbing smarter will realize you have 2 vs 4
-                                          set expandtab                           " Converts tabs to spaces
-                                          set smartindent                         " Makes indenting smart
-                                          set autoindent                          " Good auto indent
-                                          set laststatus=2                        " Always display the status line
-                                          set number relativenumber               " Line numbers
-                                          set cursorline                          " Enable highlighting of the current line
-                                          set background=dark                     " tell vim what the background color looks like
-                                          set showtabline=2                       " Always show tabs
-                                          set nobackup                            " This is recommended by coc
-                                          set nowritebackup                       " This is recommended by coc
-                                          set shortmess+=c                        " Don't pass messages to |ins-completion-menu|.
-                                          set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time
-                                          set updatetime=300                      " Faster completion
-                                          set timeoutlen=100                      " By default timeoutlen is 1000 ms
-                                          set clipboard=unnamedplus               " Copy paste between vim and everything else
-                                          set incsearch
-                                          set guifont=Fira\ Code\ Nerd\ Font
-                                          '';
-                                      #opt=[];
-                                    };
-                        };
-                      };    
-              };
-              overlays = [
-                          (self: super: {
-                              qtile = super.qtile.overrideAttrs(oldAttrs: {
-                              pythonPath = oldAttrs.pythonPath ++ (with self.python37Packages; [
-                              keyring
-                              xcffib
-                              #cairocffi-xcffib
-                              setuptools
-                              setuptools_scm
-                              dateutil
-                              dbus-python
-                              mpd2
-                              psutil
-                              pyxdg
-                              pygobject3
-                            ]);
-                          });
-                        })];
-  };
+#  nixpkgs = {
+#              config={
+#                      allowUnfree = true;
+#                      # pulseaudio = true;
+#                      packageOverrides = pkgs: rec {
+#                      neovim = pkgs.neovim.override {
+#                                      vimAlias = true;
+#                                      withPython = true;
+#                                      configure = {
+#                                              packages.myVimPackage = with
+#                                              pkgs.vimPlugins;
+#                                              {
+#                                                  start = [
+#                                                            commentary
+#                                                            vim-airline-themes
+#                                                            vim-airline
+#                                                            fzf-vim
+#                                                            tabular
+#                                                            syntastic
+#                                                            vim-nix
+#                                                            neomake
+#                                                            neoformat
+#                                                            gitgutter
+#                                                            coc-python
+#                                                            "github:tomasr/molokai"
+#                                                            # Better Comments
+#                                                            "tpope/vim-commentary"
+#                                                            # Change dates fast
+#                                                            "tpope/vim-speeddating"
+#                                                            # Convert binary, hex, etc..
+#                                                            "glts/vim-radical"
+#                                                            # Repeat stuff
+#                                                            "tpope/vim-repeat"
+#                                                            # Text Navigation
+#                                                            "unblevable/quick-scope"
+#                                                            # highlight all matches under cursor
+#                                                            "RRethy/vim-illuminate"
+#                                                            # Better syntax support
+#                                                            "sheerun/vim-polyglot"
+#                                                            # Auto pairs for '(' '[' '{'
+#                                                            "jiangmiao/auto-pairs"
+#                                                            # Rainbow brackets
+#                                                            "luochen1990/rainbow"
+#                                                            # Start screen
+#                                                            "mhinz/vim-startify"
+#                                                            #"LnL7/vim-nix"
+#                                                          ];
+#                                          opt = [];
+#                                      };
+#                                      customRC = ''
+#                                          set tw=80
+#
+#                                          set iskeyword+=-                     	" treat dash separated words as a word text object"
+#                                          set formatoptions-=cro                  " Stop newline continution of comments
+#
+#                                          syntax enable                           " Enables syntax highlighing
+#                                          set hidden                              " Required to keep multiple buffers open multiple buffers
+#                                          set nowrap                              " Display long lines as just one line
+#                                          set whichwrap+=<,>,[,],h,l
+#                                          set encoding=utf-8                      " The encoding displayed
+#                                          set pumheight=10                        " Makes popup menu smaller
+#                                          set fileencoding=utf-8                  " The encoding written to file
+#                                          set ruler              			        " Show the cursor position all the time
+#                                          set cmdheight=2                         " More space for displaying messages
+#                                          set mouse=a                             " Enable your mouse
+#                                          set splitbelow                          " Horizontal splits will automatically be below
+#                                          set splitright                          " Vertical splits will automatically be to the right
+#                                          set t_Co=256                            " Support 256 colors
+#                                          set conceallevel=0                      " So that I can see `` in markdown files
+#                                          set tabstop=4                           " Insert 2 spaces for a tab
+#                                          set shiftwidth=4                        " Change the number of space characters inserted for indentation
+#                                          set smarttab                            " Makes tabbing smarter will realize you have 2 vs 4
+#                                          set expandtab                           " Converts tabs to spaces
+#                                          set smartindent                         " Makes indenting smart
+#                                          set autoindent                          " Good auto indent
+#                                          set laststatus=2                        " Always display the status line
+#                                          set number relativenumber               " Line numbers
+#                                          set cursorline                          " Enable highlighting of the current line
+#                                          set background=dark                     " tell vim what the background color looks like
+#                                          set showtabline=2                       " Always show tabs
+#                                          set nobackup                            " This is recommended by coc
+#                                          set nowritebackup                       " This is recommended by coc
+#                                          set shortmess+=c                        " Don't pass messages to |ins-completion-menu|.
+#                                          set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time
+#                                          set updatetime=300                      " Faster completion
+#                                          set timeoutlen=100                      " By default timeoutlen is 1000 ms
+#                                          set clipboard=unnamedplus               " Copy paste between vim and everything else
+#                                          set incsearch
+#                                          set guifont=Fira\ Code\ Nerd\ Font
+#                                          '';
+#                                      #opt=[];
+#                                    };
+#                        };
+#                      };    
+#              };
+#              overlays = [
+#                          (self: super: {
+#                              qtile = super.qtile.overrideAttrs(oldAttrs: {
+#                              pythonPath = oldAttrs.pythonPath ++ (with self.python37Packages; [
+#                              keyring
+#                              xcffib
+#                              #cairocffi-xcffib
+#                              setuptools
+#                              setuptools_scm
+#                              dateutil
+#                              dbus-python
+#                              mpd2
+#                              psutil
+#                              pyxdg
+#                              pygobject3
+#                            ]);
+#                          });
+#                        })];
+#  };
 
 
   # This value determines the NixOS release from which the default
