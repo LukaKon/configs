@@ -8,10 +8,13 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./environment.nix
+      ./programs.nix
+      ./fonts.nix
       ./hdd.nix
       ./nixpkgs.nix
       ./users.nix
+      ./shellAliases.nix
+      ./nvim/nvim.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -127,24 +130,6 @@
       dconf.enable = true;  # for gnome applications
 	};
   
-  fonts = {
-      fonts = with pkgs; [
-                          inconsolata
-                          fira-code
-                          fira-code-symbols
-                          ubuntu_font_family
-                          corefonts
-                          noto-fonts-emoji
-                          joypixels
-                          nerdfonts
-                        ];
-	fontconfig={
-                defaultFonts={
-                              monospace=["Fira Code"];
-                              emoji = ["Joypixels"];
-			};
-		};
-	};
 
   # List services that you want to enable:
 
@@ -154,7 +139,7 @@
                       };
               xserver = {
                           enable = true;
-                          videoDrivers = ["intel" "nvidia"];
+                          videoDrivers = ["modesetting" "nvidia"];
                           # displayManager.startx.enable = true;  # necessary to
                           # create .xinitrc file
                           displayManager.lightdm.enable = true;
