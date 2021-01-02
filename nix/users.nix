@@ -50,9 +50,6 @@
                                     #dotnetCorePackages.sdk_3_0
                                     #dotnetCorePackages.netcore_3_1
 
-                                    # games
-                                    steam
-
                                     ];
 		};
 }
