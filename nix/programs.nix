@@ -19,7 +19,7 @@
 
                         vim
 			neovim
-                        zsh
+                        #zsh
                         fzf
                         xsel  # for copying
                         clipmenu  # for copying
