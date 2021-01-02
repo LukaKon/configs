@@ -8,13 +8,19 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./network.nix
       ./programs.nix
+      ./security/doas.nix
+      ./services/openssh.nix
+      ./services/postgresql.nix
+      ./services/pulpit.nix
       ./fonts.nix
       ./hdd.nix
-      ./nixpkgs.nix
+      ./nixpkgs/nixpkgs.nix
+      ./nixpkgs/qtile.nix
       ./users.nix
       ./shellAliases.nix
-      ./qtile.nix
+      ./virtualisation.nix
       ./nvim/nvim.nix
     ];
 
@@ -31,18 +37,6 @@
         };
 
   };
-  networking = {
-	  	  hostName = "fuji"; # Define your hostname.
-	  	  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-	  	  networkmanager.enable = true;
-
-          interfaces.wlp1s0.ipv4.addresses = [{
-                  address = "192.168.0.3";
-                  prefixLength = 24;
-                }];
-          defaultGateway = "192.168.0.1";
-          nameservers = ["37.8.214.2" "31.11.202.254"];
-		};
 
   # Set your time zone.
   time.timeZone = "Europe/Warsaw";
@@ -135,55 +129,8 @@
   # List services that you want to enable:
 
   services = {
-              openssh = {
-                          enable = true;
-                      };
-              xserver = {
-                          enable = true;
-                          videoDrivers = ["modesetting" "nvidia"];
-                          # displayManager.startx.enable = true;  # necessary to
-                          # create .xinitrc file
-                          displayManager.lightdm.enable = true;
-                          # desktopManager.plasma5.enable = true;
-                          windowManager.qtile.enable = true;
-                          displayManager.defaultSession = "none+qtile";
-                          layout = "pl";
-                      };
               gnome3.gnome-keyring.enable = true;
-              postgresql = {
-                            enable = true;
-                            package = pkgs.postgresql_12;
-                            enableTCPIP = true;
-                            #dataDir = "/home/lk/postDB";
-                            authentication = pkgs.lib.mkOverride 12 ''
-                              local all all trust
-                              host all all ::1/128 trust
-                              host all all 192.168.0.0/24 trust
-                            '';
-                            initialScript = pkgs.writeText "backend-initScript" ''
-                              CREATE ROLE lko WITH LOGIN PASSWORD 'Lukasz82' CREATEDB;
-                            
-                              CREATE DATABASE lko;
-                              GRANT ALL PRIVILEGES ON DATABASE lko TO lko;
-                            '';
-                        };
         };
-  security = {
-              doas = {
-                      enable = true;
-                      wheelNeedsPassword = true;
-                };
-        #pam.services.lightdm.enable = true;  # TODO not working. for auto unlock keyring during
-        #login
-            
-      };
-  virtualisation = {
-                    virtualbox.host = {
-                      enable = true;
-                      enableExtensionPack = true;
-                  };
-                  docker.enable = true;
-                };
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
@@ -203,7 +150,7 @@
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 7d";
+    options = "--delete-older-than 5d";
   };
 }
 
