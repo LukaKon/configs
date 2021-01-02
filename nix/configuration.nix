@@ -14,6 +14,7 @@
       ./nixpkgs.nix
       ./users.nix
       ./shellAliases.nix
+      ./qtile.nix
       ./nvim/nvim.nix
     ];
 
