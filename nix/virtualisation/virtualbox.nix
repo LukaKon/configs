@@ -5,6 +5,5 @@
 			      enable = true;
 			      enableExtensionPack = true;
 			  };
-			  docker.enable = true;
 			};
 }

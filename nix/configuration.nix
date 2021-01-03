@@ -23,8 +23,9 @@
       ./nixpkgs/qtile.nix	# Qtile additional libs
       ./users.nix		# Users configurations
       ./shellAliases.nix	# Shell aliases
-      ./virtualisation.nix	# Docker and Virtualbox
-      ./nvim/nvim.nix		# TODO nvim configuration
+      ./virtualisation/docker.nix	# Docker 
+      ./virtualisation/virtualbox.nix	# Virtualbox
+      ./nvim/nvim.nix		# TODO nvim configuration in separate files
       ./steam.nix		# Steam gaming portal
     ];
 }

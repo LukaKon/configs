@@ -1,11 +1,18 @@
-{config, ...}:
+{config, pkgs, ...}:
 
 # keyring for non GNOME desktop
 
 {
-  services = {
-              gnome3.gnome-keyring.enable = true;
-            };
+  environment = {
+                    systemPackages = with pkgs;
+                    [
+                        gnome3.gnome-keyring
+                        gnome3.seahorse
+                    ];
+                };
+
+  services.gnome3.gnome-keyring.enable = true;
+  security.pam.services.gdm.enableGnomeKeyring = true;
 
   programs = {
               seahorse.enable = true; # for gnome-keyring gui application
