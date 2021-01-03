@@ -31,7 +31,12 @@
                         blender
                         darktable
                         gimp
-                        # krita
+                        krita
+
+                        # cad
+                        qcad
+                        librecad
+                        openscad
 
                         # www
                         firefox
@@ -44,9 +49,6 @@
                         #zoom-us
                         teams
                         skype
-
-                        gnome3.gnome-keyring
-                        gnome3.seahorse
 
                         firmwareLinuxNonfree
                         microcodeIntel
@@ -66,9 +68,9 @@
                         psutils
 
                         python37Packages.pip
-                    # python37Packages.autopep8
-                    # python37Packages.flake8
-                    # python37Packages.colorama
+                        python37Packages.autopep8
+                        python37Packages.flake8
+                        python37Packages.colorama
                         
                         ###
 
