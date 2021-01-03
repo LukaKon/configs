@@ -14,13 +14,13 @@
       ./security/doas.nix	# Add 'doas'
       ./services/openssh.nix	# SSH
       ./services/postgresql.nix	# PostgreSQL
-      ./services/pulpit.nix	# Desktop and window manager settings
+      ./services/desktops/qtile.nix	# Qtile window manager settings
+      # ./services/desktops/plasma.nix	# Plasma window manager settings
       ./services/keyring.nix
       ./programs/zsh.nix	# zsh and console settings
       ./fonts.nix		# Fonts to install
       ./hdd.nix			# Additional HDD
       ./nixpkgs/nixpkgs.nix
-      ./nixpkgs/qtile.nix	# Qtile additional libs
       ./users.nix		# Users configurations
       ./shellAliases.nix	# Shell aliases
       ./virtualisation/docker.nix	# Docker 
