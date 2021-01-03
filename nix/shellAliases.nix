@@ -21,6 +21,8 @@
 
                         # backup config files to git
                         cong = "python /home/lk/scripts/git_conf.py";
+                        # deploy nix config files in /etc/nixos and rebuild system
+                        depnix = "python /home/lk/scripts/conf_deploy.py";
 
                         # rsync
                         # data

@@ -24,7 +24,7 @@
       ./users.nix		# Users configurations
       ./shellAliases.nix	# Shell aliases
       ./virtualisation.nix	# Docker and Virtualbox
-      ./nvim.nix		# TODO nvim configuration
+      ./nvim/nvim.nix		# TODO nvim configuration
       ./steam.nix		# Steam gaming portal
     ];
 }
