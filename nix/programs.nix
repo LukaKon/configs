@@ -17,8 +17,8 @@
                         #termite
                         alacritty
 
-                        vim
-			neovim
+                        # vim
+                        # neovim
                         #zsh
                         fzf
                         xsel  # for copying
@@ -31,7 +31,7 @@
                         blender
                         darktable
                         gimp
-                        krita
+                        # krita
 
                         # www
                         firefox
