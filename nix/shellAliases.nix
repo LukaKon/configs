@@ -17,12 +17,12 @@
                         upos = "sudo nixos-rebuild switch --upgrade";
 
                         # btrfs snapshots
-                        sb = "python /home/lk/scripts/snapshot.py";
+                        sb = "python /home/lk/configs/scripts/snapshot.py";
 
                         # backup config files to git
-                        cong = "python /home/lk/scripts/git_conf.py";
+                        cong = "python /home/lk/configs/scripts/git_conf.py";
                         # deploy nix config files in /etc/nixos and rebuild system
-                        depnix = "python /home/lk/scripts/conf_deploy.py";
+                        depnix = "python /home/lk/configs/scripts/conf_deploy.py";
 
                         # rsync
                         # data
