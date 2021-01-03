@@ -62,7 +62,7 @@
                                     gitgutter
                                     coc-python
                                     coc-html
-                                    coc-nvim
+                                    # coc-nvim
                                     coc-yank
                                     # Change dates fast
                                     vim-speeddating
@@ -77,7 +77,7 @@
                                     # Auto pairs for '(' '[' '{'
                                     auto-pairs
                                     # Rainbow brackets
-                                    rainbow
+                                    rainbow_parentheses-vim
                                     # Start screen
                                     vim-startify
                                   ];
