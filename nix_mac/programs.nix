@@ -14,8 +14,8 @@
                         lm_sensors
 
                         # terminal
-                        #termite
-                        alacritty
+                        termite
+                        # alacritty
 
                         #laptop
                         acpi
