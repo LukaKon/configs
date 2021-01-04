@@ -10,18 +10,18 @@
       ./security/doas.nix	# Add 'doas'
       ./services/openssh.nix	# SSH
       ./services/postgresql.nix	# PostgreSQL
-      ./services/desktops/qtile.nix	# Qtile window manager settings
-      # ./services/desktops/plasma.nix	# Plasma window manager settings
+      # ./services/desktops/qtile.nix	# Qtile window manager settings
+      ./services/desktops/plasma.nix	# Plasma window manager settings
       ./services/keyring.nix
       ./programs/zsh.nix	# zsh and console settings
       ./fonts.nix		# Fonts to install
-      ./hdd.nix			# Additional HDD
+      # ./hdd.nix			# Additional HDD
       ./nixpkgs/nixpkgs.nix
       ./users.nix		# Users configurations
       ./shellAliases.nix	# Shell aliases
       ./virtualisation/docker.nix	# Docker 
-      ./virtualisation/virtualbox.nix	# Virtualbox
+      # ./virtualisation/virtualbox.nix	# Virtualbox
       ./nvim/nvim.nix		# TODO nvim configuration in separate files
-      ./steam.nix		# Steam gaming portal
+      # ./steam.nix		# Steam gaming portal
     ];
 }
