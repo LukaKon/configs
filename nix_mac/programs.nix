@@ -28,7 +28,6 @@
                         unzip
 
                         # graphics
-                        blender
                         darktable
                         gimp
                         krita
