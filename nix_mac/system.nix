@@ -29,7 +29,10 @@
   hardware = {
                 pulseaudio.enable = true;
               };
-
+  libinput = {
+              enable = true;
+              tapping = true;
+            };
   nix.gc = {
     automatic = true;
     dates = "weekly";

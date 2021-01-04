@@ -17,6 +17,10 @@
                         #termite
                         alacritty
 
+                        #laptop
+                        acpi
+                        xorg.xbacklight
+
                         # vim
                         # neovim
                         #zsh
