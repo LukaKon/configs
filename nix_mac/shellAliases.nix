@@ -24,7 +24,7 @@
                         # backup config files to git
                         cong = "python /home/lk/configs/scripts/git_conf.py";
                         # deploy nix config files in /etc/nixos and rebuild system
-                        depnix = "python /home/lk/configs/scripts/conf_deploy.py";
+                        depnix = "python /home/lk/configs/scripts/conf_deploy_mac.py";
                         # rsync
                         # data
                         #rdata = "cd && rsync -rav --exclude=".snapshots" data/ ssh
