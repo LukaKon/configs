@@ -163,7 +163,7 @@ keys = [
 ]
 
 group_names = [
-    ("term", {"layout": "monadtall"}),
+    ("term", {"layout": "matrix"}),
     ("www", {"layout": "monadtall"}),
     ("dev", {"layout": "monadtall"}),
     ("text", {"layout": "monadtall"}),
@@ -188,11 +188,11 @@ layout_theme = {
 
 layouts = [
     layout.Max(**layout_theme),
-    #layout.Stack(num_stacks=2),
+    # layout.Stack(num_stacks=2),
     # Try more layouts by unleashing below layouts.
     # layout.Bsp(),
     # layout.Columns(),
-    # layout.Matrix(),
+    layout.Matrix(),
     layout.MonadTall(**layout_theme),
     layout.MonadWide(**layout_theme),
     # layout.RatioTile(),
@@ -227,7 +227,7 @@ colors = [
 
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
-### Default widget settings
+# Default widget settings
 widget_defaults = dict(
     font=main_font,
     fontsize=font_large,
@@ -310,65 +310,6 @@ screens = [
                     start_pos="bottom",
                     type="linefill",
                 ),
-                #                        widget.Wlan(
-                #                                background=None,
-                #                                disconnected_message='Disconnected',
-                #                                font=main_font,
-                ##                               fontsize=font_large,
-                #                                foreground=WHITE,
-                #                                format='{essid} {quality}/70',
-                #                                interface='wlp1s0',
-                #                                update_interval=1.0,
-                #                                ),
-                #widget.TextBox(
-                #    background=None,
-                #    font=main_font,
-                #    fontsize=font_large,
-                #    foreground=WHITE,
-                #    text="down",
-                #),
-                #widget.NetGraph(
-                #    background=None,
-                #    bandwidth_type="down",
-                #    border_color=RED,
-                #    border_width=1,
-                #    fill_color=LIGHT_BLUE,
-                #    frequency=1,
-                #    graph_color=ORANGE,
-                #    interface="auto",
-                #    line_width=3,
-                #    margin_x=3,
-                #    margin_y=3,
-                #    samples=100,
-                #    start_pos="bottom",
-                #    type="linefill",
-                #),
-                #widget.TextBox(
-                #    background=None,
-                #    font=main_font,
-                #    fontsize=font_large,
-                #    foreground=WHITE,
-                #    text="up",
-                #),
-                #widget.NetGraph(
-                #    background=None,
-                #    bandwidth_type="up",
-                #    border_color=RED,
-                #    border_width=1,
-                #    fill_color=LIGHT_BLUE,
-                #    frequency=1,
-                #    graph_color=ORANGE,
-                #    interface="auto",
-                #    line_width=3,
-                #    margin_x=3,
-                #    margin_y=3,
-                #    samples=100,
-                #    start_pos="bottom",
-                #    type="linefill",
-                #),
-                #                        widget.Spacer(
-                #                            background=GREY,
-                #                            ),
                 widget.Sep(
                     background=GREY,
                     foreground=GREEN,
