@@ -63,6 +63,8 @@
                         
                         psutils
 
+                        python37
+
                         python37Packages.pip
                         python37Packages.autopep8
                         python37Packages.flake8

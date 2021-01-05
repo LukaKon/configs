@@ -14,7 +14,7 @@
       # ./services/desktops/plasma.nix	# Plasma window manager settings
       # ./services/desktops/lxqt.nix	# LXQT window manager settings
       ./services/desktops/mate.nix	# Mate window manager settings
-      # ./services/keyring.nix
+      ./services/keyring.nix
       ./services/laptop.nix   # settings for laptop
       ./programs/zsh.nix	# zsh and console settings
       ./fonts.nix		# Fonts to install
