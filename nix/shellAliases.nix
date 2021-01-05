@@ -24,7 +24,10 @@
                         # backup config files to git
                         cong = "python /home/lk/configs/scripts/git_conf.py";
                         # deploy nix config files in /etc/nixos and rebuild system
-                        depnix = "python /home/lk/configs/scripts/conf_deploy.py";
+                        nixdep = "python /home/lk/configs/scripts/nix_deploy.py";
+                        # deploy qtile config files in /home/lk/.config/qtile
+                        qdep = "python /home/lk/configs/scripts/qtile_deploy.py";
+
                         # rsync
                         # data
                         #rdata = "cd && rsync -rav --exclude=".snapshots" data/ ssh

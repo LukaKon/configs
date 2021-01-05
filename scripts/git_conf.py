@@ -3,19 +3,11 @@ Put whole configs folder to github
 """
 import subprocess
 import os
+import getpass
 
-ref_path = '/home/lk/configs/'
+user = getpass.getuser()
 
-files_path = (
-    {'name':'config.py','file':'/home/lk/.config/qtile/config.py', 'dir':f'{ref_path}qtile'},
-)
-
-
-# Copying
-print('\nCopying Qtile config file to git folder:\n')
-
-for file in files_path:
-    print(f"Copying {file['name']} to {file['dir']}: ", subprocess.run(['rsync', '-rav', file['file'], file['dir']]))
+ref_path = f'/home/{user}/configs/'
 
 print(f'Enter to {ref_path}...')
 

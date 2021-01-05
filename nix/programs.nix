@@ -6,6 +6,8 @@
                     [
                         nix
 
+                        doas
+                        
                         # monitoring
                         bmon
                         htop
@@ -65,14 +67,20 @@
                         
                         psutils
 
-                        python37Packages.pip
-                        python37Packages.autopep8
-                        python37Packages.flake8
-                        python37Packages.colorama
-                        
+                        (python37.withPackages(ps: with ps;
+                        [
+                            autopep8
+                            flake8
+                            colorama
+                            psutil
+                            pip
+                        ]))
+                        # python37Packages.pip
+                        # python37Packages.autopep8
+                        # python37Packages.flake8
+                        # python37Packages.colorama
+                        # python37Packages.psutil
                         ###
-
-                        doas
                 ];
-	};
+            };
 }
