@@ -21,8 +21,8 @@
                         acpi
                         xorg.xbacklight
 
-                        # vim
-                        # neovim
+                        vim
+                        neovim
                         #zsh
                         fzf
                         xsel  # for copying
