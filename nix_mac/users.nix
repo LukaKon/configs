@@ -22,8 +22,8 @@
                                   #monodevelop
 
                                   # LaTeX
-                                  #texlive.combined.scheme-full 
-                                  #texstudio
+                                  texlive.combined.scheme-full 
+                                  texstudio
                                   
                                   # snipping screen
                                   #flameshot  - not working
