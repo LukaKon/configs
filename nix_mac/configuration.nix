@@ -11,7 +11,8 @@
       ./services/openssh.nix	# SSH
       ./services/postgresql.nix	# PostgreSQL
       # ./services/desktops/qtile.nix	# Qtile window manager settings
-      ./services/desktops/plasma.nix	# Plasma window manager settings
+      # ./services/desktops/plasma.nix	# Plasma window manager settings
+       ./services/desktops/lxqt.nix	# Plasma window manager settings
       ./services/keyring.nix
       ./services/laptop.nix   # settings for laptop
       ./programs/zsh.nix	# zsh and console settings
