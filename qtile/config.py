@@ -225,7 +225,7 @@ colors = [
     [LIGHT_BLUE, LIGHT_BLUE],
 ]  # window name
 
-prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
+prompt = "{DARK_GREY}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
 # Default widget settings
 widget_defaults = dict(
