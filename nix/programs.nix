@@ -21,6 +21,7 @@
 
                         # vim
                         # neovim
+                        neovim-remote
                         #zsh
                         fzf
                         xsel  # for copying
@@ -74,6 +75,9 @@
                             colorama
                             psutil
                             pip
+                            pynvim
+                            yapf
+                            jedi
                         ]))
                         # python37Packages.pip
                         # python37Packages.autopep8
