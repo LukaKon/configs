@@ -60,10 +60,10 @@
                                     neomake
                                     neoformat
                                     gitgutter
-                                    coc-python
-                                    coc-html
+                                    #coc-python
+                                    #coc-html
                                     # coc-nvim
-                                    coc-yank
+                                    # coc-yank
                                     # Change dates fast
                                     vim-speeddating
                                     # Repeat stuff
@@ -80,6 +80,15 @@
                                     rainbow_parentheses-vim
                                     # Start screen
                                     vim-startify
+
+									# autocomplet?
+                                    vim-yapf
+									deoplete-zsh
+									deoplete-jedi
+									deoplete-nvim
+									deoplete-clang
+									deoplete-github
+
                                   ];
                                 opt = [];
                               };
