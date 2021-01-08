@@ -335,7 +335,7 @@ screens = [
                 #                        widget.Spacer(
                 #                            background=GREY,
                 #                            ),
-                widget.QuickExit(),
+                # widget.QuickExit(),
             ],
             24,
         ),
