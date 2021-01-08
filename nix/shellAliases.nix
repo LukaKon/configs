@@ -2,7 +2,7 @@
 {
     environment.shellAliases = {
                         # git
-                        gs = "git status";
+                        gs = "git status -s";
                         ga = "git add";
                         gc = "git commit";
                         gp = "git push";
