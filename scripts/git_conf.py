@@ -15,13 +15,13 @@ print(f'Enter to {ref_path}...')
 os.chdir(ref_path)
 
 print('Checking git status:')
-subprocess.run(['git', 'status'])
+subprocess.run(['git', 'status', '-s'])
 
 print('Add all files:')
 subprocess.run(['git', 'add', '--all', '.'])
 
 print('Checking git status again:')
-subprocess.run(['git', 'status'])
+subprocess.run(['git', 'status', '-s'])
 
 commit_note = input('Enter commit comment: ')
 print('Commiting:')
