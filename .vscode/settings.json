@@ -1,3 +1,3 @@
 {
-    "python.pythonPath": "/nix/store/y36z5bxzx4in37hyvq1xfiba8jc2949x-python3-3.7.9/bin/python"
+    "python.pythonPath": "/nix/store/4vidz3l497hqdjbkaxnqbn6l6hqf3156-python3-3.7.9-env/bin/python3.7"
 }
