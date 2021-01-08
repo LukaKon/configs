@@ -14,18 +14,18 @@ print(f'Enter to {ref_path}...')
 # Send files to git repo
 os.chdir(ref_path)
 
-print('Checking git status:')
+print('\nChecking git status:')
 subprocess.run(['git', 'status', '-s'])
 
-print('Add all files:')
+print('\nAdd all files:')
 subprocess.run(['git', 'add', '--all', '.'])
 
-print('Checking git status again:')
+print('\nChecking git status again:')
 subprocess.run(['git', 'status', '-s'])
 
 commit_note = input('Enter commit comment: ')
-print('Commiting:')
+print('\nCommiting:')
 subprocess.run(['git', 'commit', '-m', commit_note])
 
-print('Pushing:')
+print('\nPushing:')
 subprocess.run(['git', 'push', 'origin', 'main'])
