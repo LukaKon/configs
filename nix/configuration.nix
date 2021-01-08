@@ -5,6 +5,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./system.nix		# Base system settings
+      ./sound.nix     # sound
+      ./locale.nix    # system localisation
       ./network.nix		# Network configuration
       ./programs.nix		# List of installed programs
       ./security/doas.nix	# Add 'doas'

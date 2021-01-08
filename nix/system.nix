@@ -1,11 +1,11 @@
-{config, pkgs, ...}:
+{config, ...}:
 
 {
   # Use the systemd-boot EFI boot loader.
   boot = {
-                loader.systemd-boot.enable = true;
-                loader.efi.canTouchEfiVariables = true;
-      };
+            loader.systemd-boot.enable = true;
+            loader.efi.canTouchEfiVariables = true;
+        };
 
   system = {
           autoUpgrade = {
@@ -13,28 +13,13 @@
           #allowReboot = true;
         };
 
-  };
-
-  # Set your time zone.
-  time.timeZone = "Europe/Warsaw";
-
-  # Select internationalisation properties.
-  i18n = {
-           defaultLocale = "pl_PL.UTF-8";
-           supportedLocales = ["pl_PL.UTF-8/UTF-8" "en_US.UTF-8/UTF-8"];
-         };
-
-  # Enable sound.
-  sound.enable = true;
-  hardware = {
-                pulseaudio.enable = true;
-              };
+      };
 
   nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 5d";
-  };
+              automatic = true;
+              dates = "weekly";
+              options = "--delete-older-than 5d";
+            };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
