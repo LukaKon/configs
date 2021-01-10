@@ -4,18 +4,20 @@
 """
 import os
 import re
+import getpass
 import subprocess
 from datetime import datetime, timedelta
 
+user = getpass.getuser()
 data = datetime.now().strftime('%Y-%m-%d_%H-%M')
 
 paths = (
     {'name': 'home', 'directory': '/home',
         'snap_loc': f'/home/.snapshots/home-{data}'},
-    {'name': 'data', 'directory': '/home/lk/data',
-        'snap_loc': f'/home/lk/data/.snapshots/data-{data}'},
-    {'name': 'vm', 'directory': '/home/lk/vm',
-        'snap_loc': f'/home/lk/vm/.snapshots/vm-{data}'},
+    {'name': 'data', 'directory': f'/home/{user}/data',
+        'snap_loc': f'/home/{user}/data/.snapshots/data-{data}'},
+    {'name': 'vm', 'directory': f'/home/{user}/vm',
+        'snap_loc': f'/home/{user}/vm/.snapshots/vm-{data}'},
     {'name': 'root', 'directory': '/', 'snap_loc': f'/.snapshots/root-{data}'},
 )
 
@@ -43,7 +45,7 @@ def delete_old_snaps():
                 match_date = datetime.strptime(match.group(), '%Y-%m-%d')
 
                 if match_date < datetime.today() - timedelta(days=7):   # selecting folders older than 7 days old
-                    print(f'{entry.name}: deleted')
+                    print(f'{entry.name}: to delete')
                     subprocess.run(
                         ['sudo', 'rm', '-r', f'{path}/{entry.name}'])
 

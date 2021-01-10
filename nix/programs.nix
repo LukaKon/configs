@@ -42,6 +42,8 @@
                         # www
                         firefox
                         geckodriver
+                        qutebrowser
+                        brave
 
                         # office
                         libreoffice
@@ -50,6 +52,10 @@
                         #zoom-us
                         teams
                         skype
+
+                        # games
+                        openarena
+                        widelands
 
                         firmwareLinuxNonfree
                         microcodeIntel

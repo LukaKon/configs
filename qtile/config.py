@@ -101,6 +101,18 @@ keys = [
     ),
     Key(
         [mod],
+        "b",
+        lazy.spawn("brave"),
+        desc="start Brave browser",
+    ),
+    Key(
+        [mod],
+        "q",
+        lazy.spawn("qutebrowser"),
+        desc="start qutebrowser",
+    ),
+    Key(
+        [mod],
         "c",
         lazy.spawn("code"),
         desc="start vscode",
