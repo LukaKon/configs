@@ -1,29 +1,3 @@
-# Copyright (c) 2010 Aldo Cortesi
-# Copyright (c) 2010, 2014 dequis
-# Copyright (c) 2012 Randall Ma
-# Copyright (c) 2012-2014 Tycho Andersen
-# Copyright (c) 2012 Craig Barnes
-# Copyright (c) 2013 horsik
-# Copyright (c) 2013 Tao Sauvage
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-
 import os
 import re
 import socket
@@ -63,84 +37,83 @@ keys = [
     # Switch between windows in current stack pane
     Key([mod], "k", lazy.layout.down()),
     Key([mod], "j", lazy.layout.up()),
+
     # Move windows up or down in current stack
     Key([mod, "shift"], "k", lazy.layout.shuffle_down()),
     Key([mod, "shift"], "j", lazy.layout.shuffle_up()),
+
     # Switch window focus to other pane(s) of stack
     Key([mod], "space", lazy.layout.next()),
+
     # Swap panes of split stack
     Key([mod, "shift"], "space", lazy.layout.rotate()),
-    # Toggle between split and unsplit sides of stack.
-    # Split = all windows displayed
-    # Unsplit = 1 window displayed, like Max layout, but still with
-    # multiple stack panes
     Key([mod, "shift"], "Return", lazy.layout.toggle_split()),
     Key([mod], "Return", lazy.spawn(myTerm)),
+
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout()),
+
     Key([mod], "w", lazy.window.kill()),
+
     Key(
         [mod, "shift"],
         "r",
         lazy.restart(),
         desc="Restart Qtile",
     ),
+
     Key(
         [mod, "shift"],
         "q",
         lazy.shutdown(),
         desc="Shutdown",
     ),
+
     # run program
     Key([mod], "r", lazy.spawncmd()),
+
     Key(
         [mod],
         "f",
         lazy.spawn("firefox"),
         desc="start Firefox",
     ),
-    Key(
-        [mod],
-        "b",
-        lazy.spawn("brave"),
-        desc="start Brave browser",
-    ),
-    Key(
-        [mod],
-        "q",
-        lazy.spawn("qutebrowser"),
-        desc="start qutebrowser",
-    ),
+
     Key(
         [mod],
         "c",
         lazy.spawn("code"),
         desc="start vscode",
     ),
+
     Key(
         [mod],
         "d",
         lazy.spawn("pycharm-community"),
         desc="start pycharm",
     ),
+
     Key(
         [mod],
         "v",
         lazy.spawn("VirtualBox"),
         desc="start VirtualBox",
     ),
+
     Key(
         [mod],
         "t",
         lazy.spawn("texstudio"),
         desc="start texstudio",
     ),
+
     Key(
         [mod],
         "s",
         lazy.spawn("steam"),
         desc="start Steam",
     ),
+
     # RESIZE UP, DOWN, LEFT, RIGHT
     Key(
         [mod, "control"],
@@ -150,6 +123,7 @@ keys = [
         lazy.layout.increase_ratio(),
         lazy.layout.delete(),
     ),
+
     Key(
         [mod, "control"],
         "h",
@@ -158,6 +132,7 @@ keys = [
         lazy.layout.decrease_ratio(),
         lazy.layout.add(),
     ),
+
     Key(
         [mod, "control"],
         "k",
@@ -165,6 +140,7 @@ keys = [
         lazy.layout.grow(),
         lazy.layout.decrease_nmaster(),
     ),
+
     Key(
         [mod, "control"],
         "j",

@@ -7,7 +7,7 @@
                       options = ["subvol=@data"]; 
                   };
   fileSystems."/home/lk/vm" = {
-                      device = "/dev/disk/by-uuid/9f74f59d-add9-42b6-926d-a959fbcfd97f";
+                      device = "/dev/disk/by-uuid/2f8299dd-bba5-4256-81cf-516828cc910b";
                       fsType = "btrfs";
                       options = ["subvol=@vm"]; 
                   };
