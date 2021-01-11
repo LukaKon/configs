@@ -319,22 +319,22 @@ screens = [
                 widget.Clock(
                     background=None,
                     font=main_font,
-                    # fontsize=font_medium;
+                    #                            fontsize=font_medium;
                     format="%d.%m.%Y",
-                    # timezone="Europe/Warsaw",
+                    #                            timezone="Europe/Warsaw",
                     update_interval=5,
                 ),
                 widget.Clock(
                     background=None,
                     font=main_font,
-                    # fontsize=font_large;
+                    #                            fontsize=font_large;
                     format="%a %I:%M %p",
-                    # timezone="Europe/Warsaw",
+                    #                            timezone="Europe/Warsaw",
                     update_interval=1.0,
                 ),
-                # widget.Spacer(
-                # background=GREY,
-                # ),
+                #                        widget.Spacer(
+                #                            background=GREY,
+                #                            ),
                 # widget.QuickExit(),
             ],
             24,
