@@ -15,7 +15,6 @@
       # ./services/desktops/qtile.nix	# Qtile window manager settings
       ./services/desktops/i3/i3.nix	# i3 window manager settings
       # ./services/desktops/mate.nix	# mate window manager settings
-      # ./services/desktops/Xmonad/xmonad.nix	# Qtile window manager settings
       # ./services/desktops/plasma.nix	# Plasma window manager settings
       # ./services/desktops/spectrwm.nix	# Spectrwm window manager settings
       ./services/keyring.nix

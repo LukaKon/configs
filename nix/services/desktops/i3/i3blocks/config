@@ -1,0 +1,118 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+command=/usr/share/i3blocks/$BLOCK_NAME
+separator_block_width=12
+markup=none
+
+[window]
+command=$SCRIPT_DIR/window
+interval=1
+color=#6cddf7
+
+
+
+
+[weather New York example]
+command=$SCRIPT_DIR/weather 3697_pc
+interval=900
+label=E 
+separator=false
+separator_block_width=7
+
+[memory]
+command=$SCRIPT_DIR/memory
+#label= 
+#label= 
+#label= 
+label= 
+interval=30
+color=#f776ea
+#align=center
+separator=false
+separator_block_width=7
+
+[cpu]
+command=$SCRIPT_DIR/cpu
+#label= 
+label= 
+interval=5
+color=#f776ea
+min_width=00%
+#align=center
+#separator_block_width=7
+
+#[cpu_freq]
+#command=$SCRIPT_DIR/cpu_freq
+#label= 
+#interval=1
+#color=#f776ea
+#min_width= 0.0GHz
+
+[ssid]
+command=$SCRIPT_DIR/ssid
+#label=
+interval=60
+color=#00FF00
+separator=false
+separator_block_width=7
+
+[wifi]
+command=$SCRIPT_DIR/wifi
+instance=wlp1s0
+interval=10
+separator=false
+separator_block_width=7
+
+[bandwidth]
+#instance=enp0s31f6
+interval=5
+color=#00FF00
+command=$SCRIPT_DIR/bandwidth
+
+[volume-pulseaudio]
+command=$SCRIPT_DIR/volume-pulseaudio -C '#6cddf7' -F '${SYMB} ${VOL}%'
+interval=1
+signal=10
+#label=VOL
+#label=♪
+#MIXER=[determined automatically]
+#SCONTROL=[determined automatically]
+##exposed format variables: ${SYMB}, ${VOL}, ${INDEX}, ${NAME}
+#LONG_FORMAT="${SYMB} ${VOL}% [${INDEX}:${NAME}]"
+#SHORT_FORMAT="${SYMB} ${VOL}% [${INDEX}]"
+#AUDIO_HIGH_SYMBOL='  '
+#AUDIO_MED_THRESH=50
+#AUDIO_MED_SYMBOL='  '
+#AUDIO_LOW_THRESH=0
+#AUDIO_LOW_SYMBOL='  '
+#AUDIO_DELTA=5
+#DEFAULT_COLOR="#ffffff"
+#MUTED_COLOR="#a0a0a0"
+#USE_ALSA_NAME=0
+#USE_DESCRIPTION=0
+## SUBSCRIBE=1 requires interval=persist and always uses LONG_FORMAT
+#SUBSCRIBE=0
