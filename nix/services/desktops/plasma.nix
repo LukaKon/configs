@@ -9,8 +9,8 @@
                     
 
                         # Plasma
-                        displayManager.sddm.enable = true;
-                        displayManager.sddm.autoNumlock = true;
+                        #displayManager.sddm.enable = true;
+                        #displayManager.sddm.autoNumlock = true;
                         desktopManager.plasma5.enable = true;
 
                         
