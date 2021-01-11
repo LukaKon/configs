@@ -4,6 +4,8 @@
     environment = {
                     systemPackages = with pkgs;
                     [
+                        doas
+
                         nix
 
                         # monitoring
@@ -37,6 +39,8 @@
                         # www
                         firefox
                         geckodriver
+                        qutebrowser
+                        brave
 
                         # office
                         libreoffice
@@ -63,12 +67,17 @@
                         
                         psutils
 
-                        python37
-
-                        python37Packages.pip
-                        python37Packages.autopep8
-                        python37Packages.flake8
-                        python37Packages.colorama
+                        (python37.withPackages(ps: with ps;
+                        [
+                            autopep8
+                            flake8
+                            colorama
+                            psutil
+                            pip
+                            pynvim
+                            yapf
+                            jedi
+                        ]))
                         
                         ###
 

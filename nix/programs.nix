@@ -85,12 +85,6 @@
                             yapf
                             jedi
                         ]))
-                        # python37Packages.pip
-                        # python37Packages.autopep8
-                        # python37Packages.flake8
-                        # python37Packages.colorama
-                        # python37Packages.psutil
-                        ###
                 ];
             };
 }

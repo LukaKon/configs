@@ -45,6 +45,7 @@
                     neovim = pkgs.neovim.override {
                           vimAlias = true;
                           withPython = true;
+                          withPython3 = true;
                           configure = {
                               packages.myVimPackage = with
                               pkgs.vimPlugins;
@@ -83,11 +84,11 @@
 
 									# autocomplet?
                                     vim-yapf
-									deoplete-zsh
-									deoplete-jedi
-									deoplete-nvim
-									deoplete-clang
-									deoplete-github
+                                    deoplete-zsh
+                                    deoplete-jedi
+                                    deoplete-nvim
+                                    deoplete-clang
+                                    deoplete-github
 
                                   ];
                                 opt = [];
