@@ -19,12 +19,12 @@
 
                         # btrfs snapshots
                         # sb = "python ${path_script}snapshot.py";
-                        sb = "python /home/lk/configs/scripts/snapshot.py";
+                        sb = "python3 /home/lk/configs/scripts/snapshot.py";
 
                         # backup config files to git
-                        cong = "python /home/lk/configs/scripts/git_conf.py";
+                        cong = "python3 /home/lk/configs/scripts/git_conf.py";
                         # deploy nix config files in /etc/nixos and rebuild system
-                        depnix = "python /home/lk/configs/scripts/conf_deploy_mac.py";
+                        depnix = "python3 /home/lk/configs/scripts/nix_deploy_mac.py";
                         # rsync
                         # data
                         #rdata = "cd && rsync -rav --exclude=".snapshots" data/ ssh
