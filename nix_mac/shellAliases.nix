@@ -18,16 +18,11 @@
 
 
                         # btrfs snapshots
-                        # sb = "python ${path_script}snapshot.py";
-                        sb = "python3 /home/lk/configs/scripts/snapshot.py";
+                        sb = "python3 /home/lk/configs/scripts/snapshot_mac.py";
 
                         # backup config files to git
                         cong = "python3 /home/lk/configs/scripts/git_conf.py";
                         # deploy nix config files in /etc/nixos and rebuild system
                         nixdep = "python3 /home/lk/configs/scripts/nix_deploy_mac.py";
-                        # rsync
-                        # data
-                        #rdata = "cd && rsync -rav --exclude=".snapshots" data/ ssh
-                        #lk@192.168.0.2:/volume2/homes/lk/Drive/pliki/";
                     };
 }

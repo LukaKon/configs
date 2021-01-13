@@ -40,6 +40,7 @@
                         firefox
                         geckodriver
                         qutebrowser
+                        tor
                         brave
 
                         # office
@@ -81,7 +82,6 @@
                         
                         # games
                         widelands
-                        
                 ];
 	};
 }
