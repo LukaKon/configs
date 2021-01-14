@@ -40,7 +40,7 @@
                         firefox
                         geckodriver
                         qutebrowser
-                        tor
+                        tor-browser-bundle-bin
                         brave
 
                         # office

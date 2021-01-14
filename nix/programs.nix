@@ -44,6 +44,7 @@
                         geckodriver
                         qutebrowser
                         brave
+                        tor-browser-bundle-bin
 
                         # office
                         libreoffice
