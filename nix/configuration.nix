@@ -19,6 +19,7 @@
       # ./services/desktops/spectrwm.nix	# Spectrwm window manager settings
       ./services/keyring.nix
       ./programs/zsh.nix	# zsh and console settings
+      ./programs/steam.nix		# Steam gaming portal
       ./fonts.nix		# Fonts to install
       ./hdd.nix			# Additional HDD
       ./nixpkgs/nixpkgs.nix
@@ -27,6 +28,5 @@
       ./virtualisation/docker.nix	# Docker 
       ./virtualisation/virtualbox.nix	# Virtualbox
       ./nvim/nvim.nix		# TODO nvim configuration in separate files
-      ./steam.nix		# Steam gaming portal
     ];
 }
