@@ -46,6 +46,9 @@
                         brave
                         tor-browser-bundle-bin
 
+                        # cd burner
+                        #brasero
+
                         # office
                         libreoffice
 
