@@ -19,7 +19,7 @@
       ./security/doas.nix
       ./services/openssh.nix
       ./services/keyring.nix
-      ./desktops/mate.nix
+      ./services/desktops/mate.nix
       ./shellAliases.nix
       ./sound.nix
       ./users.nix
