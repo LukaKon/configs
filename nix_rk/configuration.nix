@@ -20,6 +20,7 @@
       ./services/openssh.nix
       #./services/keyring.nix
       ./services/desktops/plasma.nix
+      #./services/desktops/mate.nix
       ./shellAliases.nix
       ./sound.nix
       ./users.nix
