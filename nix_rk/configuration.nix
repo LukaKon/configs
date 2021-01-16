@@ -18,8 +18,8 @@
       ./programs.nix
       ./security/doas.nix
       ./services/openssh.nix
-      ./services/keyring.nix
-      ./services/desktops/mate.nix
+      #./services/keyring.nix
+      ./services/desktops/plasma.nix
       ./shellAliases.nix
       ./sound.nix
       ./users.nix
