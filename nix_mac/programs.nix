@@ -40,9 +40,12 @@
                         firefox
                         geckodriver
                         qutebrowser
-                        tor-browser-bundle-bin
+                        # tor-browser-bundle-bin
                         brave
 
+                        # cdburner
+                        brasero
+                        
                         # office
                         libreoffice
 
