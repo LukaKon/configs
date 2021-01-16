@@ -1,4 +1,4 @@
-{config}
+{config}:
 
 {
 	# Enable CUPS to print documents.
