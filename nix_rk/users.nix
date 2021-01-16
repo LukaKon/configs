@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-    users.users.lk = {
+    users.users.rk = {
                         isNormalUser = true;
                         home = "/home/rk";
                         description = "Romano";

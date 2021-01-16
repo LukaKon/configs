@@ -3,7 +3,7 @@
 {
 	services.xserver = {
                         enable = true;
-                        videoDrivers = ["nvidia" "nouveau"];
+                        videoDrivers = ["nvidia"]; #"nouveau"];
                         # displayManager.startx.enable = true;  # necessary to
                         # create .xinitrc file
                     
