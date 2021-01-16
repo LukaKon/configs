@@ -10,7 +10,7 @@
   system = {
           autoUpgrade = {
           enable = true;
-          #allowReboot = true;
+          allowReboot = true;
         };
 
   };
