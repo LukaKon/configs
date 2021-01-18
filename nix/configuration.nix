@@ -28,5 +28,6 @@
       ./virtualisation/docker.nix	# Docker 
       ./virtualisation/virtualbox.nix	# Virtualbox
       ./nvim/nvim.nix		# TODO nvim configuration in separate files
+      # ./flatpak.nix
     ];
 }
