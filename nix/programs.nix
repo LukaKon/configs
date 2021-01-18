@@ -46,6 +46,9 @@
                         brave
                         tor-browser-bundle-bin
 
+                        # comunicator
+                        signal-desktop
+
                         # cd burner
                         #brasero
 
