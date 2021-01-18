@@ -22,13 +22,11 @@
                                           dmenu
                                           i3status
                                           i3lock
-                                          i3blocks
+                                          # i3blocks
                                         ];
+                        };
                         
-                       #layout = "pl";
+                       layout = "pl";
                       };
-                      
-                    
-                    };
                   }
 
