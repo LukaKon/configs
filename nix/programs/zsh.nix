@@ -34,18 +34,6 @@
                                 "HIST_IGNORE_SPACE"         	# Do not record an event starting with a space.
                                 "HIST_SAVE_NO_DUPS"         	# Do not write a duplicate event to the history file.
                                 "HIST_VERIFY"               	# Do not execute immediately upon history expansion.
-								"HISTSIZE=10000"
-								"SAVEHIST=10000"
-								
-								"setopt autocd extendedglob notify"
-								"unsetopt beep nomatch"
-								"bindkey -v"
-								# End of lines configured by zsh-newuser-install
-								# The following lines were added by compinstall
-								"zstyle :compinstall filename '$HOME/.config/zsh/.zshrc'"
-
-								"autoload -Uz compinit"
-								"compinit"
                             ];
 
                   ohMyZsh = {
