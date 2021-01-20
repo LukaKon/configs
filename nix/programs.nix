@@ -73,6 +73,8 @@
                         rsync
                         tree
                         
+                        nodejs
+
                         # media
                         feh # picture viewer
                         mpv # video player
