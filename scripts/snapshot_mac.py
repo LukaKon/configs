@@ -15,15 +15,14 @@ paths = (
 
 def create_new_snaps():
     for snap in paths:
-        print(f"{snap['name']}:")
+        # print(f"{snap['name']}:")
         subprocess.run(['sudo', 'btrfs', 'subvolume',
                         'snapshot', snap['directory'], snap['snap_loc']]).returncode
-        print('\n')
 
 
 def delete_old_snaps():
     for folder in paths:
-        print(f"\n\nDelete from: {folder['directory']}")
+        print(f"Delete from: {folder['directory']}")
 
         path = f"{folder['directory']}/.snapshots"
         expression_date = '[0-9]{4}-[0-9]{2}-[0-9]{2}'
@@ -41,7 +40,8 @@ def delete_old_snaps():
                         ['sudo', 'rm', '-r', f'{path}/{entry.name}'])
 
 
-print('\nCreate new snapshots:\n')
+print('\nCreate new snapshots:')
 create_new_snaps()
-print('\nDelete old snapshots:\n')
+print('\nDelete old snapshots:')
 delete_old_snaps()
+print('\n')
