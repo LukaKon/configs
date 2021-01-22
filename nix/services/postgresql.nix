@@ -8,6 +8,7 @@
                             # dataDir = "/home/lk/postDB";
                             authentication = pkgs.lib.mkOverride 12 ''
                               local all all trust
+							  host all all localhost trust
                               host all all ::1/128 trust
                               host all all 192.168.0.0/24 trust
                             '';
