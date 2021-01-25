@@ -7,7 +7,7 @@
                         nix
 
                         doas
-                        
+
                         # monitoring
                         bmon
                         htop
@@ -72,7 +72,7 @@
                         git
                         rsync
                         tree
-                        
+
                         nodejs
 
                         # media
@@ -80,7 +80,7 @@
                         mpv # video player
                         libdvdcss # plugin to play cd/dvd in mpv
                         moc  # music player
-                        
+
                         psutils
 
                         (python37.withPackages(ps: with ps;
