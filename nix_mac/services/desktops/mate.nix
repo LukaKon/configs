@@ -6,7 +6,6 @@
                         videoDrivers = ["nouveau"];
                         # displayManager.startx.enable = true;  # necessary to
                         # create .xinitrc file
-                    
 
                         # Mate
                         displayManager.gdm.enable = true;

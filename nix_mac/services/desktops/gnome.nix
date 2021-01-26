@@ -6,15 +6,14 @@
                         videoDrivers = ["nouveau"];
                         # displayManager.startx.enable = true;  # necessary to
                         # create .xinitrc file
-                    
 
                         # Gnome
                         displayManager.gdm.enable = true;
                         desktopManager.gnome3.enable = true;
-                        
+
                         layout = "pl";
-                      };
-    environment.systemPackages = [ 
+
+    environment.systemPackages = [
         # gnome3.adwaita-icon-theme
         # gnome-shell-extension-appindicator-32
         ];

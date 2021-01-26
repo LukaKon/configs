@@ -18,7 +18,7 @@
                         # terminal
                         termite
                         # alacritty
-                        
+
                         neovim
                         #zsh
                         fzf
@@ -46,7 +46,7 @@
 
                         # cdburner
                         brasero
-                        
+
                         # office
                         libreoffice
 
@@ -63,13 +63,13 @@
                         git
                         rsync
                         tree
-                        
+
                         # media
                         feh # picture viewer
                         mpv # video player
                         libdvdcss # plugin to play cd/dvd in mpv
                         moc  # music player
-                        
+
                         psutils
 
                         (python37.withPackages(ps: with ps;
@@ -83,7 +83,7 @@
                             yapf
                             jedi
                         ]))
-                        
+
                         # games
                         widelands
                 ];
