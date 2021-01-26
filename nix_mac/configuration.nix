@@ -22,7 +22,7 @@
       ./nixpkgs/nixpkgs.nix
       ./users.nix		# Users configurations
       ./shellAliases.nix	# Shell aliases
-      ./virtualisation/docker.nix	# Docker 
+      ./virtualisation/docker.nix	# Docker
       ./nvim/nvim.nix		# TODO nvim configuration in separate files
       ./flatpak.nix
     ];

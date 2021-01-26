@@ -6,14 +6,12 @@
                         videoDrivers = ["nouveau"];
                         # displayManager.startx.enable = true;  # necessary to
                         # create .xinitrc file
-                    
 
                         # LXQT
                         displayManager.sddm.enable = true;
                         displayManager.sddm.autoNumlock = true;
                         desktopManager.lxqt.enable = true;
 
-                        
                         layout = "pl";
                       };
   environment.lxqt.excludePackages = [];

@@ -5,7 +5,7 @@
                         isNormalUser = true;
                         home = "/home/lk";
                         description = "lko";
-                        extraGroups = [ "wheel" "networkmanager" "dialout" "vboxusers" "docker"]; 
+                        extraGroups = [ "wheel" "networkmanager" "dialout" "vboxusers" "docker"];
                         shell = pkgs.zsh;
                 packages = with pkgs;
                                     [
@@ -23,9 +23,9 @@
                                     #monodevelop
 
                                     # LaTeX
-                                    texlive.combined.scheme-full 
+                                    texlive.combined.scheme-full
                                     texstudio
-                                                                                                          
+
                                     # dotnet
                                     #mono
                                     dotnet-sdk_3

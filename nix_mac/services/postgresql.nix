@@ -14,7 +14,7 @@
                             '';
                             initialScript = pkgs.writeText "backend-initScript" ''
                               CREATE ROLE lko WITH LOGIN PASSWORD 'Lukasz82' CREATEDB;
-                            
+
                               CREATE DATABASE lko;
                               GRANT ALL PRIVILEGES ON DATABASE lko TO lko;
                             '';

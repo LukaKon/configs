@@ -1,38 +1,3 @@
-# { config, pkgs, lib, ... }:
-
-# let
-#   vimpkg = pkgs.neovim.override {
-#     configure = {
-#       customRC = ./vimrc;
-#       plug.plugins = with pkgs.vimPlugins; [
-#         vim-nix
-        
-#         vim-airline-themes
-#         vim-airline
-
-#         # vim-vinegar
-#         # vim-surround
-#         # vim-fugitive
-#         # vim-rhubarb
-#         # vim-eunuch
-#         # vim-closetag
-#         /*
-#         "vim-ripgrep"
-#         "vim-endwise"
-#         "vim-closer"
-#         */
-#       ];
-#     };
-#   };
-# in {
-#   environment.systemPackages = [ vimpkg ];
-#   environment.variables = {
-#     EDITOR = "nvim";
-#     VISUAL = "nvim";
-#   };
-#   programs = {npm.enable = true;};
-# }
-
 {pkgs, ...}:
 {
   environment.variables = {EDITOR = "nvim"; VISUAL = "nvim";};
@@ -135,7 +100,7 @@
                               #opt=[];
                             };
                       };
-                    };    
+                    };
             };
         };
 }

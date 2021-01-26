@@ -6,7 +6,7 @@
                     isNormalUser = true;
                     home = "/home/lk";
                     description = "lko";
-                    extraGroups = [ "wheel" "networkmanager" "dialout" "docker"]; 
+                    extraGroups = [ "wheel" "networkmanager" "dialout" "docker"];
                     shell = pkgs.zsh;
 			packages = with pkgs;
                                 [
@@ -14,24 +14,14 @@
 
                                   # IDE
                                   vscode
-                                  #vscodium
                                   arduino
-                                  #kdevelop
-                                  #kdev-python
                                   jetbrains.pycharm-community
                                   #monodevelop
 
                                   # LaTeX
-                                  texlive.combined.scheme-full 
+                                  texlive.combined.scheme-full
                                   texstudio
-                                  
-                                  # snipping screen
-                                  #flameshot  - not working
 
-                                  # docker
-                                  docker-compose
-
-                                                                    
                                   # dotnet
                                   #mono
                                   dotnet-sdk_3
@@ -44,11 +34,10 @@
                     isNormalUser = true;
                     home = "/home/kk";
                     description = "krop";
-                    extraGroups = [ "wheel" "networkmanager"]; 
+                    extraGroups = [ "wheel" "networkmanager"];
                     shell = pkgs.zsh;
 			packages = with pkgs;
                                 [];
 		};
-
-		};
+	};
 }
