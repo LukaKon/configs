@@ -32,7 +32,7 @@
                         darktable
                         gimp
                         krita
-                        gnome-photos
+                        # gnome-photos
 
                         # cad
                         librecad
