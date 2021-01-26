@@ -72,7 +72,7 @@
 
                         psutils
 
-                        (python37.withPackages(ps: with ps;
+                        (python38.withPackages(ps: with ps;
                         [
                             autopep8
                             flake8
