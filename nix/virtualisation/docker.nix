@@ -1,8 +1,5 @@
 {config, lib, pkgs, ...}:
 {
 	virtualisation.docker.enable = true;
-  		environment.systemPackages = with pkgs; [
-    # Useful for vscode dev.
-    		docker-compose
-  	];
+	environment.systemPackages = with pkgs; [docker-compose];
 }

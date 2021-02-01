@@ -6,7 +6,6 @@
                         videoDrivers = ["nouveau"];
                         # displayManager.startx.enable = true;  # necessary to
                         # create .xinitrc file
-                    
 
                         # Mate
                         displayManager.lightdm.enable = true;
@@ -14,5 +13,5 @@
 
                         layout = "pl";
                       };
-  environment.mate.excludePackages = [];
+	environment.mate.excludePackages = [];
 }

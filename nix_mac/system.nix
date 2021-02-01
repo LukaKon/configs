@@ -3,17 +3,16 @@
 {
   # Use the systemd-boot EFI boot loader.
   boot = {
-			loader.systemd-boot.enable = true;
-			loader.efi.canTouchEfiVariables = true;
-      };
-
-  system = {
-          autoUpgrade = {
-          enable = true;
-          allowReboot = true;
+          loader.systemd-boot.enable = true;
+          loader.efi.canTouchEfiVariables = true;
         };
 
-  };
+  system = {
+            autoUpgrade = {
+            enable = true;
+            allowReboot = true;
+          };
+        };
 
   # Set your time zone.
   time.timeZone = "Europe/Warsaw";
@@ -30,10 +29,10 @@
                 pulseaudio.enable = true;
               };
   nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 5d";
-  };
+            automatic = true;
+            dates = "weekly";
+            options = "--delete-older-than 5d";
+          };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

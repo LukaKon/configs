@@ -2,7 +2,7 @@
 
 {
 	security.doas = {
-                      enable = true;
-                      wheelNeedsPassword = true;
-                };
+                        enable = true;
+                        wheelNeedsPassword = true;
+					};
 }
