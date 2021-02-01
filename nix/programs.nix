@@ -52,13 +52,13 @@
                         # cd burner
                         #brasero
 
-                        # office
-                        libreoffice
-
                         # video conference
-                        #zoom-us
+                        zoom-us
                         teams
                         skype
+
+                        # office
+                        libreoffice
 
                         # games
                         openarena
@@ -94,6 +94,6 @@
                             yapf
                             jedi
                         ]))
-                ];
-            };
+                    ];
+    };
 }
