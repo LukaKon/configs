@@ -86,6 +86,6 @@
 
                         # games
                         widelands
-                ];
+                    ];
 	};
 }

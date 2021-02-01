@@ -10,12 +10,12 @@
 							# create .xinitrc file
 
 							# i3
-							
+
 							displayManager.lightdm.enable = true;
 							displayManager.defaultSession = "none+i3";
-							
+
 							desktopManager.xterm.enable = false;
-							
+
 							windowManager.i3 = {
 											enable = true;
 											# package = pkgs.i3-gaps;
@@ -27,8 +27,8 @@
 											# i3blocks
 											];
 							};
-							
-						layout = "pl";
+
+							layout = "pl";
 						};
 
 				autorandr.enable = true;

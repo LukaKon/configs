@@ -8,10 +8,10 @@
         };
 
   system = {
-          autoUpgrade = {
-          enable = true;
-          #allowReboot = true;
-        };
+              autoUpgrade = {
+              enable = true;
+              #allowReboot = true;
+            };
 
       };
 
