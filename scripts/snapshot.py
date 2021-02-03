@@ -2,11 +2,16 @@
 #! /usr/bin/env nix-shell
 #! nix-shell -i python3 -p "python3.withPackages(ps: [ps.colorama])"
 """
+
 import os
 import re
 import getpass
 import subprocess
+import colorama
+from colorama import Fore, Back, Style
 from datetime import datetime, timedelta
+
+colorama.init(autoreset=True)
 
 user = getpass.getuser()
 data = datetime.now().strftime('%Y-%m-%d_%H-%M')
@@ -50,8 +55,8 @@ def delete_old_snaps():
                         ['sudo', 'rm', '-r', f'{path}/{entry.name}'])
 
 
-print('\nCreate new snapshots:')
+print(f'{Fore.BLUE}\nCreate new snapshots:')
 create_new_snaps()
-print('\nDelete old snapshots:')
+print(f'{Fore.RED}\nDelete old snapshots:')
 delete_old_snaps()
 print('\n')
