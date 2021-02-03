@@ -48,6 +48,7 @@
 
                         # comunicator
                         signal-desktop
+                        slack
 
                         # cd burner
                         #brasero
