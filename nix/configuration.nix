@@ -18,6 +18,7 @@
 				# ./services/desktops/plasma.nix	# Plasma window manager settings
 				# ./services/desktops/spectrwm.nix	# Spectrwm window manager settings
 				./services/keyring.nix
+				./services/bluetooth.nix
 				./programs/zsh.nix	# zsh and console settings
 				./programs/steam.nix		# Steam gaming portal
 				./fonts.nix		# Fonts to install

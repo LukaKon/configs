@@ -5,6 +5,7 @@
                     systemPackages = with pkgs;
                     [
                         nix
+                        # direnv
 
                         doas
 
@@ -37,18 +38,20 @@
                         krita
 
                         # cad
-                        librecad
+                        # librecad
 
                         # www
                         firefox
                         geckodriver
                         qutebrowser
                         brave
-                        tor-browser-bundle-bin
+                        # tor-browser-bundle-bin
 
                         # comunicator
                         signal-desktop
                         slack
+
+                        # flameshot
 
                         # cd burner
                         #brasero

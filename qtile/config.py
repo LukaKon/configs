@@ -1,28 +1,3 @@
-# Copyright (c) 2010 Aldo Cortesi
-# Copyright (c) 2010, 2014 dequis
-# Copyright (c) 2012 Randall Ma
-# Copyright (c) 2012-2014 Tycho Andersen
-# Copyright (c) 2012 Craig Barnes
-# Copyright (c) 2013 horsik
-# Copyright (c) 2013 Tao Sauvage
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
 
 import os
 import re
@@ -237,110 +212,160 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 
-screens = [
-    Screen(
-        bottom=bar.Bar(
-            [
-                widget.CurrentLayout(),
-                widget.Sep(
-                    background=GREY,
-                    foreground=GREEN,
-                    linewidth=1,
-                    size_percent=80,
-                ),
-                widget.GroupBox(
-                    active=WHITE,
-                    inactive=BLUE,
-                    background=DARK_GREY,
-                    block_highlight_text_color=GREEN,
-                    highlight_color=GREEN,
-                    borderwidth=2,
-                ),
-                widget.Sep(
-                    background=GREY,
-                    foreground=GREEN,
-                    linewidth=1,
-                    size_percent=50,
-                ),
-                widget.Prompt(),
-                widget.WindowName(),
-                #widget.TextBox("default config", name="default"),
-                widget.CPU(
-                    background=None,
-                    font=main_font,
-                    fontsize=font_large,
-                    foreground=WHITE,
-                    format="CPU {freq_current}GHz  {load_percent}%",
-                    update_interval=1.0,
-                ),
-                widget.CPUGraph(
-                    background=None,
-                    border_color=RED,
-                    border_width=1,
-                    core="all",
-                    fill_color=LIGHT_BLUE,
-                    frequency=1.0,
-                    graph_color=ORANGE,
-                    line_width=3,
-                    margin_x=3,
-                    margin_y=3,
-                    samples=100,
-                    start_pos="bottom",
-                    type="linefill",
-                ),
-                widget.Memory(
-                    background=None,
-                    font=main_font,
-                    fontsize=font_large,
-                    foreground=WHITE,
-                    format="RAM {MemUsed}M / {MemTotal}M",
-                    update_interval=1.0,
-                ),
-                widget.MemoryGraph(
-                    background=None,
-                    border_color=RED,
-                    border_width=1,
-                    fill_color=LIGHT_BLUE,
-                    frequency=1.0,
-                    graph_color=ORANGE,
-                    line_width=3,
-                    margin_x=3,
-                    margin_y=3,
-                    samples=100,
-                    start_pos="bottom",
-                    type="linefill",
-                ),
-                widget.Sep(
-                    background=GREY,
-                    foreground=GREEN,
-                    linewidth=2,
-                    size_percent=50,
-                ),
-                widget.Clock(
-                    background=None,
-                    font=main_font,
-                    #                            fontsize=font_medium;
-                    format="%d.%m.%Y",
-                    #                            timezone="Europe/Warsaw",
-                    update_interval=5,
-                ),
-                widget.Clock(
-                    background=None,
-                    font=main_font,
-                    #                            fontsize=font_large;
-                    format="%a %I:%M %p",
-                    #                            timezone="Europe/Warsaw",
-                    update_interval=1.0,
-                ),
-                #                        widget.Spacer(
-                #                            background=GREY,
-                #                            ),
-                # widget.QuickExit(),
-            ],
-            24,
+def init_widgets_list():
+    widgets_list = [
+        widget.CurrentLayout(),
+        widget.Sep(
+            background=GREY,
+            foreground=GREEN,
+            linewidth=1,
+            size_percent=80,
         ),
-    ),
-]
+        widget.GroupBox(
+            active=WHITE,
+            inactive=BLUE,
+            background=DARK_GREY,
+            block_highlight_text_color=GREEN,
+            highlight_color=GREEN,
+            borderwidth=2,
+        ),
+        widget.Sep(
+            background=GREY,
+            foreground=GREEN,
+            linewidth=1,
+            size_percent=50,
+        ),
+        widget.Prompt(),
+        widget.WindowName(),
+        #widget.TextBox("default config", name="default"),
+        widget.CPU(
+            background=None,
+            font=main_font,
+            fontsize=font_large,
+            foreground=WHITE,
+            format="CPU {freq_current}GHz  {load_percent}%",
+            update_interval=1.0,
+        ),
+        widget.CPUGraph(
+            background=None,
+            border_color=RED,
+            border_width=1,
+            core="all",
+            fill_color=LIGHT_BLUE,
+            frequency=1.0,
+            graph_color=ORANGE,
+            line_width=3,
+            margin_x=3,
+            margin_y=3,
+            samples=100,
+            start_pos="bottom",
+            type="linefill",
+        ),
+        widget.Memory(
+            background=None,
+            font=main_font,
+            fontsize=font_large,
+            foreground=WHITE,
+            format="RAM {MemUsed}M / {MemTotal}M",
+            update_interval=1.0,
+        ),
+        widget.MemoryGraph(
+            background=None,
+            border_color=RED,
+            border_width=1,
+            fill_color=LIGHT_BLUE,
+            frequency=1.0,
+            graph_color=ORANGE,
+            line_width=3,
+            margin_x=3,
+            margin_y=3,
+            samples=100,
+            start_pos="bottom",
+            type="linefill",
+        ),
+        widget.Sep(
+            background=GREY,
+            foreground=GREEN,
+            linewidth=2,
+            size_percent=50,
+        ),
+        widget.Clock(
+            background=None,
+            font=main_font,
+            #                            fontsize=font_medium;
+            format="%d.%m.%Y",
+            #                            timezone="Europe/Warsaw",
+            update_interval=5,
+        ),
+        widget.Clock(
+            background=None,
+            font=main_font,
+            #                            fontsize=font_large;
+            format="%a %I:%M %p",
+            #                            timezone="Europe/Warsaw",
+            update_interval=1.0,
+        ),
+        #                        widget.Spacer(
+        #                            background=GREY,
+        #                            ),
+        # widget.QuickExit()
+    ]
+
+
+def init_widgets_screen1():
+    widgets_screen1 = init_widgets_list()
+    return widgets_screen1
+
+
+def init_widgets_screen2():
+    widgets_screen2 = init_widgets_list()
+    return widgets_screen2
+
+
+def init_screens():
+    return[
+        Screen(top=bar.Bar(widget=init_widgets_screen1(), opacity=1.0, size=20)),
+        Screen(top=bar.Bar(init_widgets_screen2(), opacity=1.0, size=20)),
+    ]
+
+
+if __name__ in ['config', '__main__']:
+    screens = init_screens()
+    widgets_list = init_widgets_list()
+    widgets_screen1 = init_widgets_screen1()
+    widget_screen2 = init_widgets_screen2()
+
+
+def window_to_prev_group(qtile):
+    if qtile.currentWindow is not None:
+        i = qtile.groups.index(qtile.currentGroup)
+        qtile.currentWindow.togroup(qtile.groups[i - 1].name)
+
+
+def window_to_next_group(qtile):
+    if qtile.currentWindow is not None:
+        i = qtile.groups.index(qtile.currentGroup)
+        qtile.currentWindow.togroup(qtile.groups[i + 1].name)
+
+
+def window_to_previous_screen(qtile):
+    i = qtile.screens.index(qtile.current_screen)
+    if i != 0:
+        group = qtile.screens[i - 1].group.name
+        qtile.current_window.togroup(group)
+
+
+def window_to_next_screen(qtile):
+    i = qtile.screens.index(qtile.current_screen)
+    if i + 1 != len(qtile.screens):
+        group = qtile.screens[i + 1].group.name
+        qtile.current_window.togroup(group)
+
+
+def switch_screens(qtile):
+    i = qtile.screens.index(qtile.current_screen)
+    group = qtile.screens[i - 1].group
+    qtile.current_screen.set_group(group)
 
 
 # Drag floating layouts.
