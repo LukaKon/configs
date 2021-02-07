@@ -1,7 +1,9 @@
 {pkgs, ...}:
 {
-	environment.variables = {EDITOR = "nvim"; VISUAL = "nvim";};
-
+	environment = {
+					variables = {EDITOR = "nvim"; VISUAL = "nvim";};
+					systemPackages = with pkgs;[neovim-remote];
+				};
 	programs = {npm.enable = true;};
 
 	nixpkgs = {
