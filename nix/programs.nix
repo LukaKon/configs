@@ -22,14 +22,16 @@
 
                         # vim
                         # neovim
-                        neovim-remote
+                        # neovim-remote
                         #zsh
                         fzf
                         xsel  # for copying
                         clipmenu  # for copying
-                        mc
-                        pciutils
                         unzip
+
+                        # file managers
+                        vifm-full
+                        pcmanfm
 
                         # graphics
                         blender
@@ -86,6 +88,7 @@
                         moc  # music player
 
                         psutils
+                        pciutils
 
                         (python38.withPackages(ps: with ps;
                         [
