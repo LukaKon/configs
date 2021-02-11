@@ -22,6 +22,10 @@
                                                 jetbrains.pycharm-community
                                                 #monodevelop
 
+                                                cudaPackages.cudatoolkit_11
+
+                                                wordpress
+
                                                 # LaTeX
                                                 texlive.combined.scheme-full
                                                 texstudio
