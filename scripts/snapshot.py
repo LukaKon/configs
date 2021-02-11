@@ -50,7 +50,8 @@ def delete_old_snaps():
                 match_date = datetime.strptime(match.group(), '%Y-%m-%d')
 
                 if match_date < datetime.today() - timedelta(days=7):   # selecting folders older than 7 days old
-                    print(f'{entry.name}: to delete')
+                    print(
+                        f'{Fore.LIGHTRED_EX}{entry.name}: {Fore.MAGENTA}to delete')
                     subprocess.run(
                         ['sudo', 'rm', '-r', f'{path}/{entry.name}'])
 
