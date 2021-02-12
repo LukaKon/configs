@@ -62,6 +62,7 @@
                         zoom-us
                         teams
                         skype
+                        remmina
 
                         # office
                         libreoffice
