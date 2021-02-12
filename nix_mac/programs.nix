@@ -35,7 +35,7 @@
                         # gnome-photos
 
                         # cad
-                        librecad
+                        # librecad
 
                         # www
                         firefox
