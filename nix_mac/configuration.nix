@@ -17,6 +17,7 @@
 				./services/desktops/mate.nix	# Mate window manager settings
 				./services/keyring.nix
 				./services/laptop.nix   # settings for laptop
+				./services/remote.nix
 				./programs/zsh.nix	# zsh and console settings
 				./fonts.nix		# Fonts to install
 				./nixpkgs/nixpkgs.nix
@@ -25,5 +26,6 @@
 				./virtualisation/docker.nix	# Docker
 				./nvim/nvim.nix		# TODO nvim configuration in separate files
 				./flatpak.nix
+				
 			];
 }

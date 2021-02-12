@@ -11,7 +11,7 @@
                                             [
                                                 # text editor
                                                 neovim
-                                                ranger
+                                                # ranger
                                                 ueberzug
 
                                                 exercism

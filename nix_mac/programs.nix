@@ -54,6 +54,7 @@
                         zoom-us
                         teams
                         skype
+                        remmina
 
                         firmwareLinuxNonfree
                         microcodeIntel
