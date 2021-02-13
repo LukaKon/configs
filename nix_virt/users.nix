@@ -11,13 +11,12 @@
                         packages = with pkgs;
                                             [
                                                 # text editor
-                                                neovim
+                                                # neovim
 
                                                 # IDE
-                                                vscode
+                                                # vscode
                                                 #arduino
 
-                                                wordpress
                                             ];
                     };
 }
