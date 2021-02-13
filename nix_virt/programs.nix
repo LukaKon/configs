@@ -6,7 +6,7 @@
                     [
                         nix
                         # direnv
-                        
+
                         linuxPackages.virtualboxGuestAdditions
 
                         doas
@@ -63,6 +63,10 @@
                             pynvim
                             yapf
                             jedi
+                            django
+                            pillow
+                            numpy
+                            
                         ]))
                     ];
     };
