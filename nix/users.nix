@@ -9,26 +9,7 @@
                         shell = pkgs.zsh;
                         packages = with pkgs;
                                             [
-                                                # text editor
-                                                neovim
-                                                # ranger
-                                                ueberzug
-
                                                 exercism
-
-                                                # IDE
-                                                vscode
-                                                arduino
-                                                jetbrains.pycharm-community
-                                                #monodevelop
-
-                                                cudaPackages.cudatoolkit_11
-
-                                                wordpress
-
-                                                # LaTeX
-                                                texlive.combined.scheme-full
-                                                texstudio
 
                                                 # dotnet
                                                 #mono

@@ -20,10 +20,10 @@
                         #termite
                         alacritty
 
-                        # vim
-                        # neovim
-                        # neovim-remote
-                        #zsh
+                        # text editor
+                        neovim
+                        # ranger
+                        ueberzug
                         fzf
                         xsel  # for copying
                         clipmenu  # for copying
@@ -32,6 +32,21 @@
                         # file managers
                         vifm-full
                         pcmanfm
+
+
+                        # IDE
+                        vscode
+                        arduino
+                        jetbrains.pycharm-community
+                        #monodevelop
+
+                        cudaPackages.cudatoolkit_11
+
+                        wordpress
+
+                        # LaTeX
+                        texlive.combined.scheme-full
+                        texstudio
 
                         # graphics
                         blender
@@ -53,8 +68,6 @@
                         signal-desktop
                         slack
 
-                        # flameshot
-
                         # cd burner
                         #brasero
 
@@ -62,6 +75,8 @@
                         zoom-us
                         teams
                         skype
+
+                        # remote desktop
                         remmina
 
                         # office
@@ -69,7 +84,7 @@
 
                         # games
                         openarena
-                        widelands
+                        # widelands
 
                         firmwareLinuxNonfree
                         microcodeIntel
@@ -90,6 +105,7 @@
 
                         psutils
                         pciutils
+                        gputils
 
                         (python38.withPackages(ps: with ps;
                         [

@@ -66,7 +66,7 @@
                             django
                             pillow
                             numpy
-                            
+
                         ]))
                     ];
     };
