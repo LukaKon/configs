@@ -22,22 +22,23 @@
                         termite
 
                         # vim
-                        # neovim
+                        neovim
                         # neovim-remote
                         #zsh
                         fzf
-                        xsel  # for copying
+                        # xsel  # for copying
                         clipmenu  # for copying
                         unzip
 
                         # file managers
                         vifm-full
-                        pcmanfm
 
                         # www
                         qutebrowser
 
                         remmina
+
+                        wordpress
 
                         firmwareLinuxNonfree
                         microcodeIntel
