@@ -14,12 +14,12 @@
                         # monitoring
                         bmon
                         htop
-                        nvtop
                         iotop
                         lm_sensors
 
                         # terminal
                         termite
+                        xterm
 
                         # vim
                         neovim
