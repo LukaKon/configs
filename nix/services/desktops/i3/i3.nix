@@ -5,7 +5,7 @@
 				xserver = {
 							enable = true;
 
-							videoDrivers = ["modesetting" "nvidia"];
+							# videoDrivers = ["modesetting" "nvidia"];
 							# displayManager.startx.enable = true;  # necessary to
 							# create .xinitrc file
 
