@@ -40,7 +40,6 @@
                         jetbrains.pycharm-community
                         #monodevelop
 
-                        cudaPackages.cudatoolkit_11
 
                         wordpress
 
@@ -71,6 +70,10 @@
                         # cd burner
                         #brasero
 
+                        # snipping tool
+                        # scrot
+                        shutter
+
                         # video conference
                         zoom-us
                         teams
@@ -84,7 +87,7 @@
 
                         # games
                         openarena
-                        # widelands
+                        widelands
 
                         firmwareLinuxNonfree
                         microcodeIntel
