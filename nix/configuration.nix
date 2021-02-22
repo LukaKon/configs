@@ -10,6 +10,7 @@
 				./locale.nix    # system localisation
 				./network.nix		# Network configuration
 				./programs.nix		# List of installed programs
+				./env_variables.nix
 				./security/doas.nix	# Add 'doas'
 				./services/openssh.nix	# SSH
 				./services/postgresql.nix	# PostgreSQL

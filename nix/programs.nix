@@ -27,7 +27,10 @@
                         fzf
                         xsel  # for copying
                         clipmenu  # for copying
+
+                        # packer
                         unzip
+                        xarchiver
 
                         # file managers
                         vifm-full
