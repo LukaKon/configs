@@ -41,7 +41,9 @@
                         vscode
                         arduino
                         jetbrains.pycharm-community
+                        # jetbrains.pycharm-professional
                         #monodevelop
+                        thonny
 
 
                         wordpress
