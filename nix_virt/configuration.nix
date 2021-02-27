@@ -13,7 +13,7 @@
 				./services/openssh.nix	# SSH
 				./services/postgresql.nix	# PostgreSQL
 				./services/nginx.nix
-				./services/desktops/mate.nix	# mate window manager settings
+				# ./services/desktops/mate.nix	# mate window manager settings
 				./services/keyring.nix
 				./services/remote.nix	# remote server/desktop
 				./programs/zsh.nix	# zsh and console settings
