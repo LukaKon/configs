@@ -8,6 +8,7 @@
                         # direnv
 
                         doas
+                        pstree  # process tree
 
                         # monitoring
                         bmon
