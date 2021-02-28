@@ -31,6 +31,7 @@
 
                         # packer
                         unzip
+                        unar
                         xarchiver
 
                         # file managers
