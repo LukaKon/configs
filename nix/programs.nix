@@ -8,7 +8,14 @@
                         # direnv
 
                         doas
+                        tree
                         pstree  # process tree
+                        wget
+                        curl
+                        git
+                        rsync
+
+                        nodejs
 
                         # monitoring
                         bmon
@@ -24,7 +31,7 @@
                         # text editor
                         neovim
                         # ranger
-                        ueberzug
+                        # ueberzug
                         fzf
                         xsel  # for copying
                         clipmenu  # for copying
@@ -37,7 +44,6 @@
                         # file managers
                         vifm-full
                         pcmanfm
-
 
                         # IDE
                         vscode
@@ -83,11 +89,8 @@
 
                         # video conference
                         zoom-us
-                        teams
+                        # teams
                         skype
-
-                        # remote desktop
-                        remmina
 
                         # office
                         libreoffice
@@ -99,13 +102,6 @@
                         firmwareLinuxNonfree
                         microcodeIntel
 
-                        wget
-                        curl
-                        git
-                        rsync
-                        tree
-
-                        nodejs
 
                         # media
                         feh # picture viewer
