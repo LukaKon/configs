@@ -19,8 +19,8 @@
 												#monodevelop
 
 												# LaTeX
-												texlive.combined.scheme-full
-												texstudio
+												# texlive.combined.scheme-full
+												# texstudio
 
 												# dotnet
 												#mono
@@ -30,14 +30,14 @@
 
 											];
 				};
-	users.kk = {
-                    isNormalUser = true;
-                    home = "/home/kk";
-                    description = "krop";
-                    extraGroups = [ "wheel" "networkmanager"];
-                    shell = pkgs.zsh;
-					packages = with pkgs;
-										[];
-		};
+	# users.kk = {
+    #                 isNormalUser = true;
+    #                 home = "/home/kk";
+    #                 description = "krop";
+    #                 extraGroups = [ "wheel" "networkmanager"];
+    #                 shell = pkgs.zsh;
+	# 				packages = with pkgs;
+	# 									[];
+	# 	};
 	};
 }
