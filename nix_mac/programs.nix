@@ -29,9 +29,9 @@
                         unzip
 
                         # graphics
-                        darktable
-                        gimp
-                        krita
+                        # darktable
+                        # gimp
+                        # krita
                         # gnome-photos
 
                         # cad
@@ -48,13 +48,12 @@
                         brasero
 
                         # office
-                        libreoffice
+                        # libreoffice
 
                         # video conference
                         zoom-us
-                        teams
+                        # teams
                         skype
-                        remmina
 
                         firmwareLinuxNonfree
                         microcodeIntel

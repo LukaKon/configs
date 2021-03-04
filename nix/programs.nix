@@ -53,7 +53,6 @@
                         #monodevelop
                         thonny
 
-
                         wordpress
 
                         # LaTeX
@@ -82,6 +81,9 @@
 
                         # cd burner
                         #brasero
+                        etcher
+
+                        polkit
 
                         # snipping tool
                         # scrot
@@ -123,6 +125,8 @@
                             pynvim
                             yapf
                             jedi
+                            termcolor
+                            ipython
                         ]))
                     ];
     };
