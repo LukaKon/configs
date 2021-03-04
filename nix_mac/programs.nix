@@ -21,12 +21,16 @@
 
                         neovim
                         #zsh
-                        fzf
+                        # fzf
                         xsel  # for copying
                         clipmenu  # for copying
-                        mc
+                        vifm-full
+
                         pciutils
+                        
                         unzip
+                        unar
+                        xarchiver
 
                         # graphics
                         # darktable
@@ -82,10 +86,12 @@
                             pynvim
                             yapf
                             jedi
+                            termcolor
+                            ipython
                         ]))
 
                         # games
-                        widelands
+                        # widelands
                     ];
 	};
 }
