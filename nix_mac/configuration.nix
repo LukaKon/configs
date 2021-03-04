@@ -25,7 +25,6 @@
 				./shellAliases.nix	# Shell aliases
 				./virtualisation/docker.nix	# Docker
 				./nvim/nvim.nix		# TODO nvim configuration in separate files
-				./flatpak.nix
-				
+				# ./flatpak.nix
 			];
 }
