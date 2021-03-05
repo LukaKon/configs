@@ -13,5 +13,5 @@
 
                         layout = "pl";
                       };
-  environment.mate.excludePackages = [];
+	environment.mate.excludePackages = [];
 }

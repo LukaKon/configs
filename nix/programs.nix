@@ -81,9 +81,9 @@
 
                         # cd burner
                         #brasero
-                        etcher
-
-                        polkit
+                        # etcher
+                        # plasma5.polkit-kde-agent
+                        # polkit
 
                         # snipping tool
                         # scrot
