@@ -81,12 +81,8 @@
 
                         # cd burner
                         #brasero
-                        # etcher
-                        # plasma5.polkit-kde-agent
-                        # polkit
 
                         # snipping tool
-                        # scrot
                         shutter
 
                         # video conference
