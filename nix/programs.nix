@@ -23,6 +23,7 @@
                         nvtop
                         iotop
                         lm_sensors
+                        ncdu # disk analisys
 
                         # terminal
                         #termite
