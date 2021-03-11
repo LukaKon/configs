@@ -26,8 +26,9 @@
                         ncdu # disk analisys
 
                         # terminal
-                        #termite
+                        termite
                         alacritty
+                        xterm
 
                         # text editor
                         neovim
@@ -41,6 +42,7 @@
                         unzip
                         unar
                         xarchiver
+                        p7zip
 
                         # file managers
                         vifm-full
