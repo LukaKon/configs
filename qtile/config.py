@@ -4,6 +4,7 @@ import re
 import socket
 import subprocess
 
+from libqtile import qtile
 from libqtile.config import Key, Screen, Group, Drag, Click
 from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook

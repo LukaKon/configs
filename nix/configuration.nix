@@ -27,6 +27,7 @@
 				./programs/steam.nix		# Steam gaming portal
 				./fonts.nix		# Fonts to install
 				./hdd.nix			# Additional HDD
+				./nfs.nix
 				./nixpkgs/nixpkgs.nix
 				./users.nix		# Users configurations
 				./shellAliases.nix	# Shell aliases
