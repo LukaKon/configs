@@ -26,9 +26,9 @@
                         ncdu # disk analisys
 
                         # terminal
-                        termite
+                        # termite
                         alacritty
-                        xterm
+                        # xterm
 
                         # text editor
                         neovim
@@ -82,16 +82,16 @@
                         signal-desktop
                         slack
 
+                        # video conference
+                        zoom-us
+                        # teams
+                        skype
+
                         # cd burner
                         #brasero
 
                         # snipping tool
                         shutter
-
-                        # video conference
-                        zoom-us
-                        # teams
-                        skype
 
                         # office
                         libreoffice
