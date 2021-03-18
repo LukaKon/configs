@@ -99,6 +99,7 @@
                         # games
                         openarena
                         widelands
+                        zeroad
 
                         firmwareLinuxNonfree
                         microcodeIntel
