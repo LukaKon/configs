@@ -126,7 +126,8 @@
                             yapf
                             jedi
                             termcolor
-                            ipython
+                            # ipython
+                            bpython
                         ]))
                     ];
     };
