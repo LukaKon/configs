@@ -14,20 +14,6 @@
           };
         };
 
-  # Set your time zone.
-  time.timeZone = "Europe/Warsaw";
-
-  # Select internationalisation properties.
-  i18n = {
-           defaultLocale = "pl_PL.UTF-8";
-           supportedLocales = ["pl_PL.UTF-8/UTF-8" "en_US.UTF-8/UTF-8"];
-         };
-
-  # Enable sound.
-  sound.enable = true;
-  hardware = {
-                pulseaudio.enable = true;
-              };
   nix.gc = {
             automatic = true;
             dates = "weekly";

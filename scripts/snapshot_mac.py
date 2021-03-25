@@ -8,7 +8,10 @@ from datetime import datetime, timedelta
 
 colorama.init(autoreset=True)
 
+user = getpass.getuser()
 data = datetime.now().strftime('%Y-%m-%d_%H-%M')
+
+days=5
 
 paths = (
     {'name': 'home', 'directory': '/home',
@@ -38,7 +41,7 @@ def delete_old_snaps():
                 # convert 'match' (str) to date
                 match_date = datetime.strptime(match.group(), '%Y-%m-%d')
 
-                if match_date < datetime.today() - timedelta(days=7):   # selecting folders older than 7 days old
+                if match_date < datetime.today() - timedelta(days=days):   # selecting folders older than 7 days old
                     print(f'{entry.name}: to delete')
                     subprocess.run(
                         ['sudo', 'rm', '-r', f'{path}/{entry.name}'])
@@ -46,6 +49,6 @@ def delete_old_snaps():
 
 print(f'{Fore.BLUE}\nCreate new snapshots:')
 create_new_snaps()
-print(f'{Fore.RED}\nDelete old snapshots:')
+print(f'{Fore.RED}\nDelete snapshots older than {Fore.YELLOW}{days} {Fore.RED}days:')
 delete_old_snaps()
 print('\n')
