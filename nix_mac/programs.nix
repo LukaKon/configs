@@ -4,9 +4,17 @@
     environment = {
                     systemPackages = with pkgs;
                     [
-                        doas
-
                         nix
+
+                        doas
+                        tree
+                        pstree  # process tree
+                        wget
+                        curl
+                        git
+                        rsync
+
+                        nodejs
 
                         # monitoring
                         bmon
@@ -14,29 +22,50 @@
                         nvtop
                         iotop
                         lm_sensors
+                        ncdu # disk analisys
 
                         # terminal
                         termite
                         # alacritty
+                        # xterm
 
+                        # text editor
                         neovim
-                        #zsh
-                        # fzf
+                        # ranger
+                        # ueberzug
+                        fzf
                         xsel  # for copying
                         clipmenu  # for copying
-                        vifm-full
 
-                        pciutils
-                        
+                        # packer
                         unzip
                         unar
                         xarchiver
+                        p7zip
+
+                        # file managers
+                        vifm-full
+                        # pcmanfm
+
+                        # IDE
+                        vscode
+                        # arduino
+                        # jetbrains.pycharm-community
+                        # jetbrains.pycharm-professional
+                        #monodevelop
+                        # thonny
+
+                        # wordpress
+
+                        # LaTeX
+                        # texlive.combined.scheme-full
+                        # texstudio
 
                         # graphics
+                        # blender
                         # darktable
                         # gimp
                         # krita
-                        # gnome-photos
 
                         # cad
                         # librecad
@@ -45,28 +74,33 @@
                         firefox
                         geckodriver
                         qutebrowser
-                        # tor-browser-bundle-bin
                         brave
+                        # tor-browser-bundle-bin
 
-                        # cdburner
-                        brasero
-
-                        # office
-                        # libreoffice
+                        # comunicator
+                        # signal-desktop
+                        slack
 
                         # video conference
                         zoom-us
                         # teams
-                        skype
+                        # skype
+
+                        # cd burner
+                        brasero
+
+                        # snipping tool
+                        shutter
+
+                        # office
+                        # libreoffice
+
+                        # games
+                        # openarena
+                        # widelands
 
                         firmwareLinuxNonfree
                         microcodeIntel
-
-                        wget
-                        curl
-                        git
-                        rsync
-                        tree
 
                         # media
                         feh # picture viewer
@@ -75,6 +109,7 @@
                         moc  # music player
 
                         psutils
+                        pciutils
 
                         (python38.withPackages(ps: with ps;
                         [
@@ -87,11 +122,9 @@
                             yapf
                             jedi
                             termcolor
-                            ipython
+                            # ipython
+                            bpython
                         ]))
-
-                        # games
-                        # widelands
                     ];
 	};
 }

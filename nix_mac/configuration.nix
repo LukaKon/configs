@@ -7,6 +7,8 @@
 				./system.nix		# Base system settings
 				./network.nix		# Network configuration
 				./programs.nix		# List of installed programs
+				./sound.nix
+				./locale.nix
 				./security/doas.nix	# Add 'doas'
 				./services/openssh.nix	# SSH
 				./services/postgresql.nix	# PostgreSQL
@@ -17,7 +19,7 @@
 				./services/desktops/mate.nix	# Mate window manager settings
 				./services/keyring.nix
 				./services/laptop.nix   # settings for laptop
-				./services/remote.nix
+				# ./services/remote.nix
 				./programs/zsh.nix	# zsh and console settings
 				./fonts.nix		# Fonts to install
 				./nixpkgs/nixpkgs.nix
