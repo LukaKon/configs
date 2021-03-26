@@ -16,6 +16,7 @@
 				# ./services/desktops/plasma.nix	# Plasma window manager settings
 				# ./services/desktops/lxqt.nix	# LXQT window manager settings
 				./services/desktops/gnome.nix	# Gnome window manager settings
+				./services/desktops/i3/i3.nix
 				# ./services/desktops/mate.nix	# Mate window manager settings
 				# ./services/keyring.nix	# included in Gnome desktop
 				./services/laptop.nix   # settings for laptop

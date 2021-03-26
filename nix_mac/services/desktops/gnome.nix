@@ -42,8 +42,5 @@
                                           gnome3.gnome-music
                                           gnome3.gnome-contacts
                                           #gnome3.gnome-calendar
-
-
-
-  ];
+                                        ];
 }

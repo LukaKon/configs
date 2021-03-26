@@ -48,8 +48,8 @@
                         # pcmanfm
 
                         # IDE
-                        #vscode
-                        vscodium
+                        vscode
+                        # vscodium
                         # arduino
                         jetbrains.pycharm-community
                         # jetbrains.pycharm-professional
