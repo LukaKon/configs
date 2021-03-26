@@ -48,9 +48,10 @@
                         # pcmanfm
 
                         # IDE
-                        vscode
+                        #vscode
+                        vscodium
                         # arduino
-                        # jetbrains.pycharm-community
+                        jetbrains.pycharm-community
                         # jetbrains.pycharm-professional
                         #monodevelop
                         # thonny
