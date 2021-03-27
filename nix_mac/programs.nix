@@ -98,7 +98,7 @@
 
                         # games
                         # openarena
-                        # widelands
+                        widelands
 
                         firmwareLinuxNonfree
                         microcodeIntel

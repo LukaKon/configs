@@ -12,7 +12,7 @@
 							# i3
 
 							# displayManager.lightdm.enable = true;
-							displayManager.defaultSession = "none+i3";
+							# displayManager.defaultSession = "none+i3";
 
 							desktopManager.xterm.enable = false;
 
