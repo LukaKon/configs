@@ -23,17 +23,17 @@
                           gnomeExtensions.tilingnome
 
                         ];
-        services.udev.packages = with pkgs; 
+        services.udev.packages = with pkgs;
                                             [
                                               gnome3.gnome-settings-daemon
                                               gnome3.seahorse
                                               gnome3.gnome-keyring
                                               gnome3.gnome-desktop
                                               gnome3.gnome-applets
-
+                                              gnome3.gnome-tweak-tool
                                             ];
     environment.gnome3.excludePackages = with pkgs;
-                                        [ 
+                                        [
                                           gnome3.totem
                                           gnome3.geary
                                           gnome3.cheese
