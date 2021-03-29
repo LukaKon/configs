@@ -49,8 +49,9 @@
 
                         # IDE
                         vscode
+                        # vscodium
                         # arduino
-                        # jetbrains.pycharm-community
+                        jetbrains.pycharm-community
                         # jetbrains.pycharm-professional
                         #monodevelop
                         # thonny
@@ -97,7 +98,7 @@
 
                         # games
                         # openarena
-                        # widelands
+                        widelands
 
                         firmwareLinuxNonfree
                         microcodeIntel
