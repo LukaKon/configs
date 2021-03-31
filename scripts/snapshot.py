@@ -38,7 +38,7 @@ def create_new_snaps():
 
 def delete_old_snaps():
     for folder in paths:
-        # print(f"\n{folder['name']}:")
+        # TODO: if there is no older than 5 snapshot write 'nothing to delete'
         print(f"Delete from: {folder['directory']}")
 
         path = f"{folder['directory']}/.snapshots"
