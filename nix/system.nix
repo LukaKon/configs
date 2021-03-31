@@ -2,21 +2,21 @@
 
 {
   # Use the systemd-boot EFI boot loader.
-  boot = {
-			loader.systemd-boot.enable = true;
-			loader.efi.canTouchEfiVariables = true;
-        };
+	boot = {
+				loader.systemd-boot.enable = true;
+				loader.efi.canTouchEfiVariables = true;
+			};
 
-  system = {
+	system = {
 				autoUpgrade = {
 				enable = true;
 				#allowReboot = true;
 				};
 			};
 
-  nix.gc = {
+	nix.gc = {
 				automatic = true;
-				dates = "weekly";
+				dates = "daily";
 				options = "--delete-older-than 3d";
             };
 
