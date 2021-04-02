@@ -20,7 +20,7 @@
 				# ./services/desktops/mate.nix	# Mate window manager settings
 				# ./services/keyring.nix	# included in Gnome desktop
 				./services/laptop.nix   # settings for laptop
-				# ./services/remote.nix
+				./services/remote.nix
 				./programs/zsh.nix	# zsh and console settings
 				./fonts.nix		# Fonts to install
 				./nixpkgs/nixpkgs.nix
