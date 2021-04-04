@@ -55,6 +55,7 @@
                         # jetbrains.pycharm-professional
                         #monodevelop
                         # thonny
+                        unityhub
 
                         # wordpress
 
