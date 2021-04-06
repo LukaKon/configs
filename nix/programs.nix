@@ -55,8 +55,9 @@
                         # jetbrains.pycharm-professional
                         #monodevelop
                         thonny
+                        unityhub
 
-                        wordpress
+                        # wordpress
 
                         # LaTeX
                         texlive.combined.scheme-full
