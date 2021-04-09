@@ -26,13 +26,19 @@
 												tabular
 												syntastic
 												vim-nix
+												vim-python-pep8-indent
+												vim-csharp
 												neomake
 												neoformat
 												gitgutter
-												#coc-python
-												#coc-html
-												# coc-nvim
-												# coc-yank
+												coc-python
+												coc-html
+												coc-nvim
+												coc-yank
+												coc-css
+												coc-pairs
+												coc-spell-checker
+												coc-highlight
 												# Change dates fast
 												vim-speeddating
 												# Repeat stuff

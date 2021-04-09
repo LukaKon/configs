@@ -111,6 +111,7 @@
                         mpv # video player
                         libdvdcss # plugin to play cd/dvd in mpv
                         moc  # music player
+                        # youtube-dl
 
                         psutils
                         pciutils
