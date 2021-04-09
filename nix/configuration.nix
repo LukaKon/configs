@@ -20,7 +20,7 @@
 				# ./services/desktops/plasma.nix	# Plasma window manager settings
 				# ./services/desktops/spectrwm.nix	# Spectrwm window manager settings
 				./services/keyring.nix
-				./services/bluetooth.nix
+				# ./services/bluetooth.nix
 				./services/remote.nix	# remote server/desktop
 				./services/cron.nix
 				./programs/zsh.nix	# zsh and console settings
