@@ -57,12 +57,20 @@
 												vim-startify
 
 												vim-yapf
+
+												colorizer
+
 												deoplete-zsh
 												deoplete-jedi
 												deoplete-nvim
 												deoplete-clang
 												deoplete-github
 
+												# git
+												vim-signify
+												vim-fugitive
+												vim-rhubarb
+												gv-vim
 											];
 											opt = [];
 										};
@@ -84,9 +92,10 @@
 											set splitright                          " Vertical splits will automatically be to the right
 											set t_Co=256                            " Support 256 colors
 											set conceallevel=0                      " So that I can see `` in markdown files
-											set tabstop=4                           " Insert 2 spaces for a tab
+											set tabstop=4                           " Insert 4 spaces for a tab
 											set shiftwidth=4                        " Change the number of space characters inserted for indentation
 											set smarttab                            " Makes tabbing smarter will realize you have 2 vs 4
+											set softtabstop=4
 											set expandtab                           " Converts tabs to spaces
 											set smartindent                         " Makes indenting smart
 											set autoindent                          " Good auto indent
@@ -104,11 +113,41 @@
 											set clipboard=unnamedplus               " Copy paste between vim and everything else
 											set incsearch
 											set guifont=Fira\ Code\ Nerd\ Font
-											'';
-										#opt=[];
+
+
+
+											" git setup
+											" Change these if you want
+											let g:signify_sign_add               = '+'
+											let g:signify_sign_delete            = '_'
+											let g:signify_sign_delete_first_line = '‾'
+											let g:signify_sign_change            = '~'
+
+											" I find the numbers disctracting
+											let g:signify_sign_show_count = 0
+											let g:signify_sign_show_text = 1
+
+
+											" Jump though hunks
+											nmap <leader>gj <plug>(signify-next-hunk)
+											nmap <leader>gk <plug>(signify-prev-hunk)
+											nmap <leader>gJ 9999<leader>gJ
+											nmap <leader>gK 9999<leader>gk
+
+
+											" If you like colors instead
+											" highlight SignifySignAdd                  ctermbg=green                guibg=#00ff00
+											" highlight SignifySignDelete ctermfg=black ctermbg=red    guifg=#ffffff guibg=#ff0000
+											" highlight SignifySignChange ctermfg=black ctermbg=yellow guifg=#000000 guibg=#ffff00
+
+											" commenting
+											nnoremap <space>/ :Commentary<CR>
+											vnoremap <space>/ :Commentary<CR>
+										'';
+											#opt=[];
+										};
 									};
-								};
+						};
 					};
-				};
-	};
-}
+		};
+	}
