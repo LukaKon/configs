@@ -46,7 +46,8 @@
 
                         # file managers
                         vifm-full
-                        pcmanfm
+                        # pcmanfm
+                        ranger
 
                         # IDE
                         vscode
