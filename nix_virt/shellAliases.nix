@@ -11,6 +11,9 @@
                                 susp = "systemctl suspend";
                                 reboot = "doas reboot";
 
+                                # editor
+                                vi = "nvim"
+
                                 # nix
                                 upnix = "sudo nix-channel --update && nix-env -u";
                                 rebuild = "sudo nixos-rebuild switch";
