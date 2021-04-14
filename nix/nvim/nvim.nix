@@ -55,6 +55,7 @@
 												rainbow_parentheses-vim
 												# Start screen
 												vim-startify
+												vim-jinja
 
 												vim-yapf
 

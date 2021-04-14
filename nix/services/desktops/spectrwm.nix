@@ -34,4 +34,8 @@
 
 				autorandr.enable = true;
 			};
+	environment = {
+                    systemPackages = with pkgs;
+                    [xlockmore];
+				};
 }
