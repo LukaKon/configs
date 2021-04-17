@@ -55,22 +55,19 @@
                         # jetbrains.pycharm-professional
                         #monodevelop
                         # thonny
-                        unityhub
+                        # unityhub
 
                         # wordpress
 
                         # LaTeX
-                        # texlive.combined.scheme-full
-                        # texstudio
+                        texlive.combined.scheme-full
+                        texstudio
 
                         # graphics
                         # blender
                         # darktable
-                        # gimp
-                        # krita
-
-                        # cad
-                        # librecad
+                        gimp
+                        krita
 
                         # www
                         firefox
