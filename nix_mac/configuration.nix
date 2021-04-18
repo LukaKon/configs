@@ -12,12 +12,12 @@
 				./security/doas.nix	# Add 'doas'
 				./services/openssh.nix	# SSH
 				./services/postgresql.nix	# PostgreSQL
-				./services/desktops/qtile.nix	# Qtile window manager settings
-				./services/desktops/spectrwm.nix
+				# ./services/desktops/qtile.nix	# Qtile window manager settings
+				# ./services/desktops/spectrwm.nix
 				# ./services/desktops/plasma.nix	# Plasma window manager settings
 				# ./services/desktops/lxqt.nix	# LXQT window manager settings
 				./services/desktops/gnome.nix	# Gnome window manager settings
-				./services/desktops/i3/i3.nix
+				# ./services/desktops/i3/i3.nix
 				# ./services/desktops/mate.nix	# Mate window manager settings
 				# ./services/keyring.nix	# included in Gnome desktop
 				./services/laptop.nix   # settings for laptop
