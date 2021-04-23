@@ -88,6 +88,7 @@
                         # cd burner
                         brasero
                         etcher
+                        gparted
 
                         # snipping tool
                         shutter
