@@ -5,7 +5,6 @@
                     systemPackages = with pkgs;
                     [
                         nix
-                        # direnv
 
                         doas
                         tree
@@ -33,7 +32,6 @@
 
                         # text editor
                         neovim
-                        # ranger
                         # ueberzug
                         fzf
                         xsel  # for copying
@@ -82,13 +80,13 @@
                         # tor-browser-bundle-bin
 
                         # comunicator
-                        signal-desktop
+                        # signal-desktop
                         slack
 
                         # video conference
-                        zoom-us
+                        # zoom-us
                         # teams
-                        skype
+                        # skype
 
                         # cd burner
                         #brasero
