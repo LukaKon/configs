@@ -87,6 +87,7 @@
 
                         # cd burner
                         brasero
+                        etcher
 
                         # snipping tool
                         shutter
