@@ -12,7 +12,7 @@
 							# i3
 
 							displayManager.lightdm.enable = true;
-							displayManager.defaultSession = "none+i3";
+							# displayManager.defaultSession = "none+i3";
 
 							desktopManager.xterm.enable = false;
 
@@ -22,7 +22,7 @@
 											configFile = ./i3.conf;
 											extraPackages = with pkgs; [
 											dmenu
-											i3status
+											# i3status
 											i3lock
 											# i3blocks
 											];

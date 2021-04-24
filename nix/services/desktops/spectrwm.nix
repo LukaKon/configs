@@ -13,7 +13,7 @@
 							# i3
 
 							# displayManager.lightdm.enable = true;
-							# displayManager.defaultSession = "none+i3";
+							displayManager.defaultSession = "none+spectrwm";
 
 							desktopManager.xterm.enable = false;
 
@@ -35,7 +35,10 @@
 				autorandr.enable = true;
 			};
 	environment = {
-                    systemPackages = with pkgs;
-                    [xlockmore];
+                    systemPackages = with pkgs; [
+						xlockmore
+						dmenu
+					];
+
 				};
 }
