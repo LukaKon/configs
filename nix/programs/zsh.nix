@@ -13,8 +13,8 @@
 					enableCompletion = true;
 					autosuggestions.enable = true;
 					syntaxHighlighting.enable = true;
-					syntaxHighlighting.highlighters = ["brackets" "pattern" "cursor" "root" "line"];
-					autosuggestions.highlightStyle = "fg=green";
+					# syntaxHighlighting.highlighters = ["brackets" "pattern" "cursor" "root" "line"];
+					autosuggestions.highlightStyle = "fg=blue";
 					histFile = "$HOME/.config/zsh/.zsh_history";
 					histSize = 10000;
 					setOptions = [
