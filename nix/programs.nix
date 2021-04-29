@@ -92,7 +92,7 @@
                         #brasero
 
                         # snipping tool
-                        shutter
+                        # shutter
 
                         # office
                         libreoffice
@@ -130,6 +130,7 @@
                             termcolor
                             # ipython
                             bpython
+                            pylint
                         ]))
                     ];
     };
