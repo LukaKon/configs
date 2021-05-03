@@ -131,6 +131,7 @@
                             # ipython
                             bpython
                             pylint
+                            jupyter
                         ]))
                     ];
     };
