@@ -81,7 +81,7 @@
                         slack
 
                         # video conference
-                        #zoom-us
+                        zoom-us
                         # teams
                         # skype
 
@@ -126,6 +126,7 @@
                             # ipython
                             bpython
                             pylint
+                            jupyter
                         ]))
                     ];
 	};
