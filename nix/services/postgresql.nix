@@ -1,6 +1,7 @@
 {config, pkgs, ...}:
 
 {
+	environment.systemPackages = with pkgs; [pgmanage];
 	services.postgresql = {
 							enable = true;
 							package = pkgs.postgresql_12;

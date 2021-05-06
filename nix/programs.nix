@@ -84,7 +84,7 @@
                         slack
 
                         # video conference
-                        # zoom-us
+                        zoom-us
                         # teams
                         # skype
 
@@ -111,7 +111,7 @@
                         mpv # video player
                         libdvdcss # plugin to play cd/dvd in mpv
                         moc  # music player
-                        # youtube-dl
+                        youtube-dl
 
                         psutils
                         pciutils
