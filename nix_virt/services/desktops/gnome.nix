@@ -17,7 +17,7 @@
 											[
 												gnome3.adwaita-icon-theme
 												# gnome-shell-extension-appindicator-32
-												gnomeExtensions.arc-menu
+												# gnomeExtensions.arc-menu
 												# gnomeExtensions.icon-hider  # broken
 												gnomeExtensions.sound-output-device-chooser
 												gnomeExtensions.tilingnome
@@ -40,6 +40,6 @@
 											gnome3.simple-scan
 											gnome3.gnome-music
 											gnome3.gnome-contacts
-											#gnome3.gnome-calendar
+											gnome3.gnome-calendar
                                         ];
 }
