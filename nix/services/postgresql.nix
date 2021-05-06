@@ -1,9 +1,9 @@
 {config, pkgs, ...}:
 
 {
-	environment.systemPackages = with pkgs; [pgmanage];
-	services.pgmanage.enable = true;
-	services.pgmanage.connections = { myserver = "host=localhost port=5432 dbname=postgres"; };
+	# environment.systemPackages = with pkgs; [pgmanage];
+	# services.pgmanage.enable = true;
+	# services.pgmanage.connections = { myserver = "host=localhost port=5432 dbname=postgres"; };
 	services.postgresql = {
 							enable = true;
 							package = pkgs.postgresql_12;
