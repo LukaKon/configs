@@ -15,7 +15,7 @@
                                 vi = "nvim";
 
                                 # nix
-                                upnix = "sudo nix-channel --update && nix-env -u";
+                                # upnix = "sudo nix-channel --update && nix-env -u";
                                 rebuild = "sudo nixos-rebuild switch";
                                 upos = "sudo nixos-rebuild switch --upgrade";
 
