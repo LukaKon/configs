@@ -17,6 +17,8 @@
 												monospace = ["Fira Code"];
 												emoji = ["Joypixels"];
 											};
-		};
+				};
 	};
+
+	nixpkgs.config.joypixels.acceptLicence = true;
 }
