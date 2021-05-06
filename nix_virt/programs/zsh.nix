@@ -13,6 +13,8 @@
 					enableCompletion = true;
 					autosuggestions.enable = true;
 					syntaxHighlighting.enable = true;
+					# syntaxHighlighting.highlighters = ["brackets" "pattern" "cursor" "root" "line"];
+					autosuggestions.highlightStyle = "fg=blue";
 					histFile = "$HOME/.config/zsh/.zsh_history";
 					histSize = 10000;
 					setOptions = [
@@ -39,7 +41,7 @@
 					ohMyZsh = {
 								enable = true;
 								plugins = ["python" "colorize"];
-								theme = "strug";	# jonathan
+								theme = "sporty_256"; #"strug";	# jonathan
 								#package = "pkgs.oh-my-zsh";
 								customPkgs = with pkgs; [
 									nix-zsh-completions
