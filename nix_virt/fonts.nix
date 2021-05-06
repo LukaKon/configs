@@ -9,16 +9,16 @@
 									ubuntu_font_family
 									corefonts
 									noto-fonts-emoji
-									joypixels
+									# joypixels
 									nerdfonts
 								];
 				fontconfig = {
 								defaultFonts = {
 												monospace = ["Fira Code"];
-												emoji = ["Joypixels"];
+												# emoji = ["Joypixels"];
 											};
 				};
 	};
 
-	nixpkgs.config.joypixels.acceptLicence = true;
+	# nixpkgs.config.joypixels.acceptLicence = true;
 }
