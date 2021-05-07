@@ -12,7 +12,6 @@
 					packageOverrides = pkgs: rec {
 								neovim = pkgs.neovim.override {
 									vimAlias = true;
-									# withPython = true;
 									withPython3 = true;
 									configure = {
 										packages.myVimPackage = with
