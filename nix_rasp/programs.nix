@@ -26,7 +26,7 @@
                         # sysstat
 
                         # terminal
-                        termite
+                        # termite
                         # alacritty
                         # xterm
 
@@ -75,7 +75,7 @@
                         # www
                         # firefox
                         # geckodriver
-                        qutebrowser
+                        # qutebrowser
                         # brave
                         # tor-browser-bundle-bin
 
@@ -129,9 +129,9 @@
                             jedi
                             termcolor
                             # ipython
-                            bpython
-                            pylint
-                            jupyter
+                            # bpython
+                            # pylint
+                            # jupyter
                         ]))
                     ];
     };
