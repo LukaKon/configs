@@ -13,6 +13,8 @@
                         curl
                         git
                         rsync
+                        bat # cat
+                        fd  # find
 
                         nodejs
 
