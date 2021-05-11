@@ -16,7 +16,7 @@
 				./services/postgresql.nix	# PostgreSQL
 				# ./services/desktops/qtile.nix	# Qtile window manager settings
 				./services/desktops/i3/i3.nix	# i3 window manager settings
-				# ./services/desktops/mate.nix	# mate window manager settings
+				# ./services/desktops/gnome.nix	# Gnome window manager settings
 				./services/desktops/spectrwm.nix
 				./services/keyring.nix
 				# ./services/bluetooth.nix
