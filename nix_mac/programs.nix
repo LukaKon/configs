@@ -27,8 +27,8 @@
                         ncdu # disk analisys
 
                         # terminal
-                        termite
-                        # alacritty
+                        # termite
+                        alacritty
                         # xterm
 
                         # text editor
