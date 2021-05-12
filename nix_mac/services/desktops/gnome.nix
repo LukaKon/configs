@@ -16,6 +16,7 @@
 	environment.systemPackages = with pkgs;
 											[
 												gnome3.adwaita-icon-theme
+												gnome-breeze
 												# gnome-shell-extension-appindicator-32
 												gnomeExtensions.arc-menu
 												# gnomeExtensions.icon-hider  # broken
