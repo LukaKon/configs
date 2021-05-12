@@ -4,7 +4,7 @@
     environment = {
                     systemPackages = with pkgs;
                     [
-                        nix
+                        # nix
 
                         doas
                         tree
@@ -91,7 +91,7 @@
                         # skype
 
                         # cd burner
-                        #brasero
+                        brasero
 
                         # snipping tool
                         # shutter
