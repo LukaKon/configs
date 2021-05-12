@@ -15,10 +15,10 @@
 				./services/openssh.nix	# SSH
 				./services/postgresql.nix	# PostgreSQL
 				# ./services/desktops/qtile.nix	# Qtile window manager settings
-				./services/desktops/i3/i3.nix	# i3 window manager settings
-				# ./services/desktops/gnome.nix	# Gnome window manager settings
+				# ./services/desktops/i3/i3.nix	# i3 window manager settings
+				./services/desktops/gnome/gnome.nix	# Gnome window manager settings
 				./services/desktops/spectrwm.nix
-				./services/keyring.nix
+				# ./services/keyring.nix
 				# ./services/bluetooth.nix
 				./services/remote.nix	# remote server/desktop
 				./services/cron.nix
@@ -32,7 +32,7 @@
 				./shellAliases.nix	# Shell aliases
 				./virtualisation/docker.nix	# Docker
 				./virtualisation/virtualbox.nix	# Virtualbox
-				./virtualisation/virt-manager.nix # broken
+				./virtualisation/virt-manager.nix
 				./nvim/nvim.nix		# TODO nvim configuration in separate files
 				# ./flatpak.nix
 				# ./programs/vscode/vscode.nix    # vscode-with-extensions
