@@ -7,15 +7,14 @@
     services = {
         xserver = {
             enable = true;                        # Enable the X11 windowing system.
-    #   services.xserver.layout = "us";                        # Set your preferred keyboard layout.
             desktopManager.xterm.enable = false;
-            
+
         displayManager.defaultSession = "none+xmonad";
         windowManager = {                     # Open configuration for the window manager.
             xmonad = {
                 enable = true;                                # Enable xmonad.
                 config = ./config.hs;
-                haskellPackages = "";
+                haskellPackages = [];
                 enableContribAndExtras = true;                # Enable xmonad contrib and extras.
                 extraPackages = hp: [                      # Open configuration for additional Haskell packages.
                     hp.dbus
