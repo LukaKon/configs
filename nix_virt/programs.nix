@@ -18,7 +18,7 @@
                         lm_sensors
 
                         # terminal
-                        termite
+                        # termite
                         xterm
 
                         # vim
