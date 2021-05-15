@@ -9,15 +9,16 @@
             enable = true;                        # Enable the X11 windowing system.
             desktopManager.xterm.enable = false;
 
+            displayManager.lightdm.enable = true;
             displayManager.defaultSession = "none+xmonad";
             windowManager = {                     # Open configuration for the window manager.
                 xmonad = {
                     enable = true;                                # Enable xmonad.
                     config = ./config.hs;
-                    haskellPackages = [];
+                    # haskellPackages = [];
                     enableContribAndExtras = true;                # Enable xmonad contrib and extras.
                     extraPackages = hp: [                      # Open configuration for additional Haskell packages.
-                        hp.dbus
+                        # hp.dbus
                         hp.monad-logger
                         hp.xmonad-contrib                               # Install xmonad-contrib.
                         hp.xmonad-extras                                # Install xmonad-extras.
