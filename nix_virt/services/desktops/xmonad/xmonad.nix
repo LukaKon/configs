@@ -8,9 +8,7 @@
         xserver = {
             enable = true;                        # Enable the X11 windowing system.
     #   services.xserver.layout = "us";                        # Set your preferred keyboard layout.
-            desktopManager = {
-                default = "none";      # Unset the default desktop manager.
-                xterm.enable = false;
+            desktopManager.xterm.enable = false;
             };
         displayManager.defaultSession = "none+xmonad";
         windowManager = {                     # Open configuration for the window manager.
