@@ -9,23 +9,23 @@
             enable = true;                        # Enable the X11 windowing system.
             desktopManager.xterm.enable = false;
 
-        displayManager.defaultSession = "none+xmonad";
-        windowManager = {                     # Open configuration for the window manager.
-            xmonad = {
-                enable = true;                                # Enable xmonad.
-                config = ./config.hs;
-                haskellPackages = [];
-                enableContribAndExtras = true;                # Enable xmonad contrib and extras.
-                extraPackages = hp: [                      # Open configuration for additional Haskell packages.
-                    hp.dbus
-                    hp.monad-logger
-                    hp.xmonad-contrib                               # Install xmonad-contrib.
-                    hp.xmonad-extras                                # Install xmonad-extras.
-                    hp.xmonad                                       # Install xmonad itself.
-                ];
-                # default = "xmonad";                                  # Set xmonad as the default window manager.
+            displayManager.defaultSession = "none+xmonad";
+            windowManager = {                     # Open configuration for the window manager.
+                xmonad = {
+                    enable = true;                                # Enable xmonad.
+                    config = ./config.hs;
+                    haskellPackages = [];
+                    enableContribAndExtras = true;                # Enable xmonad contrib and extras.
+                    extraPackages = hp: [                      # Open configuration for additional Haskell packages.
+                        hp.dbus
+                        hp.monad-logger
+                        hp.xmonad-contrib                               # Install xmonad-contrib.
+                        hp.xmonad-extras                                # Install xmonad-extras.
+                        hp.xmonad                                       # Install xmonad itself.
+                    ];
+                    # default = "xmonad";                                  # Set xmonad as the default window manager.
+                    };
                 };
-            };
 
         };
     #   services.xserver.libinput.enable = true;               # Enable touchpad support.
