@@ -9,7 +9,7 @@
             enable = true;                        # Enable the X11 windowing system.
             desktopManager.xterm.enable = false;
 
-            displayManager.lightdm.enable = true;
+            # displayManager.lightdm.enable = true;
             displayManager.defaultSession = "none+xmonad";
             windowManager = {                     # Open configuration for the window manager.
                 xmonad = {
