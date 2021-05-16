@@ -6,8 +6,8 @@
 				xserver = {
 							enable = true;
 
-							displayManager.lightdm.enable = true;
-							displayManager.defaultSession = "none+spectrwm";
+							# displayManager.lightdm.enable = true;
+							# displayManager.defaultSession = "none+spectrwm";
 
 							desktopManager.xterm.enable = false;
 
