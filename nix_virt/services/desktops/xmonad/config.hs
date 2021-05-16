@@ -123,7 +123,7 @@ spawnSelected' lst = gridselect conf lst >>= flip whenJust spawn
                    , gs_originFractY = 0.5
                    , gs_font         = myFont
                    }
-myAppGrid = [ 
+myAppGrid = [
                 -- ("Audacity", "audacity")
                 --  , ("Deadbeef", "deadbeef")
                 --  , ("Emacs", "emacsclient -c -a emacs")
@@ -159,7 +159,7 @@ myScratchPads = [
                  h = 0.9
                  w = 0.9
                  t = 0.95 -h
-                 l = 0.95 -w 
+                 l = 0.95 -w
     -- spawnCalc  = "qalculate-gtk"
     -- findCalc   = className =? "Qalculate-gtk"
     -- manageCalc = customFloating $ W.RationalRect l t w h
@@ -438,7 +438,7 @@ main = do
     -- Launching three instances of xmobar on their monitors.
     xmproc0 <- spawnPipe "xmobar -x 0 $HOME/.config/xmobar/xmobarrc0"
     xmproc1 <- spawnPipe "xmobar -x 1 $HOME/.config/xmobar/xmobarrc1"
-    xmproc2 <- spawnPipe "xmobar -x 2 $HOME/.config/xmobar/xmobarrc2"
+    -- xmproc2 <- spawnPipe "xmobar -x 2 $HOME/.config/xmobar/xmobarrc2"
     -- the xmonad, ya know...what the WM is named after!
     xmonad $ ewmh def
         { manageHook         = myManageHook <+> manageDocks
