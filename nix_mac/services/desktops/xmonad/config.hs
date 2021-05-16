@@ -127,20 +127,20 @@ myAppGrid = [
                 -- ("Audacity", "audacity")
                 --  , ("Deadbeef", "deadbeef")
                 --  , ("Emacs", "emacsclient -c -a emacs")
-                 , ("Firefox", "firefox")
+                --  , ("Firefox", "firefox")
                 --  , ("Geany", "geany")
                 --  , ("Geary", "geary")
-                 , ("Gimp", "gimp")
+                --  , ("Gimp", "gimp")
                 --  , ("Kdenlive", "kdenlive")
-                 , ("LibreOffice Impress", "loimpress")
-                 , ("LibreOffice Writer", "lowriter")
+                --  , ("LibreOffice Impress", "loimpress")
+                --  , ("LibreOffice Writer", "lowriter")
                 --  , ("OBS", "obs")
                 --  , ("PCManFM", "pcmanfm")
                  ]
 myScratchPads :: [NamedScratchpad]
 myScratchPads = [
                 -- NS "terminal" spawnTerm findTerm manageTerm
-                , NS "mocp" spawnMocp findMocp manageMocp
+                -- , NS "mocp" spawnMocp findMocp manageMocp
                 -- , NS "calculator" spawnCalc findCalc manageCalc
                 ]
   where
