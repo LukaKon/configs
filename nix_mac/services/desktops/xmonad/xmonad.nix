@@ -10,7 +10,7 @@
             desktopManager.xterm.enable = false;
 
             # displayManager.lightdm.enable = true;
-            displayManager.defaultSession = "none+xmonad";
+            # displayManager.defaultSession = "none+xmonad";
             windowManager = {                     # Open configuration for the window manager.
                 xmonad = {
                     enable = true;                                # Enable xmonad.
