@@ -18,7 +18,7 @@
 				overlays = [
 							(self: super: {
 											qtile = super.qtile.overrideAttrs(oldAttrs: {
-											pythonPath = oldAttrs.pythonPath ++ (with self.python37Packages; [
+											pythonPath = oldAttrs.pythonPath ++ (with self.python38Packages; [
 											keyring
 											xcffib
 											#cairocffi-xcffib
