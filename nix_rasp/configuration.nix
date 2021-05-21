@@ -15,15 +15,15 @@
 				./services/postgresql.nix	# PostgreSQL
 				# ./services/desktops/i3/i3.nix	# i3 window manager settings
 				# ./services/desktops/spectrwm.nix
-				# ./services/desktops/qtile.nix
+				./services/desktops/qtile.nix
 				./services/keyring.nix
-				# ./services/remote.nix	# remote server/desktop
+				./services/remote.nix	# remote server/desktop
 				./services/cron.nix
 				./programs/zsh.nix	# zsh and console settings
 				# ./programs/steam.nix		# Steam gaming portal
 				./fonts.nix		# Fonts to install
 				# ./hdd.nix			# Additional HDD
-				# ./nfs.nix
+				./nfs.nix
 				./nixpkgs/nixpkgs.nix
 				./users.nix		# Users configurations
 				./shellAliases.nix	# Shell aliases
