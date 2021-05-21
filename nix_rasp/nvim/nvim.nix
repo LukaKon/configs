@@ -29,7 +29,7 @@
 												vim-csharp
 												neomake
 												neoformat
-												gitgutter
+												#gitgutter
 												coc-python
 												coc-html
 												coc-nvim

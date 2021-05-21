@@ -21,10 +21,10 @@
     users.root = {
       password = "apassword";
     };
-    users.anormaluser = {
+    users.lk = {
       isNormalUser = true;
-      password = "apassword";
-      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+      password = "lk";
+      extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
     };
   };
 }
