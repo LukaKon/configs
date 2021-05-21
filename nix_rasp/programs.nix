@@ -14,6 +14,9 @@
                         git
                         rsync
 
+                        bat
+                        fd
+
                         # nodejs
 
                         # monitoring
