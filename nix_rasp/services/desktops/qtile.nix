@@ -3,14 +3,14 @@
 {
 	services.xserver = {
                         enable = true;
-                        videoDrivers = ["modesetting" "nvidia"];
+                        # videoDrivers = ["modesetting" "nvidia"];
                         # displayManager.startx.enable = true;  # necessary to
                         # create .xinitrc file
 
                         # Qtile
-                        # displayManager.lightdm.enable = true;
+                        displayManager.lightdm.enable = true;
                         windowManager.qtile.enable = true;
-                        # displayManager.defaultSession = "none+qtile";
+                        displayManager.defaultSession = "none+qtile";
 
                         layout = "pl";
                       };

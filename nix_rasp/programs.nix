@@ -49,7 +49,7 @@
                         # ranger
 
                         # IDE
-                        # vscode
+                         vscode
                         # arduino
                         # jetbrains.pycharm-community
                         # jetbrains.pycharm-professional
@@ -75,7 +75,7 @@
                         # www
                         # firefox
                         # geckodriver
-                        # qutebrowser
+                         qutebrowser
                         # brave
                         # tor-browser-bundle-bin
 
@@ -107,10 +107,10 @@
 
 
                         # media
-                        # feh # picture viewer
+                         feh # picture viewer
                         # mpv # video player
                         # libdvdcss # plugin to play cd/dvd in mpv
-                        # moc  # music player
+                         moc  # music player
                         # youtube-dl
 
                         # psutils
@@ -129,7 +129,7 @@
                             jedi
                             termcolor
                             # ipython
-                            # bpython
+                             bpython
                             # pylint
                             # jupyter
                         ]))
