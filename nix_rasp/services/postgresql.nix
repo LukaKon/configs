@@ -14,6 +14,7 @@
 							host all all localhost trust
 							host all all ::1/128 trust
 							host all all 192.168.0.0/24 trust
+							host all all 192.168.1.0/24 trust
 							'';
 							initialScript = pkgs.writeText "backend-initScript" ''
 							CREATE ROLE lko WITH LOGIN PASSWORD 'Lukasz82';
