@@ -22,6 +22,7 @@
 												vim-commentary
 												vim-airline-themes
 												vim-airline
+												gruvbox-community
 												fzf-vim
 												tabular
 												syntastic
@@ -58,6 +59,8 @@
 												vim-jinja
 
 												vim-yapf
+												# fuzzy finder	
+												neovim-fuzzy
 
 												colorizer
 
@@ -107,7 +110,11 @@
 											set background=dark                     " tell vim what the background color looks like
 											set showtabline=2                       " Always show tabs
 											set nobackup                            " This is recommended by coc
+											set noswapfile
+											set undodir=~/.vim/undodir
+											set undofile
 											set nowritebackup                       " This is recommended by coc
+											set scrolloff=8
 											set shortmess+=c                        " Don't pass messages to |ins-completion-menu|.
 											set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time
 											set updatetime=300                      " Faster completion
@@ -117,6 +124,23 @@
 											set guifont=Fira\ Code\ Nerd\ Font
 
 
+											colorscheme gruvbox
+											highlight Normal guibg=none
+
+											let mapleader = " "
+
+											nnoremap <C-p> :FuzzyOpen<CR>
+
+											fun! TrimWhitespace()
+												let l:save = winsaveview()
+												keeppatterns %s/\s\+$//e
+												call winrestview(l:save)
+											endfun
+
+											augroup THE_PRIMEAGEN
+												autocmd!
+												autocmd BufWritePre * :call TrimWhitespace()
+											augroup END
 
 											" git setup
 											" Change these if you want
