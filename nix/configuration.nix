@@ -12,6 +12,7 @@
 				./programs.nix		# List of installed programs
 				./env_variables.nix
 				./security/doas.nix	# Add 'doas'
+				./security/firewall.nix
 				./services/openssh.nix	# SSH
 				./services/postgresql.nix	# PostgreSQL
 				./services/desktops/qtile.nix	# Qtile window manager settings
