@@ -14,9 +14,9 @@
 				./services/openssh.nix	# SSH
 				./services/postgresql.nix	# PostgreSQL
 				# ./services/desktops/i3/i3.nix	# i3 window manager settings
-				# ./services/desktops/spectrwm.nix
+				./services/desktops/spectrwm.nix
 				# ./services/desktops/qtile.nix
-				./services/desktops/mate.nix
+				# ./services/desktops/mate.nix
 				./services/keyring.nix
 				./services/remote.nix	# remote server/desktop
 				./services/cron.nix
