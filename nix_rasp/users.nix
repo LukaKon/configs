@@ -16,15 +16,15 @@
 
 
     users = {
-    defaultUserShell = pkgs.zsh;
-    mutableUsers = false;
-    users.root = {
-      password = "apassword";
+				defaultUserShell = pkgs.zsh;
+				mutableUsers = false;
+				users.root = {
+				password = "apassword";
     };
     users.lk = {
-      isNormalUser = true;
-      password = "lk";
-      extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
+				isNormalUser = true;
+				password = "lk";
+				extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
     };
   };
 }

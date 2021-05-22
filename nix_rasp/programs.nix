@@ -30,7 +30,7 @@
 
                         # terminal
                         # termite
-                        # alacritty
+                        alacritty
                         # xterm
 
                         # text editor
@@ -110,10 +110,10 @@
 
 
                         # media
-                         feh # picture viewer
+                        #  feh # picture viewer
                         # mpv # video player
                         # libdvdcss # plugin to play cd/dvd in mpv
-                         moc  # music player
+                        #  moc  # music player
                         # youtube-dl
 
                         # psutils
