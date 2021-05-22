@@ -30,7 +30,7 @@
 				./shellAliases.nix	# Shell aliases
 				./virtualisation/docker.nix	# Docker
 				# ./virtualisation/virtualbox.nix	# Virtualbox
-				# ./virtualisation/virt-manager.nix # broken
+				./virtualisation/virt-manager.nix # broken
 				./nvim/nvim.nix		# TODO nvim configuration in separate files
 				# ./flatpak.nix
 				# ./programs/vscode/vscode.nix    # vscode-with-extensions
