@@ -11,6 +11,7 @@
 				./programs.nix		# List of installed programs
 				./env_variables.nix
 				./security/doas.nix	# Add 'doas'
+				./security/firewall.nix
 				./services/openssh.nix	# SSH
 				./services/postgresql.nix	# PostgreSQL
 				# ./services/desktops/i3/i3.nix	# i3 window manager settings
