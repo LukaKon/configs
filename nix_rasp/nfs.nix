@@ -2,7 +2,7 @@
 
 {
     fileSystems."/export/share" = {
-        device = "/home/lk/share/";
+        device = "/mnt/share/";
         options = ["bind" "nfsvers=4.2" "x-systemd.automount" "noauto"];
     };
 
