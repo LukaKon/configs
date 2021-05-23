@@ -24,7 +24,7 @@
 				users.lk = {
 							isNormalUser = true;
 							description = "lko";
-							# password = "lk";
+							password = "lk";
 							extraGroups = [ "wheel" "networkmanager" "dialout" "libvirtd" "docker"];
 							# shell = pkgs.zsh;
 							packages = with pkgs; [];
