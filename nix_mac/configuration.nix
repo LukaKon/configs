@@ -11,25 +11,23 @@
 				./locale.nix
 				./security/doas.nix	# Add 'doas'
 				./services/openssh.nix	# SSH
-				./services/postgresql.nix	# PostgreSQL
-				./services/desktops/qtile.nix	# Qtile window manager settings
-				# ./services/desktops/spectrwm.nix
-				# ./services/desktops/plasma.nix	# Plasma window manager settings
-				# ./services/desktops/lxqt.nix	# LXQT window manager settings
-				./services/desktops/gnome.nix	# Gnome window manager settings
-				./services/desktops/xmonad/xmonad.nix	# Gnome window manager settings
-				# ./services/desktops/i3/i3.nix
-				# ./services/desktops/mate.nix	# Mate window manager settings
+				./programs/postgresql.nix	# PostgreSQL
+				./desktops/qtile.nix	# Qtile window manager settings
+				# ./desktops/spectrwm.nix
+				./desktops/gnome.nix	# Gnome window manager settings
+				./desktops/xmonad/xmonad.nix	# Gnome window manager settings
+				# ./desktops/i3/i3.nix
+				# ./desktops/mate.nix	# Mate window manager settings
 				# ./services/keyring.nix	# included in Gnome desktop
 				./services/laptop.nix   # settings for laptop
 				./services/remote.nix
 				./programs/zsh.nix	# zsh and console settings
 				./fonts.nix		# Fonts to install
-				./nixpkgs/nixpkgs.nix
+				./nixpkgs.nix
 				./users.nix		# Users configurations
 				./shellAliases.nix	# Shell aliases
 				./virtualisation/docker.nix	# Docker
-				./nvim/nvim.nix		# TODO nvim configuration in separate files
-				# ./flatpak.nix
+				./programs/nvim.nix		# TODO nvim configuration in separate files
+				# ./services/flatpak.nix
 			];
 }
