@@ -14,7 +14,7 @@
     #                         '';
 
     # };
-    fileSystems."/home/lk/rasp" = {
+    fileSystems."/mnt/rasp" = {
         device = "192.168.1.9:/share";
         fsType = "nfs";
         # options = ["x-systemd.idle-timeout=600"];
