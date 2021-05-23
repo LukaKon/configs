@@ -26,7 +26,7 @@
 							description = "lko";
 							# password = "lk";
 							extraGroups = [ "wheel" "networkmanager" "dialout" "libvirtd" "docker"];
-							# shell = pkgs.zsh;
+							shell = pkgs.zsh;
 							packages = with pkgs; [];
     };
   };
