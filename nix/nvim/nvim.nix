@@ -40,6 +40,7 @@
 												coc-pairs
 												coc-spell-checker
 												coc-highlight
+
 												# Change dates fast
 												vim-speeddating
 												# Repeat stuff
@@ -59,8 +60,8 @@
 												vim-jinja
 
 												vim-yapf
-												# fuzzy finder	
-												neovim-fuzzy
+												fzf-vim
+												coc-fzf
 
 												colorizer
 
@@ -128,8 +129,6 @@
 											highlight Normal guibg=none
 
 											let mapleader = " "
-
-											nnoremap <C-p> :FuzzyOpen<CR>
 
 											fun! TrimWhitespace()
 												let l:save = winsaveview()
