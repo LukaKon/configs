@@ -19,7 +19,7 @@
 				defaultUserShell = pkgs.zsh;
 				mutableUsers = false;
 				# users.root = {
-					# password = "apassword";
+					password = "apassword";
 				# };
 		users.lk = {
 					isNormalUser = true;
