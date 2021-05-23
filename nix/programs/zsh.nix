@@ -47,6 +47,8 @@
 									nix-zsh-completions
 									zsh-fast-syntax-highlighting
 									any-nix-shell
+									fzf-zsh
+									zsh-nix-shell
 								];
 							};
 					};

@@ -17,7 +17,11 @@
 							host all all 192.168.1.0/24 trust
 							'';
 							initialScript = pkgs.writeText "backend-initScript" ''
-							CREATE ROLE lko WITH LOGIN PASSWORD 'Lukasz82';
+							CREATE ROLE lko
+							LOGIN
+							PASSWORD 'Lukasz82'
+							CREATEDB
+							CREATEROLE;
 
 							CREATE DATABASE lko;
 							GRANT ALL PRIVILEGES ON DATABASE lko TO lko;

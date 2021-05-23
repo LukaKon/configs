@@ -10,12 +10,6 @@
                         packages = with pkgs;
                                             [
                                                 exercism
-
-                                                # dotnet
-                                                #mono
-                                                # dotnet-sdk_3
-                                                #dotnetCorePackages.sdk_3_0
-                                                #dotnetCorePackages.netcore_3_1
                                             ];
                     };
 }
