@@ -17,7 +17,7 @@
                         bat
                         fd
 
-                        # nodejs
+                        nodejs
 
                         # monitoring
                         bmon
@@ -36,7 +36,7 @@
                         # text editor
                         neovim
                         # ueberzug
-                        # fzf
+                        fzf
                         xsel  # for copying
                         clipmenu  # for copying
 
@@ -47,7 +47,7 @@
                         # p7zip
 
                         # file managers
-                        # vifm-full
+                        vifm-full
                         # pcmanfm
                         # ranger
 
@@ -88,26 +88,12 @@
 
                         # video conference
                         # zoom-us
-                        # teams
-                        # skype
-
-                        # cd burner
-                        #brasero
 
                         # snipping tool
                         # shutter
 
                         # office
                         # libreoffice
-
-                        # games
-                        # openarena
-                        # widelands
-                        # zeroad
-
-                        # firmwareLinuxNonfree
-                        # microcodeIntel
-
 
                         # media
                         #  feh # picture viewer
