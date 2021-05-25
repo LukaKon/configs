@@ -6,6 +6,10 @@
         options = ["bind" "nfsvers=4.2" "x-systemd.automount" "noauto"];
     };
 
+    # fileSystems."/export/programing" = {
+    #     device = "/mnt/programing/";
+    #     options = ["bind" "nfsvers=4.2" "x-systemd.automount" "noauto"];
+    # };
     services.nfs.server = {
                             enable = true;
                             exports = ''
