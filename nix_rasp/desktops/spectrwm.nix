@@ -9,8 +9,8 @@
 							# displayManager.startx.enable = true;  # necessary to
 							# create .xinitrc file
 
-							displayManager.lightdm.enable = true;
-							displayManager.defaultSession = "none+spectrwm";
+							# displayManager.lightdm.enable = true;
+							# displayManager.defaultSession = "none+spectrwm";
 
 							desktopManager.xterm.enable = false;
 
