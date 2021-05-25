@@ -20,7 +20,7 @@
 				# ./desktops/qtile.nix
 				# ./desktops/mate.nix
 				./desktops/kde.nix
-				./services/keyring.nix
+				# ./services/keyring.nix
 				./services/remote.nix	# remote server/desktop
 				./services/cron.nix
 				./programs/zsh.nix	# zsh and console settings
