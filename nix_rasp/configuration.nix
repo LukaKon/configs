@@ -19,9 +19,9 @@
 				./desktops/xmonad/xmonad.nix
 				# ./desktops/qtile.nix
 				# ./desktops/mate.nix
-				./desktops/kde.nix
+				# ./desktops/kde.nix
 				# ./services/keyring.nix
-				./services/remote.nix	# remote server/desktop
+				# ./services/remote.nix	# remote server/desktop
 				./services/cron.nix
 				./programs/zsh.nix	# zsh and console settings
 				# ./programs/steam.nix		# Steam gaming portal
