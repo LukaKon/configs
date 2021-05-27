@@ -18,7 +18,7 @@
 												gnome3.adwaita-icon-theme
 												gnome-breeze
 												# gnome-shell-extension-appindicator-32
-												gnomeExtensions.arc-menu
+												# gnomeExtensions.arc-menu
 												# gnomeExtensions.icon-hider  # broken
 												gnomeExtensions.sound-output-device-chooser
 												gnomeExtensions.tilingnome
