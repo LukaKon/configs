@@ -9,7 +9,7 @@
 
 						# Gnome
 						displayManager.gdm.enable = true;
-						desktopManager.gnome3.enable = true;
+						desktopManager.gnome.enable = true;
 
 						layout = "pl";
 					};
@@ -37,7 +37,7 @@
 											gnome3.gnome-color-manager
 											gnome3.gnome-control-center
 										];
-    environment.gnome3.excludePackages = with pkgs;
+    environment.gnome.excludePackages = with pkgs;
                                         [
 											gnome3.totem
 											gnome3.geary
