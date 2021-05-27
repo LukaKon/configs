@@ -3,7 +3,7 @@
 {
 	services.xserver = {
 						enable = true;
-						videoDrivers = ["nouveau"];
+						videoDrivers = ["modesetting"]; #["nouveau"];
 						# displayManager.startx.enable = true;  # necessary to
 						# create .xinitrc file
 
@@ -16,11 +16,14 @@
 	environment.systemPackages = with pkgs;
 											[
 												gnome3.adwaita-icon-theme
+												gnome-breeze
 												# gnome-shell-extension-appindicator-32
-												# gnomeExtensions.arc-menu
+												gnomeExtensions.arc-menu
 												# gnomeExtensions.icon-hider  # broken
 												gnomeExtensions.sound-output-device-chooser
 												gnomeExtensions.tilingnome
+												gnomeExtensions.paperwm
+												dconf2nix
 											];
 	services.udev.packages = with pkgs;
 										[
@@ -30,6 +33,9 @@
 											gnome3.gnome-desktop
 											gnome3.gnome-applets
 											gnome3.gnome-tweak-tool
+											gnome3.dconf-editor
+											gnome3.gnome-color-manager
+											gnome3.gnome-control-center
 										];
     environment.gnome3.excludePackages = with pkgs;
                                         [
@@ -41,5 +47,8 @@
 											gnome3.gnome-music
 											gnome3.gnome-contacts
 											gnome3.gnome-calendar
+											gnome3.gnome-terminal
+											gnome3.gnome-bluetooth
+											gnome3.gnome-system-monitor
                                         ];
 }
