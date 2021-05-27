@@ -14,8 +14,8 @@
 				./services/postgresql.nix	# PostgreSQL
 				./services/nginx.nix
 				./services/desktops/gnome.nix	# mate window manager settings
-				./services/desktops/xmonad/xmonad.nix
-				./services/desktops/qtile.nix
+				# ./services/desktops/xmonad/xmonad.nix
+				# ./services/desktops/qtile.nix
 				# ./services/keyring.nix
 				./services/remote.nix	# remote server/desktop
 				./programs/zsh.nix	# zsh and console settings
