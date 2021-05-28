@@ -16,9 +16,9 @@
 				./programs/postgresql.nix	# PostgreSQL
 				# ./desktops/i3/i3.nix	# i3 window manager settings
 				./desktops/spectrwm.nix
-				./desktops/xmonad/xmonad.nix
+				# ./desktops/xmonad/xmonad.nix
 				# ./desktops/qtile.nix
-				# ./desktops/mate.nix
+				./desktops/mate.nix
 				# ./desktops/kde.nix
 				# ./services/keyring.nix
 				# ./services/remote.nix	# remote server/desktop
