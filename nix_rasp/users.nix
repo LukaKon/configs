@@ -25,9 +25,17 @@
 							isNormalUser = true;
 							description = "lko";
 							password = "lk";
-							extraGroups = [ "wheel" "networkmanager" "dialout" "vboxusers" "libvirtd" "docker"];
+							extraGroups = [ "wheel" "networkmanager" "dialout" "libvirtd" "docker"];
 							shell = pkgs.zsh;
 							packages = with pkgs; [];
-    };
+            };
+				users.kk = {
+							isNormalUser = true;
+							description = "Kropeczka";
+							password = "kk";
+							extraGroups = [ "wheel" "networkmanager" "docker"];
+							shell = pkgs.zsh;
+							packages = with pkgs; [];
+            };
   };
 }
