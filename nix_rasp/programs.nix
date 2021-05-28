@@ -43,8 +43,8 @@
                         # packer
                         # unzip
                         # unar
-                        # xarchiver
-                        # p7zip
+                        xarchiver
+                        p7zip
 
                         # file managers
                         vifm-full
@@ -68,9 +68,9 @@
 
                         # graphics
                         # blender
-                        # darktable
-                        # gimp
-                        # krita
+                        darktable
+                        gimp
+                        krita
 
                         # cad
                         # librecad
@@ -78,8 +78,8 @@
                         # www
                         # firefox
                         # geckodriver
-                         qutebrowser
-                        # brave
+                        qutebrowser
+                        brave
                         # tor-browser-bundle-bin
 
                         # comunicator
@@ -93,7 +93,7 @@
                         # shutter
 
                         # office
-                        # libreoffice
+                        libreoffice
 
                         # media
                         #  feh # picture viewer
