@@ -76,10 +76,10 @@
                         # librecad
 
                         # www
-                        # firefox
+                        firefox
                         # geckodriver
                         qutebrowser
-                        brave
+                        # brave
                         # tor-browser-bundle-bin
 
                         # comunicator
