@@ -5,6 +5,7 @@
                     systemPackages = with pkgs;
                     [
                         # nix
+                        nix-prefetch-git
 
                         doas
                         tree
@@ -91,7 +92,7 @@
                         # skype
 
                         # cd burner
-                        brasero
+                        # brasero
 
                         # snipping tool
                         # shutter
