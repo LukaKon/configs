@@ -12,17 +12,18 @@
 					packageOverrides = pkgs: rec {
 								neovim = pkgs.neovim.override {
 									vimAlias = true;
-									# withPython = true;
 									withPython3 = true;
 									configure = {
 										packages.myVimPackage = with
 										pkgs.vimPlugins;
 										{
 											start = [
-												vim-commentary
+												# view
 												vim-airline-themes
 												vim-airline
 												gruvbox-community
+
+												vim-commentary
 												fzf-vim
 												tabular
 												syntastic
@@ -32,15 +33,17 @@
 												neomake
 												neoformat
 												gitgutter
+												coc-fzf
+												coc-tabnine
 												coc-python
 												coc-html
 												coc-nvim
 												coc-yank
 												coc-css
+												coc-smartf
 												coc-pairs
 												coc-spell-checker
 												coc-highlight
-
 												# Change dates fast
 												vim-speeddating
 												# Repeat stuff
@@ -60,8 +63,6 @@
 												vim-jinja
 
 												vim-yapf
-												fzf-vim
-												coc-fzf
 
 												colorizer
 
@@ -128,7 +129,22 @@
 											colorscheme gruvbox
 											highlight Normal guibg=none
 
-											let mapleader = " "
+											let mapleager =" "
+
+											nmap <leader>gj :diffget //3<CR>
+											nmap <leader>gf :diffget //2<CR>
+											nmap <leader>gs :G<CR>
+
+											" press <esc> to cancel.
+											nmap f <Plug>(coc-smartf-forward)
+											nmap F <Plug>(coc-smartf-backward)
+											nmap ; <Plug>(coc-smartf-repeat)
+											nmap , <Plug>(coc-smartf-repeat-opposite)
+
+											augroup Smartf
+											  autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#6638F0
+											  autocmd User SmartfLeave :hi Conceal ctermfg=239 guifg=#504945
+											augroup end
 
 											fun! TrimWhitespace()
 												let l:save = winsaveview()
