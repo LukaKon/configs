@@ -12,7 +12,6 @@
 					packageOverrides = pkgs: rec {
 								neovim = pkgs.neovim.override {
 									vimAlias = true;
-									# withPython = true;
 									withPython3 = true;
 									configure = {
 										packages.myVimPackage = with
@@ -59,7 +58,7 @@
 												vim-jinja
 
 												vim-yapf
-												# fuzzy finder	
+												# fuzzy finder
 												neovim-fuzzy
 
 												colorizer
@@ -127,7 +126,11 @@
 											colorscheme gruvbox
 											highlight Normal guibg=none
 
-											let mapleader = " "
+											let mapleager =" "
+
+											nmap <leader>gh :diffget //3<CR>
+											nmap <leader>gu :diffget //2<CR>
+											nmap <leader>gs :G<CR>
 
 											nnoremap <C-p> :FuzzyOpen<CR>
 
