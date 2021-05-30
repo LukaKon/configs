@@ -11,6 +11,8 @@
                                 susp = "systemctl suspend";
                                 reboot = "doas reboot";
 
+                                vi = "nvim";
+
                                 # nix
                                 rebuild = "sudo nixos-rebuild switch";
                                 upos = "sudo nixos-rebuild switch --upgrade";
