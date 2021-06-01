@@ -120,7 +120,7 @@
                         pciutils
                         gputils
 
-                        (python38.withPackages(ps: with ps;
+                        (python39.withPackages(ps: with ps;
                         [
                             autopep8
                             flake8
