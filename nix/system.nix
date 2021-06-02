@@ -11,6 +11,7 @@
 				autoUpgrade = {
 				enable = true;
 				#allowReboot = true;
+        channel = https://nixos.org/channels/nixos-21.05;
 				};
 			};
 

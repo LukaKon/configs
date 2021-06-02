@@ -29,7 +29,6 @@
                         sysstat
 
                         # terminal
-                        # termite
                         alacritty
                         # xterm
 
@@ -56,7 +55,6 @@
                         arduino
                         jetbrains.pycharm-community
                         # jetbrains.pycharm-professional
-                        #monodevelop
                         # thonny
                         unityhub
 
@@ -101,9 +99,9 @@
                         libreoffice
 
                         # games
-                        openarena
-                        widelands
-                        zeroad
+                        # openarena
+                        # widelands
+                        # zeroad
 
                         firmwareLinuxNonfree
                         microcodeIntel
