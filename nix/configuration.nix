@@ -15,7 +15,7 @@
 				./security/firewall.nix
 				./services/openssh.nix	# SSH
 				./programs/postgresql.nix	# PostgreSQL
-				./desktops/qtile.nix	# Qtile window manager settings
+				# ./desktops/qtile.nix	# Qtile window manager settings
 				# ./desktops/i3/i3.nix	# i3 window manager settings
 				# ./desktops/gnome/gnome.nix	# Gnome window manager settings
 				./desktops/spectrwm.nix
@@ -28,7 +28,7 @@
 				./programs/steam.nix		# Steam gaming portal
 				./fonts.nix		# Fonts to install
 				./hdd.nix			# Additional HDD
-				./nfs.nix
+				# ./nfs.nix
 				./nixpkgs.nix
 				./users.nix		# Users configurations
 				./shellAliases.nix	# Shell aliases
@@ -36,7 +36,7 @@
 				./virtualisation/virtualbox.nix	# Virtualbox
 				./virtualisation/virt-manager.nix
 				./programs/nvim.nix		# TODO nvim configuration in separate files
-				# ./services/flatpak.nix
+				./services/flatpak.nix
 				# ./programs/vscode/vscode.nix    # vscode-with-extensions
 				# ./programs/vscode/vs_conf.nix   # vscode-with-extensions
 			];
