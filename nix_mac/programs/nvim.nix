@@ -3,7 +3,7 @@
 {
 	environment = {
 					variables = {EDITOR = "nvim"; VISUAL = "nvim";};
-					systemPackages = with pkgs;[neovim-remote];
+					# systemPackages = with pkgs;[neovim-remote];
 				};
 	programs = {npm.enable = true;};
 
