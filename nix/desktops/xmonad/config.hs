@@ -72,7 +72,7 @@ myEditor :: String
 myEditor = "nvim"  -- Sets nvim as editor
 -- myEditor = myTerminal ++ " -e vim "    -- Sets vim as editor
 myBorderWidth :: Dimension
-myBorderWidth = 2           -- Sets border width for windows
+myBorderWidth = 1           -- Sets border width for windows
 myNormColor :: String
 myNormColor   = "#282c34"   -- Border color of normal windows
 myFocusColor :: String
@@ -159,7 +159,7 @@ myScratchPads = [
                  h = 0.9
                  w = 0.9
                  t = 0.95 -h
-                 l = 0.95 -w 
+                 l = 0.95 -w
     -- spawnCalc  = "qalculate-gtk"
     -- findCalc   = className =? "Qalculate-gtk"
     -- manageCalc = customFloating $ W.RationalRect l t w h
@@ -183,7 +183,7 @@ tall     = renamed [Replace "tall"]
            $ addTabs shrinkText myTabTheme
            $ subLayout [] (smartBorders Simplest)
            $ limitWindows 12
-           $ mySpacing 8
+           $ mySpacing 0
            $ ResizableTall 1 (3/100) (1/2) []
 magnify  = renamed [Replace "magnify"]
            $ smartBorders
@@ -191,7 +191,7 @@ magnify  = renamed [Replace "magnify"]
            $ subLayout [] (smartBorders Simplest)
            $ magnifier
            $ limitWindows 12
-           $ mySpacing 8
+           $ mySpacing 0
            $ ResizableTall 1 (3/100) (1/2) []
 monocle  = renamed [Replace "monocle"]
            $ smartBorders
@@ -206,14 +206,14 @@ grid     = renamed [Replace "grid"]
            $ addTabs shrinkText myTabTheme
            $ subLayout [] (smartBorders Simplest)
            $ limitWindows 12
-           $ mySpacing 8
+           $ mySpacing 0
            $ mkToggle (single MIRROR)
            $ Grid (16/10)
 spirals  = renamed [Replace "spirals"]
            $ smartBorders
            $ addTabs shrinkText myTabTheme
            $ subLayout [] (smartBorders Simplest)
-           $ mySpacing' 8
+           $ mySpacing' 0
            $ spiral (6/7)
 threeCol = renamed [Replace "threeCol"]
            $ smartBorders
