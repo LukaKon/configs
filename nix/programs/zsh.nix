@@ -41,7 +41,7 @@
 					ohMyZsh = {
 								enable = true;
 								plugins = ["python" "colorize"];
-								theme = "sporty_256"; #"strug";	# jonathan
+								theme = "kolo";#"sporty_256"; #"strug";	# jonathan
 								#package = "pkgs.oh-my-zsh";
 								customPkgs = with pkgs; [
 									nix-zsh-completions
