@@ -23,6 +23,7 @@
 												vim-airline
 												gruvbox-community
 
+                                                # python-mode
 												vim-commentary
 												fzf-vim
 												tabular
@@ -62,7 +63,7 @@
 												vim-startify
 												vim-jinja
 
-												vim-yapf
+                                                vim-yapf
 
 												colorizer
 
