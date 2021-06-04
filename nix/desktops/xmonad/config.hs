@@ -271,7 +271,7 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts float
                                  ||| tallAccordion
                                  ||| wideAccordion
 -- myWorkspaces = [" 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 "]
-myWorkspaces = [" dev ", " www ", " sys ", " doc ", " vbox ", " chat ", " mus ", " vid ", " gfx "]
+myWorkspaces = [" term ", " dev ", " www ", " conf ", " zoom ", " chat ", " photo ", " virt ", " games "]
 myWorkspaceIndices = M.fromList $ zipWith (,) myWorkspaces [1..] -- (,) == \x y -> (x,y)
 clickable ws = "<action=xdotool key super+"++show i++">"++ws++"</action>"
     where i = fromJust $ M.lookup ws myWorkspaceIndices
@@ -295,9 +295,9 @@ myManageHook = composeAll
      , title =? "Mozilla Firefox"     --> doShift ( myWorkspaces !! 1 )
      , className =? "brave-browser"   --> doShift ( myWorkspaces !! 1 )
      , className =? "qutebrowser"     --> doShift ( myWorkspaces !! 1 )
-     , className =? "mpv"             --> doShift ( myWorkspaces !! 7 )
-     , className =? "Gimp"            --> doShift ( myWorkspaces !! 8 )
-     , className =? "VirtualBox Manager" --> doShift  ( myWorkspaces !! 4 )
+     --, className =? "mpv"             --> doShift ( myWorkspaces !! 7 )
+     --, className =? "Gimp"            --> doShift ( myWorkspaces !! 8 )
+     , className =? "VirtualBox Manager" --> doShift  ( myWorkspaces !! 8 )
      , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
      , isFullscreen -->  doFullFloat
      ] <+> namedScratchpadManageHook myScratchPads
@@ -312,8 +312,8 @@ myKeys =
     -- Other Dmenu Prompts
     -- In Xmonad and many tiling window managers, M-p is the default keybinding to
     -- launch dmenu_run, so I've decided to use M-p plus KEY for these dmenu scripts.
-        , ("M-p a", spawn "dm-sounds")    -- choose an ambient background
-        , ("M-p b", spawn "dm-setbg")     -- set a background
+        --, ("M-p a", spawn "dm-sounds")    -- choose an ambient background
+        --, ("M-p b", spawn "dm-setbg")     -- set a background
         , ("M-p c", spawn "dm-colpick")   -- pick color from our scheme
         , ("M-p e", spawn "dm-confedit")  -- edit config files
         , ("M-p i", spawn "dm-maim")      -- screenshots (images)
@@ -322,12 +322,11 @@ myKeys =
         , ("M-p o", spawn "dm-bookman")   -- qutebrowser bookmarks/history
         , ("M-p p", spawn "passmenu")     -- passmenu
         , ("M-p q", spawn "dm-logout")    -- logout menu
-        , ("M-p r", spawn "dm-reddit")    -- reddio (a reddit viewer)
-        , ("M-p s", spawn "dm-websearch") -- search various search engines
+        --, ("M-p s", spawn "dm-websearch") -- search various search engines
     -- Useful programs to have a keybinding for launch
         , ("M-<Return>", spawn (myTerminal))
-        , ("M-b", spawn (myBrowser ++ " www.youtube.com/c/DistroTube/"))
-        , ("M-M1-h", spawn (myTerminal ++ " -e htop"))
+        , ("M-b", spawn (myBrowser))
+        --, ("M-M1-h", spawn (myTerminal ++ " -e htop"))
     -- Kill windows
         , ("M-S-c", kill1)     -- Kill the currently focused client
         , ("M-S-a", killAll)   -- Kill all windows on current workspace
@@ -400,22 +399,6 @@ myKeys =
         , ("M-u l", spawn "mocp --next")
         , ("M-u h", spawn "mocp --previous")
         , ("M-u <Space>", spawn "mocp --toggle-pause")
-    -- Emacs (CTRL-e followed by a key)
-        -- , ("C-e e", spawn myEmacs)                 -- start emacs
-    --     , ("C-e e", spawn (myEmacs ++ ("--eval '(dashboard-refresh-buffer)'")))   -- emacs dashboard
-    --     , ("C-e b", spawn (myEmacs ++ ("--eval '(ibuffer)'")))   -- list buffers
-    --     , ("C-e d", spawn (myEmacs ++ ("--eval '(dired nil)'"))) -- dired
-    --     , ("C-e i", spawn (myEmacs ++ ("--eval '(erc)'")))       -- erc irc client
-    --     , ("C-e m", spawn (myEmacs ++ ("--eval '(mu4e)'")))      -- mu4e email
-    --     , ("C-e n", spawn (myEmacs ++ ("--eval '(elfeed)'")))    -- elfeed rss
-    --     , ("C-e s", spawn (myEmacs ++ ("--eval '(eshell)'")))    -- eshell
-    --     , ("C-e t", spawn (myEmacs ++ ("--eval '(mastodon)'")))  -- mastodon.el
-    --     -- , ("C-e v", spawn (myEmacs ++ ("--eval '(vterm nil)'"))) -- vterm if on GNU Emacs
-    --     , ("C-e v", spawn (myEmacs ++ ("--eval '(+vterm/here nil)'"))) -- vterm if on Doom Emacs
-    --     -- , ("C-e w", spawn (myEmacs ++ ("--eval '(eww \"distrotube.com\")'"))) -- eww browser if on GNU Emacs
-    --     , ("C-e w", spawn (myEmacs ++ ("--eval '(doom/window-maximize-buffer(eww \"distrotube.com\"))'"))) -- eww browser if on Doom Emacs
-    --     -- emms is an emacs audio player. I set it to auto start playing in a specific directory.
-    --     , ("C-e a", spawn (myEmacs ++ ("--eval '(emms)' --eval '(emms-play-directory-tree \"~/Music/Non-Classical/70s-80s/\")'")))
     -- -- Multimedia Keys
     --     , ("<XF86AudioPlay>", spawn (myTerminal ++ "mocp --play"))
     --     , ("<XF86AudioPrev>", spawn (myTerminal ++ "mocp --previous"))
@@ -423,10 +406,7 @@ myKeys =
     --     , ("<XF86AudioMute>", spawn "amixer set Master toggle")
     --     , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%- unmute")
     --     , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 5%+ unmute")
-    --     , ("<XF86HomePage>", spawn "qutebrowser https://www.youtube.com/c/DistroTube")
     --     , ("<XF86Search>", spawn "dmsearch")
-    --     , ("<XF86Mail>", runOrRaise "thunderbird" (resource =? "thunderbird"))
-    --     , ("<XF86Calculator>", runOrRaise "qalculate-gtk" (resource =? "qalculate-gtk"))
     --     , ("<XF86Eject>", spawn "toggleeject")
     --     , ("<Print>", spawn "dmscrot")
         ]
@@ -436,9 +416,9 @@ myKeys =
 main :: IO ()
 main = do
     -- Launching three instances of xmobar on their monitors.
-    xmproc0 <- spawnPipe "xmobar -x 0 $HOME/.config/xmobar/xmobarrc0"
-    xmproc1 <- spawnPipe "xmobar -x 1 $HOME/.config/xmobar/xmobarrc1"
-    xmproc2 <- spawnPipe "xmobar -x 2 $HOME/.config/xmobar/xmobarrc2"
+    xmproc0 <- spawnPipe "xmobar -x 0 $HOME/configs/nix/desktops/xmonad/xmobarrc0"
+    xmproc1 <- spawnPipe "xmobar -x 1 $HOME/configs/nix/desktops/xmonad/xmobarrc1"
+    -- xmproc2 <- spawnPipe "xmobar -x 2 $HOME/.config/xmobar/xmobarrc2"
     -- the xmonad, ya know...what the WM is named after!
     xmonad $ ewmh def
         { manageHook         = myManageHook <+> manageDocks
@@ -460,7 +440,6 @@ main = do
               -- the following variables beginning with 'pp' are settings for xmobar.
               { ppOutput = \x -> hPutStrLn xmproc0 x                          -- xmobar on monitor 1
                               >> hPutStrLn xmproc1 x                          -- xmobar on monitor 2
-                              >> hPutStrLn xmproc2 x                          -- xmobar on monitor 3
               , ppCurrent = xmobarColor "#98be65" "" . wrap "[" "]"           -- Current workspace
               , ppVisible = xmobarColor "#98be65" "" . clickable              -- Visible but not current workspace
               , ppHidden = xmobarColor "#82AAFF" "" . wrap "*" "" . clickable -- Hidden workspaces
