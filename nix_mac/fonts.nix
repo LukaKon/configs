@@ -10,7 +10,7 @@
 									corefonts
 									noto-fonts-emoji
 									# joypixels
-									nerdfonts
+									# nerdfonts
 								];
 				fontconfig = {
 								defaultFonts = {
