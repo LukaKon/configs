@@ -27,7 +27,6 @@
                         ncdu # disk analisys
 
                         # terminal
-                        # termite
                         alacritty
                         # xterm
 
@@ -51,15 +50,9 @@
 
                         # IDE
                         vscode
-                        # vscodium
                         # arduino
                         jetbrains.pycharm-community
-                        # jetbrains.pycharm-professional
-                        #monodevelop
                         # thonny
-                        # unityhub
-
-                        # wordpress
 
                         # LaTeX
                         texlive.combined.scheme-full
@@ -107,14 +100,14 @@
 
                         # media
                         feh # picture viewer
-                        mpv # video player
-                        libdvdcss # plugin to play cd/dvd in mpv
+                        # mpv # video player
+                        # libdvdcss # plugin to play cd/dvd in mpv
                         moc  # music player
 
                         psutils
                         pciutils
 
-                        (python38.withPackages(ps: with ps;
+                        (python39.withPackages(ps: with ps;
                         [
                             autopep8
                             flake8
@@ -126,7 +119,8 @@
                             jedi
                             termcolor
                             # ipython
-                            bpython
+                            # bpython
+			    ptpython
                             pylint
                             jupyter
                         ]))
