@@ -100,7 +100,7 @@
 
                         # games
                         # openarena
-                        # widelands
+                        widelands
                         # zeroad
 
                         firmwareLinuxNonfree
