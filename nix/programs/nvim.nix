@@ -35,7 +35,9 @@
 												vim-csharp
 												neomake
 												neoformat
-												gitgutter
+                                                neoterm
+                                                vim-javascript
+                                                vim-commentary
 												coc-fzf
 												coc-tabnine
 												coc-python
@@ -76,6 +78,8 @@
 												deoplete-github
 
 												# git
+												vim-gitgutter
+                                                vim-gitbranch
 												vim-signify
 												vim-fugitive
 												vim-rhubarb
@@ -96,7 +100,7 @@
 											set pumheight=10                        " Makes popup menu smaller
 											set fileencoding=utf-8                  " The encoding written to file
 											set ruler              			        " Show the cursor position all the time
-											set cmdheight=2                         " More space for displaying messages
+											set cmdheight=1                         " More space for displaying messages
 											set mouse=a                             " Enable your mouse
 											set splitbelow                          " Horizontal splits will automatically be below
 											set splitright                          " Vertical splits will automatically be to the right
@@ -105,10 +109,13 @@
 											set tabstop=4                           " Insert 4 spaces for a tab
 											set shiftwidth=4                        " Change the number of space characters inserted for indentation
 											set smarttab                            " Makes tabbing smarter will realize you have 2 vs 4
+                                            set ignorecase
+                                            set smartcase
 											set softtabstop=4
 											set expandtab                           " Converts tabs to spaces
 											set smartindent                         " Makes indenting smart
 											set autoindent                          " Good auto indent
+                                            set completeopt=menuone,noinsert,noselect
 											set laststatus=2                        " Always display the status line
 											set number relativenumber               " Line numbers
 											set cursorline                          " Enable highlighting of the current line
@@ -127,12 +134,16 @@
 											set clipboard=unnamedplus               " Copy paste between vim and everything else
 											set incsearch
 											set guifont=Fira\ Code\ Nerd\ Font
+                                            set diffopt+=vertical
 
+                                            filetype plugin indent on
 
 											colorscheme gruvbox
 											highlight Normal guibg=none
 
-											let mapleager =" "
+											let mapleager = " "
+
+                                            let g:markdown_fenced_languages = ['javascript','js=javascript', 'json=javascript', 'python', 'vim', 'sh', 'bash=sh', 'shell=sh', ]
 
 											nmap <leader>gj :diffget //3<CR>
 											nmap <leader>gf :diffget //2<CR>
@@ -143,6 +154,32 @@
 											nmap F <Plug>(coc-smartf-backward)
 											nmap ; <Plug>(coc-smartf-repeat)
 											nmap , <Plug>(coc-smartf-repeat-opposite)
+
+                                            " neoterm
+                                            let g:neoterm_default_mod = 'vertical'
+                                            let g:neoterm_size = 60
+                                            let g:neoterm_autoinsert = 1
+                                            nnoremap <c-q> :Ttoggle<CR>
+                                            inoremap <c-q> <Esc> :Ttoggle<CR>
+                                            tnoremap <c-q> <c-\><c-n> :Ttoggle<CR>
+
+                                            " neoformat
+                                            nnoremap <leader>F :Neoformat prettier<CR>
+
+                                            " fzf
+                                            nnoremap <leader><space> :GFiles<CR>
+                                            nnoremap <leader>ff :Rg<CR>
+                                            inoremap <expr> <c-x><c-f> "fzf#vim#complete#path(
+                                              \ "find . -path '*/\.*' -prune -o -print\| sed '1d;s:^..::'",
+                                              \ fzf#wrap({'dir':expand('%:p:h')}))
+                                            if has('nvim')
+                                              au! TermOpen * tnoremap <buffer> <Esc> <c-\><c-n>
+                                              au! FileType fzf tunmap <buffer> <Esc>
+                                            endif
+
+                                            " fugitive
+                                            nnoremap <leader>gg :G<CR>
+
 
 											augroup Smartf
 											  autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#6638F0
