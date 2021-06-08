@@ -6,11 +6,6 @@
                       fsType = "btrfs";
                       options = ["subvol=@data"];
                   };
-  # fileSystems."/home/lk/vm" = {
-  #                     device = "/dev/disk/by-uuid/2f8299dd-bba5-4256-81cf-516828cc910b";
-  #                     fsType = "btrfs";
-  #                     options = ["subvol=@vm"];
-  #                 };
 
   fileSystems."/home/lk/vm" = {
                       device = "/dev/disk/by-uuid/ef94fe71-c21b-4da8-aabb-e80588efc941";
