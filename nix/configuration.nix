@@ -5,6 +5,7 @@
 			[ # Include the results of the hardware scan.
 				./hardware-configuration.nix
 				./system.nix		# Base system settings
+                ./btrfs.nix
 				./nvidia.nix
 				./sound.nix     # sound
 				./locale.nix    # system localisation

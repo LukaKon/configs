@@ -93,7 +93,7 @@
                         # brasero
 
                         # snipping tool
-                        # shutter
+                        shutter
 
                         # office
                         libreoffice
