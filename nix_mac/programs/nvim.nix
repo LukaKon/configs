@@ -32,6 +32,7 @@
 												fzf-vim
                                                 # nvim-tree-lua
                                                 # python-mode
+                                                vim-multiple-cursors
 												vim-commentary
 												tabular
 												syntastic
@@ -40,6 +41,7 @@
 												vim-csharp
 												neomake
 												neoformat
+                                                SimpylFold
                                                 neoterm
                                                 vim-javascript
                                                 vim-commentary
@@ -75,6 +77,7 @@
 												vim-jinja
 
                                                 vim-yapf
+                                                jedi-vim
 
 												colorizer
 
@@ -172,6 +175,26 @@
 
                                             " neoformat
                                             nnoremap <leader>F :Neoformat prettier<CR>
+                                            " Enable alignment
+                                            let g:neoformat_basic_format_align = 1
+
+                                            " Enable tab to space conversion
+                                            let g:neoformat_basic_format_retab = 1
+
+                                            " Enable trimmming of trailing whitespace
+                                            let g:neoformat_basic_format_trim = 1
+
+                                            " jedi-vim
+                                            " disable autocompletion, because we use deoplete for completion
+                                            let g:jedi#completions_enabled = 0
+
+                                            " open the go-to function in split, not another buffer
+                                            let g:jedi#use_splits_not_buffers = "right"
+
+                                            " neomake
+                                            let g:neomake_python_enabled_makers = ['pylint']
+                                            call neomake#configure#automake('nrwi', 500)
+
 
                                             " fzf
                                             nnoremap <leader><space> :GFiles<CR>
