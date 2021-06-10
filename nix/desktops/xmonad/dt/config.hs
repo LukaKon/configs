@@ -160,14 +160,6 @@ myScratchPads = [
                  w = 0.9
                  t = 0.95 -h
                  l = 0.95 -w
-    -- spawnCalc  = "qalculate-gtk"
-    -- findCalc   = className =? "Qalculate-gtk"
-    -- manageCalc = customFloating $ W.RationalRect l t w h
-            --    where
-                --  h = 0.5
-                --  w = 0.4
-                --  t = 0.75 -h
-                --  l = 0.70 -w
 --Makes setting the spacingRaw simpler to write. The spacingRaw module adds a configurable amount of space around windows.
 mySpacing :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spacing l a
 mySpacing i = spacingRaw False (Border i i i i) True (Border i i i i) True

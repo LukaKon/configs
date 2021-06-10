@@ -14,7 +14,7 @@
             windowManager = {                     # Open configuration for the window manager.
                 xmonad = {
                     enable = true;                                # Enable xmonad.
-                    config = ./config.hs;
+                    config = ./xmonad.hs;
                     # haskellPackages = [];
                     enableContribAndExtras = true;                # Enable xmonad contrib and extras.
                     extraPackages = hp: [                      # Open configuration for additional Haskell packages.

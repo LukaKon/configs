@@ -26,9 +26,10 @@
                                                 # file explorer
                                                 The_NERD_tree
                                                 # nerdtree
-                                                # nerdtree-git-plugin
-                                                # vim-nerdtree-syntax-highlight
-                                                # vim-nerdtree-tabs
+                                                nerdtree-git-plugin
+                                                vim-devicons
+                                                vim-nerdtree-syntax-highlight
+                                                vim-nerdtree-tabs
 												fzf-vim
                                                 # nvim-tree-lua
                                                 # python-mode
@@ -230,6 +231,22 @@
 
                                             let g:NERDTreeDirArrowExpandable = '▸'
                                             let g:NERDTreeDirArrowCollapsible = '▾'
+
+                                            let g:NERDTreeGitStatusIndicatorMapCustom = {
+                                            \ 'Modified'  :'✹',
+                                            \ 'Staged'    :'✚',
+                                            \ 'Untracked' :'✭',
+                                            \ 'Renamed'   :'➜',
+                                            \ 'Unmerged'  :'═',
+                                            \ 'Deleted'   :'✖',
+                                            \ 'Dirty'     :'✗',
+                                            \ 'Ignored'   :'☒',
+                                            \ 'Clean'     :'✔︎',
+                                            \ 'Unknown'   :'?',
+                                            \ }
+
+                                            let g:NERDTreeGitStatusUseNerdFonts = 1 " you should install nerdfonts by yourself. default: 0
+                                            let g:NERDTreeGitStatusShowIgnored = 1 " a heavy feature may cost much more time. default: 0
 
                                             " Explorer
                                             " let g:coc_explorer_global_presets = {
