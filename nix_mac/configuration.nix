@@ -5,6 +5,7 @@
 			[ # Include the results of the hardware scan.
 				./hardware-configuration.nix
 				./system.nix		# Base system settings
+                ./btrfs.nix
 				./network.nix		# Network configuration
 				./programs.nix		# List of installed programs
 				./sound.nix
