@@ -53,6 +53,7 @@
                         # arduino
                         jetbrains.pycharm-community
                         # thonny
+                        dbeaver
 
                         # LaTeX
                         texlive.combined.scheme-full
@@ -120,9 +121,9 @@
                             termcolor
                             # ipython
                             # bpython
-			    ptpython
+                            ptpython
                             pylint
-                            jupyter
+                            # jupyter
                         ]))
                     ];
 	};

@@ -24,6 +24,11 @@
 												gruvbox-community
 
                                                 # file explorer
+                                                The_NERD_tree
+                                                # nerdtree
+                                                # nerdtree-git-plugin
+                                                # vim-nerdtree-syntax-highlight
+                                                # vim-nerdtree-tabs
 												fzf-vim
                                                 # nvim-tree-lua
                                                 # python-mode
@@ -38,7 +43,7 @@
                                                 neoterm
                                                 vim-javascript
                                                 vim-commentary
-                                                coc-explorer
+                                                # coc-explorer
 												coc-fzf
                                                 coc-emmet
 												coc-tabnine
@@ -182,44 +187,65 @@
                                             " fugitive
                                             nnoremap <leader>gg :G<CR>
 
-                                            " Explorer
-                                            let g:coc_explorer_global_presets = {
-                                            \   '.vim': {
-                                            \     'root-uri': '~/.vim',
-                                            \   },
-                                            \   'tab': {
-                                            \     'position': 'tab',
-                                            \     'quit-on-open': v:true,
-                                            \   },
-                                            \   'floating': {
-                                            \     'position': 'floating',
-                                            \     'open-action-strategy': 'sourceWindow',
-                                            \   },
-                                            \   'floatingTop': {
-                                            \     'position': 'floating',
-                                            \     'floating-position': 'center-top',
-                                            \     'open-action-strategy': 'sourceWindow',
-                                            \   },
-                                            \   'floatingLeftside': {
-                                            \     'position': 'floating',
-                                            \     'floating-position': 'left-center',
-                                            \     'floating-width': 50,
-                                            \     'open-action-strategy': 'sourceWindow',
-                                            \   },
-                                            \   'floatingRightside': {
-                                            \     'position': 'floating',
-                                            \     'floating-position': 'right-center',
-                                            \     'floating-width': 50,
-                                            \     'open-action-strategy': 'sourceWindow',
-                                            \   },
-                                            \   'simplify': {
-                                            \     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
-                                            \   }
-                                            \ }
+                                            " NERDTree
+                                            nnoremap <leader>n :NERDTreeFocus<CR>
+                                            nnoremap <C-n> :NERDTree<CR>
+                                            nnoremap <C-t> :NERDTreeToggle<CR>
+                                            nnoremap <C-f> :NERDTreeFind<CR>
 
-                                            nmap <space>e :CocCommand explorer<CR>
-                                            nmap <space>f :CocCommand explorer --preset floating<CR>
-                                            autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+                                            " Start NERDTree when Vim is started without file arguments.
+                                            autocmd StdinReadPre * let s:std_in=1
+                                            autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+
+                                            " Exit Vim if NERDTree is the only window left.
+                                            autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+                                                \ quit | endif
+
+                                            " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+                                            autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+                                                \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+
+                                            let g:NERDTreeDirArrowExpandable = '▸'
+                                            let g:NERDTreeDirArrowCollapsible = '▾'
+
+                                            " Explorer
+                                            " let g:coc_explorer_global_presets = {
+                                            " \   '.vim': {
+                                            " \     'root-uri': '~/.vim',
+                                            " \   },
+                                            " \   'tab': {
+                                            " \     'position': 'tab',
+                                            " \     'quit-on-open': v:true,
+                                            " \   },
+                                            " \   'floating': {
+                                            " \     'position': 'floating',
+                                            " \     'open-action-strategy': 'sourceWindow',
+                                            " \   },
+                                            " \   'floatingTop': {
+                                            " \     'position': 'floating',
+                                            " \     'floating-position': 'center-top',
+                                            " \     'open-action-strategy': 'sourceWindow',
+                                            " \   },
+                                            " \   'floatingLeftside': {
+                                            " \     'position': 'floating',
+                                            " \     'floating-position': 'left-center',
+                                            " \     'floating-width': 50,
+                                            " \     'open-action-strategy': 'sourceWindow',
+                                            " \   },
+                                            " \   'floatingRightside': {
+                                            " \     'position': 'floating',
+                                            " \     'floating-position': 'right-center',
+                                            " \     'floating-width': 50,
+                                            " \     'open-action-strategy': 'sourceWindow',
+                                            " \   },
+                                            " \   'simplify': {
+                                            " \     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+                                            " \   }
+                                            " \ }
+
+                                            " nmap <space>e :CocCommand explorer<CR>
+                                            " nmap <space>f :CocCommand explorer --preset floating<CR>
+                                            " autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
 											augroup Smartf
 											  autocmd User SmartfEnter :hi Conceal ctermfg=220 guifg=#6638F0
