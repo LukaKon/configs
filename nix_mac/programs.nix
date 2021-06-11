@@ -123,7 +123,7 @@
                             # bpython
                             ptpython
                             pylint
-                            # jupyter
+                            jupyter
                         ]))
                     ];
 	};
