@@ -50,6 +50,7 @@
                                                 SimpylFold
                                                 neoterm
                                                 vim-javascript
+                                                emmet-vim
                                                 # coc-explorer
 												coc-fzf
                                                 coc-emmet
@@ -91,6 +92,8 @@
 												deoplete-nvim
 												deoplete-clang
 												deoplete-github
+                                                deoplete-tabnine
+
 
 												# git
 												vim-gitgutter
@@ -189,7 +192,10 @@
                                             " Enable trimmming of trailing whitespace
                                             let g:neoformat_basic_format_trim = 1
 
-                                            " jedi-vim
+                                            " deoplete
+                                            " let g:deoplete#enable_at_startup = 1
+
+                                            "jedi-vim
                                             " disable autocompletion, because we use deoplete for completion
                                             let g:jedi#completions_enabled = 0
 
