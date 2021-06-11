@@ -34,7 +34,12 @@
                                                 # nvim-tree-lua
                                                 # python-mode
                                                 vim-multiple-cursors
-												vim-commentary
+                                                vim-commentary
+
+                                                # completion
+                                                # nvim-lspconfig
+                                                completion-nvim
+
 												tabular
 												syntastic
 												vim-nix
@@ -45,7 +50,6 @@
                                                 SimpylFold
                                                 neoterm
                                                 vim-javascript
-                                                vim-commentary
                                                 # coc-explorer
 												coc-fzf
                                                 coc-emmet
