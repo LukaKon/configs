@@ -51,6 +51,7 @@
                         ranger
 
                         # IDE
+                        # spacevim
                         vscode
                         arduino
                         jetbrains.pycharm-community

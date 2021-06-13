@@ -81,9 +81,13 @@
 												# Start screen
 												vim-startify
 												vim-jinja
-
                                                 vim-yapf
                                                 jedi-vim
+
+                                                nginx-vim
+
+                                                unicode-vim
+                                                # tagbar
 
 												colorizer
 
@@ -346,6 +350,9 @@
                                             " commenting
                                             nnoremap <space>/ :Commentary<CR>
                                             vnoremap <space>/ :Commentary<CR>
+
+                                            " tagbar
+                                            " nmap <F8> :TagbarToggle<CR>
                                 '';
                                     #opt=[];
                                 };

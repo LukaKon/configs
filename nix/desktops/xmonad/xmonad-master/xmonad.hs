@@ -21,15 +21,7 @@ import qualified Data.Map        as M
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myFont :: String
-myFont = "xft:SauceCodePro Nerd Font Mono:regular:size=10:antialias=true:hinting=true"
-myTerminal :: String
-myTerminal = "alacritty"    -- Sets default terminal
-myBrowser :: String
-myBrowser = "qutebrowser "  -- Sets qutebrowser as browser
-myEditor :: String
-myEditor = "nvim"  -- Sets nvim as editor
--- myEditor = myTerminal ++ " -e vim "    -- Sets vim as editor
+myTerminal      = "terminator"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -48,7 +40,6 @@ myBorderWidth   = 1
 -- ("right alt"), which does not conflict with emacs keybindings. The
 -- "windows key" is usually mod4Mask.
 --
-myModMask :: KeyMask
 myModMask       = mod4Mask
 
 -- The default number of workspaces (virtual screens) and their names.
@@ -60,12 +51,12 @@ myModMask       = mod4Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces    = ["0","2","3","4","5","6","7","8","9"]
+myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
-myNormalBorderColor  = "#282c34"
-myFocusedBorderColor = "#46d9ff"
+myNormalBorderColor  = "#dddddd"
+myFocusedBorderColor = "#ff0000"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -268,7 +259,7 @@ myStartupHook = return ()
 myBar = "xmobar"
 
 -- Custom PP, configure it as you like. It determines what is being written to the bar.
-myPP = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "|" "|" }
+myPP = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "<" ">" }
 
 -- Key binding to toggle the gap for the bar.
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
