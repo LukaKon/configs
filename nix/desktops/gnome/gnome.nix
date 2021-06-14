@@ -4,16 +4,19 @@
 	# imports = [ ./services/desktops/gnome/dconf.nix ];
 	# imports = [ ./dconf.nix ];
 
+    hardware.nvidia.modesetting.enable = true;
+
 	services.xserver = {
 						enable = true;
-						videoDrivers = ["nvidia"]; #["nouveau"];
+						# videoDrivers = ["nvidia"]; #["nouveau"];
 						# displayManager.startx.enable = true;  # necessary to
 						# create .xinitrc file
 
 						# Gnome
 						displayManager.gdm.enable = true;
-						displayManager.gdm.wayland = false;
-						desktopManager.gnome3.enable = true;
+						displayManager.gdm.nvidiaWayland = true;
+						# displayManager.gdm.wayland = false;
+						desktopManager.gnome.enable = true;
 
 						layout = "pl";
 					};
@@ -21,14 +24,29 @@
 											[
 												gnome3.adwaita-icon-theme
 												# gnome-shell-extension-appindicator-32
-												gnomeExtensions.arc-menu
+												# gnomeExtensions.arc-menu
 												# gnomeExtensions.icon-hider  # broken
 												gnomeExtensions.sound-output-device-chooser
 												gnomeExtensions.tilingnome
+                                                gnomeExtensions.just-perfection
+                                                gnomeExtensions.tweaks-in-system-menu
+
+                                                gnomeExtensions.ddterm
+
+                                                gnome.gnome-tweaks
+
+                                                gnome-breeze
 
 												dconf2nix
 												brasero
-												etcher
+                                                etcher
+
+
+                                                foot
+                                                havoc
+                                                # kgx
+												# kitty
+												# terminator
 											];
 	services = {
 		udev.packages = with pkgs;
@@ -45,7 +63,7 @@
 											gnome3.dconf
 										];
 	};
-	environment.gnome3.excludePackages = with pkgs;
+	environment.gnome.excludePackages = with pkgs;
                                         [
 											gnome3.totem
 											gnome3.geary

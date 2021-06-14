@@ -24,7 +24,6 @@
                         hp.xmonad-extras                                # Install xmonad-extras.
                         hp.xmonad                                       # Install xmonad itself.
                     ];
-                    # default = "xmonad";                                  # Set xmonad as the default window manager.
                     };
                 };
 
