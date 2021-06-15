@@ -36,6 +36,8 @@
                                                 vim-multiple-cursors
                                                 vim-commentary
 
+                                                vim-autoformat
+
                                                 # completion
                                                 # nvim-lspconfig
                                                 completion-nvim
@@ -81,9 +83,13 @@
 												# Start screen
 												vim-startify
 												vim-jinja
-
                                                 vim-yapf
                                                 jedi-vim
+
+                                                nginx-vim
+
+                                                unicode-vim
+                                                # tagbar
 
 												colorizer
 
@@ -167,11 +173,29 @@
 											nmap <leader>gf :diffget //2<CR>
 											nmap <leader>gs :G<CR>
 
+                                            " coc
 											" press <esc> to cancel.
 											nmap f <Plug>(coc-smartf-forward)
 											nmap F <Plug>(coc-smartf-backward)
 											nmap ; <Plug>(coc-smartf-repeat)
 											nmap , <Plug>(coc-smartf-repeat-opposite)
+
+                                            let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-python']
+
+                                            " integrated terminal
+                                            " open new split panes to right and below
+                                            "set splitright
+                                            "set splitbelow
+                                            " turn terminal to normal mode with escape
+                                            "tnoremap <Esc> <C-\><C-n>
+                                            " start terminal in insert mode
+                                            "au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+                                            " open terminal on ctrl+n
+                                            "function! OpenTerminal()
+                                            "  split term://bash
+                                            "    resize 10
+                                            "    endfunction
+                                            "    nnoremap <c-n> :call OpenTerminal()<CR>
 
                                             " neoterm
                                             let g:neoterm_default_mod = 'vertical'
@@ -180,6 +204,11 @@
                                             nnoremap <c-q> :Ttoggle<CR>
                                             inoremap <c-q> <Esc> :Ttoggle<CR>
                                             tnoremap <c-q> <c-\><c-n> :Ttoggle<CR>
+
+                                            " vim-autoformat
+                                            noremap <F3> :Autoformat<CR>
+                                            " format on save
+                                            au BufWrite * :Autoformat
 
                                             " neoformat
                                             nnoremap <leader>F :Neoformat prettier<CR>
@@ -208,24 +237,45 @@
 
 
                                             " fzf
-                                            nnoremap <leader><space> :GFiles<CR>
-                                            nnoremap <leader>ff :Rg<CR>
-                                            inoremap <expr> <c-x><c-f> "fzf#vim#complete#path(
-                                              \ "find . -path '*/\.*' -prune -o -print\| sed '1d;s:^..::'",
-                                              \ fzf#wrap({'dir':expand('%:p:h')}))
-                                            if has('nvim')
-                                              au! TermOpen * tnoremap <buffer> <Esc> <c-\><c-n>
-                                              au! FileType fzf tunmap <buffer> <Esc>
-                                            endif
+                                            nnoremap <C-p> :FZF<CR>
+                                            let g:fzf_action = {
+                                              \ 'ctrl-t': 'tab split',
+                                              \ 'ctrl-s': 'split',
+                                              \ 'ctrl-v': 'vsplit'
+                                              \}
+
+                                            "nnoremap <leader><space> :GFiles<CR>
+                                            "nnoremap <leader>ff :Rg<CR>
+                                            "inoremap <expr> <c-x><c-f> "fzf#vim#complete#path(
+                                            "  \ "find . -path '*/\.*' -prune -o -print\| sed '1d;s:^..::'",
+                                            "  \ fzf#wrap({'dir':expand('%:p:h')}))
+                                            "if has('nvim')
+                                            "  au! TermOpen * tnoremap <buffer> <Esc> <c-\><c-n>
+                                            "  au! FileType fzf tunmap <buffer> <Esc>
+                                            "endif
 
                                             " fugitive
                                             nnoremap <leader>gg :G<CR>
 
                                             " NERDTree
+                                            let g:NERDTreeShowHidden = 1
+                                            let g:NERDTreeMinimalUI = 1
+                                            let g:NERDTreeIgnore = []
+
                                             nnoremap <leader>n :NERDTreeFocus<CR>
                                             nnoremap <C-n> :NERDTree<CR>
                                             nnoremap <C-t> :NERDTreeToggle<CR>
                                             nnoremap <C-f> :NERDTreeFind<CR>
+
+                                            " use alt+hjkl to move between split/vsplit panels
+                                            tnoremap <A-h> <C-\><C-n><C-w>h
+                                            tnoremap <A-j> <C-\><C-n><C-w>j
+                                            tnoremap <A-k> <C-\><C-n><C-w>k
+                                            tnoremap <A-l> <C-\><C-n><C-w>l
+                                            nnoremap <A-h> <C-w>h
+                                            nnoremap <A-j> <C-w>j
+                                            nnoremap <A-k> <C-w>k
+                                            nnoremap <A-l> <C-w>l
 
                                             " Start NERDTree when Vim is started without file arguments.
                                             autocmd StdinReadPre * let s:std_in=1
@@ -346,6 +396,9 @@
                                             " commenting
                                             nnoremap <space>/ :Commentary<CR>
                                             vnoremap <space>/ :Commentary<CR>
+
+                                            " tagbar
+                                            " nmap <F8> :TagbarToggle<CR>
                                 '';
                                     #opt=[];
                                 };
