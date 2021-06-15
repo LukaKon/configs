@@ -36,6 +36,8 @@
                                                 vim-multiple-cursors
                                                 vim-commentary
 
+                                                vim-autoformat
+
                                                 # completion
                                                 # nvim-lspconfig
                                                 completion-nvim
@@ -182,26 +184,31 @@
 
                                             " integrated terminal
                                             " open new split panes to right and below
-                                            set splitright
-                                            set splitbelow
+                                            "set splitright
+                                            "set splitbelow
                                             " turn terminal to normal mode with escape
-                                            tnoremap <Esc> <C-\><C-n>
+                                            "tnoremap <Esc> <C-\><C-n>
                                             " start terminal in insert mode
-                                            au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+                                            "au BufEnter * if &buftype == 'terminal' | :startinsert | endif
                                             " open terminal on ctrl+n
-                                            function! OpenTerminal()
-                                              split term://bash
-                                                resize 10
-                                                endfunction
-                                                nnoremap <c-n> :call OpenTerminal()<CR>
+                                            "function! OpenTerminal()
+                                            "  split term://bash
+                                            "    resize 10
+                                            "    endfunction
+                                            "    nnoremap <c-n> :call OpenTerminal()<CR>
 
                                             " neoterm
-                                            "let g:neoterm_default_mod = 'vertical'
-                                            "let g:neoterm_size = 60
-                                            "let g:neoterm_autoinsert = 1
-                                            "nnoremap <c-q> :Ttoggle<CR>
-                                            "inoremap <c-q> <Esc> :Ttoggle<CR>
-                                            "tnoremap <c-q> <c-\><c-n> :Ttoggle<CR>
+                                            let g:neoterm_default_mod = 'vertical'
+                                            let g:neoterm_size = 60
+                                            let g:neoterm_autoinsert = 1
+                                            nnoremap <c-q> :Ttoggle<CR>
+                                            inoremap <c-q> <Esc> :Ttoggle<CR>
+                                            tnoremap <c-q> <c-\><c-n> :Ttoggle<CR>
+
+                                            " vim-autoformat
+                                            noremap <F3> :Autoformat<CR>
+                                            " format on save
+                                            au BufWrite * :Autoformat
 
                                             " neoformat
                                             nnoremap <leader>F :Neoformat prettier<CR>
