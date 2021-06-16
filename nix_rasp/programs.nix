@@ -1,23 +1,23 @@
 { config, pkgs, ... }:
 
 {
-    environment = {
-                    systemPackages = with pkgs;
-                    [
-                        nix
+  environment = {
+    systemPackages = with pkgs;
+    [
+      nix
 
-                        doas
-                        tree
-                        pstree  # process tree
-                        wget
-                        curl
-                        git
-                        rsync
+      doas
+      tree
+      pstree  # process tree
+      wget
+      curl
+      git
+      rsync
 
-                        bat
-                        fd
+      bat
+      fd
 
-                        nodejs
+      nodejs
 
                         # monitoring
                         bmon
@@ -52,7 +52,7 @@
                         # ranger
 
                         # IDE
-                         vscode
+                        vscode
                         # arduino
                         # jetbrains.pycharm-community
                         # jetbrains.pycharm-professional
@@ -76,7 +76,7 @@
                         # librecad
 
                         # www
-                        firefox
+                        # firefox
                         # geckodriver
                         qutebrowser
                         # brave
@@ -108,20 +108,20 @@
 
                         (python38.withPackages(ps: with ps;
                         [
-                            autopep8
-                            flake8
-                            colorama
-                            psutil
-                            pip
-                            pynvim
-                            yapf
-                            jedi
-                            termcolor
+                          autopep8
+                          flake8
+                          colorama
+                          psutil
+                          pip
+                          pynvim
+                          yapf
+                          jedi
+                          termcolor
                             # ipython
-                             bpython
+                            bpython
                             # pylint
                             # jupyter
-                        ]))
-                    ];
-    };
-}
+                          ]))
+                        ];
+                      };
+                    }
