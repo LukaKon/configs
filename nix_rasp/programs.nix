@@ -19,109 +19,109 @@
 
       nodejs
 
-                        # monitoring
-                        bmon
-                        htop
-                        # nvtop
-                        # iotop
-                        lm_sensors
-                        # ncdu # disk analisys
-                        # sysstat
+      # monitoring
+      bmon
+      htop
+      # nvtop
+      # iotop
+      lm_sensors
+      # ncdu # disk analisys
+      # sysstat
 
-                        # terminal
-                        # termite
-                        alacritty
-                        # xterm
+      # terminal
+      # termite
+      alacritty
+      # xterm
 
-                        # text editor
-                        neovim
-                        # ueberzug
-                        fzf
-                        xsel  # for copying
-                        clipmenu  # for copying
+      # text editor
+      neovim
+      # ueberzug
+      fzf
+      xsel  # for copying
+      clipmenu  # for copying
 
-                        # packer
-                        # unzip
-                        # unar
-                        xarchiver
-                        p7zip
+      # packer
+      # unzip
+      # unar
+      xarchiver
+      p7zip
 
-                        # file managers
-                        vifm-full
-                        # pcmanfm
-                        # ranger
+      # file managers
+      vifm-full
+      # pcmanfm
+      # ranger
 
-                        # IDE
-                        vscode
-                        # arduino
-                        # jetbrains.pycharm-community
-                        # jetbrains.pycharm-professional
-                        #monodevelop
-                        # thonny
-                        # unityhub
+      # IDE
+      # vscode
+      # arduino
+      # jetbrains.pycharm-community
+      # jetbrains.pycharm-professional
+      #monodevelop
+      # thonny
+      # unityhub
 
-                        # wordpress
+      # wordpress
 
-                        # LaTeX
-                        # texlive.combined.scheme-full
-                        # texstudio
+      # LaTeX
+      # texlive.combined.scheme-full
+      # texstudio
 
-                        # graphics
-                        # blender
-                        darktable
-                        gimp
-                        krita
+      # graphics
+      # blender
+      darktable
+      gimp
+      krita
 
-                        # cad
-                        # librecad
+      # cad
+      # librecad
 
-                        # www
-                        # firefox
-                        # geckodriver
-                        qutebrowser
-                        # brave
-                        # tor-browser-bundle-bin
+      # www
+      # firefox
+      # geckodriver
+      qutebrowser
+      # brave
+      # tor-browser-bundle-bin
 
-                        # comunicator
-                        # signal-desktop
-                        # slack
+      # comunicator
+      # signal-desktop
+      # slack
 
-                        # video conference
-                        # zoom-us
+      # video conference
+      # zoom-us
 
-                        # snipping tool
-                        # shutter
+      # snipping tool
+      # shutter
 
-                        # office
-                        libreoffice
+      # office
+      libreoffice
 
-                        # media
-                        #  feh # picture viewer
-                        # mpv # video player
-                        # libdvdcss # plugin to play cd/dvd in mpv
-                        #  moc  # music player
-                        # youtube-dl
+      # media
+      #  feh # picture viewer
+      # mpv # video player
+      # libdvdcss # plugin to play cd/dvd in mpv
+      #  moc  # music player
+      # youtube-dl
 
-                        # psutils
-                        # pciutils
-                        # gputils
+      # psutils
+      # pciutils
+      # gputils
 
-                        (python38.withPackages(ps: with ps;
-                        [
-                          autopep8
-                          flake8
-                          colorama
-                          psutil
-                          pip
-                          pynvim
-                          yapf
-                          jedi
-                          termcolor
-                            # ipython
-                            bpython
-                            # pylint
-                            # jupyter
-                          ]))
-                        ];
-                      };
-                    }
+      (python38.withPackages(ps: with ps;
+      [
+        autopep8
+        flake8
+        colorama
+        psutil
+        pip
+        pynvim
+        yapf
+        jedi
+        termcolor
+          # ipython
+          bpython
+          # pylint
+          # jupyter
+        ]))
+      ];
+    };
+  }
