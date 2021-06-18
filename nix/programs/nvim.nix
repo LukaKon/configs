@@ -98,6 +98,7 @@
                                                 # tagbar
 
                                                 colorizer
+                                                vim-surround
 
                                                 deoplete-zsh
                                                 deoplete-jedi
