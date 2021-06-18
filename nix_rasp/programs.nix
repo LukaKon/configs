@@ -29,7 +29,6 @@
       # sysstat
 
       # terminal
-      # termite
       alacritty
       # xterm
 
@@ -53,12 +52,7 @@
 
       # IDE
       # vscode
-      # arduino
-      # jetbrains.pycharm-community
-      # jetbrains.pycharm-professional
-      #monodevelop
       # thonny
-      # unityhub
 
       # wordpress
 
@@ -106,7 +100,7 @@
       # pciutils
       # gputils
 
-      (python38.withPackages(ps: with ps;
+      (python39.withPackages(ps: with ps;
       [
         autopep8
         flake8
