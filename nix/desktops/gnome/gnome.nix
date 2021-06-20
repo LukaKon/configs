@@ -41,11 +41,7 @@
       brasero
       etcher
 
-      foot
-      havoc
-      # kgx
       # kitty
-      # terminator
     ];
     services = {
       udev.packages = with pkgs;
