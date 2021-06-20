@@ -64,7 +64,7 @@
       # blender
       darktable
       gimp
-      krita
+      # krita
 
       # cad
       # librecad
