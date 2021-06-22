@@ -28,19 +28,15 @@
       # gnomeExtensions.icon-hider  # broken
       gnomeExtensions.sound-output-device-chooser
       gnomeExtensions.tilingnome
-      gnomeExtensions.just-perfection
-      gnomeExtensions.tweaks-in-system-menu
-
-      gnomeExtensions.ddterm
-
+      gnomeExtensions.gnome-shell-extension-just-perfection
+      gnomeExtensions.gnome-shell-extension-tweaks-in-system-menu
+      gnomeExtensions.gnome-shell-extension-ddterm
       gnome.gnome-tweaks
-
       gnome-breeze
 
       dconf2nix
       brasero
-      etcher
-
+      # etcher
       # kitty
     ];
     services = {
