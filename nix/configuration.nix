@@ -26,7 +26,7 @@
     # ./services/remote.nix # remote server/desktop
     ./services/cron.nix
     ./programs/zsh.nix  # zsh and console settings
-    ./programs/steam.nix        # Steam gaming portal
+    # ./programs/steam.nix        # Steam gaming portal
     ./fonts.nix     # Fonts to install
     ./hdd.nix           # Additional HDD
     # ./nfs.nix

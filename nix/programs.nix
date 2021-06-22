@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 
 {
-    environment = {
-                    systemPackages = with pkgs;
-                    [
+  environment = {
+    systemPackages = with pkgs;
+    [
                         # nix
                         nix-prefetch-git
 
@@ -51,7 +51,7 @@
                         ranger
 
                         # IDE
-                        # spacevim
+                        spacevim
                         vscode
                         arduino
                         jetbrains.pycharm-community
@@ -122,20 +122,20 @@
 
                         (python39.withPackages(ps: with ps;
                         [
-                            autopep8
-                            flake8
-                            colorama
-                            psutil
-                            pip
-                            pynvim
-                            yapf
-                            jedi
-                            termcolor
+                          autopep8
+                          flake8
+                          colorama
+                          psutil
+                          pip
+                          pynvim
+                          yapf
+                          jedi
+                          termcolor
                             # ipython
                             bpython
                             pylint
                             jupyter
-                        ]))
-                    ];
-    };
-}
+                          ]))
+                        ];
+                      };
+                    }
