@@ -92,7 +92,7 @@
                         # skype
 
                         # cd burner
-                        # brasero
+                        brasero
 
                         # snipping tool
                         shutter
