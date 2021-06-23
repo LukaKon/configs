@@ -1,6 +1,6 @@
 {config, lib, ...}:
 {
-    environment.shellAliases = {
+  environment.shellAliases = {
                                 # git
                                 gs = "git status -s";
                                 ga = "git add";
@@ -34,5 +34,5 @@
                                 # data
                                 #rdata = "cd && rsync -rav --exclude=".snapshots" data/ ssh
                                 #lk@192.168.0.2:/volume2/homes/lk/Drive/pliki/";
-                            };
-}
+                              };
+                            }
