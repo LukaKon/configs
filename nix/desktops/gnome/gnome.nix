@@ -28,9 +28,12 @@
       # gnomeExtensions.icon-hider  # broken
       gnomeExtensions.sound-output-device-chooser
       gnomeExtensions.tilingnome
-      gnomeExtensions.gnome-shell-extension-just-perfection
-      gnomeExtensions.gnome-shell-extension-tweaks-in-system-menu
-      gnomeExtensions.gnome-shell-extension-ddterm
+      # gnomeExtensions.gnome-shell-extension-just-perfection
+      gnomeExtensions.just-perfection
+      # gnomeExtensions.gnome-shell-extension-tweaks-in-system-menu
+      gnomeExtensions.tweaks-in-system-menu
+      # gnomeExtensions.gnome-shell-extension-ddterm
+      gnomeExtensions.ddterm
       gnome.gnome-tweaks
       gnome-breeze
 
