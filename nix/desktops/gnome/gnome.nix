@@ -4,18 +4,18 @@
     # imports = [ ./services/desktops/gnome/dconf.nix ];
     # imports = [ ./dconf.nix ];
 
-    # hardware.nvidia.modesetting.enable = true;
+    hardware.nvidia.modesetting.enable = true;
 
     services.xserver = {
       enable = true;
-      videoDrivers = ["nvidia"];
+      # videoDrivers = ["nvidia"];
       # displayManager.startx.enable = true;  # necessary to
       # create .xinitrc file
 
       # Gnome
       displayManager.gdm.enable = true;
-      # displayManager.gdm.nvidiaWayland = true;
-      displayManager.gdm.wayland = false;
+      displayManager.gdm.nvidiaWayland = true;
+      # displayManager.gdm.wayland = false;
       desktopManager.gnome.enable = true;
 
       layout = "pl";
@@ -23,23 +23,19 @@
     environment.systemPackages = with pkgs;
     [
       gnome3.adwaita-icon-theme
-      # gnome-shell-extension-appindicator-32
       # gnomeExtensions.arc-menu
       # gnomeExtensions.icon-hider  # broken
       gnomeExtensions.sound-output-device-chooser
       gnomeExtensions.tilingnome
-      # gnomeExtensions.gnome-shell-extension-just-perfection
       gnomeExtensions.just-perfection
-      # gnomeExtensions.gnome-shell-extension-tweaks-in-system-menu
       gnomeExtensions.tweaks-in-system-menu
-      # gnomeExtensions.gnome-shell-extension-ddterm
       gnomeExtensions.ddterm
       gnome.gnome-tweaks
       gnome-breeze
 
       dconf2nix
       brasero
-      # etcher
+      etcher
       # kitty
     ];
     services = {

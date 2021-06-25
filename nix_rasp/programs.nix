@@ -30,6 +30,7 @@
 
       # terminal
       alacritty
+      foot
       # xterm
 
       # text editor
