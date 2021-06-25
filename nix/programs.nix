@@ -30,6 +30,7 @@
 
                         # terminal
                         alacritty
+                        foot
                         # xterm
 
                         # text editor
@@ -51,7 +52,7 @@
                         ranger
 
                         # IDE
-                        spacevim
+                        # spacevim
                         vscode
                         arduino
                         jetbrains.pycharm-community
