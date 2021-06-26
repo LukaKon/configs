@@ -4,7 +4,7 @@
     # imports = [ ./services/desktops/gnome/dconf.nix ];
     # imports = [ ./dconf.nix ];
 
-    hardware.nvidia.modesetting.enable = true;
+    # hardware.nvidia.modesetting.enable = true;
 
     services.xserver = {
       enable = true;
@@ -14,8 +14,8 @@
 
       # Gnome
       displayManager.gdm.enable = true;
-      displayManager.gdm.nvidiaWayland = true;
-      # displayManager.gdm.wayland = false;
+      # displayManager.gdm.nvidiaWayland = true;
+      displayManager.gdm.wayland = false;
       desktopManager.gnome.enable = true;
 
       layout = "pl";
@@ -29,7 +29,7 @@
       gnomeExtensions.tilingnome
       gnomeExtensions.just-perfection
       gnomeExtensions.tweaks-in-system-menu
-      gnomeExtensions.ddterm
+      # gnomeExtensions.ddterm
       gnome.gnome-tweaks
       gnome-breeze
 
