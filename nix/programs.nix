@@ -81,7 +81,8 @@
                         qutebrowser
                         # vimb
                         brave
-                        # tor-browser-bundle-bin
+                        tor-browser-bundle-bin
+                        nyxt
 
                         # comunicator
                         # signal-desktop
