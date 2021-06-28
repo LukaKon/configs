@@ -96,7 +96,8 @@
                           # Auto pairs for '(' '[' '{'
                           auto-pairs
                           # Rainbow brackets
-                          rainbow_parentheses-vim
+                          # rainbow_parentheses-vim
+                          rainbow
                           # Start screen
                           vim-startify
                           vim-jinja
