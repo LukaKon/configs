@@ -16,24 +16,39 @@ colorama.init(autoreset=True)
 user = getpass.getuser()
 data = datetime.now().strftime('%Y-%m-%d_%H-%M')
 
-days=5
+days = 5
 
 paths = (
-    {'name': 'home', 'directory': '/home',
-        'snap_loc': f'/home/.snapshots/home-{data}'},
-    {'name': 'data', 'directory': f'/home/{user}/data',
-        'snap_loc': f'/home/{user}/data/.snapshots/data-{data}'},
-    {'name': 'vm', 'directory': f'/home/{user}/vm',
-        'snap_loc': f'/home/{user}/vm/.snapshots/vm-{data}'},
-    {'name': 'root', 'directory': '/', 'snap_loc': f'/.snapshots/root-{data}'},
+    {
+        'name': 'home',
+        'directory': '/home',
+        'snap_loc': f'/home/.snapshots/home-{data}'
+    },
+    {
+        'name': 'data',
+        'directory': f'/home/{user}/data',
+        'snap_loc': f'/home/{user}/data/.snapshots/data-{data}'
+    },
+    {
+        'name': 'vm',
+        'directory': f'/home/{user}/vm',
+        'snap_loc': f'/home/{user}/vm/.snapshots/vm-{data}'
+    },
+    {
+        'name': 'root',
+        'directory': '/',
+        'snap_loc': f'/.snapshots/root-{data}'
+    },
 )
 
 
 def create_new_snaps():
     for snap in paths:
         # print(f"\n{snap['name']}:")
-        subprocess.run(['sudo', 'btrfs', 'subvolume',
-                        'snapshot', snap['directory'], snap['snap_loc']]).returncode
+        subprocess.run([
+            'sudo', 'btrfs', 'subvolume', 'snapshot', snap['directory'],
+            snap['snap_loc']
+        ]).returncode
 
 
 def delete_old_snaps():
@@ -51,15 +66,19 @@ def delete_old_snaps():
                 # convert 'match' (str) to date
                 match_date = datetime.strptime(match.group(), '%Y-%m-%d')
 
-                if match_date < datetime.today() - timedelta(days=days):   # selecting folders older than 7 days old
+                if match_date < datetime.today() - timedelta(
+                        days=days):  # selecting folders older than 7 days old
                     print(
-                        f'{Fore.LIGHTRED_EX}{entry.name}: {Fore.MAGENTA}to delete')
+                        f'{Fore.LIGHTRED_EX}{entry.name}: {Fore.MAGENTA}to delete'
+                    )
                     subprocess.run(
                         ['sudo', 'rm', '-r', f'{path}/{entry.name}'])
 
 
 print(f'{Fore.BLUE}\nCreate new snapshots:')
 create_new_snaps()
-print(f'{Fore.RED}\nDelete snapshots older than {Fore.YELLOW}{days} {Fore.RED}days:')
+print(
+    f'{Fore.RED}\nDelete snapshots older than {Fore.YELLOW}{days} {Fore.RED}days:'
+)
 delete_old_snaps()
 print('\n')
