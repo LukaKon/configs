@@ -11,20 +11,29 @@ colorama.init(autoreset=True)
 user = getpass.getuser()
 data = datetime.now().strftime('%Y-%m-%d_%H-%M')
 
-days=5
+days = 5
 
 paths = (
-    {'name': 'home', 'directory': '/home',
-        'snap_loc': f'/home/.snapshots/home-{data}'},
-    {'name': 'root', 'directory': '/', 'snap_loc': f'/.snapshots/root-{data}'},
+    {
+        'name': 'home',
+        'directory': '/home',
+        'snap_loc': f'/home/.snapshots/home-{data}'
+    },
+    {
+        'name': 'root',
+        'directory': '/',
+        'snap_loc': f'/.snapshots/root-{data}'
+    },
 )
 
 
 def create_new_snaps():
     for snap in paths:
         # print(f"{snap['name']}:")
-        subprocess.run(['sudo', 'btrfs', 'subvolume',
-                        'snapshot', snap['directory'], snap['snap_loc']]).returncode
+        subprocess.run([
+            'sudo', 'btrfs', 'subvolume', 'snapshot', snap['directory'],
+            snap['snap_loc']
+        ]).returncode
 
 
 def delete_old_snaps():
@@ -41,7 +50,8 @@ def delete_old_snaps():
                 # convert 'match' (str) to date
                 match_date = datetime.strptime(match.group(), '%Y-%m-%d')
 
-                if match_date < datetime.today() - timedelta(days=days):   # selecting folders older than 7 days old
+                if match_date < datetime.today() - timedelta(
+                        days=days):  # selecting folders older than 7 days old
                     print(f'{entry.name}: to delete')
                     subprocess.run(
                         ['sudo', 'rm', '-r', f'{path}/{entry.name}'])
@@ -49,6 +59,8 @@ def delete_old_snaps():
 
 print(f'{Fore.BLUE}\nCreate new snapshots:')
 create_new_snaps()
-print(f'{Fore.RED}\nDelete snapshots older than {Fore.YELLOW}{days} {Fore.RED}days:')
+print(
+    f'{Fore.RED}\nDelete snapshots older than {Fore.YELLOW}{days} {Fore.RED}days:'
+)
 delete_old_snaps()
 print('\n')
