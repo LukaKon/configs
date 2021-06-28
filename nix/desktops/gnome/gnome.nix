@@ -35,7 +35,7 @@
 
       dconf2nix
       brasero
-      etcher
+      # etcher
       # kitty
     ];
     services = {
