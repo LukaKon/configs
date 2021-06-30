@@ -35,6 +35,7 @@
 
       dconf2nix
       brasero
+      # firefox-wayland
       # etcher
       # kitty
     ];
