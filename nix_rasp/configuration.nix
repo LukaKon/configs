@@ -14,7 +14,7 @@
     ./security/firewall.nix
     ./services/openssh.nix  # SSH
     ./programs/postgresql.nix   # PostgreSQL
-    ./desktops/mate.nix
+    # ./desktops/mate.nix
     ./desktops/gnome.nix
     # ./services/keyring.nix
     # ./services/remote.nix # remote server/desktop
