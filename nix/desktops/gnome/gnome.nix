@@ -15,6 +15,7 @@
       # Gnome
       displayManager.gdm.enable = true;
       # displayManager.gdm.nvidiaWayland = true;
+      # displayManager.gdm.wayland = true;
       displayManager.gdm.wayland = false;
       desktopManager.gnome.enable = true;
 
@@ -27,11 +28,17 @@
       # gnomeExtensions.icon-hider  # broken
       gnomeExtensions.sound-output-device-chooser
       gnomeExtensions.tilingnome
+      gnomeExtensions.wintile-windows-10-window-tiling-for-gnome
+      gnomeExtensions.windownavigator
       gnomeExtensions.just-perfection
       gnomeExtensions.tweaks-in-system-menu
+      gnomeExtensions.workspace-matrix
+      gnomeExtensions.workspace-switch-wraparound
+      gnomeExtensions.vitals
       # gnomeExtensions.ddterm
       gnome.gnome-tweaks
       gnome-breeze
+
 
       dconf2nix
       brasero
