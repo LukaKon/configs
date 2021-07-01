@@ -68,7 +68,7 @@
                           coc-fzf
                           coc-emmet
                           # coc-tabnine
-                          coc-python
+                          # coc-python
                           coc-pyright
                           coc-html
                           coc-nvim
