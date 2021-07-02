@@ -1,14 +1,10 @@
 {config, pkgs, lib, ...}:
 
 {
-    # imports = [ ./services/desktops/gnome/dconf.nix ];
-    # imports = [ ./dconf.nix ];
-
     # hardware.nvidia.modesetting.enable = true;
 
     services.xserver = {
       enable = true;
-      # videoDrivers = ["nvidia"];
       # displayManager.startx.enable = true;  # necessary to
       # create .xinitrc file
 
@@ -41,7 +37,7 @@
 
       dconf2nix
       brasero
-      firefox-wayland
+      # firefox-wayland
       # etcher
       # kitty
     ];
