@@ -117,7 +117,7 @@
                           deoplete-nvim
                           deoplete-clang
                           deoplete-github
-                          deoplete-tabnine
+                          # deoplete-tabnine
 
                           # git
                           vim-gitgutter
