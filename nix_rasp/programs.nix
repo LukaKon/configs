@@ -4,8 +4,6 @@
   environment = {
     systemPackages = with pkgs;
     [
-      nix
-
       doas
       tree
       pstree  # process tree
@@ -22,7 +20,6 @@
       # monitoring
       bmon
       htop
-      # nvtop
       # iotop
       lm_sensors
       # ncdu # disk analisys
