@@ -1,130 +1,130 @@
 { config, pkgs, ... }:
 
 {
-    environment = {
-                    systemPackages = with pkgs;
-                    [
-                        nix
+  environment = {
+    systemPackages = with pkgs;
+    [
+      # nix
 
-                        doas
-                        tree
-                        pstree  # process tree
-                        wget
-                        curl
-                        git
-                        rsync
-                        bat # cat
-                        fd  # find
+      doas
+      tree
+      pstree  # process tree
+      wget
+      curl
+      git
+      rsync
+      bat # cat
+      fd  # find
 
-                        nodejs
+      nodejs
 
-                        # monitoring
-                        bmon
-                        htop
-                        nvtop
-                        iotop
-                        lm_sensors
-                        ncdu # disk analisys
+      # monitoring
+      bmon
+      htop
+      nvtop
+      iotop
+      lm_sensors
+      ncdu # disk analisys
 
-                        # terminal
-                        alacritty
-                        # xterm
+      # terminal
+      alacritty
+      # xterm
 
-                        # text editor
-                        neovim
-                        # ranger
-                        # ueberzug
-                        fzf
-                        xsel  # for copying
-                        clipmenu  # for copying
+      # text editor
+      neovim
+      # ranger
+      # ueberzug
+      fzf
+      xsel  # for copying
+      clipmenu  # for copying
 
-                        # packer
-                        unzip
-                        unar
-                        xarchiver
-                        p7zip
+      # packer
+      unzip
+      unar
+      xarchiver
+      p7zip
 
-                        # file managers
-                        vifm-full
-                        # pcmanfm
+      # file managers
+      vifm-full
+      # pcmanfm
 
-                        # IDE
-                        vscode
-                        # arduino
-                        jetbrains.pycharm-community
-                        # thonny
-                        dbeaver
+      # IDE
+      vscode
+      # arduino
+      jetbrains.pycharm-community
+      # thonny
+      dbeaver
 
-                        # LaTeX
-                        texlive.combined.scheme-full
-                        texstudio
+      # LaTeX
+      texlive.combined.scheme-full
+      texstudio
 
-                        # graphics
-                        # blender
-                        # darktable
-                        gimp
-                        krita
+      # graphics
+      # blender
+      # darktable
+      gimp
+      krita
 
-                        # www
-                        firefox
-                        geckodriver
-                        qutebrowser
-                        brave
-                        # tor-browser-bundle-bin
+      # www
+      firefox
+      geckodriver
+      qutebrowser
+      brave
+      # tor-browser-bundle-bin
 
-                        # comunicator
-                        # signal-desktop
-                        slack
+      # comunicator
+      # signal-desktop
+      slack
 
-                        # video conference
-                        zoom-us
-                        # teams
-                        # skype
+      # video conference
+      zoom-us
+      # teams
+      # skype
 
-                        # cd burner
-                        brasero
-                        etcher
-                        gparted
+      # cd burner
+      brasero
+      etcher
+      gparted
 
-                        # snipping tool
-                        # shutter
+      # snipping tool
+      # shutter
 
-                        # office
-                        # libreoffice
+      # office
+      # libreoffice
 
-                        # games
-                        # openarena
-                        # widelands
+      # games
+      # openarena
+      # widelands
 
-                        firmwareLinuxNonfree
-                        microcodeIntel
+      firmwareLinuxNonfree
+      microcodeIntel
 
-                        # media
-                        feh # picture viewer
-                        # mpv # video player
-                        # libdvdcss # plugin to play cd/dvd in mpv
-                        moc  # music player
+      # media
+      feh # picture viewer
+      # mpv # video player
+      # libdvdcss # plugin to play cd/dvd in mpv
+      moc  # music player
 
-                        psutils
-                        pciutils
+      psutils
+      pciutils
 
-                        (python39.withPackages(ps: with ps;
-                        [
-                            autopep8
-                            flake8
-                            colorama
-                            psutil
-                            pip
-                            pynvim
-                            yapf
-                            jedi
-                            termcolor
-                            # ipython
-                            # bpython
-                            ptpython
-                            pylint
-                            jupyter
-                        ]))
-                    ];
-	};
+      (python39.withPackages(ps: with ps;
+      [
+        autopep8
+        flake8
+        colorama
+        psutil
+        pip
+        pynvim
+        yapf
+        jedi
+        termcolor
+        # ipython
+        # bpython
+        ptpython
+        pylint
+        jupyter
+      ]))
+    ];
+  };
 }

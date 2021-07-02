@@ -4,140 +4,139 @@
   environment = {
     systemPackages = with pkgs;
     [
-                        # nix
-                        nix-prefetch-git
+      nix-prefetch-git
 
-                        doas
-                        tree
-                        pstree  # process tree
-                        wget
-                        curl
-                        git
-                        rsync
-                        bat # cat
-                        fd  # find
+      doas
+      tree
+      pstree  # process tree
+      wget
+      curl
+      git
+      rsync
+      bat # cat
+      fd  # find
 
-                        nodejs
+      nodejs
 
-                        # monitoring
-                        bmon
-                        htop
-                        nvtop
-                        iotop
-                        lm_sensors
-                        ncdu # disk analisys
-                        sysstat
+      # monitoring
+      bmon
+      htop
+      nvtop
+      iotop
+      lm_sensors
+      ncdu # disk analisys
+      sysstat
 
-                        # terminal
-                        alacritty
-                        foot
-                        # xterm
+      # terminal
+      alacritty
+      foot
+      # xterm
 
-                        # text editor
-                        neovim
-                        # ueberzug
-                        fzf
-                        xsel  # for copying
-                        clipmenu  # for copying
+      # ueberzug
+      fzf
+      xsel  # for copying
+      clipmenu  # for copying
 
-                        # packer
-                        unzip
-                        unar
-                        xarchiver
-                        p7zip
+      # packer
+      unzip
+      unar
+      xarchiver
+      p7zip
 
-                        # file managers
-                        vifm-full
-                        # pcmanfm
-                        ranger
+      # file managers
+      vifm-full
+      # pcmanfm
+      ranger
 
-                        # IDE
-                        # spacevim
-                        vscode
-                        arduino
-                        jetbrains.pycharm-community
-                        # jetbrains.pycharm-professional
-                        # thonny
-                        unityhub
+      # IDE
+      # spacevim
+      sublime3
+      neovim
+      vscode
+      arduino
+      jetbrains.pycharm-community
+      # jetbrains.pycharm-professional
+      # thonny
+      unityhub
 
-                        # wordpress
+      # wordpress
 
-                        # LaTeX
-                        texlive.combined.scheme-full
-                        texstudio
+      # LaTeX
+      texlive.combined.scheme-full
+      texstudio
 
-                        # graphics
-                        blender
-                        darktable
-                        gimp
-                        krita
+      # graphics
+      blender
+      darktable
+      gimp
+      krita
 
-                        # cad
-                        # librecad
+      # cad
+      # librecad
 
-                        # www
-                        firefox
-                        geckodriver
-                        qutebrowser
-                        # vimb
-                        brave
-                        tor-browser-bundle-bin
-                        nyxt
+      # www
+      firefox
+      geckodriver
+      qutebrowser
+      # vimb
+      brave
+      tor-browser-bundle-bin
+      nyxt
 
-                        # comunicator
-                        # signal-desktop
-                        slack
+      # comunicator
+      # signal-desktop
+      slack
 
-                        # video conference
-                        zoom-us
-                        # teams
-                        # skype
+      # video conference
+      zoom-us
+      # teams
+      # skype
 
-                        # cd burner
-                        brasero
+      # cd burner
+      brasero
 
-                        # snipping tool
-                        shutter
+      # snipping tool
+      shutter
 
-                        # office
-                        libreoffice
+      # office
+      libreoffice
 
-                        # games
-                        # openarena
-                        widelands
-                        # zeroad
+      # games
+      # openarena
+      widelands
+      # zeroad
 
-                        firmwareLinuxNonfree
-                        microcodeIntel
+      firmwareLinuxNonfree
+      microcodeIntel
 
 
-                        # media
-                        feh # picture viewer
-                        mpv # video player
-                        libdvdcss # plugin to play cd/dvd in mpv
-                        moc  # music player
-                        youtube-dl
+      # media
+      feh # picture viewer
+      mpv # video player
+      libdvdcss # plugin to play cd/dvd in mpv
+      moc  # music player
+      youtube-dl
 
-                        psutils
-                        pciutils
-                        gputils
+      psutils
+      pciutils
+      gputils
 
-                        (python39.withPackages(ps: with ps;
-                        [
-                          autopep8
-                          flake8
-                          colorama
-                          psutil
-                          pip
-                          pynvim
-                          yapf
-                          jedi
-                          termcolor
-                            # ipython
-                            bpython
-                            pylint
-                            jupyter
-                          ]))
-                        ];
-                      };
-                    }
+      (python39.withPackages(ps: with ps;
+      [
+        autopep8
+        flake8
+        colorama
+        psutil
+        pip
+        pynvim
+        yapf
+        jedi
+        termcolor
+          # ipython
+          bpython
+          pylint
+          jupyter
+        ]))
+      ];
+    };
+  }
