@@ -11,7 +11,7 @@
   };
   programs = {npm.enable = true;};
 
-  nixpkgs = {
+	nixpkgs = {
     config = {
       packageOverrides = pkgs: rec {
         neovim = pkgs.neovim.override {
@@ -22,7 +22,6 @@
             pkgs.vimPlugins;
             {
               start = [
-                          # view
                           vim-airline-themes
                           vim-airline
                           gruvbox-community
@@ -64,11 +63,8 @@
                           vim-javascript
                           vim-javascript-syntax
                           emmet-vim
-                          # coc-explorer
                           coc-fzf
                           coc-emmet
-                          # coc-tabnine
-                          # coc-python
                           coc-pyright
                           coc-html
                           coc-nvim
@@ -83,21 +79,20 @@
                           coc-prettier
                           coc-spell-checker
                           coc-highlight
-                          # Change dates fast
-                          vim-speeddating
-                          # Repeat stuff
-                          vim-repeat
-                          # Text Navigation
-                          quick-scope
-                          # highlight all matches under cursor
-                          vim-illuminate
-                          # Better syntax support
-                          vim-polyglot
-                          # Auto pairs for '(' '[' '{'
-                          auto-pairs
-                          # Rainbow brackets
-                          # rainbow_parentheses-vim
-                          rainbow
+
+                          vim-speeddating # Change dates fast
+
+                          vim-repeat # Repeat stuff
+
+                          quick-scope # Text Navigation
+													vim-illuminate # highlight all matches under cursor
+
+													vim-polyglot # Better syntax support
+
+                          auto-pairs # Auto pairs for '(' '[' '{'
+
+                          rainbow # Rainbow brackets
+
                           # Start screen
                           vim-startify
                           vim-jinja
@@ -428,7 +423,7 @@
 
 
                         " tagbar
-                         nmap <F8> :TagbarToggle<CR>
+												nmap <F8> :TagbarToggle<CR>
                       '';
               #opt=[];
             };

@@ -81,7 +81,7 @@
       # vimb
       brave
       tor-browser-bundle-bin
-      nyxt
+      # nyxt
 
       # comunicator
       # signal-desktop
@@ -103,7 +103,7 @@
 
       # games
       # openarena
-      widelands
+      # widelands
       # zeroad
 
       firmwareLinuxNonfree
