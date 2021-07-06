@@ -50,22 +50,14 @@
 
       # IDE
       # vscode
-      # thonny
 
       # wordpress
-
-      # LaTeX
-      # texlive.combined.scheme-full
-      # texstudio
 
       # graphics
       # blender
       darktable
       gimp
       # krita
-
-      # cad
-      # librecad
 
       # www
       # firefox
@@ -109,11 +101,11 @@
         yapf
         jedi
         termcolor
-          # ipython
-          bpython
-          # pylint
-          # jupyter
-        ]))
-      ];
-    };
-  }
+        # ipython
+        bpython
+        # pylint
+        # jupyter
+      ]))
+    ];
+  };
+}
