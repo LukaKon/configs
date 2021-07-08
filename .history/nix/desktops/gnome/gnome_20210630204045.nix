@@ -27,8 +27,7 @@
       # gnomeExtensions.arc-menu
       # gnomeExtensions.icon-hider  # broken
       gnomeExtensions.sound-output-device-chooser
-      # gnomeExtensions.tilingnome
-      gnomeExtensions.gtile # Tile windows on a grid.
+      gnomeExtensions.tilingnome
       gnomeExtensions.wintile-windows-10-window-tiling-for-gnome
       gnomeExtensions.windownavigator
       gnomeExtensions.just-perfection
@@ -36,7 +35,6 @@
       gnomeExtensions.workspace-matrix
       gnomeExtensions.workspace-switch-wraparound
       gnomeExtensions.vitals
-      gnomeExtensions.freon   # GNOME Shell extension for displaying CPU, GPU, disk temperatures, voltage and fan RPM in the top panel
       # gnomeExtensions.ddterm
       gnome.gnome-tweaks
       gnome-breeze

@@ -34,7 +34,7 @@
     ./users.nix     # Users configurations
     ./shellAliases.nix  # Shell aliases
     ./virtualisation/docker.nix # Docker
-    # ./virtualisation/virtualbox.nix # Virtualbox
+    ./virtualisation/virtualbox.nix # Virtualbox
     ./virtualisation/virt-manager.nix
     ./programs/nvim.nix     # TODO nvim configuration in separate files
     ./services/flatpak.nix
