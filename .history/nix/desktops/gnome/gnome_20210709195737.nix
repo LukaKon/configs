@@ -4,7 +4,7 @@
     # imports = [ ./services/desktops/gnome/dconf.nix ];
     # imports = [ ./dconf.nix ];
 
-    # hardware.nvidia.modesetting.enable = true;
+    hardware.nvidia.modesetting.enable = true;
 
     services.xserver = {
       enable = true;
@@ -14,15 +14,15 @@
 
       # Gnome
       displayManager.gdm.enable = true;
-      # displayManager.gdm.nvidiaWayland = true;
+      displayManager.gdm.nvidiaWayland = true;
       # displayManager.gdm.wayland = true;
-      displayManager.gdm.wayland = false;
+      # displayManager.gdm.wayland = false;
       desktopManager.gnome.enable = true;
 
       layout = "pl";
     };
 
-    # programs.xwayland.enable = true;
+    programs.xwayland.enable = true;
 
     environment.systemPackages = with pkgs;
     [
@@ -40,7 +40,7 @@
 
       dconf2nix
       brasero
-      # firefox-wayland
+      firefox-wayland
     ];
     services = {
       udev.packages = with pkgs;

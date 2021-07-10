@@ -89,7 +89,6 @@
 
       # video conference
       zoom-us
-      teamviewer
       # teams
       # skype
 

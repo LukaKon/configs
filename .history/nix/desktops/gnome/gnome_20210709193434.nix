@@ -16,14 +16,12 @@
       displayManager.gdm.enable = true;
       # displayManager.gdm.nvidiaWayland = true;
       # displayManager.gdm.wayland = true;
-      displayManager.gdm.wayland = false;
+      displayManager.gdm.xwayland = true;
+      # displayManager.gdm.wayland = false;
       desktopManager.gnome.enable = true;
 
       layout = "pl";
     };
-
-    # programs.xwayland.enable = true;
-
     environment.systemPackages = with pkgs;
     [
       gnome3.adwaita-icon-theme
@@ -34,13 +32,12 @@
       gnomeExtensions.tweaks-in-system-menu
       gnomeExtensions.vitals
       gnome.gnome-tweaks
-      gnome.gnome-notes # sticky notes
       gnome-breeze
 
 
       dconf2nix
       brasero
-      # firefox-wayland
+      firefox-wayland
     ];
     services = {
       udev.packages = with pkgs;
@@ -69,4 +66,5 @@
       gnome3.gnome-calendar
       gnome.gnome-terminal
     ];
-}
+
+  }
