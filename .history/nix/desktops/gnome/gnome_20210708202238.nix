@@ -21,9 +21,6 @@
 
       layout = "pl";
     };
-
-    # programs.xwayland.enable = true;
-
     environment.systemPackages = with pkgs;
     [
       gnome3.adwaita-icon-theme
@@ -34,7 +31,6 @@
       gnomeExtensions.tweaks-in-system-menu
       gnomeExtensions.vitals
       gnome.gnome-tweaks
-      gnome.gnome-notes # sticky notes
       gnome-breeze
 
 
@@ -69,4 +65,5 @@
       gnome3.gnome-calendar
       gnome.gnome-terminal
     ];
-}
+
+  }
