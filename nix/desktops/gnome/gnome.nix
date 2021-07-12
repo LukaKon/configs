@@ -41,6 +41,7 @@
       dconf2nix
       brasero
       # firefox-wayland
+      # foot
     ];
     services = {
       udev.packages = with pkgs;
