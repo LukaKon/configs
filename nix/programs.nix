@@ -32,7 +32,7 @@
 
       # terminal
       alacritty
-      foot
+      # foot
       # xterm
 
       # ueberzug
@@ -67,6 +67,7 @@
       # LaTeX
       texlive.combined.scheme-full
       texstudio
+      mindforger
 
       # graphics
       blender
