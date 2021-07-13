@@ -11,7 +11,7 @@
   };
   programs = {npm.enable = true;};
 
-	nixpkgs = {
+  nixpkgs = {
     config = {
       packageOverrides = pkgs: rec {
         neovim = pkgs.neovim.override {
@@ -22,9 +22,9 @@
             pkgs.vimPlugins;
             {
               start = [
-                          vim-airline-themes
-                          vim-airline
-                          gruvbox-community
+                vim-airline-themes
+                vim-airline
+                gruvbox-community
 
                           # file explorer
                           The_NERD_tree
@@ -59,7 +59,7 @@
                           neomake
                           neoformat
                           # SimpylFold
-                          neoterm
+                          # neoterm
                           vim-javascript
                           vim-javascript-syntax
                           emmet-vim
@@ -85,9 +85,9 @@
                           vim-repeat # Repeat stuff
 
                           quick-scope # Text Navigation
-													vim-illuminate # highlight all matches under cursor
+                          vim-illuminate # highlight all matches under cursor
 
-													vim-polyglot # Better syntax support
+                          vim-polyglot # Better syntax support
 
                           auto-pairs # Auto pairs for '(' '[' '{'
 
@@ -244,12 +244,12 @@
                         "    nnoremap <c-n> :call OpenTerminal()<CR>
 
                         " neoterm
-                        let g:neoterm_default_mod = 'vertical'
-                        let g:neoterm_size = 60
-                        let g:neoterm_autoinsert = 1
-                        nnoremap <c-q> :Ttoggle<CR>
-                        inoremap <c-q> <Esc> :Ttoggle<CR>
-                        tnoremap <c-q> <c-\><c-n> :Ttoggle<CR>
+                        " let g:neoterm_default_mod = 'vertical'
+                        " let g:neoterm_size = 60
+                        " let g:neoterm_autoinsert = 1
+                        " nnoremap <c-q> :Ttoggle<CR>
+                        " inoremap <c-q> <Esc> :Ttoggle<CR>
+                        " tnoremap <c-q> <c-\><c-n> :Ttoggle<CR>
 
                         " vim-autoformat
                         noremap <F3> :Autoformat<CR>
@@ -287,7 +287,6 @@
                         " neomake
                         let g:neomake_python_enabled_makers = ['pylint']
                         " call neomake#configure#automake('nrwi', 500)
-
 
                         " fzf
                         nnoremap <C-p> :FZF<CR>
@@ -421,9 +420,26 @@
                           " g:SimpylFold_fold_blank        = 0
                           " b:SimpylFold_fold_blank        = 0
 
-
                         " tagbar
-												nmap <F8> :TagbarToggle<CR>
+                          nmap <F8> :TagbarToggle<CR>
+
+                        " run script (python, javascript, bash)
+                         augroup exe_code
+                           autocmd!
+
+                           " execute python code
+                           autocmd FileType python nnoremap <buffer> <localleader>r
+                             \ :sp<CR> :term bpython %<CR> :startinsert<CR>
+
+                           " execute javascript code
+                           autocmd FileType javascript nnoremap <buffer> <localleader>r
+                             \ :sp<CR> :term nodejs %<CR> :startinsert<CR>
+
+                           " execute bash code
+                           autocmd FileType bash,sh nnoremap <buffer> <localleader>r
+                             \ :sp<CR> :term bash %<CR> :startinsert<CR>
+
+                         augroup END
                       '';
               #opt=[];
             };
