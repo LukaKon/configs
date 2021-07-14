@@ -2,24 +2,29 @@
 
 {
   # Use the systemd-boot EFI boot loader.
-	boot = {
-				loader.systemd-boot.enable = true;
-				loader.efi.canTouchEfiVariables = true;
-			};
+  boot = {
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+    cleanTmpDir = true;
+  };
 
-	system = {
-				autoUpgrade = {
-				enable = true;
-				#allowReboot = true;
-        channel = https://nixos.org/channels/nixos-21.05;
-				};
-			};
+  # Autoupgrade
+  system = {
+    autoUpgrade = {
+      enable = true;
+      allowReboot = true;
+    };
+  };
 
-	nix.gc = {
-				automatic = true;
-				dates = "daily";
-				options = "--delete-older-than 3d";
-            };
+  nix = {
+    autoOptimiseStore = true;
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than 3d";
+
+    };
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
