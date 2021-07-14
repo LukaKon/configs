@@ -37,6 +37,7 @@
     # ./virtualisation/virtualbox.nix # Virtualbox
     ./virtualisation/virt-manager.nix
     ./programs/nvim.nix     # TODO nvim configuration in separate files
+    # ./programs/nvim/nvim.nix  # TODO finish configuration
     ./services/flatpak.nix
     # ./programs/vscode/vscode.nix    # vscode-with-extensions
     # ./programs/vscode/vs_conf.nix   # vscode-with-extensions
