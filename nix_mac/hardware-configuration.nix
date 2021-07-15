@@ -8,60 +8,66 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "ohci_pci" "ehci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "ohci_pci" "ehci_pci" "ahci" "usbhid" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" "wl" ];
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/abfdc560-4832-4b90-882a-53970c75be34";
+    { device = "/dev/disk/by-uuid/0fad7f12-efe4-4c74-9992-65e6e2ad0678";
       fsType = "btrfs";
       options = [ "subvol=@root" ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/abfdc560-4832-4b90-882a-53970c75be34";
+    { device = "/dev/disk/by-uuid/0fad7f12-efe4-4c74-9992-65e6e2ad0678";
       fsType = "btrfs";
       options = [ "subvol=@nix" ];
     };
 
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/abfdc560-4832-4b90-882a-53970c75be34";
-      fsType = "btrfs";
-      options = [ "subvol=@home" ];
-    };
-
-  fileSystems."/srv" =
-    { device = "/dev/disk/by-uuid/abfdc560-4832-4b90-882a-53970c75be34";
-      fsType = "btrfs";
-      options = [ "subvol=@srv" ];
-    };
-
-  fileSystems."/tmp" =
-    { device = "/dev/disk/by-uuid/abfdc560-4832-4b90-882a-53970c75be34";
-      fsType = "btrfs";
-      options = [ "subvol=@tmp" ];
-    };
-
-  fileSystems."/opt" =
-    { device = "/dev/disk/by-uuid/abfdc560-4832-4b90-882a-53970c75be34";
-      fsType = "btrfs";
-      options = [ "subvol=@opt" ];
-    };
-
   fileSystems."/var" =
-    { device = "/dev/disk/by-uuid/abfdc560-4832-4b90-882a-53970c75be34";
+    { device = "/dev/disk/by-uuid/0fad7f12-efe4-4c74-9992-65e6e2ad0678";
       fsType = "btrfs";
       options = [ "subvol=@var" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/1F30-ADF4";
+    { device = "/dev/disk/by-uuid/149A-9E90";
       fsType = "vfat";
     };
 
+  fileSystems."/srv" =
+    { device = "/dev/disk/by-uuid/0fad7f12-efe4-4c74-9992-65e6e2ad0678";
+      fsType = "btrfs";
+      options = [ "subvol=@srv" ];
+    };
+
+  fileSystems."/opt" =
+    { device = "/dev/disk/by-uuid/0fad7f12-efe4-4c74-9992-65e6e2ad0678";
+      fsType = "btrfs";
+      options = [ "subvol=@opt" ];
+    };
+
+  fileSystems."/tmp" =
+    { device = "/dev/disk/by-uuid/0fad7f12-efe4-4c74-9992-65e6e2ad0678";
+      fsType = "btrfs";
+      options = [ "subvol=@tmp" ];
+    };
+
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/0fad7f12-efe4-4c74-9992-65e6e2ad0678";
+      fsType = "btrfs";
+      options = [ "subvol=@home" ];
+    };
+
+  fileSystems."/var/lib/docker/btrfs" =
+    { device = "/home/@var/lib/docker/btrfs";
+      fsType = "none";
+      options = [ "bind" ];
+    };
+
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/250157f4-8d32-474b-8b52-0301d6926f00"; }
+    [ { device = "/dev/disk/by-uuid/360df655-6964-4ae8-a93e-bf1803517dd2"; }
     ];
 
 }

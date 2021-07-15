@@ -13,13 +13,8 @@
 		./security/doas.nix	# Add 'doas'
 		./services/openssh.nix	# SSH
 		./programs/postgresql.nix	# PostgreSQL
-		# ./desktops/qtile.nix	# Qtile window manager settings
-		./desktops/kde.nix
-		# ./desktops/spectrwm.nix
-		# ./desktops/gnome.nix	# Gnome window manager settings
-		# ./desktops/xmonad/xmonad.nix	# Gnome window manager settings
-		# ./desktops/i3/i3.nix
-		# ./desktops/mate.nix	# Mate window manager settings
+		# ./desktops/kde.nix
+		./desktops/gnome.nix	# Gnome window manager settings
 		# ./services/keyring.nix	# included in Gnome desktop
 		./services/laptop.nix   # settings for laptop
 		# ./services/remote.nix
