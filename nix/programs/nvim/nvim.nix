@@ -97,20 +97,20 @@
                 vim-javascript-syntax
                 emmet-vim
                 # coc-fzf
-                coc-emmet
-                coc-pyright
-                coc-html
-                coc-nvim
-                coc-yank
-                coc-css
-                coc-stylelint
-                coc-json
-                coc-smartf
-                coc-lists
-                # coc-cmake
-                coc-pairs
-                coc-prettier
-                coc-spell-checker
+                # coc-emmet
+                # coc-pyright
+                # coc-html
+                # coc-nvim
+                # coc-yank
+                # coc-css
+                # coc-stylelint
+                # coc-json
+                # coc-smartf
+                # coc-lists
+                # # coc-cmake
+                # coc-pairs
+                # coc-prettier
+                # coc-spell-checker
                 # coc-highlight
 
                 vim-speeddating # Change dates fast
@@ -140,11 +140,11 @@
                 colorizer
                 vim-surround
 
-                deoplete-zsh
-                deoplete-jedi
-                deoplete-nvim
-                deoplete-clang
-                deoplete-github
+                # deoplete-zsh
+                # deoplete-jedi
+                # deoplete-nvim
+                # deoplete-clang
+                # deoplete-github
                 # deoplete-tabnine
 
                 # git
@@ -267,12 +267,14 @@
 
             " coc
             " press <esc> to cancel.
-            nmap f <Plug>(coc-smartf-forward)
-            nmap F <Plug>(coc-smartf-backward)
-            nmap ; <Plug>(coc-smartf-repeat)
-            nmap , <Plug>(coc-smartf-repeat-opposite)
+            " nmap f <Plug>(coc-smartf-forward)
+            " nmap F <Plug>(coc-smartf-backward)
+            " nmap ; <Plug>(coc-smartf-repeat)
+            " nmap , <Plug>(coc-smartf-repeat-opposite)
 
-            let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-python']
+
+
+            " let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-python']
 
             " integrated terminal
             " open new split panes to right and below
