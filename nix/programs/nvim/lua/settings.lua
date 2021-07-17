@@ -34,7 +34,7 @@ opt.relativenumber = true    -- relative line number - (wo)
 
 opt.background = 'dark'   -- tell vim what the background color looks like
 
--- opt.completeopt = 'menuone,noinsert,noselect' -- TODO - completion error
+opt.completeopt = 'menuone,noinsert,noselect' -- TODO - completion error
 -- opt.ttimeoutlen = 5
 opt.undofile = true
 opt.undodir = "/home/lk/.cache/"
