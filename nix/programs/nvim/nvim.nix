@@ -74,7 +74,7 @@
                 vim-multiple-cursors
                 vim-commentary
                 splitjoin-vim     # gS - split; gJ - join
-                ale
+                # ale
                 vim-mundo
 
                 vim-autoformat
