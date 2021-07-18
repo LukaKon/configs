@@ -8,6 +8,7 @@
       ripgrep
       ctags
       gcc
+      rnix-lsp
     ];
   };
   programs = {npm.enable = true;};
@@ -55,6 +56,9 @@
 
                 telescope-nvim
 
+                # autocompletion server:
+                # rnix-lsp
+
                 #---old---
 
                 # vim-airline-themes
@@ -86,7 +90,7 @@
                 tabular
                 syntastic
                 vim-snippets
-                vim-nix
+                # vim-nix
                 vim-python-pep8-indent
                 vim-csharp
                 neomake
@@ -97,21 +101,22 @@
                 vim-javascript-syntax
                 emmet-vim
                 # coc-fzf
-                # coc-emmet
-                # coc-pyright
-                # coc-html
+                coc-emmet
+                coc-pyright
+                coc-html
                 # coc-nvim
                 # coc-yank
-                # coc-css
-                # coc-stylelint
+                coc-css
+                coc-stylelint
                 # coc-json
-                # coc-smartf
+                coc-smartf
                 # coc-lists
                 # # coc-cmake
-                # coc-pairs
-                # coc-prettier
-                # coc-spell-checker
-                # coc-highlight
+                coc-pairs
+                coc-prettier
+                coc-spell-checker
+                coc-highlight
+                coc-tsserver
 
                 vim-speeddating # Change dates fast
 
@@ -275,29 +280,6 @@
 
 
             " let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-python']
-
-            " integrated terminal
-            " open new split panes to right and below
-            "set splitright
-            "set splitbelow
-            " turn terminal to normal mode with escape
-            "tnoremap <Esc> <C-\><C-n>
-            " start terminal in insert mode
-            "au BufEnter * if &buftype == 'terminal' | :startinsert | endif
-            " open terminal on ctrl+n
-            "function! OpenTerminal()
-            "  split term://bash
-            "    resize 10
-            "    endfunction
-            "    nnoremap <c-n> :call OpenTerminal()<CR>
-
-            " neoterm
-            " let g:neoterm_default_mod = 'vertical'
-            " let g:neoterm_size = 60
-            " let g:neoterm_autoinsert = 1
-            " nnoremap <c-q> :Ttoggle<CR>
-            " inoremap <c-q> <Esc> :Ttoggle<CR>
-            " tnoremap <c-q> <c-\><c-n> :Ttoggle<CR>
 
             " vim-autoformat
             noremap <F3> :Autoformat<CR>

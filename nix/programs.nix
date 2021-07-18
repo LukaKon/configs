@@ -68,6 +68,7 @@
       texlive.combined.scheme-full
       texstudio
       mindforger
+      marktext
 
       # graphics
       blender
