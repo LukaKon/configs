@@ -6,6 +6,7 @@
                                 ga = "git add";
                                 gc = "git commit";
                                 gp = "git push";
+                                gpull = "git pull";
                                 gb = "git branch";
                                 gch = "git checkout";
                                 gm = "git merge";
