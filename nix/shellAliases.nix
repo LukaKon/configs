@@ -6,6 +6,10 @@
                                 ga = "git add";
                                 gc = "git commit";
                                 gp = "git push";
+                                gb = "git branch";
+                                gch = "git checkout";
+                                gm = "git merge";
+                                gf = "git fetch";
 
                                 # term
                                 susp = "systemctl suspend";
@@ -27,8 +31,6 @@
                                 cong = "python3 /home/lk/configs/scripts/git_conf.py";
                                 # deploy nix config files in /etc/nixos and rebuild system
                                 nixdep = "python3 /home/lk/configs/scripts/nix_deploy.py";
-                                # deploy qtile config files in /home/lk/.config/qtile
-                                qdep = "python3 /home/lk/configs/scripts/qtile_deploy.py";
 
                                 # rsync
                                 # data
