@@ -9,6 +9,7 @@
       ctags
       gcc
       rnix-lsp
+      tree-sitter
     ];
   };
   programs = {npm.enable = true;};
@@ -101,22 +102,22 @@
                 vim-javascript-syntax
                 emmet-vim
                 # coc-fzf
-                coc-emmet
-                coc-pyright
-                coc-html
+                # coc-emmet
+                # coc-pyright
+                # coc-html
                 # coc-nvim
                 # coc-yank
-                coc-css
-                coc-stylelint
+                # coc-css
+                # coc-stylelint
                 # coc-json
-                coc-smartf
+                # coc-smartf
                 # coc-lists
                 # # coc-cmake
-                coc-pairs
-                coc-prettier
-                coc-spell-checker
-                coc-highlight
-                coc-tsserver
+                # coc-pairs
+                # coc-prettier
+                # coc-spell-checker
+                # coc-highlight
+                # coc-tsserver
 
                 vim-speeddating # Change dates fast
 
