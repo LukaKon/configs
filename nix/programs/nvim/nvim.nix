@@ -10,6 +10,9 @@
       gcc
       rnix-lsp
       tree-sitter
+      nodePackages.typescript
+      nodePackages.typescript-language-server
+      nodePackages.pyright
     ];
   };
   programs = {npm.enable = true;};
@@ -18,6 +21,21 @@
     config = {
       packageOverrides = pkgs: rec {
         neovim = pkgs.neovim.override {
+          # extraConfig = builtins.concatStringsSep "\n" [
+            # read in the vim config from filesystem
+    # this enables syntaxhighlighting when editing those
+      # (lib.strings.fileContents ./base.vim)
+      # (lib.strings.fileContents ./plugins.vim)
+      # (lib.strings.fileContents ./lsp.vim)
+
+      # this allows you to add lua config files
+      # ''
+        # lua << EOF
+        # ${lib.strings.fileContents ./config.lua}
+        # ${lib.strings.fileContents ./lsp.lua}
+        # EOF
+      # ''
+    # ];
           vimAlias = true;
           withPython3 = true;
           configure = {
