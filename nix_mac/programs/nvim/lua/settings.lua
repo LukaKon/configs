@@ -29,13 +29,12 @@ opt.sidescroll = 1    -- scroll left/right 1 character at a time
 
 opt.number = true    -- line number - (wo)
 opt.relativenumber = true    -- relative line number - (wo)
-opt.signcolumn = 'number'    -- Always show the signcolumn, otherwise it would shift the text each time - (wo)
 
 
 
 opt.background = 'dark'   -- tell vim what the background color looks like
 
--- opt.completeopt = 'menuone,noinsert,noselect' -- TODO - completion error
+-- opt.completeopt = 'menuone,noinsert,noselect' -- TODO - in lsp.lua but without noinsert
 -- opt.ttimeoutlen = 5
 opt.undofile = true
 opt.undodir = "/home/lk/.cache/"
