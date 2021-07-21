@@ -58,6 +58,7 @@
       # LaTeX
       texlive.combined.scheme-full
       texstudio
+      mindforger
 
       # graphics
       # blender
@@ -94,7 +95,6 @@
 
       # games
       # openarena
-      # widelands
 
       firmwareLinuxNonfree
       microcodeIntel
