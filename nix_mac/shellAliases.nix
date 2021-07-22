@@ -31,7 +31,7 @@
                                 # backup config files to git
                                 cong = "python3 /home/lk/configs/scripts/git_conf.py";
                                 # deploy nix config files in /etc/nixos and rebuild system
-                                nixdep = "python3 /home/lk/configs/scripts/nix_deploy.py";
+                                nixdep = "python3 /home/lk/configs/scripts/nix_deploy_mac.py";
 
                                 # rsync
                                 # data

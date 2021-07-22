@@ -30,6 +30,8 @@
       alacritty
       # xterm
 
+      qmk
+
       # text editor
       neovim
       # ranger
