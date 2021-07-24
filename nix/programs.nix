@@ -18,9 +18,6 @@
 
       nodejs
 
-      # for keyboard
-      qmk
-
       # monitoring
       bmon
       htop
@@ -33,7 +30,6 @@
       # terminal
       alacritty
       # foot
-      # xterm
 
       # ueberzug
       fzf
@@ -62,22 +58,17 @@
       # thonny
       unityhub
 
-      # wordpress
-
       # LaTeX
       texlive.combined.scheme-full
-      texstudio
+      # texstudio
       mindforger
-      marktext
+      # marktext
 
       # graphics
       blender
       darktable
       gimp
       krita
-
-      # cad
-      # librecad
 
       # www
       firefox
@@ -109,12 +100,9 @@
 
       # games
       # openarena
-      # widelands
-      # zeroad
 
       firmwareLinuxNonfree
       microcodeIntel
-
 
       # media
       feh # picture viewer
@@ -138,11 +126,10 @@
         yapf
         jedi
         termcolor
-          # ipython
-          bpython
-          pylint
-          jupyter
-        ]))
-      ];
-    };
-  }
+        bpython
+        pylint
+        jupyter
+      ]))
+    ];
+  };
+}

@@ -34,7 +34,6 @@
       gnomeExtensions.tweaks-in-system-menu
       gnomeExtensions.vitals
       gnome.gnome-tweaks
-      gnome.gnome-notes # sticky notes
       gnome-breeze
 
 
