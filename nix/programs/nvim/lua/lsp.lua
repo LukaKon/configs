@@ -26,7 +26,8 @@ require'compe'.setup {
   max_abbr_width = 100;
   max_kind_width = 100;
   max_menu_width = 100;
-  documentation = false;
+  documentation = true;
+  -- documentation = false;
 
   source = {
     path = true;
