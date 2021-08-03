@@ -5,6 +5,7 @@
     systemPackages = with pkgs;
     [
       nix-prefetch-git
+      any-nix-shell
 
       doas
       tree
@@ -49,8 +50,8 @@
 
       # IDE
       # spacevim
-      sublime3
-      neovim
+      # sublime3
+      # neovim
       vscode
       arduino
       jetbrains.pycharm-community
@@ -62,7 +63,6 @@
       texlive.combined.scheme-full
       # texstudio
       mindforger
-      # marktext
 
       # graphics
       blender
@@ -76,7 +76,7 @@
       qutebrowser
       # vimb
       brave
-      tor-browser-bundle-bin
+      # tor-browser-bundle-bin
       # nyxt
 
       # comunicator
@@ -85,7 +85,6 @@
 
       # video conference
       zoom-us
-      # teamviewer
       # teams
       # skype
 
@@ -97,9 +96,6 @@
 
       # office
       libreoffice
-
-      # games
-      # openarena
 
       firmwareLinuxNonfree
       microcodeIntel
