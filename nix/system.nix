@@ -1,4 +1,4 @@
-{config, ...}:
+{config, pkgs, ...}:
 
 {
   # Use the systemd-boot EFI boot loader.
@@ -19,11 +19,13 @@
   nix = {
     autoOptimiseStore = true;
     gc = {
-      automatic = true;
-      dates = "daily";
-      options = "--delete-older-than 7d";
-
+      # automatic = true;
+      # dates = "daily";
+      # options = "--delete-older-than 7d";
     };
+    # For hix flakes
+    extraOptions = "experimental-features = nix-command flakes";
+    package = pkgs.nixFlakes;
   };
 
   # Open ports in the firewall.
