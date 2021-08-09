@@ -49,7 +49,7 @@
       # ranger
 
       # IDE
-      # vscode
+      vscode
 
       # wordpress
 
@@ -60,18 +60,18 @@
       # krita
 
       # www
-      # firefox
-      # geckodriver
+      firefox
+      geckodriver
       qutebrowser
       # brave
       # tor-browser-bundle-bin
 
       # comunicator
       # signal-desktop
-      # slack
+      slack
 
       # video conference
-      # zoom-us
+      zoom-us
 
       # snipping tool
       # shutter
