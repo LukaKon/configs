@@ -5,7 +5,6 @@
     systemPackages = with pkgs;
     [
       nix-prefetch-git
-      any-nix-shell
 
       doas
       tree

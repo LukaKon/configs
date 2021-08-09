@@ -1,12 +1,49 @@
 {
-  description = "Flake configurations";
+  description = "Flake system configurations";
+
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/master";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.flake-utils.follows = "flake-utils";
+    };
+
+    # flake-utils.url = "github:numtide/flake-utils";
+  #   xmonad = {
+  #     url = "github:xmonad/xmonad";
+  #     nixpkgs.follows = "nixpkgs";
+  #   };
+
+  #   xmonad-contrib = {
+  #     url = "github:ivanmalison/xmonad-contrib";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #   };
+
+  #   taffybar = {
+  #     url = "github:taffybar/taffybar";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #   };
+
+  #   picom-jonaburg = {
+  #     url = "github:jonaburg/picom";
+  #     flake = false;
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = inputs@{ nixpkgs, flake-utils, home-manager, neovim-nightly-overlay, ... }:
+
+
     let
       system = "x86_64-linux";
 
@@ -18,24 +55,26 @@
       lib = nixpkgs.lib;
 
     in {
-      homeManagerConfigurations = {
-        lk = home-manager.lib.homeManagerConfiguration {
-          inherit system pkgs;
-          username = "lk";
-          homeDirectory = "/home/lk";
-          configuration = {
-            imports = [
-              ./users/lk/home.nix
-            ];
+        homeManagerConfigurations = {
+          lk = home-manager.lib.homeManagerConfiguration {
+            inherit system pkgs;
+            username = "lk";
+            homeDirectory = "/home/lk";
+            configuration = {
+              imports = [
+                ./users/lk/home.nix
+              ];
+            };
           };
         };
-      };
-      nixosConfigurtions = {
+
+      nixosConfigurations = {
         fuji = lib.nixosSystem {
           inherit system;
 
           modules = [
-            ./config/nix/configuration.nix
+            ./nix/configuration.nix
+            # ./nix/hardware-configuration.nix
           ];
         };
       };
