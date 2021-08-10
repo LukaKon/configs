@@ -20,7 +20,6 @@
       # inputs.flake-utils.follows = "flake-utils";
     };
 
-    # flake-utils.url = "github:numtide/flake-utils";
   #   xmonad = {
   #     url = "github:xmonad/xmonad";
   #     nixpkgs.follows = "nixpkgs";
@@ -60,6 +59,7 @@
             inherit system pkgs;
             username = "lk";
             homeDirectory = "/home/lk";
+            stateVersion = "21.05";
             configuration = {
               imports = [
                 ./users/lk/home.nix

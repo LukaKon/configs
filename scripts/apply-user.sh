@@ -1,4 +1,5 @@
 #!/bin/sh
 pushd ~/configs
-home-manager switch -f ./users/lk/home.nix
+nix build .#homeManagerConfigurations.lk.activationPackage
+./result/activate
 popd
