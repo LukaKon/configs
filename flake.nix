@@ -53,6 +53,13 @@
 
       lib = nixpkgs.lib;
 
+      overlays = [
+      #   inputs.xmonad.overlay
+      #   inputs.xmonad-contrib.overlay
+      #   inputs.taffybar.overlay
+        inputs.neovim-nightly-overlay.overlay
+      ];
+
     in {
         homeManagerConfigurations = {
           lk = home-manager.lib.homeManagerConfiguration {
@@ -75,6 +82,12 @@
           modules = [
             ./nix/configuration.nix
             # ./nix/hardware-configuration.nix
+            home-manager.nixosModules.home-manager
+          {
+            nixpkgs.overlays = [
+            overlays
+            ];
+          }
           ];
         };
       };
