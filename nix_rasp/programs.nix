@@ -31,7 +31,7 @@
       # xterm
 
       # text editor
-      neovim
+      # neovim
       # ueberzug
       fzf
       xsel  # for copying
