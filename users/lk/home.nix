@@ -2,7 +2,7 @@
 
 let
   # customNeovim = import ./config/nvim/nvim.nix;
-  customNvim = import ../../programs/nvim/nvim.nix;
+  customNvim = import ../programs/nvim/nvim.nix;
 
 in
 {
@@ -55,7 +55,7 @@ in
     # IDE
     # spacevim
     # sublime3
-    # neovim
+    neovim
     vscode
     arduino
     jetbrains.pycharm-community

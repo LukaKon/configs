@@ -1,78 +1,57 @@
 local opt = vim.opt
-local g = vim.g
+-- local o = vim.o
+-- local wo = vim.wo
+-- local bo = vim.bo
 
--- Lazy load everything!
-dofile("/home/notus/.config/nixos/config/nvim/lua/galaxyline.lua")
-dofile("/home/notus/.config/nixos/config/nvim/lua/lsp.lua")
-dofile("/home/notus/.config/nixos/config/nvim/lua/nvim-tree.lua")
-dofile("/home/notus/.config/nixos/config/nvim/lua/plugins.lua")
+opt.hidden = true -- Required to keep multiple buffers open multiple buffers ???
+opt.wrap = false -- Display long lines as just one line - (wo)
+opt.showcmd = true    -- show current command in status line
+-- o.encoding = 'utf-8'    -- The encoding displayed
+-- o.fileencoding = 'utf-8'    -- The encoding written to file
+opt.ruler = true  -- Show the cursor position all the time
+opt.tabstop = 4   -- Insert 4 spaces for a tab
+-- opt.tabstop = 4   -- Insert 4 spaces for a tab - (bo)
+opt.softtabstop = 4
+-- opt.softtabstop = 4 -- (bo)
+opt.shiftwidth = 4    -- Change the number of space characters inserted for indentation
+-- opt.shiftwidth = 4    -- Change the number of space characters inserted for indentation - (bo)
+opt.autoindent = true -- Good auto indent
+-- opt.autoindent = true -- Good auto indent - (bo)
+opt.expandtab = true  -- Converts tabs to spaces
+-- opt.expandtab = true  -- Converts tabs to spaces - (bo)
+opt.smartindent = true    -- Makes indenting smart
+-- opt.smartindent = true    -- Makes indenting smart - (bo)
+opt.splitright = true -- Vertical splits will automatically be to the right
+opt.splitbelow = true -- Horizontal splits will automatically be below
+opt.scrolloff = 5 -- keep 5 lines visible above/below the cursor when scrolling
+opt.sidescrolloff = 5 -- keep 5 characters visible to the left/right of the cursor when scrolling
+opt.sidescroll = 1    -- scroll left/right 1 character at a time
 
-vim.cmd [[
-    set nowrap
-    set nobackup
-    set nowritebackup
-    set noerrorbells
-    set noswapfile
-    
-    colorscheme dusk
-    function! Preserve(command)
-      let w = winsaveview()
-      execute a:command
-      call winrestview(w)
-    endfunction
-    autocmd FileType nix map <nowait> <leader>u :call Preserve("%!update-nix-fetchgit --location=" . line(".") . ":" . col("."))<CR>
-    autocmd BufWinEnter NvimTree setlocal nonumber
-    map ; :
-    highlight IndentBlanklineChar guifg = #393b4d
-]]
+opt.number = true    -- line number - (wo)
+opt.relativenumber = true    -- relative line number - (wo)
 
-local map = vim.api.nvim_set_keymap
-options = { noremap = true }
-map('n', '<C-p>', ':NvimTreeToggle <CR>', options)
-map('n', '<C-f>', ':Telescope find_files <CR>', options)
-map('n', '<C-n>', ':Telescope live_grep <CR>', options) 
 
-g.mapleader = ' '
 
--- Indent line
-g.indent_blankline_char = '▏'
+opt.background = 'dark'   -- tell vim what the background color looks like
 
--- Performance
-opt.lazyredraw = true;
-opt.shell = "/bin/sh"
-opt.shadafile = "NONE"
-
--- Colors
-opt.termguicolors = true
-
--- Undo files
+-- opt.completeopt = 'menuone,noinsert,noselect' -- TODO - in lsp.lua but without noinsert
+-- opt.ttimeoutlen = 5
 opt.undofile = true
-opt.undodir = "/home/notus/.cache/"
-
--- Indentation
-opt.smartindent = true
-opt.tabstop = 4
-opt.shiftwidth = 4
-opt.shiftround = true
-opt.expandtab = true
-
--- Set clipboard to use system clipboard
-opt.clipboard = "unnamedplus"
-
--- Use mouse
-opt.mouse = "a"
-
--- Nicer UI settings
+opt.undodir = "/home/lk/.cache/"
+-- opt.compatible = false
 opt.cursorline = true
-opt.relativenumber = true
-
--- Get rid of annoying viminfo file
-opt.viminfo = ""
-opt.viminfofile = "NONE"
-
--- Miscellaneous quality of life
+opt.termguicolors = true
+opt.mouse = "a"
+-- opt.autoread = true
+-- opt.smartindent = true
+-- opt.clipboard = "unnamedplus"
 opt.smartcase = true
-opt.ttimeoutlen = 5
-opt.compatible = false
-opt.hidden = true
-opt.shortmess = "atI"
+-- opt.shiftwidth = 4
+-- opt.expandtab = true
+-- opt.incsearch = true
+-- opt.viminfo = ""
+-- opt.viminfofile = "NONE"
+-- opt.hidden = true
+-- opt.shortmess = "I"
+
+vim.cmd('language en_US.utf-8')
