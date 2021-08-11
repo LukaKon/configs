@@ -22,7 +22,8 @@
                                 # nix
                                 # upnix = "sudo nix-channel --update && nix-env -u";
                                 rebuild = "sudo nixos-rebuild switch";
-                                upos = "sudo nixos-rebuild switch --upgrade";
+                                # upos = "sudo nixos-rebuild switch --upgrade";
+                                upos = "python /home/lk/configs/scripts/upos.py";
 
                                 # btrfs snapshots
                                 # sb = "python ${path_script}snapshot.py";

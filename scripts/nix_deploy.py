@@ -2,8 +2,6 @@
 Copying configuration files from folder where they were edited to target folder
 """
 
-import os
-import platform
 import getpass
 import subprocess
 

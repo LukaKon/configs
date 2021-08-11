@@ -2,7 +2,7 @@
 
 let
   # customNeovim = import ./config/nvim/nvim.nix;
-  # customNvim = import /etc/nixos/programs/nvim/nvim.nix;
+  customNvim = import ../../programs/nvim/nvim.nix;
 
 in
 {
@@ -43,10 +43,85 @@ in
   };
 
   home.packages = with pkgs; [
-    # gtop
     git
     git-crypt
     gnupg # gpg
     pinentry-gnome
+
+    # file managers
+    vifm-full
+    ranger
+
+    # IDE
+    # spacevim
+    # sublime3
+    # neovim
+    vscode
+    arduino
+    jetbrains.pycharm-community
+    # jetbrains.pycharm-professional
+    # thonny
+    unityhub
+
+    # LaTeX
+    texlive.combined.scheme-full
+    # texstudio
+    mindforger
+
+      # graphics
+      blender
+      darktable
+      gimp
+      krita
+
+      # www
+      firefox
+      geckodriver
+      qutebrowser
+      # vimb
+      brave
+      # tor-browser-bundle-bin
+      # nyxt
+
+      # comunicator
+      # signal-desktop
+      slack
+
+      # video conference
+      zoom-us
+      # teams
+      # skype
+
+      # cd burner
+      brasero
+
+      # snipping tool
+      shutter
+
+      # office
+      libreoffice
+
+    # media
+      feh # picture viewer
+      mpv # video player
+      libdvdcss # plugin to play cd/dvd in mpv
+      moc  # music player
+      youtube-dl
+
+      (python39.withPackages(ps: with ps;
+      [
+        autopep8
+        flake8
+        colorama
+        psutil
+        pip
+        pynvim
+        yapf
+        jedi
+        termcolor
+        bpython
+        pylint
+        jupyter
+      ]))
   ];
 }
