@@ -8,61 +8,66 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "ums_realtek" "usb_storage" "usbhid" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "ohci_pci" "ehci_pci" "ahci" "usbhid" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  boot.kernelModules = [ "kvm-intel" "wl" ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/b44bf0be-d0e5-4711-8e9e-896fac64838f";
+    { device = "/dev/disk/by-uuid/0fad7f12-efe4-4c74-9992-65e6e2ad0678";
       fsType = "btrfs";
       options = [ "subvol=@root" ];
     };
 
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/34d8df98-e664-4cb3-83d4-241d04564d86";
-      fsType = "btrfs";
-      options = [ "subvol=@home" ];
-    };
-
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/b44bf0be-d0e5-4711-8e9e-896fac64838f";
+    { device = "/dev/disk/by-uuid/0fad7f12-efe4-4c74-9992-65e6e2ad0678";
       fsType = "btrfs";
       options = [ "subvol=@nix" ];
     };
 
-  fileSystems."/srv" =
-    { device = "/dev/disk/by-uuid/b44bf0be-d0e5-4711-8e9e-896fac64838f";
-      fsType = "btrfs";
-      options = [ "subvol=@srv" ];
-    };
-
-  fileSystems."/opt" =
-    { device = "/dev/disk/by-uuid/b44bf0be-d0e5-4711-8e9e-896fac64838f";
-      fsType = "btrfs";
-      options = [ "subvol=@opt" ];
-    };
-
-  fileSystems."/tmp" =
-    { device = "/dev/disk/by-uuid/b44bf0be-d0e5-4711-8e9e-896fac64838f";
-      fsType = "btrfs";
-      options = [ "subvol=@tmp" ];
-    };
-
   fileSystems."/var" =
-    { device = "/dev/disk/by-uuid/b44bf0be-d0e5-4711-8e9e-896fac64838f";
+    { device = "/dev/disk/by-uuid/0fad7f12-efe4-4c74-9992-65e6e2ad0678";
       fsType = "btrfs";
       options = [ "subvol=@var" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/2CDD-5DB0";
+    { device = "/dev/disk/by-uuid/149A-9E90";
       fsType = "vfat";
     };
 
+  fileSystems."/opt" =
+    { device = "/dev/disk/by-uuid/0fad7f12-efe4-4c74-9992-65e6e2ad0678";
+      fsType = "btrfs";
+      options = [ "subvol=@opt" ];
+    };
+
+  fileSystems."/srv" =
+    { device = "/dev/disk/by-uuid/0fad7f12-efe4-4c74-9992-65e6e2ad0678";
+      fsType = "btrfs";
+      options = [ "subvol=@srv" ];
+    };
+
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/0fad7f12-efe4-4c74-9992-65e6e2ad0678";
+      fsType = "btrfs";
+      options = [ "subvol=@home" ];
+    };
+
+  fileSystems."/tmp" =
+    { device = "/dev/disk/by-uuid/0fad7f12-efe4-4c74-9992-65e6e2ad0678";
+      fsType = "btrfs";
+      options = [ "subvol=@tmp" ];
+    };
+
+  fileSystems."/var/lib/docker/btrfs" =
+    { device = "/tmp/@home/@var/lib/docker/btrfs";
+      fsType = "none";
+      options = [ "bind" ];
+    };
+
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/ac236b9f-1a37-4710-a3f7-6af2acecb56a"; }
+    [ { device = "/dev/disk/by-uuid/360df655-6964-4ae8-a93e-bf1803517dd2"; }
     ];
 
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 }
