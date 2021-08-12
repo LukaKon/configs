@@ -6,9 +6,14 @@
 					keyMap = "pl";
 				};
 
+  environment.systemPackages = with pkgs; [any-nix-shell];
+
 	programs = {
 			zsh = {
 					enable = true;
+					promptInit = ''
+						any-nix-shell zsh --info-right | source /dev/stdin
+					'';
 					enableGlobalCompInit = true;
 					enableCompletion = true;
 					autosuggestions.enable = true;
