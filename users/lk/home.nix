@@ -2,7 +2,7 @@
 
 let
   # customNeovim = import ./config/nvim/nvim.nix;
-  customNvim = import ../programs/nvim/nvim.nix;
+  # customNeovim = import ../../programs/nvim/nvim.nix;
 
 in
 {
@@ -53,9 +53,9 @@ in
     ranger
 
     # IDE
-    # spacevim
+    spacevim
     # sublime3
-    neovim
+    # neovim
     vscode
     arduino
     jetbrains.pycharm-community
