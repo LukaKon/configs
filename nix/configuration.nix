@@ -37,7 +37,7 @@
     ./virtualisation/docker.nix # Docker
     # ./virtualisation/virtualbox.nix # Virtualbox
     ./virtualisation/virt-manager.nix
-    # ./programs/nvim/nvim.nix  # TODO finish configuration
+    ./programs/nvim/nvim.nix
     ./services/flatpak.nix
     # ./programs/vscode/vscode.nix    # vscode-with-extensions
     # ./programs/vscode/vs_conf.nix   # vscode-with-extensions
