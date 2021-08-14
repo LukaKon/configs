@@ -6,7 +6,7 @@
 					keyMap = "pl";
 				};
 
-  environment.systemPackages = with pkgs; [any-nix-shell];
+	environment.systemPackages = with pkgs; [any-nix-shell];
 
 	programs = {
 			zsh = {
