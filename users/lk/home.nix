@@ -55,7 +55,7 @@ in
     # IDE
     spacevim
     # sublime3
-    # neovim
+    neovim
     vscode
     arduino
     jetbrains.pycharm-community

@@ -38,6 +38,7 @@ in
       ripgrep
       ctags
       gcc
+      lua
       rnix-lsp
       sumneko-lua-language-server
       tree-sitter
