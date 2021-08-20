@@ -3,6 +3,9 @@
 import subprocess
 
 print('\nUpdate system:\n')
+# subprocess.run(
+#     ['~/configs']
+# )
 subprocess.run(
     ['nix', 'flake', 'update']
 )

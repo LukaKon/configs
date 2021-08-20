@@ -82,12 +82,12 @@
           modules = [
             ./nix/configuration.nix
             # ./nix/hardware-configuration.nix
-            home-manager.nixosModules.home-manager
-          {
-            nixpkgs.overlays = [
-              inputs.neovim-nightly-overlay.overlay
-            ];
-          }
+            # home-manager.nixosModules.home-manager
+          # {
+            # nixpkgs.overlays = [
+              # inputs.neovim-nightly-overlay.overlay
+            # ];
+          # }
           ];
         };
       };
