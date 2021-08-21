@@ -32,6 +32,7 @@
 
       # text editor
       neovim
+      uivonim
       # ueberzug
       fzf
       xsel  # for copying
@@ -50,6 +51,7 @@
 
       # IDE
       vscode
+      dbeaver
 
       # wordpress
 
@@ -68,10 +70,10 @@
 
       # comunicator
       # signal-desktop
-      slack
+      # slack
 
       # video conference
-      zoom-us
+      # zoom-us
 
       # snipping tool
       # shutter
