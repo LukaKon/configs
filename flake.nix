@@ -20,7 +20,6 @@
       # inputs.flake-utils.follows = "flake-utils";
     };
 
-    # flake-utils.url = "github:numtide/flake-utils";
   #   xmonad = {
   #     url = "github:xmonad/xmonad";
   #     nixpkgs.follows = "nixpkgs";
@@ -54,12 +53,20 @@
 
       lib = nixpkgs.lib;
 
+      # overlays = [
+      #   inputs.xmonad.overlay
+      #   inputs.xmonad-contrib.overlay
+      #   inputs.taffybar.overlay
+        # inputs.neovim-nightly-overlay.overlay
+      # ];
+
     in {
         homeManagerConfigurations = {
           lk = home-manager.lib.homeManagerConfiguration {
             inherit system pkgs;
             username = "lk";
             homeDirectory = "/home/lk";
+            stateVersion = "21.05";
             configuration = {
               imports = [
                 ./users/lk/home.nix
@@ -75,6 +82,12 @@
           modules = [
             ./nix/configuration.nix
             # ./nix/hardware-configuration.nix
+            # home-manager.nixosModules.home-manager
+          # {
+            # nixpkgs.overlays = [
+              # inputs.neovim-nightly-overlay.overlay
+            # ];
+          # }
           ];
         };
       };
