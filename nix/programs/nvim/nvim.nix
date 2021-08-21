@@ -1,5 +1,35 @@
 {config, pkgs, ...}:
 
+let
+    pears-nvim = pkgs.vimUtils.buildVimPlugin {
+        name = "pears-nvim";
+        src = pkgs.fetchFromGitHub {
+            owner = "steelsojka";
+            repo = "pears.nvim";
+            rev = "14e6c47c74768b74190a529e41911ae838c45254";
+            sha256 = "04kg7g6v6k6jv2pmapaqvkvf6py1i211l822m3lsvf26jcyfs3ag";
+        };
+    };
+    neorg-unstable = pkgs.vimUtils.buildVimPlugin {
+        name = "neorg";
+        src = pkgs.fetchFromGitHub {
+            owner = "vhyrro";
+            repo = "neorg";
+            rev = "bf1b812663b4a75221b4b8901edf578a49ba2f16";
+            sha256 = "5tA/yRYY+8HBAdHDz8uPx2TtzCbseEXGkj7e/NAjDe4=";
+        };
+    };
+    dusk-vim = pkgs.vimUtils.buildVimPlugin {
+        name = "dusk-vim";
+        src = pkgs.fetchFromGitHub {
+            owner = "notusknot";
+            repo = "dusk-vim";
+            rev = "8eb71f092ebfa173a6568befbe522a56e8382756";
+            sha256 = "09l4hda5jnyigc2hhlirv1rc8hsnsc4zgcv4sa4br8fryi73nf4g";
+        };
+    };
+
+in
 {
   environment = {
     variables = {EDITOR = "nvim"; VISUAL = "nvim";};
@@ -8,34 +38,22 @@
       ripgrep
       ctags
       gcc
+      lua
       rnix-lsp
+      sumneko-lua-language-server
       tree-sitter
       nodePackages.typescript
       nodePackages.typescript-language-server
       nodePackages.pyright
     ];
   };
+
   programs = {npm.enable = true;};
 
   nixpkgs = {
     config = {
       packageOverrides = pkgs: rec {
         neovim = pkgs.neovim.override {
-          # extraConfig = builtins.concatStringsSep "\n" [
-            # read in the vim config from filesystem
-    # this enables syntaxhighlighting when editing those
-      # (lib.strings.fileContents ./base.vim)
-      # (lib.strings.fileContents ./plugins.vim)
-      # (lib.strings.fileContents ./lsp.vim)
-
-      # this allows you to add lua config files
-      # ''
-        # lua << EOF
-        # ${lib.strings.fileContents ./config.lua}
-        # ${lib.strings.fileContents ./lsp.lua}
-        # EOF
-      # ''
-    # ];
           vimAlias = true;
           withPython3 = true;
           configure = {
@@ -182,17 +200,17 @@
               opt = [];
             };
             customRC = ''
-            luafile /etc/nixos/programs/nvim/lua/settings.lua
-            luafile /etc/nixos/programs/nvim/lua/bufferline.lua
-            luafile /etc/nixos/programs/nvim/lua/statusline.lua
+            luafile ./lua/settings.lua
+            luafile ./lua/bufferline.lua
+            luafile ./lua/statusline.lua
 
             lua << EOF
             vim.defer_fn(function()
             vim.cmd [[
-              luafile /etc/nixos/programs/nvim/lua/lsp.lua
-              luafile /etc/nixos/programs/nvim/lua/tree.lua
-              luafile /etc/nixos/programs/nvim/lua/treesitter.lua
-              luafile /etc/nixos/programs/nvim/lua/neorg.lua
+              luafile ./lua/lsp.lua
+              luafile ./lua/tree.lua
+              luafile ./lua/treesitter.lua
+              luafile ./lua/neorg.lua
             ]]
             end, 70)
             EOF

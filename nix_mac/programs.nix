@@ -21,7 +21,6 @@
       # monitoring
       bmon
       htop
-      nvtop
       iotop
       lm_sensors
       ncdu # disk analisys
@@ -29,8 +28,6 @@
       # terminal
       alacritty
       # xterm
-
-      qmk
 
       # text editor
       neovim
@@ -53,18 +50,18 @@
       # IDE
       vscode
       # arduino
-      jetbrains.pycharm-community
+      # jetbrains.pycharm-community
       # thonny
       dbeaver
 
       # LaTeX
       texlive.combined.scheme-full
-      texstudio
+      # texstudio
       mindforger
 
       # graphics
       # blender
-      # darktable
+      darktable
       gimp
       krita
 
@@ -93,7 +90,7 @@
       # shutter
 
       # office
-      # libreoffice
+      libreoffice
 
       # games
       # openarena
@@ -122,8 +119,8 @@
         jedi
         termcolor
         # ipython
-        # bpython
-        ptpython
+        bpython
+        # ptpython
         pylint
         jupyter
       ]))
