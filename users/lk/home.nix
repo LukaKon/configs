@@ -48,17 +48,24 @@ in
     gnupg # gpg
     pinentry-gnome
 
+    # terminal
+    alacritty
+    # foot
+
     # file managers
     vifm-full
     ranger
 
     # IDE
-    spacevim
+    neovim-nightly
+    # spacevim
+    # neovide
+    uivonim
     # sublime3
-    neovim
+    # neovim
     vscode
     arduino
-    jetbrains.pycharm-community
+    # jetbrains.pycharm-community
     # jetbrains.pycharm-professional
     # thonny
     unityhub
@@ -107,6 +114,37 @@ in
       libdvdcss # plugin to play cd/dvd in mpv
       moc  # music player
       youtube-dl
+
+    # packer
+      unzip
+      unar
+      xarchiver
+      p7zip
+
+    nix-prefetch-git
+
+      tree
+      pstree  # process tree
+      wget
+      curl
+      rsync
+      bat # cat
+      fd  # find
+
+      nodejs
+
+      # monitoring
+      bmon
+      htop
+      iotop
+      lm_sensors
+      ncdu # disk analisys
+      sysstat
+
+      # ueberzug
+      fzf
+      xsel  # for copying
+      clipmenu  # for copying
 
       (python39.withPackages(ps: with ps;
       [

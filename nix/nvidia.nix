@@ -5,6 +5,7 @@
   # services.xserver.videoDrivers = ["modesetting" "nvidia"];
   environment.systemPackages = with pkgs;
   [
+    nvtop
     cudaPackages.cudatoolkit_11
   ];
 }

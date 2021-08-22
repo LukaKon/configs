@@ -8,6 +8,20 @@
     cleanTmpDir = true;
   };
 
+  # Sound
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
+
+  nixpkgs.config.allowUnfree = true;
+
+  # Localisation
+  time.timeZone = "Europe/Warsaw";
+
+  i18n = {
+    defaultLocale = "pl_PL.UTF-8";
+    supportedLocales = ["pl_PL.UTF-8/UTF-8" "en_US.UTF-8/UTF-8"];
+  };
+
   # Autoupgrade
   system = {
     autoUpgrade = {
@@ -16,6 +30,7 @@
     };
   };
 
+  # cleaning store
   nix = {
     autoOptimiseStore = true;
     gc = {
@@ -23,6 +38,7 @@
       # dates = "daily";
       # options = "--delete-older-than 7d";
     };
+
     # For hix flakes
     extraOptions = "experimental-features = nix-command flakes";
     package = pkgs.nixFlakes;
