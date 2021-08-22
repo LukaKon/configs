@@ -7,8 +7,8 @@
     ./system.nix        # Base system settings
     ./btrfs.nix
     ./nvidia.nix
-    ./sound.nix     # sound
-    ./locale.nix    # system localisation
+    # ./sound.nix     # sound
+    # ./locale.nix    # system localisation
     ./network.nix       # Network configuration
     ./programs.nix      # List of installed programs
     ./env_variables.nix
@@ -31,13 +31,13 @@
     ./fonts.nix     # Fonts to install
     ./hdd.nix           # Additional HDD
     # ./nfs.nix
-    ./nixpkgs.nix
+    # ./nixpkgs.nix
     ./users.nix     # Users configurations
     ./shellAliases.nix  # Shell aliases
     ./virtualisation/docker.nix # Docker
     # ./virtualisation/virtualbox.nix # Virtualbox
     ./virtualisation/virt-manager.nix
-    # ./programs/nvim/nvim.nix
+    ./programs/nvim/nvim.nix
     ./services/flatpak.nix
     # ./programs/vscode/vscode.nix    # vscode-with-extensions
     # ./programs/vscode/vs_conf.nix   # vscode-with-extensions
