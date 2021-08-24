@@ -121,7 +121,7 @@ in
       xarchiver
       p7zip
 
-    nix-prefetch-git
+      nix-prefetch-git
 
       tree
       pstree  # process tree
