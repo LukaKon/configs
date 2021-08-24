@@ -1,4 +1,4 @@
-#!/nix/store/gih0k73swr69wkjxyg4hdphgnlh6xbzn-system-path/bin/python
+## !/nix/store/gih0k73swr69wkjxyg4hdphgnlh6xbzn-system-path/bin/python
 
 import subprocess
 
