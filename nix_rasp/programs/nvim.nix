@@ -11,7 +11,7 @@
   };
   programs = {npm.enable = true;};
 
-	nixpkgs = {
+  nixpkgs = {
     config = {
       packageOverrides = pkgs: rec {
         neovim = pkgs.neovim.override {
@@ -22,9 +22,9 @@
             pkgs.vimPlugins;
             {
               start = [
-                          vim-airline-themes
-                          vim-airline
-                          gruvbox-community
+                vim-airline-themes
+                vim-airline
+                gruvbox-community
 
                           # file explorer
                           The_NERD_tree
@@ -85,9 +85,9 @@
                           vim-repeat # Repeat stuff
 
                           quick-scope # Text Navigation
-													vim-illuminate # highlight all matches under cursor
+                          vim-illuminate # highlight all matches under cursor
 
-													vim-polyglot # Better syntax support
+                          vim-polyglot # Better syntax support
 
                           auto-pairs # Auto pairs for '(' '[' '{'
 
@@ -423,7 +423,7 @@
 
 
                         " tagbar
-												nmap <F8> :TagbarToggle<CR>
+                                                nmap <F8> :TagbarToggle<CR>
                       '';
               #opt=[];
             };

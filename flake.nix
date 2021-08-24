@@ -42,7 +42,6 @@
 
   outputs = inputs@{ nixpkgs, flake-utils, home-manager, neovim-nightly-overlay, ... }:
 
-
     let
       system = "x86_64-linux";
 
@@ -53,12 +52,12 @@
 
       lib = nixpkgs.lib;
 
-      # overlays = [
+      overlays = [
       #   inputs.xmonad.overlay
       #   inputs.xmonad-contrib.overlay
       #   inputs.taffybar.overlay
-        # inputs.neovim-nightly-overlay.overlay
-      # ];
+        inputs.neovim-nightly-overlay.overlay
+      ];
 
     in {
         homeManagerConfigurations = {
@@ -71,6 +70,7 @@
               imports = [
                 ./users/lk/home.nix
               ];
+              nixpkgs.overlays = overlays;
             };
           };
         };
