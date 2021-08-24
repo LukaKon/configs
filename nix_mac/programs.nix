@@ -52,7 +52,7 @@
       # arduino
       # jetbrains.pycharm-community
       # thonny
-      dbeaver
+      # dbeaver
 
       # LaTeX
       texlive.combined.scheme-full
