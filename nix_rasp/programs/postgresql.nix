@@ -1,6 +1,7 @@
 {config, pkgs, ...}:
 
 {
+	environment.systemPackages = with pkgs; [dbeaver];
 	# environment.systemPackages = with pkgs; [pgadmin];
 	# environment.systemPackages = with pkgs; [pgmanage];
 	# services.pgmanage.enable = true;
