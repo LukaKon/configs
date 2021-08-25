@@ -31,12 +31,8 @@
       # xterm
 
       # text editor
-<<<<<<< HEAD
       neovim
       uivonim
-=======
-      # neovim
->>>>>>> 0ef7ef01b9c57d11c6bca3b35517b7c46594b596
       # ueberzug
       fzf
       xsel  # for copying
@@ -55,7 +51,6 @@
 
       # IDE
       vscode
-      dbeaver
 
       # wordpress
 
