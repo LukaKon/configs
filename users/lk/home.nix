@@ -102,7 +102,7 @@ in
       # cd burner
       brasero
       etcher
-      gparted
+      # gparted
 
       # snipping tool
       shutter
