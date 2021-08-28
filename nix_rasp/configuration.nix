@@ -14,7 +14,8 @@
     ./security/firewall.nix
     ./services/openssh.nix  # SSH
     ./programs/postgresql.nix   # PostgreSQL
-    ./desktops/qtile.nix
+    ./desktops/i3/i3.nix
+    # ./desktops/qtile.nix
     # ./desktops/spectrwm.nix
     # ./desktops/mate.nix
     # ./desktops/gnome.nix
