@@ -30,8 +30,7 @@
     # ./programs/steam.nix        # Steam gaming portal
     ./fonts.nix     # Fonts to install
     ./hdd.nix           # Additional HDD
-    # ./nfs.nix
-    # ./nixpkgs.nix
+    # ./system/nfs.nix
     ./users.nix     # Users configurations
     ./shellAliases.nix  # Shell aliases
     ./virtualisation/docker.nix # Docker

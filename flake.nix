@@ -2,7 +2,14 @@
   description = "Flake system configurations";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    # my_conf = {
+      # url = "github:LukaKon/configs/nix";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-21.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -40,7 +47,7 @@
   #     flake = false;
   };
 
-  outputs = inputs@{ nixpkgs, flake-utils, home-manager, neovim-nightly-overlay, ... }:
+  outputs = inputs@{  nixpkgs, nixpkgs-unstable, flake-utils, home-manager, neovim-nightly-overlay, ... }:
 
     let
       system = "x86_64-linux";
@@ -80,7 +87,18 @@
           inherit system;
 
           modules = [
-            ./nix/configuration.nix
+            ({ config, pkgs, ... }:
+            let
+              overlay-unstable = final: prev: {
+                unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
+              };
+            in
+            {
+              nixpkgs.overlays = [ overlay-unstable ];
+
+              imports = [
+                ./nix/configuration.nix
+
             # ./nix/hardware-configuration.nix
             # home-manager.nixosModules.home-manager
           # {
@@ -88,6 +106,9 @@
               # inputs.neovim-nightly-overlay.overlay
             # ];
           # }
+            ];
+          }
+          )
           ];
         };
       };
