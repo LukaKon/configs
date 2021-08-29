@@ -1,29 +1,29 @@
 {
   description = "Flake system configurations";
 
-  inputs = {
+  inputs = rec {
 
     # my_conf = {
       # url = "github:LukaKon/configs/nix";
       # inputs.nixpkgs.follows = "nixpkgs";
     # };
 
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-21.05";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-21.05";
+    unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.unstable.follows = "nixpkgs";
     };
 
     flake-utils = {
       url = "github:numtide/flake-utils";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.unstable.follows = "nixpkgs";
     };
 
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.unstable.follows = "nixpkgs";
       # inputs.flake-utils.follows = "flake-utils";
     };
 
@@ -47,17 +47,19 @@
   #     flake = false;
   };
 
-  outputs = inputs@{  nixpkgs, nixpkgs-unstable, flake-utils, home-manager, neovim-nightly-overlay, ... }:
+  # outputs = inputs@{ nixpkgs, nixpkgs-unstable, flake-utils, home-manager, neovim-nightly-overlay, ... }:
+  outputs = inputs:
 
     let
       system = "x86_64-linux";
 
-      pkgs = import nixpkgs {
+      pkgs = import inputs.unstable {
         inherit system;
         config = { allowUnfree = true;};
       };
 
-      lib = nixpkgs.lib;
+      # lib = nixpkgs.lib;
+      lib = inputs.nixpkgs.lib;
 
       overlays = [
       #   inputs.xmonad.overlay
@@ -68,7 +70,7 @@
 
     in {
         homeManagerConfigurations = {
-          lk = home-manager.lib.homeManagerConfiguration {
+          lk = inputs.home-manager.lib.homeManagerConfiguration {
             inherit system pkgs;
             username = "lk";
             homeDirectory = "/home/lk";
@@ -77,7 +79,7 @@
               imports = [
                 ./users/lk/home.nix
               ];
-              nixpkgs.overlays = overlays;
+              inputs.unstable.overlays = overlays;
             };
           };
         };
@@ -87,29 +89,9 @@
           inherit system;
 
           modules = [
-            ({ config, pkgs, ... }:
-            let
-              overlay-unstable = final: prev: {
-                unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
-              };
-            in
-            {
-              nixpkgs.overlays = [ overlay-unstable ];
-
-              imports = [
                 ./nix/configuration.nix
 
-            # ./nix/hardware-configuration.nix
-            # home-manager.nixosModules.home-manager
-          # {
-            # nixpkgs.overlays = [
-              # inputs.neovim-nightly-overlay.overlay
-            # ];
-          # }
             ];
-          }
-          )
-          ];
         };
       };
     };
