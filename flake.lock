@@ -76,11 +76,11 @@
       },
       "locked": {
         "dir": "contrib",
-        "lastModified": 1629988656,
-        "narHash": "sha256-Y9XnFAePPOBwV2L+wqpwS83A5gVcDJ8sjqly0Do8HWc=",
+        "lastModified": 1630184454,
+        "narHash": "sha256-2m0LhCLtNlD5ost1BjWf4BKWmpvQM/Uip7jQjbf100U=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "274a3504a790a799b28ee89c75e29fb4dbdff41f",
+        "rev": "81f4de08bdfeb4b9c107e2eaff3cbb597b2df943",
         "type": "github"
       },
       "original": {
@@ -99,11 +99,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1630052200,
-        "narHash": "sha256-xLhJRJS1UtR+XCLF1I032EKA7AIqyZOLPJZpIUKpdoY=",
+        "lastModified": 1630224701,
+        "narHash": "sha256-TGb8QdaRcMCHK0/UBFFVG6lGI0wxy+CSqK/bgmnVtaU=",
         "owner": "nix-community",
         "repo": "neovim-nightly-overlay",
-        "rev": "0476083c6e47f8aee91bdd51e7816e81bbaf567c",
+        "rev": "7c63aa424013da20a1b4ed8f1b5cf28ff0c57d0d",
         "type": "github"
       },
       "original": {
@@ -114,11 +114,25 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1629880049,
-        "narHash": "sha256-HOxVkROGlDA57D0Tg/0nus938o4HzmqacOiCoT1H5tE=",
+        "lastModified": 1630227793,
+        "narHash": "sha256-Cr93/YpvWquBXKhr7H+D8hfStn9cyO6KJ50XEoWHb4g=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "88226ea038e538e09c272a7c56ba73c3f5eed57f",
+        "rev": "9e8fcb0184170a97b4d0a933783bd7c83aff2ab2",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs-unstable": {
+      "locked": {
+        "lastModified": 1630074300,
+        "narHash": "sha256-BFM7OiXRs0RvSUZd6NCGAKWVPn3VodgYQ4TUQXxbMBU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "21c937f8cb1e6adcfeb36dfd6c90d9d9bfab1d28",
         "type": "github"
       },
       "original": {
@@ -133,7 +147,8 @@
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-unstable": "nixpkgs-unstable"
       }
     }
   },
