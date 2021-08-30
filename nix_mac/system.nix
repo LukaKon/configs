@@ -5,8 +5,23 @@
 	boot = {
 			loader.systemd-boot.enable = true;
 			loader.efi.canTouchEfiVariables = true;
+			cleanTmpDir = true;
 			supportedFilesystems = [ "ntfs" ];
 		};
+
+	# Sound
+	sound.enable = true;
+	hardware.pulseaudio.enable = true;
+
+	nixpkgs.config.allowUnfree = true;
+
+  # Localisation
+  time.timeZone = "Europe/Warsaw";
+
+  i18n = {
+    defaultLocale = "pl_PL.UTF-8";
+    supportedLocales = ["pl_PL.UTF-8/UTF-8" "en_US.UTF-8/UTF-8"];
+  };
 
 	system = {
 				autoUpgrade = {
@@ -20,6 +35,9 @@
 				dates = "daily";
 				options = "--delete-older-than 5d";
 			};
+	# For hix flakes
+    extraOptions = "experimental-features = nix-command flakes";
+    package = pkgs.nixFlakes;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

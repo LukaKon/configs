@@ -6,6 +6,7 @@
     # my_conf = {
       # url = "github:LukaKon/configs/nix";
       # inputs.nixpkgs.follows = "nixpkgs";
+      # flake = false;
     # };
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-21.05";
@@ -65,7 +66,7 @@
       #   inputs.xmonad.overlay
       #   inputs.xmonad-contrib.overlay
       #   inputs.taffybar.overlay
-        inputs.neovim-nightly-overlay.overlay
+        # inputs.neovim-nightly-overlay.overlay
       ];
 
     in {
@@ -75,11 +76,13 @@
             username = "lk";
             homeDirectory = "/home/lk";
             stateVersion = "21.05";
-            configuration = {
+            configuration = { pkgs, ...}:
+            {
               imports = [
                 ./users/lk/home.nix
               ];
-              inputs.unstable.overlays = overlays;
+              # inputs.unstable.overlays = overlays;
+              nixpkgs.overlays = overlays;
             };
           };
         };
@@ -92,6 +95,16 @@
                 ./nix/configuration.nix
 
             ];
+        };
+      };
+
+      nixosConfigurations = {
+        mac = lib.nixosSystem {
+          inherit system;
+
+          modules = [
+            ./nix_mac/configuration.nix
+          ];
         };
       };
     };
