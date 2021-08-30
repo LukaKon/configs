@@ -93,6 +93,7 @@
 
           modules = [
                 ./nix/configuration.nix
+                # ./nix/comp/fuji.nix
 
             ];
         };
