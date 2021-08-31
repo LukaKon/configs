@@ -24,8 +24,9 @@
 
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
-      inputs.unstable.follows = "nixpkgs";
-      # inputs.flake-utils.follows = "flake-utils";
+      # inputs.unstable.follows = "unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
     };
 
   #   xmonad = {
@@ -66,7 +67,7 @@
       #   inputs.xmonad.overlay
       #   inputs.xmonad-contrib.overlay
       #   inputs.taffybar.overlay
-        # inputs.neovim-nightly-overlay.overlay
+        inputs.neovim-nightly-overlay.overlay
       ];
 
     in {
@@ -80,9 +81,11 @@
             {
               imports = [
                 ./users/lk/home.nix
+                # ../../programs/nvim/nvim.nix
               ];
               # inputs.unstable.overlays = overlays;
               nixpkgs.overlays = overlays;
+              # unstable.overlays = overlays;
             };
           };
         };
@@ -94,6 +97,7 @@
           modules = [
                 ./nix/configuration.nix
                 # ./nix/comp/fuji.nix
+                ./nix/programs/nvim/nvim.nix
 
             ];
         };

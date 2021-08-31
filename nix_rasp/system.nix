@@ -13,21 +13,41 @@
         # Some gui programs need this
         "cma=128M"
     ];
-  };
+  loader = {
+    raspberryPi = {
+      enable = true;
+      version = 4;
+    };
+    grub.enable = false;
+    generic-extlinux-compatible.enable = true;
+};
 
-  boot.loader.raspberryPi = {
-    enable = true;
-    version = 4;
-  };
-  boot.loader.grub.enable = false;
-  boot.loader.generic-extlinux-compatible.enable = true;
+
   # Required for the Wireless firmware
   hardware.enableRedistributableFirmware = true;
+
+  # Packages
+  nixpkgs.config.allowUnfree = true;
+
+  # Sound
+  sound.enable = true;
+    hardware.pulseaudio.enable = true;
+    boot.loader.raspberryPi.firmwareConfig = ''
+        dtparam=audio=on
+    '';
+
+  # Localisation
+  time.timeZone = "Europe/Warsaw";
+
+    i18n = {
+				defaultLocale = "pl_PL.UTF-8";
+				supportedLocales = ["pl_PL.UTF-8/UTF-8" "en_US.UTF-8/UTF-8"];
+         };
 
 	system = {
 				autoUpgrade = {
 				enable = true;
-				#allowReboot = true;
+				allowReboot = true;
 				};
 			};
 

@@ -60,7 +60,7 @@ in
 
     # IDE
     # neovim-nightly
-    neovim
+    # neovim
     # spacevim
     # neovide
     uivonim
