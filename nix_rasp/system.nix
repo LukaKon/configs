@@ -20,10 +20,11 @@
     };
     grub.enable = false;
     generic-extlinux-compatible.enable = true;
-};
+  };
+  };
 
 
-  # Required for the Wireless firmware
+# Required for the Wireless firmware
   hardware.enableRedistributableFirmware = true;
 
   # Packages
@@ -39,10 +40,10 @@
   # Localisation
   time.timeZone = "Europe/Warsaw";
 
-    i18n = {
-				defaultLocale = "pl_PL.UTF-8";
-				supportedLocales = ["pl_PL.UTF-8/UTF-8" "en_US.UTF-8/UTF-8"];
-         };
+  i18n = {
+      defaultLocale = "pl_PL.UTF-8";
+      supportedLocales = ["pl_PL.UTF-8/UTF-8" "en_US.UTF-8/UTF-8"];
+        };
 
 	system = {
 				autoUpgrade = {
