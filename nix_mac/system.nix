@@ -1,25 +1,45 @@
+
 {config, pkgs, ...}:
 
 {
   # Use the systemd-boot EFI boot loader.
-	boot = {
-			loader.systemd-boot.enable = true;
-			loader.efi.canTouchEfiVariables = true;
-			supportedFilesystems = [ "ntfs" ];
-		};
+  boot = {
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+    cleanTmpDir = true;
+    supportedFilesystems = [ "ntfs" ];
+  };
 
-	system = {
-				autoUpgrade = {
-					enable = true;
-					allowReboot = true;
-				};
-			};
+    # Sound
+    sound.enable = true;
+    hardware.pulseaudio.enable = true;
 
-	nix.gc = {
-				automatic = true;
-				dates = "daily";
-				options = "--delete-older-than 5d";
-			};
+    nixpkgs.config.allowUnfree = true;
+
+  # Localisation
+  time.timeZone = "Europe/Warsaw";
+
+  i18n = {
+    defaultLocale = "pl_PL.UTF-8";
+    # supportedLocales = ["pl_PL.UTF-8/UTF-8" "en_US.UTF-8/UTF-8"];
+  };
+
+  system = {
+    autoUpgrade = {
+      enable = true;
+      allowReboot = true;
+    };
+  };
+
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 5d";
+  };
+
+    # For hix flakes
+    # nix.package = [ pkgs.nixUnstable pkgs.nixFlakes ];
+    # extraOptions = "experimental-features = nix-command flakes";
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
