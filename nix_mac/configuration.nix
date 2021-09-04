@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  <<<<<<< HEAD
   imports =
     [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -13,7 +14,6 @@
     ./security/doas.nix # Add 'doas'
     ./services/openssh.nix  # SSH
     ./programs/postgresql.nix   # PostgreSQL
-    # ./desktops/kde.nix
     ./desktops/gnome.nix    # Gnome window manager settings
     # ./services/keyring.nix    # included in Gnome desktop
     ./services/laptop.nix   # settings for laptop

@@ -7,6 +7,7 @@
       neovim-remote
       ripgrep
       ctags
+      neovim
     ];
   };
   programs = {npm.enable = true;};
