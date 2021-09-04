@@ -10,14 +10,7 @@ in
   programs.home-manager.enable = true;
   # programs.neovim = customNeovim pkgs;
 
-  programs.git = {
-    enable = true;
-    userName = "lukakon";
-    userEmail = "lukasz.konieczny.lk@protonmail.com";
-    extraConfig = {
-      init = { defaultBranch = "main"; };
-    };
-  };
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "lk";
@@ -32,6 +25,15 @@ in
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "21.05";
+
+  programs.git = {
+      enable = true;
+      userName = "lukakon";
+      userEmail = "lukasz.konieczny.lk@protonmail.com";
+      extraConfig = {
+        init = { defaultBranch = "main"; };
+      };
+    };
 
   programs.gpg = {
     enable = true;
@@ -57,12 +59,12 @@ in
     ranger
 
     # IDE
-    neovim-nightly
+    # neovim-nightly
+    # neovim
     # spacevim
     # neovide
     uivonim
     # sublime3
-    # neovim
     vscode
     arduino
     # jetbrains.pycharm-community
@@ -102,7 +104,7 @@ in
       # cd burner
       brasero
       etcher
-      gparted
+      # gparted
 
       # snipping tool
       shutter

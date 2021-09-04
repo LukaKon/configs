@@ -6,6 +6,7 @@
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
     cleanTmpDir = true;
+    supportedFilesystems = [ "ntfs" ];
   };
 
   # Sound

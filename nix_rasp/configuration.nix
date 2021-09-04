@@ -5,8 +5,6 @@
     [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./system.nix        # Base system settings
-    ./sound.nix     # sound
-    ./locale.nix    # system localisation
     ./network.nix       # Network configuration
     ./programs.nix      # List of installed programs
     ./env_variables.nix
@@ -14,7 +12,9 @@
     ./security/firewall.nix
     ./services/openssh.nix  # SSH
     ./programs/postgresql.nix   # PostgreSQL
-    ./desktops/spectrwm.nix
+    ./desktops/i3/i3.nix
+    # ./desktops/qtile.nix
+    # ./desktops/spectrwm.nix
     # ./desktops/mate.nix
     # ./desktops/gnome.nix
     # ./services/keyring.nix
@@ -25,7 +25,6 @@
     ./fonts.nix     # Fonts to install
     # ./hdd.nix         # Additional HDD
     # ./nfs.nix
-    ./nixpkgs.nix
     ./users.nix     # Users configurations
     ./shellAliases.nix  # Shell aliases
     ./virtualisation/docker.nix # Docker
