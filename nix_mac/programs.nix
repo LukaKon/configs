@@ -28,6 +28,9 @@
       # terminal
       alacritty
       # xterm
+      wezterm
+      kitty
+      wayst
 
       # text editor
       neovim
