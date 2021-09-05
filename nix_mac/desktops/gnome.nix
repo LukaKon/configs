@@ -5,27 +5,28 @@
     enable = true;
     videoDrivers = ["modesetting"]; #["nouveau"];
     displayManager.gdm.enable = true;
+    displayManager.gdm.wayland = false;
     desktopManager.gnome.enable = true;
 
     layout = "pl";
   };
 
-    environment.systemPackages = with pkgs;
-    [
-      gnome3.adwaita-icon-theme
-      gnomeExtensions.sound-output-device-chooser
-      gnomeExtensions.gtile # Tile windows on a grid.
-      gnomeExtensions.windownavigator
-      gnomeExtensions.just-perfection
-      gnomeExtensions.tweaks-in-system-menu
-      gnomeExtensions.vitals
-      gnome.gnome-tweaks
-      gnome.gnome-notes # sticky notes
-      gnome-breeze
+  environment.systemPackages = with pkgs;
+  [
+    gnome3.adwaita-icon-theme
+    gnomeExtensions.sound-output-device-chooser
+    gnomeExtensions.gtile # Tile windows on a grid.
+    gnomeExtensions.windownavigator
+    gnomeExtensions.just-perfection
+    gnomeExtensions.tweaks-in-system-menu
+    gnomeExtensions.vitals
+    gnome.gnome-tweaks
+    gnome.gnome-notes # sticky notes
+    gnome-breeze
 
 
-      dconf2nix
-      brasero
+    dconf2nix
+    brasero
       # firefox-wayland
       # foot
     ];
@@ -56,4 +57,4 @@
       gnome3.gnome-calendar
       gnome.gnome-terminal
     ];
-}
+  }
