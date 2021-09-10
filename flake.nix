@@ -23,12 +23,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-      # inputs.unstable.follows = "unstable";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
+    # neovim-nightly-overlay = {
+    #   url = "github:nix-community/neovim-nightly-overlay";
+    #   # inputs.unstable.follows = "unstable";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.flake-utils.follows = "flake-utils";
+    # };
 
   #   xmonad = {
   #     url = "github:xmonad/xmonad";
@@ -56,7 +56,7 @@
     let
       system = "x86_64-linux";
 
-      pkgs = import inputs.unstable {
+      pkgs = import inputs.nixpkgs {
         inherit system;
         config = { allowUnfree = true;};
       };
@@ -68,7 +68,7 @@
       #   inputs.xmonad.overlay
       #   inputs.xmonad-contrib.overlay
       #   inputs.taffybar.overlay
-        inputs.neovim-nightly-overlay.overlay
+        # inputs.neovim-nightly-overlay.overlay
       ];
 
     in {
