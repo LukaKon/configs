@@ -24,7 +24,7 @@ in {
     ../nix/programs/zsh.nix
     ../nix/programs/postgresql.nix
     ../nix/programs/nvim/nvim.nix
-    ../nix/desktops/gnome/gnome.nix
+    ../modules/desktops/gnome.nix
   ];
 
   fileSystems = {
@@ -35,32 +35,32 @@ in {
     };
   };
 
-  networking = {
-    hostName = hostname;
-    wireless = {
-      enable = true;
-      networks."${SSID}".psk = SSIDpassword;
-      interfaces = [ interface ];
+  # networking = {
+  #   hostName = hostname;
+  #   wireless = {
+  #     enable = true;
+  #     networks."${SSID}".psk = SSIDpassword;
+  #     interfaces = [ interface ];
+  #   };
+  # };
+
+  environment.systemPackages = with pkgs; [ vscode ];
+
+  services.openssh.enable = true;
+
+  users = {
+    mutableUsers = false;
+    users."${user}" = {
+      isNormalUser = true;
+      password = password;
+      extraGroups = [ "wheel" "networkmanager" "dialout" "libvirtd" "docker" ];
+      shell = pkgs.zsh;
+      packages = with pkgs;
+      [
+        exercism
+      ];
     };
   };
-
-    # environment.systemPackages = with pkgs; [ vim  qutebrowser ];
-
-    services.openssh.enable = true;
-
-    users = {
-      mutableUsers = false;
-      users."${user}" = {
-        isNormalUser = true;
-        password = password;
-        extraGroups = [ "wheel" "networkmanager" "dialout" "libvirtd" "docker" ];
-        shell = pkgs.zsh;
-        packages = with pkgs;
-        [
-          exercism
-        ];
-      };
-    };
 
     # Enable GPU acceleration
     hardware.raspberry-pi."4".fkms-3d.enable = true;
