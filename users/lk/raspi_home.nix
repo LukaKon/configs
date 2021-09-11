@@ -1,15 +1,8 @@
 { config, pkgs, ... }:
 
-let
-  # customNeovim = import ./config/nvim/nvim.nix;
-  # customNeovim = import ../../programs/nvim/nvim.nix;
-
-in
-  {
+{
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  # programs.neovim = customNeovim pkgs;
-
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -24,7 +17,7 @@ in
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "21.05";
+  home.stateVersion = "21.11";
 
   programs.git = {
     enable = true;
@@ -63,23 +56,24 @@ in
     # neovim
     # spacevim
     # neovide
-    uivonim
+    # uivonim
     # sublime3
     vscode
-    arduino
+    vscodium
+    # arduino
     # jetbrains.pycharm-community
     # jetbrains.pycharm-professional
     # thonny
-    unityhub
+    # unityhub
 
     # LaTeX
-    texlive.combined.scheme-full
+    # texlive.combined.scheme-full
     # texstudio
-    mindforger
+    # mindforger
 
       # graphics
-      blender
-      darktable
+      # blender
+      # darktable
       gimp
       krita
 
@@ -88,29 +82,29 @@ in
       geckodriver
       qutebrowser
       # vimb
-      brave
+      # brave
       # tor-browser-bundle-bin
       # nyxt
 
       # comunicator
       # signal-desktop
-      slack
+      # slack
 
       # video conference
-      zoom-us
+      # zoom-us
       # teams
       # skype
 
       # cd burner
-      brasero
-      etcher
+      # brasero
+      # etcher
       # gparted
 
       # snipping tool
       shutter
 
       # office
-      libreoffice
+      # libreoffice
 
     # media
     feh # picture viewer
@@ -166,4 +160,5 @@ in
         jupyter
       ]))
     ];
+
   }
