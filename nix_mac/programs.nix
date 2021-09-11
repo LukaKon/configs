@@ -29,11 +29,11 @@
       alacritty
       # xterm
       wezterm
-      kitty
-      wayst
+      # kitty
+      # wayst
 
       # text editor
-      neovim
+      # neovim
       # ranger
       # ueberzug
       fzf
@@ -55,7 +55,6 @@
       # arduino
       # jetbrains.pycharm-community
       # thonny
-      # dbeaver
 
       # LaTeX
       texlive.combined.scheme-full
