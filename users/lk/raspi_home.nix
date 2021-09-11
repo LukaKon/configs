@@ -46,6 +46,7 @@
     # terminal
     alacritty
     # foot
+    wezterm
 
     # file managers
     vifm-full
@@ -58,8 +59,8 @@
     # neovide
     # uivonim
     # sublime3
-    vscode
-    vscodium
+    # vscode
+    # vscodium
     # arduino
     # jetbrains.pycharm-community
     # jetbrains.pycharm-professional
