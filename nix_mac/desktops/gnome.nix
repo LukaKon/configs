@@ -5,7 +5,7 @@
     enable = true;
     videoDrivers = ["modesetting"]; #["nouveau"];
     displayManager.gdm.enable = true;
-    displayManager.gdm.wayland = false;
+    # displayManager.gdm.wayland = false;
     desktopManager.gnome.enable = true;
 
     layout = "pl";
