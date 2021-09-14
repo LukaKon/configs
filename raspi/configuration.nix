@@ -22,7 +22,7 @@ in {
     ../nix/security/doas.nix
     ../nix/security/firewall.nix
     ../nix/programs/zsh.nix
-    ../nix/programs/postgresql.nix
+    ../modules/programs/postgresql.nix
     ../nix/programs/nvim/nvim.nix
     ../modules/desktops/gnome.nix
   ];

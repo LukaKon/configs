@@ -44,9 +44,9 @@
     pinentry-gnome
 
     # terminal
-    alacritty
-    # foot
-    wezterm
+    # alacritty
+    foot
+    # wezterm
 
     # file managers
     vifm-full
