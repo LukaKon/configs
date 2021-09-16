@@ -23,7 +23,7 @@ in {
     ../nix/security/firewall.nix
     ../nix/programs/zsh.nix
     ../modules/programs/postgresql.nix
-    ../nix/programs/nvim/nvim.nix
+    ../modules/programs/nvim/nvim.nix
     ../modules/desktops/gnome.nix
   ];
 

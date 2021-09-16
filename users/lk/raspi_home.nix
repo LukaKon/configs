@@ -68,7 +68,7 @@
     # unityhub
 
     # LaTeX
-    # texlive.combined.scheme-full
+    texlive.combined.scheme-full
     # texstudio
     # mindforger
 
@@ -87,25 +87,11 @@
       # tor-browser-bundle-bin
       # nyxt
 
-      # comunicator
-      # signal-desktop
-      # slack
+    # snipping tool
+    shutter
 
-      # video conference
-      # zoom-us
-      # teams
-      # skype
-
-      # cd burner
-      # brasero
-      # etcher
-      # gparted
-
-      # snipping tool
-      shutter
-
-      # office
-      # libreoffice
+    # office
+    libreoffice
 
     # media
     feh # picture viewer
