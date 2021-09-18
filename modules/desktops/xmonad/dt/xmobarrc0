@@ -1,0 +1,25 @@
+Config {
+       , font = "xft:Monospace:pixelsize=11"
+       -- used to make the bar appear correctly after Mod-q in older xmonad implementations (0.9.x)
+       -- doesn't seem to do anything anymore (0.10, darcs)
+--     , lowerOnStart = False
+       , borderColor = "black"
+       , border = TopB
+       , bgColor = "black"
+       , fgColor = "grey"
+       , position = TopW L 100
+       , commands = [
+                -- Addison, TX
+                Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10,
+                Run Memory ["-t","Mem: <usedratio>%"] 10,
+                Run Swap [] 10,
+                Run Date "%_d %a %b %l:%M" "date" 10,
+                Run Network "wlp1s0" ["-L","0","-H","32","--normal","green","--high","red"] 10,
+                /* Run Network "enp0s31f6" ["-L","0","-H","32","--normal","green","--high","red"] 10, */
+                Run StdinReader
+                ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       /* , template = "%StdinReader% }{ %network% | %network% | %cpu% | %memory% * %swap%    <fc=#ee9a00>%date%</fc> | " */
+       , template = "%StdinReader% }{ | %cpu% | %memory% * %swap%    <fc=#ee9a00>%date%</fc> | "
+       }

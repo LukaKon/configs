@@ -6,7 +6,7 @@
     ./hardware-configuration.nix
     ./system.nix        # Base system settings
     ./btrfs.nix
-    ./nvidia.nix
+    # ./nvidia.nix
     # ./sound.nix     # sound
     # ./locale.nix    # system localisation
     ./network.nix       # Network configuration
@@ -15,7 +15,7 @@
     ./security/doas.nix # Add 'doas'
     ./security/firewall.nix
     ./services/openssh.nix  # SSH
-    ./programs/postgresql.nix   # PostgreSQL
+    # ./programs/postgresql.nix   # PostgreSQL
     # ./desktops/qtile.nix  # Qtile window manager settings
     # ./desktops/i3/i3.nix  # i3 window manager settings
     ./desktops/gnome/gnome.nix  # Gnome window manager settings
@@ -38,7 +38,5 @@
     ./virtualisation/virt-manager.nix
     # ./programs/nvim/nvim.nix
     ./services/flatpak.nix
-    # ./programs/vscode/vscode.nix    # vscode-with-extensions
-    # ./programs/vscode/vs_conf.nix   # vscode-with-extensions
   ];
 }
