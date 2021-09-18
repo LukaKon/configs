@@ -73,24 +73,24 @@
       ];
 
     in {
-        # homeManagerConfigurations = {
-        #   lk = inputs.home-manager.lib.homeManagerConfiguration {
-        #     inherit system pkgs;
-        #     username = "lk";
-        #     homeDirectory = "/home/lk";
-        #     stateVersion = "21.05";
-        #     configuration = { pkgs, ...}:
-        #     {
-        #       imports = [
-        #         ./users/lk/home.nix
-        #         # ../../programs/nvim/nvim.nix
-        #       ];
-        #       # inputs.unstable.overlays = overlays;
-        #       nixpkgs.overlays = overlays;
-        #       # unstable.overlays = overlays;
-        #     };
-        #   };
-        # };
+        homeManagerConfigurations = {
+          lk = home-manager.lib.homeManagerConfiguration {
+            inherit system pkgs;
+            username = "lk";
+            homeDirectory = "/home/lk";
+            stateVersion = "21.05";
+            configuration = { pkgs, ...}:
+            {
+              imports = [
+                ./users/lk/home.nix
+                # ../../programs/nvim/nvim.nix
+              ];
+              # inputs.unstable.overlays = overlays;
+              nixpkgs.overlays = overlays;
+              # unstable.overlays = overlays;
+            };
+          };
+        };
 
       nixosConfigurations = {
 
@@ -99,24 +99,25 @@
           inherit system;
 
           modules = [
-                ./nix/configuration.nix
+                ./comp/fuji.nix
                 # ./modules/desktops/gnome.nix
 
-                ./modules/programs/nvim/nvim.nix
-                ./modules/programs/postgresql.nix
-                ./modules/programs/zsh.nix
-                # ./modules/system/nvidia.nix
-                # ./modules/programs/fuji_progr.nix
+                # ./modules/programs/nvim/nvim.nix
+                # ./modules/programs/postgresql.nix
+                # ./modules/programs/zsh.nix
+                # # ./modules/system/nvidia.nix
+                # # ./modules/programs/fuji_progr.nix
+                # ./modules/system/fonts.nix
 
-                home-manager.nixosModules.home-manager {
-                # pkgs.nixosModules.home-manager {
-                  home-manager.useGlobalPkgs = true;
-                  home-manager.useUserPackages = true;
-                  home-manager.users.lk = import ./users/lk/home.nix;
-                  nixpkgs.overlays = [
-                    neovim-nightly-overlay.overlay
-                  ];
-                }
+                # home-manager.nixosModules.home-manager {
+                # # pkgs.nixosModules.home-manager {
+                #   home-manager.useGlobalPkgs = true;
+                #   home-manager.useUserPackages = true;
+                #   home-manager.users.lk = import ./users/lk/home.nix;
+                #   # nixpkgs.overlays = [
+                #     # neovim-nightly-overlay.overlay
+                #   # ];
+                # }
             ];
         };
 
