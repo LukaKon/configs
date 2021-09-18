@@ -100,14 +100,6 @@
 
           modules = [
                 ./comp/fuji.nix
-                # ./modules/desktops/gnome.nix
-
-                # ./modules/programs/nvim/nvim.nix
-                # ./modules/programs/postgresql.nix
-                # ./modules/programs/zsh.nix
-                # # ./modules/system/nvidia.nix
-                # # ./modules/programs/fuji_progr.nix
-                # ./modules/system/fonts.nix
 
                 # home-manager.nixosModules.home-manager {
                 # # pkgs.nixosModules.home-manager {
