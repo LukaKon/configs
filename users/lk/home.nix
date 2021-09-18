@@ -50,6 +50,9 @@ in
     gnupg # gpg
     pinentry-gnome
 
+    # jre8
+    nodejs
+
     # terminal
     alacritty
     # foot
@@ -134,8 +137,6 @@ in
     rsync
     bat # cat
     fd  # find
-
-    nodejs
 
       # monitoring
       bmon

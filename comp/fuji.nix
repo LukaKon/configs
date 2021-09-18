@@ -9,7 +9,7 @@
     ./../modules/system/system.nix        # Base system settings
     ./../modules/system/btrfs.nix
     ./../modules/system/network.nix       # Network configuration
-    # ./../modules/system/nvidia.nix
+    ./../modules/system/nvidia.nix
     ./../modules/system/fonts.nix
     ./../modules/system/env_variables.nix
     # ./../modules/system/cron.nix
