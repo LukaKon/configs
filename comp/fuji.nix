@@ -6,7 +6,7 @@
     ./hardware-configuration.nix
 
     # System
-    ./system.nix        # Base system settings
+    ./../modules/system/system.nix        # Base system settings
     ./../modules/system/btrfs.nix
     ./../modules/system/network.nix       # Network configuration
     # ./../modules/system/nvidia.nix
