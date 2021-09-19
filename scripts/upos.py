@@ -3,6 +3,4 @@
 import subprocess
 
 print('\nUpdate repositories:\n')
-subprocess.run(
-    ['nix', 'flake', 'update']
-)
+subprocess.run(['nix', 'flake', 'update'])
