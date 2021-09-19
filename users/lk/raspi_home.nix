@@ -45,7 +45,7 @@
 
     # terminal
     # alacritty
-    foot
+    # foot
     # wezterm
 
     # file managers
@@ -72,20 +72,20 @@
     # texstudio
     # mindforger
 
-      # graphics
-      # blender
-      # darktable
-      gimp
-      krita
+    # graphics
+    # blender
+    # darktable
+    gimp
+    krita
 
-      # www
-      firefox
-      geckodriver
-      qutebrowser
-      # vimb
-      # brave
-      # tor-browser-bundle-bin
-      # nyxt
+    # www
+    firefox
+    geckodriver
+    qutebrowser
+    # vimb
+    # brave
+    # tor-browser-bundle-bin
+    # nyxt
 
     # snipping tool
     shutter
@@ -118,34 +118,33 @@
 
     nodejs
 
-      # monitoring
-      bmon
-      htop
-      iotop
-      lm_sensors
-      ncdu # disk analisys
-      sysstat
+    # monitoring
+    bmon
+    htop
+    iotop
+    lm_sensors
+    ncdu # disk analisys
+    sysstat
 
-      # ueberzug
-      fzf
-      xsel  # for copying
-      clipmenu  # for copying
+    # ueberzug
+    fzf
+    xsel  # for copying
+    clipmenu  # for copying
 
-      (python39.withPackages(ps: with ps;
-      [
-        autopep8
-        flake8
-        colorama
-        psutil
-        pip
-        pynvim
-        yapf
-        jedi
-        termcolor
-        bpython
-        pylint
-        jupyter
-      ]))
-    ];
-
-  }
+    (python39.withPackages(ps: with ps;
+    [
+      autopep8
+      flake8
+      colorama
+      psutil
+      pip
+      pynvim
+      yapf
+      jedi
+      # termcolor
+      # bpython
+      pylint
+      # jupyter
+    ]))
+  ];
+}
