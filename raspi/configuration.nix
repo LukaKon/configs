@@ -12,19 +12,20 @@ in {
   imports = [
     "${fetchTarball "https://github.com/NixOS/nixos-hardware/archive/936e4649098d6a5e0762058cb7687be1b2d90550.tar.gz" }/raspberry-pi/4"
 
-    ../nix/system.nix
-    ../nix/fonts.nix
-    ../nix/shellAliases.nix
-    ../nix/services/flatpak.nix
-    ../nix/services/openssh.nix
-    ../nix/virtualisation/docker.nix
-    ../nix/virtualisation/virt-manager.nix
-    ../nix/security/doas.nix
-    ../nix/security/firewall.nix
-    ../nix/programs/zsh.nix
-    ../modules/programs/postgresql.nix
-    ../modules/programs/nvim/nvim.nix
-    ../modules/desktops/gnome.nix
+    ./../modules/system/system.nix
+    ./../modules/system/fonts.nix
+    ./../modules/system/shellAliases.nix
+    ./../modules/services/openssh.nix
+    ./../modules/virtualisation/docker.nix
+    ./../modules/virtualisation/virt-manager.nix
+    ./../modules/security/doas.nix
+    ./../moodules/security/firewall.nix
+    ./../modules/programs/raspi_progr.nix
+    ./../modules/programs/flatpak.nix
+    ./../modules/programs/zsh.nix
+    ./../modules/programs/postgresql.nix
+    ./../modules/programs/nvim/nvim.nix
+    ./../modules/desktops/wayland_gnome.nix
   ];
 
   fileSystems = {
@@ -44,7 +45,7 @@ in {
   #   };
   # };
 
-  environment.systemPackages = with pkgs; [ vscode foot ];
+  # environment.systemPackages = with pkgs; [ vscode ];
 
   services.openssh.enable = true;
 
