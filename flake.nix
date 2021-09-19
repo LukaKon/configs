@@ -26,9 +26,9 @@
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
     #   # inputs.unstable.follows = "unstable";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
+    inputs.nixpkgs.follows = "nixpkgs";
+    inputs.flake-utils.follows = "flake-utils";
+  };
 
   #   xmonad = {
   #     url = "github:xmonad/xmonad";
@@ -48,12 +48,12 @@
   #   picom-jonaburg = {
   #     url = "github:jonaburg/picom";
   #     flake = false;
-  };
+};
 
-  outputs = inputs@{ nixpkgs, flake-utils, neovim-nightly-overlay, ... }:
+outputs = inputs@{ nixpkgs, flake-utils, neovim-nightly-overlay, ... }:
   # outputs = inputs:
 
-    let
+  let
       # system = "x86_64-linux";
 
       # pkgs = import inputs.nixpkgs {
@@ -72,7 +72,7 @@
       #   inputs.neovim-nightly-overlay.overlay
       # ];
 
-    in {
+  in {
         # homeManagerConfigurations = {
         #   lk = home-manager.lib.homeManagerConfiguration {
         #     inherit system pkgs;
@@ -92,14 +92,15 @@
         #   };
         # };
 
-      nixosConfigurations = {
+        nixosConfigurations = {
 
         # desktop
         fuji = nixpkgs.lib.nixosSystem {
           # inherit system pkgs;
           system = "x86_64-linux";
+
           modules = [
-                ./comp/fuji.nix
+            ./comp/fuji.nix
 
                 # home-manager.nixosModules.home-manager {
                 # # pkgs.nixosModules.home-manager {
@@ -110,8 +111,8 @@
                 #     neovim-nightly-overlay.overlay
                 #   ];
                 # }
-            ];
-        };
+              ];
+            };
 
         # laptop
         mac = nixpkgs.lib.nixosSystem {
@@ -128,11 +129,10 @@
           system = "aarch64-linux";
 
           modules = [
-              ./raspi/configuration.nix
+            ./raspi/configuration.nix
           ];
         };
 
-
       };
     };
-}
+  }

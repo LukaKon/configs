@@ -10,7 +10,7 @@ let
   hostname = "raspi";
 in {
   imports = [
-    "${fetchTarball "https://github.com/NixOS/nixos-hardware/archive/936e4649098d6a5e0762058cb7687be1b2d90550.tar.gz" }/raspberry-pi/4"
+    # "${fetchTarball "https://github.com/NixOS/nixos-hardware/archive/936e4649098d6a5e0762058cb7687be1b2d90550.tar.gz" }/raspberry-pi/4"
 
     ./../modules/system/system.nix
     ./../modules/system/fonts.nix
@@ -36,18 +36,14 @@ in {
     };
   };
 
-  # networking = {
-  #   hostName = hostname;
+  networking = {
+    hostName = hostname;
   #   wireless = {
   #     enable = true;
   #     networks."${SSID}".psk = SSIDpassword;
   #     interfaces = [ interface ];
-  #   };
-  # };
-
-  # environment.systemPackages = with pkgs; [ vscode ];
-
-  services.openssh.enable = true;
+# };
+  };
 
   users = {
     mutableUsers = false;
@@ -64,24 +60,23 @@ in {
   };
 
     # Enable GPU acceleration
-    hardware.raspberry-pi."4".fkms-3d.enable = true;
-
-    # services.xserver = {
-    #   enable = true;
-    #   displayManager.lightdm.enable = true;
-    #   desktopManager.xfce.enable = true;
-    # };
+    # hardware.raspberry-pi."4".fkms-3d.enable = true;
 
     hardware.pulseaudio = {
       enable = true;
       support32Bit = true;
-    # extraModules = with pkgs; [ pulseaudio-modules-bt ];
-    package = pkgs.pulseaudioFull;
-    extraConfig = ''
-        load-module module-switch-on-connect
-    '';
-  };
+      # extraModules = with pkgs; [ pulseaudio-modules-bt ];
+      package = pkgs.pulseaudioFull;
+      extraConfig = ''
+          load-module module-switch-on-connect
+      '';
+    };
 
-  # nixpkgs.config.allowUnfree = true;
+    powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 
-}
+    # services.tlp.enable = true;
+    powerManagement.powertop.enable = true;
+
+    security.protectKernelImage = true;
+
+  }
