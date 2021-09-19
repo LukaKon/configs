@@ -19,7 +19,7 @@ in {
     ./../modules/virtualisation/docker.nix
     ./../modules/virtualisation/virt-manager.nix
     ./../modules/security/doas.nix
-    ./../moodules/security/firewall.nix
+    ./../modules/security/firewall.nix
     ./../modules/programs/raspi_progr.nix
     ./../modules/programs/flatpak.nix
     ./../modules/programs/zsh.nix
