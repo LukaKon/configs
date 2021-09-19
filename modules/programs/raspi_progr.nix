@@ -97,20 +97,21 @@
         xsel  # for copying
         clipmenu  # for copying
 
-        (python39.withPackages(ps: with ps;
-        [
-            autopep8
-            flake8
-            colorama
-            psutil
-            pip
-            pynvim
-            yapf
-            jedi
-            termcolor
-            bpython
-            pylint
-            jupyter
-        ]))
+        # (python39.withPackages(ps: with ps;
+        # [
+        #     autopep8
+        #     flake8
+        #     colorama
+        #     psutil
+        #     pip
+        #     pynvim
+        #     yapf
+        #     jedi
+        #     termcolor
+        #     bpython
+        #     pylint
+        #     jupyter
+        # ]))
     ];
+  };
 }
