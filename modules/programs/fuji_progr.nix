@@ -11,37 +11,37 @@
       pciutils
       gputils
 
-    #   git
-    # git-crypt
-    # gnupg # gpg
-    # pinentry-gnome
+      #   git
+      # git-crypt
+      # gnupg # gpg
+      # pinentry-gnome
 
-    # terminal
-    alacritty
-    # foot
+      # terminal
+      alacritty
+      # foot
 
-    # file managers
-    vifm-full
-    ranger
+      # file managers
+      vifm-full
+      ranger
 
-    # IDE
-    # neovim-nightly
-    # neovim
-    # spacevim
-    # neovide
-    uivonim
-    # sublime3
-    vscode
-    arduino
-    # jetbrains.pycharm-community
-    # jetbrains.pycharm-professional
-    # thonny
-    unityhub
+      # IDE
+      # neovim-nightly
+      # neovim
+      # spacevim
+      # neovide
+      uivonim
+      # sublime3
+      vscode
+      arduino
+      # jetbrains.pycharm-community
+      # jetbrains.pycharm-professional
+      # thonny
+      unityhub
 
-    # LaTeX
-    texlive.combined.scheme-full
-    # texstudio
-    mindforger
+      # LaTeX
+      texlive.combined.scheme-full
+      # texstudio
+      mindforger
 
       # graphics
       blender
@@ -78,30 +78,30 @@
       # office
       libreoffice
 
-    # media
-    feh # picture viewer
-    mpv # video player
-    libdvdcss # plugin to play cd/dvd in mpv
-    moc  # music player
-    youtube-dl
+      # media
+      feh # picture viewer
+      mpv # video player
+      libdvdcss # plugin to play cd/dvd in mpv
+      moc  # music player
+      youtube-dl
 
-    # packer
-    unzip
-    unar
-    xarchiver
-    p7zip
+      # packer
+      unzip
+      unar
+      xarchiver
+      p7zip
 
-    nix-prefetch-git
+      nix-prefetch-git
 
-    tree
-    pstree  # process tree
-    wget
-    curl
-    rsync
-    bat # cat
-    fd  # find
+      tree
+      pstree  # process tree
+      wget
+      curl
+      rsync
+      bat # cat
+      fd  # find
 
-    nodejs
+      nodejs
 
       # monitoring
       bmon
