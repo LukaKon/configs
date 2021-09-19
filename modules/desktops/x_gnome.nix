@@ -1,9 +1,6 @@
 {config, pkgs, lib, ...}:
 
 {
-    # imports = [ ./services/desktops/gnome/dconf.nix ];
-    # imports = [ ./dconf.nix ];
-
     # hardware.nvidia.modesetting.enable = true;
 
     services.xserver = {
