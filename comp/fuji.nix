@@ -9,8 +9,8 @@
     ./../modules/system/system.nix        # Base system settings
     ./../modules/system/btrfs.nix
     ./../modules/system/network.nix       # Network configuration
-    # ./../modules/system/nvidia.nix
-    ./../modules/system/nouveau.nix
+    ./../modules/system/nvidia.nix
+    # ./../modules/system/nouveau.nix
     ./../modules/system/fonts.nix
     ./../modules/system/env_variables.nix
     # ./../modules/system/cron.nix
@@ -29,7 +29,7 @@
     # ./../modules/services/remote.nix # remote server/desktop
 
     # Programs
-    ./programs.nix      # List of installed programs
+    ./../modules/programs/fuji_progr.nix
     ./../modules/programs/nvim/nvim.nix
     ./../modules/programs/postgresql.nix
     ./../modules/programs/zsh.nix
