@@ -11,10 +11,10 @@
       pciutils
       gputils
 
-      git
-    git-crypt
-    gnupg # gpg
-    pinentry-gnome
+    #   git
+    # git-crypt
+    # gnupg # gpg
+    # pinentry-gnome
 
     # terminal
     alacritty

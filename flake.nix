@@ -13,10 +13,10 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    home-manager = {
-      url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # home-manager = {
+    #   url = "github:nix-community/home-manager/master";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     flake-utils = {
       url = "github:numtide/flake-utils";
@@ -50,54 +50,54 @@
   #     flake = false;
   };
 
-  outputs = inputs@{ nixpkgs, flake-utils, home-manager, neovim-nightly-overlay, ... }:
+  outputs = inputs@{ nixpkgs, flake-utils, neovim-nightly-overlay, ... }:
   # outputs = inputs:
 
     let
-      system = "x86_64-linux";
+      # system = "x86_64-linux";
 
       # pkgs = import inputs.nixpkgs {
-      pkgs = import nixpkgs {
-        inherit system;
-        config = { allowUnfree = true;};
-      };
+      # pkgs = import nixpkgs {
+        # inherit system;
+        # config = { allowUnfree = true;};
+      # };
 
-      lib = nixpkgs.lib;
+      # lib = nixpkgs.lib;
       # lib = inputs.nixpkgs.lib;
 
-      overlays = [
-      #   inputs.xmonad.overlay
-      #   inputs.xmonad-contrib.overlay
-      #   inputs.taffybar.overlay
-        inputs.neovim-nightly-overlay.overlay
-      ];
+      # overlays = [
+      # #   inputs.xmonad.overlay
+      # #   inputs.xmonad-contrib.overlay
+      # #   inputs.taffybar.overlay
+      #   inputs.neovim-nightly-overlay.overlay
+      # ];
 
     in {
-        homeManagerConfigurations = {
-          lk = home-manager.lib.homeManagerConfiguration {
-            inherit system pkgs;
-            username = "lk";
-            homeDirectory = "/home/lk";
-            stateVersion = "21.05";
-            configuration = { pkgs, ...}:
-            {
-              imports = [
-                ./users/lk/home.nix
-                # ../../programs/nvim/nvim.nix
-              ];
-              # inputs.unstable.overlays = overlays;
-              nixpkgs.overlays = overlays;
-              # unstable.overlays = overlays;
-            };
-          };
-        };
+        # homeManagerConfigurations = {
+        #   lk = home-manager.lib.homeManagerConfiguration {
+        #     inherit system pkgs;
+        #     username = "lk";
+        #     homeDirectory = "/home/lk";
+        #     stateVersion = "21.05";
+        #     configuration = { pkgs, ...}:
+        #     {
+        #       imports = [
+        #         ./users/lk/home.nix
+        #         # ../../programs/nvim/nvim.nix
+        #       ];
+        #       # inputs.unstable.overlays = overlays;
+        #       nixpkgs.overlays = overlays;
+        #       # unstable.overlays = overlays;
+        #     };
+        #   };
+        # };
 
       nixosConfigurations = {
 
         # desktop
         fuji = nixpkgs.lib.nixosSystem {
-          inherit system;
-
+          # inherit system pkgs;
+          system = "x86_64-linux";
           modules = [
                 ./comp/fuji.nix
 
@@ -106,16 +106,16 @@
                 #   home-manager.useGlobalPkgs = true;
                 #   home-manager.useUserPackages = true;
                 #   home-manager.users.lk = import ./users/lk/home.nix;
-                #   # nixpkgs.overlays = [
-                #     # neovim-nightly-overlay.overlay
-                #   # ];
+                #   nixpkgs.overlays = [
+                #     neovim-nightly-overlay.overlay
+                #   ];
                 # }
             ];
         };
 
         # laptop
         mac = nixpkgs.lib.nixosSystem {
-          inherit system;
+          system = "x86_64-linux";
 
           modules = [
             ./nix_mac/configuration.nix
