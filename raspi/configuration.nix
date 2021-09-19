@@ -44,7 +44,7 @@ in {
   #   };
   # };
 
-  environment.systemPackages = with pkgs; [ vscode ];
+  environment.systemPackages = with pkgs; [ vscode foot ];
 
   services.openssh.enable = true;
 
