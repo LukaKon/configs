@@ -1,13 +1,13 @@
 { config, pkgs, ... }:
 
 {
-  environment = {
-    systemPackages = with pkgs;
-    [
-        git
-        git-crypt
-        gnupg # gpg
-        pinentry-gnome
+    environment = {
+        systemPackages = with pkgs;
+        [
+            git
+            git-crypt
+            gnupg # gpg
+            pinentry-gnome
 
         # terminal
         # alacritty
@@ -16,16 +16,16 @@
 
         # file managers
         vifm-full
-        ranger
+        # ranger
 
         # IDE
         # neovim-nightly
         # neovim
         # spacevim
         # neovide
-        # uivonim
+        uivonim
         # sublime3
-        # vscode
+        vscode
         # vscodium
         # arduino
         # jetbrains.pycharm-community
@@ -113,5 +113,5 @@
         #     jupyter
         # ]))
     ];
-  };
+};
 }

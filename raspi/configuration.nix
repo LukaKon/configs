@@ -12,7 +12,6 @@ in {
   imports = [
     # "${fetchTarball "https://github.com/NixOS/nixos-hardware/archive/936e4649098d6a5e0762058cb7687be1b2d90550.tar.gz" }/raspberry-pi/4"
 
-    ./../modules/system/system.nix
     ./../modules/system/fonts.nix
     ./../modules/system/shellAliases.nix
     ./../modules/services/openssh.nix
@@ -28,12 +27,66 @@ in {
     ./../modules/desktops/wayland_gnome.nix
   ];
 
+  boot.cleanTmpDir = true;
+
+  boot = {
+    kernelPackages = pkgs.linuxPackages_rpi4;
+    # tmpOnTmpfs = true; # See note
+    kernelParams = [
+      "8250.nr_uarts=1"
+      "console=ttyAMA0,115200"
+      "console=tty1"
+      "cma=128M"
+    ];
+  };
+
+  boot.loader.raspberryPi = {
+    enable = true;
+    version = 4;
+  };
+  boot.loader.grub.enable = false;
+  boot.loader.generic-extlinux-compatible.enable = true;
+
+  hardware.enableRedistributableFirmware = true;
+
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-label/NIXOS_SD";
       fsType = "ext4";
       options = [ "noatime" ];
     };
+  };
+
+  nixpkgs.config.allowUnfree = true;
+
+  # Localisation
+  time.timeZone = "Europe/Warsaw";
+
+  i18n = {
+    defaultLocale = "pl_PL.UTF-8";
+    supportedLocales = ["pl_PL.UTF-8/UTF-8" "en_US.UTF-8/UTF-8"];
+  };
+
+  # Autoupgrade
+  system = {
+    autoUpgrade = {
+      enable = true;
+      allowReboot = true;
+    };
+  };
+
+  # cleaning store
+  nix = {
+    autoOptimiseStore = true;
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than 7d";
+    };
+
+    # For hix flakes
+    extraOptions = "experimental-features = nix-command flakes";
+    package = pkgs.nixFlakes;
   };
 
   networking = {
@@ -78,5 +131,4 @@ in {
     powerManagement.powertop.enable = true;
 
     security.protectKernelImage = true;
-
   }
