@@ -11,7 +11,6 @@
 
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-21.05";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     flake-utils = {
       url = "github:numtide/flake-utils";
@@ -20,10 +19,9 @@
 
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
-    #   # inputs.unstable.follows = "unstable";
-    inputs.nixpkgs.follows = "nixpkgs";
-    inputs.flake-utils.follows = "flake-utils";
-  };
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
 
   #   xmonad = {
   #     url = "github:xmonad/xmonad";
@@ -53,7 +51,7 @@ outputs = inputs@{ nixpkgs, flake-utils, neovim-nightly-overlay, ... }:
 
   in {
 
-        nixosConfigurations = {
+    nixosConfigurations = {
 
         # desktop
         fuji = nixpkgs.lib.nixosSystem {
@@ -62,8 +60,8 @@ outputs = inputs@{ nixpkgs, flake-utils, neovim-nightly-overlay, ... }:
 
           modules = [
             ./comp/fuji.nix
-              ];
-            };
+          ];
+        };
 
         # laptop
         mac = nixpkgs.lib.nixosSystem {
