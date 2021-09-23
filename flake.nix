@@ -47,7 +47,7 @@ outputs = inputs@{ nixpkgs, flake-utils, neovim-nightly-overlay, ... }:
   # outputs = inputs:
 
   let
-
+    # system = ["x86_64-linux" "aarch64-linux"];
 
   in {
 
@@ -55,7 +55,7 @@ outputs = inputs@{ nixpkgs, flake-utils, neovim-nightly-overlay, ... }:
 
         # desktop
         fuji = nixpkgs.lib.nixosSystem {
-          # inherit system pkgs;
+          # inherit system; # pkgs;
           system = "x86_64-linux";
 
           modules = [
