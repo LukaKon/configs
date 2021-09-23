@@ -29,7 +29,7 @@
       # neovim
       # spacevim
       # neovide
-      uivonim
+      # uivonim
       # sublime3
       vscode
       arduino
@@ -126,7 +126,6 @@
         pynvim
         yapf
         jedi
-        termcolor
         bpython
         pylint
         jupyter
