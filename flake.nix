@@ -17,11 +17,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
+    # neovim-nightly-overlay = {
+    #   url = "github:nix-community/neovim-nightly-overlay";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.flake-utils.follows = "flake-utils";
+    # };
 
   #   xmonad = {
   #     url = "github:xmonad/xmonad";
@@ -43,7 +43,7 @@
   #     flake = false;
 };
 
-outputs = inputs@{ nixpkgs, flake-utils, neovim-nightly-overlay, ... }:
+outputs = inputs@{ nixpkgs, flake-utils, ... }: # neovim-nightly-overlay, ... }:
   # outputs = inputs:
 
   let

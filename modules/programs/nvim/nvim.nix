@@ -36,7 +36,7 @@
                 vim-nerdtree-tabs
                 fzf-vim
                 # nvim-tree-lua
-                # python-mode
+                python-mode # TODO: was switched off
                 vim-multiple-cursors
                 vim-commentary
                 splitjoin-vim     # gS - split; gJ - join
@@ -80,6 +80,8 @@
                 coc-prettier
                 coc-spell-checker
                 coc-highlight
+
+
 
                 vim-speeddating # Change dates fast
 
@@ -427,7 +429,7 @@
 
               " tagbar
               nmap <F8> :TagbarToggle<CR>
-                      '';
+            '';
               #opt=[];
             };
           };
