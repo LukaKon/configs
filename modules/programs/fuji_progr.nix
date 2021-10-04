@@ -128,7 +128,7 @@
         jedi
         bpython
         pylint
-        jupyter
+        # jupyter
       ]))
     ];
   };

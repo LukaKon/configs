@@ -81,8 +81,6 @@
                 coc-spell-checker
                 coc-highlight
 
-
-
                 vim-speeddating # Change dates fast
 
                 vim-repeat # Repeat stuff
