@@ -16,7 +16,7 @@
     # ./../modules/system/cron.nix
     ./../modules/system/shellAliases.nix  # Shell aliases
     ./../modules/system/users.nix     # Users configurations
-    ./../modules/system/hdd.nix           # Additional HDD
+    # ./../modules/system/hdd.nix           # Additional HDD
 
     # Security
     ./../modules/security/doas.nix # Add 'doas'
