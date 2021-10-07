@@ -8,6 +8,8 @@
       ripgrep
       ctags
       neovim
+      gcc
+      # clang
     ];
   };
   programs = {npm.enable = true;};
@@ -134,7 +136,10 @@
                 vim-rhubarb
                 gv-vim
 
-                popup-nvim nvim-compe plenary-nvim
+                popup-nvim
+                nvim-compe
+                plenary-nvim
+
               ];
               opt = [
                 # File tree
