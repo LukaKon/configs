@@ -8,7 +8,7 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "ums_realtek" "usb_storage" "usbhid" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
@@ -19,16 +19,16 @@
       options = [ "subvol=@root" ];
     };
 
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/34d8df98-e664-4cb3-83d4-241d04564d86";
-      fsType = "btrfs";
-      options = [ "subvol=@home" ];
-    };
-
   fileSystems."/nix" =
     { device = "/dev/disk/by-uuid/b44bf0be-d0e5-4711-8e9e-896fac64838f";
       fsType = "btrfs";
       options = [ "subvol=@nix" ];
+    };
+
+  fileSystems."/var" =
+    { device = "/dev/disk/by-uuid/b44bf0be-d0e5-4711-8e9e-896fac64838f";
+      fsType = "btrfs";
+      options = [ "subvol=@var" ];
     };
 
   fileSystems."/srv" =
@@ -49,15 +49,33 @@
       options = [ "subvol=@tmp" ];
     };
 
-  fileSystems."/var" =
-    { device = "/dev/disk/by-uuid/b44bf0be-d0e5-4711-8e9e-896fac64838f";
+  fileSystems."/var/lib/docker/btrfs" =
+    { device = "/tmp/@tmp/@var/lib/docker/btrfs//deleted";
+      fsType = "none";
+      options = [ "bind" ];
+    };
+
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/34d8df98-e664-4cb3-83d4-241d04564d86";
       fsType = "btrfs";
-      options = [ "subvol=@var" ];
+      options = [ "subvol=@home" ];
     };
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/2CDD-5DB0";
       fsType = "vfat";
+    };
+
+  fileSystems."/home/lk/vm" =
+    { device = "/dev/disk/by-uuid/806efee3-efbd-4236-b2c4-c9a4ad9c0c62";
+      fsType = "btrfs";
+      options = [ "subvol=@vm" ];
+    };
+
+  fileSystems."/home/lk/data" =
+    { device = "/dev/disk/by-uuid/71bff5ad-3209-4d8f-8ead-65733cfb4b88";
+      fsType = "btrfs";
+      options = [ "subvol=@data" ];
     };
 
   swapDevices =
