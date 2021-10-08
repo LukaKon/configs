@@ -1,49 +1,39 @@
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-ignore_install = { "javascript" }, -- List of parsers to ignore installing
-highlight = {
-enable = true,              -- false will disable the whole extension
-disable = { "rust" },  -- list of language that will be disabled
--- Setting this to true will run `:h syntax` and tree-sitter at the same time.
--- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
--- Using this option may slow down your editor, and you may see some duplicate highlights.
--- Instead of true it can also be a list of languages
-custom_captures={
--- Highlight the @foo.bar capture group with the "Identifier" highlight group.
---["foo.bar"] = "Identifier",
-
-["javascript","css","c_sharp","cmake","cpp","dockerfile","html","json","latex","lua","nix","python","toml","vim","yaml"]="Identifier",
-},
-additional_vim_regex_highlighting = false,
-},
-incremental_selection = {
-enable = true,
-keymaps = {
-    init_selection = "gnn",
-    node_incremental = "grn",
-    scope_incremental = "grc",
-    node_decremental = "grm",
+    highlight = {
+    enable = true,
+    custom_captures = {
+        -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
+        --["javascript","css","c_sharp","cmake","cpp","dockerfile","html","json","latex","lua","nix","python","toml","vim","yaml"]="Identifier",
+        --["foo.bar"] = "Identifier",
+        },
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
     },
-},
-    indent={enable=true}
-    }
+}
+require('setting')
 EOF
-set tw=80
-set iskeyword+=-                        " treat dash separated words as a word text object"
-set formatoptions-=cro                  " Stop newline continution of comments
 
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
+
+
+" set tw=80
+" set iskeyword+=-                        " treat dash separated words as a word text object"
+" set formatoptions-=cro                  " Stop newline continution of comments
+
+" set foldmethod=expr
+" set foldexpr=nvim_treesitter#foldexpr()
 
 syntax enable                           " Enables syntax highlighing
-set hidden                              " Required to keep multiple buffers open multiple buffers
-set nowrap                              " Display long lines as just one line
-set showcmd                             " show current command in status line
-set whichwrap+=<,>,[,],h,l
-set encoding=utf-8                      " The encoding displayed
-set pumheight=10                        " Makes popup menu smaller
-set fileencoding=utf-8                  " The encoding written to file
+" set hidden                              " Required to keep multiple buffers open multiple buffers
+" set nowrap                              " Display long lines as just one line
+" set showcmd                             " show current command in status line
+" set whichwrap+=<,>,[,],h,l
+" set encoding=utf-8                      " The encoding displayed
+" set pumheight=10                        " Makes popup menu smaller
+" set fileencoding=utf-8                  " The encoding written to file
 set ruler                               " Show the cursor position all the time
 set showcmd                             " show current command in status line
 set notimeout                           " disable timeout for finishing a mapping key sequence
