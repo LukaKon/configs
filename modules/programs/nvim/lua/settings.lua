@@ -1,13 +1,21 @@
-local opt = vim.opt
--- local o = vim.o
--- local wo = vim.wo
--- local bo = vim.bo
+-- local opt = vim.opt
+local o = vim.o -- global options
+local wo = vim.wo -- window-local options
+local bo = vim.bo -- buffer-local options
 
-opt.hidden = true -- Required to keep multiple buffers open multiple buffers ???
-opt.wrap = false -- Display long lines as just one line - (wo)
-opt.showcmd = true    -- show current command in status line
--- o.encoding = 'utf-8'    -- The encoding displayed
--- o.fileencoding = 'utf-8'    -- The encoding written to file
+bo.tw = 80
+bo.iskeyword +=- -- treat dash separated words as a word text object
+bo.formatoptions-=cro -- stop newline continution of comment
+wo.foldhethod=expr
+wo.foldexpr=nvim_treesitter#foldexpr()
+
+o.hidden = true -- Required to keep multiple buffers open multiple buffers ???
+wo.wrap = false -- Display long lines as just one line - (wo)
+o.showcmd = true    -- show current command in status line
+o.whichwrap+=<,>,[,],h,l
+o.pumneight=8 -- Makes popup menu smaller
+o.encoding = 'utf-8'    -- The encoding displayed
+ob.fileencoding = 'utf-8'    -- The encoding written to file
 opt.ruler = true  -- Show the cursor position all the time
 opt.tabstop = 4   -- Insert 4 spaces for a tab
 -- opt.tabstop = 4   -- Insert 4 spaces for a tab - (bo)
