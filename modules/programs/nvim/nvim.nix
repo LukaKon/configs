@@ -31,6 +31,7 @@
                     tree-sitter-python
                     tree-sitter-html
                     tree-sitter-javascript
+                    tree-sitter-css
                   ]
                   ))
 
@@ -71,7 +72,7 @@
                 neomake
                 neoformat
                 # SimpylFold
-                neoterm
+                # neoterm
                 vim-javascript
                 vim-javascript-syntax
                 emmet-vim

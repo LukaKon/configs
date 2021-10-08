@@ -1,20 +1,241 @@
 lua <<EOF
-require'nvim-treesitter.configs'.setup {
-    highlight = {
-    enable = true,
-    custom_captures = {
-        -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
-        --["javascript","css","c_sharp","cmake","cpp","dockerfile","html","json","latex","lua","nix","python","toml","vim","yaml"]="Identifier",
-        --["foo.bar"] = "Identifier",
-        },
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
-    },
-}
-require('setting')
+--require'nvim-treesitter.configs'.setup {
+--    highlight = {
+--    enable = true,
+--    custom_captures = {
+--        -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
+--        --["javascript","css","c_sharp","cmake","cpp","dockerfile","html","json","latex","lua","nix","python","toml","vim","yaml"]="Identifier",
+--        --["foo.bar"] = "Identifier",
+--        },
+--    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+--    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+--    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+--    -- Instead of true it can also be a list of languages
+--    additional_vim_regex_highlighting = false,
+--    },
+--}
+-- local opt = vim.opt
+--local o = vim.o -- global options
+--local wo = vim.wo -- window-local options
+--local bo = vim.bo -- buffer-local options
+
+
+--Set highlight on search
+vim.o.hlsearch = false
+
+--Make line numbers default
+vim.wo.relativenumber = true
+
+--Do not save when switching buffers (note: this is now a default on master)
+vim.o.hidden = true
+
+--Enable mouse mode
+vim.o.mouse = 'a'
+
+--Enable break indent
+vim.o.breakindent = true
+
+--Save undo history
+vim.opt.undofile = true
+vim.opt.undodir = "/home/lk/.cache/"
+
+--Case insensitive searching UNLESS /C or capital in search
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
+--Decrease update time / faster completion
+vim.o.updatetime = 250
+vim.wo.signcolumn = 'yes'
+vim.o.timeoutlen=100  -- By default timeoutlen is 1000 ms
+
+--Set colorscheme (order is important here)
+vim.o.termguicolors = true
+vim.g.gruvbox_terminal_italics = 2
+vim.cmd [[colorscheme gruvbox]]
+
+--Set statusbar
+vim.g.lightline = {
+    colorscheme = 'gruvbox-community',
+    active = { left = { { 'mode', 'paste' }, { 'gitbranch', 'readonly', 'filename', 'modified' } } },
+    component_function = { gitbranch = 'fugitive#head' },
+    }
+
+--Remap space as leader key
+vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+--Remap for dealing with word wrap
+--vim.api.nvim_set_keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
+--vim.api.nvim_set_keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
+
+-- Highlight on yank
+--vim.api.nvim_exec(
+--[[
+--augroup YankHighlight
+--    autocmd!
+--    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+--augroup end
+--]],
+--  false
+--  )
+
+-- Y yank until the end of line  (note: this is now a default on master)
+vim.api.nvim_set_keymap('n', 'Y', 'y$', { noremap = true })
+
+--Map blankline
+vim.g.indent_blankline_char = '┊'
+vim.g.indent_blankline_filetype_exclude = { 'help', 'packer' }
+vim.g.indent_blankline_buftype_exclude = { 'terminal', 'nofile' }
+vim.g.indent_blankline_char_highlight = 'LineNr'
+vim.g.indent_blankline_show_trailing_blankline_indent = false
+
+-- Gitsigns
+--require('gitsigns').setup {
+--    signs = {
+--        add = { hl = 'GitGutterAdd', text = '+' },
+--        change = { hl = 'GitGutterChange', text = '~' },
+--        delete = { hl = 'GitGutterDelete', text = '_' },
+--        topdelete = { hl = 'GitGutterDelete', text = '‾' },
+--        changedelete = { hl = 'GitGutterChange', text = '~' },
+--        },
+--    }
+
+-- Telescope
+--require('telescope').setup {
+--    defaults = {
+--        mappings = {
+--            i = {
+--                ['<C-u>'] = false,
+--                ['<C-d>'] = false,
+--                },
+--            },
+--        },
+--    }
+
+--Add leader shortcuts
+--vim.api.nvim_set_keymap('n', '<leader><space>', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<leader>sf', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<leader>sb', [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<leader>sh', [[<cmd>lua require('telescope.builtin').help_tags()<CR>]], { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<leader>st', [[<cmd>lua require('telescope.builtin').tags()<CR>]], { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<leader>sd', [[<cmd>lua require('telescope.builtin').grep_string()<CR>]], { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<leader>sp', [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<leader>so', [[<cmd>lua require('telescope.builtin').tags{ only_current_buffer = true }<CR>]], { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<leader>?', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], { noremap = true, silent = true })
+
+-- Treesitter configuration
+-- Parsers must be installed manually via :TSInstall
+--require('nvim-treesitter.configs').setup {
+--    highlight = {
+--    enable = true, -- false will disable the whole extension
+--    },
+--incremental_selection = {
+--enable = true,
+--keymaps = {
+--    init_selection = 'gnn',
+--    node_incremental = 'grn',
+--    scope_incremental = 'grc',
+--    node_decremental = 'grm',
+--    },
+--},
+--  indent = {
+--  enable = true,
+--  },
+--  textobjects = {
+--      select = {
+--      enable = true,
+--      lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+--      keymaps = {
+--          -- You can use the capture groups defined in textobjects.scm
+--          ['af'] = '@function.outer',
+--          ['if'] = '@function.inner',
+--          ['ac'] = '@class.outer',
+--          ['ic'] = '@class.inner',
+--          },
+--      },
+--  move = {
+--  enable = true,
+--  set_jumps = true, -- whether to set jumps in the jumplist
+--  goto_next_start = {
+--      [']m'] = '@function.outer',
+--      [']]'] = '@class.outer',
+--      },
+--  goto_next_end = {
+--      [']M'] = '@function.outer',
+--      [']['] = '@class.outer',
+--      },
+--  goto_previous_start = {
+--      ['[m'] = '@function.outer',
+--      ['[['] = '@class.outer',
+--      },
+--  goto_previous_end = {
+--      ['[M'] = '@function.outer',
+--      ['[]'] = '@class.outer',
+--      },
+--  },
+--  },
+--}
+
+--bo.tw = 80
+--bo.iskeyword +=- -- treat dash separated words as a word text object
+--bo.formatoptions-=cro -- stop newline continution of comment
+--wo.foldhethod=expr
+--wo.foldexpr=nvim_treesitter#foldexpr()
+--
+--o.hidden = true -- Required to keep multiple buffers open multiple buffers ???
+--wo.wrap = false -- Display long lines as just one line - (wo)
+--o.showcmd = true    -- show current command in status line
+--o.whichwrap+=<,>,[,],h,l
+--o.pumneight=8 -- Makes popup menu smaller
+--o.encoding = 'utf-8'    -- The encoding displayed
+--ob.fileencoding = 'utf-8'    -- The encoding written to file
+
+-- opt.ruler = true  -- Show the cursor position all the time
+-- opt.tabstop = 4   -- Insert 4 spaces for a tab
+-- -- opt.tabstop = 4   -- Insert 4 spaces for a tab - (bo)
+-- opt.softtabstop = 4
+-- -- opt.softtabstop = 4 -- (bo)
+-- opt.shiftwidth = 4    -- Change the number of space characters inserted for indentation
+-- -- opt.shiftwidth = 4    -- Change the number of space characters inserted for indentation - (bo)
+-- opt.autoindent = true -- Good auto indent
+-- -- opt.autoindent = true -- Good auto indent - (bo)
+-- opt.expandtab = true  -- Converts tabs to spaces
+-- -- opt.expandtab = true  -- Converts tabs to spaces - (bo)
+-- opt.smartindent = true    -- Makes indenting smart
+-- -- opt.smartindent = true    -- Makes indenting smart - (bo)
+-- opt.splitright = true -- Vertical splits will automatically be to the right
+-- opt.splitbelow = true -- Horizontal splits will automatically be below
+-- opt.scrolloff = 5 -- keep 5 lines visible above/below the cursor when scrolling
+-- opt.sidescrolloff = 5 -- keep 5 characters visible to the left/right of the cursor when scrolling
+-- opt.sidescroll = 1    -- scroll left/right 1 character at a time
+
+
+
+
+-- opt.background = 'dark'   -- tell vim what the background color looks like
+
+-- -- opt.completeopt = 'menuone,noinsert,noselect' -- TODO - in lsp.lua but without noinsert
+-- -- opt.ttimeoutlen = 5
+-- opt.undofile = true
+-- opt.undodir = "/home/lk/.cache/"
+-- -- opt.compatible = false
+-- opt.cursorline = true
+-- opt.termguicolors = true
+-- -- opt.autoread = true
+-- -- opt.smartindent = true
+-- -- opt.clipboard = "unnamedplus"
+-- opt.smartcase = true
+-- -- opt.shiftwidth = 4
+-- -- opt.expandtab = true
+-- -- opt.incsearch = true
+-- -- opt.viminfo = ""
+-- -- opt.viminfofile = "NONE"
+-- -- opt.hidden = true
+-- -- opt.shortmess = "I"
+
+-- vim.cmd('language en_US.utf-8')
+-- require('settings')
 EOF
 
 
@@ -39,7 +260,7 @@ set showcmd                             " show current command in status line
 set notimeout                           " disable timeout for finishing a mapping key sequence
 set visualbell                          " visual bell = no sounds
 set cmdheight=1                         " More space for displaying messages
-set mouse=a                             " Enable your mouse
+" set mouse=a                             " Enable your mouse
 set splitbelow                          " Horizontal splits will automatically be below
 set splitright                          " Vertical splits will automatically be to the right
 set t_Co=256                            " Support 256 colors
@@ -47,8 +268,8 @@ set conceallevel=0                      " So that I can see `` in markdown files
 set tabstop=4                           " Insert 4 spaces for a tab
 set shiftwidth=4                        " Change the number of space characters inserted for indentation
 set smarttab                            " Makes tabbing smarter will realize you have 2 vs 4
-set ignorecase
-set smartcase
+" set ignorecase
+" set smartcase
 set softtabstop=4
 set expandtab                           " Converts tabs to spaces
 set smartindent                         " Makes indenting smart
@@ -61,16 +282,16 @@ set background=dark                     " tell vim what the background color loo
 set showtabline=2                       " Always show tabs
 set nobackup                            " This is recommended by coc
 set noswapfile
-set undodir=~/.vim/undodir
-set undofile
+" set undodir=~/.vim/undodir
+" set undofile
 set nowritebackup                       " This is recommended by coc
 set scrolloff=8                         " keep 8 lines visible above/below the cursor when scrolling
 set sidescrolloff=7                     " keep 7 characters visible to the left/right of the cursor when scrolling
 set sidescroll=1                        " scroll left/right one character at a time
 set splitbelow splitright               " put new windows below or to the right
 set shortmess+=c                        " Don't pass messages to |ins-completion-menu|.
-set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time
-set updatetime=300                      " Faster completion
+" set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time
+" set updatetime=300                      " Faster completion
 set timeoutlen=100                      " By default timeoutlen is 1000 ms
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set incsearch
@@ -80,18 +301,17 @@ set diffopt+=vertical
 
 filetype plugin indent on
 
-colorscheme gruvbox
+" colorscheme gruvbox
 highlight Normal guibg=none
 
-let mapleager = " "
 
 let g:yankring_clipboard_monitor=0              " don't worry about the system clipboard, thanks YankRing
 let g:yankring_n_keys = 'Y D'                   " by default: 'Y D x X', but I don't like x and X adding chars to my yank history
 nnoremap x "_x
 nnoremap X "_X
 
-let mapleader=" "                               " set <space> as the leader for mappings
-nnoremap <space> <nop>
+" let mapleader=" "                               " set <space> as the leader for mappings
+" nnoremap <space> <nop>
 
 let g:ctrlp_map = '<leader>jf'                  " open ctrl-p fuzzy finder (mnemonic: 'jump file')
 nnoremap <Leader>jt :CtrlPTag<CR>
@@ -102,9 +322,9 @@ let g:any_jump_disable_default_keybindings = 1  " open AnyJump (mnemonic: 'jump 
 nnoremap <leader>jd :AnyJump<CR>
 xnoremap <leader>jd :AnyJumpVisual<CR>
 
-if has("nvim")
-    set inccommand=nosplit                        " show substitutions incrementally
-endif
+" if has("nvim")
+"     set inccommand=nosplit                        " show substitutions incrementally
+" endif
 
 " restore last line position when opening file
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
@@ -141,12 +361,12 @@ let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', '
 "    nnoremap <c-n> :call OpenTerminal()<CR>
 
 " neoterm
-let g:neoterm_default_mod = 'vertical'
-let g:neoterm_size = 60
-let g:neoterm_autoinsert = 1
-nnoremap <c-q> :Ttoggle<CR>
-inoremap <c-q> <Esc> :Ttoggle<CR>
-tnoremap <c-q> <c-\><c-n> :Ttoggle<CR>
+" let g:neoterm_default_mod = 'vertical'
+" let g:neoterm_size = 60
+" let g:neoterm_autoinsert = 1
+" nnoremap <c-q> :Ttoggle<CR>
+" inoremap <c-q> <Esc> :Ttoggle<CR>
+" tnoremap <c-q> <c-\><c-n> :Ttoggle<CR>
 
 " vim-autoformat
 noremap <F3> :Autoformat<CR>
@@ -286,7 +506,7 @@ let g:signify_sign_show_count = 0
 let g:signify_sign_show_text = 1
 
 
-set termguicolors " this variable must be enabled for colors to be applied properly
+" set termguicolors " this variable must be enabled for colors to be applied properly
 
 " a list of groups can be found at `:help nvim_tree_highlight`
 highlight NvimTreeFolderIcon guibg=blue
