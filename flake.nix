@@ -68,7 +68,7 @@ outputs = inputs@{ nixpkgs, flake-utils, ... }: # neovim-nightly-overlay, ... }:
           system = "x86_64-linux";
 
           modules = [
-            ./nix_mac/configuration.nix
+            ./mac/mac.nix
           ];
         };
 
