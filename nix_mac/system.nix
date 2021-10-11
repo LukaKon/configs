@@ -31,15 +31,20 @@
     };
   };
 
-  nix.gc = {
-    automatic = true;
-    dates = "daily";
-    options = "--delete-older-than 5d";
-  };
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than 5d";
+    };
+
 
     # For hix flakes
-    # nix.package = [ pkgs.nixUnstable pkgs.nixFlakes ];
-    # extraOptions = "experimental-features = nix-command flakes";
+    package = pkgs.nixUnstable;
+    extraOptions = ''experimental-features = nix-command flakes'';
+    # package = pkgs.nixFlakes;
+  };
+
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
