@@ -31,21 +31,16 @@
       options = [ "subvol=@var" ];
     };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/149A-9E90";
-      fsType = "vfat";
+  fileSystems."/srv" =
+    { device = "/dev/disk/by-uuid/0fad7f12-efe4-4c74-9992-65e6e2ad0678";
+      fsType = "btrfs";
+      options = [ "subvol=@srv" ];
     };
 
   fileSystems."/opt" =
     { device = "/dev/disk/by-uuid/0fad7f12-efe4-4c74-9992-65e6e2ad0678";
       fsType = "btrfs";
       options = [ "subvol=@opt" ];
-    };
-
-  fileSystems."/srv" =
-    { device = "/dev/disk/by-uuid/0fad7f12-efe4-4c74-9992-65e6e2ad0678";
-      fsType = "btrfs";
-      options = [ "subvol=@srv" ];
     };
 
   fileSystems."/home" =
@@ -61,9 +56,14 @@
     };
 
   fileSystems."/var/lib/docker/btrfs" =
-    { device = "/tmp/@home/@var/lib/docker/btrfs";
+    { device = "/tmp/@tmp/@home/@var/lib/docker/btrfs//deleted";
       fsType = "none";
       options = [ "bind" ];
+    };
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/149A-9E90";
+      fsType = "vfat";
     };
 
   swapDevices =

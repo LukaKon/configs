@@ -8,7 +8,13 @@
     # System
     ./../modules/system/system.nix        # Base system settings
     ./../modules/system/btrfs.nix
-    ./../modules/system/network.nix       # Network configuration
+    ./../modules/system/network_mac.nix       # Network configuration
+    # ./../modules/system/nouveau.nix
+    ./../modules/system/fonts.nix
+    ./../modules/system/env_variables.nix
+    # ./../modules/system/cron.nix
+    ./../modules/system/shellAliases.nix  # Shell aliases
+    ./../modules/system/users.nix     # Users configurations
 
     # Security
     ./../modules/security/doas.nix # Add 'doas'
