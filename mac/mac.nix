@@ -25,6 +25,7 @@
     # ./../modules/services/keyring.nix
     # ./../modules/services/bluetooth.nix
     # ./../modules/services/remote.nix # remote server/desktop
+    ./../modules/services/laptop.nix
 
     # Programs
     ./../modules/programs/mac_progr.nix
