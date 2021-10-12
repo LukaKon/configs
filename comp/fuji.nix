@@ -36,9 +36,12 @@
     ./../modules/programs/flatpak.nix
 
     # Desktops
-    # ./../desktops/i3/i3.nix  # i3 window manager settings
+    ./../modules/desktops/i3/i3.nix  # i3 window manager settings
+    ./../modules/desktops/spectrwm.nix
+    # ./../modules/desktops/kde.nix
     ./../modules/desktops/x_gnome.nix  # Gnome window manager settings
     # ./../modules/desktops/wayland_gnome.nix  # Gnome window manager settings
+    ./../modules/desktops/qtile.nix
 
     # Virtualisation
     ./../modules/virtualisation/docker.nix # Docker
