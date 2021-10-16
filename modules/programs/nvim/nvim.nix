@@ -1,43 +1,57 @@
-{pkgs, ...}:
+{pkgs, config, ...}:
 
 {
+  nixpkgs.overlays = [
+    (import (builtins.fetchTarball {
+      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+      sha256 = "1s5g9yi7gpnvxya4xgdvl5wfha00bsd7fhpyknxcgq290bxny8jl";
+    }))
+  ];
+
   environment = {
     variables = {EDITOR = "nvim"; VISUAL = "nvim";};
     systemPackages = with pkgs;[
-      neovim-remote
       ripgrep
       ctags
-      neovim
       gcc
-      # clang
-    ];
-  };
-  programs = {npm.enable = true;};
 
-  nixpkgs = {
-    config = {
-      packageOverrides = pkgs: rec {
-        neovim = pkgs.neovim.override {
-          vimAlias = true;
-          withPython3 = true;
-          configure = {
-            packages.myVimPackage = with pkgs.vimPlugins;
-            {
-              start = [
-                (nvim-treesitter.withPlugins (
-                  plugins: with plugins;
-                  [
-                    tree-sitter-nix
-                    tree-sitter-python
-                    tree-sitter-html
-                    tree-sitter-javascript
-                    tree-sitter-css
-                  ]
-                  ))
+      (neovim.override {
+        configure = {
+          packages.myPlugins = with pkgs.vimPlugins; {
+            start = [
+              popup-nvim
+              plenary-nvim
+              nvim-compe
+              neorg
 
-                  vim-airline-themes
-                  vim-airline
-                  gruvbox-community
+              (nvim-treesitter.withPlugins (
+                plugins: with plugins;
+                [
+                  tree-sitter-nix
+                  tree-sitter-python
+                  tree-sitter-html
+                  tree-sitter-javascript
+                  tree-sitter-css
+                ]
+                ))
+
+                # File tree
+                nvim-tree-lua
+
+                # Eyecandy
+                nvim-treesitter
+                bufferline-nvim
+                galaxyline-nvim
+                nvim-colorizer-lua
+
+                # dusk-vim
+                pears-nvim
+
+                # Telescope
+                telescope-nvim
+
+                # Indent lines
+                indent-blankline-nvim
 
                 # file explorer
                 The_NERD_tree
@@ -83,6 +97,8 @@
                 coc-nvim
                 coc-yank
                 coc-css
+                coc-texlab
+                coc-lua
                 coc-stylelint
                 coc-json
                 coc-smartf
@@ -125,9 +141,7 @@
                 deoplete-zsh
                 deoplete-jedi
                 deoplete-nvim
-                deoplete-clang
                 deoplete-github
-                # deoplete-tabnine
 
                 # git
                 vim-gitgutter
@@ -140,32 +154,17 @@
                 popup-nvim
                 nvim-compe
                 plenary-nvim
-
               ];
               opt = [
-                # File tree
-                nvim-web-devicons
-                nvim-tree-lua
-                # nvim-web-devicon
-
-                # Telescope
-                popup-nvim
-                telescope-nvim
-
-                # Indent lines
-                indent-blankline-nvim
-
-                # Eyecandy
-                nvim-treesitter
-                bufferline-nvim
-                galaxyline-nvim
-                nvim-colorizer-lua
+                gruvbox-community
+                vim-airline-themes
+                vim-airline
               ];
             };
             customRC = builtins.readFile ./init.vim;
           };
-        };
-      };
+        }
+        )
+      ];
     };
-  };
 }
