@@ -5,5 +5,8 @@
     # enableNvidia= true;
   };
 
-  environment.systemPackages = with pkgs; [docker-compose];
+  environment.systemPackages = with pkgs; [
+    docker-compose
+    lazydocker
+    ];
 }
