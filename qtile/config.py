@@ -12,7 +12,7 @@ from typing import List  # noqa: F401
 
 mod = "mod4"
 myTerm = "alacritty"
-myConfig = "home/lk/.config/qtile/config.py"
+myConfig = "/home/lk/.config/qtile/config.py"
 home = os.path.expanduser("~")
 
 GREY = "#d1d1d1"
@@ -86,24 +86,6 @@ keys = [
         "d",
         lazy.spawn("pycharm-community"),
         desc="start pycharm",
-    ),
-    Key(
-        [mod],
-        "v",
-        lazy.spawn("VirtualBox"),
-        desc="start VirtualBox",
-    ),
-    Key(
-        [mod],
-        "t",
-        lazy.spawn("texstudio"),
-        desc="start texstudio",
-    ),
-    Key(
-        [mod],
-        "s",
-        lazy.spawn("steam"),
-        desc="start Steam",
     ),
     # RESIZE UP, DOWN, LEFT, RIGHT
     Key(

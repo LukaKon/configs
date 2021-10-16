@@ -13,7 +13,6 @@
       displayManager.gdm.enable = true;
       # displayManager.gdm.nvidiaWayland = true;
       displayManager.gdm.wayland = true;
-      # displayManager.gdm.wayland = false;
       desktopManager.gnome.enable = true;
 
       layout = "pl";
@@ -36,8 +35,8 @@
 
       dconf2nix
       brasero
-      # firefox-wayland
-      # foot
+      firefox-wayland
+      foot
     ];
     services = {
       udev.packages = with pkgs;

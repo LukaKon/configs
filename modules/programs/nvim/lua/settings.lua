@@ -1,3 +1,5 @@
+-- Lazy load everything
+dofile("/home/lk/configs/modules/programs/nvim/lua/statusline.lua")
 -- local opt = vim.opt
 local o = vim.o -- global options
 local wo = vim.wo -- window-local options
