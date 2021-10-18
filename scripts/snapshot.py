@@ -63,7 +63,6 @@ def delete_old_snaps():
 
             for entry in snaps:
                 match = re.search(expression_date, entry.name)
-                # convert 'match' (str) to date
                 match_date = datetime.strptime(match.group(), '%Y-%m-%d')
 
                 if match_date < datetime.today() - timedelta(

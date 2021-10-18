@@ -127,6 +127,7 @@
         yapf
         jedi
         bpython
+        ptpython
         pylint
         # jupyter
       ]))
