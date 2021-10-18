@@ -1,12 +1,21 @@
 {config, lib, pkgs, ...}:
 {
-  virtualisation.docker = {
+  virtualisation = {
+    docker = {
     enable = true;
     # enableNvidia= true;
   };
+  # podman = {
+  #   enable = true;
+  #   dockerSocket.enable = true;
+  #   defaultNetwork.dnsname.enable = true;
+  # };
+  };
+
 
   environment.systemPackages = with pkgs; [
     docker-compose
-    lazydocker
+    # arion
+    # lazydocker
     ];
 }

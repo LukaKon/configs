@@ -4,7 +4,7 @@
   nixpkgs.overlays = [
     (import (builtins.fetchTarball {
       url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-      sha256 = "1s5g9yi7gpnvxya4xgdvl5wfha00bsd7fhpyknxcgq290bxny8jl";
+      sha256 = "0hx5yhfhrv01vqxl4ravgywy8daadbnbq0hymjnzkl4cmvmikk1a";
     }))
   ];
 
@@ -22,7 +22,7 @@
               popup-nvim
               plenary-nvim
               nvim-compe
-              neorg
+              # neorg
 
               (nvim-treesitter.withPlugins (
                 plugins: with plugins;
@@ -40,7 +40,7 @@
 
                 # Eyecandy
                 nvim-treesitter
-                bufferline-nvim
+                # bufferline-nvim
                 galaxyline-nvim
                 nvim-colorizer-lua
 
