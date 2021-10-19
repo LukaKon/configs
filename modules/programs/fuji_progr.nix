@@ -88,7 +88,7 @@
       # packer
       unzip
       unar
-      xarchiver
+      # xarchiver
       p7zip
 
       nix-prefetch-git
@@ -116,7 +116,7 @@
       xsel  # for copying
       clipmenu  # for copying
 
-      (python39.withPackages(ps: with ps;
+      (python38.withPackages(ps: with ps;
       [
         autopep8
         flake8
