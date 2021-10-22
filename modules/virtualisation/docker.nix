@@ -16,6 +16,6 @@
   environment.systemPackages = with pkgs; [
     docker-compose
     # arion
-    # lazydocker
+    lazydocker
     ];
 }
