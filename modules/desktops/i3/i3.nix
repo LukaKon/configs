@@ -4,32 +4,26 @@
 	services = {
 		xserver = {
 			enable = true;
-					# displayManager.startx.enable = true;  # necessary to
-					# create .xinitrc file
+			displayManager.lightdm.enable = true;
+			displayManager.defaultSession = "none+i3";
 
-					# i3
+			desktopManager.xterm.enable = false;
 
-					# displayManager.lightdm.enable = true;
-					# displayManager.defaultSession = "none+i3";
+			windowManager.i3 = {
+				enable = true;
+				# package = pkgs.i3-gaps;
+				configFile = ./i3.conf;
+				extraPackages = with pkgs; [
+					dmenu
+					# i3status
+					i3lock
+					# i3blocks
+				];
+			};
 
-					desktopManager.xterm.enable = false;
-
-					windowManager.i3 = {
-						enable = true;
-									# package = pkgs.i3-gaps;
-									configFile = ./i3.conf;
-									extraPackages = with pkgs; [
-										dmenu
-									# i3status
-									i3lock
-									# i3blocks
-								];
-							};
-
-							layout = "pl";
-						};
-
-						autorandr.enable = true;
-					};
-				}
+			layout = "pl";
+		};
+		autorandr.enable = true;
+	};
+}
 
