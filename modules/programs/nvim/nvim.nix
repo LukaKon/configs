@@ -1,12 +1,12 @@
 {pkgs, config, ...}:
 
 {
-  nixpkgs.overlays = [
-    (import (builtins.fetchTarball {
-      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-      sha256 = "1557qfqf843qx3qn1mfnivmjqgyrv60bkyd8hsd4pyv8w51zml1x";
-    }))
-  ];
+  # nixpkgs.overlays = [
+  #   (import (builtins.fetchTarball {
+  #     url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+  #     sha256 = "01dkd7w7q7klqfiszfrx9jbq2n149500hcs0799bi8b6zg0q56hn";
+  #   }))
+  # ];
 
   environment = {
     variables = {EDITOR = "nvim"; VISUAL = "nvim";};

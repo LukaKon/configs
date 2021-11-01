@@ -4,7 +4,7 @@
 	services = {
 		xserver = {
 			enable = true;
-			displayManager.lightdm.enable = true;
+			# displayManager.lightdm.enable = true;
 			displayManager.defaultSession = "none+i3";
 
 			desktopManager.xterm.enable = false;
