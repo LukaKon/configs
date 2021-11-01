@@ -41,7 +41,7 @@
       # LaTeX
       texlive.combined.scheme-full
       # texstudio
-      mindforger
+      # mindforger
 
       # graphics
       blender
@@ -88,7 +88,7 @@
       # packer
       unzip
       unar
-      # xarchiver
+      xarchiver
       p7zip
 
       nix-prefetch-git
