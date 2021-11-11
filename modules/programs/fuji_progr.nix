@@ -11,9 +11,9 @@
       pciutils
       gputils
 
-      #   git
-      # git-crypt
-      # gnupg # gpg
+      git
+      git-crypt
+      gnupg # gpg
       # pinentry-gnome
 
       # terminal
@@ -32,6 +32,7 @@
       # uivonim
       # sublime3
       vscode
+      vscodium
       arduino
       # jetbrains.pycharm-community
       # jetbrains.pycharm-professional
@@ -116,18 +117,18 @@
       xsel  # for copying
       clipmenu  # for copying
 
-      (python38.withPackages(ps: with ps;
+      (python39.withPackages(ps: with ps;
       [
-        autopep8
-        flake8
+        # autopep8
+        # flake8
         colorama
         psutil
         pip
         pynvim
         yapf
         jedi
-        bpython
-        ptpython
+        # bpython
+        # ptpython
         pylint
         # jupyter
       ]))

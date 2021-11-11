@@ -8,61 +8,19 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/b44bf0be-d0e5-4711-8e9e-896fac64838f";
+    { device = "/dev/disk/by-uuid/847962e7-9cac-4734-97e2-0e1f7e425ad0";
       fsType = "btrfs";
-      options = [ "subvol=@root" ];
-    };
-
-  fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/b44bf0be-d0e5-4711-8e9e-896fac64838f";
-      fsType = "btrfs";
-      options = [ "subvol=@nix" ];
-    };
-
-  fileSystems."/var" =
-    { device = "/dev/disk/by-uuid/b44bf0be-d0e5-4711-8e9e-896fac64838f";
-      fsType = "btrfs";
-      options = [ "subvol=@var" ];
-    };
-
-  fileSystems."/srv" =
-    { device = "/dev/disk/by-uuid/b44bf0be-d0e5-4711-8e9e-896fac64838f";
-      fsType = "btrfs";
-      options = [ "subvol=@srv" ];
-    };
-
-  fileSystems."/opt" =
-    { device = "/dev/disk/by-uuid/b44bf0be-d0e5-4711-8e9e-896fac64838f";
-      fsType = "btrfs";
-      options = [ "subvol=@opt" ];
-    };
-
-  fileSystems."/tmp" =
-    { device = "/dev/disk/by-uuid/b44bf0be-d0e5-4711-8e9e-896fac64838f";
-      fsType = "btrfs";
-      options = [ "subvol=@tmp" ];
-    };
-
-  fileSystems."/var/lib/docker/btrfs" =
-    { device = "/tmp/@tmp/@var/lib/docker/btrfs//deleted";
-      fsType = "none";
-      options = [ "bind" ];
-    };
-
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/34d8df98-e664-4cb3-83d4-241d04564d86";
-      fsType = "btrfs";
-      options = [ "subvol=@home" ];
+      options = [ "subvol=nixos" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/2CDD-5DB0";
+    { device = "/dev/disk/by-uuid/CE70-80B2";
       fsType = "vfat";
     };
 
@@ -79,7 +37,7 @@
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/ac236b9f-1a37-4710-a3f7-6af2acecb56a"; }
+    [ { device = "/dev/disk/by-uuid/f3e17313-09db-4d1a-9238-ea58a296dd2f"; }
     ];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
