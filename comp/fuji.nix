@@ -30,7 +30,7 @@
     # Programs
     ./../modules/programs/fuji_progr.nix
     ./../modules/programs/nvim/nvim.nix
-    ./../modules/programs/postgresql.nix
+    # ./../modules/programs/postgresql.nix
     ./../modules/programs/zsh.nix
     # ./../modules/programs/steam.nix        # Steam gaming portal
     ./../modules/programs/flatpak.nix

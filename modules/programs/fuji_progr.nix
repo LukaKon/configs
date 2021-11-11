@@ -38,6 +38,7 @@
       # jetbrains.pycharm-professional
       # thonny
       unityhub
+      dbeaver
 
       # LaTeX
       texlive.combined.scheme-full
@@ -74,7 +75,7 @@
       # gparted
 
       # snipping tool
-      shutter
+      # shutter
 
       # office
       libreoffice
