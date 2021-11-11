@@ -34,11 +34,11 @@ paths = (
         'directory': f'/home/{user}/vm',
         'snap_loc': f'/home/{user}/vm/.snapshots/vm-{data}'
     },
-    {
-        'name': 'root',
-        'directory': '/',
-        'snap_loc': f'/.snapshots/root-{data}'
-    },
+    # {
+    #     'name': 'root',
+    #     'directory': '/',
+    #     'snap_loc': f'/.snapshots/root-{data}'
+    # },
 )
 
 
