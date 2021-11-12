@@ -24,22 +24,22 @@
               nvim-compe
               # neorg
 
-              (nvim-treesitter.withPlugins (
-                plugins: with plugins;
-                [
-                  tree-sitter-nix
-                  tree-sitter-python
-                  tree-sitter-html
-                  tree-sitter-javascript
-                  tree-sitter-css
-                ]
-                ))
+              # (nvim-treesitter.withPlugins (
+              #   plugins: with plugins;
+              #   [
+              #     tree-sitter-nix
+              #     tree-sitter-python
+              #     tree-sitter-html
+              #     tree-sitter-javascript
+              #     tree-sitter-css
+              #   ]
+              #   ))
 
                 # File tree
                 nvim-tree-lua
 
                 # Eyecandy
-                nvim-treesitter
+                # nvim-treesitter
                 # bufferline-nvim
                 galaxyline-nvim
                 nvim-colorizer-lua
