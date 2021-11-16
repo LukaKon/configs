@@ -95,7 +95,7 @@
 
       nix-prefetch-git
 
-      # tree
+      tree
       pstree  # process tree
       wget
       curl
