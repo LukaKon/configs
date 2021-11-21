@@ -58,6 +58,7 @@
       # arduino
       # jetbrains.pycharm-community
       # thonny
+      # dbeaver
 
       # LaTeX
       texlive.combined.scheme-full
@@ -115,7 +116,8 @@
       (python39.withPackages(ps: with ps;
       [
         autopep8
-        flake8
+        black
+        # flake8
         colorama
         psutil
         pip
@@ -124,10 +126,10 @@
         jedi
         termcolor
         # ipython
-        bpython
+        # bpython
         # ptpython
         pylint
-        jupyter
+        # jupyter
       ]))
     ];
   };
