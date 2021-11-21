@@ -22,7 +22,7 @@
 
     # Services
     ./../modules/services/openssh.nix  # SSH
-    # ./../modules/services/keyring.nix
+    ./../modules/services/keyring.nix
     # ./../modules/services/bluetooth.nix
     # ./../modules/services/remote.nix # remote server/desktop
     ./../modules/services/laptop.nix
@@ -30,18 +30,19 @@
     # Programs
     ./../modules/programs/mac_progr.nix
     ./../modules/programs/nvim/nvim.nix
-    ./../modules/programs/postgresql.nix
+    # ./../modules/programs/postgresql.nix
     ./../modules/programs/zsh.nix
     # ./../modules/programs/steam.nix        # Steam gaming portal
     ./../modules/programs/flatpak.nix
 
     # Desktops
-    # ./../desktops/i3/i3.nix  # i3 window manager settings
+    ./../desktops/i3/i3.nix  # i3 window manager settings
     # ./../modules/desktops/x_gnome.nix  # Gnome window manager settings
-    ./../modules/desktops/wayland_gnome.nix  # Gnome window manager settings
+    # ./../modules/desktops/wayland_gnome.nix  # Gnome window manager settings
 
     # Virtualisation
-    ./../modules/virtualisation/docker.nix # Docker
+    # ./../modules/virtualisation/docker.nix # Docker
+    ./../modules/virtualisation/podman.nix
     # ./../modules/virtualisation/virtualbox.nix # Virtualbox
     ./../modules/virtualisation/virt-manager.nix
   ];
