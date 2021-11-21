@@ -51,7 +51,8 @@
       # pcmanfm
 
       # IDE
-      vscode
+      # vscode
+      vscodium
       # arduino
       # jetbrains.pycharm-community
       # thonny
@@ -59,13 +60,13 @@
       # LaTeX
       texlive.combined.scheme-full
       # texstudio
-      mindforger
+      # mindforger
 
       # graphics
       # blender
-      darktable
-      gimp
-      krita
+      # darktable
+      # gimp
+      # krita
 
       # www
       firefox
@@ -85,14 +86,14 @@
 
       # cd burner
       brasero
-      etcher
-      gparted
+      # etcher
+      # gparted
 
       # snipping tool
       # shutter
 
       # office
-      libreoffice
+      # libreoffice
 
       # games
       # openarena
