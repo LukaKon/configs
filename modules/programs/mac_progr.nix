@@ -25,10 +25,12 @@
       lm_sensors
       ncdu # disk analisys
 
+      light # control display brightness
+
       # terminal
       alacritty
       # xterm
-      wezterm
+      # wezterm
       # kitty
       # wayst
 
