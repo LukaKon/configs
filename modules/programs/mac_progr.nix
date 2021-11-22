@@ -96,7 +96,7 @@
       # shutter
 
       # office
-      # libreoffice
+      libreoffice
 
       # games
       # openarena
