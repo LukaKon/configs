@@ -71,7 +71,7 @@
 
       # cd burner
       brasero
-      etcher
+      # etcher
       # gparted
 
       # snipping tool
