@@ -34,7 +34,7 @@
       vscode
       vscodium
       arduino
-      # jetbrains.pycharm-community
+      jetbrains.pycharm-community
       # jetbrains.pycharm-professional
       # thonny
       unityhub
