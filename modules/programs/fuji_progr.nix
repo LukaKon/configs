@@ -37,7 +37,7 @@
       jetbrains.pycharm-community
       # jetbrains.pycharm-professional
       # thonny
-      unityhub
+      # unityhub
       dbeaver
 
       # LaTeX
@@ -82,8 +82,8 @@
 
       # media
       feh # picture viewer
-      mpv # video player
-      libdvdcss # plugin to play cd/dvd in mpv
+      # mpv # video player
+      # libdvdcss # plugin to play cd/dvd in mpv
       moc  # music player
       youtube-dl
 
