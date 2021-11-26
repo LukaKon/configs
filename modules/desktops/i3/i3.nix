@@ -11,11 +11,10 @@
 
 			windowManager.i3 = {
 				enable = true;
-				# package = pkgs.i3-gaps;
 				configFile = ./i3.conf;
 				extraPackages = with pkgs; [
 					dmenu
-					# i3status
+					i3status
 					i3lock
 					# i3blocks
 				];
@@ -25,5 +24,9 @@
 		};
 		autorandr.enable = true;
 	};
+	environment.systemPackages = with pkgs; [
+		lxappearance
+	];
+	environment.pathsToLink = [ "/libexec" ];
 }
 
