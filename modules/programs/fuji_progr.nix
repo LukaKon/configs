@@ -34,10 +34,10 @@
       vscode
       vscodium
       arduino
-      # jetbrains.pycharm-community
+      jetbrains.pycharm-community
       # jetbrains.pycharm-professional
       # thonny
-      unityhub
+      # unityhub
       dbeaver
 
       # LaTeX
@@ -71,7 +71,7 @@
 
       # cd burner
       brasero
-      etcher
+      # etcher
       # gparted
 
       # snipping tool
@@ -82,8 +82,8 @@
 
       # media
       feh # picture viewer
-      mpv # video player
-      libdvdcss # plugin to play cd/dvd in mpv
+      # mpv # video player
+      # libdvdcss # plugin to play cd/dvd in mpv
       moc  # music player
       youtube-dl
 
