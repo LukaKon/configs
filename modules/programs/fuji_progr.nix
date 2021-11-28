@@ -46,7 +46,7 @@
       # mindforger
 
       # graphics
-      blender
+      # blender
       darktable
       gimp
       krita
@@ -129,7 +129,7 @@
         yapf
         jedi
         # bpython
-        # ptpython
+        ptpython
         pylint
         # jupyter
       ]))
