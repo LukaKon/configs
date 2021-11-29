@@ -31,7 +31,7 @@
       # neovide
       # uivonim
       # sublime3
-      vscode
+      # vscode
       vscodium
       arduino
       jetbrains.pycharm-community
