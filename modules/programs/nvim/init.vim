@@ -298,6 +298,12 @@ set incsearch
 set guifont=Fira\ Code\ Nerd\ Font
 set diffopt+=vertical
 
+" darker for python settings
+set autoread
+autocmd BufWritePost *.py silent :!darker %
+
+
+
 
 filetype plugin indent on
 
@@ -376,7 +382,7 @@ au BufWrite * :Autoformat
 " auto format code
 au BufWrite *.py,*.c,*.h,*.cpp,*.hpp,*.js :ALEFix
 au User ALEFixPost :w
-let g:ale_linters = { 'c': ['clangd'], 'cpp': ['clangd'], 'py' : ['flake8', 'pylint'] }
+let g:ale_linters = { 'c': ['clangd'], 'cpp': ['clangd'], 'py' : ['black','isort','flake8', 'pylint'], 'javascript':['eslint'] }
 let g:ale_fixers = { 'c': ['clang-format'], 'cpp': ['clang-format'], 'javascript': ['prettier'], 'python': ['autopep8', 'yapf'] }
 let g:prettier#exec_cmd_async = 1
 
