@@ -177,19 +177,19 @@ vim.g.indent_blankline_show_trailing_blankline_indent = false
 --  },
 --}
 
---bo.tw = 80
---bo.iskeyword +=- -- treat dash separated words as a word text object
---bo.formatoptions-=cro -- stop newline continution of comment
---wo.foldhethod=expr
---wo.foldexpr=nvim_treesitter#foldexpr()
---
---o.hidden = true -- Required to keep multiple buffers open multiple buffers ???
---wo.wrap = false -- Display long lines as just one line - (wo)
---o.showcmd = true    -- show current command in status line
---o.whichwrap+=<,>,[,],h,l
---o.pumneight=8 -- Makes popup menu smaller
---o.encoding = 'utf-8'    -- The encoding displayed
---ob.fileencoding = 'utf-8'    -- The encoding written to file
+-- bo.tw = 80
+-- bo.iskeyword +=- -- treat dash separated words as a word text object
+-- bo.formatoptions-=cro -- stop newline continution of comment
+-- wo.foldhethod=expr
+-- wo.foldexpr=nvim_treesitter#foldexpr()
+
+-- o.hidden = true -- Required to keep multiple buffers open multiple buffers ???
+-- wo.wrap = false -- Display long lines as just one line - (wo)
+-- o.showcmd = true    -- show current command in status line
+-- o.whichwrap+=<,>,[,],h,l
+-- o.pumneight=8 -- Makes popup menu smaller
+-- o.encoding = 'utf-8'    -- The encoding displayed
+-- ob.fileencoding = 'utf-8'    -- The encoding written to file
 
 -- opt.ruler = true  -- Show the cursor position all the time
 -- opt.tabstop = 4   -- Insert 4 spaces for a tab
@@ -240,9 +240,9 @@ EOF
 
 
 
-" set tw=80
-" set iskeyword+=-                        " treat dash separated words as a word text object"
-" set formatoptions-=cro                  " Stop newline continution of comments
+set tw=80
+set iskeyword+=-                        " treat dash separated words as a word text object"
+set formatoptions-=cro                  " Stop newline continution of comments
 
 " set foldmethod=expr
 " set foldexpr=nvim_treesitter#foldexpr()
@@ -250,7 +250,6 @@ EOF
 syntax enable                           " Enables syntax highlighing
 " set hidden                              " Required to keep multiple buffers open multiple buffers
 " set nowrap                              " Display long lines as just one line
-" set showcmd                             " show current command in status line
 " set whichwrap+=<,>,[,],h,l
 " set encoding=utf-8                      " The encoding displayed
 " set pumheight=10                        " Makes popup menu smaller

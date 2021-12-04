@@ -71,7 +71,6 @@
 
                 vim-autoformat
 
-                # completion
                 # nvim-lspconfig
                 completion-nvim
 
