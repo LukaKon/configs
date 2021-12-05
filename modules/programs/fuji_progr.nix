@@ -34,7 +34,7 @@
       # vscode
       vscodium
       arduino
-      jetbrains.pycharm-community
+      # jetbrains.pycharm-community
       # jetbrains.pycharm-professional
       # thonny
       # unityhub
@@ -52,9 +52,9 @@
       krita
 
       # www
-      firefox
-      geckodriver
-      qutebrowser
+      # firefox
+      # geckodriver
+      # qutebrowser
       # vimb
       brave
       # tor-browser-bundle-bin
