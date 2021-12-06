@@ -160,7 +160,7 @@
                 vim-airline
               ];
             };
-            customRC = builtins.readFile ./init.vim;
+            customRC = builtins.readFile ./boot.vim; #./init.vim;
           };
         }
         )

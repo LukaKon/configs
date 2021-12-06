@@ -2,23 +2,22 @@ lua <<EOF
 require'nvim-treesitter.configs'.setup {
     highlight = {
     enable = true,
-    custom_captures = {
-        -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
-        --["javascript","css","c_sharp","cmake","cpp","dockerfile","html","json","latex","lua","nix","python","toml","vim","yaml"]="Identifier",
-        --["foo.bar"] = "Identifier",
-        },
+    -- custom_captures = {
+    -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
+    -- ["javascript","css","c_sharp","cmake","cpp","dockerfile","html","json","latex","lua","nix","python","toml","vim","yaml"]="Identifier",
+    --["foo.bar"] = "Identifier",
+    --       },
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
     -- Using this option may slow down your editor, and you may see some duplicate highlights.
     -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
+    --    additional_vim_regex_highlighting = false,
     },
 }
 --local opt = vim.opt
 --local o = vim.o -- global options
 --local wo = vim.wo -- window-local options
 --local bo = vim.bo -- buffer-local options
-
 
 --Set highlight on search
 vim.o.hlsearch = false
@@ -66,29 +65,18 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 --Remap for dealing with word wrap
---vim.api.nvim_set_keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
+-- vim.api.nvim_set_keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
 --vim.api.nvim_set_keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
 
--- Highlight on yank
---vim.api.nvim_exec(
---[[
---augroup YankHighlight
---    autocmd!
---    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
---augroup end
---]],
---  false
---  )
-
 -- Y yank until the end of line  (note: this is now a default on master)
-vim.api.nvim_set_keymap('n', 'Y', 'y$', { noremap = true })
-
---Map blankline
-vim.g.indent_blankline_char = '┊'
-vim.g.indent_blankline_filetype_exclude = { 'help', 'packer' }
-vim.g.indent_blankline_buftype_exclude = { 'terminal', 'nofile' }
-vim.g.indent_blankline_char_highlight = 'LineNr'
-vim.g.indent_blankline_show_trailing_blankline_indent = false
+-- vim.api.nvim_set_keymap('n', 'Y', 'y$', { noremap = true })
+--
+-- --Map blankline
+-- vim.g.indent_blankline_char =  '|' --'┊'
+-- vim.g.indent_blankline_filetype_exclude = { 'help', 'packer' }
+-- vim.g.indent_blankline_buftype_exclude = { 'terminal', 'nofile' }
+-- vim.g.indent_blankline_char_highlight = 'LineNr'
+-- vim.g.indent_blankline_show_trailing_blankline_indent = false
 
 -- Gitsigns
 --require('gitsigns').setup {
@@ -112,17 +100,6 @@ vim.g.indent_blankline_show_trailing_blankline_indent = false
 --            },
 --        },
 --    }
-
---Add leader shortcuts
---vim.api.nvim_set_keymap('n', '<leader><space>', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], { noremap = true, silent = true })
---vim.api.nvim_set_keymap('n', '<leader>sf', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], { noremap = true, silent = true })
---vim.api.nvim_set_keymap('n', '<leader>sb', [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], { noremap = true, silent = true })
---vim.api.nvim_set_keymap('n', '<leader>sh', [[<cmd>lua require('telescope.builtin').help_tags()<CR>]], { noremap = true, silent = true })
---vim.api.nvim_set_keymap('n', '<leader>st', [[<cmd>lua require('telescope.builtin').tags()<CR>]], { noremap = true, silent = true })
---vim.api.nvim_set_keymap('n', '<leader>sd', [[<cmd>lua require('telescope.builtin').grep_string()<CR>]], { noremap = true, silent = true })
---vim.api.nvim_set_keymap('n', '<leader>sp', [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], { noremap = true, silent = true })
---vim.api.nvim_set_keymap('n', '<leader>so', [[<cmd>lua require('telescope.builtin').tags{ only_current_buffer = true }<CR>]], { noremap = true, silent = true })
---vim.api.nvim_set_keymap('n', '<leader>?', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], { noremap = true, silent = true })
 
 -- Treesitter configuration
 -- Parsers must be installed manually via :TSInstall
@@ -236,6 +213,7 @@ vim.g.indent_blankline_show_trailing_blankline_indent = false
 
 -- vim.cmd('language en_US.utf-8')
 -- require('settings')
+print('LUA working')
 EOF
 
 
