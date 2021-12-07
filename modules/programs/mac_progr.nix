@@ -74,7 +74,7 @@
       # www
       firefox
       geckodriver
-      qutebrowser
+      # qutebrowser
       brave
       # tor-browser-bundle-bin
 
