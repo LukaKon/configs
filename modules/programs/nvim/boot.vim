@@ -49,7 +49,9 @@ Plug 'dense-analysis/ale'
 Plug 'Yggdroot/indentLine'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
-Plug 'tomasr/molokai'
+" Plug 'tomasr/molokai'
+" treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 
 if isdirectory('/usr/local/opt/fzf')
@@ -138,7 +140,7 @@ set smartindent
 
 
 "" Map leader to ,
-let mapleader=','
+let mapleader=' '
 
 "" Enable hidden buffers
 set hidden
@@ -509,7 +511,7 @@ let g:jedi#smart_auto_mappings = 0
 
 " ale
 :call extend(g:ale_linters, {
-            \'python': ['flake8'], })
+            \'python': ['flake8','black'], })
 
 " vim-airline
 let g:airline#extensions#virtualenv#enabled = 1
@@ -517,6 +519,36 @@ let g:airline#extensions#virtualenv#enabled = 1
 " Syntax highlight
 let python_highlight_all = 1
 
+
+"treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    custom_captures = {
+      -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
+      -- ["python","javascript","html","nix"] = "Identifier",
+    },
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
+  indent = {
+    enable = true
+  },
+}
+EOF
 
 
 " vuejs
