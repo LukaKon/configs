@@ -106,6 +106,12 @@ Plug 'leafOfTree/vim-vue-plugin'
 "*****************************************************************************
 "*****************************************************************************
 
+" commentary
+nnoremap <space>/ :Commentary<CR>
+vnoremap <space>/ :Commentary<CR>
+
+
+
 "" Include user's extra bundle
 if filereadable(expand("~/.config/nvim/local_bundles.vim"))
     source ~/.config/nvim/local_bundles.vim

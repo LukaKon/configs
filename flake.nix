@@ -22,25 +22,6 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     #   inputs.flake-utils.follows = "flake-utils";
     # };
-
-  #   xmonad = {
-  #     url = "github:xmonad/xmonad";
-  #     nixpkgs.follows = "nixpkgs";
-  #   };
-
-  #   xmonad-contrib = {
-  #     url = "github:ivanmalison/xmonad-contrib";
-  #     inputs.nixpkgs.follows = "nixpkgs";
-  #   };
-
-  #   taffybar = {
-  #     url = "github:taffybar/taffybar";
-  #     inputs.nixpkgs.follows = "nixpkgs";
-  #   };
-
-  #   picom-jonaburg = {
-  #     url = "github:jonaburg/picom";
-  #     flake = false;
 };
 
 outputs = inputs@{ nixpkgs, flake-utils, ... }: # neovim-nightly-overlay, ... }:
