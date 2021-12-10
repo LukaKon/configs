@@ -38,6 +38,7 @@
 
     # Desktops
     ./../modules/desktops/i3/i3.nix  # i3 window manager settings
+    ./../modules/desktops/exwm.nix
     # ./../modules/desktops/spectrwm.nix
     # ./../modules/desktops/kde.nix
     # ./../modules/desktops/x_gnome.nix  # Gnome window manager settings
