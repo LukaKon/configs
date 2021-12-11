@@ -4,7 +4,7 @@
   services = {
     xserver = {
       enable = true;
-      windowManager.exwm = true;
+      windowManager.exwm.enable = true;
 
     layout = "pl";
     };

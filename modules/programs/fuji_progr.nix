@@ -106,11 +106,12 @@
       nodejs
 
       # monitoring
-      bmon
-      htop
-      iotop
+      # bmon
+      # htop
+      # iotop
+      glances
       lm_sensors
-      ncdu # disk analisys
+      # ncdu # disk analisys
       sysstat
 
       # ueberzug
