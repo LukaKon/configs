@@ -23,6 +23,7 @@
       # file managers
       vifm-full
       ranger
+      fzf
 
       # IDE
       # neovim-nightly
@@ -52,9 +53,9 @@
       krita
 
       # www
-      # firefox
+      firefox
       # geckodriver
-      # qutebrowser
+      qutebrowser
       # vimb
       brave
       # tor-browser-bundle-bin
@@ -115,7 +116,6 @@
       sysstat
 
       # ueberzug
-      fzf
       xsel  # for copying
       clipmenu  # for copying
 
