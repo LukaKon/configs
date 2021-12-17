@@ -13,5 +13,6 @@
 
   environment.systemPackages = with pkgs; [
     emacsPgtkGcc
+    emacs-all-the-icons-fonts
   ];
 }
