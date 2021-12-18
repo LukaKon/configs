@@ -99,9 +99,6 @@
       # office
       libreoffice
 
-      # games
-      # openarena
-
       firmwareLinuxNonfree
       microcodeIntel
 
