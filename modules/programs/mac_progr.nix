@@ -15,6 +15,7 @@
       rsync
       bat # cat
       fd  # find
+      fzf
 
       nodejs
 
@@ -39,7 +40,6 @@
       # neovim
       # ranger
       # ueberzug
-      fzf
       xsel  # for copying
       clipmenu  # for copying
 
@@ -75,7 +75,7 @@
       # www
       firefox
       geckodriver
-      # qutebrowser
+      qutebrowser
       brave
       # tor-browser-bundle-bin
 
