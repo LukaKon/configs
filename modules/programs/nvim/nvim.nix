@@ -153,11 +153,12 @@
                 popup-nvim
                 nvim-compe
                 plenary-nvim
-              ];
-              opt = [
+
                 gruvbox-community
                 vim-airline-themes
                 vim-airline
+              ];
+              opt = [
               ];
             };
             customRC = builtins.readFile ./boot.vim; #./init.vim;
