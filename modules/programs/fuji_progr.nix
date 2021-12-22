@@ -28,7 +28,7 @@
       # IDE
       # neovim-nightly
       # neovim
-      # spacevim
+      spacevim
       # neovide
       # uivonim
       # sublime3
