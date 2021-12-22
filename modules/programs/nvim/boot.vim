@@ -1,3 +1,6 @@
+" test
+lua dofile('/home/lk/configs/modules/programs/nvim/lua/test.lua')
+
 " vim-bootstrap 2021-12-06 19:15:45
 
 "*****************************************************************************
@@ -259,12 +262,12 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'powerlineish'
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tagbar#enabled = 1
-let g:airline_skip_empty_sections = 1
+" let g:airline_theme = 'powerlineish'
+" let g:airline#extensions#branch#enabled = 1
+" let g:airline#extensions#ale#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tagbar#enabled = 1
+" let g:airline_skip_empty_sections = 1
 
 "*****************************************************************************
 "" Abbreviations
@@ -524,8 +527,6 @@ let g:airline#extensions#virtualenv#enabled = 1
 " Syntax highlight
 let python_highlight_all = 1
 
-" test
-lua require('test')
 
 "treesitter
 lua <<EOF

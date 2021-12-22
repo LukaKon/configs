@@ -161,7 +161,7 @@
               opt = [
               ];
             };
-            customRC = builtins.readFile ./boot.vim; #./init.vim;
+            customRC = builtins.readFile nvim.vim; #./boot.vim; ./init.vim;
           };
         }
         )
