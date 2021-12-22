@@ -524,6 +524,8 @@ let g:airline#extensions#virtualenv#enabled = 1
 " Syntax highlight
 let python_highlight_all = 1
 
+" test
+lua require('test')
 
 "treesitter
 lua <<EOF
