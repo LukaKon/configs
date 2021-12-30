@@ -1,17 +1,8 @@
-"""
-#! /usr/bin/env nix-shell
-#! nix-shell -i python3 -p "python3.withPackages(ps: [ps.colorama])"
-"""
-
 import os
 import re
 import getpass
 import subprocess
-import colorama
-from colorama import Fore, Back, Style
 from datetime import datetime, timedelta
-
-colorama.init(autoreset=True)
 
 user = getpass.getuser()
 data = datetime.now().strftime('%Y-%m-%d_%H-%M')
@@ -67,17 +58,15 @@ def delete_old_snaps():
 
                 if match_date < datetime.today() - timedelta(
                         days=days):  # selecting folders older than 7 days old
-                    print(
-                        f'{Fore.LIGHTRED_EX}{entry.name}: {Fore.MAGENTA}to delete'
-                    )
+                    print( f'{entry.name}: to delete')
                     subprocess.run(
                         ['sudo', 'rm', '-r', f'{path}/{entry.name}'])
 
 
-print(f'{Fore.BLUE}\nCreate new snapshots:')
+print(f'\nCreate new snapshots:')
 create_new_snaps()
 print(
-    f'{Fore.RED}\nDelete snapshots older than {Fore.YELLOW}{days} {Fore.RED}days:'
+    f'\nDelete snapshots older than {days} days:'
 )
 delete_old_snaps()
 print('\n')
