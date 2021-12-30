@@ -43,11 +43,11 @@
     # ./../modules/desktops/kde.nix
     # ./../modules/desktops/x_gnome.nix  # Gnome window manager settings
     # ./../modules/desktops/wayland_gnome.nix  # Gnome window manager settings
-    # ./../modules/desktops/qtile.nix
+    ./../modules/desktops/qtile.nix
 
     # Virtualisation
     ./../modules/virtualisation/podman.nix # Podman
-    ./../modules/virtualisation/docker.nix # Docker
+    # ./../modules/virtualisation/docker.nix # Docker
     # ./../modules/virtualisation/virtualbox.nix # Virtualbox
     ./../modules/virtualisation/virt-manager.nix
   ];

@@ -26,12 +26,10 @@
       fzf
 
       # IDE
-      # neovim-nightly
       # neovim
-      spacevim
+      # spacevim
       # neovide
       # uivonim
-      # sublime3
       # vscode
       vscodium
       arduino
