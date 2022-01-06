@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 user = getpass.getuser()
 data = datetime.now().strftime('%Y-%m-%d_%H-%M')
 
-days = 5
+days = 30
 
 paths = (
     {
