@@ -47,7 +47,7 @@
 
     # Virtualisation
     ./../modules/virtualisation/podman.nix # Podman
-    # ./../modules/virtualisation/docker.nix # Docker
+    ./../modules/virtualisation/docker.nix # Docker
     # ./../modules/virtualisation/virtualbox.nix # Virtualbox
     ./../modules/virtualisation/virt-manager.nix
   ];
