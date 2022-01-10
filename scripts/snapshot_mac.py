@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 user = getpass.getuser()
 data = datetime.now().strftime('%Y-%m-%d_%H-%M')
 
-days = 5
+days = 30
 
 paths = (
     {
@@ -47,17 +47,14 @@ def delete_old_snaps():
                 # convert 'match' (str) to date
                 match_date = datetime.strptime(match.group(), '%Y-%m-%d')
 
-                if match_date < datetime.today() - timedelta(
-                        days=days):  # selecting folders older than 7 days old
+                if match_date < datetime.today() - timedelta(days=days):  # selecting folders older than 7 days old
                     print(f'{entry.name}: to delete')
                     subprocess.run(
                         ['sudo', 'rm', '-r', f'{path}/{entry.name}'])
 
 
-print(f'\nCreate new snapshots:')
+print('\nCreate new snapshots:')
 create_new_snaps()
-print(
-    f'\nDelete snapshots older than {days} days:'
-)
+print(f'\nDelete snapshots older than {days} days:')
 delete_old_snaps()
 print('\n')
