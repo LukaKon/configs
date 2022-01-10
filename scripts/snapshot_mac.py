@@ -2,11 +2,8 @@ import os
 import re
 import getpass
 import subprocess
-import colorama
-from colorama import Fore, Back, Style
 from datetime import datetime, timedelta
 
-colorama.init(autoreset=True)
 
 user = getpass.getuser()
 data = datetime.now().strftime('%Y-%m-%d_%H-%M')
@@ -57,10 +54,10 @@ def delete_old_snaps():
                         ['sudo', 'rm', '-r', f'{path}/{entry.name}'])
 
 
-print(f'{Fore.BLUE}\nCreate new snapshots:')
+print(f'\nCreate new snapshots:')
 create_new_snaps()
 print(
-    f'{Fore.RED}\nDelete snapshots older than {Fore.YELLOW}{days} {Fore.RED}days:'
+    f'\nDelete snapshots older than {days} days:'
 )
 delete_old_snaps()
 print('\n')
