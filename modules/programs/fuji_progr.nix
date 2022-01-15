@@ -65,16 +65,11 @@
 
       # video conference
       zoom-us
-      # teams
-      # skype
 
       # cd burner
       brasero
       # etcher
       # gparted
-
-      # snipping tool
-      # shutter
 
       # office
       libreoffice
@@ -103,6 +98,7 @@
       fd  # find
 
       nodejs
+      bmake
 
       # monitoring
       # bmon
