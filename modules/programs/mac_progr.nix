@@ -18,6 +18,7 @@
       fzf
 
       nodejs
+      bmake
 
       # monitoring
       # bmon
@@ -85,16 +86,11 @@
 
       # video conference
       zoom-us
-      # teams
-      # skype
 
       # cd burner
       brasero
       # etcher
       # gparted
-
-      # snipping tool
-      # shutter
 
       # office
       libreoffice
