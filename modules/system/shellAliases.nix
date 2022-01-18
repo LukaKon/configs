@@ -19,8 +19,10 @@
                                 # editor
                                 vi = "nvim";
 
+                                # python
+                                py = "python";
+
                                 # btrfs snapshots
-                                # sb = "python ${path_script}snapshot.py";
                                 sb = "python3 /home/lk/configs/scripts/snapshot.py";
 
                                 # backup config files to git

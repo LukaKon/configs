@@ -18,7 +18,6 @@
       fzf
 
       nodejs
-      bmake
 
       # monitoring
       # bmon
