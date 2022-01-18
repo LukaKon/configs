@@ -98,7 +98,7 @@
       fd  # find
 
       nodejs
-      bmake
+      # bmake
 
       # monitoring
       # bmon
