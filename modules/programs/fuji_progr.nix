@@ -38,6 +38,7 @@
       # thonny
       # unityhub
       dbeaver
+      postman
 
       # LaTeX
       texlive.combined.scheme-full
