@@ -15,7 +15,9 @@
     ./../modules/system/env_variables.nix
     # ./../modules/system/cron.nix
     ./../modules/system/shellAliases.nix  # Shell aliases
-    ./../modules/system/users.nix     # Users configurations
+    # ./../modules/system/users.nix     # Users configurations
+    ./../modules/system/lk.nix
+    ./../modules/system/kk.nix
 
     # Security
     ./../modules/security/doas.nix # Add 'doas'
