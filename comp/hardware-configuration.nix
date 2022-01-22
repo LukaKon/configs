@@ -8,7 +8,7 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
@@ -24,16 +24,22 @@
       fsType = "vfat";
     };
 
-  fileSystems."/home/lk/vm" =
-    { device = "/dev/disk/by-uuid/806efee3-efbd-4236-b2c4-c9a4ad9c0c62";
-      fsType = "btrfs";
-      options = [ "subvol=@vm" ];
-    };
-
   fileSystems."/home/lk/data" =
     { device = "/dev/disk/by-uuid/71bff5ad-3209-4d8f-8ead-65733cfb4b88";
       fsType = "btrfs";
       options = [ "subvol=@data" ];
+    };
+
+  fileSystems."/var/lib/docker/btrfs" =
+    { device = "/nixos/var/lib/docker/btrfs";
+      fsType = "none";
+      options = [ "bind" ];
+    };
+
+  fileSystems."/home/lk/vm" =
+    { device = "/dev/disk/by-uuid/63742996-98f1-4404-b850-b61be86ea7cd";
+      fsType = "btrfs";
+      options = [ "subvol=@vm" ];
     };
 
   swapDevices =
@@ -41,4 +47,5 @@
     ];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

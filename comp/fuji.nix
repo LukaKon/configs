@@ -15,7 +15,7 @@
     ./../modules/system/env_variables.nix
     # ./../modules/system/cron.nix
     ./../modules/system/shellAliases.nix  # Shell aliases
-    # ./../modules/system/users.nix     # Users configurations
+    #./../modules/system/users.nix     # Users configurations
     ./../modules/system/lk.nix
     ./../modules/system/kk.nix
 
@@ -27,7 +27,7 @@
     ./../modules/services/openssh.nix  # SSH
     ./../modules/services/keyring.nix
     # ./../modules/services/bluetooth.nix
-    # ./../modules/services/remote.nix # remote server/desktop
+    ./../modules/services/remote.nix # remote server/desktop
 
     # Programs
     ./../modules/programs/fuji_progr.nix
