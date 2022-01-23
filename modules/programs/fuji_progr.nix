@@ -25,26 +25,6 @@
       ranger
       fzf
 
-      # IDE
-      # neovim
-      # spacevim
-      # neovide
-      # uivonim
-      # vscode
-      vscodium
-      arduino
-      # jetbrains.pycharm-community
-      # jetbrains.pycharm-professional
-      # thonny
-      # unityhub
-      dbeaver
-      postman
-
-      # LaTeX
-      texlive.combined.scheme-full
-      # texstudio
-      # mindforger
-
       # graphics
       # blender
       darktable
@@ -53,19 +33,7 @@
 
       # www
       firefox
-      # geckodriver
-      qutebrowser
-      # vimb
       brave
-      # tor-browser-bundle-bin
-      # nyxt
-
-      # comunicator
-      # signal-desktop
-      slack
-
-      # video conference
-      zoom-us
 
       # cd burner
       brasero
@@ -113,22 +81,6 @@
       # ueberzug
       xsel  # for copying
       clipmenu  # for copying
-
-      (python39.withPackages(ps: with ps;
-      [
-        # autopep8
-        # flake8
-        colorama
-        psutil
-        pip
-        pynvim
-        yapf
-        jedi
-        # bpython
-        ptpython
-        pylint
-        # jupyter
-      ]))
     ];
   };
 }

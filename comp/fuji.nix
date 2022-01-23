@@ -25,7 +25,7 @@
 
     # Services
     ./../modules/services/openssh.nix  # SSH
-    ./../modules/services/keyring.nix
+    #./../modules/services/keyring.nix
     # ./../modules/services/bluetooth.nix
     ./../modules/services/remote.nix # remote server/desktop
 
@@ -42,7 +42,7 @@
     # ./../modules/desktops/i3/i3.nix  # i3 window manager settings
     # ./../modules/desktops/exwm.nix
     # ./../modules/desktops/spectrwm.nix
-    # ./../modules/desktops/kde.nix
+    ./../modules/desktops/kde.nix
     # ./../modules/desktops/x_gnome.nix  # Gnome window manager settings
     # ./../modules/desktops/wayland_gnome.nix  # Gnome window manager settings
     ./../modules/desktops/qtile.nix
