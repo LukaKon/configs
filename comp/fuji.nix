@@ -17,7 +17,7 @@
     ./../modules/system/shellAliases.nix  # Shell aliases
     #./../modules/system/users.nix     # Users configurations
     ./../modules/system/lk.nix
-    ./../modules/system/kk.nix
+    #./../modules/system/kk.nix
 
     # Security
     ./../modules/security/doas.nix # Add 'doas'
@@ -27,7 +27,7 @@
     ./../modules/services/openssh.nix  # SSH
     #./../modules/services/keyring.nix
     # ./../modules/services/bluetooth.nix
-    ./../modules/services/remote.nix # remote server/desktop
+    #./../modules/services/remote.nix # remote server/desktop
 
     # Programs
     ./../modules/programs/fuji_progr.nix
@@ -42,7 +42,7 @@
     # ./../modules/desktops/i3/i3.nix  # i3 window manager settings
     # ./../modules/desktops/exwm.nix
     # ./../modules/desktops/spectrwm.nix
-    ./../modules/desktops/kde.nix
+    #./../modules/desktops/kde.nix
     # ./../modules/desktops/x_gnome.nix  # Gnome window manager settings
     # ./../modules/desktops/wayland_gnome.nix  # Gnome window manager settings
     ./../modules/desktops/qtile.nix
