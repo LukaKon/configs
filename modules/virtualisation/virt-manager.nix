@@ -23,4 +23,6 @@
         "prefixLength" = 24;
       }];
     };
+
+    networking.firewall.allowedTCPPorts = [5900];
 }
