@@ -4,9 +4,9 @@
   environment.systemPackages = with pkgs; [dbeaver];
   services.postgresql = {
     enable = true;
-    package = pkgs.postgresql_12;
+    package = pkgs.postgresql_14;
     enableTCPIP = true;
-    authentication = pkgs.lib.mkOverride 12 ''
+    authentication = pkgs.lib.mkOverride 14 ''
       local all all trust
       host all all localhost trust
       host all all 127.0.0.1/32 trust
@@ -25,4 +25,6 @@
       GRANT ALL PRIVILEGES ON DATABASE lko TO lko;
     '';
   };
+
+  networking.firewall.allowedTCPPorts = [5432];
 }
