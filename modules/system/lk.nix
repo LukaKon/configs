@@ -12,6 +12,7 @@
       #exercism
 
       wezterm
+      #kitty
 
       # www
       qutebrowser
