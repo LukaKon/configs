@@ -11,6 +11,8 @@
     [
       #exercism
 
+      wezterm
+
       # www
       qutebrowser
 
