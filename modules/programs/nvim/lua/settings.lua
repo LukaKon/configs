@@ -5,7 +5,7 @@ local set = vim.opt
 -- set.termguicolors=true
 
 set.tw=80
-print('tw: ',set.tw)
+-- print('tw: ',set.tw)
 
 --Make line numbers default
 set.relativenumber = true
