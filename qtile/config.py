@@ -118,20 +118,32 @@ keys = [
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 1+ unmute")),
 ]
 
-# groups = [
-#       Group("term", layout='monadtall'),
-#       Group("dev", layout='monadtall'),
-#    Group("www", layout='monadtall'),
-#    Group("db", layout='monadtall'),
-#    Group("chat", layout='monadtall'),
-#    Group("virt", layout='monadtall'),
-#    Group("music", layout='monadtall'),
-#    Group("conf", layout='monadtall'),
-#    Group("game", layout='monadtall'),
-#    Group("float", layout='floating'),
-#  ]
+#groups = [
+#      Group("term", layout='monadwide'),
+#      Group("dev", layout='monadtall'),
+#   Group("www", layout='monadtall'),
+#   Group("db", layout='monadtall'),
+#   Group("chat", layout='monadtall'),
+#   Group("virt", layout='monadtall'),
+#   Group("music", layout='monadtall'),
+#   Group("glances", layout='monadtall'),
+#   Group("game", layout='monadtall'),
+#   Group("float", layout='floating'),
+# ]
+groups = [
+      Group("1", layout='monadwide'),
+      Group("2", layout='monadtall'),
+   Group("3", layout='monadtall'),
+   Group("4", layout='monadtall'),
+   Group("5", layout='monadtall'),
+   Group("6", layout='monadtall'),
+   Group("7", layout='monadtall'),
+   Group("8", layout='monadtall'),
+   Group("9", layout='monadtall'),
+   Group("0", layout='floating'),
+ ]
 
-groups = [Group(i,layout='monadtall') for i in "1234567890"]
+# groups = [Group(i,layout='monadtall') for i in "1234567890"]
 
 # dgroups_key_binder = simple_key_binder(mod)
 
