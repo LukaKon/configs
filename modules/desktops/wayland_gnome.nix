@@ -7,8 +7,8 @@
       enable = true;
 
       # Gnome
-      # displayManager.gdm.enable = true;
-      displayManager.gdm.wayland = true;
+      #displayManager.gdm.enable = true;
+      #displayManager.gdm.wayland = true;
       desktopManager.gnome.enable = true;
 
       layout = "pl";
@@ -26,9 +26,7 @@
       gnome.gnome-tweaks
       gnome-breeze
 
-
       dconf2nix
-      brasero
       firefox-wayland
       foot
     ];
@@ -40,11 +38,11 @@
         gnome3.gnome-keyring
         gnome3.gnome-desktop
         gnome3.gnome-applets
-        gnome3.gnome-tweak-tool
+        gnome.gnome-tweaks
       ];
       dbus.packages = with pkgs;
       [
-        gnome3.dconf
+        dconf
       ];
     };
     environment.gnome.excludePackages = with pkgs;
