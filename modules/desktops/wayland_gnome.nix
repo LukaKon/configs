@@ -5,20 +5,14 @@
 
     services.xserver = {
       enable = true;
-      # videoDrivers = ["nvidia"];
-      # displayManager.startx.enable = true;  # necessary to
-      # create .xinitrc file
 
       # Gnome
-      displayManager.gdm.enable = true;
-      # displayManager.gdm.nvidiaWayland = true;
+      # displayManager.gdm.enable = true;
       displayManager.gdm.wayland = true;
       desktopManager.gnome.enable = true;
 
       layout = "pl";
     };
-
-    # programs.xwayland.enable = true;
 
     environment.systemPackages = with pkgs;
     [

@@ -30,7 +30,7 @@
     #./../modules/services/remote.nix # remote server/desktop
 
     # Programs
-    ./../modules/programs/fuji_progr.nix
+    ./../modules/programs/progr.nix
     ./../modules/programs/nvim/nvim.nix
     # ./../modules/programs/emacs/emacs.nix
     # ./../modules/programs/postgresql.nix
