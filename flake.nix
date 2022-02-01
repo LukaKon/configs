@@ -45,11 +45,11 @@ outputs = inputs@{ nixpkgs, flake-utils, ... }: # neovim-nightly-overlay, ... }:
         };
 
         # laptop
-        mac = nixpkgs.lib.nixosSystem {
+        lap = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
 
           modules = [
-            ./mac/mac.nix
+            ./lap/lap.nix
           ];
         };
 
