@@ -30,7 +30,7 @@
     ./../modules/services/laptop.nix
 
     # Programs
-    ./../modules/programs/fuji_progr.nix
+    ./../modules/programs/progr.nix
     ./../modules/programs/nvim/nvim.nix
     # ./../modules/programs/postgresql.nix
     ./../modules/programs/zsh.nix
