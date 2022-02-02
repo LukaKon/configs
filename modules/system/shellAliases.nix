@@ -23,8 +23,8 @@
                                 py = "python";
 
                                 # btrfs snapshots
-                                sb = "python3 /home/lk/configs/scripts/snapshot.py";
-
+                                sb = "py /home/lk/configs/scripts/snapshot.py";
+                                sbl = "py /home/lk/configs/scripts/snapshot_lap.py";
                                 # backup config files to git
                                 cong = "python3 /home/lk/configs/scripts/git_conf.py";
                               };
