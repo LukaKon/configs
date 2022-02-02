@@ -49,6 +49,7 @@ BLUE = "#6ea1f8"
 DARK_BLUE = "#2e0fce"
 ORANGE = "#ff9235"
 DARK_ORANGE = "#d16608"
+LIGHT_GREEN='#8feecc'
 GREEN = "#31ce43"
 DARK_GREEN = "#4b8734"
 RED = "#ff4f4f"
@@ -132,17 +133,17 @@ keys = [
 #   Group("float", layout='floating'),
 # ]
 groups = [
-      Group("1", layout='monadwide'),
-      Group("2", layout='monadtall'),
-   Group("3", layout='monadtall'),
-   Group("4", layout='monadtall'),
-   Group("5", layout='monadtall'),
-   Group("6", layout='monadtall'),
-   Group("7", layout='monadtall'),
-   Group("8", layout='monadtall'),
-   Group("9", layout='monadtall'),
-   Group("0", layout='floating'),
- ]
+    Group("1", layout='monadwide'),
+    Group("2", layout='monadtall'),
+    Group("3", layout='monadtall'),
+    Group("4", layout='monadtall'),
+    Group("5", layout='monadtall'),
+    Group("6", layout='monadtall'),
+    Group("7", layout='monadtall'),
+    Group("8", layout='monadtall'),
+    Group("9", layout='monadtall'),
+    Group("0", layout='floating'),
+    ]
 
 # groups = [Group(i,layout='monadtall') for i in "1234567890"]
 
@@ -171,7 +172,7 @@ layout_theme = {
 }
 
 layouts = [
-    layout.Columns(border_focus_stack=['#ffffff', '#cf7830'], border_width=2),
+    layout.Columns(border_focus_stack=[WHITE, LIGHT_GREEN], border_width=2),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
