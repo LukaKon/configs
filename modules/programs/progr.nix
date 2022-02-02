@@ -30,6 +30,7 @@
       darktable
       gimp
       krita
+      flameshot
 
       # www
       firefox

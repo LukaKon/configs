@@ -25,6 +25,7 @@
       # vscode
       vscodium
       arduino
+      jetbrains.webstorm
       # jetbrains.pycharm-community
       # jetbrains.pycharm-professional
       # thonny

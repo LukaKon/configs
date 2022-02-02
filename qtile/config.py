@@ -112,6 +112,7 @@ keys = [
     Key([mod], 'v', lazy.spawn('virt-manager'), desc='Launch virt-manager'),
     Key([mod], 'y', lazy.spawn('io.freetubeapp.FreeTube'), desc='Launch free tube (flatpak)'),
     Key([mod], 'z', lazy.spawn('slack'), desc='Launch slack'),
+    Key([mod], 'f', lazy.spawn('flameshot'), desc='Launch flameshot'),
 
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 1- unmute")),
