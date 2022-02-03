@@ -28,6 +28,7 @@
     #./../modules/services/keyring.nix
     # ./../modules/services/bluetooth.nix
     #./../modules/services/remote.nix # remote server/desktop
+    ./../modules/services/pipewire.nix
 
     # Programs
     ./../modules/programs/progr.nix
