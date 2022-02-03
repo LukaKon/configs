@@ -10,7 +10,8 @@
   };
 
   # Sound
-  sound.enable = true;
+  # sound.enable = true;
+  sound.enable = false;
   hardware.pulseaudio.enable = true;
 
   nixpkgs.config.allowUnfree = true;
