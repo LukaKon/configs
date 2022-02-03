@@ -35,7 +35,7 @@
     # ./../modules/programs/postgresql.nix
     ./../modules/programs/zsh.nix
     # ./../modules/programs/steam.nix        # Steam gaming portal
-    ./../modules/programs/flatpak.nix
+    #./../modules/programs/flatpak.nix
 
     # Desktops
     # ./../modules/desktops/i3/i3.nix  # i3 window manager settings

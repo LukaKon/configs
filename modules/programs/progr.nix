@@ -36,6 +36,8 @@
       firefox
       brave
 
+      freetube
+
       # cd burner
       brasero
       # etcher
