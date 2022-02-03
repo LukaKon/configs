@@ -10,10 +10,13 @@
   };
 
   # Sound
-  # sound.enable = true;
-  sound.enable = false;
+  sound.enable = true;
   hardware.pulseaudio.enable = true;
 
+  #sound.enable = false;
+  #hardware.pulseaudio.enable = false;
+
+  # non-free
   nixpkgs.config.allowUnfree = true;
 
   # Localisation
@@ -34,7 +37,8 @@
 
   # cleaning store
   nix = {
-    settings.auto-optimise-store = true;
+    # settings.auto-optimise-store = true;
+    autoOptimiseStore = true;
     gc = {
       automatic = true;
       dates = "daily";
