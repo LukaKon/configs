@@ -111,7 +111,7 @@ keys = [
     Key([mod], 'c', lazy.spawn('codium'), desc='Launch vscodium'),
     Key([mod], 'd', lazy.spawn('dbeaver'), desc='Launch dbeaver'),
     Key([mod], 'v', lazy.spawn('virt-manager'), desc='Launch virt-manager'),
-    Key([mod], 'y', lazy.spawn('io.freetubeapp.FreeTube'), desc='Launch free tube (flatpak)'),
+    Key([mod], 'y', lazy.spawn('freetube'), desc='Launch free tube (flatpak)'),
     Key([mod], 'z', lazy.spawn('slack'), desc='Launch slack'),
     Key([mod], 'f', lazy.spawn('flameshot'), desc='Launch flameshot'),
 
