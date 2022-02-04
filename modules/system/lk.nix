@@ -9,8 +9,6 @@
     shell = pkgs.zsh;
     packages = with pkgs;
     [
-      #exercism
-
       wezterm
       #kitty
 
