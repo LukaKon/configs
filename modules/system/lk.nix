@@ -25,7 +25,7 @@
       arduino
       jetbrains.webstorm
       # jetbrains.pycharm-community
-      # jetbrains.pycharm-professional
+      jetbrains.pycharm-professional
       # thonny
       # unityhub
       dbeaver
