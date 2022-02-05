@@ -3,7 +3,6 @@
 {
   services.xserver = {
     enable = true;
-    #videoDrivers = ["nvidia"]; #["nouveau"];
     # displayManager.startx.enable = true;  # necessary to
     # create .xinitrc file
 
@@ -12,17 +11,3 @@
 
     layout = "pl";
   };
-
-#  environment.systemPackages = with pkgs;
-#  [
-#    brasero
-#  ];
-#
-#  services = {
-#      udev.packages = with pkgs;
-#      [
-#        gnome3.seahorse
-#        gnome3.gnome-keyring
-#      ];
-#  };
-}
