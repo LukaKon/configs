@@ -15,6 +15,7 @@
       nerdfonts
       font-awesome
       line-awesome
+      mononoki
     ];
 
     fontconfig = {
