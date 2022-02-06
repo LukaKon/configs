@@ -11,6 +11,7 @@
     [
       acpi #laptop
       xorg.xbacklight
+      light
     ];
   };
 }
