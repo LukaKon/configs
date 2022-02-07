@@ -9,7 +9,7 @@
     shell = pkgs.zsh;
     packages = with pkgs;
     [
-      wezterm
+      # wezterm
       #kitty
 
       # www
