@@ -9,7 +9,7 @@
   environment = {
     systemPackages = with pkgs;
     [
-      acpi #laptop
+      acpi # battery status
       xorg.xbacklight
       light
     ];
