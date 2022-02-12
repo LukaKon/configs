@@ -9,7 +9,7 @@
     ./../modules/system/system.nix        # Base system settings
     ./../modules/system/btrfs.nix
     ./../modules/system/network.nix       # Network configuration
-    # ./../modules/system/nvidia.nix
+    ./../modules/system/nvidia.nix
     # ./../modules/system/nouveau.nix
     ./../modules/system/fonts.nix
     ./../modules/system/env_variables.nix
@@ -38,6 +38,7 @@
     ./../modules/programs/zsh.nix
     # ./../modules/programs/steam.nix        # Steam gaming portal
     #./../modules/programs/flatpak.nix
+    ./../modules/programs/nix_doc.nix
 
     # Desktops
     # ./../modules/desktops/i3/i3.nix  # i3 window manager settings
