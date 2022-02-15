@@ -1,13 +1,16 @@
-{config, pkgs, ...}:
+{config, pkgs, lib, ...}:
 
 {
   # Use the systemd-boot EFI boot loader.
   boot = {
     loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
+    loader.efi.canTouchEfiVariables = false;
     cleanTmpDir = true;
     supportedFilesystems = [ "ntfs" ];
   };
+
+  # The temperature management daemon
+  services.thermald.enable = true;
 
   # Sound
   sound.enable = true;
@@ -44,6 +47,8 @@
       dates = "daily";
       options = "--delete-older-than 9d";
     };
+
+    maxJobs = lib.mkDefault 8;
 
     # For hix flakes
     extraOptions = "experimental-features = nix-command flakes";
