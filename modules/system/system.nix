@@ -9,6 +9,13 @@
     supportedFilesystems = [ "ntfs" ];
   };
 
+
+  powerManagement = {
+    enable = true;
+    cpuFreqGovernor = lib.mkDefault "powersave";
+  };
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
   # The temperature management daemon
   services.thermald.enable = true;
 
