@@ -39,8 +39,4 @@
   swapDevices =
     [ { device = "/dev/disk/by-uuid/f3e17313-09db-4d1a-9238-ea58a296dd2f"; }
     ];
-
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-  powerManagement.enable = true;
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
