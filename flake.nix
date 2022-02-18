@@ -52,13 +52,7 @@ outputs = inputs@{ nixpkgs, flake-utils, ... }: # neovim-nightly-overlay, ... }:
             ./lap/lap.nix
           ];
         };
-        mac = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
 
-          modules = [
-            ./mac/mac.nix
-          ];
-        };
         # raspberry
         raspi  = nixpkgs.lib.nixosSystem {
           # inherit pkgs;
