@@ -11,6 +11,7 @@
     [
       dotnet-sdk
       clang
+      clang-tools
       cmake
       #bmake
 
