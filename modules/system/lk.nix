@@ -12,8 +12,10 @@
       dotnet-sdk
       clang
       clang-tools
+      #gcc
       cmake
       #bmake
+      luajit
 
       # wezterm
       #kitty
