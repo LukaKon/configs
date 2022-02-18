@@ -11,6 +11,8 @@
     [
       dotnet-sdk
       clang
+      cmake
+      #bmake
 
       # wezterm
       #kitty
