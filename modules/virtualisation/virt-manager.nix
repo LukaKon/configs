@@ -12,6 +12,8 @@
     environment.systemPackages = with pkgs; [
       virt-manager
       virt-viewer
+      kvm
+      qemu
        ];
 
     # networking.defaultGateway = "192.168.1.1";
