@@ -3,7 +3,8 @@
 
   inputs = rec {
 
-    # my_conf = {
+    # lko = {
+      # type="github";
       # url = "github:LukaKon/configs/nix";
       # inputs.nixpkgs.follows = "nixpkgs";
       # flake = false;
