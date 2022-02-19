@@ -5,7 +5,7 @@
     isNormalUser = true;
     home = "/home/lk";
     description = "lko";
-    extraGroups = [ "wheel" "networkmanager" "dialout" "libvirtd" "docker"];
+    extraGroups = [ "wheel" "networkmanager" "dialout" "libvirtd" "docker" "video" ];
     shell = pkgs.zsh;
     packages = with pkgs;
     [
@@ -19,6 +19,9 @@
 
       # wezterm
       #kitty
+
+      qmk
+      qmk-udev-rules
 
       # www
       qutebrowser

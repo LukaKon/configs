@@ -19,16 +19,16 @@
 					# networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 					networkmanager.enable = true;
 
-					interfaces.wlp0s20f3.ipv4.addresses = [{
-							address = "192.168.0.4";
-							prefixLength = 24;
-						}];
-					interfaces.enp0s31f6.ipv4.addresses = [{
-							address = "192.168.1.4";
-							prefixLength = 24;
-						}];
+					# interfaces.wlp0s20f3.ipv4.addresses = [{
+					# 		address = "192.168.0.4";
+					# 		prefixLength = 24;
+					# 	}];
+					# interfaces.enp0s31f6.ipv4.addresses = [{
+					# 		address = "192.168.1.4";
+					# 		prefixLength = 24;
+					# 	}];
 
-					defaultGateway = "192.168.0.1";
+					# defaultGateway = "192.168.0.1";
 					#nameservers = ["37.8.214.2" "31.11.202.254"];
 				};
 			}

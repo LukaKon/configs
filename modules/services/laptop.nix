@@ -6,12 +6,16 @@
     touchpad.tapping = true;
   };
 
+  hardware.acpilight.enable = true;
+
   environment = {
     systemPackages = with pkgs;
     [
       acpi # battery status
       xorg.xbacklight
       light
+        acpilight
+        brightnessctl
     ];
   };
 }
