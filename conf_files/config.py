@@ -34,7 +34,8 @@ from libqtile.dgroups import simple_key_binder
 
 mod = "mod4"
 terminal = guess_terminal()
-browser='qutebrowser'
+# browser='qutebrowser'
+browser='firefox'
 
 FONT='fira'
 SF=10
