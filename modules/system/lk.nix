@@ -20,6 +20,8 @@
       # wezterm
       #kitty
 
+      firejail
+
       qmk
       qmk-udev-rules
 
