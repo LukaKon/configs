@@ -35,7 +35,7 @@
       # uivonim
       # vscode
       vscodium
-      # arduino
+      arduino
       # jetbrains.webstorm
       # jetbrains.pycharm-community
       jetbrains.pycharm-professional
