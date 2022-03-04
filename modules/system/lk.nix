@@ -26,7 +26,7 @@
       qmk-udev-rules
 
       # www
-      qutebrowser
+      # qutebrowser
 
       # IDE
       # neovim
