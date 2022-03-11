@@ -22,6 +22,7 @@
 
       #firejail
 
+      # qmk
       qmk
       qmk-udev-rules
 
@@ -40,7 +41,7 @@
       # jetbrains.pycharm-community
       jetbrains.pycharm-professional
       # thonny
-      # unityhub
+      unityhub
       dbeaver
       postman
 
