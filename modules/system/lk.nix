@@ -36,6 +36,7 @@
       # uivonim
       # vscode
       vscodium
+      # eclipses.eclipse-jee
       arduino
       # jetbrains.webstorm
       # jetbrains.pycharm-community
