@@ -28,6 +28,7 @@
 
       # www
       # qutebrowser
+      brave
 
       # IDE
       # neovim
