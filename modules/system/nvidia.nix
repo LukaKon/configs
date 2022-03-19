@@ -6,6 +6,6 @@
   environment.systemPackages = with pkgs;
   [
     nvtop
-    cudaPackages.cudatoolkit_11
+    #cudaPackages.cudatoolkit_11
   ];
 }
