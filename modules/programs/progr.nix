@@ -39,7 +39,7 @@
       freetube
 
       # cd burner
-      brasero
+      #brasero
       # etcher
       # gparted
 
@@ -48,8 +48,6 @@
 
       # media
       feh # picture viewer
-      # mpv # video player
-      # libdvdcss # plugin to play cd/dvd in mpv
       moc  # music player
       youtube-dl
 
