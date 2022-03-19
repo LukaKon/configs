@@ -50,6 +50,7 @@
       # comunicator
       # signal-desktop
       slack
+      discord
 
       # video conference
       zoom-us
