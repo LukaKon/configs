@@ -32,7 +32,7 @@
 
       # IDE
       # neovim
-      # spacevim
+      spacevim
       # neovide
       # uivonim
       # vscode
