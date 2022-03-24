@@ -10,12 +10,7 @@
         start = [ vim-nix vim-lastplace ];
         opt = [];
       };
-      vimrcConfig.customRC = ''
-        " your custom vimrc
-        set nocompatible
-        set backspace=indent,eol,start
-        " ...
-      '';
+      vimrcConfig.customRC = builtins.readFile ./init.vim; #./boot.vim; ./init.vim;
     }
   )];
 }
