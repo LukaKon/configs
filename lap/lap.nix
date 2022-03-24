@@ -31,7 +31,8 @@
 
     # Programs
     ./../modules/programs/progr.nix
-    ./../modules/programs/nvim/nvim.nix
+    # ./../modules/programs/nvim/nvim.nix
+    ./../modules/programs/vim/vim.nix
     # ./../modules/programs/postgresql.nix
     ./../modules/programs/zsh.nix
     # ./../modules/programs/steam.nix        # Steam gaming portal

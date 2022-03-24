@@ -32,7 +32,8 @@
 
     # Programs
     ./../modules/programs/progr.nix
-    ./../modules/programs/nvim/nvim.nix
+    # ./../modules/programs/nvim/nvim.nix
+    ./../modules/programs/vim/vim.nix
     # ./../modules/programs/emacs/emacs.nix
     # ./../modules/programs/postgresql.nix
     ./../modules/programs/zsh.nix

@@ -17,7 +17,8 @@
                                 reboot = "doas reboot";
 
                                 # editor
-                                vi = "nvim";
+                                # vi = "nvim";
+                                vi = "vim";
 
                                 # python
                                 py = "python";
