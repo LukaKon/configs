@@ -8,31 +8,31 @@
       name = "vim";
       vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
         start = [
-           vim-nix
-           vim-lastplace
+          vim-nix
+          vim-lastplace
 
-           # file explorer
-           The_NERD_tree
-           # nerdtree
-           nerdtree-git-plugin
-              vim-devicons
-              vim-nerdtree-syntax-highlight
-              vim-nerdtree-tabs
+          # file explorer
+          The_NERD_tree
+          # nerdtree
+          nerdtree-git-plugin
+          vim-devicons
+          vim-nerdtree-syntax-highlight
+          vim-nerdtree-tabs
 
-              vimproc
+          vimproc
 
-              fzf-vim
-              # python-mode # TODO: was switched off
-              vim-multiple-cursors
-              vim-commentary
-              splitjoin-vim     # gS - split; gJ - join
-              ale
-              vim-mundo
+          fzf-vim
+          # python-mode # TODO: was switched off
+          vim-visual-multi
+          vim-commentary
+          splitjoin-vim     # gS - split; gJ - join
+          ale
+          vim-mundo
 
-              vim-autoformat
+          vim-autoformat
 
-              # nvim-lspconfig
-              completion-nvim
+          # nvim-lspconfig
+          completion-nvim
 
               vimspector
 

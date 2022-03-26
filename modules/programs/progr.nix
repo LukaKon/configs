@@ -24,6 +24,7 @@
       vifm-full
       ranger
       fzf
+      ripgrep
 
       # graphics
       # blender
