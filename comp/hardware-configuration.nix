@@ -8,7 +8,7 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "uas" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
@@ -30,13 +30,22 @@
       options = [ "subvol=@data" ];
     };
 
-  fileSystems."/home/lk/vm" =
-    { device = "/dev/disk/by-uuid/63742996-98f1-4404-b850-b61be86ea7cd";
+  fileSystems."/var/lib/docker/btrfs" =
+    { device = "/nixos/var/lib/docker/btrfs";
+      fsType = "none";
+      options = [ "bind" ];
+    };
+
+  fileSystems."/home/lk/dev" =
+    { device = "/dev/disk/by-uuid/a3bed21d-488f-4233-b00b-98a378791ff6";
       fsType = "btrfs";
-      options = [ "subvol=@vm" ];
+      options = [ "subvol=@dev" ];
     };
 
   swapDevices =
     [ { device = "/dev/disk/by-uuid/f3e17313-09db-4d1a-9238-ea58a296dd2f"; }
     ];
+
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
