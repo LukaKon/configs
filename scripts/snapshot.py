@@ -21,9 +21,9 @@ paths = (
         'snap_loc': f'/home/{user}/data/.snapshots/data-{data}'
     },
     {
-        'name': 'vm',
-        'directory': f'/home/{user}/vm',
-        'snap_loc': f'/home/{user}/vm/.snapshots/vm-{data}'
+        'name': 'dev',
+        'directory': f'/home/{user}/dev',
+        'snap_loc': f'/home/{user}/dev/.snapshots/dev-{data}'
     },
     # {
     #     'name': 'root',
@@ -58,15 +58,13 @@ def delete_old_snaps():
 
                 if match_date < datetime.today() - timedelta(
                         days=days):  # selecting folders older than 7 days old
-                    print( f'{entry.name}: to delete')
+                    print(f'{entry.name}: to delete')
                     subprocess.run(
                         ['sudo', 'rm', '-r', f'{path}/{entry.name}'])
 
 
 print(f'\nCreate new snapshots:')
 create_new_snaps()
-print(
-    f'\nDelete snapshots older than {days} days:'
-)
+print(f'\nDelete snapshots older than {days} days:')
 delete_old_snaps()
 print('\n')
