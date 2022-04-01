@@ -28,7 +28,8 @@
 
       # www
       # qutebrowser
-      brave
+      # brave
+      ungoogled-chromium
 
       # IDE
       # neovim
@@ -45,7 +46,7 @@
       # thonny
       unityhub
       dbeaver
-      postman
+      # postman
 
       # comunicator
       # signal-desktop
