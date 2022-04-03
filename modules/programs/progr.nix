@@ -22,7 +22,7 @@
 
       # file managers
       vifm-full
-      ranger
+      # ranger
       fzf
       ripgrep
 
@@ -35,17 +35,15 @@
 
       # www
       firefox
-      brave
+      # brave
 
       freetube
 
       # cd burner
       #brasero
-      # etcher
-      # gparted
 
       # office
-      libreoffice
+      # libreoffice
 
       # media
       feh # picture viewer
@@ -68,13 +66,6 @@
       bat # cat
       fd  # find
 
-      nodejs
-      # bmake
-
-      # monitoring
-      # bmon
-      # htop
-      # iotop
       glances
       lm_sensors
       # ncdu # disk analisys
