@@ -1,36 +1,38 @@
-" "*****************************************************************************
-" "" Vim-Plug core
-" "*****************************************************************************
-" let vimplug_exists=expand('~/.vim/autoload/plug.vim')
-" if has('win32')&&!has('win64')
-"   let curl_exists=expand('C:\Windows\Sysnative\curl.exe')
-" else
-"   let curl_exists=expand('curl')
-" endif
 
-" let g:vim_bootstrap_langs = "html,javascript,python,typescript"
-" let g:vim_bootstrap_editor = "vim"				" nvim or vim
+"*****************************************************************************
+"" Vim-Plug core
+"*****************************************************************************
+let vimplug_exists=expand('~/.vim/autoload/plug.vim')
+if has('win32')&&!has('win64')
+  let curl_exists=expand('C:\Windows\Sysnative\curl.exe')
+else
+  let curl_exists=expand('curl')
+endif
+
+let g:vim_bootstrap_langs = "html,javascript,python,typescript"
+let g:vim_bootstrap_editor = "vim"				" nvim or vim
 " let g:vim_bootstrap_theme = "gruvbox"
+" let g:vim_bootstrap_frams = "svelte"
 
-" if !filereadable(vimplug_exists)
-"   if !executable(curl_exists)
-"     echoerr "You have to install curl or first install vim-plug yourself!"
-"     execute "q!"
-"   endif
-"   echo "Installing Vim-Plug..."
-"   echo ""
-"   silent exec "!"curl_exists" -fLo " . shellescape(vimplug_exists) . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-"   let g:not_finish_vimplug = "yes"
+if !filereadable(vimplug_exists)
+  if !executable(curl_exists)
+    echoerr "You have to install curl or first install vim-plug yourself!"
+    execute "q!"
+  endif
+  echo "Installing Vim-Plug..."
+  echo ""
+  silent exec "!"curl_exists" -fLo " . shellescape(vimplug_exists) . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+  let g:not_finish_vimplug = "yes"
 
-"   autocmd VimEnter * PlugInstall
-" endif
+  autocmd VimEnter * PlugInstall
+endif
 
-" " Required:
-" call plug#begin(expand('~/.vim/plugged'))
+" Required:
+call plug#begin(expand('~/.vim/plugged'))
 
-" "*****************************************************************************
-" "" Plug install packages
-" "*****************************************************************************
+"*****************************************************************************
+"" Plug install packages
+"*****************************************************************************
 " Plug 'scrooloose/nerdtree'
 " Plug 'jistr/vim-nerdtree-tabs'
 " Plug 'tpope/vim-commentary'
@@ -47,6 +49,63 @@
 " Plug 'editor-bootstrap/vim-bootstrap-updater'
 " Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 " Plug 'morhetz/gruvbox'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'davidhalter/jedi-vim'
+
+"---------------------------------------------------------
+" Plug 'Shougo/ddc.vim'
+" Plug 'vim-denops/denops.vim'
+
+" " Install your sources
+" "Plug 'Shougo/ddc-around'
+
+" " Install your filters
+" "Plug 'Shougo/ddc-matcher_head'
+" "Plug 'Shougo/ddc-sorter_rank'
+
+" " https://github.com/Shougo/ddc-around
+" call ddc#custom#patch_global('sources', ['around'])
+
+" " Use matcher_head and sorter_rank.
+" " https://github.com/Shougo/ddc-matcher_head
+" " https://github.com/Shougo/ddc-sorter_rank
+" call ddc#custom#patch_global('sourceOptions', {
+"       \ '_': {
+"       \   'matchers': ['matcher_head'],
+"       \   'sorters': ['sorter_rank']},
+"       \ })
+
+" " Change source options
+" call ddc#custom#patch_global('sourceOptions', {
+"       \ 'around': {'mark': 'A'},
+"       \ })
+" call ddc#custom#patch_global('sourceParams', {
+"       \ 'around': {'maxSize': 500},
+"       \ })
+
+" " Customize settings on a filetype
+" call ddc#custom#patch_filetype(['c', 'cpp'], 'sources', ['around', 'clangd'])
+" call ddc#custom#patch_filetype(['c', 'cpp'], 'sourceOptions', {
+"       \ 'clangd': {'mark': 'C'},
+"       \ })
+" call ddc#custom#patch_filetype('markdown', 'sourceParams', {
+"       \ 'around': {'maxSize': 100},
+"       \ })
+
+" " Mappings
+
+" " <TAB>: completion.
+" inoremap <silent><expr> <TAB>
+" \ ddc#map#pum_visible() ? '<C-n>' :
+" \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+" \ '<TAB>' : ddc#map#manual_complete()
+
+" " <S-TAB>: completion back.
+" inoremap <expr><S-TAB>  ddc#map#pum_visible() ? '<C-p>' : '<C-h>'
+
+" " Use ddc.
+" call ddc#enable()
+"----------------------------------------------------------
 
 " if isdirectory('/usr/local/opt/fzf')
 "   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -54,6 +113,7 @@
 "   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 "   Plug 'junegunn/fzf.vim'
 " endif
+
 " let g:make = 'gmake'
 " if exists('make')
 "         let g:make = 'make'
@@ -64,32 +124,40 @@
 " Plug 'xolox/vim-misc'
 " Plug 'xolox/vim-session'
 
-" "" Snippets
+"" Snippets
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
 
-" "*****************************************************************************
-" "" Custom bundles
-" "*****************************************************************************
+"*****************************************************************************
+"" Custom bundles
+"*****************************************************************************
 
-" " html
-" "" HTML Bundle
+" html
+"" HTML Bundle
 " Plug 'hail2u/vim-css3-syntax'
 " Plug 'gko/vim-coloresque'
 " Plug 'tpope/vim-haml'
 " Plug 'mattn/emmet-vim'
 
 
-" " javascript
-" "" Javascript Bundle
+" javascript
+"" Javascript Bundle
 " Plug 'jelera/vim-javascript-syntax'
 
 
-" " python
-" "" Python Bundle
+" python
+"" Python Bundle
 " Plug 'davidhalter/jedi-vim'
 " Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
+
+" svelte
+" Plug 'leafOfTree/vim-svelte-plugin'
+
+
+" typescript
+" Plug 'leafgarland/typescript-vim'
+" Plug 'HerringtonDarkholme/yats.vim'
 
 set tw=80
 set iskeyword+=-                        " treat dash separated words as a word text object"
@@ -246,8 +314,8 @@ let g:NERDTreeGitStatusShowIgnored = 1 " a heavy feature may cost much more time
 "FZF-VIM----------------------------------------------------
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 
-" command! -bang -nargs=? -complete=dir Files
-    " \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
 
 function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'

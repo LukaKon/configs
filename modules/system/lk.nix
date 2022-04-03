@@ -16,6 +16,8 @@
       cmake
       #bmake
       luajit
+      nodejs
+      deno
 
       # wezterm
       #kitty
