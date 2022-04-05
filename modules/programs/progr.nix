@@ -43,7 +43,7 @@
       #brasero
 
       # office
-      # libreoffice
+      libreoffice
 
       # media
       feh # picture viewer

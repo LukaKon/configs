@@ -16,11 +16,6 @@ paths = (
         'directory': '/home',
         'snap_loc': f'/home/.snapshots/home-{data}'
     },
-    # {
-    # 'name': 'root',
-    # 'directory': '/',
-    # 'snap_loc': f'/.snapshots/root-{data}'
-    # },
 )
 
 
