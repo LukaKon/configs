@@ -18,6 +18,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    neovim = {
+      url = "./modules/programs/nvim/neovim-flake";
+    };
+
+
     # neovim-nightly-overlay = {
     #   url = "github:nix-community/neovim-nightly-overlay";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -25,7 +30,7 @@
     # };
 };
 
-outputs = inputs@{ nixpkgs, flake-utils, ... }: # neovim-nightly-overlay, ... }:
+outputs = inputs@{ nixpkgs, flake-utils, neovim, ... }: # neovim-nightly-overlay, ... }:
   # outputs = inputs:
 
   let
@@ -43,6 +48,7 @@ outputs = inputs@{ nixpkgs, flake-utils, ... }: # neovim-nightly-overlay, ... }:
           modules = [
             ./comp/fuji.nix
           ];
+          # stdenv.mkDerivation {neovim};
         };
 
         # laptop
