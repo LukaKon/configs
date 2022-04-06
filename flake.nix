@@ -38,9 +38,8 @@ outputs = inputs@{ nixpkgs, flake-utils, neovim, ... }: # neovim-nightly-overlay
           system = "x86_64-linux";
           modules = [
             ./comp/fuji.nix
-            neovim
+            # neovim
           ];
-          # stdenv.mkDerivation {neovim};
         };
 
         # laptop
