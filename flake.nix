@@ -18,7 +18,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neovim.url = "/home/lk/configs/modules/programs/nvim/neovim-flake";
+    neovim.url = "./modules/programs/nvim/neovim-flake";
 };
 
 outputs = inputs@{ nixpkgs, flake-utils, neovim, ... }: # neovim-nightly-overlay, ... }:
@@ -52,13 +52,13 @@ outputs = inputs@{ nixpkgs, flake-utils, neovim, ... }: # neovim-nightly-overlay
         };
 
         # raspberry
-        raspi  = nixpkgs.lib.nixosSystem {
-          # inherit pkgs;
-          system = "aarch64-linux";
+        # raspi  = nixpkgs.lib.nixosSystem {
+          # # inherit pkgs;
+          # system = "aarch64-linux";
 
-          modules = [
-            ./raspi/configuration.nix
-          ];
+          # modules = [
+            # ./raspi/configuration.nix
+          # ];
         };
 
       };
