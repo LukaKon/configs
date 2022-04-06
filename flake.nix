@@ -18,17 +18,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neovim = {
-      url = "/home/lk/configs/modules/programs/nvim/neovim-flake";
-      # description = "Neovim flake";
-    };
-
-
-    # neovim-nightly-overlay = {
-    #   url = "github:nix-community/neovim-nightly-overlay";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   inputs.flake-utils.follows = "flake-utils";
-    # };
+    neovim.url = "/home/lk/configs/modules/programs/nvim/neovim-flake";
 };
 
 outputs = inputs@{ nixpkgs, flake-utils, neovim, ... }: # neovim-nightly-overlay, ... }:
