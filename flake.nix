@@ -36,9 +36,9 @@ outputs = inputs@{ nixpkgs, flake-utils, neovim, ... }: # neovim-nightly-overlay
         fuji = nixpkgs.lib.nixosSystem {
           # inherit system; # pkgs;
           system = "x86_64-linux";
-
           modules = [
             ./comp/fuji.nix
+            neovim
           ];
           # stdenv.mkDerivation {neovim};
         };
