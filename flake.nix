@@ -18,7 +18,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neovim.url = "./modules/programs/nvim/neovim-flake";
+    neovim.url = "./modules/programs/nvim/neovim-flake/";
 };
 
 outputs = inputs@{ nixpkgs, flake-utils, neovim, ... }: # neovim-nightly-overlay, ... }:
