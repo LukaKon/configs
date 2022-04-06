@@ -19,7 +19,7 @@
     };
 
     neovim = {
-      path = "/home/lk/configs/modules/programs/nvim/neovim-flake";
+      url = "/home/lk/configs/modules/programs/nvim/neovim-flake";
     };
 
 
