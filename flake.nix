@@ -20,7 +20,7 @@
 
     neovim = {
       url = "/home/lk/configs/modules/programs/nvim/neovim-flake";
-      description = "Neovim flake";
+      # description = "Neovim flake";
     };
 
 
