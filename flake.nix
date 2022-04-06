@@ -19,7 +19,7 @@
     };
 
     # neovim.url = "./modules/programs/nvim/neovim-flake";
-    neovim.path = "/home/lk/neovim-flake";
+    neovim.url = "/home/lk/neovim-flake";
 };
 
 outputs = inputs@{ nixpkgs, flake-utils, neovim, ... }: # neovim-nightly-overlay, ... }:
