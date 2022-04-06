@@ -59,7 +59,7 @@ outputs = inputs@{ nixpkgs, flake-utils, neovim, ... }: # neovim-nightly-overlay
           # modules = [
             # ./raspi/configuration.nix
           # ];
-        };
+        # };
 
       };
     };
