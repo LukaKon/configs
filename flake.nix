@@ -18,15 +18,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # neovim.url = "./modules/programs/nvim/neovim-flake";
-    neovim.url = "/home/lk/neovim-flake";
+    # myNvim.url = "/home/lk/nvim-flake";
 };
 
-outputs = inputs@{ nixpkgs, flake-utils, neovim, ... }: # neovim-nightly-overlay, ... }:
+outputs = inputs@{ nixpkgs, flake-utils, /*myNvim,*/ ... }: # neovim-nightly-overlay, ... }:
   # outputs = inputs:
 
   let
     # system = ["x86_64-linux" "aarch64-linux"];
+    # overlays = [ (final: prev: { my_nvim = myNvim.defaultPackage.x86_64-linux;}) ];
 
   in {
 
@@ -38,7 +38,12 @@ outputs = inputs@{ nixpkgs, flake-utils, neovim, ... }: # neovim-nightly-overlay
           system = "x86_64-linux";
           modules = [
             ./comp/fuji.nix
-            # neovim
+            # ({ pkgs, ... }: {
+            #     nixpkgs.overlays = overlays;
+            #     environment.systemPackages = with pkgs; [
+            #     neovim
+            #   ];
+            # })
           ];
         };
 
