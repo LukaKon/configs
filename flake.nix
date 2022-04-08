@@ -28,8 +28,6 @@ outputs = inputs@{ nixpkgs, flake-utils, neovim-flake, ... }:
   # outputs = inputs:
 
   let
-    # system = ["x86_64-linux" "aarch64-linux"];
-    # overlays = [ (final: prev: { my_nvim = myNvim.defaultPackage.x86_64-linux;}) ];
     inherit (import ./overlays {
       inherit neovim-flake;
     }) overlays;
@@ -45,12 +43,6 @@ outputs = inputs@{ nixpkgs, flake-utils, neovim-flake, ... }:
           system = "x86_64-linux";
           modules = [
             ./comp/fuji.nix
-            # ({ pkgs, ... }: {
-            #     nixpkgs.overlays = overlays;
-            #     environment.systemPackages = with pkgs; [
-            #     neovim
-            #   ];
-            # })
           ];
         };
 
