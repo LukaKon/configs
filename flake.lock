@@ -405,11 +405,11 @@
         "which-key": "which-key"
       },
       "locked": {
-        "lastModified": 1645771706,
-        "narHash": "sha256-gReB0HCg88WDP0hkCORaVtCaV0mDkFie9Ue2t/MIPRU=",
+        "lastModified": 1649434913,
+        "narHash": "sha256-HpfUpvd9dcliJxkk0dKLCY7hjibvfoGI8O1thEz6gvg=",
         "owner": "LukaKon",
         "repo": "neovim-flake",
-        "rev": "d5fc2d3e23dcb4f1dd7c55ded2e0f431d84653ea",
+        "rev": "da68d17bfcb86e8b0a9c39725793e28be549e538",
         "type": "github"
       },
       "original": {
