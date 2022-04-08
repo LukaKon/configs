@@ -18,15 +18,22 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # myNvim.url = "/home/lk/nvim-flake";
+    neovim-flake = {
+      # url = "/home/lk/nvim-flake";
+      url = "github:LukaKon/neovim-flake";
+    };
 };
 
-outputs = inputs@{ nixpkgs, flake-utils, /*myNvim,*/ ... }: # neovim-nightly-overlay, ... }:
+outputs = inputs@{ nixpkgs, flake-utils, neovim-flake, ... }:
   # outputs = inputs:
 
   let
     # system = ["x86_64-linux" "aarch64-linux"];
     # overlays = [ (final: prev: { my_nvim = myNvim.defaultPackage.x86_64-linux;}) ];
+    inherit (import ./overlays {
+      inherit neovim-flake;
+    }) overlays;
+
 
   in {
 
