@@ -15,9 +15,9 @@
       #gcc
       cmake
       #bmake
-      luajit
+      # luajit
       nodejs
-      deno
+      # deno
 
       # wezterm
       #kitty
@@ -35,6 +35,7 @@
 
       # IDE
       # neovim
+      helix
       # spacevim
       # neovide
       # uivonim
@@ -46,7 +47,7 @@
       # jetbrains.pycharm-community
       jetbrains.pycharm-professional
       # thonny
-      unityhub
+      # unityhub
       dbeaver
       # postman
 
