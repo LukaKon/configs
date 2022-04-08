@@ -44,6 +44,7 @@ outputs = inputs@{ nixpkgs, flake-utils, neovim-flake, ... }:
           modules = [
             ./comp/fuji.nix
           ];
+          overlays
         };
 
         # laptop
