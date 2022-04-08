@@ -1,10 +1,10 @@
-{ nvim-flake }:
+{ neovim-flake }:
 
 let
 
 in
 {
     overlays = [
-        nvim-flake.overlay
+        neovim-flake.overlay
     ]
 }
