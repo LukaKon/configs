@@ -1,0 +1,26 @@
+theme = "gruvbox"
+
+[editor]
+line-number = "relative"
+mouse = false
+auto-completion = true
+auto-info = true
+true-color = false
+
+[editor-lsp]
+display-messages = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.search]
+smart-case = true
+wrap-around = true
+
+# [editor.auto-pairs]
+# true
