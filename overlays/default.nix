@@ -6,5 +6,5 @@ in
 {
     overlays = [
         neovim-flake.overlay
-    ]
+    ];
 }
