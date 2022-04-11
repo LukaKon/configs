@@ -29,18 +29,20 @@ outputs = inputs@{ nixpkgs, flake-utils, neovim-flake, ... }:
 
   let
 
-          system = "x86_64-linux";
+    system = "x86_64-linux";
 
-          pkgs = import nixpkgs;
+    # pkgs = import nixpkgs;
 
     inherit (import ./overlays {
       inherit neovim-flake;
     }) overlays;
 
-    # pkgs = import nixpkgs {
-      # inherit system;
-      # overlays
-    # };
+    pkgs = import nixpkgs {
+      inherit system  overlays;
+      config = {
+          allowUnfree = true;
+        };
+    };
 
 
   in {
@@ -49,7 +51,7 @@ outputs = inputs@{ nixpkgs, flake-utils, neovim-flake, ... }:
 
         # desktop
         fuji = nixpkgs.lib.nixosSystem {
-          inherit system; # pkgs;
+          inherit system pkgs;
           # system = "x86_64-linux";
           modules = [
             ./comp/fuji.nix
