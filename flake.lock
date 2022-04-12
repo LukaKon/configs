@@ -405,11 +405,11 @@
         "which-key": "which-key"
       },
       "locked": {
-        "lastModified": 1649434913,
-        "narHash": "sha256-HpfUpvd9dcliJxkk0dKLCY7hjibvfoGI8O1thEz6gvg=",
+        "lastModified": 1649709319,
+        "narHash": "sha256-AeBvXIUZvIRJD/a8PYJaIDfSu5Jqi6igKmPsOE2TUDM=",
         "owner": "LukaKon",
         "repo": "neovim-flake",
-        "rev": "da68d17bfcb86e8b0a9c39725793e28be549e538",
+        "rev": "a94f41ba132cdec1e3d6c3428b22659e56f0d19c",
         "type": "github"
       },
       "original": {
@@ -526,11 +526,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1649537291,
-        "narHash": "sha256-V6VYIwTeI5BCfYK9f5EsMbjsjsis1rUDHMsaDbTvt+A=",
+        "lastModified": 1649619156,
+        "narHash": "sha256-p0q4zpuKMwrzGF+5ZU7Thnpac5TinhDI9jr2mBxhV4w=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "715dc137b08213aabbbe0965b78ab938e5d8d3b7",
+        "rev": "e7d63bd0d50df412f5a1d8acfa3caae75522e347",
         "type": "github"
       },
       "original": {
