@@ -31,8 +31,6 @@ outputs = inputs@{ nixpkgs, flake-utils, neovim-flake, ... }:
 
     system = "x86_64-linux";
 
-    # pkgs = import nixpkgs;
-
     inherit (import ./overlays {
       inherit neovim-flake;
     }) overlays;
@@ -43,6 +41,19 @@ outputs = inputs@{ nixpkgs, flake-utils, neovim-flake, ... }:
           allowUnfree = true;
         };
     };
+
+    # pkgs = lib.mkPkgs {
+    #   inherit nixpkgs;
+    #   cfg = { allowUnfree = true; };
+    #   overlays = [
+    #     neovim-flake.overlay
+    #     # nixpkgs-overlay.overlay
+
+    #     (self: last: {
+    #       neovimLK = neovim-flake.packages."${self.system}".neovimLK;
+    #     })
+    #   ];
+    # };
 
 
   in {
