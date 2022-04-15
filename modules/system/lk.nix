@@ -34,8 +34,15 @@
       ungoogled-chromium
 
       # IDE
-      # neovim
+      neovim
+
       helix
+      nodePackages.vscode-langservers-extracted
+      nodePackages.dockerfile-language-server-nodejs
+      nodePackages.typescript-language-server
+
+      rnix-lsp
+
       # spacevim
       # neovide
       # uivonim
@@ -66,6 +73,7 @@
 
       (python39.withPackages(ps: with ps;
       [
+        python-lsp-server
         # autopep8
         # flake8
         # colorama
