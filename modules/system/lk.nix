@@ -30,11 +30,10 @@
 
       # www
       # qutebrowser
-      # brave
       ungoogled-chromium
 
       # IDE
-      neovim
+      # neovim
 
       helix
       nodePackages.vscode-langservers-extracted

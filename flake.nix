@@ -25,7 +25,6 @@
   };
 
     neovim-flake = {
-      # url = "/home/lk/nvim-flake";
       url = "github:LukaKon/neovim-flake";
     };
 
@@ -33,28 +32,36 @@
       url = github:helix-editor/helix;
     };
 
-    leftwm = {
-      url = github:leftwm/leftwm;
-    };
+    # leftwm = {
+      # url = github:leftwm/leftwm;
+    # };
 
 };
 
-outputs = inputs@{ self ,nixpkgs, flake-utils, neovim-flake, helix-flake, leftwm, ... }:
+# outputs = inputs@{ self ,nixpkgs, flake-utils, neovim-flake, helix-flake, ... }:
+outputs = attrs@{ self ,nixpkgs, flake-utils, neovim-flake, helix-flake, ... }:
+
   # outputs = inputs:
 
   let
     system = "x86_64-linux";
 
-    overlays = [
-      inputs.neovim-flake.overlay
+    # specialArgs = attrs;
+
+    # overlays = [
+      # inputs.neovim-flake.overlay
       # inputs.helix-flake
-    ];
+    # ];
     # [(import ./overlays)];
     pkgs = import nixpkgs {
-        inherit system overlays;
+        # inherit system overlays;
         config.allowUnfree = true;
     };
 
+    overlays = [
+      (final: prev: { mynvim = neovim-flake.defaultPackage; })
+      (final: prev: { myhelix = helix-flake.defaultPackage; })
+      ];
 
   in {
 
@@ -62,12 +69,29 @@ outputs = inputs@{ self ,nixpkgs, flake-utils, neovim-flake, helix-flake, leftwm
 
         # desktop
         fuji = nixpkgs.lib.nixosSystem {
-          inherit system pkgs; #nixpkgs allPkgs;
+          inherit system ;#pkgs ; #nixpkgs allPkgs;
+
+          specialArgs = attrs;
 
           modules = [
-            ./comp/fuji.nix
-            { nixpkgs.overlays = overlays ; }
+            # ./comp/fuji.nix
 
+            ({ config, pkgs, ... }:
+            {
+              # nixpkgs.overlays = [ overlay-neovim ];
+              nixpkgs.overlays = overlays;
+
+              environment.systemPackages = with pkgs; [
+                # nvim
+                # myhelix
+                ];
+
+              imports =
+                [
+                  ./comp/fuji.nix
+                ];
+            }
+          )
           ];
         };
 
@@ -93,4 +117,6 @@ outputs = inputs@{ self ,nixpkgs, flake-utils, neovim-flake, helix-flake, leftwm
 
       };
     };
-  }
+
+
+}
