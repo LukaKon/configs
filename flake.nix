@@ -39,37 +39,38 @@
 };
 
 # outputs = inputs@{ self ,nixpkgs, flake-utils, neovim-flake, helix-flake, ... }:
-outputs = attrs@{ self ,nixpkgs, flake-utils, neovim-flake, helix-flake, ... }:
+outputs = attrs@{ self ,nixpkgs, nixpkgs-unstable, flake-utils, neovim-flake, helix-flake, ... }:
 
   # outputs = inputs:
 
   let
     system = "x86_64-linux";
 
-    # specialArgs = attrs;
+    overlays = [
+      neovim-flake.overlay
+      helix-flake.overlay
+    ];
 
-    # overlays = [
-      # inputs.neovim-flake.overlay
-      # inputs.helix-flake
-    # ];
+    lib = nixpkgs.lib;
+
     # [(import ./overlays)];
     pkgs = import nixpkgs {
-        # inherit system overlays;
+        inherit system overlays;
         config.allowUnfree = true;
     };
 
-    overlays = [
-      (final: prev: { mynvim = neovim-flake.defaultPackage; })
-      (final: prev: { myhelix = helix-flake.defaultPackage; })
-      ];
+    # overlays = [
+    #   (final: prev: { mynvim = neovim-flake.defaultPackage; })
+    #   (final: prev: { myhelix = helix-flake.defaultPackage; })
+    #   ];
 
   in {
 
     nixosConfigurations = {
 
         # desktop
-        fuji = nixpkgs.lib.nixosSystem {
-          inherit system ;#pkgs ; #nixpkgs allPkgs;
+        fuji = lib.nixosSystem {
+          inherit system pkgs ; #nixpkgs allPkgs;
 
           specialArgs = attrs;
 
@@ -78,11 +79,11 @@ outputs = attrs@{ self ,nixpkgs, flake-utils, neovim-flake, helix-flake, ... }:
 
             ({ config, pkgs, ... }:
             {
-              # nixpkgs.overlays = [ overlay-neovim ];
               nixpkgs.overlays = overlays;
 
               environment.systemPackages = with pkgs; [
                 # nvim
+                # helix
                 # myhelix
                 ];
 
