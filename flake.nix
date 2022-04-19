@@ -73,6 +73,7 @@ outputs = attrs@{ self ,nixpkgs, nixpkgs-unstable, flake-utils, neovim-flake, he
           inherit system pkgs ; #nixpkgs allPkgs;
 
           specialArgs = attrs;
+          # specialArgs = { inherit pkgs neovim-flake; };
 
           modules = [
             # ./comp/fuji.nix

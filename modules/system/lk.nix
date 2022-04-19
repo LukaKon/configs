@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, ...}:# neovim-flake, ... }:
 
 {
   users.users.lk = {
@@ -34,6 +34,8 @@
 
       # IDE
       # neovim
+
+      # neovim-flake.defaultPackage.x86_64-linux
 
       helix
       nodePackages.vscode-langservers-extracted
