@@ -38,8 +38,8 @@
 
 };
 
-# outputs = inputs@{ self ,nixpkgs, flake-utils, neovim-flake, helix-flake, ... }:
-outputs = attrs@{ self ,nixpkgs, nixpkgs-unstable, flake-utils, neovim-flake, helix-flake, ... }:
+outputs = inputs@{ self ,nixpkgs, flake-utils, neovim-flake, helix-flake, ... }:
+# outputs = attrs@{ self ,nixpkgs, nixpkgs-unstable, flake-utils, neovim-flake, helix-flake, ... }:
 
   # outputs = inputs:
 
@@ -55,8 +55,14 @@ outputs = attrs@{ self ,nixpkgs, nixpkgs-unstable, flake-utils, neovim-flake, he
 
     # [(import ./overlays)];
     pkgs = import nixpkgs {
-        inherit system overlays;
+        inherit system ;#overlays;
         config.allowUnfree = true;
+        overlays = [
+          helix-flake.overlay
+          (self: last: {
+            neovimJD = inputs.neovim-flake.packages."${self.system}".neovimJD;
+          })
+        ];
     };
 
     # overlays = [
@@ -72,7 +78,7 @@ outputs = attrs@{ self ,nixpkgs, nixpkgs-unstable, flake-utils, neovim-flake, he
         fuji = lib.nixosSystem {
           inherit system pkgs ; #nixpkgs allPkgs;
 
-          specialArgs = attrs;
+          # specialArgs = attrs;
           # specialArgs = { inherit pkgs neovim-flake; };
 
           modules = [
@@ -83,6 +89,7 @@ outputs = attrs@{ self ,nixpkgs, nixpkgs-unstable, flake-utils, neovim-flake, he
               nixpkgs.overlays = overlays;
 
               environment.systemPackages = with pkgs; [
+                inputs.neovim-flake.defaultPackage.x86_64-linux
                 # nvim
                 # helix
                 # myhelix
