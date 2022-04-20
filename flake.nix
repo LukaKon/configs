@@ -3,13 +3,6 @@
 
   inputs = rec {
 
-    # lko = {
-      # type="github";
-      # url = "github:LukaKon/configs/nix";
-      # inputs.nixpkgs.follows = "nixpkgs";
-      # flake = false;
-    # };
-
     nixpkgs.url = "github:nixos/nixpkgs/nixos-21.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -31,40 +24,25 @@
     helix-flake = {
       url = github:helix-editor/helix;
     };
-
-    # leftwm = {
-      # url = github:leftwm/leftwm;
-    # };
-
 };
 
 outputs = inputs@{ self ,nixpkgs, flake-utils, neovim-flake, helix-flake, ... }:
-# outputs = attrs@{ self ,nixpkgs, nixpkgs-unstable, flake-utils, neovim-flake, helix-flake, ... }:
-
-  # outputs = inputs:
 
   let
     system = "x86_64-linux";
 
-    #overlays = [
-      #neovim-flake.overlay
-      #helix-flake.overlay
-    #];
-
     lib = nixpkgs.lib;
 
-    # [(import ./overlays)];
     pkgs = import nixpkgs {
         inherit system ;#overlays;
         config.allowUnfree = true;
         overlays = [
-     #     helix-flake.overlay
+          # helix-flake.overlay
           #(self: last: {
-           # neovimJD = inputs.neovim-flake.packages."${self.system}".neovimJD;
+          #  neovimJD = inputs.neovim-flake.packages."${self.system}".neovimJD;
           #})
         ];
     };
-
 
   in {
 
