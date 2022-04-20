@@ -30,12 +30,6 @@
       options = [ "subvol=@data" ];
     };
 
-  fileSystems."/var/lib/docker/btrfs" =
-    { device = "/nixos/var/lib/docker/btrfs";
-      fsType = "none";
-      options = [ "bind" ];
-    };
-
   fileSystems."/home/lk/dev" =
     { device = "/dev/disk/by-uuid/a3bed21d-488f-4233-b00b-98a378791ff6";
       fsType = "btrfs";
