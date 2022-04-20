@@ -59,16 +59,12 @@ outputs = inputs@{ self ,nixpkgs, flake-utils, neovim-flake, helix-flake, ... }:
         config.allowUnfree = true;
         overlays = [
      #     helix-flake.overlay
-          (self: last: {
-            neovimJD = inputs.neovim-flake.packages."${self.system}".neovimJD;
-          })
+          #(self: last: {
+           # neovimJD = inputs.neovim-flake.packages."${self.system}".neovimJD;
+          #})
         ];
     };
 
-    # overlays = [
-    #   (final: prev: { mynvim = neovim-flake.defaultPackage; })
-    #   (final: prev: { myhelix = helix-flake.defaultPackage; })
-    #   ];
 
   in {
 
@@ -78,29 +74,22 @@ outputs = inputs@{ self ,nixpkgs, flake-utils, neovim-flake, helix-flake, ... }:
         fuji = lib.nixosSystem {
           inherit system pkgs ; #nixpkgs allPkgs;
 
-          # specialArgs = attrs;
-          # specialArgs = { inherit pkgs neovim-flake; };
-
           modules = [
             # ./comp/fuji.nix
 
             ({ config, pkgs, ... }:
-            {
-              #nixpkgs.overlays = overlays;
-
-              environment.systemPackages = with pkgs; [
-                #inputs.neovim-flake.defaultPackage.x86_64-linux
-                # nvim
-                # helix
-                # myhelix
+              {
+                environment.systemPackages = with pkgs; [
+                  inputs.neovim-flake.defaultPackage.${system}
+                  #inputs.helix-flake.defaultPackage.${system}
                 ];
 
-              imports =
-                [
-                  ./comp/fuji.nix
-                ];
-            }
-          )
+                imports =
+                  [
+                    ./comp/fuji.nix
+                  ];
+              }
+            )
           ];
         };
 
@@ -110,7 +99,20 @@ outputs = inputs@{ self ,nixpkgs, flake-utils, neovim-flake, helix-flake, ... }:
           inherit system;
 
           modules = [
-            ./lap/lap.nix
+            # ./lap/lap.nix
+            ({ config, pkgs, ... }:
+              {
+                environment.systemPackages = with pkgs; [
+                  inputs.neovim-flake.defaultPackage.${system}
+                  #inputs.helix-flake.defaultPackage.${system}
+                ];
+
+                imports =
+                  [
+                    ./lap/lap.nix
+                  ];
+              }
+            )
           ];
         };
 
