@@ -46,10 +46,10 @@ outputs = inputs@{ self ,nixpkgs, flake-utils, neovim-flake, helix-flake, ... }:
   let
     system = "x86_64-linux";
 
-    overlays = [
-      neovim-flake.overlay
-      helix-flake.overlay
-    ];
+    #overlays = [
+      #neovim-flake.overlay
+      #helix-flake.overlay
+    #];
 
     lib = nixpkgs.lib;
 
@@ -58,7 +58,7 @@ outputs = inputs@{ self ,nixpkgs, flake-utils, neovim-flake, helix-flake, ... }:
         inherit system ;#overlays;
         config.allowUnfree = true;
         overlays = [
-          helix-flake.overlay
+     #     helix-flake.overlay
           (self: last: {
             neovimJD = inputs.neovim-flake.packages."${self.system}".neovimJD;
           })
@@ -86,10 +86,10 @@ outputs = inputs@{ self ,nixpkgs, flake-utils, neovim-flake, helix-flake, ... }:
 
             ({ config, pkgs, ... }:
             {
-              nixpkgs.overlays = overlays;
+              #nixpkgs.overlays = overlays;
 
               environment.systemPackages = with pkgs; [
-                inputs.neovim-flake.defaultPackage.x86_64-linux
+                #inputs.neovim-flake.defaultPackage.x86_64-linux
                 # nvim
                 # helix
                 # myhelix
