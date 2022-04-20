@@ -17,8 +17,8 @@
                                 reboot = "doas reboot";
 
                                 # editor
-                                # vi = "nvim";
-                                vi = "vim";
+                                vi = "nvim";
+                                # vi = "vim";
 
                                 # python
                                 py = "python";
@@ -27,6 +27,6 @@
                                 sb = "py /home/lk/configs/scripts/snapshot.py";
                                 sbl = "py /home/lk/configs/scripts/snapshot_lap.py";
                                 # backup config files to git
-                                cong = "python3 /home/lk/configs/scripts/git_conf.py";
+                                cong = "py /home/lk/configs/scripts/git_conf.py";
                               };
                             }
