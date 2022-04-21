@@ -21,12 +21,9 @@
       url = "github:LukaKon/neovim-flake";
     };
 
-    helix-flake = {
-      url = github:helix-editor/helix;
-    };
 };
 
-outputs = inputs@{ self ,nixpkgs, flake-utils, neovim-flake, helix-flake, ... }:
+outputs = inputs@{ self ,nixpkgs, flake-utils, neovim-flake, ... }:
 
   let
     system = "x86_64-linux";
