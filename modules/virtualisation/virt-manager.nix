@@ -12,7 +12,6 @@
     environment.systemPackages = with pkgs; [
       virt-manager
       virt-viewer
-      kvm
       qemu
        ];
 
