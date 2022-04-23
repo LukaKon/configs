@@ -135,7 +135,7 @@ keys = [
 #   Group("float", layout='floating'),
 # ]
 groups = [
-    Group("1", layout='monadwide'),
+    Group("1", layout='Bsp'),
     Group("2", layout='monadtall'),
     Group("3", layout='monadtall'),
     Group("4", layout='monadtall'),
@@ -145,7 +145,7 @@ groups = [
     Group("8", layout='monadtall'),
     Group("9", layout='monadtall'),
     Group("0", layout='floating'),
-    ]
+]
 
 # groups = [Group(i,layout='monadtall') for i in "1234567890"]
 
@@ -174,7 +174,18 @@ layout_theme = {
 }
 
 layouts = [
-    layout.Columns(border_focus_stack=[WHITE, LIGHT_GREEN], border_width=2),
+    layout.Columns(
+        border_focus_stack=[WHITE, LIGHT_GREEN],
+        border_width=2
+        ),
+    layout.Bsp(
+        border_focus=LIGHT_BLUE,
+        border_normal=GREY,
+        border_on_single=False,
+        border_width=2,
+        grow_ammount=5,
+        ratio=1.6
+        )
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
