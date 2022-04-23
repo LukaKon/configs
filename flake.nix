@@ -23,7 +23,7 @@
 
 };
 
-outputs = inputs@{ self ,nixpkgs, flake-utils, neovim-flake, ... }:
+outputs = inputs@{ self ,nixpkgs, nixpkgs-unstable, flake-utils, neovim-flake, ... }:
 
   let
     system = "x86_64-linux";
