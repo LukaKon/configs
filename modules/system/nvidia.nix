@@ -8,7 +8,7 @@
       nvtop
       #cudaPackages.cudatoolkit_11
     ];
-  virtualisation = {
-    enableNvidia = true;
-  };
+
+  hardware.opengl.driSupport32Bit=true;
+  virtualisation.docker.enableNvidia = true;
 }
