@@ -185,7 +185,7 @@ layouts = [
         border_width=2,
         grow_ammount=5,
         ratio=1.6
-        )
+        ),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
