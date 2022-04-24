@@ -57,7 +57,6 @@
               {
                 environment.systemPackages = with pkgs; [
                   inputs.neovim-flake.defaultPackage.${system}
-                  #inputs.helix-flake.defaultPackage.${system}
                 ];
 
                 imports =
