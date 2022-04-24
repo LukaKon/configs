@@ -3,77 +3,77 @@
 {
   environment = {
     systemPackages = with pkgs;
-    [
-      firmwareLinuxNonfree
-      microcodeIntel
+      [
+        firmwareLinuxNonfree
+        microcodeIntel
 
-      psutils
-      pciutils
-      gputils
+        psutils
+        pciutils
+        gputils
 
-      git
-      git-crypt
-      gnupg # gpg
-      # pinentry-gnome
+        git
+        git-crypt
+        gnupg # gpg
+        # pinentry-gnome
 
-      # terminal
-      alacritty
-      # foot
+        # terminal
+        alacritty
+        # foot
 
-      # file managers
-      vifm-full
-      # ranger
-      fzf
-      ripgrep
+        # file managers
+        vifm-full
+        # ranger
+        fzf
+        ripgrep
 
-      # graphics
-      # blender
-      darktable
-      gimp
-      krita
-      flameshot
+        # graphics
+        # blender
+        darktable
+        gimp
+        krita
+        flameshot
 
-      # www
-      firefox
-      # brave
+        # www
+        firefox
+        # brave
 
-      freetube
+        freetube
 
-      # cd burner
-      #brasero
+        # cd burner
+        #brasero
 
-      # office
-      libreoffice
+        # office
+        libreoffice
 
-      # media
-      feh # picture viewer
-      moc  # music player
-      youtube-dl
+        # media
+        feh # picture viewer
+        moc # music player
+        youtube-dl
 
-      # packer
-      unzip
-      unar
-      xarchiver
-      p7zip
+        # packer
+        unzip
+        unar
+        xarchiver
+        p7zip
 
-      nix-prefetch-git
+        nix-prefetch-git
 
-      tree
-      pstree  # process tree
-      wget
-      curl
-      rsync
-      bat # cat
-      fd  # find
+        tree
+        pstree # process tree
+        wget
+        curl
+        rsync
+        bat # cat
+        fd # find
 
-      glances
-      lm_sensors
-      # ncdu # disk analisys
-      sysstat
+        glances
+        lm_sensors
+        # ncdu # disk analisys
+        sysstat
 
-      # ueberzug
-      xsel  # for copying
-      clipmenu  # for copying
-    ];
+        # ueberzug
+        xsel # for copying
+        clipmenu # for copying
+      ];
   };
 }
