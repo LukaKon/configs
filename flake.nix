@@ -13,25 +13,25 @@
     };
 
     flake-compat = {
-    url = "github:edolstra/flake-compat";
-    flake = false;
-  };
+      url = "github:edolstra/flake-compat";
+      flake = false;
+    };
 
     neovim-flake = {
       url = "github:LukaKon/neovim-flake";
     };
 
-};
+  };
 
-outputs = inputs@{ self ,nixpkgs, flake-utils, neovim-flake, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, flake-utils, neovim-flake, ... }:
 
-  let
-    system = "x86_64-linux";
+    let
+      system = "x86_64-linux";
 
-    lib = nixpkgs.lib;
+      lib = nixpkgs-unstable.lib;
 
-    pkgs = import nixpkgs {
-        inherit system ;#overlays;
+      pkgs = import nixpkgs-unstable {
+        inherit system; #overlays;
         config.allowUnfree = true;
         overlays = [
           # helix-flake.overlay
@@ -39,15 +39,16 @@ outputs = inputs@{ self ,nixpkgs, flake-utils, neovim-flake, ... }:
           #  neovimJD = inputs.neovim-flake.packages."${self.system}".neovimJD;
           #})
         ];
-    };
+      };
 
-  in {
+    in
+    {
 
-    nixosConfigurations = {
+      nixosConfigurations = {
 
         # desktop
         fuji = lib.nixosSystem {
-          inherit system pkgs ; #nixpkgs allPkgs;
+          inherit system pkgs; #nixpkgs allPkgs;
 
           modules = [
             # ./comp/fuji.nix
@@ -56,7 +57,6 @@ outputs = inputs@{ self ,nixpkgs, flake-utils, neovim-flake, ... }:
               {
                 environment.systemPackages = with pkgs; [
                   inputs.neovim-flake.defaultPackage.${system}
-                  #inputs.helix-flake.defaultPackage.${system}
                 ];
 
                 imports =
@@ -69,7 +69,7 @@ outputs = inputs@{ self ,nixpkgs, flake-utils, neovim-flake, ... }:
         };
 
         # laptop
-        lap = nixpkgs.lib.nixosSystem {
+        lap = nixpkgs-unstable.lib.nixosSystem {
           # system = "x86_64-linux";
           inherit system;
 
@@ -93,12 +93,12 @@ outputs = inputs@{ self ,nixpkgs, flake-utils, neovim-flake, ... }:
 
         # raspberry
         # raspi  = nixpkgs.lib.nixosSystem {
-          # # inherit pkgs;
-          # system = "aarch64-linux";
+        # # inherit pkgs;
+        # system = "aarch64-linux";
 
-          # modules = [
-            # ./raspi/configuration.nix
-          # ];
+        # modules = [
+        # ./raspi/configuration.nix
+        # ];
         # };
 
       };

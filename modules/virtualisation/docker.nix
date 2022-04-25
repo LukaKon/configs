@@ -1,17 +1,18 @@
-{config, lib, pkgs, ...}:
+{ config, lib, pkgs, ... }:
 {
   virtualisation = {
     docker = {
-    enable = true;
-    # enableNvidia= true;
-  };
+      enable = true;
+      #enableNvidia= true;
+    };
   };
 
   environment.systemPackages = with pkgs; [
-    docker-compose
+    #docker-compose
+    docker-compose_2
     # arion
     lazydocker
-    ];
+  ];
 
-    # users.users.<myuser>.extraGroups = [ "docker" ];
+  # users.users.<myuser>.extraGroups = [ "docker" ];
 }
