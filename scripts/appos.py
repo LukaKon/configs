@@ -2,7 +2,6 @@
 
 import subprocess
 
-print('\nApply to system:\n')
-subprocess.run(
-    ['sudo', 'nixos-rebuild', 'switch', '--flake', '.#']
-)
+print("\nApply to system:\n")
+subprocess.run(["nixos-rebuild", "switch", "--flake", ".#"])
+subprocess.run(["sudo", "./result/bin/switch-to-configuration", "switch"])
