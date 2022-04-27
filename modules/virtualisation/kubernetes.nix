@@ -1,4 +1,6 @@
 { config, pkgs, ... }:
+#TODO: not finished
+# https://nixos.wiki/wiki/Kubernetes
 let
   kubeMasterIP = "10.1.1.2";
   kubeMasterHostname = "api.kube";
