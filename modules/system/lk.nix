@@ -63,6 +63,7 @@
         # signal-desktop
         slack
         discord
+	#whatsapp-for-linux
 
         # video conference
         zoom-us
