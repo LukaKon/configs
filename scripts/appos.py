@@ -3,5 +3,7 @@
 import subprocess
 
 print("\nApply updates to system:\n")
-subprocess.run(["nixos-rebuild", "switch", "--flake", ".#"])
+print("\nBuild:")
+subprocess.run(["nixos-rebuild", "build", "--flake", ".#"])
+print("Switch:\n")
 subprocess.run(["sudo", "./result/bin/switch-to-configuration", "switch"])
