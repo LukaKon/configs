@@ -96,6 +96,22 @@
         "type": "github"
       }
     },
+    "comment": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1651063981,
+        "narHash": "sha256-cFi4ChO91IuVgEswesAqeRT4RwOxGC6sdFYgLE2H+p4=",
+        "owner": "numToStr",
+        "repo": "Comment.nvim",
+        "rev": "cb0de89ba80b7cdb37b92e2a9e43b566f8834c7a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numToStr",
+        "repo": "Comment.nvim",
+        "type": "github"
+      }
+    },
     "crates-nvim": {
       "flake": false,
       "locked": {
@@ -304,22 +320,6 @@
         "type": "github"
       }
     },
-    "kommentary": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1638539682,
-        "narHash": "sha256-Sq/117fzSdHjz8P+KDP2j1LmebMQJKPZjTG8ixRgTuc=",
-        "owner": "b3nj5m1n",
-        "repo": "kommentary",
-        "rev": "2e1c3be90d555cd2c1f70b1c24867cee08d352f4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "b3nj5m1n",
-        "repo": "kommentary",
-        "type": "github"
-      }
-    },
     "lsp-signature": {
       "flake": false,
       "locked": {
@@ -410,6 +410,7 @@
         "cmp-path": "cmp-path",
         "cmp-treesitter": "cmp-treesitter",
         "cmp-vsnip": "cmp-vsnip",
+        "comment": "comment",
         "crates-nvim": "crates-nvim",
         "flake-utils": "flake-utils_2",
         "gitsigns-nvim": "gitsigns-nvim",
@@ -419,7 +420,6 @@
         "hare-vim": "hare-vim",
         "indent-blankline": "indent-blankline",
         "jdpkgs": "jdpkgs",
-        "kommentary": "kommentary",
         "lsp-signature": "lsp-signature",
         "lspkind": "lspkind",
         "lspsaga": "lspsaga",
@@ -453,11 +453,11 @@
         "which-key": "which-key"
       },
       "locked": {
-        "lastModified": 1651316563,
-        "narHash": "sha256-nn1WlkL9MeaOuyK5iObY/CLuslPgbUI2afnl3dzaQCU=",
+        "lastModified": 1651350707,
+        "narHash": "sha256-CLINYmSeRVnnM4fYcZd6vwdmj2VaiAWbvGt8TNguA+0=",
         "owner": "LukaKon",
         "repo": "neovim-flake",
-        "rev": "cba916477fc18c04b9c4c8067fb668fec8ca04b8",
+        "rev": "9cc48e1c9261da46d91863af21f4430015537369",
         "type": "github"
       },
       "original": {
