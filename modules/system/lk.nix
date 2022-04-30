@@ -43,6 +43,8 @@
         nodePackages.typescript-language-server
 
         rnix-lsp
+        nixfmt
+        nixpkgs-fmt
 
         # spacevim
         # neovide
@@ -63,7 +65,7 @@
         # signal-desktop
         slack
         discord
-	#whatsapp-for-linux
+        #whatsapp-for-linux
 
         # video conference
         zoom-us

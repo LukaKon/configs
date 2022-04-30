@@ -219,6 +219,38 @@
         "type": "github"
       }
     },
+    "gruvbox": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1624196773,
+        "narHash": "sha256-1GVqWQ/kyI9XLdp6wvdDjkDho/+eSInLEBi9OM1fbxI=",
+        "owner": "rafamadriz",
+        "repo": "gruvbox",
+        "rev": "105c6c2f25a0fa1f70e39b1b4df7dd8163d8e40c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rafamadriz",
+        "repo": "gruvbox",
+        "type": "github"
+      }
+    },
+    "gruvbox-material": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1651052516,
+        "narHash": "sha256-8hn0VG9s2NWlhrmjrr0prSkrwpx7v1N0q1ubm1gu8CM=",
+        "owner": "sainnhe",
+        "repo": "gruvbox-material",
+        "rev": "3d664943daf65bf99390a52c5dbc557f87fac552",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sainnhe",
+        "repo": "gruvbox-material",
+        "type": "github"
+      }
+    },
     "hare-vim": {
       "flake": false,
       "locked": {
@@ -382,6 +414,8 @@
         "flake-utils": "flake-utils_2",
         "gitsigns-nvim": "gitsigns-nvim",
         "glow-nvim": "glow-nvim",
+        "gruvbox": "gruvbox",
+        "gruvbox-material": "gruvbox-material",
         "hare-vim": "hare-vim",
         "indent-blankline": "indent-blankline",
         "jdpkgs": "jdpkgs",
@@ -406,7 +440,6 @@
         "nvim-treesitter-context": "nvim-treesitter-context",
         "nvim-ts-autotag": "nvim-ts-autotag",
         "nvim-web-devicons": "nvim-web-devicons",
-        "onedark": "onedark",
         "plenary-nvim": "plenary-nvim",
         "registers": "registers",
         "rnix-lsp": "rnix-lsp",
@@ -414,18 +447,17 @@
         "sqls-nvim": "sqls-nvim",
         "telescope": "telescope",
         "todo-comments": "todo-comments",
-        "tokyonight": "tokyonight",
         "tree-sitter-hare": "tree-sitter-hare",
         "trouble": "trouble",
         "vim-vsnip": "vim-vsnip",
         "which-key": "which-key"
       },
       "locked": {
-        "lastModified": 1649709319,
-        "narHash": "sha256-AeBvXIUZvIRJD/a8PYJaIDfSu5Jqi6igKmPsOE2TUDM=",
+        "lastModified": 1651316563,
+        "narHash": "sha256-nn1WlkL9MeaOuyK5iObY/CLuslPgbUI2afnl3dzaQCU=",
         "owner": "LukaKon",
         "repo": "neovim-flake",
-        "rev": "a94f41ba132cdec1e3d6c3428b22659e56f0d19c",
+        "rev": "cba916477fc18c04b9c4c8067fb668fec8ca04b8",
         "type": "github"
       },
       "original": {
@@ -557,11 +589,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1650998007,
-        "narHash": "sha256-NcJnbGDBBN023x8s3ll3HZxBcQoPq1ry9E2sjg+4flc=",
+        "lastModified": 1651093906,
+        "narHash": "sha256-kHXSbv+Hc73eV0/JVJ5YsJGr08bA4vJ3/XZew5PgZg0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "a3917caedfead19f853aa5769de4c3ea4e4db584",
+        "rev": "feea25c58657fa81d16e0e51f80e1a02ef4cbd49",
         "type": "github"
       },
       "original": {
@@ -795,22 +827,6 @@
         "type": "github"
       }
     },
-    "onedark": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1641889912,
-        "narHash": "sha256-oPdKMAddGF2J2rUrKlHxQhvBT2DK00oXjhiWXX0SmVo=",
-        "owner": "navarasu",
-        "repo": "onedark.nvim",
-        "rev": "e5f6772b61b4aea429db1d8cc61b8a91f467611b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "navarasu",
-        "repo": "onedark.nvim",
-        "type": "github"
-      }
-    },
     "plenary-nvim": {
       "flake": false,
       "locked": {
@@ -933,22 +949,6 @@
       "original": {
         "owner": "folke",
         "repo": "todo-comments.nvim",
-        "type": "github"
-      }
-    },
-    "tokyonight": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1640940199,
-        "narHash": "sha256-EUiuGaX//mqv8v+UWfOQwxvV6UaQq1ZjdlqOpQAE7+c=",
-        "owner": "folke",
-        "repo": "tokyonight.nvim",
-        "rev": "8223c970677e4d88c9b6b6d81bda23daf11062bb",
-        "type": "github"
-      },
-      "original": {
-        "owner": "folke",
-        "repo": "tokyonight.nvim",
         "type": "github"
       }
     },
