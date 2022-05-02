@@ -8,8 +8,8 @@
     # create .xinitrc file
 
     # Qtile
-    #displayManager.lightdm.enable = true;
-    displayManager.gdm.wayland = true;
+    displayManager.lightdm.enable = true;
+    #displayManager.gdm.wayland = true;
     windowManager.qtile.enable = true;
     displayManager.defaultSession = "none+qtile";
 
