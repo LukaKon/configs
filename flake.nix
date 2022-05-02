@@ -20,7 +20,6 @@
     neovim-flake = {
       url = "github:LukaKon/neovim-flake";
     };
-
   };
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, flake-utils, neovim-flake, ... }:
@@ -31,14 +30,9 @@
       lib = nixpkgs-unstable.lib;
 
       pkgs = import nixpkgs-unstable {
-        inherit system; #overlays;
+        inherit system;
         config.allowUnfree = true;
-        overlays = [
-          # helix-flake.overlay
-          #(self: last: {
-          #  neovimJD = inputs.neovim-flake.packages."${self.system}".neovimJD;
-          #})
-        ];
+        overlays = [ ];
       };
 
     in
@@ -48,7 +42,7 @@
 
         # desktop
         fuji = lib.nixosSystem {
-          inherit system pkgs; #nixpkgs allPkgs;
+          inherit system pkgs;
 
           modules = [
             # ./comp/fuji.nix
@@ -70,7 +64,6 @@
 
         # laptop
         lap = nixpkgs-unstable.lib.nixosSystem {
-          # system = "x86_64-linux";
           inherit system;
 
           modules = [
@@ -103,6 +96,4 @@
 
       };
     };
-
-
 }
