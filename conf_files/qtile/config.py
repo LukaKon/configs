@@ -235,6 +235,7 @@ screens = [
                 widget.Memory(
                     measure_mem="G",
                 ),
+                widget.Battery(),
                 # widget.TextBox("default config", name="default"),
                 # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 widget.Systray(),
