@@ -1,31 +1,6 @@
-# Copyright (c) 2010 Aldo Cortesi
-# Copyright (c) 2010, 2014 dequis
-# Copyright (c) 2012 Randall Ma
-# Copyright (c) 2012-2014 Tycho Andersen
-# Copyright (c) 2012 Craig Barnes
-# Copyright (c) 2013 horsik
-# Copyright (c) 2013 Tao Sauvage
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-
 from typing import List  # noqa: F401
 
+import platform
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
@@ -34,8 +9,9 @@ from libqtile.dgroups import simple_key_binder
 
 mod = "mod4"
 terminal = guess_terminal()
-# browser='qutebrowser'
 browser = "firefox"
+
+hostname = platform.node()  # hostname: fuji , lap
 
 FONT = "fira"
 SF = 10
@@ -206,14 +182,13 @@ layouts = [
 widget_defaults = dict(font=FONT, fontsize=MF, padding=3, background=DARK_GREY)
 extension_defaults = widget_defaults.copy()
 
+separator = widget.Sep(foreground=LIGHT_GREEN, linewidth=3, padding=2)
 
-def init_widgets_list():
-    widgets_list = [
-        widget.CPU(
-            font=FONT,
-            format="CPU {freq_current}GHz  {load_percent}%",
-        )
-    ]
+battery = None
+if hostname == "lap":
+    battery = (separator, widget.Battery())
+else:
+    battery = (separator, widget.NvidiaSensors())
 
 
 screens = [
@@ -231,16 +206,18 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
+                *battery,
+                separator,
                 widget.CPU(),
+                separator,
                 widget.Memory(
                     measure_mem="G",
                 ),
-                widget.Battery(),
-                # widget.TextBox("default config", name="default"),
-                # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
+                separator,
                 widget.Systray(),
+                separator,
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.QuickExit(),
+                # widget.QuickExit(),
             ],
             24,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
