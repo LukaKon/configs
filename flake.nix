@@ -28,9 +28,10 @@
       system = "x86_64-linux";
 
       lib = nixpkgs-unstable.lib;
+      # lib = nixpkgs.lib;
 
-      # pkgs = import nixpkgs-unstable {
-      pkgs = import nixpkgs {
+      pkgs = import nixpkgs-unstable {
+        # pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
         overlays = [ ];
@@ -64,7 +65,7 @@
         };
 
         # laptop
-        lap = nixpkgs-unstable.lib.nixosSystem {
+        lap = lib.nixosSystem {
           inherit system;
 
           modules = [
