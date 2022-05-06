@@ -41,18 +41,6 @@
       options = [ "subvol=@data" ];
     };
 
-  # fileSystems."/var/lib/docker/btrfs" =
-  # { device = "/nixos/var/lib/docker/btrfs";
-  # fsType = "none";
-  # options = [ "bind" ];
-  # };
-
-  fileSystems."/home/lk/vm" =
-    {
-      device = "/dev/disk/by-uuid/6826563e-03ed-407f-bcfd-000dbf4119ea";
-      fsType = "ext4";
-    };
-
   swapDevices =
     [{ device = "/dev/disk/by-uuid/f3e17313-09db-4d1a-9238-ea58a296dd2f"; }];
 
