@@ -9,7 +9,7 @@
       (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
@@ -41,6 +41,13 @@
       options = [ "subvol=@data" ];
     };
 
+  fileSystems."/home/lk/vm" =
+    {
+      device = "/dev/disk/by-uuid/63742996-98f1-4404-b850-b61be86ea7cd";
+      fsType = "btrfs";
+      options = [ "subvol=@vm" ];
+    };
+
   swapDevices =
     [{ device = "/dev/disk/by-uuid/f3e17313-09db-4d1a-9238-ea58a296dd2f"; }];
 
@@ -52,9 +59,9 @@
   networking.interfaces.br-738b973061c6.useDHCP = lib.mkDefault true;
   networking.interfaces.docker0.useDHCP = lib.mkDefault true;
   networking.interfaces.enp0s31f6.useDHCP = lib.mkDefault true;
-  networking.interfaces.veth805b606.useDHCP = lib.mkDefault true;
-  networking.interfaces.vethbea6119.useDHCP = lib.mkDefault true;
-  networking.interfaces.virbr0.useDHCP = lib.mkDefault true;
+  networking.interfaces.veth0a67ca8.useDHCP = lib.mkDefault true;
+  networking.interfaces.veth329e418.useDHCP = lib.mkDefault true;
+  networking.interfaces.vethfb219a0.useDHCP = lib.mkDefault true;
   networking.interfaces.wlp1s0.useDHCP = lib.mkDefault true;
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
