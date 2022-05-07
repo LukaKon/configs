@@ -5,10 +5,10 @@
   # services.xserver.videoDrivers = ["modesetting" "nvidia"];
   environment.systemPackages = with pkgs;
     [
-      nvtop
+      # nvtop
       #cudaPackages.cudatoolkit_11
     ];
 
-  hardware.opengl.driSupport32Bit=true;
+  hardware.opengl.driSupport32Bit = true;
   virtualisation.docker.enableNvidia = true;
 }
