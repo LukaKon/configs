@@ -1,4 +1,4 @@
-{config, pkgs, lib, ...}:
+{ config, pkgs, lib, ... }:
 
 {
   # Use the systemd-boot EFI boot loader.
@@ -34,16 +34,16 @@
 
   i18n = {
     defaultLocale = "pl_PL.UTF-8";
-    supportedLocales = ["pl_PL.UTF-8/UTF-8" "en_US.UTF-8/UTF-8"];
+    supportedLocales = [ "pl_PL.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" ];
   };
 
   # Autoupgrade
-  system = {
-    autoUpgrade = {
-      enable = true;
-      allowReboot = true;
-    };
-  };
+  # system = {
+  #   autoUpgrade = {
+  #     enable = true;
+  #     allowReboot = true;
+  #   };
+  # };
 
   # cleaning store
   nix = {
