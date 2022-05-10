@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: # neovim-flake, ... }:
+{ config, pkgs, ... }:
 
 {
   users.users.lk = {
@@ -9,7 +9,7 @@
     shell = pkgs.zsh;
     packages = with pkgs;
       [
-        dotnet-sdk
+        # dotnet-sdk
         clang
         clang-tools
         #gcc
@@ -32,11 +32,7 @@
         # qutebrowser
         ungoogled-chromium
 
-        # IDE
-        # neovim
-
-        # neovim-flake.defaultPackage.x86_64-linux
-
+        # IDE/editors
         helix
         nodePackages.vscode-langservers-extracted
         nodePackages.dockerfile-language-server-nodejs
@@ -48,18 +44,13 @@
 
         # spacevim
         # neovide
-        # uivonim
         # vscode
         vscodium
-        # eclipses.eclipse-jee
         arduino
-        # jetbrains.webstorm
         # jetbrains.pycharm-community
         jetbrains.pycharm-professional
-        # thonny
         # unityhub
         dbeaver
-        # postman
 
         # comunicator
         # signal-desktop
@@ -79,10 +70,11 @@
 
         (python310.withPackages (ps: with ps;
         [
+          ptpython
           python-lsp-server
-          # autopep8
+          autopep8
           # flake8
-          # colorama
+          colorama
           psutil
           pip
           pynvim
