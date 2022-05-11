@@ -185,10 +185,23 @@ extension_defaults = widget_defaults.copy()
 separator = widget.Sep(foreground=LIGHT_GREEN, linewidth=3, padding=2)
 
 battery = None
+net = None
+sensors = None
 if hostname == "lap":
     battery = (separator, widget.Battery())
+    net = (separator, widget.Net(interface=""))  # TODO: add lap wifi interface
 else:
     battery = (separator, widget.NvidiaSensors())
+    net = (
+        separator,
+        widget.Net(interface="wlp1s0", format="{interface}: {down} ↓↑ {up}"),
+        separator,
+        widget.Net(interface="enp0s31f6", format="{interface}: {down} ↓↑ {up}"),
+    )
+sensors = (
+    separator,
+    widget.ThermalSensor(show_tag=True, tag_sensor="Package id 0"),
+)
 
 
 screens = [
@@ -209,10 +222,12 @@ screens = [
                 *battery,
                 separator,
                 widget.CPU(),
+                *sensors,
                 separator,
                 widget.Memory(
                     measure_mem="G",
                 ),
+                *net,
                 separator,
                 widget.Systray(),
                 separator,
