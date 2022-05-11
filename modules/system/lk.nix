@@ -60,8 +60,8 @@
 
         # video conference
         zoom-us
-        jitsi-meet
-        jitsi-meet-electron
+        # jitsi-meet
+        # jitsi-meet-electron
 
         # LaTeX
         texlive.combined.scheme-full
