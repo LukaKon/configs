@@ -189,7 +189,12 @@ net = None
 sensors = None
 if hostname == "lap":
     battery = (separator, widget.Battery())
-    net = (separator, widget.Net(interface=""))  # TODO: add lap wifi interface
+    net = (
+        separator,
+        widget.Net(interface="wlp0s20f3", format="{interface}: {down} ↓↑ {up}"),
+        separator,
+        widget.Net(interface="enp0s31f6", format="{interface}: {down} ↓↑ {up}"),
+    )
 else:
     battery = (separator, widget.NvidiaSensors())
     net = (
