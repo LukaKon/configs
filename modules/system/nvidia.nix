@@ -6,7 +6,6 @@
   environment.systemPackages = with pkgs;
     [
       # nvtop
-      #cudaPackages.cudatoolkit_11
     ];
 
   hardware.opengl.driSupport32Bit = true;
