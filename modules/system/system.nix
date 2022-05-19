@@ -55,7 +55,7 @@
       options = "--delete-older-than 9d";
     };
 
-    maxJobs = lib.mkDefault 8;
+    maxJobs = lib.mkDefault 4;
 
     # For hix flakes
     extraOptions = "experimental-features = nix-command flakes";
