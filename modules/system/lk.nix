@@ -68,6 +68,7 @@
         # texstudio
         # mindforger
 
+        nodePackages.pyright
         (python310.withPackages (ps: with ps;
         [
           ptpython
