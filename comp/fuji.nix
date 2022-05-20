@@ -33,6 +33,7 @@
 
       # Programs
       ./../modules/programs/progr.nix
+      ./../modules/programs/kakoune.nix
       # ./../modules/programs/nvim/nvim.nix
       # ./../modules/programs/vim/vim.nix
       # ./../modules/programs/emacs/emacs.nix

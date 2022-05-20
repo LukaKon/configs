@@ -33,7 +33,7 @@
         ungoogled-chromium
 
         # IDE/editors
-        helix
+        # helix
         nodePackages.vscode-langservers-extracted
         nodePackages.dockerfile-language-server-nodejs
         nodePackages.typescript-language-server
@@ -43,7 +43,6 @@
         nixpkgs-fmt
 
         # spacevim
-        # neovide
         # vscode
         vscodium
         arduino
