@@ -17,8 +17,11 @@
       flake = false;
     };
 
+    # neovim-flake = {
+    #   url = "github:LukaKon/neovim-flake";
+    # };
     neovim-flake = {
-      url = "github:LukaKon/neovim-flake";
+      url = "github:jordanisaacs/neovim-flake";
     };
   };
 
