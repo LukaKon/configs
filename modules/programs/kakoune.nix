@@ -1,3 +1,4 @@
+{ config, pkgs, ... }:
 let
   myKakoune =
     let
@@ -9,8 +10,8 @@ let
         '';
       });
     in
-    kakoune.override {
-      plugins = with kakounePlugins; [
+    pkgs.kakoune.override {
+      plugins = with pkgs.kakounePlugins; [
         config
         # parinfer-rust
         fzf-kak
