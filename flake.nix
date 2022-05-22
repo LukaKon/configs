@@ -17,12 +17,12 @@
       flake = false;
     };
 
-    neovim-flake = {
-      url = "github:LukaKon/neovim-flake";
-    };
     # neovim-flake = {
-    #   url = "github:jordanisaacs/neovim-flake";
+      # url = "github:LukaKon/neovim-flake";
     # };
+    neovim-flake = {
+      url = "github:jordanisaacs/neovim-flake";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, flake-utils, neovim-flake, ... }:
