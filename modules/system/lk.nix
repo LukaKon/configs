@@ -34,13 +34,13 @@
 
         # IDE/editors
         # helix
-        nodePackages.vscode-langservers-extracted
-        nodePackages.dockerfile-language-server-nodejs
-        nodePackages.typescript-language-server
+        #nodePackages.vscode-langservers-extracted
+        #nodePackages.dockerfile-language-server-nodejs
+        #nodePackages.typescript-language-server
 
-        rnix-lsp
-        nixfmt
-        nixpkgs-fmt
+        #rnix-lsp
+        #nixfmt
+        #nixpkgs-fmt
 
         # spacevim
         # vscode
