@@ -10,12 +10,10 @@
       ./../modules/system/system.nix # Base system settings
       ./../modules/system/btrfs.nix
       ./../modules/system/network_lap.nix # Network configuration
-      # ./../modules/system/nouveau.nix
       ./../modules/system/fonts.nix
       ./../modules/system/env_variables.nix
       # ./../modules/system/cron.nix
       ./../modules/system/shellAliases.nix # Shell aliases
-      #./../modules/system/users.nix     # Users configurations
       ./../modules/system/lk.nix
       ./../modules/system/kk.nix
 
@@ -33,23 +31,16 @@
       # Programs
       ./../modules/programs/progr.nix
       ./../modules/programs/kakoune.nix
-      # ./../modules/programs/nvim/nvim.nix
-      # ./../modules/programs/vim/vim.nix
-      # ./../modules/programs/postgresql.nix
       ./../modules/programs/zsh.nix
-      # ./../modules/programs/steam.nix        # Steam gaming portal
       #./../modules/programs/flatpak.nix
 
       # Desktops
       # ./../modules/desktops/i3/i3.nix  # i3 window manager settings
-      # ./../modules/desktops/x_gnome.nix  # Gnome window manager settings
-      #./../modules/desktops/wayland_gnome.nix  # Gnome window manager settings
       ./../modules/desktops/qtile.nix
 
       # Virtualisation
       ./../modules/virtualisation/docker.nix # Docker
       ./../modules/virtualisation/podman.nix
-      # ./../modules/virtualisation/virtualbox.nix # Virtualbox
       ./../modules/virtualisation/virt-manager.nix
     ];
 }
