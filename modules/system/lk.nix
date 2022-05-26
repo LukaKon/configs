@@ -10,8 +10,8 @@
     packages = with pkgs;
       [
         # dotnet-sdk
-        #clang
-        #clang-tools
+        clang
+        clang-tools
         #gcc
         cmake
         #bmake
