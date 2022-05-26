@@ -17,18 +17,25 @@
       flake = false;
     };
 
-    # neovim-flake = {
-    #   url = "github:LukaKon/neovim-flake";
-    # };
-    # neovim-flake = {
-    #   url = "github:jordanisaacs/neovim-flake";
-    # };
+     #neovim-flake = {
+     #  url = "github:LukaKon/neovim-flake_WT";
+     #};
+     #neovim-flake = {
+     #  url = "github:jordanisaacs/neovim-flake";
+     #};
     neovim-flake = {
       url = "github:wiltaylor/neovim-flake";
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, flake-utils, neovim-flake, ... }:
+  outputs = inputs@{ 
+    self,
+    nixpkgs,
+    nixpkgs-unstable,
+    flake-utils,
+    neovim-flake,
+    ...
+  }:
 
     let
       system = "x86_64-linux";
@@ -59,7 +66,7 @@
               {
                 environment.systemPackages = with pkgs; [
                   # packages.neovim-flake.${system}.default
-                  inputs.neovim-flake.defaultPackage.${system}
+                  neovim-flake.defaultPackage.${system}
                   # inputs.packages.neovim-flake.${system}.default
                 ];
 
