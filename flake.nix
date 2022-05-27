@@ -19,26 +19,26 @@
       flake = false;
     };
 
-     #neovim-flake = {
-     #  url = "github:LukaKon/neovim-flake_WT";
-     #};
-     #neovim-flake = {
-     #  url = "github:jordanisaacs/neovim-flake";
-     #};
-      neovim-flake = {
-        url = "github:wiltaylor/neovim-flake";
+    #neovim-flake = {
+    #  url = "github:LukaKon/neovim-flake_WT";
+    #};
+    #neovim-flake = {
+    #  url = "github:jordanisaacs/neovim-flake";
+    #};
+    neovim-flake = {
+      url = "github:wiltaylor/neovim-flake";
     };
   };
 
-  outputs = inputs@{ 
-    self,
-    nix,
-    nixpkgs,
-    nixpkgs-unstable,
-    flake-utils,
-    neovim-flake,
-    ...
-  }:
+  outputs =
+    inputs@{ self
+    , nix
+    , nixpkgs
+    , nixpkgs-unstable
+    , flake-utils
+    , neovim-flake
+    , ...
+    }:
 
     let
       system = "x86_64-linux";
@@ -46,18 +46,18 @@
       lib = nixpkgs-unstable.lib;
       # lib = nixpkgs.lib;
 
-      inherit
-        ( import ./overlays {
-          inherit
-            pkgs
-            neovim-flake
-            ;
-        })
-        overlays;
+      # inherit
+      #   ( import ./overlays {
+      #     inherit
+      #       pkgs
+      #       neovim-flake
+      #       ;
+      #   })
+      #   overlays;
 
       pkgs = import nixpkgs-unstable {
         # pkgs = import nixpkgs {
-        inherit system overlays;
+        inherit system; # overlays;
         config.allowUnfree = true;
         #overlays = [ ];
       };
