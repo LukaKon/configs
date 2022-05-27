@@ -7,6 +7,8 @@
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    nix.url = "github:NixOS/nix";
+
     flake-utils = {
       url = "github:numtide/flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,13 +25,14 @@
      #neovim-flake = {
      #  url = "github:jordanisaacs/neovim-flake";
      #};
-    neovim-flake = {
-      url = "github:wiltaylor/neovim-flake";
+      neovim-flake = {
+        url = "github:wiltaylor/neovim-flake";
     };
   };
 
   outputs = inputs@{ 
     self,
+    nix,
     nixpkgs,
     nixpkgs-unstable,
     flake-utils,
@@ -43,12 +46,28 @@
       lib = nixpkgs-unstable.lib;
       # lib = nixpkgs.lib;
 
+      inherit
+        ( import ./overlays {
+          inherit
+            pkgs
+            neovim-flake
+            ;
+        })
+        overlays;
+
       pkgs = import nixpkgs-unstable {
         # pkgs = import nixpkgs {
-        inherit system;
+        inherit system overlays;
         config.allowUnfree = true;
-        overlays = [ ];
+        #overlays = [ ];
       };
+
+      #overlay-neovim = final: prev: {
+      #  neovim = import neovim-flake {
+      #    inherit system;
+      #    config.allowUnfree = true;
+      #  };
+      #};
 
     in
     {
@@ -60,7 +79,6 @@
           inherit system pkgs;
 
           modules = [
-            # ./comp/fuji.nix
 
             ({ config, pkgs, ... }:
               {
@@ -81,15 +99,15 @@
 
         # laptop
         lap = lib.nixosSystem {
-          inherit system;
+          inherit system pkgs;
 
           modules = [
-            # ./lap/lap.nix
             ({ config, pkgs, ... }:
               {
+                #nixpkgs.overlays = [overlay-neovim];
                 environment.systemPackages = with pkgs; [
-                  inputs.neovim-flake.defaultPackage.${system}
-                  #inputs.helix-flake.defaultPackage.${system}
+                  #inputs.neovim-flake.defaultPackage.${system}
+                  neovim-flake.defaultPackage.${system}
                 ];
 
                 imports =
