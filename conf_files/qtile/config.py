@@ -90,7 +90,7 @@ keys = [
     Key([mod], "y", lazy.spawn("freetube"), desc="Launch free tube"),
     Key([mod], "z", lazy.spawn("slack"), desc="Launch slack"),
     Key([mod], "f", lazy.spawn("flameshot"), desc="Launch flameshot"),
-    Key([mod], "j", lazy.spawn("jitsi-meet-electron"), desc="Launch jitsi"),
+    # Key([mod], "j", lazy.spawn("jitsi-meet-electron"), desc="Launch jitsi"),
     # Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
     # Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 1- unmute")),
     # Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 1+ unmute")),
