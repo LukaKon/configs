@@ -100,8 +100,7 @@
           inherit system pkgs;
 
           modules = [
-            ({ config, pkgs, ... }:
-              {
+            ({ config, pkgs, ... }: {
                 #nixpkgs.overlays = [overlay-neovim];
                 environment.systemPackages = with pkgs; [
                   #inputs.neovim-flake.defaultPackage.${system}
