@@ -33,7 +33,6 @@
       ./../modules/programs/progr.nix
       ./../modules/programs/kakoune.nix
       # ./../modules/programs/nvim/nvim.nix
-      # ./../modules/programs/postgresql.nix
       ./../modules/programs/zsh.nix
       #./../modules/programs/flatpak.nix
 
