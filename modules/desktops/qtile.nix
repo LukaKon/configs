@@ -9,7 +9,7 @@
 
     # Qtile
     displayManager.lightdm.enable = true;
-    #displayManager.gdm.wayland = true;
+    # displayManager.gdm.wayland.enable = true;
     windowManager.qtile.enable = true;
     displayManager.defaultSession = "none+qtile";
 
