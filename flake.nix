@@ -42,16 +42,6 @@
       system = "x86_64-linux";
 
       lib = nixpkgs-unstable.lib;
-      # lib = nixpkgs.lib;
-
-      # inherit
-      #   ( import ./overlays {
-      #     inherit
-      #       pkgs
-      #       neovim-flake
-      #       ;
-      #   })
-      #   overlays;
 
       pkgs = import nixpkgs-unstable {
         # pkgs = import nixpkgs {
@@ -59,13 +49,6 @@
         config.allowUnfree = true;
         #overlays = [ ];
       };
-
-      #overlay-neovim = final: prev: {
-      #  neovim = import neovim-flake {
-      #    inherit system;
-      #    config.allowUnfree = true;
-      #  };
-      #};
 
     in
     {
@@ -101,17 +84,18 @@
 
           modules = [
             ({ config, pkgs, ... }: {
-                #nixpkgs.overlays = [overlay-neovim];
-                environment.systemPackages = with pkgs; [
-                  #inputs.neovim-flake.defaultPackage.${system}
-                  neovim-flake.defaultPackage.${system}
-                ];
+              #nixpkgs.overlays = [overlay-neovim];
+              environment.systemPackages = with pkgs; [
+                #inputs.neovim-flake.defaultPackage.${system}
+                #neovim-flake.defaultPackage.${system}
+                # neovim
+              ];
 
-                imports =
-                  [
-                    ./lap/lap.nix
-                  ];
-              }
+              imports =
+                [
+                  ./lap/lap.nix
+                ];
+            }
             )
           ];
         };
