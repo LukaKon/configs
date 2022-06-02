@@ -16,7 +16,7 @@ in
     ./../modules/system/shellAliases.nix
     ./../modules/system/kk.nix
     ./../modules/services/openssh.nix
-    ./../modules/virtualisation/docker.nix
+    #./modules/virtualisation/docker.nix
     #./../modules/virtualisation/virt-manager.nix
     ./../modules/security/doas.nix
     ./../modules/security/firewall.nix
@@ -25,8 +25,6 @@ in
     ./../modules/programs/zsh.nix
     ./../modules/desktops/xfce.nix
   ];
-
-  boot.cleanTmpDir = true;
 
   boot = {
     kernelPackages = pkgs.linuxPackages_rpi4;
@@ -43,11 +41,12 @@ in
         enable = true;
         version = 4;
       };
-      generic-extlinux-compatible.enable = true;
+      #generic-extlinux-compatible.enable = true;
     };
+	cleanTmpDir = true;
   };
 
-  hardware.enableRedistributableFirmware = true;
+  #hardware.enableRedistributableFirmware = true;
 
   fileSystems = {
     "/" = {
@@ -89,14 +88,14 @@ in
     package = pkgs.nixFlakes;
   };
 
-  networking = {
-    hostName = hostname;
-    wireless = {
-      enable = true;
-      networks."${SSID}".psk = SSIDpassword;
-      interfaces = [ interface ];
-    };
-  };
+  #networking = {
+  #  hostName = hostname;
+  #  wireless = {
+  #    enable = true;
+  #    networks."${SSID}".psk = SSIDpassword;
+  #    interfaces = [ interface ];
+  #  };
+  #};
 
   users = {
     mutableUsers = false;
@@ -131,4 +130,5 @@ in
   #powerManagement.powertop.enable = true;
 
   #security.protectKernelImage = true;
+  system.stateVersion = "21.11";
 }
