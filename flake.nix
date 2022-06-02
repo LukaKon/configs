@@ -3,7 +3,7 @@
 
   inputs = rec {
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-21.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.05";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
@@ -49,6 +49,12 @@
         config.allowUnfree = true;
         #overlays = [ ];
       };
+
+      stblpkgs = import nixpkgs {
+        config.allowUnfree = true;
+        #overlays = [ ];
+      };
+      	
 
     in
     {
@@ -102,7 +108,7 @@
 
         # raspberry
         raspi = lib.nixosSystem {
-          inherit pkgs;
+          inherit stblpkgs;
           system = "aarch64-linux";
 
           modules = [
