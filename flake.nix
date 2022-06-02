@@ -50,11 +50,6 @@
         #overlays = [ ];
       };
 
-      stblpkgs = import nixpkgs {
-        config.allowUnfree = true;
-        #overlays = [ ];
-      };
-      	
 
     in
     {
@@ -107,8 +102,9 @@
         };
 
         # raspberry
-        raspi = lib.nixosSystem {
-          inherit stblpkgs;
+        nixos = lib.nixosSystem {
+          #inherit pkgs;
+	  nixpkgs = self.nixpkgs;
           system = "aarch64-linux";
 
           modules = [
