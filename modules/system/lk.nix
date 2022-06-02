@@ -34,9 +34,9 @@
 
         # IDE/editors
         # helix
-        nodePackages.vscode-langservers-extracted
-        nodePackages.dockerfile-language-server-nodejs
-        nodePackages.typescript-language-server
+        #nodePackages.vscode-langservers-extracted
+        #nodePackages.dockerfile-language-server-nodejs
+        #nodePackages.typescript-language-server
 
         rnix-lsp
         nixfmt
@@ -71,7 +71,7 @@
         (python310.withPackages (ps: with ps;
         [
           ptpython
-          python-lsp-server
+          #python-lsp-server
           autopep8
           # flake8
           colorama
