@@ -17,7 +17,7 @@ in
     ./../modules/system/kk.nix
     ./../modules/services/openssh.nix
     #./modules/virtualisation/docker.nix
-    #./../modules/virtualisation/virt-manager.nix
+    ./../modules/virtualisation/virt-manager.nix
     ./../modules/security/doas.nix
     ./../modules/security/firewall.nix
     ./../modules/programs/raspi_progr.nix
@@ -88,14 +88,14 @@ in
     package = pkgs.nixFlakes;
   };
 
-  #networking = {
-  #  hostName = hostname;
-  #  wireless = {
-  #    enable = true;
-  #    networks."${SSID}".psk = SSIDpassword;
-  #    interfaces = [ interface ];
-  #  };
-  #};
+  networking = {
+    hostName = hostname;
+    wireless = {
+      enable = true;
+      networks."${SSID}".psk = SSIDpassword;
+      interfaces = [ interface ];
+    };
+  };
 
   users = {
     mutableUsers = false;
@@ -130,5 +130,5 @@ in
   #powerManagement.powertop.enable = true;
 
   #security.protectKernelImage = true;
-  system.stateVersion = "21.11";
+  system.stateVersion = "22.05";
 }
