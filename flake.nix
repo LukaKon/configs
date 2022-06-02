@@ -101,14 +101,14 @@
         };
 
         # raspberry
-        # raspi  = nixpkgs.lib.nixosSystem {
-        # # inherit pkgs;
-        # system = "aarch64-linux";
+        raspi = lib.nixosSystem {
+          inherit pkgs;
+          system = "aarch64-linux";
 
-        # modules = [
-        # ./raspi/configuration.nix
-        # ];
-        # };
+          modules = [
+            ./raspi/configuration.nix
+          ];
+        };
 
       };
     };
