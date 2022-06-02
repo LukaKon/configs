@@ -5,10 +5,10 @@
     isNormalUser = true;
     home = "/home/kk";
     description = "kko";
-    extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker"];
+    extraGroups = [ "wheel" "networkmanager" ];
     shell = pkgs.zsh;
     packages = with pkgs;
-    [
-    ];
+      [
+      ];
   };
 }

@@ -1,17 +1,17 @@
 { config, pkgs, ... }:
 
 {
-    environment = {
-        systemPackages = with pkgs;
-        [
-            git
-            git-crypt
-            gnupg # gpg
-            pinentry-gnome
+  environment = {
+    systemPackages = with pkgs;
+      [
+        git
+        git-crypt
+        gnupg # gpg
+        # pinentry-gnome
 
         # terminal
-        # alacritty
-        foot
+        alacritty
+        # foot
         # wezterm
 
         # file managers
@@ -20,13 +20,13 @@
 
         # IDE
         # neovim-nightly
-        # neovim
+        neovim
         # spacevim
         # neovide
-        uivonim
+        # uivonim
         # sublime3
-        vscode
-        # vscodium
+        # vscode
+        vscodium
         # arduino
         # jetbrains.pycharm-community
         # jetbrains.pycharm-professional
@@ -40,30 +40,27 @@
 
         # graphics
         # blender
-        # darktable
+        darktable
         gimp
         krita
+        pinta
 
         # www
         firefox
-        geckodriver
-        qutebrowser
-        # vimb
         # brave
         # tor-browser-bundle-bin
-        # nyxt
 
         # snipping tool
-        shutter
+        flameshot
 
         # office
         libreoffice
 
         # media
-        feh # picture viewer
-        mpv # video player
-        libdvdcss # plugin to play cd/dvd in mpv
-        moc  # music player
+        # feh # picture viewer
+        # mpv # video player
+        # libdvdcss # plugin to play cd/dvd in mpv
+        # moc  # music player
         youtube-dl
 
         # packer
@@ -72,30 +69,27 @@
         xarchiver
         p7zip
 
-        nix-prefetch-git
+        # nix-prefetch-git
 
         tree
-        pstree  # process tree
+        pstree # process tree
         wget
         curl
         rsync
         bat # cat
-        fd  # find
+        fd # find
 
         nodejs
 
         # monitoring
-        bmon
-        htop
-        iotop
         lm_sensors
         ncdu # disk analisys
         sysstat
 
         # ueberzug
         fzf
-        xsel  # for copying
-        clipmenu  # for copying
+        xsel # for copying
+        # clipmenu  # for copying
 
         # (python39.withPackages(ps: with ps;
         # [
@@ -112,6 +106,6 @@
         #     pylint
         #     jupyter
         # ]))
-    ];
-};
+      ];
+  };
 }
