@@ -37,20 +37,19 @@
       # ./../modules/desktops/i3/i3.nix  # i3 window manager settings
       # ./../modules/desktops/spectrwm.nix
       #./../modules/desktops/qtile.nix
-        ./../modules/desktops/xfce.nix
+      ./../modules/desktops/xfce.nix
 
       # Virtualisation
       ./../modules/virtualisation/podman.nix # Podman
       ./../modules/virtualisation/docker.nix # Docker
       #./../modules/virtualisation/virt-manager.nix
     ];
-    
-     boot.loader.grub.enable = true;
-     boot.loader.grub.version = 2;
-     boot.loader.grub.device = "/dev/vda";
-     
-     # non-free
-  #nixpkgs.config.allowUnfree = true;
+
+  boot.loader.grub = {
+    enable = true;
+    version = 2;
+    device = "/dev/vda";
+  };
 
   # Localisation
   time.timeZone = "Europe/Warsaw";
