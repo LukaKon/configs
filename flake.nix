@@ -100,7 +100,28 @@
             )
           ];
         };
+        # virt
+        virt = lib.nixosSystem {
+          inherit system pkgs;
 
+          modules = [
+
+            ({ config, pkgs, ... }:
+              {
+                environment.systemPackages = with pkgs; [
+                  # packages.neovim-flake.${system}.default
+                  neovim-flake.defaultPackage.${system}
+                  # inputs.packages.neovim-flake.${system}.default
+                ];
+
+                imports =
+                  [
+                    ./virt/virt.nix
+                  ];
+              }
+            )
+          ];
+        };
         # raspberry
         nixos = lib.nixosSystem {
           #inherit pkgs;
