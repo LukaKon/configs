@@ -12,8 +12,9 @@
         gputils
 
         git
-        git-crypt
-        gnupg # gpg
+        x11_ssh_askpass
+        #git-crypt
+        #gnupg # gpg
         # pinentry-gnome
 
         # terminal
