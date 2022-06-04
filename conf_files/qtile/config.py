@@ -19,19 +19,12 @@ MF = 11
 LF = 12
 
 # colors
-GREY = "#d1d1d1"
 DARK_GREY = "#595959"
-LIGHT_BLUE = "#7bacd3"
-BLUE = "#6ea1f8"
-DARK_BLUE = "#2e0fce"
-ORANGE = "#ff9235"
-DARK_ORANGE = "#d16608"
 LIGHT_GREEN = "#8feecc"
-GREEN = "#31ce43"
-DARK_GREEN = "#4b8734"
-RED = "#ff4f4f"
 WHITE = "#ffffff"
-BLACK = "#000000"
+BACKGROUND="#041716"
+FRAME="#1ecbe1"
+FOCUSE_FRAME="#1d9de2"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -152,15 +145,15 @@ for gr in groups:
 layout_theme = {
     "border_width": 2,
     "margin": 0,
-    "border_focus": LIGHT_BLUE,
+    "border_focus": FOCUSE_FRAME,
     "border_normal": DARK_GREY,
 }
 
 layouts = [
     layout.Columns(border_focus_stack=[WHITE, LIGHT_GREEN], border_width=2),
     layout.Bsp(
-        border_focus=LIGHT_BLUE,
-        border_normal=GREY,
+        border_focus=FOCUSE_FRAME,
+        border_normal=FRAME,
         border_on_single=False,
         border_width=2,
         grow_ammount=5,
@@ -180,10 +173,10 @@ layouts = [
     # layout.Zoomy(),
 ]
 
-widget_defaults = dict(font=FONT, fontsize=MF, padding=3, background=DARK_GREY)
+widget_defaults = dict(font=FONT, fontsize=MF, padding=3, background=BACKGROUND)
 extension_defaults = widget_defaults.copy()
 
-separator = widget.Sep(foreground=LIGHT_GREEN, linewidth=3, padding=2)
+separator = widget.Sep(foreground=FRAME, linewidth=2, padding=2)
 
 battery = None
 net = None
@@ -243,6 +236,11 @@ screens = [
             24,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+            background=BACKGROUND,
+            border_color=FRAME,
+            border_width=[1,1,1,1],
+            margin=[1,1,1,1],
+            opacity=0
         ),
     ),
 ]
@@ -271,11 +269,11 @@ floating_layout = layout.Floating(
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
         Match(wm_class="confirmreset"),  # gitk
-        Match(wm_class="makebranch"),  # gitk
-        Match(wm_class="maketag"),  # gitk
+        #Match(wm_class="makebranch"),  # gitk
+        #Match(wm_class="maketag"),  # gitk
         Match(wm_class="ssh-askpass"),  # ssh-askpass
-        Match(title="branchdialog"),  # gitk
-        Match(title="pinentry"),  # GPG key password entry
+        #Match(title="branchdialog"),  # gitk
+        #Match(title="pinentry"),  # GPG key password entry
     ]
 )
 auto_fullscreen = True
@@ -294,4 +292,4 @@ auto_minimize = True
 #
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
-wmname = "LG3D"
+wmnameE= "LG3D"
