@@ -27,7 +27,7 @@
             opt = [
             ];
           };
-          customRC = builtins.readFile ./cm/init.lua; #./nvim.vim;
+          customRC = builtins.readFile ./init.lua; #./nvim.vim;
         };
       }
       )
