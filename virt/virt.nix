@@ -14,7 +14,6 @@
       # ./../modules/system/cron.nix
       ./../modules/system/shellAliases.nix # Shell aliases
       ./../modules/system/lk.nix
-      #./../modules/system/kk.nix
 
       # Security
       ./../modules/security/doas.nix # Add 'doas'
@@ -29,7 +28,7 @@
       # Programs
       ./../modules/programs/progr.nix
       ./../modules/programs/kakoune.nix
-      # ./../modules/programs/nvim/nvim.nix
+      ./../modules/programs/nvim/nvim.nix
       ./../modules/programs/zsh.nix
       #./../modules/programs/flatpak.nix
 
