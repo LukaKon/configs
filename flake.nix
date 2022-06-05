@@ -110,7 +110,7 @@
               {
                 environment.systemPackages = with pkgs; [
                   # packages.neovim-flake.${system}.default
-                  neovim-flake.defaultPackage.${system}
+                  #neovim-flake.defaultPackage.${system}
                   # inputs.packages.neovim-flake.${system}.default
                 ];
 
