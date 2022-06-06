@@ -25,6 +25,9 @@ WHITE = "#ffffff"
 BACKGROUND="#041716"
 FRAME="#1ecbe1"
 FOCUSE_FRAME="#1d9de2"
+INACTIVE_FRAME='#0f177d'
+URGENT='#d67f29'
+INACTIVE='#1b29e4'
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -89,18 +92,6 @@ keys = [
     # Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 1+ unmute")),
 ]
 
-# groups = [
-#      Group("term", layout='monadwide'),
-#      Group("dev", layout='monadtall'),
-#   Group("www", layout='monadtall'),
-#   Group("db", layout='monadtall'),
-#   Group("chat", layout='monadtall'),
-#   Group("virt", layout='monadtall'),
-#   Group("music", layout='monadtall'),
-#   Group("glances", layout='monadtall'),
-#   Group("game", layout='monadtall'),
-#   Group("float", layout='floating'),
-# ]
 groups = [
     Group("1", layout="Bsp"),
     Group("2", layout="monadtall"),
@@ -142,6 +133,19 @@ for gr in groups:
         ]
     )
 
+columns_layout={
+    'border_focus':FOCUSE_FRAME,
+    'border_normal':INACTIVE_FRAME,
+    'border_width':2,
+}
+bsp_layout={
+    'border_focus':FOCUSE_FRAME,
+    'border_normal':FRAME,
+    'border_on_single':False,
+    'border_width':2,
+    'grow_ammount':5,
+    'ratio':1.6,
+}
 layout_theme = {
     "border_width": 2,
     "margin": 0,
@@ -150,15 +154,8 @@ layout_theme = {
 }
 
 layouts = [
-    layout.Columns(border_focus_stack=[WHITE, LIGHT_GREEN], border_width=2),
-    layout.Bsp(
-        border_focus=FOCUSE_FRAME,
-        border_normal=FRAME,
-        border_on_single=False,
-        border_width=2,
-        grow_ammount=5,
-        ratio=1.6,
-    ),
+    layout.Columns(**columns_layout),
+    layout.Bsp(**bsp_layout),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -209,15 +206,23 @@ screens = [
         top=bar.Bar(
             [
                 widget.CurrentLayout(),
-                widget.GroupBox(),
+                widget.GroupBox(
+                    active=WHITE,
+                    borderwidth=2,
+                    disable_drag=True,
+                    highlight_method='border',
+                    this_current_screen_border=FOCUSE_FRAME,
+                    urgent_border=URGENT,
+                    inactive=INACTIVE,
+                ),
                 widget.Prompt(),
                 widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
+                # widget.Chord(
+                #     chords_colors={
+                #         "launch": ("#ff0000", "#ffffff"),
+                #     },
+                #     name_transform=lambda name: name.upper(),
+                # ),
                 *battery,
                 separator,
                 widget.CPU(),

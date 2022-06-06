@@ -23,8 +23,9 @@
     #  url = "github:LukaKon/neovim-flake_WT";
     #};
     neovim-flake = {
-      #url = "github:jordanisaacs/neovim-flake";
+      # url = "github:jordanisaacs/neovim-flake";
       url = "github:wiltaylor/neovim-flake";
+
     };
   };
 
@@ -88,7 +89,8 @@
               #nixpkgs.overlays = [overlay-neovim];
               environment.systemPackages = with pkgs; [
                 #inputs.neovim-flake.defaultPackage.${system}
-                #neovim-flake.defaultPackage.${system}
+                neovim-flake.defaultPackage.${system}
+                # packages.neovim-flake.${system}.default
                 # neovim
               ];
 
@@ -100,6 +102,7 @@
             )
           ];
         };
+
         # virt
         virt = lib.nixosSystem {
           inherit system pkgs;
@@ -125,7 +128,7 @@
         # raspberry
         nixos = lib.nixosSystem {
           #inherit pkgs;
-	  nixpkgs = self.nixpkgs;
+          nixpkgs = self.nixpkgs;
           system = "aarch64-linux";
 
           modules = [
