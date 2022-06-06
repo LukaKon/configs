@@ -155,11 +155,10 @@ layout_theme = {
 
 layouts = [
     layout.Columns(**columns_layout),
-    layout.Bsp(**bsp_layout),
+    # layout.Bsp(**bsp_layout),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
-    # layout.Bsp(**layout_theme),
     # layout.Matrix(),
     layout.MonadTall(**layout_theme),
     layout.MonadWide(**layout_theme),
