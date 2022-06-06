@@ -30,12 +30,12 @@
               FixCursorHold-nvim
 
               # cmp plugins
-             nvim-cmp
-             cmp-buffer
-             cmp-path
-             cmp-cmdline
-             cmp_luasnip
-             cmp-nvim-lsp
+              nvim-cmp
+              cmp-buffer
+              cmp-path
+              cmp-cmdline
+              cmp_luasnip
+              cmp-nvim-lsp
 
               # snippets
               luasnip
@@ -48,16 +48,13 @@
               # Treesitter
               nvim-treesitter
 
-             nvim-comment
-             # git
-             gitsigns-nvim
-             
-             
-             
+              nvim-comment
+              # git
+              gitsigns-nvim
 
               #gruvbox-community
               gruvbox
-          
+
             ];
             opt = [
             ];

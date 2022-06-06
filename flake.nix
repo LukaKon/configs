@@ -25,7 +25,6 @@
     neovim-flake = {
       # url = "github:jordanisaacs/neovim-flake";
       url = "github:wiltaylor/neovim-flake";
-
     };
   };
 
@@ -48,7 +47,7 @@
         # pkgs = import nixpkgs {
         inherit system; # overlays;
         config.allowUnfree = true;
-        #overlays = [ ];
+        # overlays = [ neovim-flake.overlay ];
       };
 
 
@@ -91,7 +90,7 @@
                 #inputs.neovim-flake.defaultPackage.${system}
                 neovim-flake.defaultPackage.${system}
                 # packages.neovim-flake.${system}.default
-                # neovim
+                # neovim-nightly
               ];
 
               imports =
