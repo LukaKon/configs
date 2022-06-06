@@ -33,10 +33,10 @@
         ungoogled-chromium
 
         # IDE/editors
-        # helix
-        #nodePackages.vscode-langservers-extracted
-        #nodePackages.dockerfile-language-server-nodejs
-        #nodePackages.typescript-language-server
+        helix
+        nodePackages.vscode-langservers-extracted
+        nodePackages.dockerfile-language-server-nodejs
+        nodePackages.typescript-language-server
 
         rnix-lsp
         nixfmt
@@ -59,8 +59,8 @@
 
         # video conference
         #zoom-us
-         #jitsi-meet
-         #jitsi-meet-electron
+        #jitsi-meet
+        #jitsi-meet-electron
 
         # LaTeX
         texlive.combined.scheme-full

@@ -40,9 +40,6 @@
 
         freetube
 
-        # cd burner
-        #brasero
-
         # office
         libreoffice
 
@@ -72,7 +69,6 @@
         # ncdu # disk analisys
         sysstat
 
-        # ueberzug
         xsel # for copying
         clipmenu # for copying
       ];

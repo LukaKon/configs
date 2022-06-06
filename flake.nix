@@ -47,13 +47,18 @@
         # pkgs = import nixpkgs {
         inherit system; # overlays;
         config.allowUnfree = true;
-        # overlays = [ neovim-flake.overlay ];
+        overlays = [
+          (final: prev: {
+            # neovim = neovim-flake.defaultPackage.${system};
+          })
+        ];
       };
 
 
     in
-    {
+    rec {
 
+      defaultPackage.${system} = self.packages.${system}.neovim-flake;
       nixosConfigurations = {
 
         # desktop
@@ -90,7 +95,7 @@
                 #inputs.neovim-flake.defaultPackage.${system}
                 neovim-flake.defaultPackage.${system}
                 # packages.neovim-flake.${system}.default
-                # neovim-nightly
+                # neovim
               ];
 
               imports =
