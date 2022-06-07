@@ -71,19 +71,25 @@
         # mindforger
 
         nodePackages.pyright
+
         (python310.withPackages (ps: with ps;
         [
           ptpython
-          #python-lsp-server
+
+          python-lsp-server
+          pylsp-mypy
+          pyls-isort
+          rope
           autopep8
-          # flake8
-          colorama
+          flake8
+
+          # colorama
           psutil
           pip
           pynvim
           yapf
           jedi
-          # pylint
+          pylint
           # jupyter
         ]))
       ];
