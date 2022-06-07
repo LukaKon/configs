@@ -27,7 +27,8 @@
   #hardware.pulseaudio.enable = false;
 
   # non-free
-  nixpkgs.config.allowUnfree = true;
+  # already in flake
+  # nixpkgs.config.allowUnfree = true;
 
   # Localisation
   time.timeZone = "Europe/Warsaw";

@@ -12,6 +12,6 @@
   environment.systemPackages = with pkgs; [
     podman-compose
     # distrobox
-    podman-tui
+    # podman-tui
   ];
 }

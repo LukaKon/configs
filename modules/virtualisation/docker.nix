@@ -11,6 +11,4 @@
     # arion
     lazydocker
   ];
-
-  # users.users.<myuser>.extraGroups = [ "docker" ];
 }
