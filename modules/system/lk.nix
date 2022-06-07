@@ -33,7 +33,10 @@
         ungoogled-chromium
 
         # IDE/editors
+        #lapce
+        
         helix
+
         nodePackages.vscode-langservers-extracted
         nodePackages.dockerfile-language-server-nodejs
         nodePackages.typescript-language-server
