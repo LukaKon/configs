@@ -33,8 +33,8 @@
         ungoogled-chromium
 
         # IDE/editors
-        #lapce
-        
+        # lapce
+
         helix
 
         nodePackages.vscode-langservers-extracted
