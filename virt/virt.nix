@@ -26,7 +26,7 @@
       #./../modules/services/remote.nix # remote server/desktop
 
       # Programs
-      ./../modules/programs/progr.nix
+      ./../modules/programs/progr_virt.nix
       ./../modules/programs/kakoune.nix
       ./../modules/programs/nvim/nvim.nix
       ./../modules/programs/zsh.nix
