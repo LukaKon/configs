@@ -35,7 +35,7 @@
         # IDE/editors
         # lapce
 
-        jre8
+        #jre8
         helix
 
         nodePackages.vscode-langservers-extracted
