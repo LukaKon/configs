@@ -23,7 +23,7 @@
     #  url = "github:LukaKon/neovim-flake_WT";
     #};
     neovim-flake = {
-      # url = "github:jordanisaacs/neovim-flake";
+      #url = "github:jordanisaacs/neovim-flake";
       url = "github:wiltaylor/neovim-flake";
     };
   };
