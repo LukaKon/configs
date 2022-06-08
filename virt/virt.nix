@@ -34,7 +34,7 @@
 
       # Desktops
       # ./../modules/desktops/i3/i3.nix  # i3 window manager settings
-      # ./../modules/desktops/spectrwm.nix
+      ./../modules/desktops/spectrwm.nix
       #./../modules/desktops/qtile.nix
       ./../modules/desktops/xfce.nix
 
