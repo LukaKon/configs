@@ -24,7 +24,8 @@
     #};
     neovim-flake = {
       #url = "github:jordanisaacs/neovim-flake";
-      url = "github:wiltaylor/neovim-flake";
+      #url = "github:wiltaylor/neovim-flake";
+      url = "github:lukakon/neovim-flake";
     };
   };
 
@@ -53,11 +54,8 @@
           })
         ];
       };
-
-
     in
     rec {
-
       defaultPackage.${system} = self.packages.${system}.neovim-flake;
       nixosConfigurations = {
 
@@ -117,7 +115,7 @@
               {
                 environment.systemPackages = with pkgs; [
                   # packages.neovim-flake.${system}.default
-                  #neovim-flake.defaultPackage.${system}
+                  neovim-flake.defaultPackage.${system}
                   # inputs.packages.neovim-flake.${system}.default
                 ];
 

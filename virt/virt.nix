@@ -27,8 +27,8 @@
 
       # Programs
       ./../modules/programs/progr_virt.nix
-      ./../modules/programs/kakoune.nix
-      ./../modules/programs/nvim/nvim.nix
+      #./../modules/programs/kakoune.nix
+      #./../modules/programs/nvim/nvim.nix
       ./../modules/programs/zsh.nix
       #./../modules/programs/flatpak.nix
 
@@ -36,7 +36,7 @@
       # ./../modules/desktops/i3/i3.nix  # i3 window manager settings
       ./../modules/desktops/spectrwm.nix
       #./../modules/desktops/qtile.nix
-      ./../modules/desktops/xfce.nix
+      #./../modules/desktops/xfce.nix
 
       # Virtualisation
       ./../modules/virtualisation/podman.nix # Podman

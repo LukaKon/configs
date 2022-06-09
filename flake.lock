@@ -250,15 +250,15 @@
         "vimagit": "vimagit"
       },
       "locked": {
-        "lastModified": 1643192502,
-        "narHash": "sha256-zQYfeYV3TWXWD2IWtUPy2WETMfVXthRL88WvN0EuUJw=",
-        "owner": "wiltaylor",
+        "lastModified": 1649098948,
+        "narHash": "sha256-mbNNTumFedL7/5H0NHd17kGAzLKaNPkYtIuM4La1A6I=",
+        "owner": "lukakon",
         "repo": "neovim-flake",
-        "rev": "c3a9b2c64112121cc243c8a7debd22b0636b5630",
+        "rev": "3e0698e56e9846b663fbec48d37e22d13fefaf65",
         "type": "github"
       },
       "original": {
-        "owner": "wiltaylor",
+        "owner": "lukakon",
         "repo": "neovim-flake",
         "type": "github"
       }
@@ -270,11 +270,11 @@
         "nixpkgs-regression": "nixpkgs-regression"
       },
       "locked": {
-        "lastModified": 1654688049,
-        "narHash": "sha256-9uWAdw2HF0CRQi7hdRKn272IGYmI8jwlwwF4/NeE6bs=",
+        "lastModified": 1654775328,
+        "narHash": "sha256-Zg3Sq/BN5IIZrPj4VQnHNABgr9+R6OnizKPK2IqCUpk=",
         "owner": "NixOS",
         "repo": "nix",
-        "rev": "694b12052a2f3c830daa3acc7696b31a04afe329",
+        "rev": "1bc17ae6174b6307d2e1968583b527379c4a7019",
         "type": "github"
       },
       "original": {
@@ -317,11 +317,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1654593855,
-        "narHash": "sha256-c+SyXvj7THre87OyIdZfRVR+HhI/g1ZDrQ3VUtTuHkU=",
+        "lastModified": 1654682581,
+        "narHash": "sha256-Jb1PQCwKgwdNAp907eR5zPzuxV+kRroA3UIxUxCMJ9s=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "033bd4fa9a8fbe0c68a88e925d9a884161044b25",
+        "rev": "e0169d7a9d324afebf5679551407756c77af8930",
         "type": "github"
       },
       "original": {
