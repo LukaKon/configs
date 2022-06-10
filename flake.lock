@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "completion-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1634068787,
-        "narHash": "sha256-6um9dye0MLY8K8AAsDksCpy1KbMNSdMuj+zKteSAxR4=",
-        "owner": "nvim-lua",
-        "repo": "completion-nvim",
-        "rev": "87b0f86da3dffef63b42845049c648b5d90f1c4d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nvim-lua",
-        "repo": "completion-nvim",
-        "type": "github"
-      }
-    },
     "editorconfig-vim": {
       "flake": false,
       "locked": {
@@ -218,7 +202,6 @@
     },
     "neovim-flake": {
       "inputs": {
-        "completion-nvim": "completion-nvim",
         "editorconfig-vim": "editorconfig-vim",
         "fugitive": "fugitive",
         "gruvbox": "gruvbox",
@@ -250,11 +233,11 @@
         "vimagit": "vimagit"
       },
       "locked": {
-        "lastModified": 1649098948,
-        "narHash": "sha256-mbNNTumFedL7/5H0NHd17kGAzLKaNPkYtIuM4La1A6I=",
+        "lastModified": 1654795413,
+        "narHash": "sha256-fRLOBG064LBUAGEQEoipmbhTsYmjFKtG5DEjBG+CAlE=",
         "owner": "lukakon",
         "repo": "neovim-flake",
-        "rev": "3e0698e56e9846b663fbec48d37e22d13fefaf65",
+        "rev": "f16c291d3ab3b4ddb28b2e9e23976fa5a259bd52",
         "type": "github"
       },
       "original": {
@@ -270,11 +253,11 @@
         "nixpkgs-regression": "nixpkgs-regression"
       },
       "locked": {
-        "lastModified": 1654775328,
-        "narHash": "sha256-Zg3Sq/BN5IIZrPj4VQnHNABgr9+R6OnizKPK2IqCUpk=",
+        "lastModified": 1654860990,
+        "narHash": "sha256-CKg+p5wJetRWaLP1iZovhFP3OMvDObJgY3vn011nwpU=",
         "owner": "NixOS",
         "repo": "nix",
-        "rev": "1bc17ae6174b6307d2e1968583b527379c4a7019",
+        "rev": "e557f86490ad1d198c363e3f6ab94acf6c508242",
         "type": "github"
       },
       "original": {
@@ -378,11 +361,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1654622265,
-        "narHash": "sha256-AltUA8bPbXeRgzcDhQEURVHqQhTByxk6Xtgf+CYmEFk=",
+        "lastModified": 1654758790,
+        "narHash": "sha256-bXimktlkjL9s8ldMzMBslxEs80cjZDqrof1g8MbhmQI=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "11e805f9935f6ab4b049351ac14f2d1aa93cf1d3",
+        "rev": "e5556c75ac012ee6e03f39a56c1c51b0f7d658c2",
         "type": "github"
       },
       "original": {
