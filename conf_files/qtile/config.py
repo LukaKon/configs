@@ -86,8 +86,8 @@ keys = [
     Key([mod], "y", lazy.spawn("freetube"), desc="Launch free tube"),
     Key([mod], "z", lazy.spawn("slack"), desc="Launch slack"),
     Key([mod], "f", lazy.spawn("flameshot"), desc="Launch flameshot"),
-    Key([mod], "r", lazy.spawn('rofi -show run', desc='Search and launch program')),
-    Key([mod], "s", lazy.spawn('rofi -show window', desc='Switch to opened program')),
+    Key([mod], "r", lazy.spawn('rofi -show run'), desc='Search and launch program'),
+    Key([mod], "s", lazy.spawn('rofi -show window'), desc='Switch to opened program'),
     # Key([mod], "j", lazy.spawn("jitsi-meet-electron"), desc="Launch jitsi"),
     # Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
     # Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 1- unmute")),
@@ -216,7 +216,7 @@ screens = [
                     urgent_border=URGENT,
                     inactive=INACTIVE,
                 ),
-                widget.Prompt(),
+                #widget.Prompt(), # rofi installed
                 widget.WindowName(),
                 # widget.Chord(
                 #     chords_colors={
