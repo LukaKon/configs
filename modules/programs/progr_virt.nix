@@ -17,19 +17,24 @@
         #gnupg # gpg
         # pinentry-gnome
 
-        eclipses.eclipse-sdk
-        eclipses.eclipse-cpp
-        eclipses.eclipse-platform
-        eclipses.eclipse-committers
+        #eclipses.eclipse-sdk
+        #eclipses.eclipse-cpp
+        #eclipses.eclipse-platform
+        #eclipses.eclipse-committers
 
-        kdevelop
+        #kdevelop
+        #kdev-python
+
+        #lapce
+
+        vscode
 
         # terminal
         alacritty
         # foot
 
         # file managers
-        vifm-full
+        #vifm-full
         # ranger
         fzf
         ripgrep

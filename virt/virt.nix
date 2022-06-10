@@ -30,13 +30,7 @@
       #./../modules/programs/kakoune.nix
       #./../modules/programs/nvim/nvim.nix
       ./../modules/programs/zsh.nix
-      #./../modules/programs/flatpak.nix
-
-      # Desktops
-      # ./../modules/desktops/i3/i3.nix  # i3 window manager settings
-      ./../modules/desktops/spectrwm.nix
-      #./../modules/desktops/qtile.nix
-      #./../modules/desktops/xfce.nix
+      ./../modules/programs/flatpak.nix
 
       # Virtualisation
       ./../modules/virtualisation/podman.nix # Podman
@@ -49,6 +43,18 @@
     version = 2;
     device = "/dev/vda";
   };
+
+  services.xserver = {
+      enable = true;
+
+      displayManager.lightdm.enable = true;
+      # displayManager.gdm.wayland.enable = true;
+      desktopManager.xfce.enable = true;
+      #windowManager.openbox.enable = true;
+
+      layout = "pl";
+  };
+
 
   # Localisation
   time.timeZone = "Europe/Warsaw";
@@ -64,7 +70,7 @@
     gc = {
       automatic = true;
       dates = "daily";
-      options = "--delete-older-than 9d";
+      options = "--delete-older-than 3d";
     };
 
     maxJobs = lib.mkDefault 4;
