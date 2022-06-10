@@ -31,7 +31,7 @@
       # Programs
       ./../modules/programs/progr.nix
       # ./../modules/programs/nvim/nvim.nix
-      ./../modules/programs/kakoune.nix
+      #./../modules/programs/kakoune.nix
       ./../modules/programs/zsh.nix
       #./../modules/programs/flatpak.nix
 
