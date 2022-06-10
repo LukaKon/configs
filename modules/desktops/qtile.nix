@@ -15,4 +15,11 @@
 
     layout = "pl";
   };
+
+  environment = {
+    systemPackages = with pkgs;
+      [
+        rofi
+      ];
+  };
 }

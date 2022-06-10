@@ -75,7 +75,7 @@ keys = [
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    # Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"), # because of installed rofi
     # programs
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "b", lazy.spawn(browser), desc="Launch web browser"),
@@ -86,6 +86,8 @@ keys = [
     Key([mod], "y", lazy.spawn("freetube"), desc="Launch free tube"),
     Key([mod], "z", lazy.spawn("slack"), desc="Launch slack"),
     Key([mod], "f", lazy.spawn("flameshot"), desc="Launch flameshot"),
+    Key([mod], "r", lazy.spawn('rofi -show run', desc='Search and launch program')),
+    Key([mod], "s", lazy.spawn('rofi -show window', desc='Switch to opened program')),
     # Key([mod], "j", lazy.spawn("jitsi-meet-electron"), desc="Launch jitsi"),
     # Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
     # Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 1- unmute")),
