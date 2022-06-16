@@ -8,7 +8,6 @@
 
       # System
       #./../modules/system/system.nix # Base system settings
-      ./../modules/system/network.nix # Network configuration
       ./../modules/system/fonts.nix
       ./../modules/system/env_variables.nix
       # ./../modules/system/cron.nix
@@ -45,16 +44,22 @@
   };
 
   services.xserver = {
-      enable = true;
+    enable = true;
 
-      displayManager.lightdm.enable = true;
-      # displayManager.gdm.wayland.enable = true;
-      desktopManager.xfce.enable = true;
-      #windowManager.openbox.enable = true;
+    displayManager.lightdm.enable = true;
+    # displayManager.gdm.wayland.enable = true;
+    desktopManager.xfce.enable = true;
+    #windowManager.openbox.enable = true;
 
-      layout = "pl";
+    layout = "pl";
   };
 
+  networking = {
+    hostName = "virt"; # Define your hostname.
+    #domain = "luka.fuji.org";
+
+    networkmanager.enable = true;
+  };
 
   # Localisation
   time.timeZone = "Europe/Warsaw";
