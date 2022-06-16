@@ -66,6 +66,20 @@
         #jitsi-meet
         #jitsi-meet-electron
 
+        # file managers
+        vifm-full
+        # ranger
+        fzf
+        ripgrep
+
+        # graphics
+        # blender
+        darktable
+
+        # media
+        feh # picture viewer
+        moc # music player
+
         # LaTeX
         texlive.combined.scheme-full
         # texstudio

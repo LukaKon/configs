@@ -9,6 +9,9 @@
     shell = pkgs.zsh;
     packages = with pkgs;
       [
+        gimp
+        krita
+        mypaint
       ];
   };
 }

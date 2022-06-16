@@ -21,17 +21,6 @@
         alacritty
         # foot
 
-        # file managers
-        vifm-full
-        # ranger
-        fzf
-        ripgrep
-
-        # graphics
-        # blender
-        darktable
-        gimp
-        krita
         flameshot
 
         # www
@@ -43,9 +32,6 @@
         # office
         libreoffice
 
-        # media
-        feh # picture viewer
-        moc # music player
         youtube-dl
 
         # packer
