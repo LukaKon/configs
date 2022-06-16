@@ -5,6 +5,7 @@
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = false;
+    loader.efi.efiSysMountPoint = "/boot/efi";
     cleanTmpDir = true;
     supportedFilesystems = [ "ntfs" ];
   };
