@@ -106,13 +106,13 @@
         };
 
         # kk virt desktop
-        kkvirt = lib.nixosSystem {
+        kkvirt = nixpkgs.lib.nixosSystem {
           # inherit system pkgs;
           inherit system;
 
           modules = [
 
-            ({ config, nixpkgs, ... }:
+            ({ config, pkgs, ... }:
               {
                 imports =
                   [
