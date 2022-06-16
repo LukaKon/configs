@@ -38,4 +38,6 @@
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
     networkmanager.enable = true;
   };
+
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
 }

@@ -46,7 +46,7 @@
         nixfmt
         nixpkgs-fmt
 
-        # spacevim
+        spacevim
         # vscode
         vscodium
         arduino
