@@ -27,7 +27,7 @@
 
   # non-free
   # already in flake
-  # nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
 
   # Localisation
   time.timeZone = "Europe/Warsaw";
