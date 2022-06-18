@@ -46,5 +46,11 @@
       ./../modules/virtualisation/docker.nix # Docker
       ./../modules/virtualisation/virt-manager.nix
     ];
-	networking.hostId = "8bd23953";
+
+  networking.hostId = "8bd23953";
+
+  # ZFS services
+  # services.zfs.autoSnapshot.enable = true;
+  # services.zfs.autoScrub.enable = true;
+
 }

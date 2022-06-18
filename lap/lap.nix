@@ -44,4 +44,6 @@
       ./../modules/virtualisation/podman.nix
       ./../modules/virtualisation/virt-manager.nix
     ];
+
+  networking.hostId = "d2ede719";
 }

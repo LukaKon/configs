@@ -9,11 +9,11 @@
     cleanTmpDir = true;
     supportedFilesystems = [ "ntfs" "zfs" ];
   };
-  
-# ZFS services
+
+  # ZFS services
   services.zfs.autoSnapshot.enable = true;
   services.zfs.autoScrub.enable = true;
-  
+
   powerManagement = {
     enable = true;
     cpuFreqGovernor = lib.mkDefault "powersave";
