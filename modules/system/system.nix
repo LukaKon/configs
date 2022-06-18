@@ -7,9 +7,13 @@
     loader.efi.canTouchEfiVariables = false;
     #loader.efi.efiSysMountPoint = "/boot/efi";
     cleanTmpDir = true;
-    supportedFilesystems = [ "ntfs" ];
+    supportedFilesystems = [ "ntfs" "zfs" ];
   };
-
+  
+# ZFS services
+  services.zfs.autoSnapshot.enable = true;
+  services.zfs.autoScrub.enable = true;
+  
   powerManagement = {
     enable = true;
     cpuFreqGovernor = lib.mkDefault "powersave";

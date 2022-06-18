@@ -8,7 +8,7 @@
 
       # System
       ./../modules/system/system.nix # Base system settings
-      ./../modules/system/btrfs.nix
+      #./../modules/system/btrfs.nix
       ./../modules/system/network.nix # Network configuration
       ./../modules/system/nvidia.nix
       # ./../modules/system/nouveau.nix
@@ -46,4 +46,5 @@
       ./../modules/virtualisation/docker.nix # Docker
       ./../modules/virtualisation/virt-manager.nix
     ];
+	networking.hostId = "8bd23953";
 }
