@@ -8,7 +8,7 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
@@ -28,23 +28,18 @@
       fsType = "vfat";
     };
 
-  fileSystems."/home/lk/usb" =
-    { device = "/dev/disk/by-uuid/e779f41f-9817-4a88-a1c5-f0e35e084113";
-      fsType = "btrfs";
-    };
-
   fileSystems."/home/lk/dev" =
-    { device = "tank_dev";
-      fsType = "zfs";
-    };
-
-  fileSystems."/home/lk/data" =
-    { device = "tank_data";
+    { device = "tdev";
       fsType = "zfs";
     };
 
   fileSystems."/home/lk/vm" =
-    { device = "tank_vm";
+    { device = "tvm";
+      fsType = "zfs";
+    };
+
+  fileSystems."/home/lk/data" =
+    { device = "tdata";
       fsType = "zfs";
     };
 
