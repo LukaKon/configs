@@ -37,6 +37,8 @@
       #./../modules/virtualisation/virt-manager.nix
     ];
 
+
+  loader.efi.efiSysMountPoint = "/boot/efi";
   boot.loader.grub = {
     enable = true;
     version = 2;

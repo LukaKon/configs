@@ -13,18 +13,12 @@ in
     "${fetchTarball "https://github.com/NixOS/nixos-hardware/archive/936e4649098d6a5e0762058cb7687be1b2d90550.tar.gz" }/raspberry-pi/4"
 
     # ./../modules/system/fonts.nix
-    ./../modules/system/shellAliases.nix
-    # ./../modules/system/kk.nix
-    ./../modules/services/openssh.nix
-    #./modules/virtualisation/docker.nix
-    ./../modules/virtualisation/virt-manager.nix
-    ./../modules/security/doas.nix
-    ./../modules/security/firewall.nix
-    ./../modules/programs/progr.nix
-    #./../modules/programs/flatpak.nix
-    ./../modules/programs/zsh.nix
-    # ./../modules/desktops/xfce.nix
-    ./../modules/desktops/sepctrwm.nix
+    modules/system/shellAliases.nix
+    modules/services/openssh.nix
+    modules/virtualisation/virt-manager.nix
+    modules/security/doas.nix
+    modules/programs/flatpak.nix
+    modules/desktops/spectrwm.nix
   ];
 
   boot = {
@@ -112,6 +106,38 @@ in
       packages = with pkgs;
         [
           neovim
+
+          psutils
+          pciutils
+          gputils
+
+          git
+          x11_ssh_askpass
+          #git-crypt
+          #gnupg # gpg
+          # pinentry-gnome
+
+          # terminal
+          alacritty
+          # foot
+
+
+          nix-prefetch-git
+
+          tree
+          pstree # process tree
+          wget
+          curl
+          rsync
+          bat # cat
+          fd # find
+
+          lm_sensors
+          # ncdu # disk analisys
+          sysstat
+
+          xsel # for copying
+          clipmenu # for copying
         ];
     };
   };
