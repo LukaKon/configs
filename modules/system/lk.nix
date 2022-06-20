@@ -50,8 +50,8 @@
         qmk-udev-rules
 
         # www
-        # qutebrowser
-        ungoogled-chromium
+        qutebrowser
+        # ungoogled-chromium
 
         # IDE/editors
         # lapce

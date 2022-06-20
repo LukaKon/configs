@@ -79,7 +79,7 @@ keys = [
     # programs
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "b", lazy.spawn(browser), desc="Launch web browser"),
-    Key([mod], "g", lazy.spawn("chromium"), desc="Launch chromium"),
+    Key([mod], "g", lazy.spawn("qutebrowser"), desc="Launch qutebrowser"),
     Key([mod], "c", lazy.spawn("codium"), desc="Launch vscodium"),
     Key([mod], "d", lazy.spawn("dbeaver"), desc="Launch dbeaver"),
     Key([mod], "v", lazy.spawn("virt-manager"), desc="Launch virt-manager"),
