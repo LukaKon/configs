@@ -9,6 +9,27 @@
     shell = pkgs.zsh;
     packages = with pkgs;
       [
+
+        # www
+        firefox
+        # brave
+
+        flameshot
+
+
+        freetube
+
+        # office
+        libreoffice
+
+        youtube-dl
+
+        # packer
+        unzip
+        unar
+        xarchiver
+        p7zip
+
         # dotnet-sdk
         clang
         clang-tools
@@ -86,6 +107,8 @@
         # mindforger
 
         nodePackages.pyright
+
+        glances
 
         (python310.withPackages (ps: with ps;
         [

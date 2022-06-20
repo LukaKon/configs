@@ -1,30 +1,29 @@
-
-{config, lib, pkgs, ...}:
+{ config, lib, pkgs, ... }:
 
 {
-	services = {
-		xserver = {
-			enable = true;
+  services = {
+    xserver = {
+      enable = true;
 
-			# displayManager.lightdm.enable = true;
-			# displayManager.defaultSession = "none+spectrwm";
+      # displayManager.lightdm.enable = true;
+      # displayManager.defaultSession = "none+spectrwm";
 
-			desktopManager.xterm.enable = false;
+      desktopManager.xterm.enable = false;
 
-			windowManager.spectrwm = {
-				enable = true;
-			};
+      windowManager.spectrwm = {
+        enable = true;
+      };
 
-			layout = "pl";
-		};
+      layout = "pl";
+    };
 
-		autorandr.enable = true;
-	};
-	environment = {
-		systemPackages = with pkgs; [
-			xlockmore
-			dmenu
-		];
+    autorandr.enable = true;
+  };
+  environment = {
+    systemPackages = with pkgs; [
+      # xlockmore
+      dmenu
+    ];
 
-	};
+  };
 }

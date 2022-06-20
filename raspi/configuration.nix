@@ -10,20 +10,21 @@ let
 in
 {
   imports = [
-    # "${fetchTarball "https://github.com/NixOS/nixos-hardware/archive/936e4649098d6a5e0762058cb7687be1b2d90550.tar.gz" }/raspberry-pi/4"
+    "${fetchTarball "https://github.com/NixOS/nixos-hardware/archive/936e4649098d6a5e0762058cb7687be1b2d90550.tar.gz" }/raspberry-pi/4"
 
-    ./../modules/system/fonts.nix
+    # ./../modules/system/fonts.nix
     ./../modules/system/shellAliases.nix
-    ./../modules/system/kk.nix
+    # ./../modules/system/kk.nix
     ./../modules/services/openssh.nix
     #./modules/virtualisation/docker.nix
     ./../modules/virtualisation/virt-manager.nix
     ./../modules/security/doas.nix
     ./../modules/security/firewall.nix
-    ./../modules/programs/raspi_progr.nix
+    ./../modules/programs/progr.nix
     #./../modules/programs/flatpak.nix
     ./../modules/programs/zsh.nix
-    ./../modules/desktops/xfce.nix
+    # ./../modules/desktops/xfce.nix
+    ./../modules/desktops/sepctrwm.nix
   ];
 
   boot = {
@@ -43,7 +44,7 @@ in
       };
       #generic-extlinux-compatible.enable = true;
     };
-	cleanTmpDir = true;
+    cleanTmpDir = true;
   };
 
   #hardware.enableRedistributableFirmware = true;
@@ -55,6 +56,8 @@ in
       options = [ "noatime" ];
     };
   };
+
+  swapDevices = [{ device = "/swapfile"; size = 1024; }];
 
   nixpkgs.config.allowUnfree = true;
 
@@ -83,6 +86,8 @@ in
       options = "--delete-older-than 7d";
     };
 
+    maxJobs = lib.mkDefault 4;
+
     # For nix flakes
     extraOptions = "experimental-features = nix-command flakes";
     package = pkgs.nixFlakes;
@@ -102,17 +107,17 @@ in
     users."${user}" = {
       isNormalUser = true;
       password = password;
-      extraGroups = [ "wheel" "networkmanager" "docker" ];
+      extraGroups = [ "wheel" "networkmanager" "libvirtd" ];
       shell = pkgs.zsh;
       packages = with pkgs;
         [
-          #exercism
+          neovim
         ];
     };
   };
 
-  # Enable GPU acceleration
-  # hardware.raspberry-pi."4".fkms-3d.enable = true;
+  ### Enable GPU acceleration
+  hardware.raspberry-pi."4".fkms-3d.enable = true;
 
   hardware.pulseaudio = {
     enable = true;

@@ -21,24 +21,6 @@
         alacritty
         # foot
 
-        flameshot
-
-        # www
-        firefox
-        # brave
-
-        freetube
-
-        # office
-        libreoffice
-
-        youtube-dl
-
-        # packer
-        unzip
-        unar
-        xarchiver
-        p7zip
 
         nix-prefetch-git
 
@@ -50,7 +32,6 @@
         bat # cat
         fd # find
 
-        glances
         lm_sensors
         # ncdu # disk analisys
         sysstat
