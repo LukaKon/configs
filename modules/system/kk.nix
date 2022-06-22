@@ -9,6 +9,7 @@
     shell = pkgs.zsh;
     packages = with pkgs;
       [
+	firefox
         gimp
         krita
         mypaint

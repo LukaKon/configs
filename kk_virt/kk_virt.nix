@@ -8,7 +8,7 @@
 
       # System
       ./../modules/system/system.nix # Base system settings
-      ./../modules/system/fonts.nix
+      #./../modules/system/fonts.nix
       ./../modules/system/env_variables.nix
       # ./../modules/system/cron.nix
       ./../modules/system/shellAliases.nix # Shell aliases
