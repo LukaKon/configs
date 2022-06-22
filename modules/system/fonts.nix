@@ -10,7 +10,7 @@
       ubuntu_font_family
       corefonts
       noto-fonts-emoji
-      monoid
+      #monoid
       # joypixels
       nerdfonts
       font-awesome
