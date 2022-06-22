@@ -72,7 +72,7 @@
         vscodium
         arduino
         # jetbrains.pycharm-community
-        jetbrains.pycharm-professional
+        #jetbrains.pycharm-professional
         # unityhub
         dbeaver
 
@@ -88,7 +88,7 @@
         #jitsi-meet-electron
 
         # file managers
-        vifm-full
+        #vifm-full
         # ranger
         fzf
         ripgrep
