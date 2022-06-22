@@ -31,11 +31,10 @@
       # Desktops
       ./../modules/desktops/xfce.nix
     ];
+networking.hostId="8556b001";
 
   networking = {
     hostName = "kkvirt"; # Define your hostname.
-    # domain = "luka.fuji.org";
-    # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
     networkmanager.enable = true;
   };
 
