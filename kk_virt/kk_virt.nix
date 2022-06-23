@@ -29,7 +29,7 @@
       ./../modules/programs/flatpak.nix
 
       # Desktops
-      ./../modules/desktops/xfce.nix
+      ./../modules/desktops/kde.nix
     ];
 networking.hostId="8556b001";
 
