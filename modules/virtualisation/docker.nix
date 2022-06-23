@@ -10,5 +10,6 @@
     docker-compose
     # arion
     lazydocker
+    kubernetes-helm-wrapped
   ];
 }
