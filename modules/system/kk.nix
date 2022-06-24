@@ -14,6 +14,7 @@
         krita
         mypaint
         libsForQt5.kolourpaint
+	flameshot
       ];
   };
 }
