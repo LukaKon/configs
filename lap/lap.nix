@@ -8,7 +8,6 @@
 
       # System
       ./../modules/system/system.nix # Base system settings
-      ./../modules/system/btrfs.nix
       ./../modules/system/network_lap.nix # Network configuration
       ./../modules/system/fonts.nix
       ./../modules/system/env_variables.nix
@@ -45,5 +44,5 @@
       ./../modules/virtualisation/virt-manager.nix
     ];
 
-  networking.hostId = "d2ede719";
+  networking.hostId = "4195cf38";
 }
