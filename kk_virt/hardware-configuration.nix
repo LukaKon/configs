@@ -24,7 +24,7 @@
     };
 
   fileSystems."/home/kk/data" =
-    { device = "/dev/disk/by-uuid/cd8d2297-84c4-40e4-b0b2-a251faa67fb4";
+    { device = "/dev/disk/by-uuid/1c7f42d6-f9db-4be5-9f13-8b2f9418d74e";
       fsType = "ext4";
     };
 
