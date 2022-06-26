@@ -19,14 +19,15 @@
                                 # editor
                                 vi = "nvim";
                                 # vi = "vim";
+                                sv = "spacevim";
 
                                 # python
                                 py = "python";
 
-                                # btrfs snapshots
-                                sb = "py /home/lk/configs/scripts/snapshot.py";
-                                sbl = "py /home/lk/configs/scripts/snapshot_lap.py";
                                 # backup config files to git
                                 cong = "py /home/lk/configs/scripts/git_conf.py";
+    
+                                # docker
+                                dc = "docker container";
                               };
                             }
