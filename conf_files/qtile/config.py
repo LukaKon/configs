@@ -18,6 +18,13 @@ SF = 10
 MF = 11
 LF = 12
 
+def fontSize():
+    if hostname=='lap':
+        fontsize=SF
+    else:
+        fontsize=MF
+
+
 # colors
 DARK_GREY = "#595959"
 LIGHT_GREEN = "#8feecc"
@@ -135,18 +142,18 @@ for gr in groups:
         ]
     )
 
-columns_layout={
-    'border_focus':FOCUSE_FRAME,
-    'border_normal':INACTIVE_FRAME,
-    'border_width':2,
+columns_layout = {
+    'border_focus': FOCUSE_FRAME,
+    'border_normal': INACTIVE_FRAME,
+    'border_width': 2,
 }
-bsp_layout={
-    'border_focus':FOCUSE_FRAME,
-    'border_normal':FRAME,
-    'border_on_single':False,
-    'border_width':2,
-    'grow_ammount':5,
-    'ratio':1.6,
+bsp_layout = {
+    'border_focus': FOCUSE_FRAME,
+    'border_normal': FRAME,
+    'border_on_single': False,
+    'border_width': 2,
+    'grow_ammount': 5,
+    'ratio': 1.6,
 }
 layout_theme = {
     "border_width": 2,
@@ -171,7 +178,7 @@ layouts = [
     # layout.Zoomy(),
 ]
 
-widget_defaults = dict(font=FONT, fontsize=MF, padding=3, background=BACKGROUND)
+widget_defaults = dict(font=FONT, fontsize=fontSize(), padding=3, background=BACKGROUND)
 extension_defaults = widget_defaults.copy()
 
 separator = widget.Sep(foreground=FRAME, linewidth=2, padding=2)
@@ -200,56 +207,67 @@ sensors = (
     widget.ThermalSensor(show_tag=True, tag_sensor="Package id 0"),
 )
 
+def widgets_list():
+    return [
+            widget.CurrentLayout(),
+            widget.GroupBox(
+                active=WHITE,
+                borderwidth=2,
+                disable_drag=True,
+                highlight_method='border',
+                this_current_screen_border=FOCUSE_FRAME,
+                urgent_border=URGENT,
+                inactive=INACTIVE,
+            ),
+            widget.WindowName(),
+            *battery,
+            separator,
+            widget.CPU(),
+            *sensors,
+            separator,
+            widget.Memory(
+                measure_mem="G",
+            ),
+            *net,
+            separator,
+            widget.Systray(),
+            separator,
+            widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
+        ]
 
-screens = [
-    Screen(
-        # bottom=bar.Bar(
-        top=bar.Bar(
-            [
-                widget.CurrentLayout(),
-                widget.GroupBox(
-                    active=WHITE,
-                    borderwidth=2,
-                    disable_drag=True,
-                    highlight_method='border',
-                    this_current_screen_border=FOCUSE_FRAME,
-                    urgent_border=URGENT,
-                    inactive=INACTIVE,
+def init_screens():
+    if hostname=='lap':
+        return [
+            Screen(
+                    top=bar.Bar(
+                        widgets=widgets_list(),
+                        size=30,
+                        background=BACKGROUND,
+                        border_color=FRAME,
+                        border_width=[1, 1, 1, 1],
+                        margin=[1, 1, 1, 1],
+                        opacity=0,
+                    )
+            ),
+            Screen(),
+        ]
+    else:
+        return [
+            Screen(
+                    top=bar.Bar(widgets=widgets_list(),
+                        size=24,
+                        background=BACKGROUND,
+                        border_color=FRAME,
+                        border_width=[1, 1, 1, 1],
+                        margin=[1, 1, 1, 1],
+                        opacity=0,
+                    ),
                 ),
-                #widget.Prompt(), # rofi installed
-                widget.WindowName(),
-                # widget.Chord(
-                #     chords_colors={
-                #         "launch": ("#ff0000", "#ffffff"),
-                #     },
-                #     name_transform=lambda name: name.upper(),
-                # ),
-                *battery,
-                separator,
-                widget.CPU(),
-                *sensors,
-                separator,
-                widget.Memory(
-                    measure_mem="G",
-                ),
-                *net,
-                separator,
-                widget.Systray(),
-                separator,
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                # widget.QuickExit(),
-            ],
-            24,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
-            background=BACKGROUND,
-            border_color=FRAME,
-            border_width=[1,1,1,1],
-            margin=[1,1,1,1],
-            opacity=0
-        ),
-    ),
-]
+            ]
+
+screens=init_screens()
+
+Key([mod], 't', lazy.next_screen(),desc='switch screen')
 
 # Drag floating layouts.
 mouse = [
