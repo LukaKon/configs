@@ -18,11 +18,11 @@ SF = 10
 MF = 11
 LF = 12
 
-def fontSize():
-    if hostname=='lap':
-        fontsize=SF
-    else:
-        fontsize=MF
+# def fontSize():
+#     if hostname=='lap':
+#         return SF
+#     else:
+#         return MF
 
 
 # colors
@@ -44,7 +44,7 @@ keys = [
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    # Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
     Key(
@@ -178,7 +178,7 @@ layouts = [
     # layout.Zoomy(),
 ]
 
-widget_defaults = dict(font=FONT, fontsize=fontSize(), padding=3, background=BACKGROUND)
+widget_defaults = dict(font=FONT, fontsize=MF, padding=3, background=BACKGROUND)
 extension_defaults = widget_defaults.copy()
 
 separator = widget.Sep(foreground=FRAME, linewidth=2, padding=2)
@@ -241,7 +241,7 @@ def init_screens():
             Screen(
                     top=bar.Bar(
                         widgets=widgets_list(),
-                        size=30,
+                        size=24,
                         background=BACKGROUND,
                         border_color=FRAME,
                         border_width=[1, 1, 1, 1],
@@ -249,7 +249,19 @@ def init_screens():
                         opacity=0,
                     )
             ),
-            Screen(),
+            Screen(
+                top=bar.Bar(
+                    widget=[
+                        widget.CurrentLayout(),
+                    ],
+                    size=24,
+                    background=BACKGROUND,
+                    border_color=FRAME,
+                    border_width=[1, 1, 1, 1],
+                    margin=[1, 1, 1, 1],
+                    opacity=0,
+                )
+            ),
         ]
     else:
         return [
@@ -267,7 +279,7 @@ def init_screens():
 
 screens=init_screens()
 
-Key([mod], 't', lazy.next_screen(),desc='switch screen')
+Key([mod], 'space', lazy.next_screen(),desc='switch screen')
 
 # Drag floating layouts.
 mouse = [
@@ -287,7 +299,7 @@ dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
 follow_mouse_focus = True
 bring_front_click = False
-cursor_warp = False
+cursor_warp = True
 floating_layout = layout.Floating(
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
