@@ -42,7 +42,7 @@
       ./../modules/desktops/qtile.nix
 
       # Virtualisation
-      ./../modules/virtualisation/podman.nix # Podman
+      # ./../modules/virtualisation/podman.nix # Podman
       ./../modules/virtualisation/docker.nix # Docker
       ./../modules/virtualisation/virt-manager.nix
     ];
