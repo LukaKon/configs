@@ -20,7 +20,7 @@ LF = 12
 
 def fontSize():
     if hostname=='lap':
-        return SF
+        return LF
     else:
         return MF
 
@@ -248,17 +248,7 @@ if hostname=='lap':
                             opacity=0,
                         )
                 ),
-                Screen(
-                        top=bar.Bar(
-                            widgets= my_widget,
-                            size=20,
-                            background=BACKGROUND,
-                            border_color=FRAME,
-                            border_width=[1, 1, 1, 1],
-                            margin=[1, 1, 1, 1],
-                            opacity=0,
-                        )
-                ),
+                Screen(),
         ]
 else:
       screens= [
@@ -275,7 +265,7 @@ else:
                   ),
               ]
 
-Key([mod], 'space', lazy.next_screen(),desc='switch screen')
+Key([mod], 'o', lazy.next_screen(),desc='switch screen')
 
 # Drag floating layouts.
 mouse = [

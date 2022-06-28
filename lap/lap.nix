@@ -39,7 +39,7 @@
       ./../modules/desktops/qtile.nix
 
       # Virtualisation
-      # ./../modules/virtualisation/docker.nix # Docker
+      ./../modules/virtualisation/docker.nix # Docker
       # ./../modules/virtualisation/podman.nix
       ./../modules/virtualisation/arion.nix
       ./../modules/virtualisation/virt-manager.nix
