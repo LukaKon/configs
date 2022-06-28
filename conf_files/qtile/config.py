@@ -207,8 +207,7 @@ sensors = (
     widget.ThermalSensor(show_tag=True, tag_sensor="Package id 0"),
 )
 
-def widgets_list():
-    return [
+my_widgets=[
             widget.CurrentLayout(),
             widget.GroupBox(
                 active=WHITE,
@@ -235,23 +234,23 @@ def widgets_list():
             widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
         ]
 
-def init_screens():
-    if hostname=='lap':
-        return [
-            Screen(
-                    top=bar.Bar(
-                        widgets=widgets_list(),
-                        size=24,
-                        background=BACKGROUND,
-                        border_color=FRAME,
-                        border_width=[1, 1, 1, 1],
-                        margin=[1, 1, 1, 1],
-                        opacity=0,
-                    )
-            ),
-            Screen(
-                top=bar.Bar(
-                    widget=[
+
+if hostname=='lap':
+    screens = [
+                Screen(
+                        top=bar.Bar(
+                            widgets=my_widgets,
+                            size=24,
+                            background=BACKGROUND,
+                            border_color=FRAME,
+                            border_width=[1, 1, 1, 1],
+                            margin=[1, 1, 1, 1],
+                            opacity=0,
+                          )
+              ),
+                Screen(
+                        top=bar.Bar(
+                            widgets=[
                         widget.CurrentLayout(),
                     ],
                     size=24,
@@ -263,21 +262,20 @@ def init_screens():
                 )
             ),
         ]
-    else:
-        return [
-            Screen(
-                    top=bar.Bar(widgets=widgets_list(),
-                        size=24,
-                        background=BACKGROUND,
-                        border_color=FRAME,
-                        border_width=[1, 1, 1, 1],
-                        margin=[1, 1, 1, 1],
-                        opacity=0,
-                    ),
-                ),
-            ]
-
-screens=init_screens()
+else:
+      screens= [
+              Screen(
+                      top=bar.Bar(
+                          widgets=my_widgets,
+                          size=24,
+                          background=BACKGROUND,
+                          border_color=FRAME,
+                          border_width=[1, 1, 1, 1],
+                          margin=[1, 1, 1, 1],
+                          opacity=0,
+                      ),
+                  ),
+              ]
 
 Key([mod], 'space', lazy.next_screen(),desc='switch screen')
 

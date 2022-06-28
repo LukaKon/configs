@@ -8,7 +8,8 @@
 
   services.kubernetes = {
     roles = [ "master" "node" ];
-    masterAddress = "api.kube:6443";
+    masterAddress = "localhost";
+    easyCerts = true;
 
     kubelet.extraOpts = "--fail-swap-on=false";
   };
@@ -25,6 +26,7 @@
     kubernetes
 
     # helm
-    kubernetes-helm-wrapped
+    kubernetes-helm
+    # kubernetes-helm-wrapped
   ];
 }
