@@ -18,11 +18,11 @@ SF = 10
 MF = 11
 LF = 12
 
-# def fontSize():
-#     if hostname=='lap':
-#         return SF
-#     else:
-#         return MF
+def fontSize():
+    if hostname=='lap':
+        return SF
+    else:
+        return MF
 
 
 # colors
@@ -178,7 +178,7 @@ layouts = [
     # layout.Zoomy(),
 ]
 
-widget_defaults = dict(font=FONT, fontsize=MF, padding=3, background=BACKGROUND)
+widget_defaults = dict(font=FONT, fontsize=fontSize(), padding=3, background=BACKGROUND)
 extension_defaults = widget_defaults.copy()
 
 separator = widget.Sep(foreground=FRAME, linewidth=2, padding=2)
@@ -246,21 +246,19 @@ if hostname=='lap':
                             border_width=[1, 1, 1, 1],
                             margin=[1, 1, 1, 1],
                             opacity=0,
-                          )
-              ),
+                        )
+                ),
                 Screen(
                         top=bar.Bar(
-                            widgets=[
-                        widget.CurrentLayout(),
-                    ],
-                    size=24,
-                    background=BACKGROUND,
-                    border_color=FRAME,
-                    border_width=[1, 1, 1, 1],
-                    margin=[1, 1, 1, 1],
-                    opacity=0,
-                )
-            ),
+                            widgets= my_widget,
+                            size=20,
+                            background=BACKGROUND,
+                            border_color=FRAME,
+                            border_width=[1, 1, 1, 1],
+                            margin=[1, 1, 1, 1],
+                            opacity=0,
+                        )
+                ),
         ]
 else:
       screens= [

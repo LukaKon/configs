@@ -6,13 +6,13 @@
     };
   };
 
-  services.kubernetes = {
-    roles = [ "master" "node" ];
-    masterAddress = "localhost";
-    easyCerts = true;
+  # services.kubernetes = {
+  #   roles = [ "master" "node" ];
+  #   masterAddress = "localhost";
+  #   easyCerts = true;
 
-    kubelet.extraOpts = "--fail-swap-on=false";
-  };
+  #   kubelet.extraOpts = "--fail-swap-on=false";
+  # };
 
   environment.systemPackages = with pkgs; [
     # docker
@@ -21,12 +21,12 @@
     lazydocker
 
     # kubernetes
-    kompose
-    kubectl
-    kubernetes
+    # kompose
+    # kubectl
+    # kubernetes
 
     # helm
-    kubernetes-helm
+    # kubernetes-helm
     # kubernetes-helm-wrapped
   ];
 }
