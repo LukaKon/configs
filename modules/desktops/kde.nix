@@ -6,7 +6,8 @@
 
     displayManager = {
       sddm.enable = true;
-      autoLogin.user = "kk"
+      autoLogin.user = "kk";
+    };
     desktopManager.plasma5.enable = true;
 
     layout = "pl";
