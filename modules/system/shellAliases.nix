@@ -19,7 +19,6 @@
                                 # editor
                                 vi = "nvim";
                                 # vi = "vim";
-                                sv = "spacevim";
 
                                 # python
                                 py = "python";
