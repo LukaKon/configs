@@ -11,12 +11,11 @@
       [
         flameshot
 
-        freetube
-
         # office
         libreoffice
 
         youtube-dl
+        freetube
 
         # packer
         unzip
@@ -60,19 +59,19 @@
         nixfmt
         nixpkgs-fmt
 
-        spacevim
+        #spacevim
         # vscode
+        dbeaver
         vscodium
         arduino
         # jetbrains.pycharm-community
         #jetbrains.pycharm-professional
         # unityhub
-        dbeaver
 
         # comunicator
         # signal-desktop
         slack
-        discord
+        # discord
         #whatsapp-for-linux
 
         # video conference
