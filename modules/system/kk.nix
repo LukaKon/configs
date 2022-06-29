@@ -9,12 +9,12 @@
     shell = pkgs.zsh;
     packages = with pkgs;
       [
-	firefox
+        firefox
         gimp
         krita
         mypaint
         libsForQt5.kolourpaint
-	flameshot
+        flameshot
       ];
   };
 }

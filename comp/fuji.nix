@@ -17,7 +17,7 @@
       # ./../modules/system/cron.nix
       ./../modules/system/shellAliases.nix # Shell aliases
       ./../modules/system/lk.nix
-      #./../modules/system/kk.nix
+      ./../modules/system/kk.nix
 
       # Security
       ./../modules/security/doas.nix # Add 'doas'
@@ -27,7 +27,7 @@
       ./../modules/services/openssh.nix # SSH
       #./../modules/services/keyring.nix
       # ./../modules/services/bluetooth.nix
-      #./../modules/services/remote.nix # remote server/desktop
+      ./../modules/services/remote.nix # remote server/desktop
 
       # Programs
       ./../modules/programs/progr.nix
@@ -39,7 +39,8 @@
       # Desktops
       # ./../modules/desktops/i3/i3.nix  # i3 window manager settings
       # ./../modules/desktops/spectrwm.nix
-      ./../modules/desktops/qtile.nix
+      # ./../modules/desktops/qtile.nix
+      ./../modules/desktops/kde.nix
 
       # Virtualisation
       # ./../modules/virtualisation/podman.nix # Podman

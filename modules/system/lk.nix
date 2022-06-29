@@ -9,13 +9,7 @@
     shell = pkgs.zsh;
     packages = with pkgs;
       [
-
-        # www
-        firefox
-        # brave
-
         flameshot
-
 
         freetube
 
@@ -50,11 +44,10 @@
         qmk-udev-rules
 
         # www
+        firefox
+        # brave
         qutebrowser
         # ungoogled-chromium
-
-        # IDE/editors
-        # lapce
 
         #jre8
         helix

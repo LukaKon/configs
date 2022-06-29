@@ -250,6 +250,7 @@ if hostname=='lap':
                 ),
                 Screen(),
         ]
+        Key([mod], 'o', lazy.next_screen(),desc='switch screen')
 else:
       screens= [
               Screen(
@@ -265,7 +266,6 @@ else:
                   ),
               ]
 
-Key([mod], 'o', lazy.next_screen(),desc='switch screen')
 
 # Drag floating layouts.
 mouse = [
