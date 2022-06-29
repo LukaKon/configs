@@ -29,7 +29,7 @@
     };
 
   #fileSystems."/home/lk/dev" =
-  fileSystems."/mnt/dev" =
+  fileSystems."/mnt/devel" =
     { device = "tdev";
       fsType = "zfs";
     };
