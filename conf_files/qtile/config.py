@@ -11,21 +11,11 @@ mod = "mod4"
 terminal = guess_terminal()
 browser = "firefox"
 
-hostname = platform.node()  # hostname: fuji , lap
-
 FONT = "fira"
 SF = 10
 MF = 11
-LF = 12
+LF = 14
 
-def fontSize():
-    if hostname=='lap':
-        return LF
-    else:
-        return MF
-
-
-# colors
 DARK_GREY = "#595959"
 LIGHT_GREEN = "#8feecc"
 WHITE = "#ffffff"
@@ -178,33 +168,14 @@ layouts = [
     # layout.Zoomy(),
 ]
 
-widget_defaults = dict(font=FONT, fontsize=fontSize(), padding=3, background=BACKGROUND)
+widget_defaults = dict(font=FONT, fontsize=LF, padding=3, background=BACKGROUND)
 extension_defaults = widget_defaults.copy()
 
 separator = widget.Sep(foreground=FRAME, linewidth=2, padding=2)
 
-battery = None
-net = None
-sensors = None
-if hostname == "lap":
-    battery = (separator, widget.Battery())
-    net = (
-        separator,
-        widget.Net(interface="wlp0s20f3", format="{interface}: {down} ↓↑ {up}"),
-        separator,
-        widget.Net(interface="enp0s31f6", format="{interface}: {down} ↓↑ {up}"),
-    )
-else:
-    battery = (separator, widget.NvidiaSensors())
-    net = (
-        separator,
-        widget.Net(interface="wlp1s0", format="{interface}: {down} ↓↑ {up}"),
-        separator,
-        widget.Net(interface="enp0s31f6", format="{interface}: {down} ↓↑ {up}"),
+net = (
     )
 sensors = (
-    separator,
-    widget.ThermalSensor(show_tag=True, tag_sensor="Package id 0"),
 )
 
 my_widgets=[
@@ -219,15 +190,26 @@ my_widgets=[
                 inactive=INACTIVE,
             ),
             widget.WindowName(),
-            *battery,
+            separator,
+            widget.Battery(),
             separator,
             widget.CPU(),
-            *sensors,
+            separator,
+            widget.ThermalSensor(
+                show_tag=True,
+                tag_sensor="Package id 0"
+            ),
             separator,
             widget.Memory(
                 measure_mem="G",
             ),
-            *net,
+            separator,
+            widget.Net(
+                interface="wlp0s20f3",
+                format="{interface}: {down} ↓↑ {up}"
+            ),
+            separator,
+            widget.Net(interface="enp0s31f6", format="{interface}: {down} ↓↑ {up}"),
             separator,
             widget.Systray(),
             separator,
@@ -235,37 +217,21 @@ my_widgets=[
         ]
 
 
-if hostname=='lap':
-    screens = [
-                Screen(
-                        top=bar.Bar(
-                            widgets=my_widgets,
-                            size=24,
-                            background=BACKGROUND,
-                            border_color=FRAME,
-                            border_width=[1, 1, 1, 1],
-                            margin=[1, 1, 1, 1],
-                            opacity=0,
-                        )
+screens = [
+            Screen(
+                    top=bar.Bar(
+                        widgets=my_widgets,
+                        size=24,
+                        background=BACKGROUND,
+                        border_color=FRAME,
+                        border_width=[1, 1, 1, 1],
+                        margin=[1, 1, 1, 1],
+                        opacity=0,
+                    )
                 ),
-                Screen(),
-        ]
-        Key([mod], 'o', lazy.next_screen(),desc='switch screen')
-else:
-      screens= [
-              Screen(
-                      top=bar.Bar(
-                          widgets=my_widgets,
-                          size=24,
-                          background=BACKGROUND,
-                          border_color=FRAME,
-                          border_width=[1, 1, 1, 1],
-                          margin=[1, 1, 1, 1],
-                          opacity=0,
-                      ),
-                  ),
-              ]
-
+            Screen(),
+    ]
+Key([mod], 'o', lazy.next_screen(),desc='switch screen')
 
 # Drag floating layouts.
 mouse = [

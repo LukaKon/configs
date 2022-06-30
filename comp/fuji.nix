@@ -8,7 +8,6 @@
 
       # System
       ./../modules/system/system.nix # Base system settings
-      #./../modules/system/btrfs.nix
       ./../modules/system/network.nix # Network configuration
       ./../modules/system/nvidia.nix
       # ./../modules/system/nouveau.nix
@@ -44,7 +43,7 @@
 
       # Virtualisation
       # ./../modules/virtualisation/podman.nix # Podman
-      ./../modules/virtualisation/docker.nix # Docker
+      #./../modules/virtualisation/docker.nix # Docker
       ./../modules/virtualisation/virt-manager.nix
     ];
 
