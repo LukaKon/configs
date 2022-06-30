@@ -56,7 +56,7 @@
       };
     in
     rec {
-      defaultPackage.${system} = self.packages.${system}.neovim-flake;
+      #defaultPackage.${system} = self.packages.${system}.neovim-flake;
       nixosConfigurations = {
 
         # desktop
@@ -105,23 +105,6 @@
           ];
         };
 
-        # kk virt desktop
-        kkvirt = nixpkgs.lib.nixosSystem {
-          # inherit system pkgs;
-          inherit system;
-
-          modules = [
-
-            ({ config, pkgs, ... }:
-              {
-                imports =
-                  [
-                    ./kk_virt/kk_virt.nix
-                  ];
-              }
-            )
-          ];
-        };
 
         # virt
         virt = lib.nixosSystem {
@@ -145,6 +128,7 @@
             )
           ];
         };
+
         # raspberry
         nixos = lib.nixosSystem {
           #inherit pkgs;

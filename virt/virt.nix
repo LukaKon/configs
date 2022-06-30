@@ -38,8 +38,8 @@
     ];
 
 
-  loader.efi.efiSysMountPoint = "/boot/efi";
-  boot.loader.grub = {
+ # loader.efi.efiSysMountPoint = "/boot/efi";
+ boot.loader.grub = {
     enable = true;
     version = 2;
     device = "/dev/vda";
