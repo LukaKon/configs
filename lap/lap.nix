@@ -29,7 +29,7 @@
 
       # Programs
       ./../modules/programs/progr.nix
-      ./../modules/programs/nixvim.nix
+      #./../modules/programs/nixvim.nix
       # ./../modules/programs/nvim/nvim.nix
       #./../modules/programs/kakoune.nix
       ./../modules/programs/zsh.nix

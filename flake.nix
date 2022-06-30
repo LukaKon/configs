@@ -59,10 +59,6 @@
       };
     in
     rec {
-      #nvim-with-gruvbox = nixvim.build "${system}" {
-      #  colorschemes.gruvbox.enable = true;
-      #};
-      #defaultPackage.${system} = self.packages.${system}.neovim-flake;
       nixosConfigurations = {
 
         # desktop
@@ -98,7 +94,7 @@
               #nixpkgs.overlays = [overlay-neovim];
               environment.systemPackages = with pkgs; [
                 #neovim-flake.defaultPackage.${system}
-                nvim-with-gruvbox
+                neovim
               ];
 
               imports =
