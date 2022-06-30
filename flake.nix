@@ -27,6 +27,8 @@
       #url = "github:wiltaylor/neovim-flake";
       url = "github:lukakon/neovim-flake";
     };
+
+    nixvim.url = github:pta2002/nixvim;
   };
 
   outputs =
@@ -36,6 +38,7 @@
     , nixpkgs-unstable
     , flake-utils
     , neovim-flake
+    , nixvim
     , ...
     }:
 
@@ -56,6 +59,9 @@
       };
     in
     rec {
+      #nvim-with-gruvbox = nixvim.build "${system}" {
+      #  colorschemes.gruvbox.enable = true;
+      #};
       #defaultPackage.${system} = self.packages.${system}.neovim-flake;
       nixosConfigurations = {
 
@@ -86,14 +92,13 @@
         lap = lib.nixosSystem {
           inherit system pkgs;
 
+
           modules = [
             ({ config, pkgs, ... }: {
               #nixpkgs.overlays = [overlay-neovim];
               environment.systemPackages = with pkgs; [
-                #inputs.neovim-flake.defaultPackage.${system}
-                neovim-flake.defaultPackage.${system}
-                # packages.neovim-flake.${system}.default
-                # neovim
+                #neovim-flake.defaultPackage.${system}
+                nvim-with-gruvbox
               ];
 
               imports =

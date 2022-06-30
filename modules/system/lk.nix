@@ -33,7 +33,6 @@
         nodejs
         # deno
 
-        # wezterm
         #kitty
 
         #firejail
@@ -48,7 +47,6 @@
         qutebrowser
         # ungoogled-chromium
 
-        #jre8
         helix
 
         nodePackages.vscode-langservers-extracted
