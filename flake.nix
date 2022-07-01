@@ -70,9 +70,7 @@
             ({ config, pkgs, ... }:
               {
                 environment.systemPackages = with pkgs; [
-                  # packages.neovim-flake.${system}.default
                   neovim-flake.defaultPackage.${system}
-                  # inputs.packages.neovim-flake.${system}.default
                 ];
 
                 imports =
@@ -88,24 +86,10 @@
         lap = lib.nixosSystem {
           inherit system pkgs;
 
-
           modules = [
-            ({ config, pkgs, ... }: {
-              #nixpkgs.overlays = [overlay-neovim];
-              environment.systemPackages = with pkgs; [
-                #neovim-flake.defaultPackage.${system}
-                neovim
-              ];
-
-              imports =
-                [
                   ./lap/lap.nix
                 ];
-            }
-            )
-          ];
-        };
-
+          };
 
         # virt
         virt = lib.nixosSystem {

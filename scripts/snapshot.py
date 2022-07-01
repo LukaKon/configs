@@ -70,7 +70,7 @@ def delete_old_snaps():
                     subprocess.run(["sudo", "rm", "-r", f"{path}/{entry.name}"])
 
 
-print(f"\nCreate new snapshots:")
+print("\nCreate new snapshots:")
 create_new_snaps()
 print(f"\nDelete snapshots older than {days} days:")
 delete_old_snaps()

@@ -30,8 +30,8 @@
         cmake
         #bmake
         # luajit
-        nodejs
-        # deno
+        nodejs-18_x
+        deno
 
         #kitty
 
@@ -49,9 +49,14 @@
 
         helix
 
+        nodePackages.pyright
         nodePackages.vscode-langservers-extracted
         nodePackages.dockerfile-language-server-nodejs
         nodePackages.typescript-language-server
+        nodePackages.yaml-language-server
+        
+        texlab
+        taplo-lsp
 
         rnix-lsp
         nixfmt
@@ -95,8 +100,6 @@
         texlive.combined.scheme-full
         # texstudio
         # mindforger
-
-        nodePackages.pyright
 
         glances
 
