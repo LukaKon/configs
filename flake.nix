@@ -29,6 +29,11 @@
     };
 
     nixvim.url = github:pta2002/nixvim;
+
+    #home-manager = {
+    #  url = "github:nix-community/home-manager";
+    #  inputs.nixpkgs.follows = "nixpkgs-unstable";
+    #};
   };
 
   outputs =
@@ -39,24 +44,57 @@
     , flake-utils
     , neovim-flake
     , nixvim
+      #, home-manager
     , ...
     }:
 
     let
       system = "x86_64-linux";
 
-      lib = nixpkgs-unstable.lib;
+      inherit (nixpkgs-unstable) lib;
+
+      #util = import ./lib {
+      #  inherit system pkgs home-manager lib;
+      #  overlays = (pkgs.overlays);
+      #};
+
+      #inherit (util) user;
+      #inherit (util) host;
 
       pkgs = import nixpkgs-unstable {
-        # pkgs = import nixpkgs {
-        inherit system; # overlays;
+        inherit system;
         config.allowUnfree = true;
-        overlays = [
-          (final: prev: {
-            # neovim = neovim-flake.defaultPackage.${system};
-          })
-        ];
+        overlays = [ ];
       };
+
+      #    in
+      #    {
+      #      homeManagerConfiguration =
+      #        { system
+      #        , configuration
+      #        , homeDirectory
+      #        , username
+      #        , extraModules ? [ ]
+      #        , extraSpecialArgs ? { }.pkgs ? builtins.getAttr system nixpkgs.outputs.legacyPackages
+      #        , check ? true
+      #        , stateVersion ? "20.09"
+      #        }@args:
+      #          assert nixpkgs.lib.versionAtLeast stateVersion "20.09";
+      #
+      #          import ./modules {
+      #            inherit pkgs check extraSpecialArgs;
+      #            configuration = { ... }: {
+      #              imports = [ configuration ] ++ extraModules;
+      #              home = { inherit homeDirectory stateVersion username; };
+      #              nixpkgs = { inherit (pkgs) config overlays; };
+      #            };
+      #          };
+      #      lk = user.mkHMUser {
+      #        userConfig = {
+      #          git.enable = true;
+      #          zsh.enable = true;
+      #        };
+      #      };
     in
     rec {
       nixosConfigurations = {
@@ -83,13 +121,32 @@
         };
 
         # laptop
+        #        lap = host.mkHost {
+        #          name = "lap";
+        #          NICs = [ "enp0s31f6" "wlp0s20f3" ];
+        #          kernelPackages = pkgs.linuxPackages;
+        #          initrdMods = [ "xhci_pci" "thunderbolt" "vmd" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
+        #          kernelMods = [ "kvm-intel" ];
+        #          kernelParams = [ ];
+        #          systemConfig = { };
+
+        #          users = [{
+        #            name = "lk";
+        #            groups = [ "wheel" "networkmanager" "dialout" "libvirtd" "docker" "video" ];
+        #            uid = 1000;
+        #            shell = pkgs.zsh;
+        #          }];
+        #          cpuCores = 8;
+        #        };
+
+
         lap = lib.nixosSystem {
           inherit system pkgs;
 
           modules = [
-                  ./lap/lap.nix
-                ];
-          };
+            ./lap/lap.nix
+          ];
+        };
 
         # virt
         virt = lib.nixosSystem {
@@ -115,15 +172,15 @@
         };
 
         # raspberry
-        nixos = lib.nixosSystem {
-          #inherit pkgs;
-          nixpkgs = self.nixpkgs;
-          system = "aarch64-linux";
+        #        nixos = lib.nixosSystem {
+        #          #inherit pkgs;
+        #          nixpkgs = self.nixpkgs;
+        #          system = "aarch64-linux";
 
-          modules = [
-            ./raspi/configuration.nix
-          ];
-        };
+        #          modules = [
+        #            ./raspi/configuration.nix
+        #          ];
+        #        };
 
       };
     };

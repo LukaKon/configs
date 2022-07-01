@@ -26,6 +26,7 @@
         # dotnet-sdk
         clang
         clang-tools
+        lldb
         #gcc
         cmake
         #bmake
