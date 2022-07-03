@@ -1,11 +1,38 @@
 theme = "gruvbox"
 
 [editor]
-line-number = "relative"
-mouse = false
+scrolloff = 5
 auto-completion = true
+auto-format = true
+true-color= true
+line-number = "relative"
+mouse = true
+#auto-completion = true
 auto-info = true
-true-color = false
+#auto-pairs = true
+#true-color = true
+
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+'<' = '>'
+
+[editor.whitespace]
+render = "all"
+# or control each character
+#[editor.whitespace.render]
+#space = "all"
+#tab = "all"
+#newline = "all"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+newline = "⏎"
 
 #[editor-lsp]
 #display-messages = true

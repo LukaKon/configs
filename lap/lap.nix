@@ -14,7 +14,7 @@
       # ./../modules/system/cron.nix
       ./../modules/system/shellAliases.nix # Shell aliases
       ./../modules/system/lk.nix
-      ./../modules/system/kk.nix
+      #./../modules/system/kk.nix
 
       # Security
       ./../modules/security/doas.nix # Add 'doas'
@@ -33,7 +33,7 @@
       # ./../modules/programs/nvim/nvim.nix
       #./../modules/programs/kakoune.nix
       ./../modules/programs/zsh.nix
-      #./../modules/programs/flatpak.nix
+      ./../modules/programs/flatpak.nix
 
       # Desktops
       # ./../modules/desktops/i3/i3.nix  # i3 window manager settings

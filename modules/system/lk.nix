@@ -47,6 +47,8 @@
         # brave
         qutebrowser
         # ungoogled-chromium
+        
+        #lapce
 
         helix
 
