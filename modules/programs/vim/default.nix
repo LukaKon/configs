@@ -16,46 +16,51 @@ let myVim = vim_configurable.customize {
     # import .vimrc
     customRC = builtins.readFile ./.vimrc;
     
+      plug.plugins = with pkgs.vimPlugins;
+      [
+        nerdtree
+      ];
+    };
     # make plugins avaliable to vam
-    vam.knownPlugins = pkgs.vimPlugins;
+    # vam.knownPlugins = pkgs.vimPlugins;
     
     # declare plugins to use
-    vam.pluginDictonaries = [
-      { 
-        names = [
-            "nerdtree"
-            "vim-nerdtree-tabs"
-            "vim-nerdtree-syntax-highlight"
-            "nerdtree-git-plugin"
-            "vim-commentary"
-            "vim-fugitive"
-            "vim-airline"
-            "vim-airline-themes"
-            "vim-gitgutter"
-            "vim-grepper"
-            "csapprox"
-            "delimitMate"
-            "tagbar"
-            "ale"
-            "indentLine"
-            "vim-rhubarb"
+    # vam.pluginDictonaries = [
+    #   { 
+    #     names = [
+    #         "nerdtree"
+    #         "vim-nerdtree-tabs"
+    #         "vim-nerdtree-syntax-highlight"
+    #         "nerdtree-git-plugin"
+    #         "vim-commentary"
+    #         "vim-fugitive"
+    #         "vim-airline"
+    #         "vim-airline-themes"
+    #         "vim-gitgutter"
+    #         "vim-grepper"
+    #         "csapprox"
+    #         "delimitMate"
+    #         "tagbar"
+    #         "ale"
+    #         "indentLine"
+    #         "vim-rhubarb"
             
-            "fzf-vim"
+    #         "fzf-vim"
             
-            "vimproc-vim"
-            "vim-misc"
+    #         "vimproc-vim"
+    #         "vim-misc"
             
-            "emmet-vim"
-            "vim-javascript-syntax"
-            "jedi-vim"
-            "typescript-vim"
-            "yats-vim"
-            "vim-nix"
-          #...
-        ];
-      }
-    ];
-  };
+    #         "emmet-vim"
+    #         "vim-javascript-syntax"
+    #         "jedi-vim"
+    #         "typescript-vim"
+    #         "yats-vim"
+    #         "vim-nix"
+    #       #...
+    #     ];
+    #   }
+    # ];
+  # };
 };
 # include our customized vim package in systemPackages
 in { 

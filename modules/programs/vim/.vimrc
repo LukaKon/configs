@@ -12,7 +12,7 @@ endif
 
 let g:vim_bootstrap_langs = "html,javascript,python,typescript"
 let g:vim_bootstrap_editor = "vim"				" nvim or vim
-let g:vim_bootstrap_theme = "molokai"
+let g:vim_bootstrap_theme = "gruvbox"
 let g:vim_bootstrap_frams = ""
 
 if !filereadable(vimplug_exists)
@@ -49,8 +49,8 @@ Plug 'dense-analysis/ale'
 Plug 'Yggdroot/indentLine'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
-Plug 'tomasr/molokai'
-
+""Plug 'tomasr/molokai'
+Plug 'gruvbox-community/gruvbox'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -164,9 +164,11 @@ let g:session_command_aliases = 1
 syntax on
 set ruler
 set relativenumber
+set number
 
 let no_buffers_menu=1
-colorscheme molokai
+colorscheme gruvbox
+set bg=dark
 
 
 " Better command line completion 
