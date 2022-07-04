@@ -18,6 +18,7 @@
     systemPackages = with pkgs;
       [
         rofi
+        polybar
       ];
   };
 }
