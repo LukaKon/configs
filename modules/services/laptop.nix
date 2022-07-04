@@ -1,11 +1,16 @@
 {config, lib, pkgs, ...}:
 
 {
-  services.xserver.libinput = {
+  services = {
+  xserver.libinput = {
     enable = true;
     touchpad.tapping = true;
   };
-
+    logind = {
+    lidSwitch = "ignore";
+    lidSwitchExternalPower = "ignore";
+    };
+};
   hardware.acpilight.enable = true;
 
   environment = {

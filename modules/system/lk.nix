@@ -32,7 +32,7 @@
         #bmake
         # luajit
         nodejs-18_x
-        deno
+        #deno
 
         #kitty
 
@@ -86,7 +86,7 @@
         #jitsi-meet-electron
 
         # file managers
-        #vifm-full
+        vifm-full
         # ranger
         fzf
         ripgrep

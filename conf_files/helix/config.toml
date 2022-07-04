@@ -46,7 +46,7 @@ select = "underline"
 hidden = false
 
 [editor.search]
-smart-case = true
+smart-case = false
 wrap-around = true
 
 # [editor.auto-pairs]
