@@ -9,7 +9,7 @@
     displayManager.lightdm.enable = true;
     # displayManager.gdm.wayland.enable = true;
     windowManager.leftwm.enable = true;
-    displayManager.defaultSession = "leftwm";
+    displayManager.defaultSession = "none+leftwm";
 
     layout = "pl";
   };

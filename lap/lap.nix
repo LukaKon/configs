@@ -38,8 +38,8 @@
 
       # Desktops
       # ./../modules/desktops/i3/i3.nix  # i3 window manager settings
-      # ./../modules/desktops/qtile.nix
-      ./../modules/desktops/leftwm
+      ./../modules/desktops/qtile.nix
+      # ./../modules/desktops/leftwm
 
       # Virtualisation
       ./../modules/virtualisation/docker.nix # Docker
