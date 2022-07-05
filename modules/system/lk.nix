@@ -23,6 +23,8 @@
         xarchiver
         p7zip
 
+        # rustup
+        
         # dotnet-sdk
         clang
         clang-tools
