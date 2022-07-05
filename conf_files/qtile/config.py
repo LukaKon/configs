@@ -1,5 +1,4 @@
 from typing import List  # noqa: F401
-
 import platform
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
@@ -19,12 +18,12 @@ LF = 14
 DARK_GREY = "#595959"
 LIGHT_GREEN = "#8feecc"
 WHITE = "#ffffff"
-BACKGROUND="#041716"
-FRAME="#1ecbe1"
-FOCUSE_FRAME="#1d9de2"
-INACTIVE_FRAME='#0f177d'
-URGENT='#d67f29'
-INACTIVE='#1b29e4'
+BACKGROUND = "#041716"
+FRAME = "#1ecbe1"
+FOCUSE_FRAME = "#1d9de2"
+INACTIVE_FRAME = '#0f177d'
+URGENT = '#d67f29'
+INACTIVE = '#1b29e4'
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -38,7 +37,10 @@ keys = [
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
     Key(
-        [mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"
+        [mod, "shift"],
+        "h",
+        lazy.layout.shuffle_left(),
+        desc="Move window to the left",
     ),
     Key(
         [mod, "shift"],
@@ -46,17 +48,50 @@ keys = [
         lazy.layout.shuffle_right(),
         desc="Move window to the right",
     ),
-    Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
-    Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
+    Key(
+        [mod, "shift"],
+        "j",
+        lazy.layout.shuffle_down(),
+        desc="Move window down",
+    ),
+    Key(
+        [mod, "shift"],
+        "k",
+        lazy.layout.shuffle_up(),
+        desc="Move window up",
+    ),
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
-    Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
     Key(
-        [mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"
+        [mod, "control"],
+        "h",
+        lazy.layout.grow_left(),
+        desc="Grow window to the left",
     ),
-    Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
-    Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
-    Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key(
+        [mod, "control"],
+        "l",
+        lazy.layout.grow_right(),
+        desc="Grow window to the right",
+    ),
+    Key(
+        [mod, "control"],
+        "j",
+        lazy.layout.grow_down(),
+        desc="Grow window down",
+    ),
+    Key(
+        [mod, "control"],
+        "k",
+        lazy.layout.grow_up(),
+        desc="Grow window up",
+    ),
+    Key(
+        [mod],
+        "n",
+        lazy.layout.normalize(),
+        desc="Reset all window sizes",
+    ),
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
@@ -72,7 +107,14 @@ keys = [
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    # Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"), # because of installed rofi
+    # because of installed rofi
+    # Key(
+    # [mod],
+    # "r",
+    # lazy.spawncmd(),
+    # desc="Spawn a command using a prompt widget",
+    # ),
+
     # programs
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "b", lazy.spawn(browser), desc="Launch web browser"),
@@ -82,9 +124,19 @@ keys = [
     Key([mod], "v", lazy.spawn("virt-manager"), desc="Launch virt-manager"),
     Key([mod], "y", lazy.spawn("freetube"), desc="Launch free tube"),
     Key([mod], "z", lazy.spawn("slack"), desc="Launch slack"),
-    Key([mod], "f", lazy.spawn("flameshot"), desc="Launch flameshot"),
-    Key([mod], "r", lazy.spawn('rofi -show run'), desc='Search and launch program'),
-    Key([mod], "s", lazy.spawn('rofi -show window'), desc='Switch to opened program'),
+    Key([mod], "f", lazy.spawn("flameshot gui"), desc="Launch flameshot"),
+    Key(
+        [mod],
+        "r",
+        lazy.spawn('rofi -show run'),
+        desc='Search and launch program',
+    ),
+    Key(
+        [mod],
+        "s",
+        lazy.spawn('rofi -show window'),
+        desc='Switch to opened program',
+    ),
     # Key([mod], "j", lazy.spawn("jitsi-meet-electron"), desc="Launch jitsi"),
     # Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
     # Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 1- unmute")),
@@ -168,17 +220,17 @@ layouts = [
     # layout.Zoomy(),
 ]
 
-widget_defaults = dict(font=FONT, fontsize=LF, padding=3, background=BACKGROUND)
+widget_defaults = dict(
+    font=FONT,
+    fontsize=LF,
+    padding=3,
+    background=BACKGROUND
+)
 extension_defaults = widget_defaults.copy()
 
 separator = widget.Sep(foreground=FRAME, linewidth=2, padding=2)
 
-net = (
-    )
-sensors = (
-)
-
-my_widgets=[
+my_widgets = [
             widget.CurrentLayout(),
             widget.GroupBox(
                 active=WHITE,
@@ -209,7 +261,10 @@ my_widgets=[
                 format="{interface}: {down} ↓↑ {up}"
             ),
             separator,
-            widget.Net(interface="enp0s31f6", format="{interface}: {down} ↓↑ {up}"),
+            widget.Net(
+                interface="enp0s31f6",
+                format="{interface}: {down} ↓↑ {up}"
+            ),
             separator,
             widget.Systray(),
             separator,
@@ -231,7 +286,13 @@ screens = [
                 ),
             Screen(),
     ]
-Key([mod], 'o', lazy.next_screen(),desc='switch screen')
+
+
+def switch_screens(qtile):
+    i = qtile.screens.index(qtile.current_screen)
+    group = qtile.screens[i - 1].group
+    qtile.current_screen.set_group(group)
+
 
 # Drag floating layouts.
 mouse = [
@@ -242,7 +303,10 @@ mouse = [
         start=lazy.window.get_position(),
     ),
     Drag(
-        [mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()
+        [mod],
+        "Button3",
+        lazy.window.set_size_floating(),
+        start=lazy.window.get_size(),
     ),
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
@@ -254,16 +318,17 @@ bring_front_click = False
 cursor_warp = True
 floating_layout = layout.Floating(
     float_rules=[
-        # Run the utility of `xprop` to see the wm class and name of an X client.
+    # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
         Match(wm_class="confirmreset"),  # gitk
-        #Match(wm_class="makebranch"),  # gitk
-        #Match(wm_class="maketag"),  # gitk
+        # Match(wm_class="makebranch"),  # gitk
+        # Match(wm_class="maketag"),  # gitk
         Match(wm_class="ssh-askpass"),  # ssh-askpass
-        #Match(title="branchdialog"),  # gitk
-        #Match(title="pinentry"),  # GPG key password entry
+        # Match(title="branchdialog"),  # gitk
+        # Match(title="pinentry"),  # GPG key password entry
     ]
 )
+
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
@@ -280,4 +345,4 @@ auto_minimize = True
 #
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
-wmnameE= "LG3D"
+wmname = "LG3D"
