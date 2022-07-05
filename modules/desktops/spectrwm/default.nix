@@ -21,9 +21,9 @@
   };
   environment = {
     systemPackages = with pkgs; [
-      # xlockmore
-      # dmenu
-      rofi
+      xlockmore
+      dmenu
+      # rofi
     ];
   };
 }
