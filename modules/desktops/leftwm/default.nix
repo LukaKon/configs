@@ -19,6 +19,7 @@
       [
         rofi
         polybar
+        picom
       ];
   };
 }
