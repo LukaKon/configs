@@ -19,9 +19,6 @@
       flake = false;
     };
 
-    #neovim-flake = {
-    #  url = "github:LukaKon/neovim-flake_WT";
-    #};
     neovim-flake = {
       #url = "github:jordanisaacs/neovim-flake";
       #url = "github:wiltaylor/neovim-flake";
@@ -104,19 +101,20 @@
           inherit system pkgs;
 
           modules = [
-
-            ({ config, pkgs, ... }:
-              {
-                environment.systemPackages = with pkgs; [
-                  neovim-flake.defaultPackage.${system}
-                ];
-
-                imports =
-                  [
                     ./comp/fuji.nix
-                  ];
-              }
-            )
+
+            # ({ config, pkgs, ... }:
+            #   {
+            #     environment.systemPackages = with pkgs; [
+            #       neovim-flake.defaultPackage.${system}
+            #     ];
+
+            #     imports =
+            #       [
+            #         ./comp/fuji.nix
+            #       ];
+            #   }
+            # )
           ];
         };
 
