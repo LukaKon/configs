@@ -1,4 +1,4 @@
-{config, pkgs, ...}:
+{ config, pkgs, ... }:
 
 {
   fonts = {
@@ -11,7 +11,6 @@
       corefonts
       noto-fonts-emoji
       #monoid
-      # joypixels
       nerdfonts
       font-awesome
       line-awesome
@@ -20,9 +19,9 @@
 
     fontconfig = {
       defaultFonts = {
-        monospace = ["Fira Code"];
-            # emoji = ["Joypixels"];
-          };
-        };
+        monospace = [ "Fira Code" ];
+        # emoji = ["Joypixels"];
       };
-    }
+    };
+  };
+}

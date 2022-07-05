@@ -18,7 +18,7 @@
     systemPackages = with pkgs;
       [
         rofi
-        polybar
+        # polybar
         picom
       ];
   };

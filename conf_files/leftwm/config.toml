@@ -5,13 +5,13 @@ tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 layouts = [
    # "MainAndVertStack",
    "MainAndHorizontalStack",
+   "CenterMainBalanced",
    # "MainAndDeck",
    "GridHorizontal",
    # "EvenHorizontal",
    "EvenVertical",
    # "Fibonacci",
    # "CenterMain",
-   "CenterMainBalanced",
    "Monocle",
    # "RightWiderLeftStack",
    "LeftWiderRightStack"
@@ -28,7 +28,14 @@ command = "Execute"
 # value = "dmenu_run"
 value = "rofi -show run"
 modifier = ["modkey"]
-key = "p"
+key = "r"
+
+[[keybind]]
+command = "Execute"
+# value = "dmenu_run"
+value = "rofi -show window"
+modifier = ["modkey"]
+key = "s"
 
 [[keybind]]
 command = "Execute"
@@ -38,7 +45,25 @@ key = "Return"
 
 [[keybind]]
 command = "Execute"
-value = "flameshot"
+value = "firefox"
+modifier = ["modkey"]
+key = "b"
+
+[[keybind]]
+command = "Execute"
+value = "qutebrowser"
+modifier = ["modkey"]
+key = "g"
+
+[[keybind]]
+command = "Execute"
+value = "virt-manager"
+modifier = ["modkey"]
+key = "v"
+
+[[keybind]]
+command = "Execute"
+value = "flameshot gui"
 modifier = ["modkey"]
 key = "f"
 
