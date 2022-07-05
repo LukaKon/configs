@@ -29,7 +29,7 @@
 
       # Programs
       ./../modules/programs/progr.nix
-      ./../modules/programs/vim
+      # ./../modules/programs/vim
       #./../modules/programs/nixvim.nix
       # ./../modules/programs/nvim/nvim.nix
       #./../modules/programs/kakoune.nix
@@ -39,7 +39,8 @@
       # Desktops
       # ./../modules/desktops/i3/i3.nix  # i3 window manager settings
       # ./../modules/desktops/qtile
-      ./../modules/desktops/leftwm
+      # ./../modules/desktops/leftwm
+      ./../modules/desktops/sepctrwm
 
       # Virtualisation
       ./../modules/virtualisation/docker.nix # Docker
