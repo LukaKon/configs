@@ -8,6 +8,7 @@
     };
     logind = {
       lidSwitch = "ignore";
+      extraConfig = "HandleLidSwitch=ignore";
       lidSwitchExternalPower = "ignore";
     };
   };
