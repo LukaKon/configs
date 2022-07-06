@@ -59,14 +59,16 @@
 
   # cleaning store
   nix = {
-    autoOptimiseStore = true;
+    settings = {
+      auto-optimise-store = true;
+      max-jobs = lib.mkDefault 4;
+    };
+
     gc = {
       automatic = true;
       dates = "daily";
       options = "--delete-older-than 9d";
     };
-
-    maxJobs = lib.mkDefault 4;
 
     # For hix flakes
     extraOptions = "experimental-features = nix-command flakes";
