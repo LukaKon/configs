@@ -11,7 +11,16 @@
       extraConfig = "HandleLidSwitch=ignore";
       lidSwitchExternalPower = "ignore";
     };
+    upower = {
+      usePercentageForPolicy = true;
+      percentageLow = 20;
+      percentageCritical = 5;
+      percentageAction = 2;
+    };
   };
+  
+  powerManagement.enable = true;
+  
   hardware.acpilight.enable = true;
 
   environment = {
