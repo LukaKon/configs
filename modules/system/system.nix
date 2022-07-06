@@ -10,13 +10,24 @@
   };
 
   # ZFS services
-  services.zfs.autoSnapshot.enable = true;
-  services.zfs.autoScrub.enable = true;
+  services.zfs = {
+    autoSnapshot = {
+      enable = true;
+      daily = 5;
+      weekly = 5;
+      monthly = 10;
+    };
+    autoScrub = {
+      enable = true;
+      interval = "weekly";
+    };
+  };
 
   powerManagement = {
     enable = true;
     cpuFreqGovernor = lib.mkDefault "powersave";
   };
+
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   # The temperature management daemon
@@ -25,9 +36,6 @@
   # Sound
   sound.enable = true;
   hardware.pulseaudio.enable = true;
-
-  #sound.enable = false;
-  #hardware.pulseaudio.enable = false;
 
   # non-free
   # already in flake
@@ -51,7 +59,6 @@
 
   # cleaning store
   nix = {
-    # settings.auto-optimise-store = true;
     autoOptimiseStore = true;
     gc = {
       automatic = true;
