@@ -10,17 +10,33 @@
   };
 
   # ZFS services
-  services.zfs = {
-    autoSnapshot = {
-      enable = true;
-      daily = 5;
-      weekly = 5;
-      monthly = 10;
+  services = {
+    zfs = {
+      autoSnapshot = {
+        enable = true;
+        daily = 5;
+        weekly = 5;
+        monthly = 10;
+      };
+      autoScrub = {
+        enable = true;
+        interval = "weekly";
+      };
     };
-    autoScrub = {
+
+    # Redshift change screen's colour temperature depending on the time of day. 
+    redshift = {
       enable = true;
-      interval = "weekly";
+      brightness = {
+        day = "0.6";
+        night = "0.4";
+      };
     };
+  };
+
+  # bluetooth
+  hardware.bluetooth = {
+    enable = false;
   };
 
   powerManagement = {
@@ -43,6 +59,13 @@
 
   # Localisation
   time.timeZone = "Europe/Warsaw";
+
+  # probably for redshift
+  # should point to Wroclaw
+  location = {
+    longitude = 17.0;
+    latitude = 51.0;
+  };
 
   i18n = {
     defaultLocale = "pl_PL.UTF-8";

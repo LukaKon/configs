@@ -2,7 +2,7 @@
 
 {
   environment = {
-    systemPackages = with pkgs;
+    defaultPackages = with pkgs;
       [
         firmwareLinuxNonfree
         microcodeIntel

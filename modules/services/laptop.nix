@@ -6,11 +6,16 @@
       enable = true;
       touchpad.tapping = true;
     };
+
+    # illum, a daemon for controlling screen brightness with brightness buttons. 
+    illum.enable = true;
+
     logind = {
       lidSwitch = "ignore";
       extraConfig = "HandleLidSwitch=ignore";
       lidSwitchExternalPower = "ignore";
     };
+
     upower = {
       usePercentageForPolicy = true;
       percentageLow = 20;
@@ -18,9 +23,7 @@
       percentageAction = 2;
     };
   };
-  
-  powerManagement.enable = true;
-  
+
   hardware.acpilight.enable = true;
 
   environment = {
