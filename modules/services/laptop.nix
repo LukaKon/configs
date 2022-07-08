@@ -10,6 +10,15 @@
     # illum, a daemon for controlling screen brightness with brightness buttons. 
     illum.enable = true;
 
+    # Redshift change screen's colour temperature depending on the time of day. 
+    redshift = {
+      enable = true;
+      brightness = {
+        day = "0.6";
+        night = "0.4";
+      };
+    };
+
     logind = {
       lidSwitch = "ignore";
       extraConfig = "HandleLidSwitch=ignore";
@@ -22,6 +31,13 @@
       percentageCritical = 5;
       percentageAction = 2;
     };
+  };
+
+  # probably for redshift
+  # should point to Wroclaw
+  location = {
+    longitude = 17.0;
+    latitude = 51.0;
   };
 
   hardware.acpilight.enable = true;
