@@ -23,15 +23,6 @@
         interval = "weekly";
       };
     };
-
-    # Redshift change screen's colour temperature depending on the time of day. 
-    redshift = {
-      enable = true;
-      brightness = {
-        day = "0.6";
-        night = "0.4";
-      };
-    };
   };
 
   # bluetooth
@@ -60,12 +51,6 @@
   # Localisation
   time.timeZone = "Europe/Warsaw";
 
-  # probably for redshift
-  # should point to Wroclaw
-  location = {
-    longitude = 17.0;
-    latitude = 51.0;
-  };
 
   i18n = {
     defaultLocale = "pl_PL.UTF-8";
