@@ -43,6 +43,10 @@
         # qmk
         qmk
         qmk-udev-rules
+        
+        # via
+        via
+        vial
 
         # www
         firefox
