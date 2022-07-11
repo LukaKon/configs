@@ -14,8 +14,8 @@
     redshift = {
       enable = true;
       brightness = {
-        day = "0.6";
-        night = "0.4";
+        day = "0.9";
+        night = "0.7";
       };
     };
 
