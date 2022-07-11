@@ -36,8 +36,6 @@
         nodejs-18_x
         #deno
 
-        #kitty
-
         #firejail
 
         # qmk
