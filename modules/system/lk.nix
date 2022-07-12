@@ -68,6 +68,8 @@
         rnix-lsp
         nixfmt
         nixpkgs-fmt
+        
+        hadolint  # docker linter
 
         #spacevim
         # vscode
