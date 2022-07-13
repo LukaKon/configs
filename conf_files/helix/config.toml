@@ -34,8 +34,8 @@ nbsp = "⍽"
 tab = "→"
 newline = "⏎"
 
-#[editor-lsp]
-#display-messages = true
+[editor.lsp]
+display-messages = true
 
 [editor.cursor-shape]
 insert = "bar"
