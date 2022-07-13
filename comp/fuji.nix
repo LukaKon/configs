@@ -26,7 +26,7 @@
       ./../modules/services/openssh.nix # SSH
       #./../modules/services/keyring.nix
       # ./../modules/services/bluetooth.nix
-      ./../modules/services/remote.nix # remote server/desktop
+      # ./../modules/services/remote.nix # remote server/desktop
 
       # Programs
       ./../modules/programs/progr.nix
@@ -43,8 +43,8 @@
 
       # Virtualisation
       # ./../modules/virtualisation/podman.nix # Podman
-      ./../modules/virtualisation/docker.nix # Docker
-      ./../modules/virtualisation/virt-manager.nix
+      # ./../modules/virtualisation/docker.nix # Docker
+      # ./../modules/virtualisation/virt-manager.nix
     ];
 
   networking.hostId = "8bd23953";
