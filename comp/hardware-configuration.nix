@@ -28,19 +28,16 @@
       fsType = "vfat";
     };
 
-  #fileSystems."/home/lk/dev" =
-  fileSystems."/mnt/devel" =
-    { device = "tdev";
-      fsType = "zfs";
-    };
+  # fileSystems."/mnt/devel" =
+    # { device = "tdev";
+      # fsType = "zfs";
+    # };
 
-  #fileSystems."/home/lk/vm" =
-  fileSystems."/mnt/vm" =
-    { device = "tvm";
-      fsType = "zfs";
-    };
+  # fileSystems."/mnt/vm" =
+    # { device = "tvm";
+      # fsType = "zfs";
+    # };
 
-  #fileSystems."/home/lk/data" =
   fileSystems."/mnt/data" =
     { device = "tdata";
       fsType = "zfs";
