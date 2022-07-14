@@ -22,7 +22,7 @@
 
       # Services
       ./../modules/services/openssh.nix # SSH
-      ./../modules/services/keyring.nix
+      # ./../modules/services/keyring.nix
       # ./../modules/services/bluetooth.nix
       # ./../modules/services/remote.nix # remote server/desktop
       ./../modules/services/laptop.nix

@@ -59,7 +59,9 @@
         nodePackages.pyright
         nodePackages.vscode-langservers-extracted
         nodePackages.dockerfile-language-server-nodejs
+        # nodePackages.javascript-typescript-langserver
         nodePackages.typescript-language-server
+        nodePackages.typescript
         nodePackages.yaml-language-server
         
         texlab
