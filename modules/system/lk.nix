@@ -13,6 +13,10 @@
 
         # office
         libreoffice
+        
+        # graphic
+        gimp
+        darktable
 
         youtube-dl
         freetube
