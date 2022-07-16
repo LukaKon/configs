@@ -10,6 +10,7 @@
     packages = with pkgs;
       [
         firefox
+        freetube
         libreoffice
         gimp
         krita
