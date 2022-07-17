@@ -86,11 +86,10 @@
         #jetbrains.pycharm-professional
         # unityhub
 
+        mindforger
+
         # comunicator
-        # signal-desktop
         slack
-        # discord
-        #whatsapp-for-linux
 
         # video conference
         #zoom-us
@@ -103,10 +102,6 @@
         fzf
         ripgrep
 
-        # graphics
-        # blender
-        darktable
-
         # media
         feh # picture viewer
         moc # music player
@@ -114,7 +109,6 @@
         # LaTeX
         texlive.combined.scheme-full
         # texstudio
-        # mindforger
 
         glances
 
