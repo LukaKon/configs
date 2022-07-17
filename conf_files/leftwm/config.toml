@@ -68,6 +68,18 @@ modifier = ["modkey"]
 key = "f"
 
 [[keybind]]
+command = "Execute"
+value = "freetube"
+modifier = ["modkey"]
+key = "y"
+
+[[keybind]]
+command = "Execute"
+value = "slack"
+modifier = ["modkey"]
+key = "z"
+
+[[keybind]]
 command = "CloseWindow"
 modifier = ["modkey", "Shift"]
 key = "q"
