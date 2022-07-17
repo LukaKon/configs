@@ -15,7 +15,8 @@
         rofi
         polybar
         picom
-        conky
+        # conky
+        dunst
       ];
   };
 }
