@@ -13,7 +13,7 @@
 
         # office
         libreoffice
-        
+
         # graphic
         gimp
         darktable
@@ -28,7 +28,7 @@
         p7zip
 
         # rustup
-        
+
         # dotnet-sdk
         clang
         clang-tools
@@ -45,7 +45,7 @@
         # qmk
         qmk
         qmk-udev-rules
-        
+
         # via
         via
         vial
@@ -55,7 +55,7 @@
         # brave
         qutebrowser
         # ungoogled-chromium
-        
+
         #lapce
 
         helix
@@ -66,15 +66,15 @@
         # nodePackages.typescript-language-server
         # nodePackages.typescript
         nodePackages.yaml-language-server
-        
+
         texlab
         taplo-lsp
 
         rnix-lsp
         nixfmt
         nixpkgs-fmt
-        
-        hadolint  # docker linter
+
+        hadolint # docker linter
 
         #spacevim
         # vscode
