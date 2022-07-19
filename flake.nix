@@ -25,7 +25,7 @@
     # url = "github:lukakon/neovim-flake";
     # };
 
-    nixvim.url = github:pta2002/nixvim;
+    # nixvim.url = github:pta2002/nixvim;
   };
 
   outputs =
@@ -35,7 +35,7 @@
     , nixpkgs-unstable
     , flake-utils
       # , neovim-flake
-    , nixvim
+    # , nixvim
     , ...
     }:
 
@@ -55,8 +55,9 @@
       nixosConfigurations = {
 
         # desktop
-        fuji = lib.nixosSystem {
-          inherit system pkgs;
+        fuji = nixpkgs.lib.nixosSystem {
+          inherit system; 
+          # pkgs = import nixpkgs;
 
           modules = [
             # ./comp/fuji.nix

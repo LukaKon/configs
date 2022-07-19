@@ -130,65 +130,13 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1641710811,
-        "narHash": "sha256-yVJ+CtwWZY8BnkNIJ/ue5a28yrRM6CkDF1LvmGmqqwM=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "0ecf7d414811f831060cf55707c374d54fbb1dec",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixvim": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_3",
-        "nmdSrc": "nmdSrc"
-      },
-      "locked": {
-        "lastModified": 1658178881,
-        "narHash": "sha256-ipMeXvr/ANounGxKHj0Q5TlILBbNkjGywXxMzWZrXk4=",
-        "owner": "pta2002",
-        "repo": "nixvim",
-        "rev": "4d573a1e75688d75508e426243a2abaf121f6376",
-        "type": "github"
-      },
-      "original": {
-        "owner": "pta2002",
-        "repo": "nixvim",
-        "type": "github"
-      }
-    },
-    "nmdSrc": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1637239786,
-        "narHash": "sha256-l2KsnY537mz0blZdqALZKrWXn9PD39CpvotgPnxyIP4=",
-        "owner": "rycee",
-        "repo": "nmd",
-        "rev": "527245ff605bde88c2dd2ddae21c6479bb7cf8aa",
-        "type": "gitlab"
-      },
-      "original": {
-        "owner": "rycee",
-        "repo": "nmd",
-        "type": "gitlab"
-      }
-    },
     "root": {
       "inputs": {
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils",
         "nix": "nix",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-unstable": "nixpkgs-unstable",
-        "nixvim": "nixvim"
+        "nixpkgs-unstable": "nixpkgs-unstable"
       }
     }
   },
