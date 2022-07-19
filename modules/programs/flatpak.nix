@@ -1,9 +1,9 @@
-{config, pkgs, lib, ...}:
+{ config, pkgs, lib, ... }:
 
 {
-    services.flatpak.enable = true;
+  services.flatpak.enable = true;
 
-    xdg.portal.enable = true;
-    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    #xdg.portal.extraPortals = [];
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  #xdg.portal.extraPortals = [];
 }

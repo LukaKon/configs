@@ -138,8 +138,9 @@ key = "j"
 
 [[keybind]]
 command = "NextLayout"
-modifier = ["modkey", "Control"]
-key = "k"
+# modifier = ["modkey", "Control"]
+modifier = ["modkey" ]
+key = "Tab"
 
 [[keybind]]
 command = "PreviousLayout"

@@ -13,6 +13,8 @@
   # started in user sessions.
   # programs.mtr.enable = true;
 
+  networking.hostId = "8bd23953";
+
   networking = {
     hostName = "fuji"; # Define your hostname.
     # domain = "luka.fuji.org";
