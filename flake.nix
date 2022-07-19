@@ -25,7 +25,7 @@
     # url = "github:lukakon/neovim-flake";
     # };
 
-    nixvim.url = github:pta2002/nixvim;
+    # nixvim.url = github:pta2002/nixvim;
   };
 
   outputs =
@@ -35,7 +35,7 @@
     , nixpkgs-unstable
     , flake-utils
       # , neovim-flake
-    , nixvim
+    # , nixvim
     , ...
     }:
 
@@ -55,11 +55,10 @@
       nixosConfigurations = {
 
         # desktop
-        fuji = lib.nixosSystem {
+        fuji = nixpkgs.lib.nixosSystem {
           inherit system pkgs;
 
           modules = [
-            # ./comp/fuji.nix
             # Include the results of the hardware scan.
             ./fuji/hardware-configuration.nix
 
@@ -122,7 +121,6 @@
           inherit system pkgs;
 
           modules = [
-            # ./lap/lap.nix
             # Include the results of the hardware scan.
             ./lap/hardware-configuration.nix
 
