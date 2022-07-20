@@ -1,2 +1,2 @@
 # configs
-Configuration files for NixOS
+ **Configuration files for NixOS**
