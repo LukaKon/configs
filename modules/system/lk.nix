@@ -89,6 +89,7 @@
 
         # comunicator
         slack
+        # telegram-cli
 
         # video conference
         #zoom-us
