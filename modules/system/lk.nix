@@ -60,21 +60,21 @@
 
         helix
 
-        nodePackages.pyright
-        nodePackages.vscode-langservers-extracted
-        nodePackages.dockerfile-language-server-nodejs
-        # nodePackages.typescript-language-server
-        # nodePackages.typescript
-        nodePackages.yaml-language-server
+        # nodePackages.pyright
+        # nodePackages.vscode-langservers-extracted
+        # nodePackages.dockerfile-language-server-nodejs
+        # # nodePackages.typescript-language-server
+        # # nodePackages.typescript
+        # nodePackages.yaml-language-server
 
-        texlab
-        taplo-lsp
+        # texlab
+        # taplo-lsp
 
-        rnix-lsp
-        nixfmt
-        nixpkgs-fmt
+        # rnix-lsp
+        # nixfmt
+        # nixpkgs-fmt
 
-        hadolint # docker linter
+        # hadolint # docker linter
 
         #spacevim
         # vscode
@@ -93,7 +93,7 @@
         # video conference
         #zoom-us
         #jitsi-meet
-        #jitsi-meet-electron
+        jitsi-meet-electron
 
         # file managers
         vifm-full
