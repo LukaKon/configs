@@ -35,7 +35,7 @@
     , nixpkgs-unstable
     , flake-utils
       # , neovim-flake
-    # , nixvim
+      # , nixvim
     , ...
     }:
 
@@ -55,7 +55,7 @@
       nixosConfigurations = {
 
         # desktop
-        fuji = nixpkgs.lib.nixosSystem {
+        fuji = lib.nixosSystem {
           inherit system pkgs;
 
           modules = [
