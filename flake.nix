@@ -66,7 +66,6 @@
             ./modules/system/system.nix # Base system settings
             ./modules/system/network.nix # Network configuration
             ./modules/system/nvidia.nix
-            # ./modules/system/nouveau.nix
             ./modules/system/fonts.nix
             ./modules/system/env_variables.nix
             # ./modules/system/cron.nix
@@ -89,11 +88,10 @@
             #./modules/programs/kakoune.nix
             # ./modules/programs/nvim/nvim.nix
             ./modules/programs/zsh.nix
-            #./modules/programs/flatpak.nix
+            ./modules/programs/flatpak.nix
 
             # Desktops
             # ./modules/desktops/i3/i3.nix  # i3 window manager settings
-            # ./modules/desktops/spectrwm.nix
             # ./modules/desktops/qtile.nix
             ./modules/desktops/kde.nix
 
@@ -101,19 +99,6 @@
             # ./modules/virtualisation/podman.nix # Podman
             # ./modules/virtualisation/docker.nix # Docker
             # ./modules/virtualisation/virt-manager.nix
-
-            # ({ config, pkgs, ... }:
-            #   {
-            #     environment.systemPackages = with pkgs; [
-            #       neovim-flake.defaultPackage.${system}
-            #     ];
-
-            #     imports =
-            #       [
-            #         ./comp/fuji.nix
-            #       ];
-            #   }
-            # )
           ];
         };
 
@@ -141,7 +126,6 @@
             # Services
             ./modules/services/openssh.nix # SSH
             # ./modules/services/keyring.nix
-            # ./modules/services/bluetooth.nix
             # ./modules/services/remote.nix # remote server/desktop
             ./modules/services/laptop.nix
 
