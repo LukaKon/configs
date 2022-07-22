@@ -54,6 +54,7 @@
         firefox
         # brave
         qutebrowser
+        librewolf
         # ungoogled-chromium
 
         #lapce

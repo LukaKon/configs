@@ -3,7 +3,7 @@ theme = "dark_plus"
 [editor]
 scrolloff = 5
 auto-completion = true
-auto-format = true
+auto-format = false
 true-color= true
 line-number = "relative"
 mouse = true
