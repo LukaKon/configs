@@ -7,63 +7,62 @@
         firmwareLinuxNonfree
         microcodeIntel
 
-        nodePackages.pyright
-        nodePackages.vscode-langservers-extracted
-        nodePackages.dockerfile-language-server-nodejs
-        nodePackages.typescript-language-server
-        nodePackages.typescript
-        nodePackages.yaml-language-server
+        # nodePackages.pyright
+        # nodePackages.vscode-langservers-extracted
+        # nodePackages.dockerfile-language-server-nodejs
+        # nodePackages.typescript-language-server
+        # nodePackages.typescript
+        # nodePackages.yaml-language-server
 
-        texlab
-        taplo-lsp
+        # texlab
+        # taplo-lsp
 
-        rnix-lsp
-        nixfmt
-        nixpkgs-fmt
-        
+        # rnix-lsp
+        # nixfmt
+        # nixpkgs-fmt
+
         # to link config files to .config
         stow
 
 
-        (python310.withPackages (ps: with ps;
-        [
-          python-lsp-server
-          pylsp-mypy
-        ]))
+        # (python310.withPackages (ps: with ps;
+        # [
+        #   python-lsp-server
+        #   pylsp-mypy
+        # ]))
 
-          hadolint # docker linter
+        #   hadolint # docker linter
 
-          psutils
-          pciutils
-          gputils
+        psutils
+        pciutils
+        gputils
 
-          git
-          x11_ssh_askpass
-          #git-crypt
-          #gnupg # gpg
-          # pinentry-gnome
+        git
+        x11_ssh_askpass
+        #git-crypt
+        #gnupg # gpg
+        # pinentry-gnome
 
-          # terminal
-          alacritty
-          # foot
+        # terminal
+        alacritty
+        # foot
 
+        nix-prefetch-git
 
-          nix-prefetch-git
+        tree
+        pstree # process tree
+        wget
+        curl
+        rsync
+        bat # cat
+        fd # find
 
-          tree
-          pstree # process tree
-          wget
-          curl
-          rsync
-          bat # cat
-          fd # find
+        lm_sensors
+        # ncdu # disk analisys
+        sysstat
 
-          lm_sensors
-          # ncdu # disk analisys
-          sysstat
-
-          xsel # for copying
-          clipmenu # for copying
-          ];
-        };
-        }
+        xsel # for copying
+        clipmenu # for copying
+      ];
+  };
+}

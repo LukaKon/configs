@@ -26,6 +26,14 @@
     # };
 
     # nixvim.url = github:pta2002/nixvim;
+    
+    helix-master.url = "github:helix-editor/helix";
+    
+    home-manager = {
+            url = "github:nix-community/home-manager";
+            inputs.nixpkgs-unstable.follows = "nixpkgs";
+          };
+    
   };
 
   outputs =
@@ -36,6 +44,8 @@
     , flake-utils
       # , neovim-flake
       # , nixvim
+    , helix-master
+    , home-manager
     , ...
     }:
 
@@ -149,6 +159,19 @@
             # ./modules/virtualisation/podman.nix
             ./modules/virtualisation/arion.nix
             ./modules/virtualisation/virt-manager.nix
+                        
+            home-manager.nixosModules.home-manager
+                        {
+                            home-manager.useGlobalPkgs = true;
+                            home-manager.useUserPackages = true;
+                            home-manager.extraSpecialArgs = {
+                                inherit
+                                   helix-master;
+                              };
+                        home-manager.users.lk= { ... }: {
+                          imports = [./development/dev.nix];
+                        };
+                      }
           ];
         };
 
