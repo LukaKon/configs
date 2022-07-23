@@ -4,9 +4,10 @@ theme = "dark_plus"
 scrolloff = 5
 auto-completion = true
 auto-format = false
-true-color= true
+true-color = true
 line-number = "relative"
 mouse = true
+idle-timeout = 300
 #auto-completion = true
 auto-info = true
 #auto-pairs = true
@@ -22,11 +23,6 @@ auto-info = true
 
 [editor.whitespace]
 render = "all"
-# or control each character
-#[editor.whitespace.render]
-#space = "all"
-#tab = "all"
-#newline = "all"
 
 [editor.whitespace.characters]
 space = "·"

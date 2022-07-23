@@ -91,6 +91,7 @@
         # comunicator
         slack
         # telegram-cli
+        element-desktop
 
         # video conference
         #zoom-us
@@ -115,10 +116,9 @@
 
         (python310.withPackages (ps: with ps;
         [
+            # django
           ptpython
 
-          python-lsp-server
-          pylsp-mypy
           pyls-isort
           rope
           autopep8

@@ -6,7 +6,7 @@
       [
         firmwareLinuxNonfree
         microcodeIntel
-        
+
         nodePackages.pyright
         nodePackages.vscode-langservers-extracted
         nodePackages.dockerfile-language-server-nodejs
@@ -20,40 +20,50 @@
         rnix-lsp
         nixfmt
         nixpkgs-fmt
-
-        hadolint # docker linter
-
-        psutils
-        pciutils
-        gputils
-
-        git
-        x11_ssh_askpass
-        #git-crypt
-        #gnupg # gpg
-        # pinentry-gnome
-
-        # terminal
-        alacritty
-        # foot
+        
+        # to link config files to .config
+        stow
 
 
-        nix-prefetch-git
+        (python310.withPackages (ps: with ps;
+        [
+          python-lsp-server
+          pylsp-mypy
+        ]))
 
-        tree
-        pstree # process tree
-        wget
-        curl
-        rsync
-        bat # cat
-        fd # find
+          hadolint # docker linter
 
-        lm_sensors
-        # ncdu # disk analisys
-        sysstat
+          psutils
+          pciutils
+          gputils
 
-        xsel # for copying
-        clipmenu # for copying
-      ];
-  };
-}
+          git
+          x11_ssh_askpass
+          #git-crypt
+          #gnupg # gpg
+          # pinentry-gnome
+
+          # terminal
+          alacritty
+          # foot
+
+
+          nix-prefetch-git
+
+          tree
+          pstree # process tree
+          wget
+          curl
+          rsync
+          bat # cat
+          fd # find
+
+          lm_sensors
+          # ncdu # disk analisys
+          sysstat
+
+          xsel # for copying
+          clipmenu # for copying
+          ];
+        };
+        }
