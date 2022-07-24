@@ -59,7 +59,7 @@
 
         #lapce
 
-        helix
+        # helix
 
         # nodePackages.pyright
         # nodePackages.vscode-langservers-extracted

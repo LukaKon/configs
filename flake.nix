@@ -160,19 +160,19 @@
             ./modules/virtualisation/arion.nix
             ./modules/virtualisation/virt-manager.nix
 
-            # home-manager.nixosModules.home-manager
-            # {
-            #   home-manager.useGlobalPkgs = true;
-            #   home-manager.useUserPackages = true;
-            #   home-manager.extraSpecialArgs = {
-            #     inherit
-            #       helix-master;
-            #   };
-            #   home-manager.users.lk = { ... }: {
-            #     home.stateVersion="22.11";
-            #     imports = [ ./development/dev.nix ];
-            #   };
-            # }
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = {
+                inherit
+                  helix-master;
+              };
+              home-manager.users.lk = { ... }: {
+                home.stateVersion="22.11";
+                imports = [ ./home ];
+              };
+            }
           ];
         };
 
