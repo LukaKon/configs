@@ -1,26 +1,32 @@
 { pkgs, config, ... }:
 {
   home.packages = with pkgs; [
-    # nodePackages.pyright
-    # nodePackages.vscode-langservers-extracted
-    # nodePackages.dockerfile-language-server-nodejs
-    # nodePackages.typescript-language-server
-    # nodePackages.typescript
-    # nodePackages.yaml-language-server
+    clang
 
-    # texlab
-    # taplo-lsp
+    nodejs-18_x
+    # deno
 
-    # rnix-lsp
-    # nixfmt
-    # nixpkgs-fmt
+    hadolint # docker linter
+
+    dotnet-sdk
 
     # (python310.withPackages (ps: with ps;
     # [
-    #   python-lsp-server
-    #   pylsp-mypy
-    # ]))
+      # ptpython
 
-    hadolint # docker linter
+      # pyls-isort
+      # rope
+      # autopep8
+      # flake8
+
+        # colorama
+      # psutil
+      # pip
+      # pynvim
+      # yapf
+      # jedi
+      # pylint
+      #   # jupyter
+    # ]))
   ];
 }

@@ -48,29 +48,26 @@
   };
 
   home.packages = with pkgs; [
-    # Debugging stuff
+    # Debugging     
     lldb
+
 
     # Language servers
     clang-tools # C-Style
     cmake-language-server # Cmake
-    texlab # LaTeX
     # gopls # Go 
-    rnix-lsp # Nix
-    # rust-analyzer
+    rust-analyzer
     # zls # Zig
-    # omnisharp-roslyn # .NET 
+    omnisharp-roslyn # .NET 
     # sumneko-lua-language-server # Lua
     nodePackages.vim-language-server
     nodePackages.vscode-json-languageserver
 
-    # haskell-language-server
-
     nodePackages.pyright
     nodePackages.vscode-langservers-extracted
     nodePackages.dockerfile-language-server-nodejs
-    # nodePackages.typescript-language-server
-    # nodePackages.typescript
+    nodePackages.typescript-language-server
+    nodePackages.typescript
 
     # yaml
     nodePackages.yaml-language-server

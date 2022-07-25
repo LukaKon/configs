@@ -27,19 +27,6 @@
         xarchiver
         p7zip
 
-        # rustup
-
-        # dotnet-sdk
-        # clang
-        # clang-tools
-        # lldb
-        #gcc
-        # cmake
-        #bmake
-        # luajit
-        # nodejs-18_x
-        #deno
-
         #firejail
 
         # qmk
@@ -60,22 +47,6 @@
         #lapce
 
         # helix
-
-        # nodePackages.pyright
-        # nodePackages.vscode-langservers-extracted
-        # nodePackages.dockerfile-language-server-nodejs
-        # # nodePackages.typescript-language-server
-        # # nodePackages.typescript
-        # nodePackages.yaml-language-server
-
-        # texlab
-        # taplo-lsp
-
-        # rnix-lsp
-        # nixfmt
-        # nixpkgs-fmt
-
-        # hadolint # docker linter
 
         #spacevim
         # vscode
@@ -114,25 +85,24 @@
 
         glances
 
-        # (python310.withPackages (ps: with ps;
-        # [
-        #     # django
+        (python310.withPackages (ps: with ps;
+        [
         #   ptpython
 
-        #   pyls-isort
-        #   rope
-        #   autopep8
-        #   flake8
+          pyls-isort
+          rope
+          autopep8
+          flake8
 
         #   # colorama
-        #   psutil
-        #   pip
-        #   pynvim
-        #   yapf
-        #   jedi
-        #   pylint
+          psutil
+          pip
+          pynvim
+          yapf
+          jedi
+          pylint
         #   # jupyter
-        # ]))
+        ]))
       ];
   };
 }
