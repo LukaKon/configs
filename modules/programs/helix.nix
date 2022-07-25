@@ -40,9 +40,9 @@
       };
       keys.normal = {
         "X" = "extend_line_above";
-        # "{" = "goto_prev_paragraph";
-        # "}" = "goto_next_paragraph";
-        # "y" = "yank_main_selection_to_clipboard";
+        "{" = "goto_prev_paragraph";
+        "}" = "goto_next_paragraph";
+        "y" = "yank_main_selection_to_clipboard";
       };
     };
   };
@@ -67,9 +67,9 @@
     # haskell-language-server
 
     nodePackages.pyright
-    # nodePackages.vscode-langservers-extracted
+    nodePackages.vscode-langservers-extracted
     nodePackages.dockerfile-language-server-nodejs
-    nodePackages.typescript-language-server
+    # nodePackages.typescript-language-server
     # nodePackages.typescript
 
     # yaml

@@ -30,14 +30,14 @@
         # rustup
 
         # dotnet-sdk
-        clang
-        clang-tools
-        lldb
+        # clang
+        # clang-tools
+        # lldb
         #gcc
-        cmake
+        # cmake
         #bmake
         # luajit
-        nodejs-18_x
+        # nodejs-18_x
         #deno
 
         #firejail
@@ -114,25 +114,25 @@
 
         glances
 
-        (python310.withPackages (ps: with ps;
-        [
-            # django
-          ptpython
+        # (python310.withPackages (ps: with ps;
+        # [
+        #     # django
+        #   ptpython
 
-          pyls-isort
-          rope
-          autopep8
-          flake8
+        #   pyls-isort
+        #   rope
+        #   autopep8
+        #   flake8
 
-          # colorama
-          psutil
-          pip
-          pynvim
-          yapf
-          jedi
-          pylint
-          # jupyter
-        ]))
+        #   # colorama
+        #   psutil
+        #   pip
+        #   pynvim
+        #   yapf
+        #   jedi
+        #   pylint
+        #   # jupyter
+        # ]))
       ];
   };
 }
