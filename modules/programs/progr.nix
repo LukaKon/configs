@@ -7,6 +7,8 @@
         firmwareLinuxNonfree
         microcodeIntel
 
+        glances
+
         # to link config files to .config
         stow
 

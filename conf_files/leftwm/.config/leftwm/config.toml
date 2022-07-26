@@ -45,6 +45,12 @@ key = "Return"
 
 [[keybind]]
 command = "Execute"
+value = "codium"
+modifier = ["modkey"]
+key = "c"
+
+[[keybind]]
+command = "Execute"
 value = "firefox"
 modifier = ["modkey"]
 key = "b"

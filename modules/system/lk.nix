@@ -44,10 +44,6 @@
         librewolf
         # ungoogled-chromium
 
-        #lapce
-
-        # helix
-
         #spacevim
         # vscode
         dbeaver
@@ -82,8 +78,6 @@
         # LaTeX
         texlive.combined.scheme-full
         # texstudio
-
-        glances
 
         (python310.withPackages (ps: with ps;
         [
