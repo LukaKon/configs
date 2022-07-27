@@ -19,11 +19,11 @@
       flake = false;
     };
 
-    neovim-flake = {
-    url = "github:jordanisaacs/neovim-flake";
+    # neovim-flake = {
+    # url = "github:jordanisaacs/neovim-flake";
     #url = "github:wiltaylor/neovim-flake";
     # url = "github:lukakon/neovim-flake";
-    };
+    # };
 
     # nixvim.url = github:pta2002/nixvim;
 
@@ -42,8 +42,8 @@
     , nixpkgs
     , nixpkgs-unstable
     , flake-utils
-      , neovim-flake
-      # , nixvim
+    # , neovim-flake
+    # , nixvim
     , helix-master
     , home-manager
     , ...
@@ -166,8 +166,8 @@
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = {
                 inherit
-                  helix-master
-                neovim-flake;
+                  helix-master;
+                # neovim-flake;
               };
               home-manager.users.lk = { ... }: {
                 home.stateVersion="22.11";
