@@ -11,6 +11,9 @@
       [
         flameshot
 
+        # remote controle
+        rustdesk
+
         # office
         libreoffice
 
@@ -81,21 +84,21 @@
 
         (python310.withPackages (ps: with ps;
         [
-        #   ptpython
+          #   ptpython
 
           pyls-isort
           rope
           autopep8
           flake8
 
-        #   # colorama
+          #   # colorama
           psutil
           pip
           pynvim
           yapf
           jedi
           pylint
-        #   # jupyter
+          #   # jupyter
         ]))
       ];
   };
