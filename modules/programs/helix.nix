@@ -48,16 +48,14 @@
   };
 
   home.packages = with pkgs; [
-    # Debugging     
+    # Debugging
     lldb
 
 
     # Language servers
     clang-tools # C-Style
     cmake-language-server # Cmake
-    # gopls # Go 
     rust-analyzer
-    # zls # Zig
     omnisharp-roslyn # .NET 
     # sumneko-lua-language-server # Lua
     nodePackages.vim-language-server
