@@ -69,7 +69,7 @@
   nix = {
     settings = {
       auto-optimise-store = true;
-      max-jobs = lib.mkDefault 4;
+      max-jobs = lib.mkDefault 6;
     };
 
     gc = {

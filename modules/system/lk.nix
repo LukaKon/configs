@@ -69,7 +69,7 @@
         jitsi-meet-electron
 
         # file managers
-        vifm-full
+        # vifm-full
         # ranger
         fzf
         ripgrep
@@ -94,7 +94,7 @@
           #   # colorama
           psutil
           pip
-          pynvim
+          # pynvim
           yapf
           jedi
           pylint

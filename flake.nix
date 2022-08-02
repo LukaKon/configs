@@ -4,7 +4,9 @@
   inputs = rec {
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.05";
-    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    # nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    # nixpkgs.url = "nixpkgs/nixos-unstable";
+
 
     nix.url = "github:NixOS/nix";
 
@@ -29,8 +31,9 @@
     helix-master.url = "github:helix-editor/helix";
 
     home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs-unstable.follows = "nixpkgs";
+      # url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-22.05";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -38,10 +41,10 @@
     inputs@{ self
     , nix
     , nixpkgs
-    , nixpkgs-unstable
+      # , nixpkgs-unstable
     , flake-utils
-    # , neovim-flake
-    # , nixvim
+      # , neovim-flake
+      # , nixvim
     , helix-master
     , home-manager
     , ...
@@ -50,9 +53,9 @@
     let
       system = "x86_64-linux";
 
-      inherit (nixpkgs-unstable) lib;
+      inherit (nixpkgs) lib;
 
-      pkgs = import nixpkgs-unstable{
+      pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
         overlays = [ ];
@@ -165,7 +168,7 @@
                   helix-master;
               };
               home-manager.users.lk = { ... }: {
-                home.stateVersion="22.11";
+                home.stateVersion = "22.05";
                 imports = [ ./home ];
               };
             }

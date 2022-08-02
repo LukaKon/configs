@@ -51,14 +51,13 @@
     # Debugging
     lldb
 
-
     # Language servers
     clang-tools # C-Style
     cmake-language-server # Cmake
     rust-analyzer
     omnisharp-roslyn # .NET 
     # sumneko-lua-language-server # Lua
-    nodePackages.vim-language-server
+    # nodePackages.vim-language-server
     nodePackages.vscode-json-languageserver
 
     nodePackages.pyright
@@ -81,12 +80,10 @@
     nixfmt
     nixpkgs-fmt
 
-
     (python310.withPackages (ps: with ps;
     [
       python-lsp-server
       pylsp-mypy
     ]))
-
   ];
 }
