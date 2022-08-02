@@ -14,8 +14,8 @@
     redshift = {
       enable = true;
       brightness = {
-        day = "0.9";
-        night = "0.7";
+        day = "1.0";
+        night = "0.8";
       };
     };
 
@@ -28,8 +28,8 @@
     upower = {
       usePercentageForPolicy = true;
       percentageLow = 20;
-      percentageCritical = 5;
-      percentageAction = 2;
+      percentageCritical = 15;
+      percentageAction = 10;
     };
   };
 
