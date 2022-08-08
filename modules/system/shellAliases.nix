@@ -16,7 +16,7 @@
     # term
     susp = "systemctl suspend";
     reboot = "doas reboot";
-    poff = "doas powesoff";
+    poff = "doas poweroff";
 
     # editor
     vi = "nvim";
