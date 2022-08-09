@@ -7,7 +7,6 @@
     # nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     # nixpkgs.url = "nixpkgs/nixos-unstable";
 
-
     nix.url = "github:NixOS/nix";
 
     flake-utils = {
@@ -19,14 +18,6 @@
       url = "github:edolstra/flake-compat";
       flake = false;
     };
-
-    # neovim-flake = {
-    # url = "github:jordanisaacs/neovim-flake";
-    #url = "github:wiltaylor/neovim-flake";
-    # url = "github:lukakon/neovim-flake";
-    # };
-
-    # nixvim.url = github:pta2002/nixvim;
 
     helix-master.url = "github:helix-editor/helix";
 
@@ -43,8 +34,6 @@
     , nixpkgs
       # , nixpkgs-unstable
     , flake-utils
-      # , neovim-flake
-      # , nixvim
     , helix-master
     , home-manager
     , ...
@@ -121,17 +110,6 @@
             }
           ];
         };
-
-        # raspberry
-        #        nixos = lib.nixosSystem {
-        #          #inherit pkgs;
-        #          nixpkgs = self.nixpkgs;
-        #          system = "aarch64-linux";
-
-        #          modules = [
-        #            ./raspi/configuration.nix
-        #          ];
-        #        };
       };
     };
 }
