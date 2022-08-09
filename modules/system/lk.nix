@@ -20,6 +20,7 @@
         # graphic
         gimp
         darktable
+        blender
 
         youtube-dl
         freetube
@@ -53,7 +54,7 @@
         vscodium
         arduino
         # jetbrains.pycharm-community
-        #jetbrains.pycharm-professional
+        # jetbrains.pycharm-professional
         # unityhub
 
         mindforger
@@ -65,7 +66,6 @@
 
         # video conference
         #zoom-us
-        #jitsi-meet
         jitsi-meet-electron
 
         # file managers
