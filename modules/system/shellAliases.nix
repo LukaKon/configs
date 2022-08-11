@@ -20,7 +20,6 @@
 
     # editor
     vi = "nvim";
-    # vi = "vim";
 
     # python
     py = "python";
@@ -30,5 +29,9 @@
 
     # docker
     dc = "docker container";
+
+    # programs
+    lgi = "lazygit";
+    ldo = "lazydocker";
   };
 }

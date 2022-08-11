@@ -4,7 +4,7 @@
     enable = true;
     package = helix-master.packages."x86_64-linux".default;
     settings = {
-      theme = "dark_plus";
+      theme = "ayu_mirage";
       editor = {
         auto-format = false;
         auto-info = true;
