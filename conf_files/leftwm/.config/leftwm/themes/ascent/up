@@ -65,7 +65,8 @@ fi
 
 #set background
 if [ -x "$(command -v feh)" ]; then
-  feh --bg-fill "$SCRIPTPATH"/nord-wallpaper.jpg
+  # feh --bg-fill "$SCRIPTPATH"/nord-wallpaper.jpg
+  feh --bg-fill "$SCRIPTPATH"/02.jpg
 fi
 
 #set the theme.toml config
