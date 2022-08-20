@@ -80,6 +80,10 @@
     nixfmt
     nixpkgs-fmt
 
+    # markdown
+    # TODO: markdown is not yet supported by helix
+    tree-sitter-grammars.tree-sitter-markdown
+
     (python310.withPackages (ps: with ps;
     [
       python-lsp-server
