@@ -95,6 +95,9 @@
             # ./modules/virtualisation/podman.nix
             ./modules/virtualisation/arion.nix
             ./modules/virtualisation/virt-manager.nix
+            
+            # Nixos ontainers
+            ./containers
 
             home-manager.nixosModules.home-manager
             {
