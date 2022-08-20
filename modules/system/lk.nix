@@ -57,7 +57,7 @@
         # jetbrains.pycharm-professional
         # unityhub
 
-        mindforger
+        # mindforger
 
         # comunicator
         slack

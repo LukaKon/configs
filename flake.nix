@@ -78,6 +78,7 @@
             ./modules/services/openssh.nix # SSH
             # ./modules/services/remote.nix # remote server/desktop
             ./modules/services/laptop.nix
+            ./modules/services/vial.nix
 
             # Programs
             ./modules/programs/progr.nix
