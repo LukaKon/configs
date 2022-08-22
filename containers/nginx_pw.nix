@@ -1,4 +1,4 @@
-{ ... }:
+{ config, pkgs, ... }:
 {
   containers.test = {
     # system.stateVersion = "22.05";
@@ -7,20 +7,7 @@
     config = { config, pkgs, ... }: {
       services.nginx = {
         enable = true;
-        # config = ''
-        # server {
-          # listen 80 default_server;
-        #   server_name localhost;
-        
-        #   location / {
-        #     root /usr/share/nginx/html;
-        #     index index.html index.htm;
-        #   }
-        # }
-        # '';
-        # virtualHosts = {
-          # "partywizard.pl" = { };
-        # };
+        config = pkgs.lib.readFile /home/lk/dev/party_wizard/PARTY/nginx/nginx.conf;
       };
       networking.firewall.allowedTCPPorts = [ 80 ];
     };

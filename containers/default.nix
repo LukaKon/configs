@@ -1,6 +1,6 @@
 { config, ... }:
 {
   imports = [
-    ./test.nix
+    ./nginx_pw.nix
   ];
 }
