@@ -7,7 +7,7 @@
     config = { config, pkgs, ... }: {
       services.nginx = {
         enable = true;
-        config = pkgs.lib.readFile /home/lk/dev/party_wizard/PARTY/nginx/nginx.conf;
+        config = pkgs.lib.readFile ./nginx.conf;
       };
       networking.firewall.allowedTCPPorts = [ 80 ];
     };
