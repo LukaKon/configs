@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  containers.test = {
+  containers.nginx_pw = {
     # system.stateVersion = "22.05";
     ephemeral = true;
     autoStart = true;
@@ -19,8 +19,8 @@
     #   };
     # };
 
-    # privateNetwork = true;
-    # hostAddress = "192.168.0.4";
-    # localAddress = "192.168.0.50";
+    privateNetwork = true;
+    hostAddress = "192.168.0.4";
+    localAddress = "192.168.0.50";
   };
 }
