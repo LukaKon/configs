@@ -7,20 +7,20 @@
     config = { config, pkgs, ... }: {
       services.nginx = {
         enable = true;
-        config = pkgs.lib.readFile ./nginx.conf;
+        # config = pkgs.lib.readFile ./nginx.conf;
       };
-      networking.firewall.allowedTCPPorts = [ 80 ];
+      # networking.firewall.allowedTCPPorts = [ 80 ];
     };
 
     # bindMounts = {
-    #   "/var/log/httpd" = {
-    #     hostPath = "/mnt/testContainerData/";
-    #     isReadOnly = false;
-    #   };
+      # "/usr/share/nginx/html" = {
+        # hostPath = "/home/lk/dev/party_creator/PARTY/front/dist";
+        # isReadOnly = false;
+      # };
     # };
 
-    privateNetwork = true;
-    hostAddress = "192.168.0.4";
-    localAddress = "192.168.0.50";
+    # privateNetwork = true;
+    # hostAddress = "192.168.0.4";
+    # localAddress = "192.168.0.50";
   };
 }
