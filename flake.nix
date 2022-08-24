@@ -97,7 +97,7 @@
             ./modules/virtualisation/virt-manager.nix
             
             # Nixos ontainers
-            ./containers
+            # ./containers
 
             home-manager.nixosModules.home-manager
             {
