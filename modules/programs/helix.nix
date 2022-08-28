@@ -10,7 +10,7 @@
         auto-info = true;
         line-number = "relative";
         cursorline = true;
-        scrolloff = 10;
+        scrolloff = 5;
         color-modes = true;
         idle-timeout = 400;
         true-color = true;

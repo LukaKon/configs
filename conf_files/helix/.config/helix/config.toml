@@ -1,17 +1,17 @@
-theme = "dark_plus"
+theme = "ayu_mirage"
 
 [editor]
-scrolloff = 5
-auto-completion = true
 auto-format = false
-true-color = true
-line-number = "relative"
-mouse = true
-idle-timeout = 300
-#auto-completion = true
 auto-info = true
-#auto-pairs = true
-#true-color = true
+line-number = "relative"
+# cursorline = true
+scrolloff = 5
+# color-modes = true
+idle-timeout = 300
+true-color = true
+mouse = true
+shell = [ "zsh" ]
+auto-completion = true
 
 [editor.auto-pairs]
 '(' = ')'
@@ -21,6 +21,11 @@ auto-info = true
 '`' = '`'
 '<' = '>'
 
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
 [editor.whitespace]
 render = "all"
 
@@ -28,15 +33,10 @@ render = "all"
 space = "·"
 nbsp = "⍽"
 tab = "→"
-newline = "⏎"
+newline = "⤶"
 
 [editor.lsp]
 display-messages = true
-
-[editor.cursor-shape]
-insert = "bar"
-normal = "block"
-select = "underline"
 
 [editor.file-picker]
 hidden = false
@@ -45,5 +45,15 @@ hidden = false
 smart-case = false
 wrap-around = true
 
-# [editor.auto-pairs]
-# true
+# [editor.statusline]
+# left = [ "mode" "spinner" "file-name" ]
+# center = []
+# right = [ "diagnostics" "file-encoding" "file-line-ending" "file-type" "position" "selections" ]
+
+# [editor.indent-guides]
+# render = true
+
+[keys.normal]
+"X" = "extend_line_above"
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
