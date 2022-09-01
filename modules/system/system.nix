@@ -9,6 +9,8 @@
     supportedFilesystems = [ "ntfs" "zfs" ];
   };
 
+  networking.hostId = "cf635851";
+
   # ZFS services
   services = {
     zfs = {
@@ -56,14 +58,6 @@
     defaultLocale = "pl_PL.UTF-8";
     supportedLocales = [ "pl_PL.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" ];
   };
-
-  # Autoupgrade
-  # system = {
-  #   autoUpgrade = {
-  #     enable = true;
-  #     allowReboot = true;
-  #   };
-  # };
 
   # cleaning store
   nix = {

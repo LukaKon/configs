@@ -41,6 +41,11 @@
   };
 
   hardware.acpilight.enable = true;
+  
+  sound.mediaKeys = {
+    enable = true;
+    volumeStep = "4%";
+  };
 
   environment = {
     systemPackages = with pkgs;

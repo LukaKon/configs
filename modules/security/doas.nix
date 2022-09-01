@@ -7,5 +7,8 @@
   security.doas = {
     enable = true;
     wheelNeedsPassword = true;
+    extraRules = [
+      { groups = [ "wheel" ];}
+    ];
   };
 }

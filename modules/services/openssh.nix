@@ -6,5 +6,7 @@
     permitRootLogin = "no";
     #passwordAuthentication = false;
   };
-  # users.users.lk.openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBSpljbG2//f7ln7RMOuV++QOUdzr7duIVLXhE2zpahE lukasz.konieczny.lk@protonmail.com" ];
+  users.users.lk.openssh.authorizedKeys.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFQV1Lae+Dzf/6Ji7kbqojsC/UfC8wqaSdd/L8bqYEvt lukasz.konieczny.lk@protonmail.com"
+  ];
 }

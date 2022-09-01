@@ -17,7 +17,7 @@
         gputils
 
         git
-        x11_ssh_askpass
+        # x11_ssh_askpass
         lazygit
         #git-crypt
         #gnupg # gpg
@@ -25,7 +25,6 @@
 
         # terminal
         alacritty
-        # foot
 
         nix-prefetch-git
 

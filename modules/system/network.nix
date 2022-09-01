@@ -13,8 +13,6 @@
   # started in user sessions.
   # programs.mtr.enable = true;
 
-  networking.hostId = "4195cf38";
-
   networking = {
     hostName = "lap"; # Define your hostname.
     domain = "luka.lap.org";
