@@ -44,7 +44,7 @@
       ohMyZsh = {
         enable = true;
         plugins = [ "python" "colorize" ];
-        theme = "kolo"; #"sporty_256"; #"strug"; # jonathan
+        theme = "robbyrussell";#"kolo"; #"sporty_256"; #"strug"; # jonathan
         customPkgs = with pkgs; [
           nix-zsh-completions
           zsh-fast-syntax-highlighting
