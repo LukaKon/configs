@@ -124,9 +124,9 @@
             ./virt/hardware-configuration.nix
 
             # System
-            ./modules/system/system.nix # Base system settings
+            ./virt/system.nix # Base system settings
             ./virt/network.nix # Network configuration
-            ./modules/system/fonts.nix
+            # ./modules/system/fonts.nix
             ./modules/system/env_variables.nix
             ./modules/system/shellAliases.nix # Shell aliases
             ./virt/virt_user.nix
