@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  users.users.virt = {
+  users.users.lk = {
     isNormalUser = true;
-    home = "/home/virt";
+    home = "/home/lk";
     description = "virtual user";
     extraGroups = [ "wheel" "networkmanager" "docker" ];
     shell = pkgs.zsh;
