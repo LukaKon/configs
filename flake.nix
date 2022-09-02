@@ -125,7 +125,7 @@
 
             # System
             ./modules/system/system.nix # Base system settings
-            ./modules/system/network.nix # Network configuration
+            ./virt/network.nix # Network configuration
             ./modules/system/fonts.nix
             ./modules/system/env_variables.nix
             ./modules/system/shellAliases.nix # Shell aliases
