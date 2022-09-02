@@ -129,7 +129,7 @@
             ./modules/system/fonts.nix
             ./modules/system/env_variables.nix
             ./modules/system/shellAliases.nix # Shell aliases
-            ./modules/system/lk.nix
+            ./virt/virt_user.nix
 
             # Security
             ./modules/security/doas.nix # Add 'doas'
@@ -139,7 +139,6 @@
             ./modules/services/openssh.nix # SSH
 
             # Programs
-            ./modules/programs/progr.nix
             ./modules/programs/zsh.nix
 
 
