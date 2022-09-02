@@ -6,25 +6,7 @@
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = false;
     cleanTmpDir = true;
-    supportedFilesystems = [ "ntfs" "zfs" ];
-  };
-
-  networking.hostId = "cf635851";
-
-  # ZFS services
-  services = {
-    zfs = {
-      autoSnapshot = {
-        enable = true;
-        daily = 5;
-        weekly = 5;
-        monthly = 10;
-      };
-      autoScrub = {
-        enable = true;
-        interval = "weekly";
-      };
-    };
+    supportedFilesystems = [ "ntfs" ];
   };
 
   # bluetooth
@@ -42,9 +24,6 @@
   # The temperature management daemon
   services.thermald.enable = true;
 
-  # Sound
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
 
   # non-free
   # already in flake

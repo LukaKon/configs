@@ -7,10 +7,10 @@
       touchpad.tapping = true;
     };
 
-    # illum, a daemon for controlling screen brightness with brightness buttons. 
+    # illum, a daemon for controlling screen brightness with brightness buttons.
     illum.enable = true;
 
-    # Redshift change screen's colour temperature depending on the time of day. 
+    # Redshift change screen's colour temperature depending on the time of day.
     redshift = {
       enable = true;
       brightness = {
@@ -41,11 +41,6 @@
   };
 
   hardware.acpilight.enable = true;
-  
-  sound.mediaKeys = {
-    enable = true;
-    volumeStep = "4%";
-  };
 
   environment = {
     systemPackages = with pkgs;

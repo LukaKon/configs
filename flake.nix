@@ -66,7 +66,8 @@
             ./modules/system/network.nix # Network configuration
             ./modules/system/fonts.nix
             ./modules/system/env_variables.nix
-            # ./modules/system/cron.nix
+            ./modules/system/zfs.nix
+            ./modules/sound.nix
             ./modules/system/shellAliases.nix # Shell aliases
             ./modules/system/lk.nix
 
@@ -95,7 +96,58 @@
             # ./modules/virtualisation/podman.nix
             # ./modules/virtualisation/arion.nix
             ./modules/virtualisation/virt-manager.nix
-            
+
+            # Nixos ontainers
+            # ./containers
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = {
+                inherit
+                  helix-master;
+              };
+              home-manager.users.lk = { ... }: {
+                home.stateVersion = "22.05";
+                imports = [ ./home ];
+              };
+            }
+          ];
+        };
+
+        virt = lib.nixosSystem {
+          inherit system pkgs;
+
+          modules = [
+            # Include the results of the hardware scan.
+            ./virt/hardware-configuration.nix
+
+            # System
+            ./modules/system/system.nix # Base system settings
+            ./modules/system/network.nix # Network configuration
+            ./modules/system/fonts.nix
+            ./modules/system/env_variables.nix
+            ./modules/system/shellAliases.nix # Shell aliases
+            ./modules/system/lk.nix
+
+            # Security
+            ./modules/security/doas.nix # Add 'doas'
+            ./modules/security/firewall.nix
+
+            # Services
+            ./modules/services/openssh.nix # SSH
+
+            # Programs
+            ./modules/programs/progr.nix
+            ./modules/programs/zsh.nix
+
+
+            # Virtualisation
+            ./modules/virtualisation/docker.nix # Docker
+            # ./modules/virtualisation/podman.nix
+            # ./modules/virtualisation/arion.nix
+
             # Nixos ontainers
             # ./containers
 
