@@ -67,7 +67,7 @@
             ./modules/system/fonts.nix
             ./modules/system/env_variables.nix
             ./modules/system/zfs.nix
-            ./modules/sound.nix
+            ./modules/system/sound.nix
             ./modules/system/shellAliases.nix # Shell aliases
             ./modules/system/lk.nix
 
@@ -144,7 +144,7 @@
 
 
             # Virtualisation
-            ./modules/virtualisation/docker.nix # Docker
+            # ./modules/virtualisation/docker.nix # Docker
             # ./modules/virtualisation/podman.nix
             # ./modules/virtualisation/arion.nix
 
