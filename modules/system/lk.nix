@@ -12,7 +12,7 @@
         flameshot
 
         # remote controle
-        rustdesk
+        # rustdesk
 
         # office
         libreoffice
