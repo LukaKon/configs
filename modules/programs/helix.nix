@@ -32,7 +32,7 @@
         statusline = {
           left = [ "mode" "spinner" "file-name" ];
           center = [ ];
-          right = [ "diagnostics" "file-encoding" "file-line-ending" "file-type" "position" "selections" ];
+          right = [ "diagnostics" "file-encoding" "file-line-ending" "file-type" "position" "position-percentage" "selections" ];
         };
         indent-guides = {
           render = true;
