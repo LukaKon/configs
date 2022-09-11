@@ -22,6 +22,9 @@
         cursor-shape.insert = "bar";
         cursor-shape.normal = "block";
         cursor-shape.select = "underline";
+        file-picker = {
+          hidden = true;
+        };
         whitespace.render = "all";
         whitespace.characters = {
           space = "·";
@@ -30,12 +33,14 @@
           newline = "⤶";
         };
         statusline = {
-          left = [ "mode" "spinner" "file-name" ];
-          center = [ ];
+          left = [ "mode" "spinner" ];
+          center = [ "file-name" ];
           right = [ "diagnostics" "file-encoding" "file-line-ending" "file-type" "position" "position-percentage" "selections" ];
+          separator = "|";
         };
         indent-guides = {
           render = true;
+          # character = "|"; # default is '|''
         };
       };
       keys.normal = {
