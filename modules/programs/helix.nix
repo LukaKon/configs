@@ -33,8 +33,8 @@
           newline = "⤶";
         };
         statusline = {
-          left = [ "mode" "spinner" ];
-          center = [ "file-name" ];
+          left = [ "mode" "spinner" "file-name" ];
+          center = [ ];
           right = [ "diagnostics" "file-encoding" "file-line-ending" "file-type" "position" "position-percentage" "selections" ];
           separator = "|";
         };

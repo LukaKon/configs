@@ -5,7 +5,7 @@
     isNormalUser = true;
     home = "/home/lk";
     description = "lko";
-    extraGroups = [ "wheel" "networkmanager" "dialout" "libvirtd" "docker" "video" ];
+    extraGroups = [ "wheel" "networkmanager" "dialout" "libvirtd" "docker" "video" "vboxuser" ];
     shell = pkgs.zsh;
     packages = with pkgs;
       [
@@ -49,19 +49,15 @@
         # ungoogled-chromium
 
         #spacevim
-        # vscode
         dbeaver
         vscodium
         arduino
-        # jetbrains.pycharm-community
-        # jetbrains.pycharm-professional
         # unityhub
 
         # mindforger
 
         # comunicator
         slack
-        # telegram-cli
         element-desktop
 
         # video conference
