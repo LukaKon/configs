@@ -6,8 +6,10 @@
 
     nodejs-18_x
     # deno
-    
+
     http-prompt
+
+    heroku
 
     hadolint # docker linter
 
@@ -15,21 +17,21 @@
 
     # (python310.withPackages (ps: with ps;
     # [
-      # ptpython
+    # ptpython
 
-      # pyls-isort
-      # rope
-      # autopep8
-      # flake8
+    # pyls-isort
+    # rope
+    # autopep8
+    # flake8
 
-        # colorama
-      # psutil
-      # pip
-      # pynvim
-      # yapf
-      # jedi
-      # pylint
-      #   # jupyter
+    # colorama
+    # psutil
+    # pip
+    # pynvim
+    # yapf
+    # jedi
+    # pylint
+    #   # jupyter
     # ]))
   ];
 }
