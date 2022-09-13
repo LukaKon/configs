@@ -8,7 +8,7 @@
     # deno
 
     http-prompt
-
+    gitlab-runner
     heroku
 
     hadolint # docker linter
