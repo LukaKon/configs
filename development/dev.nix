@@ -8,6 +8,7 @@
     # deno
 
     http-prompt
+    gitlab
     gitlab-runner
     heroku
 
