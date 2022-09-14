@@ -1,5 +1,10 @@
 { pkgs, config, ... }:
 {
+  imports = [ ./gitlab-runner.nix ];
+  services.gitlab-runner2.enable = true;
+  # services.gitlab-runner2.registrationConfigFile = "/var/lib/secrets/mysecret";
+
+
   home.packages = with pkgs; [
     clang
     bmake
@@ -8,8 +13,8 @@
     # deno
 
     http-prompt
-    gitlab
-    gitlab-runner
+    # gitlab
+    # gitlab-runner
     heroku
 
     hadolint # docker linter
