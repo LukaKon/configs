@@ -17,13 +17,17 @@
         mouse = true;
         shell = [ "zsh" ];
         lsp.display-messages = true;
-        search.smart-case = false;
-        search.wrap-around = true;
-        cursor-shape.insert = "bar";
-        cursor-shape.normal = "block";
-        cursor-shape.select = "underline";
+        search = {
+          smart-case = false;
+          wrap-around = true;
+        };
+        cursor-shape = {
+          insert = "bar";
+          normal = "block";
+          select = "underline";
+        };
         file-picker = {
-          hidden = true;
+          hidden = false;
         };
         whitespace.render = "all";
         whitespace.characters = {
@@ -31,12 +35,13 @@
           nbsp = "⍽";
           tab = "→";
           newline = "⤶";
+          tabpad = ".";
         };
         statusline = {
           left = [ "mode" "spinner" "file-name" ];
           center = [ ];
           right = [ "diagnostics" "file-encoding" "file-line-ending" "file-type" "position" "position-percentage" "selections" ];
-          separator = "|";
+          # separator = "|";
         };
         indent-guides = {
           render = true;
