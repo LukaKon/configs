@@ -26,6 +26,8 @@
       url = "github:nix-community/home-manager/release-22.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    leftwm.url = "github:leftwm/leftwm";
   };
 
   outputs =
@@ -36,6 +38,7 @@
     , flake-utils
     , helix-master
     , home-manager
+    , leftwm
     , ...
     }:
 
@@ -43,12 +46,15 @@
       system = "x86_64-linux";
 
       inherit (nixpkgs) lib;
+      
+      overlays = [ leftwm.overlay ];
 
       pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-        overlays = [ ];
+        inherit system overlays;
+        config = { allowUnfree = true; };
       };
+      
+      # lib = nixpkgs.lib;
 
     in
     rec {
