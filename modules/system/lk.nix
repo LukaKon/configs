@@ -48,9 +48,7 @@
         # brave
         qutebrowser
         librewolf
-        # ungoogled-chromium
 
-        #spacevim
         dbeaver
         vscodium
         arduino
