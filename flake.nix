@@ -47,7 +47,9 @@
 
       inherit (nixpkgs) lib;
 
-      overlays = [ leftwm.overlay ];
+      overlays = [
+        leftwm.overlay
+      ];
 
       pkgs = import nixpkgs {
         inherit system overlays;
@@ -109,7 +111,7 @@
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = {
                 inherit
-                  helix-master;
+                  helix-master ;
               };
               home-manager.users.lk = { ... }: {
                 home.stateVersion = "22.05";
