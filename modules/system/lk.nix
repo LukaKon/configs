@@ -12,6 +12,8 @@
         flameshot
 
         czkawka
+        
+        meld
 
         # remote controle
         # rustdesk

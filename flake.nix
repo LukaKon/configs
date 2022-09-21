@@ -28,6 +28,7 @@
     };
 
     leftwm.url = "github:leftwm/leftwm";
+    polybar.url = "github:polybar/polybar";
   };
 
   outputs =
@@ -39,6 +40,7 @@
     , helix-master
     , home-manager
     , leftwm
+    , polybar
     , ...
     }:
 
@@ -49,6 +51,7 @@
 
       overlays = [
         leftwm.overlay
+        polybar.overlay
       ];
 
       pkgs = import nixpkgs {
