@@ -6,6 +6,8 @@
 
     nodejs-18_x
     # deno
+    
+    distrobox
 
     # http-prompt
     # gitlab
