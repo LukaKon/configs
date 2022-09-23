@@ -1,4 +1,4 @@
-theme = "ayu_mirage"
+theme = "autumn"
 
 [editor]
 auto-format = false
@@ -7,24 +7,25 @@ line-number = "relative"
 # cursorline = true
 scrolloff = 5
 # color-modes = true
-idle-timeout = 300
+idle-timeout = 400
 true-color = true
 mouse = true
 shell = [ "zsh" ]
-auto-completion = true
 
-[editor.auto-pairs]
-'(' = ')'
-'{' = '}'
-'[' = ']'
-'"' = '"'
-'`' = '`'
-'<' = '>'
+[editor.lsp]
+display-messages = true
+
+[editor.search]
+smart-case = false
+wrap-around = true
 
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
 select = "underline"
+
+[editor.file-picker]
+hidden = false
 
 [editor.whitespace]
 render = "all"
@@ -34,26 +35,17 @@ space = "·"
 nbsp = "⍽"
 tab = "→"
 newline = "⤶"
-
-[editor.lsp]
-display-messages = true
-
-[editor.file-picker]
-hidden = false
-
-[editor.search]
-smart-case = false
-wrap-around = true
+tabpad = "."
 
 # [editor.statusline]
-# left = [ "mode" "spinner" "file-name" ]
-# center = []
-# right = [ "diagnostics" "file-encoding" "file-line-ending" "file-type" "position" "selections" ]
+# left = [ "mode", "spinner", "file-name" ]
+# center = [ ]
+# right = [ "diagnostics", "file-encoding", "file-line-ending", "file-type", "position", "position-percentage", "selections" ]
 
 # [editor.indent-guides]
 # render = true
 
-[keys.normal]
-"X" = "extend_line_above"
-"{" = "goto_prev_paragraph"
-"}" = "goto_next_paragraph"
+# [keys.normal]
+# "X" = "extend_line_above"
+# "{" = "goto_prev_paragraph"
+# "}" = "goto_next_paragraph"
