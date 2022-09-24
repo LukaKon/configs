@@ -4,9 +4,9 @@ theme = "autumn"
 auto-format = false
 auto-info = true
 line-number = "relative"
-# cursorline = true
+cursorline = true
 scrolloff = 5
-# color-modes = true
+color-modes = true
 idle-timeout = 400
 true-color = true
 mouse = true
@@ -37,15 +37,15 @@ tab = "→"
 newline = "⤶"
 tabpad = "."
 
-# [editor.statusline]
-# left = [ "mode", "spinner", "file-name" ]
-# center = [ ]
-# right = [ "diagnostics", "file-encoding", "file-line-ending", "file-type", "position", "position-percentage", "selections" ]
+[editor.statusline]
+left = [ "mode", "spinner", "file-name" ]
+center = [ ]
+right = [ "diagnostics", "file-encoding", "file-line-ending", "file-type", "position", "position-percentage", "selections" ]
 
-# [editor.indent-guides]
-# render = true
+[editor.indent-guides]
+render = true
 
-# [keys.normal]
-# "X" = "extend_line_above"
-# "{" = "goto_prev_paragraph"
-# "}" = "goto_next_paragraph"
+[keys.normal]
+"X" = "extend_line_above"
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
