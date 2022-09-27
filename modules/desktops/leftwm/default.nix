@@ -4,7 +4,7 @@
   services.xserver = {
     enable = true;
     displayManager.lightdm.enable = true;
-    # displayManager.startx.enable = true;
+    # displayManager.sddm.enable = true;
     windowManager.leftwm.enable = true;
     displayManager.defaultSession = "none+leftwm";
     layout = "pl";
@@ -16,7 +16,6 @@
         rofi
         polybar
         picom
-        # conky
         dunst
       ];
   };

@@ -4,7 +4,7 @@
   inputs = rec {
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.05";
-    # nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     # nixpkgs.url = "nixpkgs/nixos-unstable";
 
     nix.url = "github:NixOS/nix";
@@ -21,6 +21,8 @@
 
     helix-master.url = "github:helix-editor/helix";
 
+    # neovim-flake.url = "github:jordanisaacs/neovim-flake";
+
     home-manager = {
       # url = "github:nix-community/home-manager";
       url = "github:nix-community/home-manager/release-22.05";
@@ -28,6 +30,12 @@
     };
 
     leftwm.url = "github:leftwm/leftwm";
+
+    # hyprland = {
+    #   url = "github:hyprwm/Hyprland";
+    #   # build with your own instance of nixpkgs
+    #   inputs.nixpkgs-unstable.follows = "nixpkgs";
+    # };
   };
 
   outputs =
@@ -37,8 +45,10 @@
       # , nixpkgs-unstable
     , flake-utils
     , helix-master
+    # , neovim-flake
     , home-manager
     , leftwm
+    # , hyprland
     , ...
     }:
 
@@ -105,13 +115,22 @@
             # Nixos ontainers
             # ./containers
 
+            # hyprland.nixosModules.default
+
+            # {
+            #   programs = {
+            #     hyprland.enable = true;
+            #   };
+            # }
+
+
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = {
                 inherit
-                  helix-master ;
+                  helix-master;
               };
               home-manager.users.lk = { ... }: {
                 home.stateVersion = "22.05";

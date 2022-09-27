@@ -25,6 +25,7 @@
 
         # terminal
         alacritty
+        kitty
 
         nix-prefetch-git
 
