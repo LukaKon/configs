@@ -4,7 +4,7 @@
   inputs = rec {
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.05";
-    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    # nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     # nixpkgs.url = "nixpkgs/nixos-unstable";
 
     nix.url = "github:NixOS/nix";
