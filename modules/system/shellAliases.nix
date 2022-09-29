@@ -33,5 +33,9 @@
     # programs
     lgi = "lazygit";
     ldo = "lazydocker";
+    
+    # kitty
+    icat = "kitty +kitten icat";
+    d = "kitty +kitten diff";
   };
 }

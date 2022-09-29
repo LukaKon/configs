@@ -17,14 +17,10 @@
         gputils
 
         git
-        # x11_ssh_askpass
         lazygit
-        #git-crypt
-        #gnupg # gpg
-        # pinentry-gnome
 
         # terminal
-        alacritty
+        # alacritty
         kitty
 
         nix-prefetch-git

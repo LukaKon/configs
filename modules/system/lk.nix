@@ -12,7 +12,7 @@
         flameshot
 
         czkawka
-        
+
         meld
 
         # remote controle
@@ -83,6 +83,7 @@
         (python310.withPackages (ps: with ps;
         [
           #   ptpython
+          pygments
 
           pyls-isort
           rope
