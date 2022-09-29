@@ -39,7 +39,7 @@ key = "s"
 
 [[keybind]]
 command = "Execute"
-value = "alacritty"
+value = "kitty"
 modifier = ["modkey"]
 key = "Return"
 
