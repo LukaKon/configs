@@ -15,6 +15,7 @@
       font-awesome
       line-awesome
       mononoki
+      meslo-lgs-nf
     ];
 
     fontconfig = {

@@ -6,7 +6,9 @@
     keyMap = "pl";
   };
 
-  environment.systemPackages = with pkgs; [ any-nix-shell ];
+  environment.systemPackages = with pkgs; [
+    any-nix-shell
+  ];
 
   programs = {
     zsh = {
@@ -44,13 +46,14 @@
       ohMyZsh = {
         enable = true;
         plugins = [ "python" "colorize" ];
-        theme = "norm";#"half-life";#"robbyrussell";#"kolo"; #"sporty_256"; #"strug"; # jonathan
+        theme = "norm"; #"half-life";#"robbyrussell";#"kolo"; #"sporty_256"; #"strug"; # jonathan
         customPkgs = with pkgs; [
           nix-zsh-completions
           zsh-fast-syntax-highlighting
           any-nix-shell
-          # fzf-zsh
+          fzf-zsh
           zsh-nix-shell
+          zsh-vi-mode
         ];
       };
     };
