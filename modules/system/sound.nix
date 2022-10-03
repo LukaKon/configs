@@ -14,7 +14,7 @@
     };
 
     # pulse.enable = true;
-    jack.enable = true;
+    # jack.enable = true;
   };
 
   sound.mediaKeys = {
