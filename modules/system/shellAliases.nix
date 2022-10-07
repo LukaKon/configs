@@ -18,9 +18,6 @@
     reboot = "doas reboot";
     poff = "doas poweroff";
 
-    # editor
-    vi = "nvim";
-
     # python
     py = "python";
 
@@ -29,6 +26,7 @@
 
     # docker
     dc = "docker container";
+    db = "distrobox";
 
     # programs
     lgi = "lazygit";
