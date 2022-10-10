@@ -9,17 +9,27 @@
     shell = pkgs.zsh;
     packages = with pkgs;
       [
-        flameshot
+        # www
+        firefox
+        # brave
+        qutebrowser
+        librewolf
 
-        czkawka
-
+        # dev
+        vscodium
+        dbeaver
+        arduino
+        # unityhub
         meld
+        postman
 
         # remote controle
         # rustdesk
 
         # office
         libreoffice
+        flameshot
+        czkawka
 
         # graphic
         gimp
@@ -35,7 +45,6 @@
         xarchiver
         p7zip
 
-        #firejail
 
         # qmk
         qmk
@@ -45,24 +54,11 @@
         via
         vial
 
-        # www
-        firefox
-        # brave
-        qutebrowser
-        librewolf
-
-        dbeaver
-        vscodium
-        arduino
-        # unityhub
-
         # mindforger
 
-        # comunicator
+        # comunication
         slack
         element-desktop
-
-        # video conference
         #zoom-us
         jitsi-meet-electron
 

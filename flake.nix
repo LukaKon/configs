@@ -22,6 +22,10 @@
     helix-master.url = "github:helix-editor/helix";
 
     # neovim-flake.url = "github:jordanisaacs/neovim-flake";
+    neovim-flake = {
+      url = github:gvolpe/neovim-flake;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       # url = "github:nix-community/home-manager";
@@ -45,10 +49,10 @@
       # , nixpkgs-unstable
     , flake-utils
     , helix-master
-    # , neovim-flake
+    , neovim-flake
     , home-manager
     , leftwm
-    # , hyprland
+      # , hyprland
     , ...
     }:
 
@@ -134,57 +138,10 @@
               };
               home-manager.users.lk = { ... }: {
                 home.stateVersion = "22.05";
-                imports = [ ./home ];
-              };
-            }
-          ];
-        };
-
-        virt = lib.nixosSystem {
-          inherit system pkgs;
-
-          modules = [
-            # Include the results of the hardware scan.
-            ./virt/hardware-configuration.nix
-
-            # System
-            ./virt/system.nix # Base system settings
-            ./virt/network.nix # Network configuration
-            # ./modules/system/fonts.nix
-            ./modules/system/env_variables.nix
-            ./modules/system/shellAliases.nix # Shell aliases
-            ./virt/virt_user.nix
-
-            # Security
-            ./modules/security/doas.nix # Add 'doas'
-            ./modules/security/firewall.nix
-
-            # Services
-            ./modules/services/openssh.nix # SSH
-
-            # Programs
-            ./modules/programs/zsh.nix
-
-
-            # Virtualisation
-            # ./modules/virtualisation/docker.nix # Docker
-            # ./modules/virtualisation/podman.nix
-            # ./modules/virtualisation/arion.nix
-
-            # Nixos ontainers
-            # ./containers
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = {
-                inherit
-                  helix-master;
-              };
-              home-manager.users.lk = { ... }: {
-                home.stateVersion = "22.05";
-                imports = [ ./home ];
+                imports = [
+                  ./home
+                  neovim-flake.nixosModules.hm
+                ];
               };
             }
           ];
