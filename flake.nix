@@ -22,10 +22,10 @@
     helix-master.url = "github:helix-editor/helix";
 
     # neovim-flake.url = "github:jordanisaacs/neovim-flake";
-    neovim-flake = {
-      url = github:gvolpe/neovim-flake;
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # neovim-flake = {
+    #   url = github:gvolpe/neovim-flake;
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     home-manager = {
       # url = "github:nix-community/home-manager";
@@ -49,7 +49,7 @@
       # , nixpkgs-unstable
     , flake-utils
     , helix-master
-    , neovim-flake
+    # , neovim-flake
     , home-manager
     , leftwm
       # , hyprland
@@ -140,7 +140,7 @@
                 home.stateVersion = "22.05";
                 imports = [
                   ./home
-                  neovim-flake.nixosModules.hm
+                  # neovim-flake.nixosModules.hm
                 ];
               };
             }
