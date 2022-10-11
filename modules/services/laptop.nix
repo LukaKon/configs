@@ -2,10 +2,14 @@
 
 {
   services = {
-    xserver.libinput = {
-      enable = true;
-      touchpad.tapping = true;
-    };
+    xserver =
+      {
+        xkbOptions = "caps:escape";
+        libinput = {
+          enable = true;
+          touchpad.tapping = true;
+        };
+      };
 
     # illum, a daemon for controlling screen brightness with brightness buttons.
     illum.enable = true;
@@ -20,8 +24,8 @@
     };
 
     logind = {
-      lidSwitch = "ignore";
-      extraConfig = "HandleLidSwitch=ignore";
+      lidSwitch = "hibernate";
+      # extraConfig = "HandleLidSwitch=ignore";
       lidSwitchExternalPower = "ignore";
     };
 
