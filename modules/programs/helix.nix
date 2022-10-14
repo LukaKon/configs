@@ -15,8 +15,10 @@
         idle-timeout = 400;
         true-color = true;
         mouse = true;
+        middle-click-paste = true; # new default
         shell = [ "zsh" ];
         lsp.display-messages = true;
+        completion-trigger-len = 3; #new
         search = {
           smart-case = false;
           wrap-around = true;
