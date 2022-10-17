@@ -25,8 +25,12 @@
 
     logind = {
       lidSwitch = "hibernate";
-      # extraConfig = "HandleLidSwitch=ignore";
       lidSwitchExternalPower = "ignore";
+      extraConfig = ''
+        IdleAction=suspend
+        IdleActionSec=3m
+      '';
+
     };
 
     upower = {

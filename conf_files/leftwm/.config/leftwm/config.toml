@@ -4,17 +4,17 @@ workspaces = []
 tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 layouts = [
    "MainAndVertStack",
-   # "CenterMainBalanced",
-   "MainAndHorizontalStack",
-   # "MainAndDeck",
-   "GridHorizontal",
+   "CenterMainBalanced",
+   # "MainAndHorizontalStack",
+   "MainAndDeck",
+   # "GridHorizontal",
    # "EvenHorizontal",
-   "EvenVertical",
+   # "EvenVertical",
    # "Fibonacci",
    # "CenterMain",
    "Monocle",
    # "RightWiderLeftStack",
-   "LeftWiderRightStack"
+   # "LeftWiderRightStack"
   ]
 
 layout_mode = "Workspace"
