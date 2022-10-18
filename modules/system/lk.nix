@@ -5,7 +5,15 @@
     isNormalUser = true;
     home = "/home/lk";
     description = "lko";
-    extraGroups = [ "wheel" "networkmanager" "dialout" "libvirtd" "docker" "video" "vboxuser" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "dialout"
+      "libvirtd"
+      "docker"
+      "video"
+      "vboxuser"
+    ];
     shell = pkgs.zsh;
     packages = with pkgs;
       [

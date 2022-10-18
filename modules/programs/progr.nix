@@ -4,6 +4,12 @@
   environment = {
     defaultPackages = with pkgs;
       [
+        # Logitech mause
+        # piper
+        # libratbag
+        solaar
+        # logiops
+
         firmwareLinuxNonfree
         microcodeIntel
 
