@@ -9,11 +9,6 @@
     supportedFilesystems = [ "ntfs" ];
   };
 
-  # bluetooth
-  hardware.bluetooth = {
-    enable = false;
-  };
-
   powerManagement = {
     enable = true;
     cpuFreqGovernor = lib.mkDefault "powersave";
