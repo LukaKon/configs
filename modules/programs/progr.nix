@@ -7,7 +7,7 @@
         # Logitech mause
         # piper
         # libratbag
-        # solaar
+        solaar
         # logiops
 
         firmwareLinuxNonfree
