@@ -20,6 +20,7 @@
     dotnet-sdk
 
     rustc
+    cargo
     rustfmt
     # (python310.withPackages (ps: with ps;
     # [
