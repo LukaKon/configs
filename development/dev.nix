@@ -19,6 +19,8 @@
 
     dotnet-sdk
 
+    rustc
+    rustfmt
     # (python310.withPackages (ps: with ps;
     # [
     # ptpython
