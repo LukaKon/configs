@@ -12,7 +12,7 @@ layouts = [
    # "EvenVertical",
    # "Fibonacci",
    # "CenterMain",
-   "Monocle",
+   # "Monocle",
    # "RightWiderLeftStack",
    # "LeftWiderRightStack"
   ]
@@ -26,7 +26,7 @@ focus_new_windows = true
 [[keybind]]
 command = "Execute"
 # value = "dmenu_run"
-value = "rofi -show run"
+value = "rofi -show drun"
 modifier = ["modkey"]
 key = "r"
 
@@ -39,15 +39,15 @@ key = "s"
 
 [[keybind]]
 command = "Execute"
-value = "kitty"
-modifier = ["modkey"]
-key = "Return"
-
-[[keybind]]
-command = "Execute"
 value = "codium"
 modifier = ["modkey"]
 key = "c"
+
+[[keybind]]
+command = "Execute"
+value = "kitty"
+modifier = ["modkey"]
+key = "Return"
 
 [[keybind]]
 command = "Execute"
