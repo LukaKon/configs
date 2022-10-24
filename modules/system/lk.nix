@@ -24,6 +24,7 @@
         librewolf
 
         # dev
+        neovim
         vscodium
         dbeaver
         arduino

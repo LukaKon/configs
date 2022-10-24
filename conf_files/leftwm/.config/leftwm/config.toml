@@ -14,7 +14,7 @@ layouts = [
    # "CenterMain",
    # "Monocle",
    # "RightWiderLeftStack",
-   # "LeftWiderRightStack"
+   "LeftWiderRightStack"
   ]
 
 layout_mode = "Workspace"

@@ -105,7 +105,7 @@
             # Programs
             ./modules/programs/progr.nix
             ./modules/programs/zsh.nix
-            ./modules/programs/flatpak.nix
+            # ./modules/programs/flatpak.nix
 
             # Desktops
             ./modules/desktops/leftwm
