@@ -32,6 +32,9 @@
     lgi = "lazygit";
     ldo = "lazydocker";
     
+    # nvim
+    vi = "nvim";
+    
     # kitty
     icat = "kitty +kitten icat";
     d = "kitty +kitten diff";
