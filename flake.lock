@@ -180,11 +180,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1666566178,
-        "narHash": "sha256-X7SJZMLOFUf1bXh73Ben60O+taUd9vx/3WbvD7dZUII=",
+        "lastModified": 1666753213,
+        "narHash": "sha256-Q84taWnAYFGQOg+lQy1bP0pYWl6KKtbe5q1/eUIZBWA=",
         "owner": "helix-editor",
         "repo": "helix",
-        "rev": "801984c7fc2cd3f4072f1bdf42c5fbfe1a634348",
+        "rev": "c4d7cde6c8d7f5ca3a9cabd50bdfbda9c3f7bb15",
         "type": "github"
       },
       "original": {
@@ -222,11 +222,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1666208014,
-        "narHash": "sha256-9N2ORFHIKiNzAdbHQtRTdTz0QSSDSGeh0ebEoOJN848=",
+        "lastModified": 1666716418,
+        "narHash": "sha256-aDqNfH4MAGshiZfiD4tNujvh2fMC0kDpk69rMeOSj6I=",
         "owner": "leftwm",
         "repo": "leftwm",
-        "rev": "dc87b0ec4f91e604c814d52b64fdeb8abb816836",
+        "rev": "5775070c8013e39ee67a0386c1c475e772c88bd2",
         "type": "github"
       },
       "original": {
@@ -306,11 +306,11 @@
         "nixpkgs-regression": "nixpkgs-regression"
       },
       "locked": {
-        "lastModified": 1666244640,
-        "narHash": "sha256-BKbf12IZZYrCJQk12MTdj7u9DLyfWTIomKad5QMmgxw=",
+        "lastModified": 1666795728,
+        "narHash": "sha256-QtL3i+NM9LB/f3SAY1u5lnrnav/h9jd/wY7O06afIlE=",
         "owner": "NixOS",
         "repo": "nix",
-        "rev": "b3d2a05c59266688aa904d5fb326394cbb7e9e90",
+        "rev": "9323d139b0692e3ce140f89f8fe2a14e41610057",
         "type": "github"
       },
       "original": {
@@ -384,11 +384,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1666528161,
-        "narHash": "sha256-PFOQSC0x4xPD1p/GZIbpKuoEBu6M8HnEOeNRiBUCELA=",
+        "lastModified": 1666610816,
+        "narHash": "sha256-q4F2VNe5bpxXOvp16DyLwE1SgNZMbNO29ZQJPIomedg=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "471d92178b978fcbad8db27c2e8a4e737d4e0e27",
+        "rev": "6107f97012a0c134c5848125b5aa1b149b76d2c9",
         "type": "github"
       },
       "original": {

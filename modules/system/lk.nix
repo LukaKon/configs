@@ -22,6 +22,8 @@
         # brave
         qutebrowser
         librewolf
+        
+        appimage-run
 
         # dev
         neovim
