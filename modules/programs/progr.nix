@@ -22,7 +22,7 @@
         lazygit
 
         # terminal
-        # alacritty
+        alacritty
         kitty
 
         nix-prefetch-git
