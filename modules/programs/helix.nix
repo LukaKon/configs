@@ -12,13 +12,13 @@
         cursorline = true;
         scrolloff = 5;
         color-modes = true;
-        idle-timeout = 400;
+        idle-timeout = 300;
         true-color = true;
         mouse = true;
         middle-click-paste = true; # new default
         shell = [ "zsh" ];
         lsp.display-messages = true;
-        completion-trigger-len = 3; #new
+        completion-trigger-len = 2; #new
         search = {
           smart-case = false;
           wrap-around = true;
