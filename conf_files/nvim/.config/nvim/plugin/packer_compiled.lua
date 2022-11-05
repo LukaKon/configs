@@ -89,20 +89,25 @@ _G.packer_plugins = {
     path = "/home/lk/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/lk/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/lk/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/lk/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/lk/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
-  },
-  ["plenary.vim"] = {
-    loaded = true,
-    path = "/home/lk/.local/share/nvim/site/pack/packer/start/plenary.vim",
-    url = "https://github.com/nvim-lua/plenary.vim"
   },
   ["vim-maximizer"] = {
     loaded = true,
