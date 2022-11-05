@@ -1,0 +1,5 @@
+require("lk.plugins-setup")
+require("lk.core.options")
+require("lk.core.keymaps")
+require("lk.core.colorscheme")
+require('lk.plugins.comment')
