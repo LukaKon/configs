@@ -6,7 +6,7 @@
 
     nodejs-18_x
     # deno
-    
+
     distrobox
 
     # http-prompt
@@ -22,23 +22,47 @@
     rustc
     cargo
     rustfmt
-    # (python310.withPackages (ps: with ps;
-    # [
-    # ptpython
 
-    # pyls-isort
-    # rope
-    # autopep8
-    # flake8
+    lldb
 
-    # colorama
-    # psutil
-    # pip
-    # pynvim
-    # yapf
-    # jedi
-    # pylint
-    #   # jupyter
-    # ]))
+    # Language servers
+    clang-tools # C-Style
+    cmake-language-server # Cmake
+    rust-analyzer
+    omnisharp-roslyn # .NET 
+    sumneko-lua-language-server # Lua
+    # nodePackages.vim-language-server
+    nodePackages.vscode-json-languageserver
+
+    nodePackages.pyright
+    nodePackages.vscode-langservers-extracted
+    nodePackages.dockerfile-language-server-nodejs
+    nodePackages.typescript-language-server
+    nodePackages.typescript
+    nodePackages.tailwindcss
+
+    # yaml
+    nodePackages.yaml-language-server
+
+    # LaTeX
+    texlab
+
+    # toml
+    taplo-lsp
+
+    # nix
+    rnix-lsp
+    nixfmt
+    nixpkgs-fmt
+
+    # markdown
+    # TODO: markdown is not yet supported by helix
+    tree-sitter-grammars.tree-sitter-markdown
+
+    (python310.withPackages (ps: with ps;
+    [
+      python-lsp-server
+      pylsp-mypy
+    ]))
   ];
 }

@@ -27,12 +27,10 @@ if not status then
 end
 
 
-
 -- add list of plugins to install
 return packer.startup(function(use)
 	-- packer can manage itself
 	use("wbthomason/packer.nvim")
-
 
 	-- lua functions that many plugins use
 	use('nvim-lua/plenary.nvim')
@@ -54,20 +52,19 @@ return packer.startup(function(use)
 	-- commenting with gc
 	use('numToStr/Comment.nvim')
 
-	  -- file explorer
-	  use('nvim-tree/nvim-tree.lua')
+  -- file explorer
+  use('nvim-tree/nvim-tree.lua')
 
-    -- icons
-    use("kyazdani42/nvim-web-devicons")
+  -- icons
+  use("kyazdani42/nvim-web-devicons")
 
-    -- statusline
-    use('nvim-lualine/lualine.nvim')
+  -- statusline
+  use('nvim-lualine/lualine.nvim')
 
-    -- fuzzy finding
-    use({'nvim-telescope/telescope-fzf-native.nvim', run = 'make'})
-    -- use({'nvim-telescope/telescope.nvim', branch = '0.1.x'})
-    use({'nvim-telescope/telescope.nvim', branch = '0.1.x',
-      requires = { {'nvim-lua/plenary.nvim'} }})
+  -- fuzzy finding
+  use({'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
+  use({'nvim-telescope/telescope.nvim', branch = '0.1.x',
+        requires = { {'nvim-lua/plenary.nvim'} }})
 
   -- autocompletion
   use("hrsh7th/nvim-cmp") -- completion plugin
@@ -78,6 +75,14 @@ return packer.startup(function(use)
   use("L3MON4D3/LuaSnip") -- snippet engine
   use("saadparwaiz1/cmp_luasnip") -- for autocompletion
   use("rafamadriz/friendly-snippets") -- useful snippets
+
+  -- managing & installing lsp servers
+  use('williamboman/mason.nvim')
+  use('williamboman/mason-lspconfig.nvim')
+
+  -- configuring lsp servers
+  use('neovim/nvim-lspconfig')
+
 
 	if packer_bootstrap then
 		require("packer").sync()
