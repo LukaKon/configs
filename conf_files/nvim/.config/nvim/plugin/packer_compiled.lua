@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/home/lk/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["nvim-telescope.nvim"] = {
+    loaded = true,
+    path = "/home/lk/.local/share/nvim/site/pack/packer/start/nvim-telescope.nvim",
+    url = "https://github.com/nvim-telescope.nvim"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/lk/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -108,6 +113,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/lk/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["telescope-fzf-native.nvim"] = {
+    loaded = true,
+    path = "/home/lk/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
   ["vim-maximizer"] = {
     loaded = true,

@@ -22,7 +22,7 @@
         # brave
         qutebrowser
         librewolf
-        
+
         appimage-run
 
         # dev
@@ -56,7 +56,6 @@
         xarchiver
         p7zip
 
-
         # qmk
         qmk
         qmk-udev-rules
@@ -65,8 +64,6 @@
         via
         vial
 
-        # mindforger
-
         # comunication
         slack
         element-desktop
@@ -74,10 +71,9 @@
         jitsi-meet-electron
 
         # file managers
-        # vifm-full
-        # ranger
         fzf
         ripgrep
+        fd # find
 
         # media
         feh # picture viewer

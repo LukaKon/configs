@@ -33,7 +33,6 @@
         curl
         rsync
         bat # cat
-        fd # find
 
         lm_sensors
         # ncdu # disk analisys
