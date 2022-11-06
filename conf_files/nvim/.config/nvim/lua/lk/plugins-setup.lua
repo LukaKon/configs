@@ -26,6 +26,8 @@ if not status then
 	return
 end
 
+
+
 -- add list of plugins to install
 return packer.startup(function(use)
 	-- packer can manage itself
@@ -33,7 +35,7 @@ return packer.startup(function(use)
 
 
 	-- lua functions that many plugins use
-	-- use('nvim-lua/plenary.vim')
+	use('nvim-lua/plenary.nvim')
 
 	-- colorscheme
 	-- use("Shatur/neovim-ayu")
@@ -66,6 +68,16 @@ return packer.startup(function(use)
     -- use({'nvim-telescope/telescope.nvim', branch = '0.1.x'})
     use({'nvim-telescope/telescope.nvim', branch = '0.1.x',
       requires = { {'nvim-lua/plenary.nvim'} }})
+
+  -- autocompletion
+  use("hrsh7th/nvim-cmp") -- completion plugin
+  use("hrsh7th/cmp-buffer") -- source for text in buffer
+  use("hrsh7th/cmp-path") -- source for file system paths
+
+  -- snippets
+  use("L3MON4D3/LuaSnip") -- snippet engine
+  use("saadparwaiz1/cmp_luasnip") -- for autocompletion
+  use("rafamadriz/friendly-snippets") -- useful snippets
 
 	if packer_bootstrap then
 		require("packer").sync()

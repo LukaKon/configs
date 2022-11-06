@@ -15,6 +15,7 @@ telescope.setup({
         ['<C-k>'] = actions.move_selection_previous,
         ['<C-j>'] = actions.move_selection_next,
         ['<C-q>'] = actions.send_toqflist + actions.open_qflist,
+        ["<C-s>"] = actions.select_horizontal,
       }
     }
   }
