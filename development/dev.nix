@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     clang
     bmake
+    # cmake
 
     nodejs-18_x
     # deno

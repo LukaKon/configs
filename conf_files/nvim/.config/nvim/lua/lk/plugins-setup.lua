@@ -62,7 +62,8 @@ return packer.startup(function(use)
   use('nvim-lualine/lualine.nvim')
 
   -- fuzzy finding
-  use({'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+  -- use({'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
   use({'nvim-telescope/telescope.nvim', branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }})
 
@@ -70,18 +71,20 @@ return packer.startup(function(use)
   use("hrsh7th/nvim-cmp") -- completion plugin
   use("hrsh7th/cmp-buffer") -- source for text in buffer
   use("hrsh7th/cmp-path") -- source for file system paths
+  use('hrsh7th/cmp-cmdline')
 
   -- snippets
   use("L3MON4D3/LuaSnip") -- snippet engine
   use("saadparwaiz1/cmp_luasnip") -- for autocompletion
   use("rafamadriz/friendly-snippets") -- useful snippets
 
-  -- managing & installing lsp servers
-  use('williamboman/mason.nvim')
-  use('williamboman/mason-lspconfig.nvim')
+  -- managing & installing lsp servers, linters & formatters
+  use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
+  use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
 
   -- configuring lsp servers
-  use('neovim/nvim-lspconfig')
+  use("neovim/nvim-lspconfig") -- easily configure language servers
+  use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
 
 
 	if packer_bootstrap then

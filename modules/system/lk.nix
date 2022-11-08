@@ -31,7 +31,7 @@
         dbeaver
         arduino
         # unityhub
-        meld
+        # meld
         postman
 
         # remote controle
@@ -40,7 +40,7 @@
         # office
         libreoffice
         flameshot
-        czkawka
+        # czkawka
 
         # graphic
         gimp
