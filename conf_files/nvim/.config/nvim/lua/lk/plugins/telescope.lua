@@ -1,6 +1,7 @@
 -- import telescope plugin safely
 local telescope_setup, telescope = pcall(require, "telescope")
 if not telescope_setup then
+  print('Telescope plugin error.')
   return
 end
 

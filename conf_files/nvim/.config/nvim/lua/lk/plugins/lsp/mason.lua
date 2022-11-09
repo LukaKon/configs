@@ -25,12 +25,12 @@ local servers = {
     'dockerls',
     'emmet_ls',
     'html',
-    'tsserver',
-    'texlab',
-    'sumneko_lua',
+    'python',
     'rnix',
     'rust_analyzer',
-    'python',
+    'sumneko_lua',
+    'tsserver',
+    'texlab',
 }
 
 local settings = {
