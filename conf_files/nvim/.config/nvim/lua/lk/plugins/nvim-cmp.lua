@@ -11,10 +11,10 @@ if not luasnip_status then
 end
 
 -- import lspkind plugin safely
--- local lspkind_status, lspkind = pcall(require, "lspkind")
--- if not lspkind_status then
---   return
--- end
+local lspkind_status, lspkind = pcall(require, "lspkind")
+if not lspkind_status then
+  return
+end
 
 -- load vs-code like snippets from plugins (e.g. friendly-snippets)
 require("luasnip/loaders/from_vscode").lazy_load()
@@ -28,8 +28,8 @@ cmp.setup({
     end,
   },
   mapping = cmp.mapping.preset.insert({
-    ["<C-p>"] = cmp.mapping.select_prev_item(), -- previous suggestion
-    ["<C-n>"] = cmp.mapping.select_next_item(), -- next suggestion
+    ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
+    ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
@@ -51,10 +51,10 @@ cmp.setup({
       { name = 'buffer' },
   }),
   -- configure lspkind for vs-code like icons
-  -- formatting = {
-  --   format = lspkind.cmp_format({
-  --     maxwidth = 50,
-  --     ellipsis_char = "...",
-  --   }),
-  -- },
+  formatting = {
+    format = lspkind.cmp_format({
+      maxwidth = 50,
+      ellipsis_char = "...",
+    }),
+  },
 })

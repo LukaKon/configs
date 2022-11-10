@@ -1,7 +1,9 @@
 { pkgs, config, ... }:
+
 {
-  home.packages = with pkgs; [
+  environment.defaultPackages = with pkgs; [
     clang
+    # gcc
     bmake
     cmake
 

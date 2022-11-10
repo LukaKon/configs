@@ -62,8 +62,8 @@ return packer.startup(function(use)
   use('nvim-lualine/lualine.nvim')
 
   -- fuzzy finding
-  -- use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
-  use({'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+  -- use({'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
   use({'nvim-telescope/telescope.nvim', branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }})
 
@@ -85,6 +85,9 @@ return packer.startup(function(use)
   -- configuring lsp servers
   use("neovim/nvim-lspconfig") -- easily configure language servers
   use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
+  use({'glepnir/lspsaga.nvim', branch = 'main'})
+  use('jose-elias-alvarez/typescript.nvim')
+  use('onsails/lspkind.nvim')
 
 
 	if packer_bootstrap then

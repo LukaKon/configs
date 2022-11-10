@@ -3,6 +3,6 @@
 {
   imports = [
     ../modules/programs/helix.nix
-    ../development/dev.nix
+    # ../development/dev.nix
   ];
 }

@@ -81,6 +81,9 @@
             # Include the results of the hardware scan.
             ./lap/hardware-configuration.nix
 
+            # dev
+            ./development/dev.nix
+
             # System
             ./modules/system/system.nix # Base system settings
             ./modules/system/network.nix # Network configuration
