@@ -7,10 +7,12 @@ line-number = "relative"
 cursorline = true
 scrolloff = 5
 color-modes = true
-idle-timeout = 400
+idle-timeout = 300
 true-color = true
 mouse = true
 shell = [ "zsh" ]
+middle-click-paste = true # new default
+completion-trigger-len = 2
 
 [editor.lsp]
 display-messages = true
@@ -41,6 +43,7 @@ tabpad = "."
 left = [ "mode", "spinner", "file-name" ]
 center = [ ]
 right = [ "diagnostics", "file-encoding", "file-line-ending", "file-type", "position", "position-percentage", "selections" ]
+# separator = "|";
 
 [editor.indent-guides]
 render = true
@@ -49,3 +52,9 @@ render = true
 "X" = "extend_line_above"
 "{" = "goto_prev_paragraph"
 "}" = "goto_next_paragraph"
+
+[keys.insert]
+"up" = "move_line_up"
+"down" = "move_line_down"
+"left" = "move_char_left"
+"right" = "move_char_right"
