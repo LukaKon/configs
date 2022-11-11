@@ -46,7 +46,6 @@ end
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
 -- Change the Diagnostic symbols in the sign column (gutter)
--- (not in youtube nvim video)
 local signs = { Error = " ", Warn = " ", Hint = "ﴞ ", Info = " " }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
@@ -57,8 +56,15 @@ end
 lspconfig['pylsp'].setup({
   capabilities = capabilities,
   on_attach = on_attach,
-  filetypes = { 'py' }
+  -- filetypes = { 'py' },
 })
+
+-- configure toml server
+lspconfig['taplo'].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
 
 -- configure html server
 lspconfig["html"].setup({
@@ -92,6 +98,34 @@ lspconfig["emmet_ls"].setup({
   on_attach = on_attach,
   filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 })
+
+-- configure latex server
+lspconfig['texlab'].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+-- configure markdown server
+lspconfig['marksman'].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+-- configure nix server
+lspconfig['rnix'].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+-- configure rust server
+lspconfig['rust_analyzer'].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    ['rust-analyzer'] = {},
+  }
+})
+
 
 -- configure lua server (with special settings)
 lspconfig["sumneko_lua"].setup({

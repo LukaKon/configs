@@ -11,6 +11,18 @@ vim.g.loaded_netrwPlugin = 1
 vim.cmd([[ highlight NvimTreeIndentMarker guifg=#81B622 ]])
 
 nvimtree.setup({
+  view = {
+    side = 'left',  -- default left
+    number = true,
+    relativenumber = true,
+    float = {
+      enable = true,  -- default false
+      quit_on_focus_loss = true,  -- default true
+      open_win_config = {
+       border = 'rounded', 
+      },
+    },
+  },
   -- change folder arrow icons
 	renderer = {
 		icons = {

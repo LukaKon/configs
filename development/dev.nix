@@ -37,12 +37,13 @@
     # nodePackages.vim-language-server
     nodePackages.vscode-json-languageserver
 
-    nodePackages.pyright
+    # nodePackages.pyright
     nodePackages.vscode-langservers-extracted
     nodePackages.dockerfile-language-server-nodejs
     nodePackages.typescript-language-server
     nodePackages.typescript
     nodePackages.tailwindcss
+    nodePackages.prettier
 
     # yaml
     nodePackages.yaml-language-server
@@ -66,6 +67,8 @@
     [
       python-lsp-server
       pylsp-mypy
+      isort
+      flake8
     ]))
   ];
 }

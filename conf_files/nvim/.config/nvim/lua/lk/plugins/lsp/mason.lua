@@ -34,6 +34,10 @@ local servers = {
     'tsserver',
 }
 
+local linters = {
+
+}
+
 local settings = {
   ui = {
     icons = {
@@ -61,4 +65,3 @@ mason_lspconfig.setup({
 --     "eslint_d", -- ts/js linter
 --   },
 -- })
---
