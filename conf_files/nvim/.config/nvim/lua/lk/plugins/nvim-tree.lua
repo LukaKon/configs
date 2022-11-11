@@ -12,9 +12,13 @@ vim.cmd([[ highlight NvimTreeIndentMarker guifg=#81B622 ]])
 
 nvimtree.setup({
   view = {
-    side = 'left',  -- default left
+    adaptive_size = true,
+    centralize_selection = false,
+    width = 50,
+    side = 'right',  -- default left
     number = true,
     relativenumber = true,
+    -- signcolumn = "yes",
     float = {
       enable = true,  -- default false
       quit_on_focus_loss = true,  -- default true
@@ -25,23 +29,34 @@ nvimtree.setup({
   },
   -- change folder arrow icons
 	renderer = {
-		icons = {
-			glyphs = {
-				folder = {
-					arrow_closed = "", -- arrow when folder is closed
-					arrow_open = "", -- arrow when folder is open
-				},
-			},
-		},
-	},
-	-- disable window_picker for
-	-- explorer to work well with
-	-- window splits
-	actions = {
-		open_file = {
-			window_picker = {
-				enable = false,
-			},
-		},
-	},
+    indent_markers = {
+      enable = false,
+      inline_arrows = true,
+      icons = {
+        corner = "└",
+        edge = "│",
+        item = "│",
+        bottom = "─",
+        none = " ",
+      },
+    },
+    icons = {
+      glyphs = {
+        folder = {
+          arrow_closed = "", -- arrow when folder is closed
+          arrow_open = "", -- arrow when folder is open
+        },
+      },
+    },
+  },
+  -- disable window_picker for
+  -- explorer to work well with
+  -- window splits
+  actions = {
+    open_file = {
+      window_picker = {
+        enable = false,
+      },
+    },
+  },
 })

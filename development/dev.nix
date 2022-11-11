@@ -20,7 +20,7 @@
 
     hadolint # docker linter
 
-    dotnet-sdk
+    # dotnet-sdk
 
     rustc
     cargo
@@ -28,13 +28,14 @@
 
     lldb
 
+    tree-sitter
+
     # Language servers
     clang-tools # C-Style
     cmake-language-server # Cmake
     rust-analyzer
-    omnisharp-roslyn # .NET 
+    # omnisharp-roslyn # .NET 
     sumneko-lua-language-server # Lua
-    # nodePackages.vim-language-server
     nodePackages.vscode-json-languageserver
 
     # nodePackages.pyright
@@ -44,9 +45,14 @@
     nodePackages.typescript
     nodePackages.tailwindcss
     nodePackages.prettier
+    nodePackages.eslint_d
+    nodePackages.coc-markdownlint  # linter
+    
+    gitlint  # linter for git
 
     # yaml
     nodePackages.yaml-language-server
+    yamllint  # linter
 
     # LaTeX
     texlab
@@ -58,10 +64,6 @@
     rnix-lsp
     nixfmt
     nixpkgs-fmt
-
-    # markdown
-    # TODO: markdown is not yet supported by helix
-    tree-sitter-grammars.tree-sitter-markdown
 
     (python310.withPackages (ps: with ps;
     [
