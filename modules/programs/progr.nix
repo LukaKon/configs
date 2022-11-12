@@ -9,8 +9,6 @@
 
         glances
 
-        solaar
-
         # to link config files to .config
         stow
 
@@ -22,7 +20,7 @@
         lazygit
 
         # terminal
-        alacritty
+        # alacritty
         kitty
 
         nix-prefetch-git

@@ -68,6 +68,9 @@ return packer.startup(function(use)
   -- statusline
   use('nvim-lualine/lualine.nvim')
 
+  -- whichkey
+  use('folke/which-key.nvim')
+
   -- fuzzy finding
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
   -- use({'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })

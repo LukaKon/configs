@@ -27,6 +27,7 @@
 
         # dev
         neovim
+        helix
         vscodium
         dbeaver
         arduino
@@ -56,6 +57,10 @@
         xarchiver
         p7zip
 
+        # mouse
+        solaar
+
+        ## keyboard
         # qmk
         qmk
         qmk-udev-rules
@@ -63,10 +68,11 @@
         # via
         via
         vial
+        ## keyboard
 
         # comunication
         slack
-        element-desktop
+        # element-desktop
         #zoom-us
         jitsi-meet-electron
 
