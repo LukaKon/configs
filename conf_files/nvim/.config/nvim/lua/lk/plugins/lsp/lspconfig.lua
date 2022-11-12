@@ -1,15 +1,21 @@
 local lspconfig_status, lspconfig = pcall(require, 'lspconfig')
-if not lspconfig_status then
+if(not lspconfig_status)
+then
+  print('lspconfig not found')
   return
 end
 
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
-if not cmp_nvim_lsp_status then
+if(not cmp_nvim_lsp_status)
+then
+  print('cmp_nvim_lsp not found')
   return
 end
 
 local typescript_setup, typescript = pcall(require, 'typescript')
-if not typescript_setup then
+if(not typescript_setup)
+then
+  print('typescript not found')
   return
 end
 

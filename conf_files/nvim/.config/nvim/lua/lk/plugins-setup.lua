@@ -37,7 +37,8 @@ return packer.startup(function(use)
 
 	-- colorscheme
 	-- use("Shatur/neovim-ayu")
-	use('ellisonleao/gruvbox.nvim')
+	-- use('ellisonleao/gruvbox.nvim')
+  use('EdenEast/nightfox.nvim')
 	
 	-- tmux & split window navigation
 	use('christoomey/vim-tmux-navigator')
@@ -51,6 +52,9 @@ return packer.startup(function(use)
 	
 	-- commenting with gc
 	use('numToStr/Comment.nvim')
+
+  -- colorizer 
+  use('NvChad/nvim-colorizer.lua')
 
   -- file explorer with icons
   use({
@@ -93,7 +97,13 @@ return packer.startup(function(use)
   use('onsails/lspkind.nvim')
 
   -- formatting and linting
-  use('jose-elias-alvarez/null-ls.nvim')
+  use({
+    'jose-elias-alvarez/null-ls.nvim',
+    -- config = function()
+    --   require('null-ls').setup()
+    -- end,
+    require = {'nvim-lua/plenary.nvim'},
+})
   use('jayp0521/mason-null-ls.nvim')
 
   -- treesitter

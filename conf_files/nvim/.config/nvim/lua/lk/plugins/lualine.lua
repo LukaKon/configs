@@ -1,19 +1,16 @@
 local status, lualine = pcall(require, 'lualine')
-if not status then
+if(not status)
+then
+  print('Lualine not found')
   return
 end
 
 lualine.setup({
   options = {
     icons_enabled = true,
-    theme = 'gruvbox_dark',
+    theme = 'nightfox',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
-    disabled_filetypes = {
-      statusline = {},
-      winbar = {},
-    },
-    ignore_focus = {},
     always_divide_middle = true,
     globalstatus = false,
     refresh = {
@@ -38,8 +35,4 @@ lualine.setup({
     lualine_y = {},
     lualine_z = {}
   },
-  tabline = {},
-  winbar = {},
-  inactive_winbar = {},
-  extensions = {}
 })

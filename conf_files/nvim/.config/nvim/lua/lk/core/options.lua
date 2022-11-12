@@ -37,5 +37,6 @@ opt.splitbelow = true
 
 opt.iskeyword:append("-") -- consider '-' as a part of word: 'test-test' as a one word
 
--- show matching words
--- opt.showmatch = true
+-- scrolling
+opt.scrolloff = 5
+
