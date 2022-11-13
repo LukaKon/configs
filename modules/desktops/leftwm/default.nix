@@ -16,6 +16,13 @@
         rofi
         polybar
         picom
+
+        # wayland based window manager
+        river
+        swaybg
+        waybar
+        # wofi
+        fuzzel
         dunst
       ];
   };

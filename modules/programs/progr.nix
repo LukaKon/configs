@@ -20,8 +20,9 @@
         lazygit
 
         # terminal
-        # alacritty
+        alacritty
         kitty
+        # foot
 
         nix-prefetch-git
 
