@@ -26,7 +26,6 @@
 
     # docker
     dc = "docker container";
-    db = "distrobox";
 
     # programs
     lgi = "lazygit";
