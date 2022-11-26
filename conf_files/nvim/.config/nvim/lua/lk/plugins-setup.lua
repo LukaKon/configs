@@ -36,8 +36,6 @@ return packer.startup(function(use)
 	use('nvim-lua/plenary.nvim')
 
 	-- colorscheme
-	-- use("Shatur/neovim-ayu")
-	-- use('ellisonleao/gruvbox.nvim')
   use('EdenEast/nightfox.nvim')
 	
 	-- tmux & split window navigation
@@ -124,6 +122,13 @@ return packer.startup(function(use)
 
   -- git signs plugin
   use('lewis6991/gitsigns.nvim')
+
+  -- terminal
+  use({"akinsho/toggleterm.nvim",
+        tag = '*', config = function()
+        require('toggleterm').setup()
+      end
+  })
 
 	if packer_bootstrap then
 		require("packer").sync()

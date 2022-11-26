@@ -23,7 +23,7 @@
         qutebrowser
         librewolf
 
-        appimage-run
+        # appimage-run
 
         # dev
         neovim
@@ -36,7 +36,7 @@
         postman
 
         # remote controle
-        rustdesk
+        # rustdesk
 
         # office
         libreoffice
@@ -75,6 +75,7 @@
         # element-desktop
         #zoom-us
         jitsi-meet-electron
+        discord
 
         # file managers
         fzf

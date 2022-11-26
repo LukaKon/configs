@@ -18,12 +18,11 @@
         picom
 
         # wayland based window manager
-        river
-        swaybg
-        waybar
-        # wofi
-        fuzzel
-        dunst
+        # river
+        # swaybg
+        # waybar
+        # fuzzel
+        # dunst
       ];
   };
 }

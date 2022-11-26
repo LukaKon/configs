@@ -40,3 +40,5 @@ opt.iskeyword:append("-") -- consider '-' as a part of word: 'test-test' as a on
 -- scrolling
 opt.scrolloff = 5
 
+-- mouse
+opt.mouse = 'a'

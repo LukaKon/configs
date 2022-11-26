@@ -68,6 +68,7 @@
     (python310.withPackages (ps: with ps;
     [
       python-lsp-server
+      pyls-isort
       pylsp-mypy
       isort
       flake8
