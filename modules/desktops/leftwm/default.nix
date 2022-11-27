@@ -17,12 +17,14 @@
         polybar
         picom
 
+        # hyprland
+
         # wayland based window manager
-        # river
-        # swaybg
-        # waybar
-        # fuzzel
-        # dunst
+        river
+        swaybg
+        waybar
+        fuzzel
+        dunst
       ];
   };
 }

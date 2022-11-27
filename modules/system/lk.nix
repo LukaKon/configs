@@ -97,8 +97,8 @@
 
           pyls-isort
           rope
-          autopep8
-          flake8
+          # autopep8
+          # flake8
 
           #   # colorama
           psutil

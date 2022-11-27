@@ -4,8 +4,7 @@
   inputs = rec {
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.05";
-    # nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
-    # nixpkgs.url = "nixpkgs/nixos-unstable";
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nix.url = "github:NixOS/nix";
 
@@ -29,25 +28,24 @@
 
     leftwm.url = "github:leftwm/leftwm";
 
-    # hyprland = {
-    #   url = "github:hyprwm/Hyprland";
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
     #   # build with your own instance of nixpkgs
-    #   inputs.nixpkgs-unstable.follows = "nixpkgs";
-    # };
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     inputs@{ self
     , nix
     , nixpkgs
-      # , nixpkgs-unstable
     , flake-utils
     # , helix-master
     # , home-manager
     , leftwm
-      # , hyprland
+    , hyprland
     , ...
-    }:
+  }:
 
     let
       system = "x86_64-linux";
@@ -116,8 +114,8 @@
             # Nixos ontainers
             # ./containers
 
-            # hyprland.nixosModules.default
-
+            hyprland.nixosModules.default
+            #
             # {
             #   programs = {
             #     hyprland.enable = true;
