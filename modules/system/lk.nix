@@ -64,7 +64,6 @@
         # qmk
         qmk
         qmk-udev-rules
-
         # via
         via
         vial
@@ -88,27 +87,6 @@
 
         # LaTeX
         texlive.combined.scheme-full
-        # texstudio
-
-        (python310.withPackages (ps: with ps;
-        [
-          #   ptpython
-          pygments
-
-          pyls-isort
-          rope
-          # autopep8
-          # flake8
-
-          #   # colorama
-          psutil
-          pip
-          # pynvim
-          yapf
-          jedi
-          pylint
-          #   # jupyter
-        ]))
       ];
   };
 }

@@ -20,11 +20,12 @@
         # hyprland
 
         # wayland based window manager
-        river
+        # river
         swaybg
+        swaylock
         waybar
         fuzzel
-        dunst
+        # dunst
       ];
   };
 }

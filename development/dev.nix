@@ -46,13 +46,13 @@
     nodePackages.tailwindcss
     nodePackages.prettier
     nodePackages.eslint_d
-    nodePackages.coc-markdownlint  # linter
-    
-    gitlint  # linter for git
+    nodePackages.coc-markdownlint # linter
+
+    gitlint # linter for git
 
     # yaml
     nodePackages.yaml-language-server
-    yamllint  # linter
+    yamllint # linter
 
     # LaTeX
     texlab
@@ -72,6 +72,14 @@
       pylsp-mypy
       isort
       flake8
+      pygments
+      rope
+      psutil
+      pip
+      # pynvim
+      yapf
+      jedi
+      pylint
     ]))
   ];
 }
