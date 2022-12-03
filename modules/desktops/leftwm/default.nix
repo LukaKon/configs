@@ -21,7 +21,8 @@
 
         # wayland based window manager
         # river
-        swaybg
+        hyprpaper
+        # swaybg
         swaylock
         waybar
         fuzzel
