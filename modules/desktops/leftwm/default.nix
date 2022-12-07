@@ -27,6 +27,10 @@
         waybar
         fuzzel
         # dunst
+
+        # for sharing screen
+        xdg-desktop-portal-wlr
+        grim
       ];
   };
 }

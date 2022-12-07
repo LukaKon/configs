@@ -12,11 +12,12 @@ saga.init_lsp_saga({
   border_style = 'rounded',
   -- background transparecy
   saga_winblend = 20,
-  -- diagnostic header
-  -- diagnostic_header = { " ", " ", " ", "ﴞ " }, -- <- default
-  diagnostic_header = { "🔴 ", "🟡 ", "🔵 ", "🟢 " }, 
   -- keybinds for navigation in lspsaga window
   move_in_saga = { prev = '<C-k>', next = 'C-j>'},
+  -- Error, Warn, Info, Hint
+  -- diagnostic_header = { " ", " ", " ", "ﴞ " }, -- <- default
+  diagnostic_header = { "🔴 ", "🟡 ", "🔵 ", "🟢 " }, 
+  -- diagnostic_header = { "😡", "😥", "😤", "😐" },
   -- preview lines above of lsp_finder
   preview_lines_above = 3,
   -- preview lines of lsp_finder and definition preview
@@ -69,25 +70,25 @@ saga.init_lsp_saga({
   -- in_custom mean use lspsaga api to get symbols
   -- and set it to your custom winbar or some winbar plugins.
   -- if in_cusomt = true you must set in_enable to false
-  -- symbol_in_winbar = {
-  --     in_custom = false,
-  --     enable = true,
-  --     separator = ' ',
-  --     show_file = true,
-  --     -- define how to customize filename, eg: %:., %
-  --     -- if not set, use default value `%:t`
-  --     -- more information see `vim.fn.expand` or `expand`
-  --     -- ## only valid after set `show_file = true`
-  --     file_formatter = "",
-  --     click_support = false,
-  -- },
+  symbol_in_winbar = {
+      in_custom = false,
+      enable = true,
+      separator = ' ',
+      show_file = true,
+      -- define how to customize filename, eg: %:., %
+      -- if not set, use default value `%:t`
+      -- more information see `vim.fn.expand` or `expand`
+      -- ## only valid after set `show_file = true`
+      file_formatter = "",
+      click_support = false,
+  },
   -- show outline
   show_outline = {
     win_position = 'right',
     --set special filetype win that outline window split.like NvimTree neotree
     -- defx, db_ui
     win_with = '',
-    win_width = 30,
+    win_width = 40,
     auto_enter = true,
     auto_preview = true,
     virt_text = '┃',
