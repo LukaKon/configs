@@ -3,19 +3,21 @@
 {
   fonts = {
     fonts = with pkgs; [
-      inconsolata
-      inconsolata-nerdfont
+      corefonts
+      emojione
       fira-code
       fira-code-symbols
-      ubuntu_font_family
-      corefonts
-      noto-fonts-emoji
-      #monoid
-      nerdfonts
       font-awesome
+      inconsolata
+      inconsolata-nerdfont
+      joypixels
       line-awesome
-      mononoki
       meslo-lgs-nf
+      mononoki
+      nerdfonts
+      noto-fonts-emoji
+      rofi-emoji
+      ubuntu_font_family
     ];
 
     fontconfig = {

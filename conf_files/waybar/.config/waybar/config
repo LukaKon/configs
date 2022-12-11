@@ -6,17 +6,20 @@
   "margin-top": 0,
   "margin-bottom": 0,
 
-// Choose the order of the modules
-
     "modules-left":[  "river/tags", "tray"],
-    "modules-center":["clock"],
+    "modules-center":["clock", "idle_inhibitor"],
     "modules-right":["network", "cpu", "memory", "battery", "battery#bat2" ],
 
     // Modules configuration
 
+    "hyprland/window":{
+        "format": "{}"
+    },
+
     "river/tags": {
         "num-tags": 9,
     },
+
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -24,22 +27,32 @@
             "deactivated": ""
         }
     },
+
     "tray": {
         "icon-size": 10,
         "spacing": 10
     },
+
     "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "timezone": "Europe/Warsaw",
+        "format": "<span color='blue'></span> {:%a %b %d}",
+        "tooltip-format": "<small>{:%Y %B}</small>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%d.%m.%Y}"
     },
+
     "cpu": {
+        "interval": 5,
         "format": "{usage}% ",
         "tooltip": false
+        "max-length": 10,
     },
+
     "memory": {
+        "interval": 30,
         "format": "{}% "
+        "max-length": 10,
     },
+
     "battery": {
         "states": {
             // "good": 95,
@@ -54,9 +67,11 @@
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
+
     "battery#bat2": {
         "bat": "BAT2"
     },
+
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",

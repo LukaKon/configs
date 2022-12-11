@@ -61,7 +61,7 @@ return packer.startup(function(use)
   })
 
   -- icons
-  -- use("kyazdani42/nvim-web-devicons")
+  use("kyazdani42/nvim-web-devicons")
 
   -- statusline
   use('nvim-lualine/lualine.nvim')
@@ -129,6 +129,10 @@ return packer.startup(function(use)
         require('toggleterm').setup()
       end
   })
+
+  -- diff view
+  -- use({'sindrets/diffview.nvim',
+  --     requires = 'nvim-lua/plenary.nvim'})
 
 	if packer_bootstrap then
 		require("packer").sync()

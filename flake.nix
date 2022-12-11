@@ -30,7 +30,7 @@
 
     hyprland = {
       url = "github:hyprwm/Hyprland";
-    #   # build with your own instance of nixpkgs
+      #   # build with your own instance of nixpkgs
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -40,12 +40,12 @@
     , nix
     , nixpkgs
     , flake-utils
-    # , helix-master
-    # , home-manager
+      # , helix-master
+      # , home-manager
     , leftwm
     , hyprland
     , ...
-  }:
+    }:
 
     let
       system = "x86_64-linux";
@@ -58,7 +58,10 @@
 
       pkgs = import nixpkgs {
         inherit system overlays;
-        config = { allowUnfree = true; };
+        config = {
+          allowUnfree = true;
+          joypixels.acceptLicense = true;
+        };
       };
 
     in

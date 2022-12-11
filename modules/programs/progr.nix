@@ -26,6 +26,9 @@
 
         nix-prefetch-git
 
+        # firmware service
+        fwupd-efi
+
         tree
         pstree # process tree
         wget
