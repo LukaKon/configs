@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, modulesPath, pkgs, ... }:
 
 {
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
@@ -31,4 +31,21 @@
     # defaultGateway = "192.168.0.1";
     #nameservers = ["37.8.214.2" "31.11.202.254"];
   };
+
+  # services.rpcbind.enable = true;
+  #
+  # environment.systemPackages = with pkgs;
+  #   [
+  #     nfs-utils
+  #   ];
+
+  # fileSystems."/home/net" = {
+  #     # mountPoint = "/net";
+  #     device = "192.168.0.5:/netfs0";
+  #     fsType = "nfs";
+  #   };
+
+
+  # networking.firewall.allowedTCPPorts = [ 2049 ];
+  
 }
