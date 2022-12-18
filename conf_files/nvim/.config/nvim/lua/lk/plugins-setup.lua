@@ -130,6 +130,13 @@ return packer.startup(function(use)
       end
   })
 
+  use({
+      "jiaoshijie/undotree",
+      requires = {
+        "nvim-lua/plenary.nvim",
+      },
+  })
+
   -- diff view
   -- use({'sindrets/diffview.nvim',
   --     requires = 'nvim-lua/plenary.nvim'})

@@ -7,6 +7,7 @@ end
 
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
+local completion = null_ls.builtins.completion
 
 local sources = {
     formatting.prettier,
@@ -20,6 +21,10 @@ local sources = {
     diagnostics.yamllint,
     diagnostics.gitlint,
     formatting.rustfmt,
+    formatting.astyle,
+    diagnostics.luacheck,
+
+    completion.luasnip,
 }
 
 -- to setup format on save

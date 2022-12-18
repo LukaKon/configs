@@ -31,7 +31,7 @@
         vscodium
         dbeaver
         arduino
-        # unityhub
+        unityhub
         # meld
         postman
 

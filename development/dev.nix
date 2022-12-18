@@ -20,7 +20,7 @@
 
     hadolint # docker linter
 
-    # dotnet-sdk
+    dotnet-sdk
 
     rustc
     cargo
@@ -30,11 +30,15 @@
 
     tree-sitter
 
+    astyle # Source code indenter, formatter, and beautifier for C, C++, C# and Java
+    stylua # An opinionated Lua code formatter
+
+
     # Language servers
     clang-tools # C-Style
     cmake-language-server # Cmake
     rust-analyzer
-    # omnisharp-roslyn # .NET 
+    omnisharp-roslyn # .NET 
     sumneko-lua-language-server # Lua
     nodePackages.vscode-json-languageserver
 
