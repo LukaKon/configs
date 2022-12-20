@@ -84,6 +84,7 @@
       yapf
       jedi
       pylint
+      yamllint
     ]))
   ];
 }

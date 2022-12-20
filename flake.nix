@@ -28,11 +28,11 @@
 
     leftwm.url = "github:leftwm/leftwm";
 
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      #   # build with your own instance of nixpkgs
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # hyprland = {
+    #   url = "github:hyprwm/Hyprland";
+    #   #   # build with your own instance of nixpkgs
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs =
@@ -43,7 +43,7 @@
       # , helix-master
       # , home-manager
     , leftwm
-    , hyprland
+    # , hyprland
     , ...
     }:
 
@@ -115,13 +115,13 @@
             # ./modules/virtualisation/vbox.nix
 
 
-            hyprland.nixosModules.default
-
-            {
-              programs = {
-                hyprland.enable = true;
-              };
-            }
+            # hyprland.nixosModules.default
+            #
+            # {
+            #   programs = {
+            #     hyprland.enable = true;
+            #   };
+            # }
 
             # home-manager.nixosModules.home-manager
             # {

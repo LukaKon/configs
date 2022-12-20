@@ -7,6 +7,8 @@
     loader.efi.canTouchEfiVariables = false;
     cleanTmpDir = true;
     supportedFilesystems = [ "ntfs" ];
+
+    kernel.sysctl = { "vm.overcommit_memory" = true; };
   };
 
   powerManagement = {

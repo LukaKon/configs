@@ -38,14 +38,14 @@
   #   [
   #     nfs-utils
   #   ];
-
-  # fileSystems."/home/net" = {
-  #     # mountPoint = "/net";
-  #     device = "192.168.0.5:/netfs0";
-  #     fsType = "nfs";
-  #   };
+  #
+  # fileSystems."/net" = {
+  #   # mountPoint = "/net";
+  #   device = "192.168.0.5:/netfs";
+  #   fsType = "nfs";
+  # };
 
 
   # networking.firewall.allowedTCPPorts = [ 2049 ];
-  
+
 }

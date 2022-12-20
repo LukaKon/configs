@@ -17,10 +17,10 @@
         polybar
         picom
 
-        # hyprland
 
         # wayland based window manager
         # river
+        hyprland
         hyprpaper
         # swaybg
         swaylock
