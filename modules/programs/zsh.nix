@@ -8,6 +8,7 @@
 
   environment.systemPackages = with pkgs; [
     any-nix-shell
+    python310Packages.pygments
   ];
 
   programs = {
@@ -45,7 +46,10 @@
 
       ohMyZsh = {
         enable = true;
-        plugins = [ "python" "colorize" ];
+        plugins = [ 
+          "colorize"
+          "fd"
+          ];
         theme = "norm"; #"half-life";#"robbyrussell";#"kolo"; #"sporty_256"; #"strug"; # jonathan
         customPkgs = with pkgs; [
           nix-zsh-completions
