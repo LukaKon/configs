@@ -7,7 +7,8 @@
         firmwareLinuxNonfree
         microcodeIntel
 
-        glances
+        # glances
+        bpytop
 
         # to link config files to .config
         stow

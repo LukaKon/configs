@@ -101,7 +101,8 @@
 
             # Programs
             ./modules/programs/progr.nix
-            ./modules/programs/zsh.nix
+            # ./modules/programs/zsh.nix
+            ./modules/programs/fish.nix
             # ./modules/programs/flatpak.nix
 
             # Desktops

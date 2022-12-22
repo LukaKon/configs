@@ -2,7 +2,7 @@
 
 {
   environment.variables = {
-    EDITOR = "helix";
-    VISUAL = "helix";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
   };
 }

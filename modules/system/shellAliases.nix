@@ -17,6 +17,7 @@
     susp = "systemctl suspend";
     reboot = "doas reboot";
     poff = "doas poweroff";
+    top = "bpytop";
 
     # python
     py = "python";
@@ -37,5 +38,7 @@
     # kitty
     icat = "kitty +kitten icat";
     d = "kitty +kitten diff";
+    hg = "kitty +kitten hyperlinged_grep";
+    s = "kitty +kitten ssh";
   };
 }

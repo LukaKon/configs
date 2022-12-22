@@ -18,7 +18,8 @@
         "lk"
       ];
 
-      shell = pkgs.zsh;
+      # shell = pkgs.zsh;
+      shell = pkgs.fish;
       packages = with pkgs;
         [
           # www

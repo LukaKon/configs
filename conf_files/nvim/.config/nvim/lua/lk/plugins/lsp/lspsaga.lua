@@ -16,8 +16,8 @@ saga.init_lsp_saga({
   move_in_saga = { prev = '<C-k>', next = 'C-j>'},
   -- Error, Warn, Info, Hint
   -- diagnostic_header = { " ", " ", " ", "ﴞ " }, -- <- default
-  diagnostic_header = { "✘ ", "▲ ", " ", "⚑ " }, -- <- default
-  -- diagnostic_header = { "🔴 ", "🟡 ", "🔵 ", "🟢 " }, 
+  -- diagnostic_header = { "✘ ", "▲ ", " ", "⚑ " }, 
+  diagnostic_header = { "🔴 ", "🟡 ", "🔵 ", "🟢 " }, 
   -- diagnostic_header = { "😡", "😥", "😤", "😐" },
   -- preview lines above of lsp_finder
   preview_lines_above = 3,
