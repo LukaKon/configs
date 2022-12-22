@@ -15,7 +15,7 @@
     zsh = {
       enable = true;
       promptInit = ''
-        any-nix-shell zsh --info-right | source /dev/stdin
+        any-nix-shell zsh --info-left | source /dev/stdin
       '';
       enableGlobalCompInit = true;
       enableCompletion = true;
