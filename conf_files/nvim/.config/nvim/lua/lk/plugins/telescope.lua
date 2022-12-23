@@ -40,3 +40,14 @@ telescope.setup({
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
 telescope.load_extension("fzf")
+
+local keymap = vim.keymap  -- for conciseness
+
+keymap.set('n', '<leader>f', '<cmd>Telescope find_files<cr>', {desc = '[F]earch files'})
+keymap.set('n', '<leader>s', '<cmd>Telescope live_grep<cr>', {desc = 'Search by grep'})
+keymap.set('n', '<leader>c', '<cmd>Telescope grep_string<cr>', {desc = 'Search current word'})
+keymap.set('n', '<leader>b', '<cmd>Telescope buffers<cr>', {desc = '[ ]Find exitsting buffers'})
+keymap.set('n', '<leader>h', '<cmd>Telescope help_tags<cr>', {desc='Search help'})
+keymap.set('n', '<leader>th', '<cmd> Telescope find_files hidden=true<cr>', {desc='Search in dotfiles'})
+keymap.set('n', '<leader>td', '<cmd> Telescope.diagnostics', {desc='Search diagnostics'})
+keymap.set('n', '<leader>m', '<cmd>Telescope keymap<CR>')

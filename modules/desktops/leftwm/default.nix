@@ -20,17 +20,17 @@
 
         # wayland based window manager
         # river
-        hyprland
-        hyprpaper
+        # hyprland
+        # hyprpaper
         # swaybg
-        swaylock
-        waybar
-        fuzzel
+        # swaylock
+        # waybar
+        # fuzzel
         # dunst
 
         # for sharing screen
-        xdg-desktop-portal-wlr
-        grim
+        # xdg-desktop-portal-wlr
+        # grim
       ];
   };
 }

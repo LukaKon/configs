@@ -1,6 +1,6 @@
 ### EXPORT ###
 set fish_greeting                                 # Supresses fish's intro message
-set TERM "xterm-256color"                         # Sets the terminal type
+# set TERM "xterm-256color"                         # Sets the terminal type
 
 ### SET MANPAGER
 ### Uncomment only one of these!
@@ -26,10 +26,10 @@ set fish_color_error '#ff6c6b'
 set fish_color_param brcyan
 
 ### SETTING THE STARSHIP PROMPT ###
-#starship init fish
+starship init fish | source
 
 
 
-if status is-interactive
+# if status is-interactive
     # Commands to run in interactive sessions can go here
-end
+# end

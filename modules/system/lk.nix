@@ -85,6 +85,7 @@
           fzf
           ripgrep
           fd # find
+          exa
 
           # media
           feh # picture viewer

@@ -18,6 +18,7 @@
     reboot = "doas reboot";
     poff = "doas poweroff";
     top = "bpytop";
+    ll = "exa -l --icons";
 
     # python
     py = "python";

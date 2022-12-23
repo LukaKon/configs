@@ -3,6 +3,7 @@ vim.g.mapleader = ' '
 local keymap = vim.keymap  -- for conciseness
 
 -- general keymaps
+keymap.set({'v', 'n'}, '<Space>', '<Nop>', {silent = true})
 
 keymap.set('i', 'jk', '<ESC>')
 
@@ -34,12 +35,23 @@ keymap.set('n', 'gp', ':bprevious<CR>') -- go to previous buffer
 keymap.set('n', '<leader>sm', ':MaximizerToggle<CR>')
 
 -- nvim-tree
-keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
+-- keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
 
 -- telescope
-keymap.set('n', '<leader>f', '<cmd>Telescope find_files<cr>')
-keymap.set('n', '<leader>s', '<cmd>Telescope live_grep<cr>')
-keymap.set('n', '<leader>c', '<cmd>Telescope grep_string<cr>')
-keymap.set('n', '<leader>b', '<cmd>Telescope buffers<cr>')
-keymap.set('n', '<leader>h', '<cmd>Telescope help_tags<cr>')
-keymap.set('n', '<leader>th', '<cmd> Telescope find_files hidden=true<cr>')
+-- keymap.set('n', '<leader>f', '<cmd>Telescope find_files<cr>')
+-- keymap.set('n', '<leader>s', '<cmd>Telescope live_grep<cr>')
+-- keymap.set('n', '<leader>c', '<cmd>Telescope grep_string<cr>')
+-- keymap.set('n', '<leader>b', '<cmd>Telescope buffers<cr>')
+-- keymap.set('n', '<leader>h', '<cmd>Telescope help_tags<cr>')
+-- keymap.set('n', '<leader>th', '<cmd> Telescope find_files hidden=true<cr>')
+
+-- [[ Highlight on yank ]]
+-- See `:help vim.highlight.on_yank()`
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = '*',
+})

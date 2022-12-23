@@ -24,7 +24,7 @@ end
 
 local servers = {
     -- 'arduino_language_server',
-    -- 'omnisharp',
+    'omnisharp',
     'clangd',
     'cssls',
     'cssmodules_ls',
@@ -41,18 +41,18 @@ local servers = {
 }
 
 local linters_formaters = {
-    'prettier', -- ts/js formatter
-    'stylua', -- lua formatter
     'eslint_d', -- ts/js linter
-    'isort',
     'flake8',
-    'taplo',  -- toml
-    'hadolint', -- docker linter
     'gitlint',
+    'hadolint', -- docker linter
+    'isort',
     'markdownlint',
-    'yamllint',
-    'rustfmt',
     'nixfmt',
+    'prettier', -- ts/js formatter
+    'rustfmt',
+    'stylua', -- lua formatter
+    'taplo',  -- toml
+    'yamllint',
 }
 
 local settings = {

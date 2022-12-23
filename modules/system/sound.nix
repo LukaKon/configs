@@ -13,10 +13,10 @@
       # support32Bit = true;
     };
 
-    pulse.enable = true;
+    # pulse.enable = true;
     # jack.enable = true;
 
-    wireplumber.enable = true;
+    # wireplumber.enable = true;
   };
 
   sound.mediaKeys = {
@@ -25,10 +25,10 @@
   };
 
   environment = {
-    defaultPackages = with pkgs;
+    systemPackages = with pkgs;
       [
-        pavucontrol
-        helvum
+        # pavucontrol
+        # helvum
       ];
   };
 }

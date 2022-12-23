@@ -62,3 +62,7 @@ nvimtree.setup({
     },
   },
 })
+
+
+-- nvim-tree
+vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')

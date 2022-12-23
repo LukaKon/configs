@@ -15,16 +15,16 @@ saga.init_lsp_saga({
   -- keybinds for navigation in lspsaga window
   move_in_saga = { prev = '<C-k>', next = 'C-j>'},
   -- Error, Warn, Info, Hint
-  -- diagnostic_header = { " ", " ", " ", "ﴞ " }, -- <- default
-  -- diagnostic_header = { "✘ ", "▲ ", " ", "⚑ " }, 
-  diagnostic_header = { "🔴 ", "🟡 ", "🔵 ", "🟢 " }, 
+  -- diagnostic_header = { " ", " ", " ", " " }, -- <- default
+  diagnostic_header = { "✘ ", "▲ ", " ", "⚑ " }, 
+  -- diagnostic_header = { "🔴 ", "🟡 ", "🔵 ", "🟢 " }, 
   -- diagnostic_header = { "😡", "😥", "😤", "😐" },
   -- preview lines above of lsp_finder
   preview_lines_above = 3,
   -- preview lines of lsp_finder and definition preview
   max_preview_lines = 10,
   -- use emoji lightbulb in default
-  code_action_icon = "💡",
+  code_action_icon = "",
   -- if true can press number to execute the codeaction in codeaction window
   code_action_num_shortcut = true,
   -- same as nvim-lightbulb but async
@@ -46,7 +46,7 @@ saga.init_lsp_saga({
   -- finder do lsp request timeout
   -- if your project big enough or your server very slow
   -- you may need to increase this value
-  finder_request_timeout = 1500,
+  finder_request_timeout = 2000,
   finder_action_keys = {
       open = {'o', '<CR>'},
       vsplit = 's',
