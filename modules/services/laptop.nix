@@ -55,7 +55,7 @@
       [
         acpi # battery status
         xorg.xbacklight
-        light
+        # light
         acpilight
         brightnessctl
       ];

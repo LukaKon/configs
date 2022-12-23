@@ -19,6 +19,8 @@
     # wireplumber.enable = true;
   };
 
+
+
   sound.mediaKeys = {
     enable = true;
     volumeStep = "4%";
@@ -28,7 +30,7 @@
     systemPackages = with pkgs;
       [
         # pavucontrol
-        # helvum
+        helvum
       ];
   };
 }

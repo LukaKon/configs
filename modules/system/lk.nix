@@ -89,7 +89,7 @@
 
           # media
           feh # picture viewer
-          moc # music player
+          # moc # music player
 
           # LaTeX
           texlive.combined.scheme-full
