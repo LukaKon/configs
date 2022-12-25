@@ -3,8 +3,8 @@
 
   inputs = rec {
 
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nix.url = "github:NixOS/nix";
 
@@ -28,11 +28,11 @@
 
     leftwm.url = "github:leftwm/leftwm";
 
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      #   # build with your own instance of nixpkgs
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # hyprland = {
+    #   url = "github:hyprwm/Hyprland";
+    #   #   # build with your own instance of nixpkgs
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs =
@@ -43,7 +43,7 @@
       # , helix-master
       # , home-manager
     , leftwm
-    , hyprland
+    # , hyprland
     , ...
     }:
 
@@ -86,6 +86,7 @@
             ./modules/system/zfs.nix
             ./modules/system/sound.nix
             ./modules/system/shellAliases.nix # Shell aliases
+            ./modules/system/xdg.nix
             ./modules/system/lk.nix
 
             # Security
@@ -116,13 +117,13 @@
             # ./modules/virtualisation/vbox.nix
 
 
-            hyprland.nixosModules.default
-
-            {
-              programs = {
-                hyprland.enable = true;
-              };
-            }
+            # hyprland.nixosModules.default
+            #
+            # {
+            #   programs = {
+            #     hyprland.enable = true;
+            #   };
+            # }
 
             # home-manager.nixosModules.home-manager
             # {
