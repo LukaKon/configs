@@ -86,7 +86,6 @@
             ./modules/system/zfs.nix
             ./modules/system/sound.nix
             ./modules/system/shellAliases.nix # Shell aliases
-            ./modules/system/xdg.nix
             ./modules/system/lk.nix
 
             # Security

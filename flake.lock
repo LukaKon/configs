@@ -75,11 +75,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1670850444,
-        "narHash": "sha256-JTWXLhvYVrg+0az3ccEBVDamLzhHFJErZgzjFOuIw9c=",
+        "lastModified": 1672058942,
+        "narHash": "sha256-yJmkUs17V0R7/D7vj4my5zi3UKCqvbc+GO26CFSew0g=",
         "owner": "leftwm",
         "repo": "leftwm",
-        "rev": "403008aac1a49b3d0ec4e225574497b5a8019c21",
+        "rev": "9154db25d314509b1dfbe1feac8dbcb985a0cd09",
         "type": "github"
       },
       "original": {

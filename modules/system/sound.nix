@@ -7,6 +7,7 @@
   security.rtkit.enable = true;
 
   services.pipewire = {
+    audio.enable = true;
     enable = true;
     alsa = {
       enable = true;
@@ -16,14 +17,15 @@
     # pulse.enable = true;
     # jack.enable = true;
 
-    wireplumber.enable = true;
+    # wireplumber.enable = true;
   };
 
-
-
-  sound.mediaKeys = {
+  sound = {
     enable = true;
-    volumeStep = "4%";
+    mediaKeys = {
+      enable = true;
+      volumeStep = "4%";
+    };
   };
 
   environment = {
