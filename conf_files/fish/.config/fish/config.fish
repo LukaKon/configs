@@ -11,6 +11,8 @@ set fish_greeting                                 # Supresses fish's intro messa
 ### "nvim" as manpager
 # set -x MANPAGER "nvim -c 'set ft=man' -"
 
+alias tb="toolbox"
+
 ### SET EITHER DEFAULT EMACS MODE OR VI MODE ###
 function fish_user_key_bindings
   # fish_default_key_bindings

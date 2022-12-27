@@ -2,14 +2,23 @@
 
 {
   # Use the systemd-boot EFI boot loader.
-  boot = {
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = false;
-    cleanTmpDir = true;
-    supportedFilesystems = [ "ntfs" ];
+   boot = {
+     loader.systemd-boot.enable = true;
+     loader.efi.canTouchEfiVariables = false;
+     cleanTmpDir = true;
+     supportedFilesystems = [ "ntfs" ];
+  
+     kernel.sysctl = { "vm.overcommit_memory" = true; };
+   };
 
-    kernel.sysctl = { "vm.overcommit_memory" = true; };
-  };
+  # boot = {
+  #  loader = {
+  #    grub = {
+  #      enable = true;
+  #      device = "/dev/vda";
+  #    };
+  #  };
+  #};
 
   powerManagement = {
     enable = true;
