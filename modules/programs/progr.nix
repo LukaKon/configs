@@ -21,7 +21,7 @@
         lazygit
 
         # terminal
-        alacritty
+        # alacritty
         kitty
         # foot
 
@@ -30,12 +30,26 @@
         # firmware service
         fwupd-efi
 
+          # packer
+          unzip
+          unar
+          xarchiver
+          p7zip
+
         tree
         pstree # process tree
         wget
         curl
         rsync
         bat # cat
+        exa
+
+
+          # file managers
+          fzf
+          ripgrep
+          fd # find
+          exa
 
         lm_sensors
         # ncdu # disk analisys

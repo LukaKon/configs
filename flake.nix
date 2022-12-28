@@ -3,8 +3,8 @@
 
   inputs = rec {
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nix.url = "github:NixOS/nix";
 
@@ -19,6 +19,20 @@
     };
 
     # helix-master.url = "github:helix-editor/helix";
+
+    # home-manager = {
+    #   # url = "github:nix-community/home-manager";
+    #   url = "github:nix-community/home-manager/release-22.05";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
+    leftwm.url = "github:leftwm/leftwm";
+
+     #hyprland = {
+     #  url = "github:hyprwm/Hyprland";
+     #  #   # build with your own instance of nixpkgs
+     #  inputs.nixpkgs.follows = "nixpkgs";
+     #};
   };
 
   outputs =
@@ -26,6 +40,10 @@
     , nix
     , nixpkgs
     , flake-utils
+      # , helix-master
+      # , home-manager
+    , leftwm
+    #, hyprland
     , ...
     }:
 
@@ -35,7 +53,7 @@
       inherit (nixpkgs) lib;
 
       overlays = [
-        #leftwm.overlay
+        leftwm.overlay
       ];
 
       pkgs = import nixpkgs {
@@ -49,6 +67,55 @@
     in
     rec {
       nixosConfigurations = {
+        virt = lib.nixosSystem {
+          inherit system pkgs;
+
+          modules = [
+            # Include the results of the hardware scan.
+            ./virt/hardware-configuration.nix
+
+            # dev
+            ./development/dev.nix
+
+            # System
+            ./modules/system/system.nix # Base system settings
+            ./modules/system/network.nix # Network configuration
+            ./modules/system/fonts.nix
+            ./modules/system/env_variables.nix
+            ./modules/system/shellAliases.nix # Shell aliases
+            ./modules/system/vr.nix
+            
+
+            # Security
+            ./modules/security/doas.nix # Add 'doas'
+            ./modules/security/firewall.nix
+
+            # Services
+            ./modules/services/openssh.nix # SSH
+
+            # Programs
+            ./modules/programs/progr.nix
+            ./modules/programs/fish.nix
+
+            # Desktops
+            # ./modules/desktops/leftwm
+
+            # Virtualisation
+            ./modules/virtualisation/docker.nix # Docker
+            ./modules/virtualisation/podman.nix
+
+            # hyprland.nixosModules.default
+            #
+            # {
+            #   programs = {
+            #     hyprland.enable = true;
+            #   };
+            # }
+
+          ];
+        };
+    #   };
+    # };
 
         lap = lib.nixosSystem {
           inherit system pkgs;
@@ -65,6 +132,8 @@
             ./modules/system/network.nix # Network configuration
             ./modules/system/fonts.nix
             ./modules/system/env_variables.nix
+            ./modules/system/zfs.nix
+            ./modules/system/sound.nix
             ./modules/system/shellAliases.nix # Shell aliases
             ./modules/system/lk.nix
 
@@ -74,20 +143,26 @@
 
             # Services
             ./modules/services/openssh.nix # SSH
-            #./modules/services/laptop.nix
+            ./modules/services/remote.nix # remote server/desktop
+            ./modules/services/laptop.nix
+            ./modules/services/bluetooth.nix
+            ./modules/services/vial.nix
 
             # Programs
-            #./modules/programs/progr.nix
+            ./modules/programs/progr.nix
+            # ./modules/programs/zsh.nix
             ./modules/programs/fish.nix
             # ./modules/programs/flatpak.nix
 
             # Desktops
-            #./modules/desktops/leftwm
+            ./modules/desktops/leftwm
 
             # Virtualisation
             ./modules/virtualisation/docker.nix # Docker
-            ./modules/virtualisation/podman.nix
+            # ./modules/virtualisation/podman.nix
             # ./modules/virtualisation/arion.nix
+            ./modules/virtualisation/virt-manager.nix
+            # ./modules/virtualisation/vbox.nix
 
 
             # hyprland.nixosModules.default

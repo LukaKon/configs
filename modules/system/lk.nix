@@ -32,11 +32,11 @@
 
           # dev
           neovim
-          helix
-          vscodium
+          #helix
+          #vscodium
           dbeaver
-          arduino
-          unityhub
+          #arduino
+          #unityhub
           # meld
           postman
 
@@ -44,23 +44,17 @@
           # rustdesk
 
           # office
-          libreoffice
+          #libreoffice
           flameshot
           # czkawka
 
           # graphic
-          gimp
-          darktable
-          blender
+          #gimp
+          #darktable
+          #blender
 
           youtube-dl
-          freetube
-
-          # packer
-          unzip
-          unar
-          xarchiver
-          p7zip
+          #freetube
 
           # mouse
           solaar
@@ -70,8 +64,8 @@
           qmk
           qmk-udev-rules
           # via
-          via
-          vial
+          #via
+          #vial
           ## keyboard
 
           # comunication
@@ -79,13 +73,7 @@
           # element-desktop
           #zoom-us
           jitsi-meet-electron
-          discord
-
-          # file managers
-          fzf
-          ripgrep
-          fd # find
-          exa
+          #discord
 
           # media
           feh # picture viewer
