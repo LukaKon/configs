@@ -28,7 +28,7 @@ set fish_greeting                                 # Supresses fish's intro messa
     alias py="python";
 
     # backup config files to git
-    cong = "py /home/lk/configs/scripts/git_conf.py";
+    alias cong="py /home/lk/configs/scripts/git_conf.py";
 
     # docker
     alias dc="docker container";
