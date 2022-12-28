@@ -56,6 +56,7 @@ set fish_greeting                                 # Supresses fish's intro messa
 # set -x MANPAGER "nvim -c 'set ft=man' -"
 
 alias tb="toolbox"
+alias top="bpytop"
 
 ### SET EITHER DEFAULT EMACS MODE OR VI MODE ###
 function fish_user_key_bindings
