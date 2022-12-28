@@ -2,17 +2,15 @@
 
 {
   users = {
-    groups.vr.gid = 1002;
-    users.vr = {
+    groups.lk.gid = 1002;
+    users.lk = {
       isNormalUser = true;
-      home = "/home/vr";
+      home = "/home/lk";
       description = "virtual user";
       uid = 1002;
       extraGroups = [
         "wheel"
         "networkmanager"
-        "dialout"
-        "libvirtd"
         "docker"
         "video"
         "lk"

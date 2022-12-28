@@ -82,7 +82,6 @@
             ./modules/system/network.nix # Network configuration
             ./modules/system/fonts.nix
             ./modules/system/env_variables.nix
-            ./modules/system/shellAliases.nix # Shell aliases
             ./modules/system/vr.nix
             
 
@@ -114,8 +113,6 @@
 
           ];
         };
-    #   };
-    # };
 
         lap = lib.nixosSystem {
           inherit system pkgs;
@@ -134,7 +131,6 @@
             ./modules/system/env_variables.nix
             ./modules/system/zfs.nix
             ./modules/system/sound.nix
-            ./modules/system/shellAliases.nix # Shell aliases
             ./modules/system/lk.nix
 
             # Security
