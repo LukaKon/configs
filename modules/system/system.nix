@@ -8,16 +8,17 @@
   #  cleanTmpDir = true;
   #  supportedFilesystems = [ "ntfs" ];
 
-   # kernel.sysctl = { "vm.overcommit_memory" = true; };
+  # kernel.sysctl = { "vm.overcommit_memory" = true; };
   #};
 
   boot = {
-	loader = {
-		grub = {
-			enable = true;
-			device = "/dev/vda";
-		};
-	};
+    loader = {
+      grub = {
+        enable = true;
+        device = "/dev/vda";
+      };
+    };
+    kernel.sysctl = { "vm.overcommit_memory" = true; };
   };
 
   powerManagement = {
@@ -68,5 +69,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "20.09"; # Did you read the comment?
+  system.stateVersion = "22.11"; # Did you read the comment?
 }
