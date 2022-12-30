@@ -17,11 +17,11 @@ set fish_greeting                                 # Supresses fish's intro messa
    alias glog="git log --graph --pretty=oneline --abbrev-commit";
 
     # term
-   alias susp="systemctl suspend";
-   alias reboot="doas reboot";
-   alias poff="doas poweroff";
-   alias top="btop";
-   alias ll="exa -l --icons --all";
+    alias susp="systemctl suspend";
+    alias reboot="doas reboot";
+    alias poff="doas poweroff";
+    alias top="btop";
+    alias ll="exa -l --icons --all";
     alias tb="toolbox"
 
     # python
@@ -55,8 +55,6 @@ set fish_greeting                                 # Supresses fish's intro messa
 ### "nvim" as manpager
 # set -x MANPAGER "nvim -c 'set ft=man' -"
 
-alias tb="toolbox"
-alias top="bpytop"
 
 ### SET EITHER DEFAULT EMACS MODE OR VI MODE ###
 function fish_user_key_bindings
