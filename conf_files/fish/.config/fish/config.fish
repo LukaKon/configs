@@ -20,7 +20,7 @@ set fish_greeting                                 # Supresses fish's intro messa
    alias susp="systemctl suspend";
    alias reboot="doas reboot";
    alias poff="doas poweroff";
-   alias top="bpytop";
+   alias top="btop";
    alias ll="exa -l --icons --all";
     alias tb="toolbox"
 
