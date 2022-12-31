@@ -8,7 +8,7 @@
         microcodeIntel
 
         # glances
-        bpytop
+        btop
 
         # to link config files to .config
         stow
@@ -30,11 +30,11 @@
         # firmware service
         fwupd-efi
 
-          # packer
-          unzip
-          unar
-          xarchiver
-          p7zip
+        # packer
+        unzip
+        unar
+        xarchiver
+        p7zip
 
         tree
         pstree # process tree
@@ -45,11 +45,11 @@
         exa
 
 
-          # file managers
-          fzf
-          ripgrep
-          fd # find
-          exa
+        # file managers
+        fzf
+        ripgrep
+        fd # find
+        exa
 
         lm_sensors
         # ncdu # disk analisys

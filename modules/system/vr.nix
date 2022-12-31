@@ -29,11 +29,11 @@
           neovim
           #helix
           #vscodium
-          dbeaver
+          # dbeaver
           #arduino
           #unityhub
           # meld
-          postman
+          # postman
 
           # LaTeX
           texlive.combined.scheme-full

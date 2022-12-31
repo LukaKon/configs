@@ -5,46 +5,46 @@ set fish_greeting                                 # Supresses fish's intro messa
 ### ALIASES
 
 # git
-   alias gs="git status -s";
-   alias ga="git add";
-   alias gc="git commit";
-   alias gp="git push";
-   alias gpull="git pull";
-   alias gb="git branch";
-   alias gch="git checkout";
-   alias gm="git merge";
-   alias gf="git fetch";
-   alias glog="git log --graph --pretty=oneline --abbrev-commit";
+alias gs="git status -s";
+alias ga="git add";
+alias gc="git commit";
+alias gp="git push";
+alias gpull="git pull";
+alias gb="git branch";
+alias gch="git checkout";
+alias gm="git merge";
+alias gf="git fetch";
+alias glog="git log --graph --pretty=oneline --abbrev-commit";
 
-    # term
-    alias susp="systemctl suspend";
-    alias reboot="doas reboot";
-    alias poff="doas poweroff";
-    alias top="btop";
-    alias ll="exa -l --icons --all";
-    alias tb="toolbox"
+# term
+alias susp="systemctl suspend";
+alias reboot="doas reboot";
+alias poff="doas poweroff";
+alias top="btop";
+alias ll="exa -l --icons --all";
+alias tb="toolbox"
 
-    # python
-    alias py="python";
+# python
+alias py="python";
 
-    # backup config files to git
-    alias cong="py /home/lk/configs/scripts/git_conf.py";
+# backup config files to git
+alias cong="py /home/lk/configs/scripts/git_conf.py";
 
-    # docker
-    alias dc="docker container";
+# docker
+alias dc="docker container";
 
-    # programs
-   alias lgi="lazygit";
-   alias ldo="lazydocker";
-    
-    # nvim
-    alias vi="nvim";
-    
-    # kitty
-   alias icat="kitty +kitten icat";
-   alias d="kitty +kitten diff";
-   alias hg="kitty +kitten hyperlinged_grep";
-   alias s="kitty +kitten ssh";
+# programs
+alias lgi="lazygit";
+alias ldo="lazydocker";
+
+# nvim
+alias vi="nvim";
+
+# kitty
+alias icat="kitty +kitten icat";
+alias d="kitty +kitten diff";
+alias hg="kitty +kitten hyperlinged_grep";
+alias s="kitty +kitten ssh";
 
 ### SET MANPAGER
 ### Uncomment only one of these!
