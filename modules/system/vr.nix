@@ -20,7 +20,7 @@
       packages = with pkgs;
         [
           # www
-          # firefox
+          firefox
           # brave
           # qutebrowser
           # librewolf

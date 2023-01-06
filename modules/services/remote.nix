@@ -1,13 +1,18 @@
-{config, pkgs, ...}:
+{ config, pkgs, ... }:
 
 {
-    environment.systemPackages = with pkgs;
-                [remmina];
+  environment.systemPackages = with pkgs;
+    [
+      remmina
+    ];
 
-    services.xrdp.enable = true;
-    # services.xrdp.defaultWindowManager = "${pkgs.openbox}/bin/openbox";
-    # services.xrdp.defaultWindowManager = "${pkgs.icewm}/bin/icewm";
-    services.xrdp.defaultWindowManager = "startplasma-x11";
+  services.xrdp.enable = true;
+  services.xrdp.defaultWindowManager = "startplasma-x11";
 
-    networking.firewall.allowedTCPPorts = [ 3389 ];
+
+  # nixpkgs.config.permittedInsecurePackages = [
+  #   "xrdp-0.9.9"
+  # ];
+
+  networking.firewall.allowedTCPPorts = [ 3389 ];
 }

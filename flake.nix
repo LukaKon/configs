@@ -28,11 +28,11 @@
 
     leftwm.url = "github:leftwm/leftwm";
 
-     #hyprland = {
-     #  url = "github:hyprwm/Hyprland";
-     #  #   # build with your own instance of nixpkgs
-     #  inputs.nixpkgs.follows = "nixpkgs";
-     #};
+    #hyprland = {
+    #  url = "github:hyprwm/Hyprland";
+    #  #   # build with your own instance of nixpkgs
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
   };
 
   outputs =
@@ -43,7 +43,7 @@
       # , helix-master
       # , home-manager
     , leftwm
-    #, hyprland
+      #, hyprland
     , ...
     }:
 
@@ -59,6 +59,7 @@
       pkgs = import nixpkgs {
         inherit system overlays;
         config = {
+          permittedInsecurePackages = [ "xrdp-0.9.9" ];
           allowUnfree = true;
           joypixels.acceptLicense = true;
         };
