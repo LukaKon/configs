@@ -83,7 +83,6 @@
             ./modules/system/fonts.nix
             ./modules/system/env_variables.nix
             ./modules/system/vr.nix
-            
 
             # Security
             ./modules/security/doas.nix # Add 'doas'
@@ -91,6 +90,7 @@
 
             # Services
             ./modules/services/openssh.nix # SSH
+            ./modules/services/remote.nix # remote server/desktop
 
             # Programs
             ./modules/programs/progr.nix
@@ -98,6 +98,7 @@
 
             # Desktops
             # ./modules/desktops/leftwm
+            ./modules/desktops/kde
 
             # Virtualisation
             ./modules/virtualisation/docker.nix # Docker
