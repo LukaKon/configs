@@ -9,6 +9,7 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
+opt.smartindent = true  -- default off
 
 -- line wrapping
 opt.wrap = false
@@ -16,6 +17,7 @@ opt.wrap = false
 -- search settings
 opt.ignorecase = true
 opt.smartcase = true
+opt.wildignore:append {'*/node_modules/*'}
 
 -- cursor line
 opt.cursorline = true
@@ -24,6 +26,8 @@ opt.cursorline = true
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
+opt.winblend = 15 -- transparency 0-100
+opt.wildoptions = "pum"
 
 -- backspace
 opt.backspace = "indent,eol,start"
@@ -37,8 +41,10 @@ opt.splitbelow = true
 
 opt.iskeyword:append("-") -- consider '-' as a part of word: 'test-test' as a one word
 
--- scrolling
+-- minimal lines below or under cursor
 opt.scrolloff = 5
 
 -- mouse
 opt.mouse = 'a'
+
+opt.inccommand = 'split'

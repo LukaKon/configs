@@ -9,10 +9,18 @@ keymap.set('i', 'jk', '<ESC>')
 
 keymap.set('n', '<leader>nh', ':nohl<CR>')  -- deselect after search
 
-keymap.set('n', 'x', '"_x')  -- delete single character without copying it to a register
+-- delete single character without copying it to a register
+keymap.set('n', 'x', '"_x')  
 
-keymap.set('n', '<leader>+', '<C-a>')  -- increment
-keymap.set('n', '<leaces>-', '<C-x>')  -- decrement
+-- increment
+keymap.set('n', '+', '<C-a>')
+-- decrement
+keymap.set('n', '-', '<C-x>')
+
+-- delete a word backward
+keymap.set('n', 'dw', 'vb"_d')
+-- select all
+keymap.set('n', '<C-a>', 'gg<S-v>G')
 
 keymap.set('n', '<leader>sv', '<C-w>v')  -- split window vertically
 keymap.set('n', '<leader>sh', '<C-w>s')  -- split window horizontally

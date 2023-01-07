@@ -138,7 +138,6 @@ return packer.startup(function(use)
   use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
   use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
 
-
   -- auto closing
   use({'windwp/nvim-autopairs',
     config = function() require('nvim-autopairs').setup {} end })
@@ -156,6 +155,9 @@ return packer.startup(function(use)
         require('toggleterm').setup()
       end
   })
+
+  -- folding
+  use({'anuvyklack/pretty-fold.nvim'})
 
   use({
       "jiaoshijie/undotree",
