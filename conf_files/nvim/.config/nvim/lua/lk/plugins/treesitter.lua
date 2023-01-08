@@ -69,7 +69,9 @@ treesitter.setup({
     'cpp',
     'css',
     'dockerfile',
+    'fish',
     'gitignore',
+    'help',
     'html',
     'javascript',
     'json',
@@ -83,7 +85,6 @@ treesitter.setup({
     'tsx',
     'typescript',
     'yaml',
-    'help',
   },
   -- Automatically install missing parsers when entering buffer
   -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally

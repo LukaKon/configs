@@ -28,7 +28,8 @@
         nix-prefetch-git
 
         # firmware service
-        fwupd-efi
+        # fwupd-efi
+        # fwupd
 
         # packer
         unzip

@@ -28,6 +28,51 @@ require("luasnip/loaders/from_vscode").lazy_load()
 
 vim.opt.completeopt = "menu,menuone,noselect"
 
+lspkind.init({
+    -- defines how annotations are shown
+    -- default: symbol
+    -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
+    mode = 'symbol_text',
+
+    -- default symbol map
+    -- can be either 'default' (requires nerd-fonts font) or
+    -- 'codicons' for codicon preset (requires vscode-codicons font)
+    --
+    -- default: 'default'
+    preset = 'default',
+
+    -- override preset symbols
+    --
+    -- default: {}
+    symbol_map = {
+      Text = "",
+      Method = "",
+      Function = "",
+      Constructor = "",
+      Field = "ﰠ",
+      Variable = "",
+      Class = "ﴯ",
+      Interface = "",
+      Module = "",
+      Property = "ﰠ",
+      Unit = "塞",
+      Value = "",
+      Enum = "",
+      Keyword = "",
+      Snippet = "",
+      Color = "",
+      File = "",
+      Reference = "",
+      Folder = "",
+      EnumMember = "",
+      Constant = "",
+      Struct = "פּ",
+      Event = "",
+      Operator = "",
+      TypeParameter = ""
+    },
+})
+
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -35,14 +80,16 @@ cmp.setup({
     end,
   },
   mapping = cmp.mapping.preset.insert({
-    -- ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
-    ["<S-Tab>"] = cmp.mapping.select_prev_item(), -- previous suggestion
-    -- ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
-    ["<Tab>"] = cmp.mapping.select_next_item(), -- next suggestion
+    -- previous suggestion
+    ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+    -- next suggestion
+    ["<Tab>"] = cmp.mapping.select_next_item(),
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-    ["<C-e>"] = cmp.mapping.abort(), -- close completion window
+    -- show completion suggestions
+    ["<C-Space>"] = cmp.mapping.complete(),
+    -- close completion window
+    ["<C-e>"] = cmp.mapping.abort(),
     ["<CR>"] = cmp.mapping.confirm({ select = false }),
   }),
   window = {
@@ -52,9 +99,9 @@ cmp.setup({
   -- sources for autocompletion
   sources = cmp.config.sources({
     { name = 'nvim_lsp' }, -- lsp
-    -- { name = 'luasnip' }, -- snippets
     { name = 'buffer' }, -- text within current buffer
     { name = 'path' }, -- file system paths
+    { name = 'luasnip' }, -- snippets
     -- { name = 'cmdline' },
   },{
       { name = 'buffer' },

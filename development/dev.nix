@@ -32,6 +32,8 @@
 
     astyle # Source code indenter, formatter, and beautifier for C, C++, C# and Java
     stylua # An opinionated Lua code formatter
+    luajit # High-performance JIT compiler for Lua
+    luajitPackages.luacheck
 
 
     # Language servers

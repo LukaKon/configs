@@ -13,7 +13,7 @@ local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
 -- autocommand that reloads neovim and installs/updates/removes plugins
 -- when file is saved
-vim.cmd([[ 
+vim.cmd([[
   augroup packer_user_config
     autocmd!
     autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
@@ -81,21 +81,21 @@ return packer.startup(function(use)
 
 	-- colorscheme
   use('EdenEast/nightfox.nvim')
-	
+
 	-- tmux & split window navigation
 	use('christoomey/vim-tmux-navigator')
-	
+
 	-- maximize and restores current window
 	use('szw/vim-maximizer')
-	
+
 	-- esential plugins
 	use('tpope/vim-surround')
 	use('vim-scripts/ReplaceWithRegister')
-	
+
 	-- commenting with gc
 	use('numToStr/Comment.nvim')
 
-  -- colorizer 
+  -- colorizer
   use('NvChad/nvim-colorizer.lua')
 
   -- file explorer with icons

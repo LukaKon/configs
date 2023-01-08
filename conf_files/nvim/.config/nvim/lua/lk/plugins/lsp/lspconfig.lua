@@ -27,25 +27,41 @@ local on_attach = function(client, bufnr)
   local opts = { noremap = true, silent = true, buffer = bufnr }
 
   -- set keybinds
-  keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts) -- show definition, references
-  keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts) -- got to declaration
-  keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts, '[G]oto [D]efinition') -- see definition and make edits in window
-  keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts, '[G]oto [I]mplementation') -- go to implementation
-  keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts, '[C]ode [A]ction') -- see available code actions
-  keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts, '[R]e[N]ame') -- smart rename
-  keymap.set("n", "<leader>d", "<cmd>Lspsaga show_line_diagnostics<CR>", opts) -- show  diagnostics for line
-  keymap.set("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts) -- show diagnostics for cursor
-  keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
-  keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
-  keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
-  keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand side
-  keymap.set('n', '<leader>mt', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)  -- formatting file
+  -- show definition, references
+  keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts)
+  -- got to declaration
+  keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+  -- see definition and make edits in window
+  keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts, '[G]oto [D]efinition')
+  -- go to implementation
+  keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts, '[G]oto [I]mplementation')
+  -- see available code actions
+  keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts, '[C]ode [A]ction')
+  -- smart rename
+  keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts, '[R]e[N]ame')
+  -- show  diagnostics for line
+  keymap.set("n", "<leader>d", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
+  -- show diagnostics for cursor
+  keymap.set("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
+  -- jump to previous diagnostic in buffer
+  keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+  -- jump to next diagnostic in buffer
+  keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+  -- show documentation for what is under cursor
+  keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+  -- see outline on right hand side
+  keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts)
+  -- formatting file
+  keymap.set('n', '<leader>mt', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
   -- typescript specific keymaps (e.g. rename file and update imports)
   if client.name == "tsserver" then
-    keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
-    keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports (not in youtube nvim video)
-    keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
+    -- rename file and update imports
+    keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>")
+    -- organize imports (not in youtube nvim video)
+    keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>")
+    -- remove unused variables (not in youtube nvim video)
+    keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>")
   end
 end
 
@@ -61,7 +77,8 @@ end
 
 
 -- configure tsserver
-lspconfig['tsserver'].setup({
+-- lspconfig['tsserver'].setup({
+lspconfig.tsserver.setup({
   on_attach = function(client, bufnr)
         client.resolved_capabilities.document_formatting = false
         vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
@@ -69,21 +86,23 @@ lspconfig['tsserver'].setup({
 })
 
 -- configure python server
-lspconfig['pylsp'].setup({
+-- lspconfig['pylsp'].setup({
+lspconfig.pylsp.setup({
   capabilities = capabilities,
   on_attach = on_attach,
   -- filetypes = { 'py' },
 })
 
 -- configure toml server
-lspconfig['taplo'].setup({
+-- lspconfig['taplo'].setup({
+lspconfig.taplo.setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
 
-
 -- configure html server
-lspconfig["html"].setup({
+-- lspconfig["html"].setup({
+lspconfig.html.setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
@@ -97,44 +116,47 @@ typescript.setup({
 })
 
 -- configure css server
-lspconfig["cssls"].setup({
+-- lspconfig["cssls"].setup({
+lspconfig.cssls.setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
 
 -- configure tailwindcss server
-lspconfig["tailwindcss"].setup({
+lspconfig.tailwindcss.setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
 
 -- configure emmet language server
-lspconfig["emmet_ls"].setup({
+lspconfig.emmet_ls.setup({
   capabilities = capabilities,
   on_attach = on_attach,
   filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 })
 
 -- configure latex server
-lspconfig['texlab'].setup({
+-- lspconfig['texlab'].setup({
+lspconfig.texlab.setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
 
 -- configure markdown server
-lspconfig['marksman'].setup({
+-- lspconfig['marksman'].setup({
+lspconfig.marksman.setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
 
 -- configure nix server
-lspconfig['rnix'].setup({
+lspconfig.rnix.setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
 
 -- configure rust server
-lspconfig['rust_analyzer'].setup({
+lspconfig.rust_analyzer.setup({
   capabilities = capabilities,
   on_attach = on_attach,
   settings = {
@@ -149,16 +171,25 @@ lspconfig["sumneko_lua"].setup({
   on_attach = on_attach,
   settings = { -- custom settings for lua
     Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+      },
       -- make the language server recognize "vim" global
       diagnostics = {
         globals = { "vim" },
       },
       workspace = {
         -- make language server aware of runtime files
-        library = {
-          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-          [vim.fn.stdpath("config") .. "/lua"] = true,
-        },
+        -- library = {
+        --   [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+        --   [vim.fn.stdpath("config") .. "/lua"] = true,
+        -- },
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      telemetry = {
+        enable = false,
       },
     },
   },
