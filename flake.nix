@@ -18,13 +18,13 @@
       flake = false;
     };
 
-    # helix-master.url = "github:helix-editor/helix";
+    helix-master.url = "github:helix-editor/helix";
 
-    # home-manager = {
-    #   # url = "github:nix-community/home-manager";
-    #   url = "github:nix-community/home-manager/release-22.05";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      # url = "github:nix-community/home-manager/release-22.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     leftwm.url = "github:leftwm/leftwm";
 
@@ -40,8 +40,8 @@
     , nix
     , nixpkgs
     , flake-utils
-      # , helix-master
-      # , home-manager
+    , helix-master
+    , home-manager
     , leftwm
       #, hyprland
     , ...
@@ -113,6 +113,21 @@
             #   };
             # }
 
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = {
+                inherit
+                  helix-master;
+              };
+              home-manager.users.lk = { ... }: {
+                home.stateVersion = "22.11";
+                imports = [
+                  ./home
+                ];
+              };
+            }
           ];
         };
 
