@@ -114,6 +114,7 @@ return packer.startup(function(use)
   use('folke/which-key.nvim')
 
   -- fuzzy finding
+  use { "nvim-telescope/telescope-file-browser.nvim" }
   use {
     'nvim-telescope/telescope-fzf-native.nvim',
     run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
@@ -121,13 +122,18 @@ return packer.startup(function(use)
   use({
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
-    requires = { {'nvim-lua/plenary.nvim'} }})
+    requires = { {'nvim-lua/plenary.nvim'} }
+  })
 
   -- autocompletion
   use("hrsh7th/nvim-cmp") -- completion plugin
   use("hrsh7th/cmp-buffer") -- source for text in buffer
   use("hrsh7th/cmp-path") -- source for file system paths
   -- use('hrsh7th/cmp-cmdline')
+  use({ "mtoohey31/cmp-fish", ft = "fish" })
+  use({ "f3fora/cmp-spell" })
+  use({ "chrisgrieser/cmp-nerdfont" })
+
 
   -- snippets
   use("L3MON4D3/LuaSnip") -- snippet engine
@@ -159,12 +165,15 @@ return packer.startup(function(use)
   -- folding
   -- use({'anuvyklack/pretty-fold.nvim'})
 
+  -- undotree
   use({
       "jiaoshijie/undotree",
       requires = {
         "nvim-lua/plenary.nvim",
       },
   })
+
+  -- fish
 
 	if packer_bootstrap then
 		require("packer").sync()

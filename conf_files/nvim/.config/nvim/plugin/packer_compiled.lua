@@ -94,6 +94,19 @@ _G.packer_plugins = {
     path = "/home/lk/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
+  ["cmp-fish"] = {
+    after_files = { "/home/lk/.local/share/nvim/site/pack/packer/opt/cmp-fish/after/plugin/cmp_fish.lua" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/lk/.local/share/nvim/site/pack/packer/opt/cmp-fish",
+    url = "https://github.com/mtoohey31/cmp-fish"
+  },
+  ["cmp-nerdfont"] = {
+    loaded = true,
+    path = "/home/lk/.local/share/nvim/site/pack/packer/start/cmp-nerdfont",
+    url = "https://github.com/chrisgrieser/cmp-nerdfont"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/lk/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -103,6 +116,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/lk/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
+  },
+  ["cmp-spell"] = {
+    loaded = true,
+    path = "/home/lk/.local/share/nvim/site/pack/packer/start/cmp-spell",
+    url = "https://github.com/f3fora/cmp-spell"
   },
   cmp_luasnip = {
     loaded = true,
@@ -232,10 +250,10 @@ _G.packer_plugins = {
     path = "/home/lk/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["pretty-fold.nvim"] = {
+  ["telescope-file-browser.nvim"] = {
     loaded = true,
-    path = "/home/lk/.local/share/nvim/site/pack/packer/start/pretty-fold.nvim",
-    url = "https://github.com/anuvyklack/pretty-fold.nvim"
+    path = "/home/lk/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
+    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
@@ -299,6 +317,13 @@ time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
 vim.cmd [[ packadd nvim-treesitter-textobjects ]]
 time([[Sequenced loading]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Filetype lazy-loads
+time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType fish ++once lua require("packer.load")({'cmp-fish'}, { ft = "fish" }, _G.packer_plugins)]]
+time([[Defining lazy-load filetype autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

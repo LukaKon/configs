@@ -66,7 +66,7 @@ treesitter.setup({
   autotag = { enable = true },
   -- A list of parser names, or "all"
   ensure_installed = {
-    'cpp',
+    -- 'cpp',
     'css',
     'dockerfile',
     'fish',

@@ -77,16 +77,16 @@ end
 
 
 -- configure tsserver
--- lspconfig['tsserver'].setup({
 lspconfig.tsserver.setup({
   on_attach = function(client, bufnr)
         client.resolved_capabilities.document_formatting = false
         vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
     end,
+  -- do I need 'cmd'?
+  cmd = { "typescript-language-server", "--stdio" },
 })
 
 -- configure python server
--- lspconfig['pylsp'].setup({
 lspconfig.pylsp.setup({
   capabilities = capabilities,
   on_attach = on_attach,
@@ -94,14 +94,12 @@ lspconfig.pylsp.setup({
 })
 
 -- configure toml server
--- lspconfig['taplo'].setup({
 lspconfig.taplo.setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
 
 -- configure html server
--- lspconfig["html"].setup({
 lspconfig.html.setup({
   capabilities = capabilities,
   on_attach = on_attach,
@@ -116,7 +114,6 @@ typescript.setup({
 })
 
 -- configure css server
--- lspconfig["cssls"].setup({
 lspconfig.cssls.setup({
   capabilities = capabilities,
   on_attach = on_attach,
@@ -136,14 +133,12 @@ lspconfig.emmet_ls.setup({
 })
 
 -- configure latex server
--- lspconfig['texlab'].setup({
 lspconfig.texlab.setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
 
 -- configure markdown server
--- lspconfig['marksman'].setup({
 lspconfig.marksman.setup({
   capabilities = capabilities,
   on_attach = on_attach,

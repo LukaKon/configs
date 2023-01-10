@@ -13,7 +13,7 @@ local sources = {
     formatting.prettier,
     formatting.stylua,
     diagnostics.eslint_d,
-    formatting.autopep8,
+    -- formatting.autopep8,
     diagnostics.flake8,
     formatting.isort,
     formatting.taplo,

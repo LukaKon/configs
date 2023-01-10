@@ -28,51 +28,6 @@ require("luasnip/loaders/from_vscode").lazy_load()
 
 vim.opt.completeopt = "menu,menuone,noselect"
 
-lspkind.init({
-    -- defines how annotations are shown
-    -- default: symbol
-    -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
-    mode = 'symbol_text',
-
-    -- default symbol map
-    -- can be either 'default' (requires nerd-fonts font) or
-    -- 'codicons' for codicon preset (requires vscode-codicons font)
-    --
-    -- default: 'default'
-    preset = 'default',
-
-    -- override preset symbols
-    --
-    -- default: {}
-    symbol_map = {
-      Text = "",
-      Method = "",
-      Function = "",
-      Constructor = "",
-      Field = "ﰠ",
-      Variable = "",
-      Class = "ﴯ",
-      Interface = "",
-      Module = "",
-      Property = "ﰠ",
-      Unit = "塞",
-      Value = "",
-      Enum = "",
-      Keyword = "",
-      Snippet = "",
-      Color = "",
-      File = "",
-      Reference = "",
-      Folder = "",
-      EnumMember = "",
-      Constant = "",
-      Struct = "פּ",
-      Event = "",
-      Operator = "",
-      TypeParameter = ""
-    },
-})
-
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -97,20 +52,81 @@ cmp.setup({
     documentation = cmp.config.window.bordered(),
   },
   -- sources for autocompletion
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' }, -- lsp
-    { name = 'buffer' }, -- text within current buffer
-    { name = 'path' }, -- file system paths
-    { name = 'luasnip' }, -- snippets
-    -- { name = 'cmdline' },
-  },{
-      { name = 'buffer' },
-  }),
+  sources = cmp.config.sources(
+    {
+      { name = 'nvim_lsp' }, -- lsp
+      { name = 'buffer' }, -- text within current buffer
+      { name = 'path' }, -- file system paths
+      { name = 'luasnip' }, -- snippets
+      -- { name = 'cmdline' },
+      {
+        name = 'spell',
+          option = {
+            keep_all_entries = false,
+            enable_in_context = function()
+              return true
+            end,
+        },
+        { name = 'nerdfont' },
+        { name = 'fish' },
+      },
+    },
+    {
+        { name = 'buffer' },
+    }
+  ),
   -- configure lspkind for vs-code like icons
   formatting = {
     format = lspkind.cmp_format({
+      -- defines how annotations are shown
+      -- default: symbol
+      -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
+      mode = 'symbol_text',
+
       maxwidth = 50,
       ellipsis_char = "...",
+
+      -- default symbol map
+      -- can be either 'default' (requires nerd-fonts font) or
+      -- 'codicons' for codicon preset (requires vscode-codicons font)
+      --
+      -- default: 'default'
+      preset = 'default',
+
+      -- override preset symbols
+      --
+      -- default: {}
+      symbol_map = {
+        Text = "",
+        -- Text = "",
+        Method = "",
+        Function = "",
+        Constructor = "",
+        Field = "ﰠ",
+        Variable = "",
+        Class = "ﴯ",
+        Interface = "",
+        Module = "",
+        Property = "ﰠ",
+        Unit = "塞",
+        Value = "",
+        Enum = "",
+        Keyword = "",
+        Snippet = "",
+        Color = "",
+        File = "",
+        Reference = "",
+        Folder = "",
+        EnumMember = "",
+        Constant = "",
+        Struct = "פּ",
+        Event = "",
+        Operator = "",
+        TypeParameter = ""
+      },
     }),
   },
 })
+
+vim.opt.spell = true
+vim.opt.spelllang = { 'en_us',}
