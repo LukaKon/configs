@@ -10,7 +10,7 @@ color-modes = true
 idle-timeout = 300
 true-color = true
 mouse = true
-shell = [ "zsh" ]
+shell = [ "fish" ]
 middle-click-paste = true # new default
 completion-trigger-len = 2
 

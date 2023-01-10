@@ -157,7 +157,7 @@ return packer.startup(function(use)
   })
 
   -- folding
-  use({'anuvyklack/pretty-fold.nvim'})
+  -- use({'anuvyklack/pretty-fold.nvim'})
 
   use({
       "jiaoshijie/undotree",
@@ -165,23 +165,6 @@ return packer.startup(function(use)
         "nvim-lua/plenary.nvim",
       },
   })
-
-  -- diff view
-  -- use({'sindrets/diffview.nvim',
-  --     requires = 'nvim-lua/plenary.nvim'})
-
-  -- Fuzzy Finder (files, lsp, etc)
-  -- use {
-  --   'nvim-telescope/telescope.nvim',
-  --   branch = '0.1.x',
-  --   requires = { 'nvim-lua/plenary.nvim' }
-  -- }
-
-  -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
-  -- use {
-  --   'nvim-telescope/telescope-fzf-native.nvim',
-  --   run = 'make',
-  --   cond = vim.fn.executable 'make' == 1 }
 
 	if packer_bootstrap then
 		require("packer").sync()
