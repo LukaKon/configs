@@ -10,7 +10,7 @@ keymap.set('i', 'jk', '<ESC>')
 keymap.set('n', '<leader>nh', ':nohl<CR>')  -- deselect after search
 
 -- delete single character without copying it to a register
-keymap.set('n', 'x', '"_x')  
+keymap.set('n', 'x', '"_x')
 
 -- increment
 keymap.set('n', '+', '<C-a>')
@@ -35,23 +35,10 @@ keymap.set('n', '<leader>tp', ':tabp<CR>')  -- go to previous tab
 keymap.set('n', 'gn', ':bNext<CR>') -- go to next buffer
 keymap.set('n', 'gp', ':bprevious<CR>') -- go to previous buffer
 
-
-
 -- plugin keymaps
 
 -- vim-maximizer
 keymap.set('n', '<leader>sm', ':MaximizerToggle<CR>')
-
--- nvim-tree
--- keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
-
--- telescope
--- keymap.set('n', '<leader>f', '<cmd>Telescope find_files<cr>')
--- keymap.set('n', '<leader>s', '<cmd>Telescope live_grep<cr>')
--- keymap.set('n', '<leader>c', '<cmd>Telescope grep_string<cr>')
--- keymap.set('n', '<leader>b', '<cmd>Telescope buffers<cr>')
--- keymap.set('n', '<leader>h', '<cmd>Telescope help_tags<cr>')
--- keymap.set('n', '<leader>th', '<cmd> Telescope find_files hidden=true<cr>')
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`

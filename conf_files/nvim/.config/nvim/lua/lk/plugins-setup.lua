@@ -99,10 +99,10 @@ return packer.startup(function(use)
   use('NvChad/nvim-colorizer.lua')
 
   -- file explorer with icons
-  use({
-    'nvim-tree/nvim-tree.lua',
-    requires = { 'nvim-tree/nvim-web-devicons'},
-  })
+  -- use({
+  --   'nvim-tree/nvim-tree.lua',
+  --   requires = { 'nvim-tree/nvim-web-devicons'},
+  -- })
 
   -- icons
   use("kyazdani42/nvim-web-devicons")
@@ -173,7 +173,12 @@ return packer.startup(function(use)
       },
   })
 
-  -- fish
+  -- bufferline
+  use {
+    'akinsho/bufferline.nvim',
+    tag = "v3.*",
+    requires = 'nvim-tree/nvim-web-devicons'
+  }
 
 	if packer_bootstrap then
 		require("packer").sync()

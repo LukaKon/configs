@@ -22,8 +22,9 @@
 
     fontconfig = {
       defaultFonts = {
-        monospace = [ "Fira Code" ];
-        # emoji = ["Joypixels"];
+        # monospace = [ "Fira Code" ];
+        monospace = [ "Nerdfont" ];
+        emoji = ["Joypixels"];
       };
     };
   };

@@ -40,7 +40,7 @@ local on_attach = function(client, bufnr)
   -- smart rename
   keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts, '[R]e[N]ame')
   -- show  diagnostics for line
-  keymap.set("n", "<leader>d", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
+  keymap.set("n", "<leader>ld", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
   -- show diagnostics for cursor
   keymap.set("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
   -- jump to previous diagnostic in buffer
