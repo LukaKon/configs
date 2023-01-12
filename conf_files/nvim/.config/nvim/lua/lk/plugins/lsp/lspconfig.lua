@@ -28,9 +28,9 @@ local on_attach = function(client, bufnr)
 
   -- set keybinds
   -- show definition, references
-  keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts)
+  keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts, {desc = 'Show definition/refernces'})
   -- got to declaration
-  keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+  keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts, {desc = '[G]o to [Declaration]'})
   -- see definition and make edits in window
   keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts, '[G]oto [D]efinition')
   -- go to implementation
@@ -42,13 +42,13 @@ local on_attach = function(client, bufnr)
   -- show  diagnostics for line
   keymap.set("n", "<leader>ld", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
   -- show diagnostics for cursor
-  keymap.set("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
+  keymap.set("n", "<leader>lc", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
   -- jump to previous diagnostic in buffer
-  keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+  keymap.set("n", "<C-k>", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts, {desc = 'Jump to previous diagnostic'})
   -- jump to next diagnostic in buffer
-  keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+  keymap.set("n", "<C-j>", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts, {desc = '[J]ump to next diagnostic'})
   -- show documentation for what is under cursor
-  keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+  keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts, {desc = 'Show documentation for element under cursor'})
   -- see outline on right hand side
   keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts)
   -- formatting file

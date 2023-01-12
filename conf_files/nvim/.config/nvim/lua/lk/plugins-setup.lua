@@ -60,8 +60,11 @@ return packer.startup(function(use)
     --   require('null-ls').setup()
     -- end,
     require = {'nvim-lua/plenary.nvim'},
-})
+  })
   use('jayp0521/mason-null-ls.nvim')
+
+  -- prettier
+  use('MunifTanjim/prettier.nvim')
 
   -- treesitter
   use({ -- Highlight, edit, and navigate code

@@ -1,8 +1,8 @@
 -- import lspsaga safely
-local saga_status, saga = pcall(require, 'lspsaga')
-if(not saga_status)
+local status, saga = pcall(require, 'lspsaga')
+if(not status)
 then
-  print('saga not found')
+  print('lspsaga not found')
   return
 end
 
