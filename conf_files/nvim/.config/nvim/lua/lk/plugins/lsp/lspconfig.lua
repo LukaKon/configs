@@ -52,7 +52,7 @@ local on_attach = function(client, bufnr)
   -- see outline on right hand side
   keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts)
   -- formatting file
-  keymap.set('n', '<leader>mt', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  keymap.set('n', '<leader>rt', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
   -- typescript specific keymaps (e.g. rename file and update imports)
   if client.name == "tsserver" then
@@ -80,7 +80,7 @@ end
 lspconfig.tsserver.setup({
   on_attach = function(client, bufnr)
         client.resolved_capabilities.document_formatting = false
-        vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
+        -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>rt", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
     end,
   -- do I need 'cmd'?
   cmd = { "typescript-language-server", "--stdio" },

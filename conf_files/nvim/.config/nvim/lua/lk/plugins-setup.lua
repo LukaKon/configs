@@ -152,6 +152,8 @@ return packer.startup(function(use)
     config = function() require('nvim-autopairs').setup {} end })
   use('windwp/nvim-ts-autotag')
 
+  -- git - for git blame and browser
+  use ({ 'dinhhuy258/git.nvim' })
   -- git signs plugin
   use('lewis6991/gitsigns.nvim')
 
@@ -182,6 +184,20 @@ return packer.startup(function(use)
     tag = "v3.*",
     requires = 'nvim-tree/nvim-web-devicons'
   }
+
+  -- neoclip - clipboard history - yank history
+  use {
+  "AckslD/nvim-neoclip.lua",
+  requires = {
+    -- {'kkharji/sqlite.lua', module = 'sqlite'},
+    -- you'll need at least one of these
+    -- {'nvim-telescope/telescope.nvim'},
+    -- {'ibhagwan/fzf-lua'},
+  },
+  config = function()
+    require('neoclip').setup()
+  end,
+}
 
 	if packer_bootstrap then
 		require("packer").sync()

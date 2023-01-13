@@ -6,7 +6,6 @@ then
   return
 end
 
-
 saga.init_lsp_saga({
   -- border style
   border_style = 'rounded',
