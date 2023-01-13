@@ -42,9 +42,9 @@
     rust-analyzer
     omnisharp-roslyn # .NET 
     sumneko-lua-language-server # Lua
-    nodePackages.vscode-json-languageserver
 
     # nodePackages.pyright
+    nodePackages.vscode-json-languageserver
     nodePackages.vscode-langservers-extracted
     nodePackages.dockerfile-language-server-nodejs
     nodePackages.typescript-language-server
