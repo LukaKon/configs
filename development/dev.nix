@@ -35,6 +35,7 @@
     luajit # High-performance JIT compiler for Lua
     luajitPackages.luacheck
 
+    marksman # Language Server for Markdown
 
     # Language servers
     clang-tools # C-Style

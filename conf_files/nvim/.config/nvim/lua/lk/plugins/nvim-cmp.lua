@@ -57,19 +57,19 @@ cmp.setup({
       { name = 'nvim_lsp' }, -- lsp
       { name = 'buffer' }, -- text within current buffer
       { name = 'path' }, -- file system paths
-      { name = 'luasnip' }, -- snippets
+      -- { name = 'luasnip' }, -- stippets
       -- { name = 'cmdline' },
-      {
-        name = 'spell',
-          option = {
-            keep_all_entries = false,
-            enable_in_context = function()
-              return true
-            end,
-        },
-        { name = 'nerdfont' },
-        { name = 'fish' },
-      },
+      -- {
+      --   name = 'spell',
+      --     option = {
+      --       keep_all_entries = true,
+      --       enable_in_context = function()
+      --         return true
+      --       end,
+      --   },
+      --   { name = 'nerdfont' },
+      --   { name = 'fish' },
+      -- },
     },
     {
         { name = 'buffer' },
