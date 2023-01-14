@@ -21,7 +21,7 @@ bufferline.setup({
     max_name_length = 15,
     max_prefix_length = 5,
     truncate_name = true,
-    tab_size = 18,
+    tab_size = 15,
     separator_style = 'slant',
     always_show_bufferline = false,
     show_buffer_close_icons = false,
@@ -30,27 +30,27 @@ bufferline.setup({
     enforece_regular_tabs = false,
   },
   highlights = {
-    separator = {
+    -- separator = {
       -- fg = '#lightblue',
       -- bg = '#darkgreen',
-    },
-    separartor_selected = {
+    -- },
+    -- separartor_selected = {
       -- fg = ,
-    },
-    background = {
+    -- },
+    -- background = {
       -- fg = ,
       -- bg = ,
-    },
+    -- },
     buffer_selected = {
       bold = true,
     },
-    fill = {
+    -- fill = {
       -- bg = ,
-    },
+    -- },
   },
 })
 
-vim.opt.termguicolors = true
+-- vim.opt.termguicolors = true
 vim.api.nvim_set_keymap('n', '<Tab>', '<cmd>BufferLineCycleNext<CR>', {desc = 'Next tab'})
 vim.api.nvim_set_keymap('n', '<S-Tab>', '<cmd>BufferLineCyclePrev<CR>', {desc = 'Previous tab'})
 vim.api.nvim_set_keymap('n', 'tp', '<cmd>BufferLinePick<CR>', {desc = '[P]ick tab'})
