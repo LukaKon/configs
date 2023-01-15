@@ -18,7 +18,7 @@ keymap.set('n', '+', '<C-a>')
 keymap.set('n', '-', '<C-x>')
 
 -- delete a word backward
-keymap.set('n', 'dw', 'vb"_d')
+-- keymap.set('n', 'dw', 'vb"_d')
 -- select all
 keymap.set('n', '<C-a>', 'gg<S-v>G')
 

@@ -5,6 +5,13 @@ then
   return
 end
 
+local eslint_setup, eslint = pcall(require, 'eslint')
+if(not eslint_setup)
+then
+  print('eslint not found')
+  return
+end
+
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 local completion = null_ls.builtins.completion
@@ -58,4 +65,24 @@ null_ls.setup({
   sources = sources,
   -- configure format on save
   on_attach = on_attach
+})
+
+eslint.setup({
+  bin = 'eslint', -- or `eslint_d`
+  code_actions = {
+    enable = true,
+    apply_on_save = {
+      enable = true,
+      types = { "directive", "problem", "suggestion", "layout" },
+    },
+    disable_rule_comment = {
+      enable = true,
+      location = "same_line", -- "separate_line", -- or `same_line`
+    },
+  },
+  diagnostics = {
+    enable = true,
+    report_unused_disable_directives = false,
+    run_on = "type", -- or `save`
+  },
 })

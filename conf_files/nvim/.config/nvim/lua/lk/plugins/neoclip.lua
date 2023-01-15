@@ -56,5 +56,5 @@ if(not status)
         paste_behind = 'ctrl-k',
         custom = {},
       },
-      },
+    },
   })

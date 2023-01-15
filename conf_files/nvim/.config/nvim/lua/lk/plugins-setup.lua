@@ -66,6 +66,9 @@ return packer.startup(function(use)
   -- prettier
   use('MunifTanjim/prettier.nvim')
 
+  -- eslint
+  use('MunifTanjim/eslint.nvim')
+
   -- treesitter
   use({ -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
@@ -186,18 +189,24 @@ return packer.startup(function(use)
   }
 
   -- neoclip - clipboard history - yank history
-  use {
-  "AckslD/nvim-neoclip.lua",
-  requires = {
-    -- {'kkharji/sqlite.lua', module = 'sqlite'},
-    -- you'll need at least one of these
-    -- {'nvim-telescope/telescope.nvim'},
-    -- {'ibhagwan/fzf-lua'},
-  },
-  config = function()
-    require('neoclip').setup()
-  end,
-}
+  use ({
+      "AckslD/nvim-neoclip.lua",
+      requires = {
+        -- {'kkharji/sqlite.lua', module = 'sqlite'},
+        -- you'll need at least one of these
+        -- {'nvim-telescope/telescope.nvim'},
+        -- {'ibhagwan/fzf-lua'},
+      },
+      config = function()
+        require('neoclip').setup()
+      end,
+  })
+
+  -- Todo comments
+  use ({
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+  })
 
 	if packer_bootstrap then
 		require("packer").sync()
