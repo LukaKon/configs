@@ -22,8 +22,8 @@
           # www
           firefox
           # brave
-          # qutebrowser
-          # librewolf
+          qutebrowser
+          librewolf
 
           # dev
           neovim
