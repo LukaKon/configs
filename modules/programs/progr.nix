@@ -22,7 +22,7 @@
 
         # terminal
         # alacritty
-        kitty
+        # kitty
         # foot
 
         nix-prefetch-git
