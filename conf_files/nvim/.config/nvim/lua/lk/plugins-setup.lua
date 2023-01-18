@@ -208,6 +208,15 @@ return packer.startup(function(use)
     requires = "nvim-lua/plenary.nvim",
   })
 
+  -- alpha - greeter
+ use {
+    'goolord/alpha-nvim',
+    requires = { 'nvim-tree/nvim-web-devicons' },
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.startify'.config)
+    end
+  }
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
