@@ -201,7 +201,7 @@ lspconfig.rust_analyzer.setup({
 
 
 -- configure lua server (with special settings)
-lspconfig["sumneko_lua"].setup({
+lspconfig.sumneko_lua.setup({
   capabilities = capabilities,
   on_attach = on_attach,
   settings = { -- custom settings for lua
