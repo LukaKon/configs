@@ -40,7 +40,8 @@ telescope.setup({
                                        -- the default case_mode is "smart_case"
     },
     file_browser = {
-      theme = 'dropdown',
+      -- theme = 'dropdown',
+      theme = 'ivy',
       hijack_netrw = true,
       mappings = {
         n = {
