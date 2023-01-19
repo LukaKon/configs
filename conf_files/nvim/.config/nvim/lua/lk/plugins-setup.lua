@@ -86,7 +86,7 @@ return packer.startup(function(use)
 	use('nvim-lua/plenary.nvim')
 
 	-- colorscheme
-  use('EdenEast/nightfox.nvim')
+ 	use('EdenEast/nightfox.nvim')
 
 	-- tmux & split window navigation
 	use('christoomey/vim-tmux-navigator')
@@ -101,8 +101,8 @@ return packer.startup(function(use)
 	-- commenting with gc
 	use('numToStr/Comment.nvim')
 
-  -- colorizer
-  use('NvChad/nvim-colorizer.lua')
+ 	-- colorizer
+ 	use('NvChad/nvim-colorizer.lua')
 
   -- file explorer with icons
   -- use({
@@ -165,7 +165,7 @@ return packer.startup(function(use)
 
   -- terminal
   use({"akinsho/toggleterm.nvim",
-        tag = '*', config = function()
+        tag = 'v2.*', config = function()
         require('toggleterm').setup()
       end
   })
