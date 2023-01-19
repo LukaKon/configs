@@ -17,10 +17,11 @@ local diagnostics = null_ls.builtins.diagnostics
 local completion = null_ls.builtins.completion
 
 local sources = {
+    -- formatting.prettier.with({ extra_args = {}}),
     formatting.prettier,
     formatting.stylua,
     diagnostics.eslint_d,
-    -- formatting.autopep8,
+    formatting.autopep8,
     diagnostics.fish,
     diagnostics.flake8,
     formatting.isort,
@@ -55,6 +56,7 @@ local on_attach = function(client, bufnr)
             group = augroup,
             buffer = bufnr,
             callback = function()
+              -- vim.lsp.buf.format({ bufnr = bufnr })
                 lsp_formatting(bufnr)
             end,
         })
@@ -68,7 +70,7 @@ null_ls.setup({
 })
 
 eslint.setup({
-  bin = 'eslint', -- or `eslint_d`
+  bin = 'eslint_d', -- or `eslint`
   code_actions = {
     enable = true,
     apply_on_save = {

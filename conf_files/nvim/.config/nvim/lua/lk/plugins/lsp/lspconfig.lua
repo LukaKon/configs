@@ -71,7 +71,7 @@ local opts = { noremap = true, silent = true, buffer = bufnr }
   keymap.set(
     'n',
     '<leader>rt',
-    '<cmd>lua vim.lsp.buf.formatting()<CR>',
+    '<cmd>lua vim.lsp.buf.format {async=true}<CR>',
     opts,
     {desc = 'Forma[T] file'}
   )
