@@ -42,6 +42,8 @@ telescope.setup({
     file_browser = {
       theme = 'dropdown',
       -- theme = 'ivy',
+      -- prompt_prefix=🔍,
+      prompt_prefix=,
       hijack_netrw = true,
       mappings = {
         n = {
