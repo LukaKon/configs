@@ -7,12 +7,12 @@ then
 end
 
 -- import luasnip plugin safely
-local luasnip_status, luasnip = pcall(require, "luasnip")
-if(not luasnip_status)
-then
-  print('luasnip not found')
-  return
-end
+-- local luasnip_status, luasnip = pcall(require, "luasnip")
+-- if(not luasnip_status)
+-- then
+--   print('luasnip not found')
+--   return
+-- end
 
 -- import lspkind plugin safely
 local lspkind_status, lspkind = pcall(require, "lspkind")
@@ -24,16 +24,16 @@ end
 
 
 -- load vs-code like snippets from plugins (e.g. friendly-snippets)
-require("luasnip/loaders/from_vscode").lazy_load()
+-- require("luasnip/loaders/from_vscode").lazy_load()
 
 vim.opt.completeopt = "menu,menuone,noselect"
 
 cmp.setup({
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
+  -- snippet = {
+  --   expand = function(args)
+  --     luasnip.lsp_expand(args.body)
+  --   end,
+  -- },
   mapping = cmp.mapping.preset.insert({
     -- previous suggestion
     ["<S-Tab>"] = cmp.mapping.select_prev_item(),
