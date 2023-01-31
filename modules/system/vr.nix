@@ -27,7 +27,7 @@
 
           # dev
           neovim
-          #helix
+          helix
           #vscodium
           # dbeaver
           #arduino
