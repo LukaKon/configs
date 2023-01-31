@@ -23,6 +23,7 @@ alias poff="doas poweroff";
 alias top="btop";
 alias ll="exa -l --icons --all";
 alias tb="toolbox"
+alias db="distrobox"
 
 # python
 alias py="python";
@@ -53,7 +54,7 @@ alias s="kitty +kitten ssh";
 #set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 ### "nvim" as manpager
-# set -x MANPAGER "nvim -c 'set ft=man' -"
+set -x MANPAGER "nvim -c 'set ft=man' -"
 
 
 ### SET EITHER DEFAULT EMACS MODE OR VI MODE ###
