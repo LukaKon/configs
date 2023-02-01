@@ -13,6 +13,7 @@ mouse = true
 shell = [ "fish" ]
 middle-click-paste = true # new default
 completion-trigger-len = 2
+bufferline = "multiple"
 
 [editor.lsp]
 display-messages = true

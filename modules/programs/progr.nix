@@ -45,7 +45,6 @@
         bat # cat
         exa
 
-
         # file managers
         fzf
         ripgrep
