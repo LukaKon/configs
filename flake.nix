@@ -81,7 +81,7 @@
             # System
             ./modules/system/system.nix # Base system settings
             ./modules/system/network.nix # Network configuration
-            ./modules/system/fonts.nix
+            # ./modules/system/fonts.nix
             ./modules/system/env_variables.nix
             ./modules/system/vr.nix
 
@@ -98,7 +98,6 @@
             ./modules/programs/fish.nix
 
             # Desktops
-            # ./modules/desktops/leftwm
             ./modules/desktops/kde
 
             # Virtualisation
