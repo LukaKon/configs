@@ -15,7 +15,7 @@
     loader = {
       grub = {
         enable = true;
-        device = "/dev/vda";
+        device = "/dev/sda";
       };
     };
     kernel.sysctl = { "vm.overcommit_memory" = true; };
