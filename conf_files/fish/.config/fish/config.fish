@@ -3,11 +3,7 @@ set fish_greeting                                 # Supresses fish's intro messa
 # set TERM "xterm-256color"                         # Sets the terminal type
 
 ### PROMPT
-function fish_prompt
-
-end
-
-fish_prompt
+functions -q fish_right_prompt && fish_right_prompt
 
 # theme
 set -g theme_color_scheme terminal-dark
