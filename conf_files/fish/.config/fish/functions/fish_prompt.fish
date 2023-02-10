@@ -56,11 +56,11 @@ function fish_prompt
         end
     end
 
-    set -l cyan (set_color -o cyan)
+    set -l cyan (set_color -o 09b4f2)
     set -l yellow (set_color -o yellow)
-    set -l red (set_color -o red)
-    set -l green (set_color -o green)
-    set -l blue (set_color -o blue)
+    set -l red (set_color -o ffaa2b)
+    set -l green (set_color -o 35d929)
+    set -l blue (set_color -o 69e4ff)
     set -l normal (set_color normal)
 
     set -l arrow_color "$green"
@@ -68,7 +68,7 @@ function fish_prompt
         set arrow_color "$red"
     end
 
-    set -l arrow "$arrow_color➜ "
+    set -l arrow "$arrow_color=> "
     if fish_is_root_user
         set arrow "$arrow_color# "
     end
