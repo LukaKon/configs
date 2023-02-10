@@ -102,7 +102,7 @@
 
             # Virtualisation
             ./modules/virtualisation/docker.nix # Docker
-            # ./modules/virtualisation/podman.nix
+            ./modules/virtualisation/podman.nix
 
             # hyprland.nixosModules.default
             #

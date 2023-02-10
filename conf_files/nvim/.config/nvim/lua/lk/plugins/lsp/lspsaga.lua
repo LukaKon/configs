@@ -101,7 +101,7 @@ saga.setup({
     theme = 'round',
     -- border type can be single,double,rounded,solid,shadow.
     border = 'solid',
-    winblend = 95,
+    winblend = 0,
     expand = '',
     collapse = '',
     preview = ' ',

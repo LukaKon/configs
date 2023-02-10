@@ -33,7 +33,7 @@ local sources = {
     formatting.astyle,
     diagnostics.luacheck,
 
-    completion.luasnip,
+    -- completion.luasnip,
 }
 
 -- to setup format on save

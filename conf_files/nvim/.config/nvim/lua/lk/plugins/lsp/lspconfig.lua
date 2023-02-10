@@ -33,7 +33,7 @@ local opts = { noremap = true, silent = true, buffer = bufnr }
   keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts, {desc = '[G]o to [Declaration]'})
   -- see definition and make edits in window
   -- support tagstack C-t jump back
-  keymap.set("n", "Pd", "<cmd>Lspsaga peek_definition<CR>", opts, 'Peek [D]efinition')
+  keymap.set("n", "<leader>pd", "<cmd>Lspsaga peek_definition<CR>", opts, 'Peek [D]efinition')
   -- go to definition
   keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<CR>", opts, 'Goto [D]efinition')
   -- go to implementation
