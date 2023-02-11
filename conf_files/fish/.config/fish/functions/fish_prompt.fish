@@ -93,5 +93,5 @@ function fish_prompt
       set user_color "$purple"
     end
 
-    echo -n -s $arrow ' ' $hostname ' '$cwd $repo_info $normal ' '
+    echo -n -s $arrow ' '$user_color $hostname ' '$cwd $repo_info $normal ' '
 end
