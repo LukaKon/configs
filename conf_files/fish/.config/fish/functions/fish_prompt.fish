@@ -58,14 +58,16 @@ function fish_prompt
 
     set -l cyan (set_color -o 09b4f2)
     set -l yellow (set_color -o yellow)
-    set -l red (set_color -o ffaa2b)
+    set -l orange (set_color -o ffaa2b)
+    set -l lightgreen (set_color -o 17e86c)
     set -l green (set_color -o 35d929)
     set -l blue (set_color -o 69e4ff)
+    set -l purple (set_color -o aa5591)
     set -l normal (set_color normal)
 
     set -l arrow_color "$green"
     if test $__last_command_exit_status != 0
-        set arrow_color "$red"
+        set arrow_color "$orange"
     end
 
     set -l arrow "$arrow_color=> "
@@ -77,14 +79,19 @@ function fish_prompt
 
     set -l repo_info
     if set -l repo_type (_repo_type)
-        set -l repo_branch $red(_repo_branch_name $repo_type)
+        set -l repo_branch $orange(_repo_branch_name $repo_type)
         set repo_info "$blue $repo_type:($repo_branch$blue)"
 
         if _is_repo_dirty $repo_type
-            set -l dirty "$yellow ✗"
+            set -l dirty "$yellow "
             set repo_info "$repo_info$dirty"
         end
     end
 
-    echo -n -s $arrow ' '$cwd $repo_info $normal ' '
+    set -l user_color "$lightgreen"
+    if fish_is_root_user
+      set user_color "$purple"
+    end
+
+    echo -n -s $arrow ' ' $hostname ' '$cwd $repo_info $normal ' '
 end
