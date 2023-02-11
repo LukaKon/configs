@@ -8,7 +8,7 @@
 
   environment.systemPackages = with pkgs; [
     any-nix-shell
-    starship
+    # starship
   ];
 
   programs = {

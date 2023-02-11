@@ -2,6 +2,20 @@
 set fish_greeting                                 # Supresses fish's intro message
 # set TERM "xterm-256color"                         # Sets the terminal type
 
+### PROMPT
+functions -q fish_right_prompt && fish_right_prompt
+
+# theme
+set -g theme_color_scheme terminal-dark
+set -g fish_prompt_pwd_dir_length 1
+set -g theme_display_user yes
+set -g theme_hide_hostname no
+set -g theme_hostname always
+
+set -gx EDITOR nvim
+set -gx BROWSER firefox
+set -gx DISPLAY :1
+
 ### ALIASES
 
 # git
@@ -22,6 +36,7 @@ alias reboot="doas reboot";
 alias poff="doas poweroff";
 alias top="btop";
 alias ll="exa -l --icons --all";
+alias lt="exa --tree --level=2 -a --color auto --icons"
 alias tb="toolbox"
 alias db="distrobox"
 
@@ -71,11 +86,13 @@ set fish_color_command brcyan
 set fish_color_error '#ff6c6b'
 set fish_color_param brcyan
 
+
 ### SETTING THE STARSHIP PROMPT ###
-starship init fish | source
+# starship init fish | source
 
 
 
-# if status is-interactive
+if status is-interactive
     # Commands to run in interactive sessions can go here
-# end
+  fish_config theme choose Tomorrow\ Night\ Bright
+end
