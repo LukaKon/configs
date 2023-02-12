@@ -32,7 +32,7 @@ local servers = {
     'pylsp', -- python
     'rnix',
     'rust_analyzer',
-    'sumneko_lua',
+    'lua_ls',
     'tailwindcss',
     'texlab',
     'tsserver',
