@@ -2,3 +2,12 @@
 2023/01/27 (20:48:13) | ===> btop++ v.1.2.13
 2023/01/27 (20:48:15) | ERROR: Stall in Runner thread, restarting!
 2023/01/27 (20:48:32) | ERROR: Stall in Runner thread, restarting!
+
+2023/02/13 (20:16:11) | ===> btop++ v.1.2.13
+2023/02/13 (20:16:11) | WARNING: Could not get temp sensor - maybe you need to load the coretemp module
+
+2023/02/13 (20:38:09) | ===> btop++ v.1.2.13
+2023/02/13 (20:38:09) | WARNING: Could not get temp sensor - maybe you need to load the coretemp module
+
+2023/02/13 (21:14:31) | ===> btop++ v.1.2.13
+2023/02/13 (21:14:31) | WARNING: Could not get temp sensor - maybe you need to load the coretemp module

@@ -66,10 +66,10 @@ alias s="kitty +kitten ssh";
 ### Uncomment only one of these!
 
 ### "bat" as manpager
-#set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 ### "nvim" as manpager
-set -x MANPAGER "nvim -c 'set ft=man' -"
+# set -x MANPAGER "nvim -c 'set ft=man' -"
 
 
 ### SET EITHER DEFAULT EMACS MODE OR VI MODE ###

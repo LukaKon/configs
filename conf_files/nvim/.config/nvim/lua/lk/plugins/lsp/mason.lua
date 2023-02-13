@@ -30,11 +30,11 @@ local servers = {
     'emmet_ls',
     'html',
     'pylsp', -- python
-    'rnix',
-    'rust_analyzer',
+    -- 'rnix',
+    -- 'rust_analyzer',
     'lua_ls',
     'tailwindcss',
-    'texlab',
+    -- 'texlab',
     'tsserver',
 }
 
@@ -45,9 +45,9 @@ local linters_formaters = {
     'hadolint', -- docker linter
     'isort',
     'markdownlint',
-    'nixfmt',
+    -- 'nixfmt',
     'prettier', -- ts/js formatter
-    'rustfmt',
+    -- 'rustfmt',
     'stylua', -- lua formatter
     'taplo',  -- toml
     'yamllint',
