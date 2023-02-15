@@ -2,3 +2,5 @@ flake.lock
 result
 .mypy_cache
 .vscode
+lua-language-server.core
+btop.log
