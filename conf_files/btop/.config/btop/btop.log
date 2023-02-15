@@ -11,3 +11,20 @@
 
 2023/02/13 (21:14:31) | ===> btop++ v.1.2.13
 2023/02/13 (21:14:31) | WARNING: Could not get temp sensor - maybe you need to load the coretemp module
+
+2023/02/13 (21:47:39) | ===> btop++ v.1.2.13
+2023/02/13 (21:47:39) | WARNING: Could not get temp sensor - maybe you need to load the coretemp module
+2023/02/13 (21:48:22) | WARNING: Failed to join _runner thread on exit!
+
+2023/02/15 (18:30:31) | ===> btop++ v.1.2.13
+2023/02/15 (18:30:31) | WARNING: Could not get temp sensor - maybe you need to load the coretemp module
+2023/02/15 (18:30:50) | WARNING: Failed to join _runner thread on exit!
+
+2023/02/15 (18:45:25) | ===> btop++ v.1.2.13
+2023/02/15 (18:45:25) | WARNING: Could not get temp sensor - maybe you need to load the coretemp module
+
+2023/02/15 (20:14:58) | ===> btop++ v.1.2.13
+2023/02/15 (20:14:58) | WARNING: Could not get temp sensor - maybe you need to load the coretemp module
+
+2023/02/15 (21:17:47) | ===> btop++ v.1.2.13
+2023/02/15 (21:17:47) | WARNING: Could not get temp sensor - maybe you need to load the coretemp module

@@ -63,6 +63,7 @@ function fish_prompt
     set -l green (set_color -o 35d929)
     set -l blue (set_color -o 69e4ff)
     set -l purple (set_color -o aa5591)
+    set -l red (set_color -o d25050)
     set -l normal (set_color normal)
 
     set -l arrow_color "$green"
@@ -93,5 +94,5 @@ function fish_prompt
       set user_color "$purple"
     end
 
-    echo -n -s $arrow ' '$user_color $hostname ' '$cwd $repo_info $normal ' '
+    echo -n -s $arrow' '$user_color $hostname' '$red ' '$cwd $repo_info $normal ' '
 end

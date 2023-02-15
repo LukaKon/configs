@@ -22,14 +22,14 @@ end
 
 local servers = {
     -- 'arduino_language_server',
-    'omnisharp',
+    -- 'omnisharp',
     -- 'clangd',
     'cssls',
     'cssmodules_ls',
     'dockerls',
     'emmet_ls',
     'html',
-    'pylsp', -- python
+    -- 'pylsp', -- python
     -- 'rnix',
     -- 'rust_analyzer',
     'lua_ls',
