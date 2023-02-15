@@ -14,7 +14,7 @@
   # programs.mtr.enable = true;
 
   networking = {
-    hostName = "lap"; # Define your hostname.
+    hostName = "nix"; # Define your hostname.
     # domain = "luka.lap.org";
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
     networkmanager.enable = true;
