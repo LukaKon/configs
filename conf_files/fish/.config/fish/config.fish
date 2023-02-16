@@ -14,7 +14,7 @@ set -g theme_hostname always
 
 set -gx EDITOR nvim
 set -gx BROWSER firefox
-set -gx DISPLAY :1
+set -gx DISPLAY :0
 
 ### ALIASES
 
