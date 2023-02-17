@@ -1,3 +1,4 @@
+conf_files/nvim/.config/nvim/plugin/packer_compiled.lua
 flake.lock
 result
 .mypy_cache
