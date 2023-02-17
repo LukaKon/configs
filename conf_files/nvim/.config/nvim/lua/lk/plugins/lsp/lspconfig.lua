@@ -162,12 +162,6 @@ lspconfig.texlab.setup({
 	on_attach = on_attach,
 })
 
--- configure markdown server
-lspconfig.marksman.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
 -- configure nix server
 lspconfig.rnix.setup({
 	capabilities = capabilities,
@@ -187,28 +181,23 @@ lspconfig.rust_analyzer.setup({
 lspconfig.lua_ls.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-	-- settings = { -- custom settings for lua
-	--   Lua = {
-	--     runtime = {
-	--       -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-	--       version = 'LuaJIT',
-	--     },
-	--     -- make the language server recognize "vim" global
-	--     diagnostics = {
-	--       globals = { "vim" },
-	--     },
-	--     workspace = {
-	--       -- make language server aware of runtime files
-	--       -- library = {
-	--       --   [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-	--       --   [vim.fn.stdpath("config") .. "/lua"] = true,
-	--       -- },
-	--       -- Make the server aware of Neovim runtime files
-	--       library = vim.api.nvim_get_runtime_file("", true),
-	--     },
-	--     telemetry = {
-	--       enable = false,
-	--     },
-	--   },
-	-- },
+	settings = { -- custom settings for lua
+		Lua = {
+			runtime = {
+				-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+				version = "LuaJIT",
+			},
+			-- make the language server recognize "vim" global
+			diagnostics = {
+				globals = { "vim" },
+			},
+			workspace = {
+				-- Make the server aware of Neovim runtime files
+				library = vim.api.nvim_get_runtime_file("", true),
+			},
+			telemetry = {
+				enable = false,
+			},
+		},
+	},
 })
