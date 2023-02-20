@@ -99,7 +99,7 @@
 
             # Desktops
             # ./modules/desktops/kde
-            ./modules/desktops/openbox
+            ./modules/desktops/xfce
 
             # Virtualisation
             ./modules/virtualisation/docker.nix # Docker

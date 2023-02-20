@@ -5,7 +5,7 @@
     enable = true;
     displayManager.sddm.enable = true;
     # desktopManager.plasma5.enable = true;
-    services.xserver.windowManager.openbox.enable = true;
+    windowManager.xfce.enable = true;
     layout = "pl";
   };
 

@@ -7,7 +7,7 @@
     ];
 
   services.xrdp.enable = true;
-  services.xrdp.defaultWindowManager = "openbox";
+  services.xrdp.defaultWindowManager = "xfce4-session";
   # services.xrdp.defaultWindowManager = "startplasma-x11";
 
 
