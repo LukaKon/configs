@@ -29,7 +29,7 @@
           neovim
           helix
           #vscodium
-          # dbeaver
+          dbeaver
           #arduino
           #unityhub
           # meld

@@ -98,7 +98,8 @@
             ./modules/programs/fish.nix
 
             # Desktops
-            ./modules/desktops/kde
+            # ./modules/desktops/kde
+            ./modules/desktops/openbox
 
             # Virtualisation
             ./modules/virtualisation/docker.nix # Docker

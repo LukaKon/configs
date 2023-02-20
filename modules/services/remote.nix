@@ -3,11 +3,12 @@
 {
   environment.systemPackages = with pkgs;
     [
-      remmina
+      # remmina
     ];
 
   services.xrdp.enable = true;
-  services.xrdp.defaultWindowManager = "startplasma-x11";
+  services.xrdp.defaultWindowManager = "openbox";
+  # services.xrdp.defaultWindowManager = "startplasma-x11";
 
 
   # nixpkgs.config.permittedInsecurePackages = [
