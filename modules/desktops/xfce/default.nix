@@ -3,9 +3,9 @@
 {
   services.xserver = {
     enable = true;
-    displayManager.sddm.enable = true;
+    displayManager.lightdm.enable = true;
     # desktopManager.plasma5.enable = true;
-    windowManager.xfce.enable = true;
+    desktopManager.xfce.enable = true;
     layout = "pl";
   };
 
