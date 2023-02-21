@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/fish
 # baraction.sh for spectrwm status bar
 
 ## DISK
@@ -47,8 +47,9 @@ SLEEP_SEC=3
 # the baraction script output. And the the markup tags count in that limit.
 # So I would love to add more functions to this script but it makes the 
 # echo output too long to display correctly.
-while :; do
+while true
     # echo "+@fg=1; +@fn=1;💻+@fn=0; $(cpu) +@fg=0; | +@fg=2; +@fn=1;💾+@fn=0; $(mem) +@fg=0; | +@fg=3; +@fn=1;💿+@fn=0; $(hdd) +@fg=0; | +@fg=4; +@fn=1;🔈+@fn=0; $(vol) +@fg=0; |"
+    echo "TEST"
     echo "test: $bat"
 	sleep $SLEEP_SEC
-done
+end
