@@ -43,7 +43,7 @@ lualine.setup({
 				"filename",
 				path = 0,
 				symbols = {
-					modified = "(+)", -- Text to show when the file is modified.
+					modified = "", -- Text to show when the file is modified.
 					-- modified = '[+]',      -- Text to show when the file is modified.
 					readonly = " ", -- Text to show when the file is non-modifiable or readonly.
 					-- readonly = '[-]',      -- Text to show when the file is non-modifiable or readonly.

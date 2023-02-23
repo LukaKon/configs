@@ -11,13 +11,13 @@ hdd() {
 mem() {
   MEM=`sysctl -n hw.usermem`
   MEM_GB=$((MEM / 1024000000))
-  echo -e "RAM: $MEM_GB GB"
+  echo -e "󰍛: $MEM_GB GB"
 }
 
 # ## CPU
 cpu() {
   CPU_FREQ=`sysctl -n dev.cpu.0.freq`
-  echo -e "CPU: $CPU_FREQ MHz"
+  echo -e "󱑼: $CPU_FREQ MHz"
 }
 
 # ## BAT
@@ -27,9 +27,10 @@ STATUS=`sysctl -n hw.acpi.battery.state`
 
 if [$STATUS -eq 1]
 then
-   ACTUAL_STATUS="discharge"
+   ACTUAL_STATUS="󰂄"
 else
-  ACTUAL_STATUS="charge"
+  # ACTUAL_STATUS="charge"
+  ACTUAL_STATUS="󱐋"
 fi
 
   echo -e "BAT: $LIFE% $ACTUAL_STATUS"
