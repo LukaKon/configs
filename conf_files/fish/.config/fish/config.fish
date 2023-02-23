@@ -18,6 +18,9 @@ set -gx DISPLAY :0
 
 ### ALIASES
 
+# X11
+alias xx='xinit'
+
 # git
 alias gs="git status -s";
 alias ga="git add";
