@@ -2,7 +2,7 @@
 
 {
   users = {
-    groups.lk.gid = 1002;
+    # groups.lk.gid = 1002;
     users.lk = {
       isNormalUser = true;
       home = "/home/lk";
@@ -33,7 +33,7 @@
           #arduino
           #unityhub
           # meld
-          # postman
+          postman
 
           # LaTeX
           texlive.combined.scheme-full
