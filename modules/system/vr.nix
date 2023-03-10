@@ -7,7 +7,7 @@
       isNormalUser = true;
       home = "/home/lk";
       description = "virtual user";
-      uid = 1002;
+      # uid = 1002;
       extraGroups = [
         "wheel"
         "networkmanager"
