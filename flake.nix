@@ -26,7 +26,7 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
-    leftwm.url = "github:leftwm/leftwm";
+    # leftwm.url = "github:leftwm/leftwm";
 
     #hyprland = {
     #  url = "github:hyprwm/Hyprland";
@@ -42,7 +42,7 @@
     , flake-utils
     # , helix-master
     # , home-manager
-    , leftwm
+    # , leftwm
       #, hyprland
     , ...
     }:
@@ -53,7 +53,7 @@
       inherit (nixpkgs) lib;
 
       overlays = [
-        leftwm.overlay
+        # leftwm.overlay
       ];
 
       pkgs = import nixpkgs {
@@ -168,7 +168,7 @@
             # ./modules/programs/flatpak.nix
 
             # Desktops
-            ./modules/desktops/leftwm
+            # ./modules/desktops/leftwm
 
             # Virtualisation
             ./modules/virtualisation/docker.nix # Docker
