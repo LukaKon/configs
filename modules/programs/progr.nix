@@ -57,6 +57,7 @@
 
         xsel # for copying
         clipmenu # for copying
+        xclip
       ];
   };
 }
