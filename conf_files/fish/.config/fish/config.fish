@@ -34,17 +34,14 @@ alias gf="git fetch";
 alias glog="git log --graph --pretty=oneline --abbrev-commit";
 
 # term
-alias susp="systemctl suspend";
 alias reboot="doas reboot";
 alias poff="doas poweroff";
-alias top="btop";
+alias t="btop";
 alias ll="exa -l --icons --all";
 alias lt="exa --tree --level=2 -a --color auto --icons"
-alias tb="toolbox"
-alias db="distrobox"
 
 # python
-alias py="python";
+alias py="python3.9";
 
 # backup config files to git
 alias cong="py /home/lk/configs/scripts/git_conf.py";
