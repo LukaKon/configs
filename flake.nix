@@ -105,6 +105,9 @@
             ./modules/virtualisation/docker.nix # Docker
             ./modules/virtualisation/podman.nix
 
+            # vbox guest
+            ./modules/virtualisation/vbox.nix
+
             # hyprland.nixosModules.default
             #
             # {
