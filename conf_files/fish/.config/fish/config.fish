@@ -13,7 +13,8 @@ set -g theme_hide_hostname no
 set -g theme_hostname always
 
 set -gx EDITOR nvim
-set -gx BROWSER firefox
+# set -gx BROWSER firefox
+set -gx BROWSER librewolf
 set -gx DISPLAY :0
 
 ### ALIASES
@@ -41,7 +42,8 @@ alias ll="exa -l --icons --all";
 alias lt="exa --tree --level=2 -a --color auto --icons"
 
 # python
-alias py="python3.9";
+alias py3="python3.9";
+alias py="python";
 
 # backup config files to git
 alias cong="py /home/lk/configs/scripts/git_conf.py";
