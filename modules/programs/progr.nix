@@ -43,7 +43,6 @@
         curl
         rsync
         bat # cat
-        exa
 
         # file managers
         fzf
@@ -51,7 +50,7 @@
         fd # find
         exa
 
-        lm_sensors
+        # lm_sensors
         # ncdu # disk analisys
         sysstat
 

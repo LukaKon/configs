@@ -20,13 +20,13 @@
 
     hadolint # docker linter
 
-    dotnet-sdk
+    # dotnet-sdk
 
-    rustc
-    cargo
-    rustfmt
+    # rustc
+    # cargo
+    # rustfmt
 
-    lldb
+    # lldb
 
     tree-sitter
 
@@ -38,10 +38,10 @@
     marksman # Language Server for Markdown
 
     # Language servers
-    clang-tools # C-Style
+    # clang-tools # C-Style
     cmake-language-server # Cmake
-    rust-analyzer
-    omnisharp-roslyn # .NET 
+    # rust-analyzer
+    # omnisharp-roslyn # .NET 
     sumneko-lua-language-server # Lua
 
     # nodePackages.pyright
@@ -63,7 +63,7 @@
     yamllint # linter
 
     # LaTeX
-    texlab
+    # texlab
 
     # toml
     taplo-lsp
