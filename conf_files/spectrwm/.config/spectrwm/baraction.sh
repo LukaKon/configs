@@ -27,7 +27,7 @@ STATUS=`sysctl -n hw.acpi.battery.state`
 
 if [$STATUS -eq 1]
 then
-   ACTUAL_STATUS="discharge"
+  ACTUAL_STATUS="discharge"
 else
   ACTUAL_STATUS="charge"
 fi
