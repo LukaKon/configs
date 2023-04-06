@@ -114,6 +114,15 @@ lspconfig.tsserver.setup({
 lspconfig.pylsp.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          maxLineLength = 100,
+        }
+      }
+    }
+  }
 	-- filetypes = { 'py' },
 })
 
