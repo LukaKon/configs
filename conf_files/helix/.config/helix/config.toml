@@ -17,6 +17,7 @@ bufferline = "multiple"
 
 [editor.lsp]
 display-messages = true
+display-inlay-hints = true
 
 [editor.search]
 smart-case = false
@@ -33,6 +34,9 @@ hidden = false
 [editor.whitespace]
 render = "all"
 
+[editor.soft-wrap]
+enable = true
+
 [editor.whitespace.characters]
 space = "·"
 nbsp = "⍽"
@@ -42,7 +46,7 @@ tabpad = "."
 
 [editor.statusline]
 left = [ "mode", "spinner", "file-name" ]
-center = [ ]
+center = ["version-control" ]
 right = [ "diagnostics", "file-encoding", "file-line-ending", "file-type", "position", "position-percentage", "selections" ]
 # separator = "|";
 
