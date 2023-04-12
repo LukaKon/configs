@@ -114,15 +114,15 @@ lspconfig.tsserver.setup({
 lspconfig.pylsp.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-  settings = {
-    pylsp = {
-      plugins = {
-        pycodestyle = {
-          maxLineLength = 100,
-        }
-      }
-    }
-  }
+	settings = {
+		pylsp = {
+			plugins = {
+				pycodestyle = {
+					maxLineLength = 100,
+				},
+			},
+		},
+	},
 	-- filetypes = { 'py' },
 })
 
@@ -178,13 +178,13 @@ lspconfig.rnix.setup({
 })
 
 -- configure rust server
-lspconfig.rust_analyzer.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	settings = {
-		["rust-analyzer"] = {},
-	},
-})
+-- lspconfig.rust_analyzer.setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- 	settings = {
+-- 		["rust-analyzer"] = {},
+-- 	},
+-- })
 
 -- configure lua server (with special settings)
 lspconfig.lua_ls.setup({
