@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs;
     [
       # remmina
+      # tigervnc
     ];
 
   services.xrdp.enable = true;
@@ -15,5 +16,5 @@
   #   "xrdp-0.9.9"
   # ];
 
-  networking.firewall.allowedTCPPorts = [ 3389 ];
+  networking.firewall.allowedTCPPorts = [ 3389 5995 ];
 }
