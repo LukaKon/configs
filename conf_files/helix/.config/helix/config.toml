@@ -44,7 +44,7 @@ newline = "⤶"
 tabpad = "."
 
 [editor.statusline]
-left = ["mode", "spinner", "file-name"]  # file-path"]
+left = ["mode", "spinner", "file-name",] # file-path"]
 center = ["version-control",] # "file-name"]
 right = [
   "diagnostics",
