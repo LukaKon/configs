@@ -18,6 +18,9 @@ bufferline = "multiple"
 display-messages = true
 display-inlay-hints = true
 
+[editor.gutters]
+layout = ["diff", "diagnostics", "line-numbers", "spacer"]
+
 [editor.search]
 smart-case = false
 wrap-around = true
@@ -29,6 +32,7 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+git-ignore = false
 
 [editor.whitespace]
 render = "all"
@@ -44,21 +48,34 @@ newline = "⤶"
 tabpad = "."
 
 [editor.statusline]
-left = ["mode", "spinner", "file-name",] # file-path"]
-center = ["version-control",] # "file-name"]
+left = ["mode", "separator", "spinner", "file-name"]
+center = [
+  "version-control",
+  "spacer",
+  "separator",
+  "file-base-name",
+  "file-modification-indicator"
+]
 right = [
   "diagnostics",
+  "workspace-diagnostics",
+  "separator",
   "file-encoding",
-  "file-line-ending",
   "file-type",
+  "separator",
   "position",
   "position-percentage",
+  "total-line-numbers",
+  "separator",
+  "file-line-ending",
   "selections",
 ]
-# separator = "|";
+# separator = ""
+separator = "|"
 
 [editor.indent-guides]
 render = true
+character = "┆" # defauly "|"
 
 [keys.normal]
 "X" = "extend_line_above"
