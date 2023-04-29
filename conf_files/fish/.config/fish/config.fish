@@ -58,6 +58,7 @@ alias ldo="lazydocker";
 # nvim
 alias vi="nvim";
 alias lazy="NVIM_APPNAME=lazyvim nvim"
+alias nvc="NVIM_APPNAME=nvchad nvim"
 
 # kitty
 alias icat="kitty +kitten icat";
