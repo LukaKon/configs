@@ -6,3 +6,13 @@ result
 .vscode
 *.core
 *.log
+
+# lazyvim
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data
