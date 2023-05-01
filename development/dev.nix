@@ -52,6 +52,7 @@
     nodePackages.typescript
     nodePackages.tailwindcss
     nodePackages.prettier
+    nodePackages.prettier_d_slim
     nodePackages.eslint
     nodePackages.eslint_d
     nodePackages.coc-markdownlint # linter
