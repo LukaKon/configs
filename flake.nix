@@ -134,6 +134,68 @@
           ];
         };
 
+        vm = lib.nixosSystem {
+          inherit system pkgs;
+
+          modules = [
+            # Include the results of the hardware scan.
+            ./vm/hardware-configuration.nix
+
+            # dev
+            ./development/dev.nix
+
+            # System
+            ./vm/system.nix # Base system settings
+            ./modules/system/network.nix # Network configuration
+            # ./modules/system/fonts.nix
+            ./modules/system/env_variables.nix
+            ./modules/system/vr.nix
+
+            # Security
+            ./modules/security/doas.nix # Add 'doas'
+            ./modules/security/firewall.nix
+
+            # Services
+            ./modules/services/openssh.nix # SSH
+            ./modules/services/remote.nix # remote server/desktop
+
+            # Programs
+            ./modules/programs/progr.nix
+            ./modules/programs/fish.nix
+
+            # Desktops
+            # ./modules/desktops/kde
+            ./modules/desktops/xfce
+
+            # Virtualisation
+            ./modules/virtualisation/docker.nix # Docker
+            # ./modules/virtualisation/podman.nix
+
+            # hyprland.nixosModules.default
+            #
+            # {
+            #   programs = {
+            #     hyprland.enable = true;
+            #   };
+            # }
+
+            # home-manager.nixosModules.home-manager
+            # {
+            #   home-manager.useGlobalPkgs = true;
+            #   home-manager.useUserPackages = true;
+            #   home-manager.extraSpecialArgs = {
+            #     inherit
+            #       helix-master;
+            #   };
+            #   home-manager.users.lk = { ... }: {
+            #     home.stateVersion = "22.11";
+            #     imports = [
+            #       ./home
+            #     ];
+            #   };
+            # }
+          ];
+        };
         lap = lib.nixosSystem {
           inherit system pkgs;
 
