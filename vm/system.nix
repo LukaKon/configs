@@ -9,7 +9,7 @@
    efi.canTouchEfiVariables = false;
     efi.efiSysMountPoint = "/boot/efi";
   };
-   cleanTmpDir = true;
+   tmp.cleanOnBoot= true;
    supportedFilesystems = [ "ntfs" ];
 
   kernel.sysctl = { "vm.overcommit_memory" = true; };
