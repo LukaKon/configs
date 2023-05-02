@@ -22,7 +22,7 @@ display-inlay-hints = true
 layout = ["diff", "diagnostics", "line-numbers", "spacer"]
 
 [editor.search]
-smart-case = false
+smart-case = true
 wrap-around = true
 
 [editor.cursor-shape]
