@@ -12,6 +12,9 @@
 
     # distrobox
 
+    opencv
+    pkg-config
+
     # http-prompt
     # gitlab
     # gitlab-runner
