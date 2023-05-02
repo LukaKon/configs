@@ -31,8 +31,8 @@ normal = "block"
 select = "underline"
 
 [editor.file-picker]
-hidden = true
-git-ignore = false
+hidden = false
+# git-ignore = false
 
 [editor.whitespace]
 render = "all"
