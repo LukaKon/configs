@@ -48,12 +48,14 @@ alias py="python";
 # backup config files to git
 alias cong="py /home/lk/configs/scripts/git_conf.py";
 
-# docker
-alias dc="docker container";
-
 # programs
+# linux
 alias lgi="lazygit";
 alias ldo="lazydocker";
+alias dc="docker container";
+# freebsd
+alias ba="doas bastille";
+alias vm="doas vm";
 
 # nvim
 alias vi="nvim";
