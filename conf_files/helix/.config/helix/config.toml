@@ -19,7 +19,7 @@ display-messages = true
 display-inlay-hints = true
 
 [editor.gutters]
-layout = ["diff", "diagnostics", "line-numbers", "spacer"]
+layout = ["spacer", "diff", "diagnostics", "line-numbers", "spacer"]
 
 [editor.search]
 smart-case = true
