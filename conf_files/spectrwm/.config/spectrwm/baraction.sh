@@ -25,7 +25,7 @@ bat(){
   LIFE=`sysctl -n hw.acpi.battery.life`
   STATUS=`sysctl -n hw.acpi.battery.state`
 
-  if [$STATUS -eq 1]
+  if [ $STATUS -eq 1 ]
   then
     ACTUAL_STATUS="discharge"
   else
