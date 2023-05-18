@@ -56,6 +56,7 @@ function fish_prompt
         end
     end
 
+    set -l white (set_color -o ffffff)
     set -l cyan (set_color -o 09b4f2)
     set -l yellow (set_color -o yellow)
     set -l orange (set_color -o ffaa2b)
@@ -94,5 +95,5 @@ function fish_prompt
       set user_color "$purple"
     end
 
-    echo -n -s $arrow' '$user_color $hostname' '$red ' '$cwd $repo_info $normal ' '
+    echo -n -s $arrow' '$user_color $hostname' '$red ' '$cwd $repo_info $normal' '$white '>> ' $normal
 end
