@@ -22,17 +22,22 @@ cpu() {
 
 # ## BAT
 bat(){
-  LIFE=`sysctl -n hw.acpi.battery.life`
-  STATUS=`sysctl -n hw.acpi.battery.state`
+  if [`sysctl hw.acpi.battery`]
+    then
+      LIFE=`sysctl -n hw.acpi.battery.life`
+      STATUS=`sysctl -n hw.acpi.battery.state`
 
-  if [ $STATUS -eq 1 ]
-  then
-    ACTUAL_STATUS="discharge"
-  else
-    ACTUAL_STATUS="charge"
+      if [ $STATUS -eq 1 ]
+      then
+        ACTUAL_STATUS="discharge"
+      else
+        ACTUAL_STATUS="charge"
+      fi
+
+      echo -e "BAT: $LIFE% $ACTUAL_STATUS"
+    else
+      echo -e "no battery"
   fi
-
-  echo -e "BAT: $LIFE% $ACTUAL_STATUS"
 }
 
 SLEEP_SEC=3  # set bar_delay = 5 in /etc/spectrwm.conf
