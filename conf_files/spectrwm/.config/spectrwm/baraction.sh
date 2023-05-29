@@ -22,7 +22,9 @@ cpu() {
 
 # ## BAT
 bat(){
-  if [`sysctl hw.acpi.battery`]
+  IS_BATTERY=`sysctl -n hw.acpi.battery`
+
+  if [ -z $IS_BATTERY ]
     then
       LIFE=`sysctl -n hw.acpi.battery.life`
       STATUS=`sysctl -n hw.acpi.battery.state`
