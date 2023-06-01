@@ -26,6 +26,8 @@ bat(){
 
   if [ -z $IS_BATTERY ]
     then
+      echo -e "no battery"
+    else
       LIFE=`sysctl -n hw.acpi.battery.life`
       STATUS=`sysctl -n hw.acpi.battery.state`
 
@@ -37,8 +39,6 @@ bat(){
       fi
 
       echo -e "BAT: $LIFE% $ACTUAL_STATUS"
-    else
-      echo -e "no battery"
   fi
 }
 
