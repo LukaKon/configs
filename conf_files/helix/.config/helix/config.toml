@@ -10,7 +10,7 @@ color-modes = true
 idle-timeout = 300
 true-color = true
 mouse = true
-shell = ["fish"]
+shell = ["fish", "-c"]
 completion-trigger-len = 2
 bufferline = "multiple"
 
