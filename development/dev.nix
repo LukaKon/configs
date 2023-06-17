@@ -76,6 +76,8 @@
     rnix-lsp
     nixfmt
     nixpkgs-fmt
+    nixd
+    nil
 
     (python310.withPackages (ps: with ps;
     [
