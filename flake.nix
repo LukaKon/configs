@@ -92,7 +92,7 @@
 
             # Services
             ./modules/services/openssh.nix # SSH
-            ./modules/services/remote.nix # remote server/desktop
+            # ./modules/services/remote.nix # remote server/desktop
 
             # Programs
             ./modules/programs/progr.nix
@@ -100,7 +100,7 @@
 
             # Desktops
             # ./modules/desktops/kde
-            ./modules/desktops/xfce
+            # ./modules/desktops/xfce
 
             # Virtualisation
             ./modules/virtualisation/docker.nix # Docker
