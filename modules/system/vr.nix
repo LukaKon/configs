@@ -25,6 +25,8 @@
           qutebrowser
           librewolf
 
+          nextcloud-client
+
           # dev
           neovim
           helix
