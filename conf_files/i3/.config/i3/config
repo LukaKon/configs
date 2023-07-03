@@ -49,6 +49,7 @@ set $ws10 "10"
 ######################
 
 bindsym $mod+w exec --no-startup-id firefox
+bindsym $mod+p exec --no-startup-id flameshot gui
 
 assign [class="nextcloud"] $ws0
 assign [class="darktable"] $ws6
