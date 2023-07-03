@@ -204,6 +204,11 @@ bindsym $mod+Shift+r restart
 default_border pixel 2
 default_floating_border pixel 2
 
+# gaps
+gaps inner 5px
+gaps outer 5px
+smart_gaps inverse_outer
+
 # borders
 hide_edge_borders smart
 
