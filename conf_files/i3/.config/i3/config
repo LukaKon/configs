@@ -1,7 +1,5 @@
-font pango:fira 9
-
-title_align center
-
+# font pango:fira 9
+font pango:nerd 9
 
 #############
 # Variables #
@@ -27,6 +25,12 @@ exec --no-startup-id redshift &
 # launch picom
 exec --no-startup-id picom &
 
+# wallpaper
+exec --no-startup-id feh --bg-scale ~/.config/i3/image.jpg
+
+# start applications
+exec --no-startup-id thunderbird; remmina
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -45,9 +49,11 @@ set $ws10 "10"
 ######################
 
 bindsym $mod+w exec --no-startup-id firefox
-# bindsym $mod+u exec --no-startup-id .shutter-wrapped
 
+assign [class="nextcloud"] $ws0
 assign [class="darktable"] $ws6
+assign [class="remmina"] $ws5
+assign [class="thunderbird"] $ws7
 
 # start terminal
 bindsym $mod+Return exec $terminal
@@ -56,7 +62,6 @@ bindsym $mod+Return exec $terminal
 bindsym $mod+z kill
 
 # start dmenu
-# bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'fira:bold:pixelsize=12'
 bindsym $mod+d exec --no-startup-id dmenu_run -i -fn 'fira:pixelsize=12'
 
 # change focus
@@ -91,7 +96,7 @@ bindsym $mod+Ctrl+v split v;exec notify-send 'tile vertically'
 bindsym $mod+t split toggle
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fulscreen toggle
+bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -198,6 +203,12 @@ bindsym $mod+Shift+r restart
 default_border pixel 2
 default_floating_border pixel 2
 
+# borders
+hide_edge_borders smart
+
+# mouse
+focus_follows_mouse yes
+
 # exit i3 (logs you out of your X session)
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # bindsym $mod+Shift+e exec --no-startup-id i3-msg exit
@@ -219,23 +230,25 @@ mode "$mode_i3_exit" {
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-# bar {
-	status_command i3status --config $I3_CONFIG/i3status.conf
+bar {
+	position top
+	status_command i3status
+	# status_command i3status --config $I3_CONFIG/i3status.conf
     # Disable all tray icons
-    tray_output none
-    # tray_output primary
-    separator_symbol "┃"
+    separator_symbol " | "
+	# font Fira 12
     colors {
-        background $black1
-        statusline $white2
-        separator $black2
+        #background black
+        statusline #00C20A
+        # separator $black2
+		separator #16B4FA
 
         #                  border background text
-        focused_workspace  $background $background $red1
-        active_workspace   $black1 $black1 $black2
-        inactive_workspace $background $black1 $foreground
-        urgent_workspace   $red1 $red1 $white2
-        binding_mode       $background $red2 $white2
+        # focused_workspace  $background $background $red1
+        # active_workspace   $black1 $black1 $black2
+        # inactive_workspace $background $black1 $foreground
+        # urgent_workspace   $red1 $red1 $white2
+        # binding_mode       $background $red2 $white2
     }
 }
 
