@@ -25,18 +25,19 @@
 
     # dotnet-sdk
 
-    # rustc
-    # cargo
-    # rustfmt
+    rustc
+    cargo
+    rustfmt
+    rustup
 
-    # lldb
+    lldb
 
     tree-sitter
 
     astyle # Source code indenter, formatter, and beautifier for C, C++, C# and Java
-    stylua # An opinionated Lua code formatter
-    luajit # High-performance JIT compiler for Lua
-    luajitPackages.luacheck
+    # stylua # An opinionated Lua code formatter
+    # luajit # High-performance JIT compiler for Lua
+    # luajitPackages.luacheck
 
     marksman # Language Server for Markdown
 
@@ -45,7 +46,7 @@
     cmake-language-server # Cmake
     # rust-analyzer
     # omnisharp-roslyn # .NET 
-    sumneko-lua-language-server # Lua
+    # sumneko-lua-language-server # Lua
 
     # nodePackages.pyright
     nodePackages.vscode-json-languageserver
