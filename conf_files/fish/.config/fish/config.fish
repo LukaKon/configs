@@ -68,6 +68,9 @@ alias d="kitty +kitten diff";
 alias hg="kitty +kitten hyperlinged_grep";
 alias s="kitty +kitten ssh";
 
+# ssh
+alias lsh="ssh -i ~/.ssh/local";
+
 ### SET MANPAGER
 ### Uncomment only one of these!
 
