@@ -29,6 +29,7 @@
     cargo
     rustfmt
     rustup
+    rust-analyzer
 
     lldb
 
@@ -44,7 +45,6 @@
     # Language servers
     # clang-tools # C-Style
     cmake-language-server # Cmake
-    # rust-analyzer
     # omnisharp-roslyn # .NET 
     # sumneko-lua-language-server # Lua
 
