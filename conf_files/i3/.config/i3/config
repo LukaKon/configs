@@ -54,10 +54,11 @@ set $ws10 "10"
 bindsym $mod+w exec --no-startup-id firefox
 bindsym $mod+p exec --no-startup-id flameshot gui
 
-assign [class="nextcloud"] $ws0
-assign [class="darktable"] $ws6
+assign [class="firefox"] $ws2
 assign [class="remmina"] $ws5
+assign [class="darktable"] $ws6
 assign [class="thunderbird"] $ws7
+assign [class="nextcloud"] $ws0
 
 # start terminal
 bindsym $mod+Return exec $terminal
