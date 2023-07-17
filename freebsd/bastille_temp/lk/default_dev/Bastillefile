@@ -1,4 +1,4 @@
-ARG hostname=default
+ARG hostname=dev
 ARG user=lk
 
 SYSRC sshd_enable=YES
@@ -21,16 +21,22 @@ CMD echo "${user}" | pw user add -n ${user} -G wheel -s /usr/local/bin/fish -m -
 # configure 'doas'
 CMD echo "permit nopass :wheel">>/usr/local/etc/doas.conf
 
+# copy configuration for git
+CP /home/lk/.gitconfig /home/${user}/
+CMD chown ${user}:wheel /home/${user}/.gitconfig
+
 # copy ssh key for git
 CMD mkdir /home/${user}/.ssh
 CP /home/lk/.ssh/id_ed25519 /home/${user}/.ssh/
 CP /home/lk/.ssh/id_ed25519.pub /home/${user}/.ssh/
+CMD chown -R ${user}:wheel /home/${user}/.ssh
 
 # copy config files
 CMD mkdir /home/${user}/.config
-CP /home/lk/.gitconfig /home/${user}/
 CP /home/lk/configs/conf_files/helix/.config/helix /home/${user}/.config/
 CP /home/lk/configs/conf_files/fish/.config/fish /home/${user}/.config/
+CMD chown -R ${user}:wheel /home/${user}/.config
 
 # create working directory
 CMD mkdir /home/${user}/dev
+CMD chown -R ${user}:wheel /home/${user}/dev
