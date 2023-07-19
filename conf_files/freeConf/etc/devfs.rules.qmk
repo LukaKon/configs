@@ -1,3 +1,0 @@
-[qmk=10]
-add path 'usb/*' mode 0660 group operator
-
