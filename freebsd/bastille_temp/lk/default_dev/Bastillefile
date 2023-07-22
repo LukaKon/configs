@@ -21,6 +21,11 @@ CMD echo "${user}" | pw user add -n ${user} -G wheel -s /usr/local/bin/fish -m -
 # configure 'doas'
 CMD echo "permit nopass :wheel">>/usr/local/etc/doas.conf
 
+# copy ssh key for git
+CMD mkdir /home/${user}/.ssh
+CP /home/lk/.ssh/id_ed25519 /home/${user}/.ssh/
+CP /home/lk/.ssh/id_ed25519.pub /home/${user}/.ssh/
+
 # copy config files
 CMD mkdir /home/${user}/.config
 CP /home/lk/.gitconfig /home/${user}/
