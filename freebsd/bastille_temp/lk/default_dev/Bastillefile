@@ -1,0 +1,31 @@
+ARG hostname=default
+ARG user=lk
+
+SYSRC sshd_enable=YES
+
+# set repository to latest
+CMD mkdir -p /usr/local/etc/pkg/repos
+CMD echo 'FreeBSD: { url: 'pkg+http://pkg.FreeBSD.org/\$\{ABI\}/latest', enabled: yes }' > /usr/local/etc/pkg/repos/FreeBSD.conf
+
+SERVICE sshd start
+
+# install packages
+PKG git rsync helix fish doas exa
+
+# set hostname
+CMD hostname ${hostname}
+
+# create user
+CMD echo "${user}" | pw user add -n ${user} -G wheel -s /usr/local/bin/fish -m -h 0
+
+# configure 'doas'
+CMD echo "permit nopass :wheel">>/usr/local/etc/doas.conf
+
+# copy config files
+CMD mkdir /home/${user}/.config
+CP /home/lk/.gitconfig /home/${user}/
+CP /home/lk/configs/conf_files/helix/.config/helix /home/${user}/.config/
+CP /home/lk/configs/conf_files/fish/.config/fish /home/${user}/.config/
+
+# create working directory
+CMD mkdir /home/${user}/dev

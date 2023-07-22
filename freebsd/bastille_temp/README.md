@@ -1,0 +1,1 @@
+**Copy directory 'lk' with templates to /usr/local/bastille/templates**
