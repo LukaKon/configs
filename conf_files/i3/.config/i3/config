@@ -219,9 +219,22 @@ hide_edge_borders smart
 # mouse
 focus_follows_mouse yes
 
-# exit i3 (logs you out of your X session)
-# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-# bindsym $mod+Shift+e exec --no-startup-id i3-msg exit
+##########
+# COLORS #
+##########
+set $bg_color #181818
+set $fg_color #d8d8d8
+set $blue_color #458588
+set $green_color #b8bb26
+set $cyan_color #8ec07c
+
+#							border	backgr.	text	indicator child_border
+client.focused         $bg_color $bg_color $blue_color $fg_color $bg_color
+client.focused_inactive $bg_color $bg_color $green_color $fg_color $bg_color
+client.unfocused       $bg_color $bg_color $cyan_color $fg_color $bg_color
+client.urgent          $bg_color $bg_color $bg_color $fg_color $bg_color
+client.placeholder     $bg_color $bg_color $cyan_color $fg_color $bg_color
+
 
 bindsym $mod+Shift+e mode "$mode_i3_exit"
 set $mode_i3_exit Do you want to exit i3? (Y)ES or (N)O
@@ -251,7 +264,7 @@ bar {
         #background black
         statusline #00C20A
         # separator $black2
-		separator #16B4FA
+		separator #27D2FA
 
         #                  border background text
         # focused_workspace  $background $background $red1
