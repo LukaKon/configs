@@ -13,6 +13,8 @@ set $terminal kitty
 # Autostart applications #
 ##########################
 
+exec --no-startup-id setxkbmap pl &
+
 # start nextcloud client
 exec --no-startup-id nextcloud &
 
@@ -205,12 +207,12 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # hide window title bar
-default_border pixel 5
+default_border pixel 2
 default_floating_border pixel 2
 
 # gaps
-gaps inner 5px
-gaps outer 5px
+gaps inner 10px
+gaps outer 2px
 smart_gaps inverse_outer
 
 # borders
@@ -223,17 +225,44 @@ focus_follows_mouse yes
 # COLORS #
 ##########
 set $bg_color #181818
-set $fg_color #d8d8d8
-set $blue_color #458588
-set $green_color #b8bb26
-set $cyan_color #8ec07c
+set $fg_color #D8D8D8
+set $blue #6ABFE6
+set $green #4FE672
+set $cyan #Cf77E6
 
-#							border	backgr.	text	indicator child_border
-client.focused         $bg_color $bg_color $blue_color $fg_color $bg_color
-client.focused_inactive $bg_color $bg_color $green_color $fg_color $bg_color
-client.unfocused       $bg_color $bg_color $cyan_color $fg_color $bg_color
-client.urgent          $bg_color $bg_color $bg_color $fg_color $bg_color
-client.placeholder     $bg_color $bg_color $cyan_color $fg_color $bg_color
+set $rosewater #f4dbd6
+set $flamingo  #f0c6c6
+set $pink      #f5bde6
+set $mauve     #c6a0f6
+set $red       #ed8796
+set $maroon    #ee99a0
+set $peach     #f5a97f
+set $green     #a6da95
+set $teal      #8bd5ca
+set $sky       #91d7e3
+set $sapphire  #7dc4e4
+set $blue      #8aadf4
+set $lavender  #b7bdf8
+set $text      #cad3f5
+set $subtext1  #b8c0e0
+set $subtext0  #a5adcb
+set $overlay2  #939ab7
+set $overlay1  #8087a2
+set $overlay0  #6e738d
+set $surface2  #5b6078
+set $surface1  #494d64
+set $surface0  #363a4f
+set $base      #24273a
+set $mantle    #1e2030
+set $crust     #181926
+
+# target		 border    backgr.	text	indicator 	child_border
+client.focused           $green    $base 	$text  	$rosewater 	$pink
+client.focused_inactive  $blue     $base 	$text  	$rosewater 	$mauve
+client.unfocused         $mauve    $base 	$text  	$rosewater 	$mauve
+client.urgent            $peach    $base 	$peach 	$overlay0  	$peach
+client.placeholder       $overlay0 $base 	$text  	$overlay0  	$overlay0
+client.background        $base
 
 
 bindsym $mod+Shift+e mode "$mode_i3_exit"
