@@ -1,5 +1,5 @@
 ### EXPORT ###
-set fish_greeting                                 # Supresses fish's intro message
+set fish_greeting # Supresses fish's intro message
 # set TERM "xterm-256color"                         # Sets the terminal type
 
 ### PROMPT
@@ -23,53 +23,56 @@ set -gx DISPLAY :0
 alias xx='xinit'
 
 # git
-alias gs="git status -s";
-alias ga="git add";
-alias gc="git commit";
-alias gp="git push";
-alias gpull="git pull";
-alias gb="git branch";
-alias gch="git checkout";
-alias gm="git merge";
-alias gf="git fetch";
-alias glog="git log --graph --pretty=oneline --abbrev-commit";
+alias gs="git status -s"
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
+alias gpull="git pull"
+alias gb="git branch"
+alias gch="git checkout"
+alias gm="git merge"
+alias gf="git fetch"
+alias glog="git log --graph --pretty=oneline --abbrev-commit"
 
 # term
-alias reboot="doas reboot";
-alias poff="doas poweroff";
-alias t="btop";
-alias ll="exa -l --icons --all";
+alias reboot="doas reboot"
+alias poff="doas poweroff"
+alias t="btop"
+alias ll="exa -l --icons --all"
 alias lt="exa --tree --level=2 -a --color auto --icons"
 
 # python
-alias py3="python3.9";
-alias py="python";
+alias py3="python3.9"
+alias py="python"
 
 # backup config files to git
-alias cong="py /home/lk/configs/scripts/git_conf.py";
+alias cong="py /home/lk/configs/scripts/git_conf.py"
 
 # programs
 # linux
-alias lgi="lazygit";
-alias ldo="lazydocker";
-alias dc="docker container";
+alias lgi="lazygit"
+alias ldo="lazydocker"
+alias dc="docker container"
 # freebsd
-alias ba="doas bastille";
-alias vm="doas vm";
+alias ba="doas bastille"
+alias vm="doas vm"
+
+# weather
+alias wt="curl wttr.in"
 
 # nvim
-alias vi="nvim";
+alias vi="nvim"
 alias lazy="NVIM_APPNAME=lazyvim nvim"
 alias nvc="NVIM_APPNAME=nvchad nvim"
 
 # kitty
-alias icat="kitty +kitten icat";
-alias d="kitty +kitten diff";
-alias hg="kitty +kitten hyperlinged_grep";
-alias s="kitty +kitten ssh";
+alias icat="kitty +kitten icat"
+alias d="kitty +kitten diff"
+alias hg="kitty +kitten hyperlinged_grep"
+alias s="kitty +kitten ssh"
 
 # ssh
-alias lsh="ssh -i ~/.ssh/local";
+alias lsh="ssh -i ~/.ssh/local"
 
 ### SET MANPAGER
 ### Uncomment only one of these!
@@ -83,8 +86,8 @@ set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 ### SET EITHER DEFAULT EMACS MODE OR VI MODE ###
 function fish_user_key_bindings
-  # fish_default_key_bindings
-  fish_vi_key_bindings
+    # fish_default_key_bindings
+    fish_vi_key_bindings
 end
 ### END OF VI MODE ###
 
@@ -97,5 +100,5 @@ set fish_color_param brcyan
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
-  fish_config theme choose Tomorrow\ Night\ Bright
+    fish_config theme choose Tomorrow\ Night\ Bright
 end

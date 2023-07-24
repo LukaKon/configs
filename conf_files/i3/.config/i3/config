@@ -13,6 +13,7 @@ set $terminal kitty
 # Autostart applications #
 ##########################
 
+# set polish letters
 exec --no-startup-id setxkbmap pl &
 
 # start nextcloud client
@@ -256,8 +257,8 @@ set $base      #24273a
 set $mantle    #1e2030
 set $crust     #181926
 
-# target		 border    backgr.	text	indicator 	child_border
-client.focused           $green    $base 	$text  	$rosewater 	$pink
+# target		             border    backgr.	text	indicator 	child_border
+client.focused           $green    $base 	$text  	$rosewater 	$green
 client.focused_inactive  $blue     $base 	$text  	$rosewater 	$mauve
 client.unfocused         $mauve    $base 	$text  	$rosewater 	$mauve
 client.urgent            $peach    $base 	$peach 	$overlay0  	$peach
