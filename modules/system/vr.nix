@@ -21,11 +21,12 @@
         [
           # www
           firefox
-          # brave
-          qutebrowser
+          brave
+          # qutebrowser
           librewolf
 
-          nextcloud-client
+          # nextcloud-client
+          # syncthing
 
           # dev
           neovim
