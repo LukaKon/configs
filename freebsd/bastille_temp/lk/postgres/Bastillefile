@@ -1,0 +1,30 @@
+CONFIG set sysvshm=new
+RESTART
+
+ARG PG_VERSION=15
+ARG PG_USER=admin
+ARG PG_PASSWORD=password
+ARG PG_DB=database
+
+PKG postgresql${PG_VERSION}-server
+PKG postgresql${PG_VERSION}-contrib
+PKG sudo
+
+SYSRC postgresql_enable=YES
+
+CMD if [ ! -e /var/db/postgres/data${PG_VERSION} ];then service postgresql initdb; service postgresql start; fi
+
+CMD echo 'host    all             all             all                     scram-sha-256' >> /var/db/postgres/data${PG_VERSION}/pg_hba.conf
+
+SERVICE postgresql restart
+
+# create user
+# CMD sudo -u postgres psql -c "CREATE ROLE ${PG_USER} WITH SUPERUSER LOGIN ENCRYPTED PASSWORD '${PG_PASSWORD}'"
+CMD sudo -u postgres psql -c "CREATE USER ${PG_USER} WITH PASSWORD '${PG_PASSWORD}'"
+CMD sudo -u postgres psql -c "ALTER USER ${PG_USER} LOGIN CREATEDB SUPERUSER"
+CMD sudo -u postgres psql -c "CREATE DATABASE ${PG_USER}"
+
+
+# create database
+CMD sudo -u postgres psql -c "CREATE DATABASE ${PG_DB} OWNER ${PG_USER}"
+

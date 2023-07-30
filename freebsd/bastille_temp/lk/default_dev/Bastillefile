@@ -10,7 +10,15 @@ CMD echo 'FreeBSD: { url: 'pkg+http://pkg.FreeBSD.org/\$\{ABI\}/latest', enabled
 SERVICE sshd start
 
 # install packages
-PKG git rsync helix fish doas exa
+PKG git
+PKG rsync
+PKG doas
+PKG helix
+PKG neovim
+PKG fish
+PKG exa
+PKG bat
+PKG lazygit
 
 # set hostname
 CMD hostname ${hostname}
@@ -30,6 +38,9 @@ CMD mkdir /home/${user}/.ssh
 CP /home/lk/.ssh/id_ed25519 /home/${user}/.ssh/
 CP /home/lk/.ssh/id_ed25519.pub /home/${user}/.ssh/
 CMD chown -R ${user}:wheel /home/${user}/.ssh
+
+# neovim configuration
+CMD git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 
 # copy config files
 CMD mkdir /home/${user}/.config

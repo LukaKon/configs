@@ -261,7 +261,7 @@ set $crust     #181926
 client.focused           $green    $base 	$text  	$rosewater 	$green
 client.focused_inactive  $blue     $base 	$text  	$rosewater 	$mauve
 client.unfocused         $blue     $base 	$text  	$rosewater 	$blue
-client.urgent            $cyan    $base 	$peach 	$overlay0  	$cyan
+client.urgent            $cyan     $base 	$peach 	$overlay0  	$cyan
 client.placeholder       $overlay0 $base 	$text  	$overlay0  	$overlay0
 client.background        $base
 
