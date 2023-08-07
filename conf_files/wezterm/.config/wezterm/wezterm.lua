@@ -16,4 +16,6 @@ config.font = wezterm.font('Overpass Regular Nerd Font Complete', { weight = "Re
 
 config.window_background_opacity = 0.8
 
+config.tab_max_width = 16
+
 return config
