@@ -7,7 +7,7 @@ font pango:nerd 9
 
 set $mod Mod4
 
-set $terminal kitty
+set $terminal wezterm
 
 ##########################
 # Autostart applications #

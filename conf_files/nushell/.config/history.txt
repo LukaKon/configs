@@ -1,0 +1,2 @@
+ls -a |sort-by name
+ls -a |sort-by modified
