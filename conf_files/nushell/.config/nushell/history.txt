@@ -23,3 +23,9 @@ ls -a
 exit
 cd configs/
 git status
+git add --all .
+git commit -m 'nu conf'
+git push
+gpull
+git pull
+exit
