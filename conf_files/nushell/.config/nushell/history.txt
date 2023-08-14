@@ -3,3 +3,23 @@ ls -a |sort-by modified
 pkg list
 pkg list | table 
 exit
+open ~/.config/helix/config.toml
+open ~/.config/helix/config.toml | editor
+cd
+ll
+ls -a
+exit
+ls -a
+rm fonts
+ls
+ls -a
+rm -rf .yarn .yarnrc
+ls
+ls -a
+npm list
+ls -a .npm
+exit
+ls -a
+exit
+cd configs/
+git status
