@@ -11,15 +11,7 @@ config.font = wezterm.font_with_fallback({
   { family = "CaskaydiaCove Nerd Font", scale = 1.0 },
   { family = "FantasqueSansM Nerd Font", scale = 1.0 },
 })
--- config.font = wezterm.font({
--- family = 'Inconsolata Nerd Font Mono',
--- family = 'Iosevka Nerd Font Mono',
--- family = 'FiraCode Nerd Font Mono',
--- family = 'FiraCode Nerd Font Mono',
--- weight = "Regular",
--- stretch = "Normal",
--- style = 'Normal',
--- })
+
 config.font_size = 13.0
 
 config.window_background_opacity = 0.8
@@ -45,6 +37,7 @@ config.leader = {
   mods = 'CTRL',
   timeout_milliseconds = 1000,
 }
+
 config.keys = {
   { key = '-', mods = 'LEADER', action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' }, },
   { key = '\\', mods = 'LEADER', action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' }, },
