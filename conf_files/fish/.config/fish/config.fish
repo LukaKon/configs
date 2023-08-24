@@ -54,6 +54,7 @@ alias lgi="lazygit"
 alias ldo="lazydocker"
 alias dc="docker container"
 # freebsd
+alias ap="doas appjail"
 alias ba="doas bastille"
 alias vm="doas vm"
 
