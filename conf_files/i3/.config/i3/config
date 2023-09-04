@@ -16,9 +16,6 @@ set $terminal wezterm
 # set polish letters
 exec --no-startup-id setxkbmap pl &
 
-# start nextcloud client
-#exec --no-startup-id nextcloud &
-
 # Hide the mouse after some time 
 exec --no-startup-id unclutter
 
