@@ -12,9 +12,9 @@ set -g theme_display_user yes
 set -g theme_hide_hostname no
 set -g theme_hostname always
 
-set -gx EDITOR nvim
-# set -gx BROWSER firefox
-set -gx BROWSER librewolf
+set -gx EDITOR hx
+set -gx BROWSER firefox
+# set -gx BROWSER librewolf
 set -gx DISPLAY :0
 
 ### ALIASES

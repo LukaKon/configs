@@ -29,3 +29,50 @@ git push
 gpull
 git pull
 exit
+nu --version
+exit
+$env
+exit
+$env
+env
+hx $nu.env-path
+$env
+exit
+cd dev/
+ll
+ls
+ls -a
+cd 
+cd configs/
+gs
+git status
+ls -l
+exit
+ls -l
+ls -a
+exa -l --icons --all
+ls -a
+scope aliases
+shells
+g
+n
+time
+date
+date now
+exit
+vm start omni
+exit
+cd configs/
+ll
+ls
+mkdir nix
+mv vm/ modules/ flake.lock flake.nix development/ nix/
+mv vm/ modules/ nix/
+mv vm/ nix/
+mv modules/ nix/
+mv flake.* nix/
+mv development/ nix/
+ll
+ls
+gs
+git status
