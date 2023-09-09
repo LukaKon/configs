@@ -76,3 +76,12 @@ ll
 ls
 gs
 git status
+git add --all .
+git status
+git commit -m 'all *.nix moved to nix/'
+git push
+ll
+ls
+..
+git status
+exit
