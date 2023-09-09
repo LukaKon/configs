@@ -2,40 +2,41 @@
 
 {
   environment.defaultPackages = with pkgs; [
-    clang
+    # clang
     # gcc
-    bmake
-    cmake
+    # bmake
+    # cmake
 
     nodejs-18_x
     # deno
 
     # distrobox
 
-    opencv
-    pkg-config
+    # opencv
+    # pkg-config
 
     # http-prompt
     # gitlab
     # gitlab-runner
     # github-runner
-    heroku
 
-    hadolint # docker linter
+    # heroku
+
+# TODO: broken pkg: # hadolint # docker linter
 
     # dotnet-sdk
 
-    rustc
-    cargo
-    rustfmt
-    rustup
-    rust-analyzer
+    # rustc
+    # cargo
+    # rustfmt
+    # rustup
+    # rust-analyzer
 
-    lldb
+    # lldb
 
     tree-sitter
 
-    astyle # Source code indenter, formatter, and beautifier for C, C++, C# and Java
+    # astyle # Source code indenter, formatter, and beautifier for C, C++, C# and Java
     # stylua # An opinionated Lua code formatter
     # luajit # High-performance JIT compiler for Lua
     # luajitPackages.luacheck
@@ -54,7 +55,7 @@
     nodePackages.dockerfile-language-server-nodejs
     nodePackages.typescript-language-server
     nodePackages.typescript
-    nodePackages.tailwindcss
+    # nodePackages.tailwindcss
     nodePackages.prettier
     nodePackages.prettier_d_slim
     nodePackages.eslint
