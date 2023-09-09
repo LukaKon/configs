@@ -812,3 +812,47 @@ $env.config = {
         }
     ]
 }
+
+# git
+alias gs = git status -s
+alias ga = git add
+alias gc = git commit
+alias gp = git push
+alias gpull = git pull
+alias gb = git branch
+alias gch = git checkout
+alias gm = git merge
+alias gf = git fetch
+alias glog = git log --graph --pretty=oneline --abbrev-commit
+
+# term
+alias reboot = doas reboot
+alias poff = doas poweroff
+alias t = btop
+alias ll = exa -l --icons --all
+alias lt = exa --tree --level=2 -a --color auto --icons
+
+# python
+alias py3 = python3.9
+alias py = python
+
+# programs
+# linux
+alias lgi = lazygit
+alias ldo = lazydocker
+alias dc = docker container
+# freebsd
+alias ap = doas appjail
+alias ba = doas bastille
+alias vm = doas vm
+
+# weather
+alias wt = curl wttr.in
+
+# nvim
+alias vi = nvim
+alias lazy = NVIM_APPNAME=lazyvim nvim
+alias nvc = NVIM_APPNAME=nvchad nvim
+
+# ssh
+alias lsh = ssh -i ~/.ssh/local

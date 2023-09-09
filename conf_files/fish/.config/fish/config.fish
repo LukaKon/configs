@@ -66,12 +66,6 @@ alias vi="nvim"
 alias lazy="NVIM_APPNAME=lazyvim nvim"
 alias nvc="NVIM_APPNAME=nvchad nvim"
 
-# kitty
-alias icat="kitty +kitten icat"
-alias d="kitty +kitten diff"
-alias hg="kitty +kitten hyperlinged_grep"
-alias s="kitty +kitten ssh"
-
 # ssh
 alias lsh="ssh -i ~/.ssh/local"
 

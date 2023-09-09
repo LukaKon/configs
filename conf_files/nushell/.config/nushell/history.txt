@@ -85,3 +85,41 @@ ls
 ..
 git status
 exit
+vm list
+doas vm list
+doas vm list as table
+doas vm list | as table
+vm list
+sudo vm list
+doas vm list
+exit
+vm list
+gs
+cd configs/
+gs
+git status
+t
+ll
+exit
+vm list
+scope aliases
+[1,2,3,4,5]|insert 2 100
+[1,2,3,4,5]
+[1,2,3,4,5]|insert 2 100
+[1,2,3,4,5]|insert 2 100|insert 1 50
+ll
+ls -a
+su
+cd configs/
+exit
+cd configs/exit
+exit
+cd configs/
+exit
+greet "world"
+[one two three] | to yaml<\n>
+ll
+$"greetings, lk"
+shells
+pkg search starship
+exit
