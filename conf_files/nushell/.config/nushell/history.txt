@@ -123,3 +123,25 @@ $"greetings, lk"
 shells
 pkg search starship
 exit
+starship config
+cd dev/
+ll
+ls -a
+cd
+ls -a
+ssh lk@192.168.1.103
+cd dev/
+cargo new testowe
+python --version
+python3 --version
+vm list
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo new pro
+ll
+ls
+cd pro/
+pkg search rust
+pkg search lapce
+cd
+cd configs/
+gs

@@ -1,19 +1,23 @@
 # Nushell Environment Config File
 #
 # version = 0.83.1
+$env.STARSHIP_SHELL = "nu"
+
 def create_left_prompt [] {
-    let home =  $nu.home-path
+#     let home =  $nu.home-path
 
-    let dir = ([
-        ($env.PWD | str substring 0..($home | str length) | str replace $home "~"),
-        ($env.PWD | str substring ($home | str length)..)
-    ] | str join)
+#     let dir = ([
+#         ($env.PWD | str substring 0..($home | str length) | str replace $home "~"),
+#         ($env.PWD | str substring ($home | str length)..)
+#     ] | str join)
 
-    let path_color = (if (is-admin) { ansi red_bold } else { ansi green_bold })
-    let separator_color = (if (is-admin) { ansi light_red_bold } else { ansi light_green_bold })
-    let path_segment = $"($path_color)($dir)"
+#     let path_color = (if (is-admin) { ansi red_bold } else { ansi green_bold })
+#     let separator_color = (if (is-admin) { ansi light_red_bold } else { ansi light_green_bold })
+#     let path_segment = $"($path_color)($dir)"
 
-    $path_segment | str replace --all (char path_sep) $"($separator_color)/($path_color)"
+#     $path_segment | str replace --all (char path_sep) $"($separator_color)/($path_color)"
+
+starship prompt --cmd-duration $env.CMD_DURATION_MS $'--status=($env.LAST_EXIT_CODE)'
 }
 
 def create_right_prompt [] {
