@@ -145,3 +145,8 @@ pkg search lapce
 cd
 cd configs/
 gs
+ls -a
+ll
+ls
+poff
+exit

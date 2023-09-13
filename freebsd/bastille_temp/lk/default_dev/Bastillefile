@@ -19,6 +19,7 @@ PKG fish
 PKG exa
 PKG bat
 PKG lazygit
+PKG stow
 
 # set hostname
 CMD hostname ${hostname}
@@ -42,6 +43,8 @@ CMD chown -R ${user}:wheel /home/${user}/.ssh
 
 # copy config files
 CMD mkdir /home/${user}/.config
+CMD git clone https://github.com/LukaKon/configs.git /home/${user}/
+CMD 
 
 # neovim configuration
 CMD git clone https://github.com/NvChad/NvChad /home/${user}/.config/nvim --depth 1
