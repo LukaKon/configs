@@ -23,16 +23,19 @@ PKG stow
 
 # set hostname
 CMD hostname ${hostname}
+CMD hostname
 
 # create user
 CMD echo "${user}" | pw user add -n ${user} -G wheel -s /usr/local/bin/fish -m -h 0
+CMD users 
 
 # configure 'doas'
 CMD echo "permit nopass :wheel">>/usr/local/etc/doas.conf
+CMD echo doas
 
 # copy configuration for git
-CP /home/lk/.gitconfig /home/${user}/
-CMD chown ${user}:wheel /home/${user}/.gitconfig
+# CP /home/lk/.gitconfig /home/${user}/
+# CMD chown ${user}:wheel /home/${user}/.gitconfig
 
 # copy ssh key for git
 CMD mkdir /home/${user}/.ssh
@@ -49,8 +52,8 @@ CMD git clone https://github.com/LukaKon/configs.git /home/${user}/
 # neovim configuration
 CMD git clone https://github.com/NvChad/NvChad /home/${user}/.config/nvim --depth 1
 
-CP /home/lk/configs/conf_files/helix/.config/helix /home/${user}/.config/
-CP /home/lk/configs/conf_files/fish/.config/fish /home/${user}/.config/
+# CP /home/lk/configs/conf_files/helix/.config/helix /home/${user}/.config/
+# CP /home/lk/configs/conf_files/fish/.config/fish /home/${user}/.config/
 CMD chown -R ${user}:wheel /home/${user}/.config
 
 # create working directory
