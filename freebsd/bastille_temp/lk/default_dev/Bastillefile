@@ -44,7 +44,7 @@ CMD chown -R ${user}:wheel /home/${user}/.ssh
 # copy config files
 CMD mkdir /home/${user}/.config
 CMD git clone https://github.com/LukaKon/configs.git /home/${user}/
-CMD 
+# CMD stow config files...
 
 # neovim configuration
 CMD git clone https://github.com/NvChad/NvChad /home/${user}/.config/nvim --depth 1
