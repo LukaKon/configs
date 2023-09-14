@@ -16,6 +16,8 @@ PKG doas
 PKG helix
 PKG neovim
 PKG fish
+PKG nushell
+PKG starship
 PKG exa
 PKG bat
 PKG lazygit
