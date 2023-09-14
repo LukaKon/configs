@@ -149,4 +149,9 @@ ls -a
 ll
 ls
 poff
+ls -a | where type file
+ls -a | where type 'file'
+vm list
+vm install -f omni omnios-r151046.iso
+zfs list
 exit
