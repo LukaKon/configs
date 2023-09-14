@@ -155,3 +155,35 @@ vm list
 vm install -f omni omnios-r151046.iso
 zfs list
 exit
+gs
+git status
+cd
+vm list
+lsh lk@192.168.1.142
+exit
+cd dev/Python/classes/
+hx .
+ll
+..
+cd classes/
+ll
+rm -rf .vscode/
+rm -rf .mypy_cache/
+ll
+hx default.nix
+..
+ll
+cd `Clever Programmer - django/`
+ll
+rm -rf .vscode/
+..
+ll
+ls -a
+cd Udemy/
+ls -a
+cd 10_Apps/
+ls -a
+cd 7_Errors/
+ls
+hx .
+poff

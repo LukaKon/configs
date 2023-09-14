@@ -6,6 +6,7 @@ result
 .vscode
 *.core
 *.log
+**/history.txt
 
 # lazyvim
 tt.*
