@@ -29,4 +29,4 @@ lazy-lock.json
 
 # nushell
 history.txt
-conf_files/nushell/.config/nushell/history.txt
+# conf_files/nushell/.config/nushell/history.txt
