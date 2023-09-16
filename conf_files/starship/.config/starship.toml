@@ -26,6 +26,9 @@ disabled = false
 style = 'bold yellow'
 format = '[$time]($style) '
 
+[cmd_duration]
+format = '[$duration]($style) '
+
 [username]
 style_root = 'bold red'
 style_user = 'bold #2E93E0'
