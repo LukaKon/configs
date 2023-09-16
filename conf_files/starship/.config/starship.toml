@@ -1,0 +1,62 @@
+format = """$hostname$localip$os$username$directory$all"""
+
+right_format = """$battery $time"""
+
+add_newline = false
+
+[line_break]
+disabled = true
+
+[localip]
+ssh_only = true
+format = '@[$localipv4](bold red) '
+disabled = false
+
+[time]
+disabled = false
+style = 'bold yellow'
+format = '[$time]($style) '
+
+[username]
+style_root = 'bold red'
+style_user = 'bold #2E93E0'
+format = '[$user]($style) '
+show_always = true
+
+[hostname]
+ssh_only = false
+ssh_symbol = '🌐'
+style = 'bold #22EB39'
+format = '[$ssh_symbol $hostname]($style)'
+
+[os]
+style = 'bold red'
+disabled = false
+format = ' [$symbol]($style) '
+
+[os.symbols]
+FreeBSD = ''
+
+[directory]
+truncation_length = 1
+# style ='bold #D83FE0'
+style = 'bold #D4E6FE'
+# truncation_symbol = '_/'
+
+[git_branch]
+symbol = '🌱 '
+ignore_branches = ['master', 'main']
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[package]
+format = '[$symbol$version]($style) '
+
+[rust]
+symbol = ' '
+format = '[$symbol($version )]($style)'
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+[nodejs]
+format = '[$symbol($version )]($style)'

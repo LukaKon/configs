@@ -3,7 +3,17 @@ set fish_greeting # Supresses fish's intro message
 # set TERM "xterm-256color"                         # Sets the terminal type
 
 ### PROMPT
-functions -q fish_right_prompt && fish_right_prompt
+function starship_transient_prompt_func
+  starship module character
+end
+starship init fish | source
+enable_transience
+
+function starship_transient_rprompt_func
+  starship module time
+end
+starship init fish | source
+enable_transience
 
 # theme
 set -g theme_color_scheme terminal-dark
