@@ -831,6 +831,9 @@ alias poff = doas poweroff
 alias t = btop
 alias ll = exa -l --icons --all
 alias lt = exa --tree --level=2 -a --color auto --icons
+# nushell
+alias la = ls -a
+alias lh = ls -la
 
 # python
 alias py3 = python3.9
@@ -856,6 +859,3 @@ alias nvc = NVIM_APPNAME=nvchad nvim
 
 # ssh
 alias lsh = ssh -i ~/.ssh/local
-
-# nushell
-alias la = ls -a
