@@ -234,3 +234,8 @@ cd conf_files/
 ..
 hx .gitignore
 gs
+ga --all .
+gc -m '.gitignore <- nushell'
+gp
+gpull
+gs
