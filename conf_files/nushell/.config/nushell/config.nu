@@ -856,3 +856,6 @@ alias nvc = NVIM_APPNAME=nvchad nvim
 
 # ssh
 alias lsh = ssh -i ~/.ssh/local
+
+# nushell
+alias la = ls -a

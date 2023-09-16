@@ -187,3 +187,50 @@ cd 7_Errors/
 ls
 hx .
 poff
+doas pkg install starship
+exit
+cd dev/CodersLab/
+ll
+cd ONL_PYT_W_06_zaawansowane_django/
+ll
+cd 06_Dzień_3_-_praca_domowa/
+ll
+../05_Dzień_3/
+ll
+hx def default.nix
+../01_Dzień_1/
+ll
+rm -fr .vscode/
+ll
+../../
+ll
+hx `elementy blokowe`
+ll
+hx index.html
+../
+ll
+cd rust/
+ll
+cd guessing_game/
+ll
+hx .
+cd
+ll
+ls -a
+cdb
+cd
+cd configs/
+gs
+la
+hx .
+la
+exit
+la
+ls
+exit
+cd
+cd configs/
+cd conf_files/
+..
+hx .gitignore
+gs
