@@ -10,7 +10,7 @@ disabled = true
 [localip]
 ssh_only = true
 style = '#6f9dab'
-format = '@[$localipv4]($style) '
+format = '@[$localipv4]($style)'
 disabled = false
 
 [time]
