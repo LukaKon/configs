@@ -9,7 +9,8 @@ disabled = true
 
 [localip]
 ssh_only = true
-format = '@[$localipv4](bold red) '
+style = '#6f9dab'
+format = '@[$localipv4]($style) '
 disabled = false
 
 [time]
