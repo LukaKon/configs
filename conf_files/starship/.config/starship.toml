@@ -1,11 +1,19 @@
 format = """$shell$hostname$localip$os$username$directory$all"""
 
-right_format = """$battery $time"""
+right_format = """$battery$memory_usage$time"""
 
 add_newline = false
 
 [line_break]
 disabled = true
+
+[character]
+success_symbol = '[󰁕](bold #23d191)'
+error_symbol = '[✗](bold red)'
+vimcmd_symbol = '[:](bold #d2ba2d)'
+vimcmd_replace_one_symbol = '[](bold pink)'
+vimcmd_replace_symbol = '[rs](bold)'
+vimcmd_visual_symbol = '[](bold #da13ec)'
 
 [shell]
 fish_indicator = '󰈺'
@@ -53,10 +61,19 @@ FreeBSD = ''
 truncation_length = 1
 # style ='bold #D83FE0'
 style = 'bold #D4E6FE'
+read_only = ' '
 # truncation_symbol = '_/'
 
+[memory_usage]
+disabled = false
+threshold = -1
+symbol = '󰍛 '
+style = 'bold dimmed green'
+# format = '$symbol [R:${ram}( ${swap})]($style) '
+format = '[$symbol${ram}]($style) '
+
 [git_branch]
-symbol = '🌱 '
+symbol = '󰘬 '
 ignore_branches = ['master', 'main']
 format = '[$symbol$branch(:$remote_branch)]($style) '
 

@@ -56,7 +56,7 @@ CMD git clone https://github.com/NvChad/NvChad /home/${user}/.config/nvim --dept
 
 # CP ${HOME}/lk/configs/conf_files/helix/.config/helix /home/${user}/.config/
 # CP ${HOME}/lk/configs/conf_files/fish/.config/fish /home/${user}/.config/
-CMD chown -R ${user}:wheel /home/${user}/.config
+# CMD chown -R ${user}:wheel /home/${user}/.config
 
 # create working directory
 CMD mkdir /home/${user}/dev
