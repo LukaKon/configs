@@ -40,7 +40,7 @@ config.leader = {
 
 config.keys = {
   { key = '-', mods = 'LEADER', action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' }, },
-  { key = '\\', mods = 'LEADER', action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' }, },
+  { key = '/', mods = 'LEADER', action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' }, },
   { key = 'w', mods = 'LEADER', action = wezterm.action.CloseCurrentTab { confirm = true }, },
   { key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
   { key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
