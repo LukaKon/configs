@@ -56,7 +56,7 @@ alias py3="python3.9"
 alias py="python"
 
 # backup config files to git
-alias cong="py /home/lk/configs/scripts/git_conf.py"
+alias cong="py /home/lk/nix_conf/scripts/git_conf.py"
 
 # programs
 # linux
