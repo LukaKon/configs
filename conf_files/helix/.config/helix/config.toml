@@ -89,6 +89,6 @@ esc = ["collapse_selection", "keep_primary_selection"]
 "left" = "move_char_left"
 "right" = "move_char_right"
 
-[keys.insert."+"]
+[keys.normal."+"]
 c = ":run-shell-command cargo build"
 r = ":run-shell-command cargo run"
