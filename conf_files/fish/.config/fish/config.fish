@@ -78,6 +78,7 @@ alias nvc="NVIM_APPNAME=nvchad nvim"
 
 # ssh
 alias lsh="ssh -i ~/.ssh/local"
+alias dsh="ssh -i ~/.ssh/lap"
 
 ### SET MANPAGER
 ### Uncomment only one of these!
