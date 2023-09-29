@@ -24,8 +24,9 @@ set -g theme_hostname always
 
 set -gx EDITOR hx
 set -gx BROWSER firefox
-# set -gx BROWSER librewolf
 set -gx DISPLAY :0
+
+set FZF_DEFAULT_OPTS "--extended --cycle"
 
 ### ALIASES
 
@@ -70,6 +71,8 @@ alias vm="doas vm"
 
 # weather
 alias wt="curl wttr.in"
+# cheat sheet
+alias cs="~/configs/scripts/cht.sh"
 
 # nvim
 alias vi="nvim"
