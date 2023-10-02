@@ -26,7 +26,9 @@ set -gx EDITOR hx
 set -gx BROWSER firefox
 set -gx DISPLAY :0
 
-set FZF_DEFAULT_OPTS "--extended --cycle"
+# fzf
+set FZF_DEFAULT_OPTS "--layout=reverse --extended --cycle"
+set FZF_DEFAULT_COMMAND ""
 
 ### ALIASES
 
@@ -68,6 +70,12 @@ alias dc="docker container"
 alias ap="doas appjail"
 alias ba="doas bastille"
 alias vm="doas vm"
+
+# bat
+alias bat="bat -p --color always --theme gruvbox-dark"
+
+# fzf
+alias fz="fzf --multi --layout reverse --border rounded --border-label 'FZ' --border-label-pos 5 --preview-window right --preview 'bat -n --color=always {}' --bind 'enter:execute($EDITOR {})'"
 
 # weather
 alias wt="curl wttr.in"
