@@ -27,8 +27,28 @@ set -gx BROWSER firefox
 set -gx DISPLAY :0
 
 # fzf
-set FZF_DEFAULT_OPTS "--layout=reverse --extended --cycle"
-set FZF_DEFAULT_COMMAND ""
+set -gx FZF_DEFAULT_OPTS "--layout reverse --height=15 --extended --multi --cycle --border rounded --prompt='▶' --pointer='' --marker='' --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54"
+
+# set -gx FZF_DEFAULT_COMMAND "fd --type f --color=never --hidden"
+set -gx FZF_DEFAULT_COMMAND 'find . \! -name ".git/"'
+
+#set -gx FZF_CTRL_T_COMMAND "
+#  --preview 'bat -n --color=always {}'
+#  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+
+# CTRL-/ to toggle small preview window to see the full command
+# CTRL-Y to copy the command into clipboard using pbcopy
+#set -gx FZF_CTRL_R_OPTS "
+#  --preview 'echo {}' --preview-window up:3:hidden:wrap
+#  --bind 'ctrl-/:toggle-preview'
+#  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+#  --color header:italic
+#  --header 'Press CTRL-Y to copy command into clipboard'"
+
+# Print tree structure in the preview window
+#set -gx FZF_ALT_C_COMMAND "--preview 'tree -C {}'"
+
+alias fz="fzf --hidden --multi --layout reverse --border rounded --border-label 'FZ' --border-label-pos 5 --preview-window right --preview 'bat -n --color=always {}' --bind 'enter:execute($EDITOR {})'"
 
 ### ALIASES
 
@@ -73,9 +93,6 @@ alias vm="doas vm"
 
 # bat
 alias bat="bat -p --color always --theme gruvbox-dark"
-
-# fzf
-alias fz="fzf --multi --layout reverse --border rounded --border-label 'FZ' --border-label-pos 5 --preview-window right --preview 'bat -n --color=always {}' --bind 'enter:execute($EDITOR {})'"
 
 # weather
 alias wt="curl wttr.in"
