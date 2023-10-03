@@ -48,7 +48,13 @@ newline = "⤶"
 tabpad = "."
 
 [editor.statusline]
-left = ["mode", "separator", "spinner", "file-name"]
+left = [
+  "mode",
+  "separator",
+  "spinner",
+  "file-name",
+  "file-modification-indicator"
+]
 center = [
   "version-control",
   "spacer",
