@@ -19,7 +19,13 @@ display-messages = true
 display-inlay-hints = true
 
 [editor.gutters]
-layout = ["spacer", "diff", "diagnostics", "line-numbers", "spacer"]
+layout = [
+  "spacer",
+  "diff",
+  "diagnostics",
+  "line-numbers",
+  "spacer"
+]
 
 [editor.search]
 smart-case = true
@@ -81,7 +87,8 @@ separator = "|"
 
 [editor.indent-guides]
 render = true
-character = "┆" # defauly "|"
+character = ""
+# character = "┆" # defauly "|"
 
 [keys.normal]
 "X" = "extend_line_above"
@@ -99,4 +106,3 @@ esc = ["collapse_selection", "keep_primary_selection"]
 c = ":run-shell-command cargo check"
 b = ":run-shell-command cargo build"
 r = ":run-shell-command cargo run"
-# s = ":run-shell-command cs"
