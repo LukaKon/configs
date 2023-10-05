@@ -29,7 +29,8 @@ exec --no-startup-id picom &
 exec --no-startup-id feh --bg-scale ~/.config/i3/image.jpg
 
 # start applications
-exec --no-startup-id thunderbird
+exec --no-startup-id QOwnNotes &
+exec --no-startup-id thunderbird &
 exec --no-startup-id firefox &
 exec --no-startup-id remmina &
 
@@ -57,6 +58,7 @@ assign [class="firefox"] $ws2
 assign [class="remmina"] $ws5
 assign [class="darktable"] $ws6
 assign [class="thunderbird"] $ws7
+assign [class="QOwnNotes"] $ws8
 
 # start terminal
 bindsym $mod+Return exec $terminal
