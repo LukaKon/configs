@@ -1,5 +1,6 @@
 local wezterm = require 'wezterm'
 local act = wezterm.action
+-- local mux = wezterm.mux
 
 local config = {}
 
@@ -8,6 +9,11 @@ if wezterm.config_builder then config = wezterm.config_builder() end
 wezterm.on('update-right-status', function(window, pane)
   window:set_right_status(window:active_workspace())
 end)
+
+-- wezterm.on('mux-startup', function()
+--   local tab, pane, window = mux.spawn_window {}
+--   pane:split { direction = 'Top' }
+-- end)
 
 config.color_scheme = 'Gruvbox dark, medium (base16)'
 

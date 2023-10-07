@@ -14,9 +14,9 @@ PKG git
 PKG rsync
 PKG doas
 PKG helix
+PKG fzf fd-find
 PKG neovim
 PKG fish
-PKG nushell
 PKG starship
 PKG exa
 PKG bat
@@ -35,28 +35,18 @@ CMD users
 CMD echo "permit nopass :wheel">>/usr/local/etc/doas.conf
 CMD echo doas
 
-# copy configuration for git
-# CP ${HOME}/lk/.gitconfig /home/${user}/
-# CMD chown ${user}:wheel /home/${user}/.gitconfig
-
 # copy ssh key for git
 CMD mkdir /home/${user}/.ssh
-CP ${HOME}/lk/.ssh/id_ed25519 /home/${user}/.ssh/
-CP ${HOME}/lk/.ssh/id_ed25519.pub /home/${user}/.ssh/
+CP /usr/home/lk/.ssh/id_ed25519 /home/${user}/.ssh/
+CP /usr/home/lk/.ssh/id_ed25519.pub /home/${user}/.ssh/
 CMD chown -R ${user}:wheel /home/${user}/.ssh
 
-
 # copy config files
-CMD mkdir /home/${user}/.config
 CMD git clone https://github.com/LukaKon/configs.git /home/${user}/
 # CMD stow config files...
 
 # neovim configuration
 CMD git clone https://github.com/NvChad/NvChad /home/${user}/.config/nvim --depth 1
-
-# CP ${HOME}/lk/configs/conf_files/helix/.config/helix /home/${user}/.config/
-# CP ${HOME}/lk/configs/conf_files/fish/.config/fish /home/${user}/.config/
-# CMD chown -R ${user}:wheel /home/${user}/.config
 
 # create working directory
 CMD mkdir /home/${user}/dev
