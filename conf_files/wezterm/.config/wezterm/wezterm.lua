@@ -18,6 +18,8 @@ config.font = wezterm.font_with_fallback({
 
 config.font_size = 13.0
 
+config.force_reverse_video_cursor = true
+
 config.window_background_opacity = 0.8
 
 config.window_decorations = "RESIZE"

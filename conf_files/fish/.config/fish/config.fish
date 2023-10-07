@@ -32,9 +32,9 @@ set -gx FZF_DEFAULT_OPTS "--layout reverse --height=50% --extended --multi --cyc
 set -gx FZF_DEFAULT_COMMAND 'fd . --exclude .git --exclude node_modules --exclude target --hidden'
 # set -gx FZF_DEFAULT_COMMAND 'rg . --files --hidden --glob "!.git" --glob "!node_modules"'
 
-alias fz="fzf --multi --layout reverse --border rounded --border-label '| Find and edit file |' --border-label-pos 5 --preview-window right --preview 'bat -n --color=always {}' --bind 'enter:execute($EDITOR {})'"
+alias ff="fzf --multi --layout reverse --border rounded --border-label '| Find and edit file |' --border-label-pos 5 --preview-window right --preview 'bat -n --color=always {}' --bind 'enter:execute($EDITOR {})'"
 
-alias cf="cd (fd . --type directory --hidden --exclude .cache --exclude .git --exclude node_modules | fzf --height=70% --border-label '| Find Directory |' --preview='exa --tree --level=1 -a --color auto --icons {}')"
+alias fd="cd (fd . --type directory --hidden --exclude .cache --exclude .git --exclude node_modules | fzf --height=70% --border-label '| Find Directory |' --preview='exa --tree --level=1 -a --color auto --icons {}')"
 
 # alias h="history | fzf --bind 'enter:become{}'"
 
