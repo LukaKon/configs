@@ -1,6 +1,8 @@
 # font pango:fira 9
 font pango:nerd 9
 
+floating_modifier Mod4
+
 #############
 # Variables #
 #############
@@ -225,36 +227,18 @@ focus_follows_mouse yes
 set $bg_color #181818
 set $fg_color #D8D8D8
 set $blue #6ABFE6
-set $green #4FE672
+set $green #70ffb8
 set $cyan #Cf77E6
-
 set $rosewater #f4dbd6
-set $flamingo  #f0c6c6
-set $pink      #f5bde6
 set $mauve     #c6a0f6
 set $red       #ed8796
-set $maroon    #ee99a0
 set $peach     #f5a97f
-set $green     #a6da95
-set $teal      #8bd5ca
-set $sky       #91d7e3
-set $sapphire  #7dc4e4
-set $blue      #8aadf4
-set $lavender  #b7bdf8
 set $text      #cad3f5
-set $subtext1  #b8c0e0
-set $subtext0  #a5adcb
-set $overlay2  #939ab7
-set $overlay1  #8087a2
 set $overlay0  #6e738d
-set $surface2  #5b6078
-set $surface1  #494d64
-set $surface0  #363a4f
 set $base      #24273a
 set $mantle    #1e2030
-set $crust     #181926
 
-# target		             border    backgr.	text	indicator 	child_border
+# target		         border    backgr.	text	indicator 	child_border
 client.focused           $green    $base 	$text  	$rosewater 	$green
 client.focused_inactive  $blue     $base 	$text  	$rosewater 	$mauve
 client.unfocused         $blue     $base 	$text  	$rosewater 	$blue
@@ -286,14 +270,13 @@ bar {
 	# status_command i3status --config $I3_CONFIG/i3status.conf
     # Disable all tray icons
     separator_symbol " | "
-	# font Fira 12
+	#font Nerd 12
     colors {
         #background black
-        statusline #00C20A
-        # separator $black2
-		separator #27D2FA
+        statusline $blue
+		separator $blue
 
-        #                  border background text
+        #          	         border background text
         # focused_workspace  $background $background $red1
         # active_workspace   $black1 $black1 $black2
         # inactive_workspace $background $black1 $foreground
