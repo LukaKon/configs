@@ -1,6 +1,6 @@
 local wezterm = require 'wezterm'
 local act = wezterm.action
--- local mux = wezterm.mux
+local mux = wezterm.mux
 
 local config = {}
 
@@ -19,6 +19,19 @@ if wezterm.config_builder then config = wezterm.config_builder() end
 --
 -- Settings
 --
+config.check_for_updates = false
+config.show_update_window = false
+config.default_domain = "local"
+config.default_prog = { '/usr/local/bin/fish', '-l' }
+config.default_cwd = "/home/lk"
+-- config.launch_menu = {
+--   { args = { 'btop' } },
+--   {
+--     label = 'rust jail',
+--     args = { 'ssh lk@10.2.0.1' }
+--   },
+-- }
+config.hide_mouse_cursor_when_typing = true
 
 config.color_scheme = 'Gruvbox dark, medium (base16)'
 
@@ -43,7 +56,7 @@ config.default_workspace = "home"
 -- Tab bar
 config.tab_max_width = 16
 config.tab_bar_at_bottom = true
-config.hide_tab_bar_if_only_one_tab = true
+config.hide_tab_bar_if_only_one_tab = false
 config.use_fancy_tab_bar = false
 config.status_update_interval = 1000
 
@@ -95,7 +108,7 @@ wezterm.on("update-status", function(window, pane)
     { Text = wezterm.nerdfonts.cod_code .. "  " .. cmd },
     "ResetAttributes",
     { Text = " | " },
-    { Text =  " " .. time },
+    { Text = " " .. time },
     { Text = "  " },
   }))
 end)
