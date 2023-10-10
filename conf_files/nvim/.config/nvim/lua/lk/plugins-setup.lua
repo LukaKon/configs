@@ -86,7 +86,8 @@ return packer.startup(function(use)
 	use('nvim-lua/plenary.nvim')
 
 	-- colorscheme
- 	use('EdenEast/nightfox.nvim')
+ 	-- use('EdenEast/nightfox.nvim')
+  use('ellisonleao/gruvbox.nvim')
 
 	-- tmux & split window navigation
 	use('christoomey/vim-tmux-navigator')
