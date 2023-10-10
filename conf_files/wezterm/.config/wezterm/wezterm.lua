@@ -11,10 +11,10 @@ if wezterm.config_builder then config = wezterm.config_builder() end
 --   window:set_right_status(window:active_workspace())
 -- end)
 
--- wezterm.on('mux-startup', function()
---   local tab, pane, window = mux.spawn_window {}
---   pane:split { direction = 'Top' }
--- end)
+wezterm.on('mux-startup', function()
+  local tab, pane, window = mux.spawn_window {}
+  pane:split { direction = 'Top' }
+end)
 
 --
 -- Settings
@@ -23,7 +23,7 @@ config.check_for_updates = false
 config.show_update_window = false
 config.default_domain = "local"
 config.default_prog = { '/usr/local/bin/fish', '-l' }
-config.default_cwd = "/home/lk"
+config.default_cwd = "$HOME"
 -- config.launch_menu = {
 --   { args = { 'btop' } },
 --   {
@@ -85,7 +85,7 @@ wezterm.on("update-status", function(window, pane)
   cwd = cwd and basename(cwd) or ""
   -- Current command
   local cmd = pane:get_foreground_process_name()
-  cmd = cmd and basename(cmd) or ""
+  cmd = cmd and basename(cmd) or "no cmd"
 
   -- Time
   local time = wezterm.strftime("%H:%M")
