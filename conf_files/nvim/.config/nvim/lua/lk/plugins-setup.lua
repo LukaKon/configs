@@ -64,10 +64,10 @@ return packer.startup(function(use)
   use('jayp0521/mason-null-ls.nvim')
 
   -- prettier
-  use('MunifTanjim/prettier.nvim')
+  -- use('MunifTanjim/prettier.nvim')
 
   -- eslint
-  use('MunifTanjim/eslint.nvim')
+  -- use('MunifTanjim/eslint.nvim')
 
   -- treesitter
   use({ -- Highlight, edit, and navigate code
@@ -124,7 +124,8 @@ return packer.startup(function(use)
   -- use {
   --   'nvim-telescope/telescope-fzf-native.nvim',
   --   run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
-  use({'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+  -- use({'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
   use({
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
@@ -207,7 +208,6 @@ return packer.startup(function(use)
     "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim",
   })
-
 
 	if packer_bootstrap then
 		require("packer").sync()

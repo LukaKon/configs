@@ -178,13 +178,13 @@ lspconfig.rnix.setup({
 })
 
 -- configure rust server
--- lspconfig.rust_analyzer.setup({
--- 	capabilities = capabilities,
--- 	on_attach = on_attach,
--- 	settings = {
--- 		["rust-analyzer"] = {},
--- 	},
--- })
+lspconfig.rust_analyzer.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		["rust-analyzer"] = {},
+	},
+})
 
 -- configure lua server (with special settings)
 lspconfig.lua_ls.setup({

@@ -28,7 +28,7 @@ local sources = {
 	diagnostics.hadolint,
 	diagnostics.yamllint,
 	diagnostics.gitlint,
-	-- formatting.rustfmt,
+	formatting.rustfmt,
 	formatting.astyle,
 	diagnostics.luacheck,
 

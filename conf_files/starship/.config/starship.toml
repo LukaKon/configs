@@ -94,3 +94,6 @@ format = '[$symbol($version )]($style)'
 
 [c]
 format = '[$symbol($version(-$name) )]($style)'
+
+[lua]
+format = '[$symbol($version )]($style)'
