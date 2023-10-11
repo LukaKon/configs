@@ -68,7 +68,7 @@ center = [
   "spacer",
   "separator",
   "file-base-name",
-  "file-modification-indicator"
+  # "file-modification-indicator"
 ]
 right = [
   "diagnostics",

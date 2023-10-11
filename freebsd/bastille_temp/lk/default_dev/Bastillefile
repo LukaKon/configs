@@ -43,10 +43,6 @@ CMD chown -R ${user}:wheel /home/${user}/.ssh
 
 # copy config files
 CMD git clone https://github.com/LukaKon/configs.git /home/${user}/
-# CMD stow config files...
-
-# neovim configuration
-CMD git clone https://github.com/NvChad/NvChad /home/${user}/.config/nvim --depth 1
 
 # create working directory
 CMD mkdir /home/${user}/dev
