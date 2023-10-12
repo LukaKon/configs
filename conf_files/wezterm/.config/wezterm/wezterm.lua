@@ -147,7 +147,14 @@ config.keys = {
   { key = "o", mods = "LEADER", action = act.RotatePanes "Clockwise" },
 
   -- custom "mode" in the name of "KeyTable"
-  { key = "r", mods = "LEADER", action = act.ActivateKeyTable { name = "resize_pane", one_shot = false } },
+  {
+    key = "r",
+    mods = "LEADER",
+    action = act.ActivateKeyTable {
+      name = "resize_pane",
+      one_shot = false
+    }
+  },
 
   -- Tab keybindings
   { key = "t", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
@@ -171,13 +178,25 @@ config.keys = {
     }
   },
   -- Key table for moving tabs around
-  { key = "m", mods = "LEADER", action = act.ActivateKeyTable { name = "move_tab", one_shot = false } },
+  {
+     key = "m",
+     mods = "LEADER",
+     action = act.ActivateKeyTable {
+       name = "move_tab",
+       one_shot = false 
+    }
+     },
   -- Or shortcuts to move tab w/o move_tab table. SHIFT is for when caps lock is on
   { key = "{", mods = "LEADER|SHIFT", action = act.MoveTabRelative(-1) },
   { key = "}", mods = "LEADER|SHIFT", action = act.MoveTabRelative(1) },
 
   -- Workspaces
-  { key = "w", mods = "LEADER", action = act.ShowLauncherArgs { flags = "FUZZY|WORKSPACES" } },
+  { 
+    key = "w", 
+    mods = "LEADER",
+     action = act.ShowLauncherArgs {
+       flags = "FUZZY|WORKSPACES" } 
+  },
 }
 
 -- Tab navigator (LDR t), but I also want to quickly navigate tabs with index
