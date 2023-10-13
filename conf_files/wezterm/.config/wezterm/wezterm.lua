@@ -84,9 +84,10 @@ wezterm.on("update-status", function(window, pane)
   local cwd = pane:get_current_working_dir()
   cwd = cwd and basename(cwd) or ""
   -- Current command
-  local cmd = pane:get_foreground_process_name()
-  cmd = cmd and basename(cmd) or "no cmd"
-
+  -- local cmd = pane:get_foreground_process_name()
+  -- cmd = cmd and basename(cmd) or "no cmd"
+  -- Domain name
+  local domain=pane:get_domain_name()
   -- Time
   local time = wezterm.strftime("%H:%M")
 
@@ -105,8 +106,9 @@ wezterm.on("update-status", function(window, pane)
     { Text = wezterm.nerdfonts.cod_folder .. "  " .. cwd },
     { Text = " | " },
     { Foreground = { Color = "#e0af68" } },
-    { Text = wezterm.nerdfonts.cod_code .. "  " .. cmd },
-    "ResetAttributes",
+    { Text = wezterm.nerdfonts.cod_code .. "  " .. domain},
+    -- { Text = wezterm.nerdfonts.cod_code .. "  " .. cmd },
+    -- "ResetAttributes",
     { Text = " | " },
     { Text = " " .. time },
     { Text = "  " },
@@ -179,23 +181,24 @@ config.keys = {
   },
   -- Key table for moving tabs around
   {
-     key = "m",
-     mods = "LEADER",
-     action = act.ActivateKeyTable {
-       name = "move_tab",
-       one_shot = false 
+    key = "m",
+    mods = "LEADER",
+    action = act.ActivateKeyTable {
+      name = "move_tab",
+      one_shot = false
     }
-     },
+  },
   -- Or shortcuts to move tab w/o move_tab table. SHIFT is for when caps lock is on
   { key = "{", mods = "LEADER|SHIFT", action = act.MoveTabRelative(-1) },
   { key = "}", mods = "LEADER|SHIFT", action = act.MoveTabRelative(1) },
 
   -- Workspaces
-  { 
-    key = "w", 
+  {
+    key = "w",
     mods = "LEADER",
-     action = act.ShowLauncherArgs {
-       flags = "FUZZY|WORKSPACES" } 
+    action = act.ShowLauncherArgs {
+      flags = "FUZZY|WORKSPACES"
+    }
   },
 }
 
