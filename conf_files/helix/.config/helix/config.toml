@@ -112,5 +112,3 @@ esc = ["collapse_selection", "keep_primary_selection"]
 c = ":run-shell-command cargo check"
 b = ":run-shell-command cargo build"
 r = ":run-shell-command cargo run"
-f = ":run-shell-command cargo fmt"
-p = ":run-shell-command cargo clippy"
