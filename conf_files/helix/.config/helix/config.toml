@@ -1,5 +1,6 @@
 # theme = "gruvbox"
-theme = "everforest_dark"
+# theme = "everforest_dark"
+theme = "lk_theme"
 
 [editor]
 auto-format = false

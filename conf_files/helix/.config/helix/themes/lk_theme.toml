@@ -1,0 +1,4 @@
+inherits = "gruvbox"
+
+"ui.cursor" = { bg = "light-red" }
+"ui.cursorline.secondary" = "blue"
