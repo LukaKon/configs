@@ -42,8 +42,8 @@ CP /usr/home/lk/.ssh/id_ed25519.pub /home/${user}/.ssh/
 CMD chown -R ${user}:wheel /home/${user}/.ssh
 
 # copy config files
-CMD git clone https://github.com/LukaKon/configs.git /home/${user}/
+CMD git clone https://github.com/LukaKon/configs.git /usr/home/${user}/
 
 # create working directory
-CMD mkdir /home/${user}/dev
-CMD chown -R ${user}:wheel /home/${user}/dev
+CMD mkdir /usr/home/${user}/dev
+CMD chown -R ${user}:wheel /usr/home/${user}/dev
