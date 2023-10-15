@@ -227,9 +227,9 @@ focus_follows_mouse yes
 ##########
 set $bg_color #181818
 set $fg_color #D8D8D8
-set $blue #6ABFE6
-set $green #70ffb8
-set $cyan #Cf77E6
+set $blue	  #6ABFE6
+set $green 	  #c1ed12
+set $cyan	  #Cf77E6
 set $rosewater #f4dbd6
 set $mauve     #c6a0f6
 set $red       #ed8796
@@ -267,6 +267,7 @@ mode "$mode_i3_exit" {
 # finds out, if available)
 bar {
 	position top
+	i3bar_command i3bar --transparency
 	status_command i3status
 	# status_command i3status --config $I3_CONFIG/i3status.conf
     # Disable all tray icons
