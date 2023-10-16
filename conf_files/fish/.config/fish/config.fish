@@ -43,6 +43,10 @@ alias fcd="cd (fd . --type directory --hidden --exclude .cache --exclude .git --
 # X11
 alias xx='xinit'
 
+# internal screen on/off
+alias soff="xrandr --output eDP-1 --off"
+alias son="xrandr --output eDP-1 --auto"
+
 # git
 alias gs="git status -s"
 alias ga="git add"

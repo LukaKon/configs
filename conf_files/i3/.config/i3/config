@@ -63,6 +63,9 @@ assign [class="darktable"] $ws6
 assign [class="thunderbird"] $ws7
 assign [class="QOwnNotes"] $ws8
 
+# screen
+bindsym $mod+Ctrl+s exec --no-startup-id xrandr --output eDP-1 --off
+
 # start terminal
 bindsym $mod+Return exec $terminal
 
@@ -70,7 +73,7 @@ bindsym $mod+Return exec $terminal
 bindsym $mod+z kill
 
 # start dmenu
-bindsym $mod+d exec --no-startup-id dmenu_run -i -fn 'fira:pixelsize=12'
+bindsym $mod+d exec --no-startup-id dmenu_run -i -fn 'fira:pixelsize=14'
 
 # change focus
 bindsym $mod+h focus left
