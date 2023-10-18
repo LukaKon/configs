@@ -32,7 +32,6 @@ exec --no-startup-id feh --bg-scale ~/.config/i3/image.jpg
 
 # start applications
 exec --no-startup-id nextcloud &
-exec --no-startup-id QOwnNotes &
 exec --no-startup-id thunderbird &
 exec --no-startup-id firefox &
 exec --no-startup-id remmina &
