@@ -24,13 +24,6 @@ config.show_update_window = false
 config.default_domain = "local"
 config.default_prog = { '/usr/local/bin/fish', '-l' }
 config.default_cwd = "$HOME"
--- config.launch_menu = {
---   { args = { 'btop' } },
---   {
---     label = 'rust jail',
---     args = { 'ssh lk@10.2.0.1' }
---   },
--- }
 config.hide_mouse_cursor_when_typing = true
 
 config.color_scheme = 'Gruvbox dark, medium (base16)'
@@ -229,80 +222,5 @@ config.key_tables = {
     { key = "Enter", action = "PopKeyTable" },
   }
 }
-
--- -- Switch to default workspace
--- {
---   key = 'y',
---   mods = 'CTRL|SHIFT',
---   action = act.SwitchToWorkspace {
---     name = 'default',
---   },
--- },
--- -- Switch to a monitoring workspace
--- {
---   key = 'u',
---   mods = 'CTRL|SHIFT',
---   action = act.SwitchToWorkspace {
---     name = 'monitoring',
---     spawn = {
---       args = { 'btop' },
---     },
---   },
--- },
--- -- Create a new workspace with a random name and switch to it
--- { key = 'i', mods = 'CTRL|SHIFT', action = act.SwitchToWorkspace },
--- -- Show the launcher in fuzzy selection mode and have it list all workspaces
--- -- and allow activating one.
--- {
---   key = '9',
---   mods = 'ALT',
---   action = act.ShowLauncherArgs {
---     flags = 'FUZZY|WORKSPACES',
---   },
--- },
--- -- Prompt for a name to use for a new workspace and switch to it.
--- {
---   key = 'W',
---   mods = 'CTRL|SHIFT',
---   action = act.PromptInputLine {
---     description = wezterm.format {
---       { Attribute = { Intensity = 'Bold' } },
---       { Foreground = { AnsiColor = 'Fuchsia' } },
---       { Text = 'Enter name for new workspace' },
---     },
---     action = wezterm.action_callback(function(window, pane, line)
---       -- line will be `nil` if they hit escape without entering anything
---       -- An empty string if they just hit enter
---       -- Or the actual line of text they wrote
---       if line then
---         window:perform_action(
---           act.SwitchToWorkspace {
---             name = line,
---           },
---           pane
---         )
---       end
---     end),
---   },
--- },
--- {
---   key = '9',
---   mods = 'ALT',
---   action = act.ShowLauncherArgs { flags = 'FUZZY|WORKSPACES' },
--- },
---   { key = 'n', mods = 'CTRL', action = act.SwitchWorkspaceRelative(1) },
---   { key = 'p', mods = 'CTRL', action = act.SwitchWorkspaceRelative(-1) },
---   {
---     key = 'n',
---     mods = 'SHIFT|CTRL',
---     action = wezterm.action.ToggleFullScreen,
---   },
---   {
---     key = 'Z',
---     mods = 'CTRL',
---     action = wezterm.action.TogglePaneZoomState,
---   },
--- }
-
 
 return config
