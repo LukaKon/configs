@@ -25,6 +25,7 @@ set -g theme_hostname always
 set -gx EDITOR hx
 set -gx BROWSER firefox
 set -gx DISPLAY :0
+set -gx QT_QPA_PLATFORMTHEME qt5ct
 
 # fzf
 set -gx FZF_DEFAULT_OPTS "--layout reverse --height=50% --extended --multi --cycle --border rounded --prompt='▶' --pointer='' --marker='' --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54"
