@@ -23,7 +23,8 @@ config.check_for_updates = false
 config.show_update_window = false
 config.default_domain = "local"
 config.default_prog = { '/usr/local/bin/fish', '-l' }
-config.default_cwd = "$HOME"
+-- config.default_cwd = "$HOME"
+config.default_cwd = "/usr/home/lk"
 config.hide_mouse_cursor_when_typing = true
 
 config.color_scheme = 'Gruvbox dark, medium (base16)'
@@ -47,7 +48,7 @@ config.scrollback_lines = 9000
 config.default_workspace = "home"
 
 -- Tab bar
-config.tab_max_width = 16
+config.tab_max_width = 20
 config.tab_bar_at_bottom = true
 config.hide_tab_bar_if_only_one_tab = false
 config.use_fancy_tab_bar = false
