@@ -26,7 +26,7 @@ set -gx EDITOR hx
 set -gx BROWSER firefox
 set -gx DISPLAY :0
 # set -gx QT_QPA_PLATFORMTHEME qt5ct
-set SSH_AUTH_SOCK /tmp/ssh-Zek7BjyxuEDg/agent.79284
+# set SSH_AUTH_SOCK /tmp/ssh-Zek7BjyxuEDg/agent.79284
 
 # fzf
 set -gx FZF_DEFAULT_OPTS "--layout reverse --height=50% --extended --multi --cycle --border rounded --prompt='▶' --pointer='' --marker='' --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54"
@@ -37,7 +37,7 @@ alias ff="fzf --multi --layout reverse --border rounded --border-label '| Find a
 
 alias fcd="cd (fd . --type directory --hidden --exclude .cache --exclude .git --exclude node_modules | fzf --height=70% --border-label '| Find Directory |' --preview='exa --tree --level=1 -a --color auto --icons {}')"
 
-alias h="history | fzf --bind 'enter:become{}'"
+alias h="history | fzf --no-multi --bind 'enter:become($SHELL -c {})'"
 
 ### ALIASES
 
@@ -106,8 +106,10 @@ alias dsh="ssh -i ~/.ssh/lap"
 alias fu="SSH_AUTH_SOCK=$(echo $SSH_AUTH_SOCK) mosh lk@192.168.1.103"
 
 # NFS
-alias dam="doas mount -t nfs 192.168.1.103:data/data /mnt/data"
-alias dem="doas mount -t nfs 192.168.1.103:data/dev /mnt/dev"
+alias dam="doas mount -t nfs 192.168.1.103:/data/data /mnt/data"
+alias dem="doas mount -t nfs 192.168.1.103:/data/dev /mnt/dev"
+alias nas="doas mount -t nfs 192.168.1.112:/volume2/export /mnt/nas"
+alias um="doas umount /mnt/data; doas umount /mnt/dev; doas umount /mnt/nas"
 
 ### SET MANPAGER
 ### Uncomment only one of these!

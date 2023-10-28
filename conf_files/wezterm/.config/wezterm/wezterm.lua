@@ -22,9 +22,8 @@ end)
 config.check_for_updates = false
 config.show_update_window = false
 config.default_domain = "local"
-config.default_prog = { '/usr/local/bin/fish', '-l' }
--- config.default_cwd = "$HOME"
-config.default_cwd = "/usr/home/lk"
+config.default_prog = { '/usr/local/bin/fish', '-l', '-C cd' }
+config.default_cwd = "$HOME"
 config.hide_mouse_cursor_when_typing = true
 
 config.color_scheme = 'Gruvbox dark, medium (base16)'
