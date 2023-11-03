@@ -1,0 +1,6 @@
+env
+venv
+target
+.vscode
+__pycache__/
+build/
