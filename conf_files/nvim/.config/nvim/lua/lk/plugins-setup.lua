@@ -1,13 +1,13 @@
 -- auto install packer if not installed
 local ensure_packer = function()
-	local fn = vim.fn
-	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-	if fn.empty(fn.glob(install_path)) > 0 then
-		fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
-		vim.cmd([[packadd packer.nvim]])
-		return true
-	end
-	return false
+  local fn = vim.fn
+  local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
+    vim.cmd([[packadd packer.nvim]])
+    return true
+  end
+  return false
 end
 local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
@@ -23,14 +23,14 @@ vim.cmd([[
 -- import packer safely
 local status, packer = pcall(require, "packer")
 if not status then
-	return
+  return
 end
 
 
 -- add list of plugins to install
 return packer.startup(function(use)
-	-- packer can manage itself
-	use("wbthomason/packer.nvim")
+  -- packer can manage itself
+  use("wbthomason/packer.nvim")
 
   -- configuring lsp servers
   use({
@@ -46,10 +46,18 @@ return packer.startup(function(use)
       -- Additional lua configuration, makes nvim stuff amazing
       'folke/neodev.nvim',
     },
-  }
-  ) -- easily configure language servers
+  }) -- easily configure language servers
+
+  use({
+    'nvimdev/lspsaga.nvim',
+    after = 'nvim-lspconfig',
+    config = function()
+      require('lspsaga').setup({})
+    end,
+  })
+
   use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
-  use({'glepnir/lspsaga.nvim', branch = 'main'})
+  -- use({ 'glepnir/lspsaga.nvim', branch = 'main' })
   use('jose-elias-alvarez/typescript.nvim')
   use('onsails/lspkind.nvim')
 
@@ -59,7 +67,7 @@ return packer.startup(function(use)
     -- config = function()
     --   require('null-ls').setup()
     -- end,
-    require = {'nvim-lua/plenary.nvim'},
+    require = { 'nvim-lua/plenary.nvim' },
   })
   use('jayp0521/mason-null-ls.nvim')
 
@@ -73,7 +81,7 @@ return packer.startup(function(use)
   use({ -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     run = function()
-      require('nvim-treesitter.install').update({with_sync = true})
+      require('nvim-treesitter.install').update({ with_sync = true })
     end,
   })
 
@@ -82,28 +90,28 @@ return packer.startup(function(use)
     after = 'nvim-treesitter',
   }
 
-	-- lua functions that many plugins use
-	use('nvim-lua/plenary.nvim')
+  -- lua functions that many plugins use
+  use('nvim-lua/plenary.nvim')
 
-	-- colorscheme
- 	-- use('EdenEast/nightfox.nvim')
+  -- colorscheme
+  -- use('EdenEast/nightfox.nvim')
   use('ellisonleao/gruvbox.nvim')
 
-	-- tmux & split window navigation
-	use('christoomey/vim-tmux-navigator')
+  -- tmux & split window navigation
+  use('christoomey/vim-tmux-navigator')
 
-	-- maximize and restores current window
-	use('szw/vim-maximizer')
+  -- maximize and restores current window
+  use('szw/vim-maximizer')
 
-	-- esential plugins
-	use('tpope/vim-surround')
-	use('vim-scripts/ReplaceWithRegister')
+  -- esential plugins
+  use('tpope/vim-surround')
+  use('vim-scripts/ReplaceWithRegister')
 
-	-- commenting with gc
-	use('numToStr/Comment.nvim')
+  -- commenting with gc
+  use('numToStr/Comment.nvim')
 
- 	-- colorizer
- 	use('NvChad/nvim-colorizer.lua')
+  -- colorizer
+  use('NvChad/nvim-colorizer.lua')
 
   -- file explorer with icons
   -- use({
@@ -125,12 +133,13 @@ return packer.startup(function(use)
   -- use {
   --   'nvim-telescope/telescope-fzf-native.nvim',
   --   run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
-  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+  use { 'nvim-telescope/telescope-fzf-native.nvim',
+    run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
   -- use({'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
   use({
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   })
 
   -- autocompletion
@@ -153,12 +162,12 @@ return packer.startup(function(use)
   use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
 
   -- auto closing
-  use({'windwp/nvim-autopairs',
+  use({ 'windwp/nvim-autopairs',
     config = function() require('nvim-autopairs').setup {} end })
   use('windwp/nvim-ts-autotag')
 
   -- git - for git blame and browser
-  use ({ 'dinhhuy258/git.nvim' })
+  use({ 'dinhhuy258/git.nvim' })
   -- git signs plugin
   use('lewis6991/gitsigns.nvim')
 
@@ -166,10 +175,10 @@ return packer.startup(function(use)
   use('lukas-reineke/indent-blankline.nvim')
 
   -- terminal
-  use({"akinsho/toggleterm.nvim",
-        tag = 'v2.*', config = function()
-        require('toggleterm').setup()
-      end
+  use({ "akinsho/toggleterm.nvim",
+    tag = 'v2.*', config = function()
+      require('toggleterm').setup()
+    end
   })
 
   -- folding
@@ -177,10 +186,10 @@ return packer.startup(function(use)
 
   -- undotree
   use({
-      "jiaoshijie/undotree",
-      requires = {
-        "nvim-lua/plenary.nvim",
-      },
+    "jiaoshijie/undotree",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
   })
 
   -- bufferline
@@ -191,26 +200,26 @@ return packer.startup(function(use)
   }
 
   -- neoclip - clipboard history - yank history
-  use ({
-      "AckslD/nvim-neoclip.lua",
-      requires = {
-        -- {'kkharji/sqlite.lua', module = 'sqlite'},
-        -- you'll need at least one of these
-        -- {'nvim-telescope/telescope.nvim'},
-        -- {'ibhagwan/fzf-lua'},
-      },
-      config = function()
-        require('neoclip').setup()
-      end,
+  use({
+    "AckslD/nvim-neoclip.lua",
+    requires = {
+      -- {'kkharji/sqlite.lua', module = 'sqlite'},
+      -- you'll need at least one of these
+      -- {'nvim-telescope/telescope.nvim'},
+      -- {'ibhagwan/fzf-lua'},
+    },
+    config = function()
+      require('neoclip').setup()
+    end,
   })
 
   -- Todo comments
-  use ({
+  use({
     "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim",
   })
 
-	if packer_bootstrap then
-		require("packer").sync()
-	end
+  if packer_bootstrap then
+    require("packer").sync()
+  end
 end)
