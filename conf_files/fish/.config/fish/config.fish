@@ -101,9 +101,8 @@ alias nvc="NVIM_APPNAME=nvchad nvim"
 # ssh
 alias lsh="ssh -i ~/.ssh/local"
 alias dsh="ssh -i ~/.ssh/lap"
-# alias fu="dsh lk@192.168.1.103"
-# alias fu="mosh -i ~/.ssh/lap lk@192.168.1.103"
-alias fu="SSH_AUTH_SOCK=$(echo $SSH_AUTH_SOCK) mosh lk@192.168.1.103"
+alias fu="dsh lk@192.168.1.103"
+alias fum="SSH_AUTH_SOCK=$(echo $SSH_AUTH_SOCK) mosh lk@192.168.1.103"
 
 # NFS
 alias dam="doas mount -t nfs 192.168.1.103:/data/data /mnt/data"

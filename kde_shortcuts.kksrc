@@ -14,7 +14,7 @@ ExposeClassCurrentDesktop=
 Increase Opacity=
 Kill Window=Meta+Ctrl+Esc
 Krohnkite: Cycle Layout=
-Krohnkite: Decrease=
+Krohnkite: Decrease=Meta+O
 Krohnkite: Down/Next=Meta+J
 Krohnkite: Float=
 Krohnkite: Float All=Meta+Shift+F
@@ -189,17 +189,17 @@ view_zoom_in=Meta+=; Meta++
 view_zoom_out=Meta+-
 
 [org.flameshot.Flameshot.desktop][Global Shortcuts]
-Capture=
+Capture=Meta+P
 Configure=
 Launcher=
-_launch=Meta+P
+_launch=
 
 [org.kde.dolphin.desktop][Global Shortcuts]
 _launch=Meta+E
 
 [org.kde.krunner.desktop][Global Shortcuts]
 RunClipboard=Alt+Shift+F2
-_launch=Alt+F2; Search; Alt+Space; Meta+D
+_launch=Meta+D
 
 [org.kde.spectacle.desktop][Global Shortcuts]
 ActiveWindowScreenShot=Meta+Print

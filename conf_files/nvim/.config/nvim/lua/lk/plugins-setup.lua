@@ -51,9 +51,6 @@ return packer.startup(function(use)
   use({
     'nvimdev/lspsaga.nvim',
     after = 'nvim-lspconfig',
-    config = function()
-      require('lspsaga').setup({})
-    end,
   })
 
   use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
