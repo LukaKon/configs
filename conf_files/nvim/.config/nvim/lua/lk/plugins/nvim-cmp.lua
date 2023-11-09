@@ -1,132 +1,56 @@
--- import nvim-cmp plugin safely
-local cmp_status, cmp = pcall(require, "cmp")
-if(not cmp_status)
-then
-  print('cmp not found')
-  return
-end
-
--- import luasnip plugin safely
--- local luasnip_status, luasnip = pcall(require, "luasnip")
--- if(not luasnip_status)
--- then
---   print('luasnip not found')
---   return
--- end
-
--- import lspkind plugin safely
-local lspkind_status, lspkind = pcall(require, "lspkind")
-if(not lspkind_status)
-then
-  print('lspkind not found')
-  return
-end
-
-
--- load vs-code like snippets from plugins (e.g. friendly-snippets)
--- require("luasnip/loaders/from_vscode").lazy_load()
-
-vim.opt.completeopt = "menu,menuone,noselect"
-
-cmp.setup({
-  -- snippet = {
-  --   expand = function(args)
-  --     luasnip.lsp_expand(args.body)
-  --   end,
-  -- },
-  mapping = cmp.mapping.preset.insert({
-    -- previous suggestion
-    ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-    -- next suggestion
-    ["<Tab>"] = cmp.mapping.select_next_item(),
-    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    -- show completion suggestions
-    ["<C-Space>"] = cmp.mapping.complete(),
-    -- close completion window
-    ["<C-e>"] = cmp.mapping.abort(),
-    ["<CR>"] = cmp.mapping.confirm({ select = false }),
-  }),
-  window = {
-    -- completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
+return {
+  "hrsh7th/nvim-cmp",
+  event = "InsertEnter",
+  dependencies = {
+    "hrsh7th/cmp-buffer", -- source for text in buffer
+    "hrsh7th/cmp-path", -- source for file system paths
+    "L3MON4D3/LuaSnip", -- snippet engine
+    "saadparwaiz1/cmp_luasnip", -- for autocompletion
+    "rafamadriz/friendly-snippets", -- useful snippets
+    "onsails/lspkind.nvim", -- vs-code like pictograms
   },
-  -- sources for autocompletion
-  sources = cmp.config.sources(
-    {
-      { name = 'nvim_lsp' }, -- lsp
-      { name = 'buffer' }, -- text within current buffer
-      { name = 'path' }, -- file system paths
-      -- { name = 'luasnip' }, -- stippets
-      -- { name = 'cmdline' },
-      -- {
-      --   name = 'spell',
-      --     option = {
-      --       keep_all_entries = true,
-      --       enable_in_context = function()
-      --         return true
-      --       end,
-      --   },
-      --   { name = 'nerdfont' },
-      --   { name = 'fish' },
-      -- },
-    },
-    {
-        { name = 'buffer' },
-    }
-  ),
-  -- configure lspkind for vs-code like icons
-  formatting = {
-    format = lspkind.cmp_format({
-      -- defines how annotations are shown
-      -- default: symbol
-      -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
-      mode = 'symbol_text',
+  config = function()
+    local cmp = require("cmp")
 
-      maxwidth = 50,
-      ellipsis_char = "...",
+    local luasnip = require("luasnip")
 
-      -- default symbol map
-      -- can be either 'default' (requires nerd-fonts font) or
-      -- 'codicons' for codicon preset (requires vscode-codicons font)
-      --
-      -- default: 'default'
-      preset = 'default',
+    local lspkind = require("lspkind")
 
-      -- override preset symbols
-      --
-      -- default: {}
-      symbol_map = {
-        Text = "",
-        -- Text = "",
-        Method = "",
-        Function = "",
-        Constructor = "",
-        Field = "ﰠ",
-        Variable = "",
-        Class = "ﴯ",
-        Interface = "",
-        Module = "",
-        Property = "ﰠ",
-        Unit = "塞",
-        Value = "",
-        Enum = "",
-        Keyword = "",
-        Snippet = "",
-        Color = "",
-        File = "",
-        Reference = "",
-        Folder = "",
-        EnumMember = "",
-        Constant = "",
-        Struct = "פּ",
-        Event = "",
-        Operator = "",
-        TypeParameter = ""
+    -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
+    require("luasnip.loaders.from_vscode").lazy_load()
+
+    cmp.setup({
+      completion = {
+        completeopt = "menu,menuone,preview,noselect",
       },
-    }),
-  },
-})
-
-vim.opt.spell = true
-vim.opt.spelllang = { 'en_us',}
+      snippet = { -- configure how nvim-cmp interacts with snippet engine
+        expand = function(args)
+          luasnip.lsp_expand(args.body)
+        end,
+      },
+      mapping = cmp.mapping.preset.insert({
+        ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
+        ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
+        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(4),
+        ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
+        ["<C-e>"] = cmp.mapping.abort(), -- close completion window
+        ["<CR>"] = cmp.mapping.confirm({ select = false }),
+      }),
+      -- sources for autocompletion
+      sources = cmp.config.sources({
+        { name = "nvim_lsp" },
+        { name = "luasnip" }, -- snippets
+        { name = "buffer" }, -- text within current buffer
+        { name = "path" }, -- file system paths
+      }),
+      -- configure lspkind for vs-code like pictograms in completion menu
+      formatting = {
+        format = lspkind.cmp_format({
+          maxwidth = 50,
+          ellipsis_char = "...",
+        }),
+      },
+    })
+  end,
+}
