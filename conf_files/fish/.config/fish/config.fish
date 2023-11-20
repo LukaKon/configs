@@ -64,7 +64,7 @@ alias glog="git log --graph --pretty=oneline --abbrev-commit"
 # alias reboot="doas reboot"
 alias reboot="doas init 6"
 alias poff="doas poweroff"
-alias t="btop"
+alias t="glances"
 alias ll="exa -l --icons --all"
 alias lt="exa --tree --level=2 -a --color auto --icons"
 

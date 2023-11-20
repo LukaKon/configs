@@ -37,7 +37,6 @@ return {
         "emmet_ls",
         "prismals",
         "pyright",
-        "rust-analyzer",
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true, -- not the same as ensure_installed
@@ -51,7 +50,6 @@ return {
         "black", -- python formatter
         "pylint", -- python linter
         "eslint_d", -- js linter
-        "rustfmt", -- rust formatter
       },
     })
   end,

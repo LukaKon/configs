@@ -15,7 +15,7 @@ PKG rsync
 PKG doas
 PKG helix
 PKG fzf fd-find
-PKG neovim
+# PKG neovim
 PKG fish
 PKG starship
 PKG exa
