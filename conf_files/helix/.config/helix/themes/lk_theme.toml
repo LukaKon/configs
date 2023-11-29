@@ -2,7 +2,7 @@ inherits = "gruvbox"
 
 "ui.cursor" = { fg = "white", bg = "light-red" }
 # "ui.cursor.primary" = { modifiers = ["slow_blink", "dim"]}
-"ui.cursor.match" = {bg = "white", modifiers = ["reversed"]}
-
+"ui.cursor.match" = { bg = "white", modifiers = ["reversed"] }
 "ui.cursorline.secondary" = "blue"
 
+"comment" = { fg = "white", modifiers = ["italic", "dim"]}
