@@ -1,5 +1,3 @@
-# theme = "gruvbox"
-# theme = "everforest_dark"
 theme = "lk_theme"
 
 [editor]
