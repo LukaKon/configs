@@ -35,7 +35,7 @@ set -gx FZF_DEFAULT_COMMAND 'fd . --exclude .git --exclude node_modules --exclud
 
 alias ff="fzf --multi --layout reverse --border rounded --border-label '| Find and edit file |' --border-label-pos 5 --preview-window right --preview 'bat -n --color=always {}' --bind 'enter:execute($EDITOR {})'"
 
-alias fcd="cd (fd . --type directory --hidden --exclude .cache --exclude .git --exclude node_modules | fzf --height=70% --border-label '| Find Directory |' --preview='exa --tree --level=1 -a --color auto --icons {}')"
+alias fcd="cd (fd . --type directory --hidden --exclude .cache --exclude .git --exclude node_modules | fzf --height=70% --border-label '| Find Directory |' --preview='eza --tree --level=1 -a --color auto --icons {}')"
 
 alias h="history | fzf --no-multi --bind 'enter:become($SHELL -c {})'"
 
@@ -65,8 +65,8 @@ alias glog="git log --graph --pretty=oneline --abbrev-commit"
 alias reboot="doas init 6"
 alias poff="doas poweroff"
 alias t="glances"
-alias ll="exa -l --icons --all"
-alias lt="exa --tree --level=2 -a --color auto --icons"
+alias ll="eza --long --header --changed --total-size --git --icons=auto --color=auto --all"
+alias lt="eza --tree --level=2 -a --color=auto --icons=auto"
 
 # python
 alias py3="python3.9"
