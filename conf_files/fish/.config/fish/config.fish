@@ -76,8 +76,8 @@ alias py="python"
 alias cong="py /home/lk/nix_conf/scripts/git_conf.py"
 
 # programs
-# linux
 alias lgi="lazygit"
+# linux
 alias ldo="lazydocker"
 alias dc="docker container"
 # freebsd
