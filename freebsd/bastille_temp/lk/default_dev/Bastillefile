@@ -18,7 +18,7 @@ PKG fzf fd-find
 # PKG neovim
 PKG fish
 PKG starship
-PKG exa
+PKG eza
 PKG bat
 PKG lazygit
 PKG stow
