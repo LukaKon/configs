@@ -1,5 +1,8 @@
 inherits = "gruvbox"
 
+# transparent background
+"ui.background" = {}
+
 "ui.cursor" = { fg = "white", bg = "light-red" }
 # "ui.cursor.primary" = { modifiers = ["slow_blink", "dim"]}
 "ui.cursor.match" = { bg = "white", modifiers = ["reversed"] }
