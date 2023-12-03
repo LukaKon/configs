@@ -83,6 +83,7 @@ alias dc="docker container"
 # freebsd
 alias ap="doas appjail"
 alias ba="doas bastille"
+alias pot="doas pot"
 alias vm="doas vm"
 
 # bat
