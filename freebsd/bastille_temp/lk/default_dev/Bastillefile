@@ -22,7 +22,7 @@ PKG starship
 PKG eza
 PKG bat
 PKG lazygit
-PKG xstow
+# PKG xstow
 
 # set hostname
 CMD hostname ${hostname}
@@ -38,16 +38,22 @@ CMD echo doas
 
 # copy config files
 MOUNT /home/lk/configs/conf_files /configs
-# TODO: fix stow path
-CMD xstow -t /home/${user}/ /config/conf_files/fish 
+CMD mkdir -p /home/${user}/.config
+CMD chown -R ${user}:${user} /home/${user}/.config
+CMD ln -sf /configs/fish/.config/fish /home/${user}/.config/
+CMD ln -s /configs/helix/.config/helix /home/${user}/.config/
+CMD ln -s /configs/starship/.config/starship.toml /home/${user}/.config/
+CMD ln -s /configs/git/.gitconfig /home/${user}/
 
 # copy ssh key for git
 CMD mkdir /home/${user}/.ssh
-CP /usr/home/lk/.ssh/id_ed25519 /home/${user}/.ssh/
-CP /usr/home/lk/.ssh/id_ed25519.pub /home/${user}/.ssh/
+CP /home/lk/.ssh/id_ed25519 /home/${user}/.ssh/
+CP /home/lk/.ssh/id_ed25519.pub /home/${user}/.ssh/
 
 # create working directory
 CMD mkdir /usr/home/${user}/dev
 
 # change owner root -> user
 CMD chown -R ${user}:wheel /home/${user}
+
+CMD pkg clean
