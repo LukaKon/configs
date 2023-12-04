@@ -25,7 +25,7 @@ disabled = false
 
 [localip]
 ssh_only = true
-style = '#6f9dab'
+style = 'bold #ffaa00'
 format = '@[$localipv4]($style)'
 disabled = false
 
@@ -39,7 +39,7 @@ format = '[$duration]($style) '
 
 [username]
 style_root = 'bold red'
-style_user = 'bold #2E93E0'
+style_user = 'bold #4adeff'
 format = '[$user]($style) '
 show_always = true
 
