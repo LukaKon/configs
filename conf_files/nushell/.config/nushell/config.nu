@@ -178,10 +178,47 @@ let light_theme = {
 # let carapace_completer = {|spans|
 #     carapace $spans.0 nushell $spans | from json
 # }
+
+# if the current command is an alias, get it's expansion
+# let expanded_alias = (scope aliases | where name == $spans.0 | get -i 0 | get -i expansion)
+
+# overwrite
+# let spans = (if $expanded_alias != null  {
+  # put the first word of the expanded alias first in the span
+  # $spans | skip 1 | prepend ($expanded_alias | split row " ")
+# } else { $spans })
+
 let fish_completer = {|spans|
     fish --command $'complete "--do-complete=($spans | str join " ")"'
     | $"value(char tab)description(char newline)" + $in
     | from tsv --flexible --no-infer
+}
+
+let carapace_completer = {|spans: list<string>|
+    carapace $spans.0 nushell $spans
+    | from json
+    | if ($in | default [] | where value =~ '^-.*ERR$' | is-empty) { $in } else { null }
+}
+
+let external_completer = {|spans|
+    # let expanded_alias = scope alias-completions
+    # | where name == $spans.0
+    # | get -i 0.expansion
+
+    # let spans = if $expanded_alias != null {
+    #     $spans
+    #     | skip 1
+    #     | prepend ($expanded_alias | split row ' ')
+    # } else {
+    #     $spans
+    # }
+
+    match $spans.0 {
+        nu => $fish_completer,
+        git => $fish_completer,
+        asdf => $fish_completer,
+        _ => $carapace_completer,
+    } | do $in $spans
 }
 
 
@@ -199,7 +236,7 @@ $env.config = {
     }
 
     cd: {
-        abbreviations: false # allows `cd s/o/f` to expand to `cd some/other/folder`
+        abbreviations: true # allows `cd s/o/f` to expand to `cd some/other/folder`
     }
 
     table: {
@@ -265,7 +302,8 @@ $env.config = {
         external: {
             enable: true # set to false to prevent nushell looking into $env.PATH to find more suggestions, `false` recommended for WSL users as this look up may be very slow
             max_results: 100 # setting it lower can improve completion performance at the cost of omitting some options
-            completer: null # check 'carapace_completer' above as an example
+            # completer: $external_completer # check 'carapace_completer' above as an example
+            completer: $external_completer
         }
     }
 
