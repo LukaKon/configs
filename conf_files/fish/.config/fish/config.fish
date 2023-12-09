@@ -102,7 +102,7 @@ alias nvc="NVIM_APPNAME=nvchad nvim"
 # ssh
 alias lsh="ssh -i ~/.ssh/local"
 alias dsh="ssh -i ~/.ssh/lap"
-alias ra="dsh lk@192.168.1.111"
+alias ra="dsh lk@192.168.1.102"
 alias fu="dsh lk@192.168.1.103"
 
 # NFS
