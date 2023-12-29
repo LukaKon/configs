@@ -7,7 +7,7 @@ SYSRC sendmail_enable=NONE
 # set repository to latest
 CMD mkdir -p /usr/local/etc/pkg/repos
 CMD echo 'FreeBSD: { url: 'pkg+http://pkg.FreeBSD.org/\$\{ABI\}/latest', enabled: yes }' > /usr/local/etc/pkg/repos/FreeBSD.conf
-CMD pkg upgrade
+CMD pkg upgrade -y
 
 SERVICE sshd start
 
