@@ -108,7 +108,7 @@ alias fu="dsh lk@192.168.1.103"
 # NFS
 # alias dam="doas mount -t nfs 192.168.1.103:/data/data /mnt/data"
 # alias dem="doas mount -t nfs 192.168.1.103:/data/dev /mnt/dev"
-# alias pho="doas mount -t nfs 192.168.1.103:/data/photo /mnt/photo"
+alias pho="doas mount -t nfs 192.168.1.103:/data/photo /mnt/photo"
 alias nas="doas mount -t nfs 192.168.1.112:/volume2/export /mnt/nas"
 alias um="doas umount /mnt/nas"
 
