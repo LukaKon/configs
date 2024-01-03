@@ -108,9 +108,11 @@ alias fu="dsh lk@192.168.1.103"
 # NFS
 # alias dam="doas mount -t nfs 192.168.1.103:/data/data /mnt/data"
 # alias dem="doas mount -t nfs 192.168.1.103:/data/dev /mnt/dev"
-alias pho="doas mount -t nfs 192.168.1.103:/data/photo /mnt/photo"
+alias media="doas mount -t nfs 192.168.1.103:/data/photo /mnt/photo ;
+doas mount -t nfs 192.168.1.103:/data/music /mnt/music ;
+doas mount -t nfs 192.168.1.103:/data/audiobook /mnt/audiobook"
 alias nas="doas mount -t nfs 192.168.1.112:/volume2/export /mnt/nas"
-alias um="doas umount /mnt/nas"
+alias um="doas umount /mnt/nas /mnt/photo /mnt/audiobook /mnt/music"
 
 ### SET MANPAGER
 ### Uncomment only one of these!
