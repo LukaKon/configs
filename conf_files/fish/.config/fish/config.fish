@@ -95,15 +95,16 @@ alias wt="curl wttr.in"
 alias cs="~/configs/scripts/cht.sh"
 
 # nvim
-alias vi="nvim"
-alias lazy="NVIM_APPNAME=lazyvim nvim"
-alias nvc="NVIM_APPNAME=nvchad nvim"
+# alias vi="nvim"
+# alias lazy="NVIM_APPNAME=lazyvim nvim"
+# alias nvc="NVIM_APPNAME=nvchad nvim"
 
 # ssh
 alias lsh="ssh -i ~/.ssh/local"
 alias dsh="ssh -i ~/.ssh/lap"
 alias ra="dsh lk@192.168.1.102"
 alias fu="dsh lk@192.168.1.103"
+alias na="dsh lk@192.168.1.112"
 
 # NFS
 # alias dam="doas mount -t nfs 192.168.1.103:/data/data /mnt/data"
@@ -128,7 +129,7 @@ alias um="sudo umount /mnt/nas /mnt/photo /mnt/audiobook /mnt/music"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 ### "nvim" as manpager
-# set -x MANPAGER "nvim -c 'set ft=man' -"
+# set -x MANPAGER "hx -c 'set ft=man' -"
 
 
 ### SET EITHER DEFAULT EMACS MODE OR VI MODE ###
