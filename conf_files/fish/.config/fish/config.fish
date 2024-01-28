@@ -85,6 +85,10 @@ alias ap="doas appjail"
 alias ba="doas bastille"
 alias pot="doas pot"
 alias vm="doas vm"
+# toolbox
+alias tb="toolbox"
+alias te="toolbox enter"
+alias tc="toolbox create"
 
 # bat
 alias bat="bat -p --color always --theme gruvbox-dark"
