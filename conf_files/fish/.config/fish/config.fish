@@ -66,7 +66,7 @@ alias reboot="doas init 6"
 alias poff="doas poweroff"
 alias t="glances"
 alias ll="eza --long --header --changed --total-size --git --icons=auto --color=auto --all"
-alias lt="eza --tree --level=2 -a --color=auto --icons=auto"
+alias lt="eza --tree --level=3 -a --color=auto --icons=auto"
 
 # python
 alias py3="python3.9"
@@ -111,20 +111,12 @@ alias fu="dsh lk@192.168.1.103"
 alias na="dsh lk@192.168.1.112"
 
 # NFS
-# alias dam="doas mount -t nfs 192.168.1.103:/data/data /mnt/data"
-# alias dem="doas mount -t nfs 192.168.1.103:/data/dev /mnt/dev"
-
 alias media="doas mount -t nfs 192.168.1.103:/data/photo /mnt/photo ;
 doas mount -t nfs 192.168.1.103:/data/music /mnt/music ;
-doas mount -t nfs 192.168.1.103:/data/audiobook /mnt/audiobook"
+doas mount -t nfs 192.168.1.103:/data/audiobook /mnt/audiobook ;
+doas mount -t nfs 192.168.1.103:/data/dev /mnt/dev"
 alias nas="doas mount -t nfs 192.168.1.112:/volume2/export /mnt/nas"
-alias um="doas umount /mnt/nas /mnt/photo /mnt/audiobook /mnt/music"
-
-# alias media="sudo mount -t nfs 192.168.1.103:/data/photo /mnt/photo ;
-# sudo mount -t nfs 192.168.1.103:/data/music /mnt/music ;
-# sudo mount -t nfs 192.168.1.103:/data/audiobook /mnt/audiobook"
-# alias nas="sudo mount -t nfs 192.168.1.112:/volume2/export /mnt/nas"
-# alias um="sudo umount /mnt/nas /mnt/photo /mnt/audiobook /mnt/music"
+alias um="doas umount /mnt/nas /mnt/photo /mnt/audiobook /mnt/music /mnt/dev"
 
 ### SET MANPAGER
 ### Uncomment only one of these!
@@ -134,7 +126,6 @@ set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 ### "nvim" as manpager
 # set -x MANPAGER "hx -c 'set ft=man' -"
-
 
 ### SET EITHER DEFAULT EMACS MODE OR VI MODE ###
 function fish_user_key_bindings
