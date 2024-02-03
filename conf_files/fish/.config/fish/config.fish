@@ -111,13 +111,12 @@ alias fu="dsh lk@192.168.1.103"
 alias na="dsh lk@192.168.1.112"
 
 # NFS
-alias media="doas mount -t nfs 192.168.1.103:/data/photo /mnt/photo ;
-doas mount -t nfs 192.168.1.103:/data/music /mnt/music ;
-doas mount -t nfs 192.168.1.103:/data/audiobook /mnt/audiobook ;
-doas mount -t nfs 192.168.1.103:/data/dev /mnt/dev ;
+alias media="doas mount -t nfs 192.168.1.103:/tera/data/photos /mnt/photos ;
+doas mount -t nfs 192.168.1.103:/tera/data/audio/ /mnt/music ;
+doas mount -t nfs 192.168.1.103:/tera/data/dev /mnt/dev ;
 doas mount -t nfs 192.168.1.103:/tera/exports /mnt/exports"
 alias nas="doas mount -t nfs 192.168.1.112:/volume2/export /mnt/nas"
-alias um="doas umount /mnt/nas /mnt/photo /mnt/audiobook /mnt/music /mnt/dev /mnt/exports"
+alias um="doas umount /mnt/nas /mnt/photo /mnt/music /mnt/dev /mnt/exports"
 
 ### SET MANPAGER
 ### Uncomment only one of these!
