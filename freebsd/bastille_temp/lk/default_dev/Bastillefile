@@ -50,15 +50,14 @@ CMD ln -s /configs/git/.gitconfig /home/${user}/
 CMD mkdir /home/${user}/.ssh
 CP /home/lk/.ssh/id_ed25519 /home/${user}/.ssh/
 CP /home/lk/.ssh/id_ed25519.pub /home/${user}/.ssh/
+CMD chown -R ${user}:${user} /home/${user}/.ssh
 
 # create working directory
 # CMD mkdir /usr/home/${user}/dev
 
-# change owner root -> user
-# CMD chown -R ${user}:wheel /home/${user}
+CMD pkg autoremove
+CMD pkg clean
 
 # remove not used default files
 CMD rm .cshrc .shrc .mailrc .mail_aliases
 
-CMD pkg autoremove
-CMD pkg clean
