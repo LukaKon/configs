@@ -76,7 +76,7 @@ format = '[$symbol${ram}]($style) '
 
 [git_branch]
 symbol = '󰘬 '
-ignore_branches = ['master', 'main']
+# ignore_branches = ['master', 'main']
 format = '[$symbol$branch(:$remote_branch)]($style) '
 
 [package]
