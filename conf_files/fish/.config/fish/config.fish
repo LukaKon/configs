@@ -65,7 +65,7 @@ alias glog="git log --graph --pretty=oneline --abbrev-commit"
 alias reboot="doas init 6"
 alias poff="doas poweroff"
 alias t="glances"
-# alias ll="eza --long --header --changed --total-size --git --icons=auto --color=auto --all"
+alias lsi="eza --long --header --changed --total-size --git --icons=auto --color=auto --all"
 alias ll="eza --long --header --changed --git --icons=auto --color=auto --all"
 alias lt="eza --tree --level=3 -a --color=auto --icons=auto"
 
