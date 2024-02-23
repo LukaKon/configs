@@ -1,0 +1,34 @@
+{
+  "autoboot": "false",
+  "brand": "sparse",
+  "ip-type": "exclusive",
+  "net": [
+    {
+      "global-nic": "e1000g0",
+      "physical": "dev0",
+      "allowed-address": "192.168.1.70/24",
+      "defrouter": "192.168.1.1"
+    }
+  ],
+  "resolvers": [
+    "1.1.1.1"
+  ],
+  "fs": [
+    { 
+      "dir": "/programing",
+      "special": "/tera/dev",
+      "type": "lofs",
+      "options": [
+        "rw", "nodevices"
+      ]
+      }
+  ],
+  "zonename": "dev",
+  "zonepath": "/zones/dev",
+
+  "capped-memory": {
+    "physical": "6G",
+    "swap": "2G"
+  },
+  "cpu-shares": 4
+}
