@@ -108,6 +108,7 @@ alias cs="~/configs/scripts/cht.sh"
 alias lsh="ssh -i ~/.ssh/local"
 alias dsh="ssh -i ~/.ssh/lap"
 alias ra="dsh lk@192.168.1.102"
+alias rawi="dsh lk@192.168.1.122"
 alias fu="dsh lk@192.168.1.103"
 alias na="dsh lk@192.168.1.112"
 
