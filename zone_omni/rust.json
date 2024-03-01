@@ -1,12 +1,12 @@
 {
   "autoboot": "true",
-  "brand": "sparse",
+  "brand": "lipkg",
   "ip-type": "exclusive",
   "net": [
     {
       "global-nic": "e1000g0",
-      "physical": "py0",
-      "allowed-address": "192.168.1.75/24",
+      "physical": "rust0",
+      "allowed-address": "192.168.1.72/24",
       "defrouter": "192.168.1.1"
     }
   ],
@@ -15,8 +15,8 @@
   ],
   "fs": [
     { 
-      "dir": "/programing",
-      "special": "/tera/dev",
+      "dir": "/coding",
+      "special": "/coding",
       "type": "lofs",
       "options": [
         "rw", "nodevices"
@@ -31,6 +31,6 @@
       ]
     }
   ],
-  "zonename": "python",
-  "zonepath": "/zones/python"
+  "zonename": "rust",
+  "zonepath": "/zones/rust"
 }
