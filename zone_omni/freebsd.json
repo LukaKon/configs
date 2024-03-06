@@ -2,9 +2,11 @@
    "brand" : "bhyve",
    "acpi" : "off",
    "autoboot" : "false",
+   "bootargs" : "",
    "bootdisk" : {
       "blocksize" : "8K",
       "path" : "rpool/vm/freebsd",
+      "size" : "30G",
       "sparse" : "false"
    },
    "vcpus": 2,
@@ -18,15 +20,34 @@
          "match" : "/dev/zvol/rdsk/rpool/freebsd"
       }
    ],
+   "fs": [
+      {
+         "dir": "/coding",
+         "special": "/coding",
+         "type": "lofs",
+         "options": ["rw", "nodevices"]
+      },
+      {
+         "dir": "/config",
+         "special": "/home/lk/configs",
+         "type": "lofs",
+         "options": ["ro", "nodevices"]
+      }
+   ],
+   "fs-allowed" : "",
+   "hostid" : "",
    "ip-type" : "exclusive",
    "limitpriv" : "",
    "net" : [
       {
+         "global-nic": "e1000g0",
          "allowed-address" : "192.168.1.80/24",
          "defrouter" : "192.168.1.1",
          "physical" : "free0"
       }
    ],
+   "pool" : "",
+   "scheduling-class" : "",
    "vnc" : {
       "enabled" : "on"
    },
