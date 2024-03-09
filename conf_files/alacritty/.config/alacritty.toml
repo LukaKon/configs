@@ -1,3 +1,7 @@
+[shell]
+program = "/usr/bin/fish"
+args = ["-l", "-C", "cd"]
+
 [cursor]
 style = "Beam" 
 vi_mode_style = "Block"
