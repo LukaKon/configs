@@ -1,0 +1,42 @@
+autoboot="false"
+brand="bhyve"
+zonename="casa"
+zonepath="/zones/casa"
+
+cdrom="/iso/ubuntu-20.04.6-live-server-amd64.iso"
+
+ram="8G"
+vcpus="4"
+
+dns-domain="casa.local"
+resolvers=[
+  "1.1.1.1",
+  "9.9.9.9",
+]
+
+acpi="on"
+xhci="on"
+bootorder="cd"
+ip-type="exclusive"
+limitpriv="default"
+
+[capped-memory]
+# should match global "ram" key above
+physical="4G"
+swap="2G"
+
+[[net]]
+global-nic="e1000g0"
+physical="casa0"
+allowed-address="192.168.1.81/24"
+defrouter="192.168.1.1"
+
+[bootdisk]
+blocksize="8K"
+path="rpool/vm/casa/root"
+size="100G"
+sparse="false"
+
+[vnc]
+# needed for installation
+enabled="on"

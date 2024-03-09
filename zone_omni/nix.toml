@@ -1,0 +1,42 @@
+autoboot="false"
+brand="bhyve"
+zonename="nix"
+zonepath="/zones/nix"
+
+cdrom="/iso/latest-nixos-minimal-x86_64-linux.iso"
+
+ram="8G"
+vcpus="4"
+
+dns-domain="nix.local"
+resolvers=[
+  "1.1.1.1",
+  "9.9.9.9",
+]
+
+acpi="on"
+xhci="on"
+bootorder="cd"
+ip-type="exclusive"
+limitpriv="default"
+
+[capped-memory]
+# should match global "ram" key above
+physical="8G"
+swap="2G"
+
+[[net]]
+global-nic="e1000g0"
+physical="nix0"
+allowed-address="192.168.1.82/24"
+defrouter="192.168.1.1"
+
+[bootdisk]
+blocksize="8K"
+path="rpool/vm/nix/root"
+size="100G"
+sparse="false"
+
+[vnc]
+# needed for installation
+enabled="on"
