@@ -1,0 +1,42 @@
+autoboot="false"
+brand="bhyve"
+zonename="proxmox"
+zonepath="/zones/proxmox"
+
+cdrom="/iso/proxmox-ve_8.1-2.iso"
+
+ram="16G"
+vcpus="4"
+
+dns-domain="proxmox.local"
+resolvers=[
+  "1.1.1.1",
+  "9.9.9.9",
+]
+
+acpi="on"
+xhci="on"
+bootorder="cd"
+ip-type="exclusive"
+limitpriv="default"
+
+[capped-memory]
+# should match global "ram" key above
+physical="16G"
+swap="2G"
+
+[[net]]
+global-nic="e1000g0"
+physical="proxmox0"
+allowed-address="192.168.1.86/24"
+defrouter="192.168.1.1"
+
+[bootdisk]
+blocksize="8K"
+path="rpool/vm/proxmox/root"
+size="200G"
+sparse="false"
+
+[vnc]
+# needed for installation
+enabled="on"
