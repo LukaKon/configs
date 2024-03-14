@@ -1,14 +1,14 @@
 autoboot="false"
 brand="bhyve"
-zonename="nix"
-zonepath="/zones/nix"
+zonename="ubuntu"
+zonepath="/zones/ubuntu"
 
-cdrom="/iso/latest-nixos-minimal-x86_64-linux.iso"
+cdrom="/iso/lubuntu-23.10-desktop-amd64.iso"
 
 ram="8G"
 vcpus="4"
 
-dns-domain="nix.local"
+dns-domain="ubuntu.local"
 resolvers=[
   "1.1.1.1",
   "9.9.9.9",
@@ -27,21 +27,15 @@ swap="2G"
 
 [[net]]
 global-nic="e1000g0"
-physical="nix0"
-allowed-address="192.168.1.82/24"
+physical="ubuntu0"
+allowed-address="192.168.1.89/24"
 defrouter="192.168.1.1"
 
 [bootdisk]
 blocksize="8K"
-path="rpool/vm/nix/root"
+path="rpool/vm/ubuntu/root"
 size="100G"
 sparse="false"
-
-[[fs]]
-dir="/programing"
-special="/coding"
-type="lofs"
-options=["rw", "nodevices"]
 
 [vnc]
 # needed for installation
