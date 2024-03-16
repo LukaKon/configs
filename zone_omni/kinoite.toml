@@ -1,14 +1,14 @@
 autoboot="false"
 brand="bhyve"
-zonename="oi"
-zonepath="/zones/oi"
+zonename="kinoite"
+zonepath="/zones/kinoite"
 
-cdrom="/iso/OI-hipster-text-20210430.iso"
+cdrom="/iso/Fedora-Kinoite-ostree-x86_64-39-1.5.iso"
 
-ram="4G"
+ram="6G"
 vcpus="2"
 
-dns-domain="oi.local"
+dns-domain="kinoite.local"
 resolvers=[
   "1.1.1.1",
   "9.9.9.9",
@@ -22,26 +22,20 @@ limitpriv="default"
 
 [capped-memory]
 # should match global "ram" key above
-physical="4G"
+physical="6G"
 swap="2G"
 
 [[net]]
 global-nic="e1000g0"
-physical="oi0"
-allowed-address="192.168.1.85/24"
+physical="kinoite0"
+allowed-address="192.168.1.90/24"
 defrouter="192.168.1.1"
 
 [bootdisk]
 blocksize="8K"
-path="rpool/vm/oi/root"
-size="50G"
+path="rpool/vm/kinoite/root"
+size="100G"
 sparse="false"
-
-[[fs]]
-dir="/config"
-special="/home/lk/configs"
-type="lofs"
-options=["ro", "nodevices"]
 
 [vnc]
 # needed for installation
