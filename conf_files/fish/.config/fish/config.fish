@@ -90,6 +90,7 @@ alias vm="doas vm"
 alias tb="toolbox"
 alias te="toolbox enter"
 alias tc="toolbox create"
+alias tet="toolbox enter tool"
 
 # bat
 alias bat="bat -p --color always --theme gruvbox-dark"
