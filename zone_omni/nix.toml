@@ -15,7 +15,7 @@ resolvers=[
 ]
 
 acpi="on"
-xhci="on"
+# xhci="on"
 bootorder="cd"
 ip-type="exclusive"
 limitpriv="default"

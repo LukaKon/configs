@@ -1,40 +1,40 @@
-autoboot="false"
+autoboot="true"
 brand="bhyve"
-zonename="proxmox"
-zonepath="/zones/proxmox"
+zonename="nextcloud"
+zonepath="/zones/nextcloud"
 
-cdrom="/iso/proxmox-ve_8.1-2.iso"
+cdrom="/iso/nixos-gnome-23.11.5060.617579a78725-x86_64-linux.iso"
 
-ram="8G"
-vcpus="3"
+ram="4G"
+vcpus="2"
 
-dns-domain="proxmox.local"
+dns-domain="nextcloud.local"
 resolvers=[
   "1.1.1.1",
   "9.9.9.9",
 ]
 
 acpi="on"
-xhci="on"
+# xhci="on"
 bootorder="cd"
 ip-type="exclusive"
 limitpriv="default"
 
 [capped-memory]
 # should match global "ram" key above
-physical="8G"
+physical="4G"
 swap="2G"
 
 [[net]]
 global-nic="e1000g0"
-physical="proxmox0"
-allowed-address="192.168.1.86/24"
+physical="nextcloud0"
+allowed-address="192.168.1.90/24"
 defrouter="192.168.1.1"
 
 [bootdisk]
 blocksize="8K"
-path="rpool/vm/proxmox/root"
-size="10G"
+path="rpool/vm/nextcloud/root"
+size="50G"
 sparse="false"
 
 [vnc]
