@@ -1,5 +1,5 @@
 autoboot="true"
-brand="sparse"
+brand="pkgsrc"
 zonename="py"
 zonepath="/zones/py"
 
