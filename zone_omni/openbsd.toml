@@ -1,14 +1,14 @@
 autoboot="false"
 brand="bhyve"
-zonename="ubuntu"
-zonepath="/zones/ubuntu"
+zonename="freebsd"
+zonepath="/zones/freebsd"
 
-cdrom="/iso/lubuntu-23.10-desktop-amd64.iso"
+cdrom="/iso/FreeBSD-14.0-RELEASE-amd64-dvd1.iso"
 
-ram="2G"
-vcpus="1"
+ram="4G"
+vcpus="2"
 
-dns-domain="ubuntu.local"
+dns-domain="free.local"
 resolvers=[
   "1.1.1.1",
   "9.9.9.9",
@@ -22,20 +22,26 @@ limitpriv="default"
 
 [capped-memory]
 # should match global "ram" key above
-physical="2G"
+physical="4G"
 swap="2G"
 
 [[net]]
 global-nic="e1000g0"
-physical="ubuntu0"
-allowed-address="192.168.1.89/24"
+physical="freebsd0"
+allowed-address="192.168.1.80/24"
 defrouter="192.168.1.1"
 
 [bootdisk]
 blocksize="8K"
-path="rpool/vm/ubuntu/root"
-size="30G"
+path="rpool/vm/freebsd/root"
+size="50G"
 sparse="false"
+
+[[fs]]
+dir="/config"
+special="/home/lk/configs"
+type="lofs"
+options=["ro", "nodevices"]
 
 [vnc]
 # needed for installation

@@ -3,10 +3,10 @@ brand="bhyve"
 zonename="casa"
 zonepath="/zones/casa"
 
-cdrom="/iso/ubuntu-20.04.6-live-server-amd64.iso"
+cdrom="/iso/ubuntu-22.04.4-live-server-amd64.iso"
 
-ram="8G"
-vcpus="4"
+ram="4G"
+vcpus="2"
 
 dns-domain="casa.local"
 resolvers=[

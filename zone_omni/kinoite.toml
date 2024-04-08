@@ -1,4 +1,4 @@
-autoboot="false"
+autoboot="true"
 brand="bhyve"
 zonename="kinoite"
 zonepath="/zones/kinoite"
@@ -15,7 +15,7 @@ resolvers=[
 ]
 
 acpi="on"
-xhci="on"
+# xhci="on"
 bootorder="cd"
 ip-type="exclusive"
 limitpriv="default"
@@ -28,13 +28,13 @@ swap="2G"
 [[net]]
 global-nic="e1000g0"
 physical="kinoite0"
-allowed-address="192.168.1.90/24"
+allowed-address="192.168.1.89/24"
 defrouter="192.168.1.1"
 
 [bootdisk]
 blocksize="8K"
 path="rpool/vm/kinoite/root"
-size="100G"
+size="30G"
 sparse="false"
 
 [vnc]
