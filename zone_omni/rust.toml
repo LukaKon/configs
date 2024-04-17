@@ -22,6 +22,6 @@ options=["ro", "nodevices"]
 
 [[fs]]
 dir="/coding"
-special="/coding"
+special="/export/coding"
 type="lofs"
 options=["rw", "nodevices"]
