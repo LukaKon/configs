@@ -44,6 +44,9 @@ alias h="history | fzf --no-multi --bind 'enter:become($SHELL -c {})'"
 # X11
 alias xx='xinit'
 
+# zellij
+alias z='zellij'
+
 # internal screen on/off
 alias soff="xrandr --output eDP-1 --off"
 alias son="xrandr --output eDP-1 --auto"
