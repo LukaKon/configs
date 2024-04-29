@@ -1,9 +1,9 @@
-autoboot="false"
+autoboot="true"
 brand="bhyve"
 zonename="casa"
 zonepath="/zones/casa"
 
-cdrom="/iso/ubuntu-22.04.4-live-server-amd64.iso"
+cdrom="/export/iso/debian-12.5.0-amd64-netinst.iso"
 
 ram="4G"
 vcpus="2"
@@ -28,13 +28,13 @@ swap="2G"
 [[net]]
 global-nic="e1000g0"
 physical="casa0"
-allowed-address="192.168.1.81/24"
+allowed-address="192.168.1.80/24"
 defrouter="192.168.1.1"
 
 [bootdisk]
 blocksize="8K"
 path="rpool/vm/casa/root"
-size="100G"
+size="20G"
 sparse="false"
 
 [vnc]
