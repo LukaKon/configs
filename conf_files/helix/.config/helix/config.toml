@@ -98,7 +98,7 @@ character = ""
 "}" = "goto_next_paragraph"
 esc = ["collapse_selection", "keep_primary_selection"]
 # y = "yank_main_selection_to_clipboard"
-C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+C-x = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
 "F5" = ":reload"
 
 [keys.insert]
