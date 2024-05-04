@@ -1,14 +1,14 @@
-autoboot="false"
+autoboot="true"
 brand="bhyve"
-zonename="proxmox"
-zonepath="/zones/proxmox"
+zonename="pihole"
+zonepath="/zones/pihole"
 
-cdrom="/iso/proxmox-ve_8.1-2.iso"
+cdrom="/export/iso/Fedora-Server-netinst-x86_64-40-1.14.iso"
 
-ram="8G"
-vcpus="3"
+ram="2G"
+vcpus="1"
 
-dns-domain="proxmox.local"
+dns-domain="pihole.local"
 resolvers=[
   "1.1.1.1",
   "9.9.9.9",
@@ -21,19 +21,18 @@ ip-type="exclusive"
 limitpriv="default"
 
 [capped-memory]
-# should match global "ram" key above
-physical="8G"
-swap="2G"
+physical="1G"
+swap="1G"
 
 [[net]]
 global-nic="e1000g0"
-physical="proxmox0"
-allowed-address="192.168.1.86/24"
+physical="pihole0"
+allowed-address="192.168.1.80/24"
 defrouter="192.168.1.1"
 
 [bootdisk]
 blocksize="8K"
-path="rpool/vm/proxmox/root"
+path="rpool/vm/pihole/root"
 size="10G"
 sparse="false"
 
