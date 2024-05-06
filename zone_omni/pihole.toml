@@ -3,7 +3,7 @@ brand="bhyve"
 zonename="pihole"
 zonepath="/zones/pihole"
 
-cdrom="/export/iso/Fedora-Server-netinst-x86_64-40-1.14.iso"
+cdrom="/export/iso/debian-12.5.0-amd64-netinst.iso"
 
 ram="2G"
 vcpus="1"
@@ -33,9 +33,8 @@ defrouter="192.168.1.1"
 [bootdisk]
 blocksize="8K"
 path="rpool/vm/pihole/root"
-size="10G"
+size="6G"
 sparse="false"
 
 [vnc]
-# needed for installation
 enabled="on"
