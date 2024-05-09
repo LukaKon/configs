@@ -16,6 +16,10 @@ wezterm.on('mux-startup', function()
   pane:split { direction = 'Top' }
 end)
 
+-- Visual bell
+wezterm.on('bell', function(window, pane)
+  wezterm.log_info('bell: ' .. pane:pane_id() .. '!')
+end)
 --
 -- Settings
 --
@@ -29,13 +33,15 @@ config.hide_mouse_cursor_when_typing = true
 config.color_scheme = 'Gruvbox dark, medium (base16)'
 
 config.font = wezterm.font_with_fallback({
-  { family = "CaskaydiaCove Nerd Font", scale = 1.0 },
+  { family = "CaskaydiaCove Nerd Font",  scale = 1.0 },
   { family = "FantasqueSansM Nerd Font", scale = 1.0 },
-  { family = "CaskaydiaCove Nerd Font", scale = 1.0 },
+  { family = "CaskaydiaCove Nerd Font",  scale = 1.0 },
   { family = "FantasqueSansM Nerd Font", scale = 1.0 },
 })
 
 config.font_size = 13.0
+
+config.audible_bell = "Disabled"
 
 config.force_reverse_video_cursor = false
 
@@ -80,7 +86,7 @@ wezterm.on("update-status", function(window, pane)
   -- local cmd = pane:get_foreground_process_name()
   -- cmd = cmd and basename(cmd) or "no cmd"
   -- Domain name
-  local domain=pane:get_domain_name()
+  local domain = pane:get_domain_name()
   -- Time
   local time = wezterm.strftime("%H:%M")
 
@@ -99,7 +105,7 @@ wezterm.on("update-status", function(window, pane)
     { Text = wezterm.nerdfonts.cod_folder .. "  " .. cwd },
     { Text = " | " },
     { Foreground = { Color = "#e0af68" } },
-    { Text = wezterm.nerdfonts.cod_code .. "  " .. domain},
+    { Text = wezterm.nerdfonts.cod_code .. "  " .. domain },
     -- { Text = wezterm.nerdfonts.cod_code .. "  " .. cmd },
     -- "ResetAttributes",
     { Text = " | " },
@@ -125,21 +131,21 @@ config.leader = {
 
 config.keys = {
   -- Send C-a when pressing C-a twice
-  { key = "a", mods = "LEADER|CTRL", action = act.SendKey { key = "a", mods = "CTRL" } },
-  { key = "c", mods = "LEADER", action = act.ActivateCopyMode },
-  { key = "phys:Space", mods = "LEADER", action = act.ActivateCommandPalette },
+  { key = "a",          mods = "LEADER|CTRL", action = act.SendKey { key = "a", mods = "CTRL" } },
+  { key = "c",          mods = "LEADER",      action = act.ActivateCopyMode },
+  { key = "phys:Space", mods = "LEADER",      action = act.ActivateCommandPalette },
 
   -- Pane keybindings
-  { key = 's', mods = 'LEADER', action = act.SplitVertical { domain = 'CurrentPaneDomain' }, },
-  { key = 'v', mods = 'LEADER', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' }, },
-  { key = 'q', mods = 'LEADER', action = act.CloseCurrentTab { confirm = true }, },
-  { key = "x", mods = "LEADER", action = act.CloseCurrentPane { confirm = true } },
-  { key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
-  { key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
-  { key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
-  { key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
-  { key = "z", mods = "LEADER", action = act.TogglePaneZoomState },
-  { key = "o", mods = "LEADER", action = act.RotatePanes "Clockwise" },
+  { key = 's',          mods = 'LEADER',      action = act.SplitVertical { domain = 'CurrentPaneDomain' }, },
+  { key = 'v',          mods = 'LEADER',      action = act.SplitHorizontal { domain = 'CurrentPaneDomain' }, },
+  { key = 'q',          mods = 'LEADER',      action = act.CloseCurrentTab { confirm = true }, },
+  { key = "x",          mods = "LEADER",      action = act.CloseCurrentPane { confirm = true } },
+  { key = "h",          mods = "LEADER",      action = act.ActivatePaneDirection("Left") },
+  { key = "j",          mods = "LEADER",      action = act.ActivatePaneDirection("Down") },
+  { key = "k",          mods = "LEADER",      action = act.ActivatePaneDirection("Up") },
+  { key = "l",          mods = "LEADER",      action = act.ActivatePaneDirection("Right") },
+  { key = "z",          mods = "LEADER",      action = act.TogglePaneZoomState },
+  { key = "o",          mods = "LEADER",      action = act.RotatePanes "Clockwise" },
 
   -- custom "mode" in the name of "KeyTable"
   {
@@ -206,20 +212,20 @@ end
 
 config.key_tables = {
   resize_pane = {
-    { key = "h", action = act.AdjustPaneSize { "Left", 1 } },
-    { key = "j", action = act.AdjustPaneSize { "Down", 1 } },
-    { key = "k", action = act.AdjustPaneSize { "Up", 1 } },
-    { key = "l", action = act.AdjustPaneSize { "Right", 1 } },
+    { key = "h",      action = act.AdjustPaneSize { "Left", 1 } },
+    { key = "j",      action = act.AdjustPaneSize { "Down", 1 } },
+    { key = "k",      action = act.AdjustPaneSize { "Up", 1 } },
+    { key = "l",      action = act.AdjustPaneSize { "Right", 1 } },
     { key = "Escape", action = "PopKeyTable" },
-    { key = "Enter", action = "PopKeyTable" },
+    { key = "Enter",  action = "PopKeyTable" },
   },
   move_tab = {
-    { key = "h", action = act.MoveTabRelative(-1) },
-    { key = "j", action = act.MoveTabRelative(-1) },
-    { key = "k", action = act.MoveTabRelative(1) },
-    { key = "l", action = act.MoveTabRelative(1) },
+    { key = "h",      action = act.MoveTabRelative(-1) },
+    { key = "j",      action = act.MoveTabRelative(-1) },
+    { key = "k",      action = act.MoveTabRelative(1) },
+    { key = "l",      action = act.MoveTabRelative(1) },
     { key = "Escape", action = "PopKeyTable" },
-    { key = "Enter", action = "PopKeyTable" },
+    { key = "Enter",  action = "PopKeyTable" },
   }
 }
 
