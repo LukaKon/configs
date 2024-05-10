@@ -50,6 +50,9 @@ alias z='zellij'
 # tmux
 alias t='tmux'
 
+# nix flake
+alias f='nix develop --command fish'
+
 # internal screen on/off
 alias soff="xrandr --output eDP-1 --off"
 alias son="xrandr --output eDP-1 --auto"
