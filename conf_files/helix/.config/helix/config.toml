@@ -98,8 +98,9 @@ character = ""
 "}" = "goto_next_paragraph"
 esc = ["collapse_selection", "keep_primary_selection"]
 # y = "yank_main_selection_to_clipboard"
-C-x = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
 "F5" = ":reload"
+C-x = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+C-r = [":new", ":insert-output lazydocker", ":buffer-close!", ":redraw"]
 
 [keys.insert]
 "up" = "move_line_up"
