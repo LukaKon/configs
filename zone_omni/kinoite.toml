@@ -3,7 +3,7 @@ brand="bhyve"
 zonename="kinoite"
 zonepath="/zones/kinoite"
 
-cdrom="/iso/Fedora-Kinoite-ostree-x86_64-39-1.5.iso"
+cdrom="/export/iso/Fedora-Kinoite-ostree-x86_64-40-1.14.iso"
 
 ram="6G"
 vcpus="2"
@@ -15,7 +15,8 @@ resolvers=[
 ]
 
 acpi="on"
-# xhci="on"
+xhci="on"
+type="windows"
 bootorder="cd"
 ip-type="exclusive"
 limitpriv="default"
@@ -40,3 +41,4 @@ sparse="false"
 [vnc]
 # needed for installation
 enabled="on"
+unix="/tmp/vm.vnc"
