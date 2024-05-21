@@ -34,9 +34,9 @@ config.color_scheme = 'Gruvbox dark, medium (base16)'
 
 config.font = wezterm.font_with_fallback({
   { family = "CaskaydiaCove Nerd Font",  scale = 1.0 },
-  { family = "FantasqueSansM Nerd Font", scale = 1.0 },
-  { family = "CaskaydiaCove Nerd Font",  scale = 1.0 },
-  { family = "FantasqueSansM Nerd Font", scale = 1.0 },
+  -- { family = "FantasqueSansM Nerd Font", scale = 1.0 },
+  -- { family = "CaskaydiaCove Nerd Font",  scale = 1.0 },
+  -- { family = "FantasqueSansM Nerd Font", scale = 1.0 },
 })
 
 config.font_size = 13.0

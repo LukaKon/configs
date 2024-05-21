@@ -4,3 +4,4 @@
 [safe]
 	directory = /mnt/conf/nix_conf
 	directory = /mnt/dev/rust/todo_react
+	directory = /mnt/dev/party_creator
