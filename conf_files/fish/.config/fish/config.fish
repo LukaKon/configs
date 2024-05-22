@@ -23,7 +23,8 @@ set -g theme_hide_hostname no
 set -g theme_hostname always
 
 set -gx EDITOR hx
-set -gx BROWSER firefox
+# set -gx BROWSER firefox
+set -gx BROWSER librewolf
 set -gx DISPLAY :0
 # set -gx QT_QPA_PLATFORMTHEME qt5ct
 # set SSH_AUTH_SOCK /tmp/ssh-Zek7BjyxuEDg/agent.79284
