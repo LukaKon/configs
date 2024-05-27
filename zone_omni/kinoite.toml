@@ -16,7 +16,7 @@ resolvers=[
 
 acpi="on"
 xhci="on"
-type="windows"
+# type="windows"
 bootorder="cd"
 ip-type="exclusive"
 limitpriv="default"
@@ -39,6 +39,5 @@ size="30G"
 sparse="false"
 
 [vnc]
-# needed for installation
 enabled="on"
-unix="/tmp/vm.vnc"
+# unix="/tmp/vm.vnc"
