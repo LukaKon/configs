@@ -1,6 +1,8 @@
 [user]
 	name = lukakon
 	email = lukasz.konieczny.lk@protonmail.com
+[core]
+	editor = hx
 [safe]
 	directory = /mnt/conf/nix_conf
 	directory = /mnt/dev/rust/todo_react
