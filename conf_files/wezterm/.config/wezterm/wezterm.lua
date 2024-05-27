@@ -126,7 +126,7 @@ config.inactive_pane_hsb = {
 config.leader = {
   key = 'a',
   mods = 'CTRL',
-  timeout_milliseconds = 1000,
+  timeout_milliseconds = 1500,
 }
 
 config.keys = {
@@ -178,6 +178,7 @@ config.keys = {
       end)
     }
   },
+
   -- Key table for moving tabs around
   {
     key = "m",
