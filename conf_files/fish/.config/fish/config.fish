@@ -38,8 +38,6 @@ alias ff="fzf --multi --layout reverse --border rounded --border-label '| Find a
 
 alias fcd="cd (fd . --type directory --hidden --exclude .cache --exclude .git --exclude node_modules | fzf --height=70% --border-label '| Find Directory |' --preview='eza --tree --level=1 -a --color auto --icons {}')"
 
-alias h="history | fzf --no-multi --bind 'enter:become($SHELL -c {})'"
-
 ### ALIASES
 
 # X11
