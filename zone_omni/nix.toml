@@ -1,21 +1,22 @@
-autoboot="false"
+autoboot="true"
 brand="bhyve"
 zonename="nix"
 zonepath="/zones/nix"
 
-cdrom="/iso/latest-nixos-minimal-x86_64-linux.iso"
+cdrom="/export/iso/latest-nixos-gnome-x86_64-linux.iso"
 
 ram="8G"
 vcpus="4"
 
 dns-domain="nix.local"
 resolvers=[
+  "192.168.1.93",
   "1.1.1.1",
   "9.9.9.9",
 ]
 
 acpi="on"
-# xhci="on"
+xhci="on"
 bootorder="cd"
 ip-type="exclusive"
 limitpriv="default"
@@ -34,14 +35,8 @@ defrouter="192.168.1.1"
 [bootdisk]
 blocksize="8K"
 path="rpool/vm/nix/root"
-size="100G"
+size="150G"
 sparse="false"
-
-[[fs]]
-dir="/programing"
-special="/coding"
-type="lofs"
-options=["rw", "nodevices"]
 
 [vnc]
 # needed for installation
