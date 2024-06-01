@@ -7,3 +7,4 @@
 	directory = /mnt/conf/nix_conf
 	directory = /mnt/dev/rust/todo_react
 	directory = /mnt/dev/party_creator
+	directory = /home/lk/nix_conf/.git
