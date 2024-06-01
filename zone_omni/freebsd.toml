@@ -3,13 +3,14 @@ brand="bhyve"
 zonename="freebsd"
 zonepath="/zones/freebsd"
 
-cdrom="/iso/FreeBSD-14.0-RELEASE-amd64-dvd1.iso"
+cdrom="/export/iso/FreeBSD-14.0-RELEASE-amd64-bootonly.iso"
 
-ram="4G"
+ram="2G"
 vcpus="2"
 
 dns-domain="free.local"
 resolvers=[
+  "192.168.1.93",
   "1.1.1.1",
   "9.9.9.9",
 ]
@@ -22,7 +23,7 @@ limitpriv="default"
 
 [capped-memory]
 # should match global "ram" key above
-physical="4G"
+physical="2G"
 swap="2G"
 
 [[net]]
@@ -34,14 +35,8 @@ defrouter="192.168.1.1"
 [bootdisk]
 blocksize="8K"
 path="rpool/vm/freebsd/root"
-size="50G"
+size="30G"
 sparse="false"
-
-[[fs]]
-dir="/config"
-special="/home/lk/configs"
-type="lofs"
-options=["ro", "nodevices"]
 
 [vnc]
 # needed for installation
