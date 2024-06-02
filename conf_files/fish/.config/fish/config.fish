@@ -86,7 +86,7 @@ alias cong="py /home/lk/nix_conf/scripts/git_conf.py"
 
 # programs
 alias lgi="lazygit"
-# linux
+# docker
 alias ldo="lazydocker"
 alias dc="docker container"
 # freebsd
@@ -94,11 +94,6 @@ alias ap="doas appjail"
 alias ba="doas bastille"
 alias pot="doas pot"
 alias vm="doas vm"
-# toolbox
-alias tb="toolbox"
-alias te="toolbox enter"
-alias tc="toolbox create"
-alias tet="toolbox enter tool"
 
 # bat
 alias bat="bat -p --color always --theme gruvbox-dark"
@@ -114,10 +109,6 @@ alias cs="~/configs/scripts/cht.sh"
 # alias nvc="NVIM_APPNAME=nvchad nvim"
 
 # ssh
-alias lsh="ssh -i ~/.ssh/local"
-alias dsh="ssh -i ~/.ssh/lap"
-alias ra="dsh lk@192.168.1.102"
-alias rawi="dsh lk@192.168.1.122"
 alias fu="dsh lk@192.168.1.103"
 alias na="dsh lk@192.168.1.112"
 
