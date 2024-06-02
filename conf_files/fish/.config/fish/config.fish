@@ -109,6 +109,7 @@ alias cs="~/configs/scripts/cht.sh"
 # alias nvc="NVIM_APPNAME=nvchad nvim"
 
 # ssh
+alias dsh="ssh -i ~/.ssh/lap"
 alias fu="dsh lk@192.168.1.103"
 alias na="dsh lk@192.168.1.112"
 
