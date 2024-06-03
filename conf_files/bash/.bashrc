@@ -1,6 +1,7 @@
 set -o vi
 
-eval $(starship init bash)
+eval "$(starship init bash)"
+eval "$(fzf --bash)"
 
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
