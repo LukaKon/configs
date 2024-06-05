@@ -87,7 +87,7 @@ alias glog="git log --graph --pretty=oneline --abbrev-commit"
 # term
 # alias reboot="doas reboot"
 alias reboot="doas init 6"
-alias reb="doas init 6"
+alias reb="doas reboot"
 alias poff="doas poweroff"
 alias g="glances"
 alias lsi="eza --long --header --changed --total-size --git --icons=auto --color=auto --all"
