@@ -26,7 +26,8 @@ end)
 config.check_for_updates = false
 config.show_update_window = false
 config.default_domain = "local"
-config.default_prog = { '/run/current-system/sw/bin/fish', '-l', '-C cd' }
+-- config.default_prog = { '/run/current-system/sw/bin/fish', '-l', '-C cd' }
+config.default_prog = { '/run/current-system/sw/bin/bash', }
 config.default_cwd = "$HOME"
 config.hide_mouse_cursor_when_typing = true
 
