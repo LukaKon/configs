@@ -4,10 +4,8 @@
 [core]
 	editor = hx
 [safe]
-	directory = /mnt/conf/nix_conf
 	directory = /mnt/dev/rust/todo_react
 	directory = /mnt/dev/party_creator
 	directory = /home/lk/nix_conf/.git
-	directory = /mnt/conf/nix_conf/.git
-	directory = /home/lk/nix_conf/.git
+	directory = /mnt/conf/nix_conf
 	directory = /mnt/conf/nix_conf/.git
