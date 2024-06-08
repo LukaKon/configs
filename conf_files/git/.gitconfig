@@ -9,3 +9,4 @@
 	directory = /home/lk/nix_conf/.git
 	directory = /mnt/conf/nix_conf
 	directory = /mnt/conf/nix_conf/.git
+	directory = /mnt/export/dev/rust/todo_react
