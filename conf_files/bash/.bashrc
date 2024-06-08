@@ -5,27 +5,7 @@ eval "$(fzf --bash)"
 
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
-
-
-  # Check whether we're running a version of Bash that has support for
-  # programmable completion. If we do, enable all modules installed in
-  # the system and user profile in obsolete /etc/bash_completion.d/
-  # directories. Bash loads completions in all
-  # $XDG_DATA_DIRS/bash-completion/completions/
-  # on demand, so they do not need to be sourced here.
-  if shopt -q progcomp &>/dev/null; then
-    . "/nix/store/m44hmzsiwqxw0jc6sf32k4r280h28m6s-bash-completion-2.13.0/etc/profile.d/bash_completion.sh"
-      nullglobStatus=$(shopt -p nullglob)
-        shopt -s nullglob
-          for p in $NIX_PROFILES; do
-              for m in "$p/etc/bash_completion.d/"*; do
-                    . "$m"
-                  done
-                done
-              eval "$nullglobStatus"
-            unset nullglobStatus p m
-          fi
-                              
+                            
 export FZF_DEFAULT_OPTS="--layout reverse --height=50% --extended --multi --cycle --border rounded --prompt='▶' --pointer='' --marker='' --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54"
 
 export FZF_DEFAULT_COMMAND='fd . --exclude .git --exclude node_modules --exclude target --hidden'
@@ -130,3 +110,4 @@ alias media="doas mount -t nfs 192.168.1.103:/export/photos /mnt/photos ;
 doas mount -t nfs 192.168.1.103:/export/coding /mnt/dev"
 alias nas="doas mount -t nfs 192.168.1.112:/volume2/export /mnt/nas"
 alias um="doas umount /mnt/nas /mnt/photos /mnt/dev /mnt/exports"
+. "$HOME/.cargo/env"
