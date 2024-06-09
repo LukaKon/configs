@@ -5,7 +5,7 @@ eval "$(fzf --bash)"
 
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
-                            
+
 export FZF_DEFAULT_OPTS="--layout reverse --height=50% --extended --multi --cycle --border rounded --prompt='▶' --pointer='' --marker='' --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54"
 
 export FZF_DEFAULT_COMMAND='fd . --exclude .git --exclude node_modules --exclude target --hidden'

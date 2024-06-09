@@ -29,8 +29,8 @@
     layouts: [
         // "EvenHorizontal",
         // "EvenVertical",
-        "MainAndVertStack",
         "Monocle",
+        "MainAndVertStack",
         // "Grid",
         // "MainAndHorizontalStack",
         // "RightMainAndVertStack",
@@ -56,7 +56,8 @@
         (name: "CenterMainBalanced", flip: None, rotate: North, reserve: None, columns: (flip: None, rotate: North, main: (count: 1, size: 0.5, flip: None, rotate: North, split: Vertical), stack: (flip: None, rotate: North, split: Dwindle), second_stack: (flip: None, rotate: North, split: Dwindle))),
         (name: "CenterMainFluid", flip: None, rotate: North, reserve: Reserve, columns: (flip: None, rotate: North, main: (count: 1, size: 0.5, flip: None, rotate: North, split: Vertical), stack: (flip: None, rotate: North, split: None), second_stack: (flip: None, rotate: North, split: Horizontal))),
     ],
-    layout_mode: Tag,   // Workspace
+    layout_mode: Workspace,   // Workspace, Tag
+    // layout_mode: Tag,   // Workspace, Tag
     insert_behavior: Bottom,
     scratchpad: [
         (name: "alacritty", value: "alacritty", x: 860, y: 390, height: 300, width: 200),
