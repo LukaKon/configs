@@ -15,6 +15,8 @@ end
 starship init fish | source
 enable_transience
 
+fzf --fish | source
+
 # theme
 set -g theme_color_scheme terminal-dark
 set -g fish_prompt_pwd_dir_length 1
