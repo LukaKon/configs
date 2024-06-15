@@ -91,6 +91,11 @@ wezterm.on("update-status", function(window, pane)
   local domain = pane:get_domain_name()
   -- Time
   local time = wezterm.strftime("%H:%M")
+  -- battery
+  local battery = ''
+  for _, b in ipairs(wezterm.battery_info()) do
+    bat = '🔋 ' .. string.format('%.0f%%', b.state_of_charge * 100)
+  end
 
   -- Left status (left of the tab line)
   window:set_left_status(wezterm.format({
@@ -110,6 +115,8 @@ wezterm.on("update-status", function(window, pane)
     { Text = wezterm.nerdfonts.cod_code .. "  " .. domain },
     -- { Text = wezterm.nerdfonts.cod_code .. "  " .. cmd },
     -- "ResetAttributes",
+    { Text = " | " },
+    { Text = " " .. battery },
     { Text = " | " },
     { Text = " " .. time },
     { Text = "  " },
