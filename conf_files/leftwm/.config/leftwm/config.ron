@@ -23,7 +23,6 @@
         "7",
         "8",
         "9",
-        // "0",
     ],
     max_window_width: None,
     layouts: [
