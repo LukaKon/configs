@@ -11,3 +11,5 @@
 	directory = /mnt/conf/nix_conf/.git
 	directory = /mnt/export/dev/rust/todo_react
 	directory = /mnt/dev/party_creator/.git
+	directory = /mnt/export/dev/party_creator
+	directory = /mnt/export/dev/taxi-react-app
