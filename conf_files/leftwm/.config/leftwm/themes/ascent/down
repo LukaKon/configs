@@ -6,4 +6,7 @@ leftwm-command "UnloadTheme"
 
 pkill dunst
 pkill picom
-pkill polybar
+# pkill polybar
+if [ -x "$(command -v eww)" ]; then
+  eww kill
+fi
