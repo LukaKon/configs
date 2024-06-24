@@ -15,7 +15,17 @@ end
 starship init fish | source
 enable_transience
 
-fzf --fish | source
+# fzf --fish | source
+
+# yazi - file explorer
+function yy
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	yazi $argv --cwd-file="$tmp"
+	if set cwd (cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+		cd -- "$cwd"
+	end
+	rm -f -- "$tmp"
+end
 
 # theme
 set -g theme_color_scheme terminal-dark

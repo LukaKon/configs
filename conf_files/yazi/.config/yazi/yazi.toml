@@ -1,0 +1,23 @@
+[manager]
+show_hidden = true
+ratio = [1, 4, 3]
+sort_by = "natural"
+sort_sensitive = false
+sort_reverse = false
+sort_dir_first = true
+sort_translit = false
+linemode = "mtime"
+scrolloff = 5
+mouse_events = ["click", "scroll", "touch", "move"]
+
+[preview]
+tab_size = 20
+max_width = 200
+max_height = 200
+image_filter = "triangle"
+image_quality = 80
+
+[opener]
+edit = [
+  { run = 'hx "$@"', block = false, orphan = false, for = "unix" },
+]
