@@ -113,11 +113,6 @@ alias wt="curl wttr.in"
 # cheat sheet
 alias cs="~/configs/scripts/cht.sh"
 
-# nvim
-# alias vi="nvim"
-# alias lazy="NVIM_APPNAME=lazyvim nvim"
-# alias nvc="NVIM_APPNAME=nvchad nvim"
-
 # ssh
 alias dsh="ssh -i ~/.ssh/lap"
 alias fu="dsh lk@192.168.1.103"

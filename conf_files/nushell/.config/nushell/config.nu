@@ -851,6 +851,19 @@ $env.config = {
     ]
 }
 
+
+# X11
+alias xx = xinit
+
+# zellij
+alias z = zellij
+
+# tmux
+alias t = tmux
+
+# nix flake
+alias f = nix develop --command nu
+
 # git
 alias gs = git status -s
 alias ga = git add
@@ -891,10 +904,24 @@ alias vm = doas vm
 # weather
 alias wt = curl wttr.in
 
-# nvim
-alias vi = nvim
-alias lazy = NVIM_APPNAME=lazyvim nvim
-alias nvc = NVIM_APPNAME=nvchad nvim
-
 # ssh
 alias lsh = ssh -i ~/.ssh/local
+
+# bat
+alias bat = bat -p --color always --theme gruvbox-dark
+
+# weather
+alias wt = curl wttr.in
+# cheat sheet
+# alias cs = ~/configs/scripts/cht.sh
+
+# ssh
+alias dsh = ssh -i ~/.ssh/lap
+alias fu = dsh lk@192.168.1.103
+alias na = dsh lk@192.168.1.112
+
+# NFS
+alias media = doas mount -t nfs 192.168.1.103:/export/photos /mnt/photos ;
+doas mount -t nfs 192.168.1.103:/export/coding /mnt/dev
+alias nas= doas mount -t nfs 192.168.1.112:/volume2/export /mnt/nas
+alias um=doas umount /mnt/nas /mnt/photos /mnt/dev /mnt/exports
