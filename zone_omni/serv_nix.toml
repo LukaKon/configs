@@ -3,8 +3,7 @@ brand="bhyve"
 zonename="nextcloud"
 zonepath="/zones/nextcloud"
 
-cdrom="/export/iso/nixos-gnome-23.11.5060.617579a78725-x86_64-linux.iso"
-
+cdrom="/tank/iso/latest-nixos-gnome-x86_64-linux.iso"
 ram="4G"
 vcpus="2"
 

@@ -3,10 +3,10 @@ brand="bhyve"
 zonename="nix"
 zonepath="/zones/nix"
 
-cdrom="/export/iso/latest-nixos-gnome-x86_64-linux.iso"
+cdrom="/tank/iso/latest-nixos-gnome-x86_64-linux.iso"
 
 ram="8G"
-vcpus="4"
+vcpus="2"
 
 dns-domain="nix.local"
 resolvers=[
@@ -34,7 +34,7 @@ defrouter="192.168.1.1"
 
 [bootdisk]
 blocksize="8K"
-path="rpool/vm/nix/root"
+path="tank/vm/nix/root"
 size="150G"
 sparse="false"
 
