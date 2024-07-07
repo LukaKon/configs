@@ -9,6 +9,10 @@ eval "$(starship init bash)"
 [[ $PS1 && -f /usr/local/share/bash-completion/bash_completion.sh ]] && \
         source /usr/local/share/bash-completion/bash_completion.sh
 
+if [ -r /opt/local/share/bash-completion/bash_completion ]; then
+  . /opt/local/share/bash-completion/bash_completion
+fi
+
 # yazi - file explorer
 function yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"

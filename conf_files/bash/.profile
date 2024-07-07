@@ -3,4 +3,5 @@ export DISPLAY=localhost:0.0
 export EDITOR hx
 export BROWSER librewolf
 
-. "$HOME/.cargo/env"
+export PATH=/opt/local/sbin:/opt/local/bin:$PATH
+export MANPATH=/opt/local/man:$MANPATH

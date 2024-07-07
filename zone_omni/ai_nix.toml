@@ -7,7 +7,7 @@ cdrom="/tank/iso/latest-nixos-gnome-x86_64-linux.iso"
 ram="20G"
 vcpus="6"
 
-dns-domain="ai.local"
+dns-domain="home.lan"
 resolvers=[
   "1.1.1.1",
   "9.9.9.9",
