@@ -921,7 +921,6 @@ alias fu = dsh lk@192.168.1.103
 alias na = dsh lk@192.168.1.112
 
 # NFS
-alias media = doas mount -t nfs 192.168.1.103:/export/photos /mnt/photos ;
-doas mount -t nfs 192.168.1.103:/export/coding /mnt/dev
-alias nas= doas mount -t nfs 192.168.1.112:/volume2/export /mnt/nas
-alias um=doas umount /mnt/nas /mnt/photos /mnt/dev /mnt/exports
+# alias media = doas mount -t nfs 192.168.1.103:/export/photos /mnt/photos ; doas mount -t nfs 192.168.1.103:/export/coding /mnt/dev
+alias nas = doas mount -t nfs 192.168.1.112:/volume2/export /mnt/nas
+# alias um = doas umount /mnt/nas /mnt/photos /mnt/dev /mnt/exports
