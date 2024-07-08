@@ -20,30 +20,15 @@ mem() {
 cpu() {
   # CPU_FREQ=`sysctl -n dev.cpu.0.freq`
   # echo -e "CPU: $CPU_FREQ MHz"
-  echo -e "CPU"
+  CPU_USAGE=`vmstat | awk 'FNR==3 {print $17}'`
+  echo -e "CPU: $CPU_USAGE"
 }
 
 # ## BAT
 bat(){
-  # IS_BATTERY=`sysctl -n hw.acpi.battery`
-
-  # if [ -z $IS_BATTERY ]
-  #   then
-  #     echo -e "no battery"
-  #   else
-  #     LIFE=`sysctl -n hw.acpi.battery.life`
-  #     STATUS=`sysctl -n hw.acpi.battery.state`
-
-  #     if [ $STATUS -eq 1 ]
-  #     then
-  #       ACTUAL_STATUS="discharge"
-  #     else
-  #       ACTUAL_STATUS="charge"
-  #     fi
-
-  #     echo -e "BAT: $LIFE% $ACTUAL_STATUS"
-  # fi
-  echo -e "BAT"
+  BAT_PERCENT=`apm | awk -F: 'FNR==5 {print $2}'`
+  BAT_STATUS=`apm | awk -F: 'FNR==4 {print $2}'`
+  echo -e "BAT: $BAT_PERCENT $BAT_STATUS"
 }
 
 SLEEP_SEC=3  # set bar_delay = 5 in /etc/spectrwm.conf
@@ -52,9 +37,7 @@ SLEEP_SEC=3  # set bar_delay = 5 in /etc/spectrwm.conf
 # So I would love to add more functions to this script but it makes the 
 # echo output too long to display correctly.
 while :; do
-    # echo "$(cpu) $(mem) $(bat)"
-    echo "TEST"
-
+    echo "$(cpu) $(mem) $(bat)"
 
 	sleep $SLEEP_SEC
 done
