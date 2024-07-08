@@ -4,8 +4,8 @@ zonename="dock"
 zonepath="/zones/dock"
 
 cdrom="/tank/iso/latest-nixos-gnome-x86_64-linux.iso"
-ram="2G"
-vcpus="1"
+ram="3G"
+vcpus="2"
 
 dns-domain="home.lan"
 resolvers=[
@@ -21,7 +21,7 @@ limitpriv="default"
 
 [capped-memory]
 # should match global "ram" key above
-physical="2G"
+physical="3G"
 swap="2G"
 
 [[net]]
