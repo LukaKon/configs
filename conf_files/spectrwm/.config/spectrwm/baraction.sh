@@ -18,8 +18,9 @@ mem() {
 cpu() {
   # CPU_FREQ=`sysctl -n dev.cpu.0.freq`
   # echo -e "CPU: $CPU_FREQ MHz"
+  CPU_TEMP=`sysctl -n dev.cpu.0.temperature`
   CPU_USAGE=`vmstat | awk 'FNR==3 {print $17}'`
-  echo -e "CPU: $CPU_USAGE"
+  echo -e "CPU: $CPU_USAGE $CPU_TEMP"
 }
 
 # ## BAT
