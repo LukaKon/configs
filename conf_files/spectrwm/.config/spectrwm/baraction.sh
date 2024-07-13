@@ -3,17 +3,15 @@
 
 # ## DISK
 hdd() {
-  # hdd="$(df -h | awk 'NR==4{print $3, $5}')"
-  # echo -e "HDD: $hdd"
-  echo -e "HDD"
+  hdd="$(df -h | awk 'NR==4{print $3, $5}')"
+  echo -e "HDD: $hdd"
 }
 
 # ## RAM
 mem() {
-  # MEM=`sysctl -n hw.usermem`
-  # MEM_GB=$((MEM / 1024000000))
-  # echo -e "RAM: $MEM_GB GB"
-  echo -e "RAM"
+  MEM=`sysctl -n hw.usermem`
+  MEM_GB=$((MEM / 1024000000))
+  echo -e "RAM: $MEM_GB GB"
 }
 
 # ## CPU
