@@ -5,3 +5,5 @@ export BROWSER librewolf
 
 export PATH=/opt/local/sbin:/opt/local/bin:$PATH
 export MANPATH=/opt/local/man:$MANPATH
+
+source ~/.bashrc

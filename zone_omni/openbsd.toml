@@ -1,17 +1,18 @@
-autoboot="false"
+autoboot="true"
 brand="bhyve"
 zonename="openbsd"
 zonepath="/zones/openbsd"
 
-cdrom="/export/iso/install75.iso"
+cdrom="/tank/iso/install75.iso"
 
 type="openbsd"
 
 ram="2G"
-vcpus="2"
+vcpus="1"
 
 dns-domain="free.local"
 resolvers=[
+  "192.168.1.93",
   "1.1.1.1",
   "9.9.9.9",
 ]
@@ -36,14 +37,8 @@ defrouter="192.168.1.1"
 [bootdisk]
 blocksize="8K"
 path="rpool/vm/openbsd/root"
-size="50G"
+size="30G"
 sparse="false"
-
-# [[fs]]
-# dir="/config"
-# special="/home/lk/configs"
-# type="lofs"
-# options=["ro", "nodevices"]
 
 [vnc]
 enabled="on"

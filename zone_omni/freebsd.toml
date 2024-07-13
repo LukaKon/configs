@@ -1,12 +1,12 @@
-autoboot="false"
+autoboot="true"
 brand="bhyve"
 zonename="freebsd"
 zonepath="/zones/freebsd"
 
-cdrom="/export/iso/FreeBSD-14.0-RELEASE-amd64-bootonly.iso"
+cdrom="/tank/iso/FreeBSD-14.1-RELEASE-amd64-bootonly.iso"
 
 ram="2G"
-vcpus="2"
+vcpus="1"
 
 dns-domain="free.local"
 resolvers=[
@@ -29,7 +29,7 @@ swap="2G"
 [[net]]
 global-nic="e1000g0"
 physical="freebsd0"
-allowed-address="192.168.1.80/24"
+allowed-address="192.168.1.95/24"
 defrouter="192.168.1.1"
 
 [bootdisk]
