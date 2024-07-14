@@ -34,7 +34,7 @@ defrouter="192.168.1.1"
 
 [bootdisk]
 blocksize="8K"
-path="rpool/vm/freebsd/root"
+path="tank/vm/freebsd/root"
 size="30G"
 sparse="false"
 

@@ -10,7 +10,7 @@ type="openbsd"
 ram="2G"
 vcpus="1"
 
-dns-domain="free.local"
+dns-domain="open.local"
 resolvers=[
   "192.168.1.93",
   "1.1.1.1",
@@ -36,7 +36,7 @@ defrouter="192.168.1.1"
 
 [bootdisk]
 blocksize="8K"
-path="rpool/vm/openbsd/root"
+path="tank/vm/openbsd/root"
 size="30G"
 sparse="false"
 
