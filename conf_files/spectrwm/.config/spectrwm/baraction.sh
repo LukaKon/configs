@@ -19,8 +19,8 @@ cpu() {
   # CPU_FREQ=`sysctl -n dev.cpu.0.freq`
   # echo -e "CPU: $CPU_FREQ MHz"
   CPU_TEMP=`sysctl -n dev.cpu.0.temperature`
-  CPU_USAGE=`vmstat | awk 'FNR==3 {print $17}'`
-  echo -e "CPU: $CPU_USAGE $CPU_TEMP"
+  # CPU_USAGE=`vmstat | awk 'FNR==3 {print $17}'`
+  echo -e "CPU: $CPU_TEMP"
 }
 
 # ## BAT
@@ -36,7 +36,7 @@ SLEEP_SEC=3  # set bar_delay = 5 in /etc/spectrwm.conf
 # So I would love to add more functions to this script but it makes the 
 # echo output too long to display correctly.
 while :; do
-    echo "$(cpu) $(mem) $(bat)"
+    echo "$(cpu) $(bat)"
 
 	sleep $SLEEP_SEC
 done
