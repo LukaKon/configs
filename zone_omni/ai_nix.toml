@@ -4,8 +4,8 @@ zonename="ai"
 zonepath="/zones/ai"
 
 cdrom="/tank/iso/latest-nixos-gnome-x86_64-linux.iso"
-ram="20G"
-vcpus="6"
+ram="16G"
+vcpus="4"
 
 dns-domain="home.lan"
 resolvers=[
@@ -21,7 +21,7 @@ limitpriv="default"
 
 [capped-memory]
 # should match global "ram" key above
-physical="20G"
+physical="16G"
 swap="2G"
 
 [[net]]
@@ -33,7 +33,7 @@ defrouter="192.168.1.1"
 [bootdisk]
 blocksize="8K"
 path="tank/vm/ai/root"
-size="200G"
+size="150G"
 sparse="false"
 
 [vnc]
