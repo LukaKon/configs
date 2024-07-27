@@ -9,6 +9,7 @@ vcpus="4"
 
 dns-domain="home.lan"
 resolvers=[
+  "192.168.1.93",
   "1.1.1.1",
   "9.9.9.9",
 ]
