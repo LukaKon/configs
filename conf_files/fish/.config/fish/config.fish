@@ -54,7 +54,7 @@ alias fcd="cd (fd . --type directory --hidden --exclude .cache --exclude .git --
 alias xx='xinit'
 
 # zellij
-alias z='zellij'
+alias ze='zellij'
 
 # tmux
 alias t='tmux'
