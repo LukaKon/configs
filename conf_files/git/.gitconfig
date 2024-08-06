@@ -16,3 +16,4 @@
 	directory = /mnt/dev/photo
 	directory = /mnt/export/dev/photo
 	directory = /mnt/dev/photo/.git
+	directory = /mnt/conf/configs
