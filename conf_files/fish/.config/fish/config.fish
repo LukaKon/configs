@@ -15,9 +15,9 @@ end
 starship init fish | source
 enable_transience
 
-# fzf --fish | source
+fzf --fish | source
 
-# yazi - file explorer
+yazi - file explorer
 function yy
 	set tmp (mktemp -t "yazi-cwd.XXXXXX")
 	yazi $argv --cwd-file="$tmp"
