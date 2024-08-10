@@ -5,6 +5,7 @@ zonepath="/zones/rust"
 
 ip-type="exclusive"
 resolvers=[
+  "192.168.1.93",
   "1.1.1.1",
 ]
 
@@ -16,12 +17,12 @@ defrouter="192.168.1.1"
 
 [[fs]]
 dir="/config"
-special="/home/lk/configs"
+special="/export/conf/configs"
 type="lofs"
 options=["ro", "nodevices"]
 
 [[fs]]
 dir="/coding"
-special="/export/coding"
+special="/export/coding/rust"
 type="lofs"
 options=["rw", "nodevices"]
