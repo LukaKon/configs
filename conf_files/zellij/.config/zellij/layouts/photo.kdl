@@ -18,9 +18,9 @@ layout {
 		}
 	}
 	tab name="terminal" {
-		pane {
+		// pane {
 			// command "lazygit"
-		}
+		// }
 	}
 	// pane size=3
 }
