@@ -36,9 +36,6 @@ config.color_scheme = 'Gruvbox dark, medium (base16)'
 
 config.font = wezterm.font_with_fallback({
   { family = "CaskaydiaCove Nerd Font",  scale = 1.0 },
-  -- { family = "FantasqueSansM Nerd Font", scale = 1.0 },
-  -- { family = "CaskaydiaCove Nerd Font",  scale = 1.0 },
-  -- { family = "FantasqueSansM Nerd Font", scale = 1.0 },
 })
 
 config.font_size = 13.0
@@ -94,7 +91,7 @@ wezterm.on("update-status", function(window, pane)
   -- battery
   local battery = ''
   for _, b in ipairs(wezterm.battery_info()) do
-    bat = '🔋 ' .. string.format('%.0f%%', b.state_of_charge * 100)
+    battery = '🔋 ' .. string.format('%.0f%%', b.state_of_charge * 100)
   end
 
   -- Left status (left of the tab line)
