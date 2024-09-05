@@ -88,7 +88,7 @@ alias ll="eza --long --header --changed --git --icons=auto --color=auto --all"
 alias lt="eza --tree --level=3 -a --color=auto --icons=auto"
 
 # python
-alias py3="python3.9"
+alias py3="python3.11"
 alias py="python"
 
 # backup config files to git
@@ -104,6 +104,7 @@ alias ap="doas appjail"
 alias ba="doas bastille"
 alias pot="doas pot"
 alias vm="doas vm"
+alias po="doas podman"
 
 # bat
 alias bat="bat -p --color always --theme gruvbox-dark"

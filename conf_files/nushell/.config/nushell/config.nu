@@ -888,7 +888,7 @@ alias la = ls -a
 alias lh = ls -la
 
 # python
-alias py3 = python3.9
+alias py3 = python3.11
 alias py = python
 
 # programs
@@ -900,6 +900,7 @@ alias dc = docker container
 alias ap = doas appjail
 alias ba = doas bastille
 alias vm = doas vm
+alias po = doas podman
 
 # weather
 alias wt = curl wttr.in

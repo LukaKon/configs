@@ -109,6 +109,7 @@ alias ap="doas appjail"
 alias ba="doas bastille"
 alias pot="doas pot"
 alias vm="doas vm"
+alias po="doas podman"
 
 # bat
 alias bat="bat -p --color always --theme gruvbox-dark"
