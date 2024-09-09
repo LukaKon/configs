@@ -17,3 +17,4 @@
 	directory = /mnt/export/dev/photo
 	directory = /mnt/dev/photo/.git
 	directory = /mnt/conf/configs
+	directory = /mnt/conf/nix_conf/.git

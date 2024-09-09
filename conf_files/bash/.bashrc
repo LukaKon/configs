@@ -3,9 +3,6 @@ set -o vi
 eval "$(fzf --bash)"
 eval "$(starship init bash)"
 
-# [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
-#     . /usr/share/bash-completion/bash_completion
-
 [[ $PS1 && -f /usr/local/share/bash-completion/bash_completion.sh ]] && \
         source /usr/local/share/bash-completion/bash_completion.sh
 
