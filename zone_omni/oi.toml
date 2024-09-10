@@ -1,0 +1,43 @@
+autoboot="true"
+brand="bhyve"
+zonename="oi"
+zonepath="/zones/oi"
+
+cdrom="/tank/iso/OI-hipster-text-20240426.iso"
+
+ram="2G"
+vcpus="1"
+
+dns-domain="home.local"
+resolvers=[
+  "192.168.1.93",
+  "1.1.1.1",
+  "9.9.9.9",
+]
+
+acpi="on"
+xhci="on"
+bootorder="cd"
+ip-type="exclusive"
+limitpriv="default"
+
+[capped-memory]
+# should match global "ram" key above
+physical="2G"
+swap="2G"
+
+[[net]]
+global-nic="e1000g0"
+physical="oi0"
+allowed-address="192.168.1.96/24"
+defrouter="192.168.1.1"
+
+[bootdisk]
+blocksize="8K"
+path="tank/vm/oi/root"
+size="50G"
+sparse="false"
+
+[vnc]
+# needed for installation
+enabled="on"
