@@ -46,7 +46,7 @@ config.force_reverse_video_cursor = false
 
 config.window_background_opacity = 0.8
 
-config.window_decorations = "RESIZE"
+-- config.window_decorations = "RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"
 config.scrollback_lines = 9000
 config.default_workspace = "home"
@@ -62,7 +62,6 @@ wezterm.on("update-status", function(window, pane)
   -- Workspace name
   local stat = window:active_workspace()
   local stat_color = "#f7768e"
-  -- It's a little silly to have workspace name all the time
   -- Utilize this to display LDR or current key table name
   if window:active_key_table() then
     stat = window:active_key_table()
@@ -75,15 +74,14 @@ wezterm.on("update-status", function(window, pane)
 
   -- Current working directory
   local basename = function(s)
-    -- Nothing a little regex can't fix
     return string.gsub(s, "(.*[/\\])(.*)", "%2")
   end
   -- CWD and CMD could be nil (e.g. viewing log using Ctrl-Alt-l). Not a big deal, but check in case
   local cwd = pane:get_current_working_dir()
   cwd = cwd and basename(cwd) or ""
   -- Current command
-  -- local cmd = pane:get_foreground_process_name()
-  -- cmd = cmd and basename(cmd) or "no cmd"
+  local cmd = pane:get_foreground_process_name()
+  cmd = cmd and basename(cmd) or "no cmd"
   -- Domain name
   local domain = pane:get_domain_name()
   -- Time
