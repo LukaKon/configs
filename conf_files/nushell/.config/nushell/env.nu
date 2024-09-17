@@ -4,20 +4,20 @@
 $env.STARSHIP_SHELL = "nu"
 
 def create_left_prompt [] {
-#     let home =  $nu.home-path
+    let home =  $nu.home-path
 
-#     let dir = ([
-#         ($env.PWD | str substring 0..($home | str length) | str replace $home "~"),
-#         ($env.PWD | str substring ($home | str length)..)
-#     ] | str join)
+    let dir = ([
+        ($env.PWD | str substring 0..($home | str length) | str replace $home "~"),
+        ($env.PWD | str substring ($home | str length)..)
+    ] | str join)
 
-#     let path_color = (if (is-admin) { ansi red_bold } else { ansi green_bold })
-#     let separator_color = (if (is-admin) { ansi light_red_bold } else { ansi light_green_bold })
-#     let path_segment = $"($path_color)($dir)"
+    let path_color = (if (is-admin) { ansi red_bold } else { ansi green_bold })
+    let separator_color = (if (is-admin) { ansi light_red_bold } else { ansi light_green_bold })
+    let path_segment = $"($path_color)($dir)"
 
-#     $path_segment | str replace --all (char path_sep) $"($separator_color)/($path_color)"
+    $path_segment | str replace --all (char path_sep) $"($separator_color)/($path_color)"
 
-starship prompt --cmd-duration $env.CMD_DURATION_MS $'--status=($env.LAST_EXIT_CODE)'
+    # starship prompt --cmd-duration $env.CMD_DURATION_MS $'--status=($env.LAST_EXIT_CODE)'
 }
 
 def create_right_prompt [] {
@@ -39,15 +39,15 @@ def create_right_prompt [] {
 }
 
 # yazi - file manager
-def --env yy [...args] {
-	let tmp = (mktemp -t "yazi-cwd.XXXXXX")
-	yazi ...$args --cwd-file $tmp
-	let cwd = (open $tmp)
-	if $cwd != "" and $cwd != $env.PWD {
-		cd $cwd
-	}
-	rm -fp $tmp
-}
+# def --env yy [...args] {
+# 	let tmp = (mktemp -t "yazi-cwd.XXXXXX")
+# 	yazi ...$args --cwd-file $tmp
+# 	let cwd = (open $tmp)
+# 	if $cwd != "" and $cwd != $env.PWD {
+# 		cd $cwd
+# 	}
+# 	rm -fp $tmp
+# }
 
 # Use nushell functions to define your right and left prompt
 $env.PROMPT_COMMAND = {|| create_left_prompt }
