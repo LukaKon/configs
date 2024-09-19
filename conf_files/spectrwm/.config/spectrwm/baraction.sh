@@ -16,19 +16,26 @@ mem() {
 
 # ## CPU
 cpu() {
-  # CPU_FREQ=`sysctl -n dev.cpu.0.freq`
-  # echo -e "CPU: $CPU_FREQ MHz"
-  CPU_TEMP=`sysctl -n dev.cpu.0.temperature`
-  # CPU_USAGE=`vmstat | awk 'FNR==3 {print $17}'`
+  # for FreeBSD
+  # CPU_TEMP=`sysctl -n dev.cpu.0.temperature`
+
+  # for OpenBSD
+  CPU_TEMP=`apm | awk 'FNR==3 {print $5 $6}'`
   echo -e "CPU: $CPU_TEMP"
 }
 
 # ## BAT
 bat(){
-  BAT_PERCENT=`apm | awk -F: 'FNR==5 {print $2}'`
-  BAT_STATUS=`apm | awk -F: 'FNR==4 {print $2}'`
+  # for FreeBSD
+  # BAT_PERCENT=`apm | awk -F: 'FNR==5 {print $2}'`
+  # BAT_STATUS=`apm | awk -F: 'FNR==4 {print $2}'`
+  # echo -e "BAT: $BAT_PERCENT $BAT_STATUS"
+
+  # for OpenBSD
+  BAT_PERCENT=`apm | awk 'FNR==1 {print $4,$6,$7}'`
+  BAT_STATUS=`apm | awk 'FNR==2 {print $4,$5}'`
   echo -e "BAT: $BAT_PERCENT $BAT_STATUS"
-}
+  }
 
 SLEEP_SEC=3  # set bar_delay = 5 in /etc/spectrwm.conf
 # It seems that we are limited to how many characters can be displayed via
@@ -37,6 +44,7 @@ SLEEP_SEC=3  # set bar_delay = 5 in /etc/spectrwm.conf
 # echo output too long to display correctly.
 while :; do
     echo "$(cpu) $(bat)"
+    # echo "$(bat)"
 
 	sleep $SLEEP_SEC
 done
