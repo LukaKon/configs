@@ -96,6 +96,7 @@ alias cong="py /home/lk/nix_conf/scripts/git_conf.py"
 
 # programs
 alias lgi="lazygit"
+alias gt="gitui"
 # docker
 alias ldo="lazydocker"
 alias dc="docker container"
