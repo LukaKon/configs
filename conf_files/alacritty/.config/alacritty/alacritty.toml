@@ -93,7 +93,7 @@ multiplier = 5
 [window]
 dynamic_padding = false
 title = "Term"
-opacity = 0.6
+opacity = 0.8
 blur = false
 decorations = "None"
 decorations_theme_variant = "Dark"
