@@ -1,0 +1,23 @@
+[?1006;1000h[?1002h[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;24r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[24;1H"/tmp/kZ6BZXB7OU.toml" 26L, 395B[1;1H[36mautoboot[m=[31m"false"[m
+[36mbootargs[m=[31m""[m
+[36mbrand[m=[31m"lx"[m
+[36mfs-allowed[m=[31m""[m
+[36mhostid[m=[31m""[m
+[36mip-type[m=[31m"exclusive"[m
+[36mkernel-version[m=[31m"5.10.0"[m
+[36mlimitpriv[m=[31m"default"[m
+[36mpool[m=[31m""[m
+[36mscheduling-class[m=[31m""[m
+[36mzonename[m=[31m"nc"[m
+[36mzonepath[m=[31m"/zones/nc"[m
+[36mresolvers[m=[
+  [31m"192.168.1.93"[m,
+  [31m"1.1.1.1"[m,
+]
+
+[35m[[dataset]][m
+[36mname[m=[31m"data/nc"[m
+
+[35m[[net]][m
+[36mallowed-address[m=[31m"192.168.1.113/24"[m
+[36mdefrouter[m=[31m"192.168.1.1"[m[24;77H1,1[11CTop[1;1H[?25h[?4m[24;1H[?1006;1000l[?1002l[?2004l[>4;m[23;2t[23;1t[24;1H[K[24;1H[?1004l[?2004l[?1l>[?1049l[23;0;0t[>4;m

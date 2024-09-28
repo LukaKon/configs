@@ -1,0 +1,21 @@
+autoboot="true"
+brand="sparse"
+zonename="nfs"
+zonepath="/zones/nfs"
+
+ip-type="exclusive"
+resolvers=[
+  "1.1.1.1",
+]
+
+[[net]]
+global-nic="e1000g0"
+physical="nfs0"
+allowed-address="192.168.1.111/24"
+defrouter="192.168.1.1"
+
+[[fs]]
+dir="/export"
+special="/export"
+type="lofs"
+options=["rw", "nodevices"]
