@@ -57,7 +57,7 @@ alias xx='xinit'
 alias ze='zellij'
 
 # tmux
-alias t='tmux'
+alias t='tmux new -s (pwd | sed "s/.*\///g")'
 
 # nix flake
 alias f='nix develop --command fish'
