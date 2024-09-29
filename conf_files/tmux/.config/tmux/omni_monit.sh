@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -x
+
 NAME='monitoring'
 
 # start a new tmux session or attach to existing one
@@ -13,7 +15,7 @@ tmux send-keys -t $NAME:0 'htop' C-m # run application in the first window
 tmux new-window -t $NAME:1 -n 'proc/disk'
 
 # split second window into panes
-tmux split-window -h -p 50 # create vertical split (70% left)
+tmux split-window -h # create vertical split (70% left)
 # tmux split-window -v -p 50 # split right pane horizontally (50% of remaining)
 
 # naming panes
@@ -25,7 +27,11 @@ tmux select-pane -T 'zpool'
 
 # run applications/commands in panes
 tmux send-keys -t $NAME:1.0 'prstat -Z' C-m
+sleep 1
 tmux send-keys -t $NAME:1.1 'zpool iostat -v 2' C-m
+
+# set first tab active
+tmux select-window -t $NAME:0
 
 # attach to the session
 tmux attach-session -t $NAME
