@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -x
+# set -x
 
 NAME='monitoring'
 
@@ -27,7 +27,7 @@ tmux select-pane -T 'zpool'
 
 # run applications/commands in panes
 tmux send-keys -t $NAME:1.0 'prstat -Z' C-m
-sleep 1
+sleep 3
 tmux send-keys -t $NAME:1.1 'zpool iostat -v 2' C-m
 
 # set first tab active
