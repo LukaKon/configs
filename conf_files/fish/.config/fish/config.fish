@@ -115,6 +115,10 @@ alias wt="curl wttr.in"
 # cheat sheet
 alias cs="~/configs/scripts/cht.sh"
 
+# ytfzf
+alias ytm="ytfzf -m --show-thumbnails --thumb-viewer=chafa --preview-side=right"
+alias ytv="ytfzf --show-thumbnails --thumb-viewer=chafa --preview-side=right"
+
 # ssh
 alias dsh="ssh -i ~/.ssh/lap"
 alias fu="dsh lk@192.168.1.103"
