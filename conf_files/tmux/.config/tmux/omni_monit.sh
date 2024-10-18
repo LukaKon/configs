@@ -27,8 +27,8 @@ tmux select-pane -T 'zpool'
 
 # run applications/commands in panes
 tmux send-keys -t $NAME:1.0 'prstat -Z' C-m
-sleep 10
-tmux send-keys -t $NAME:1.1 'zpool iostat -v 2' C-m
+# sleep 10
+# tmux send-keys -t $NAME:1.1 'zpool iostat -v 2' C-m
 
 # set first tab active
 tmux select-window -t $NAME:0
