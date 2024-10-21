@@ -1,0 +1,44 @@
+autoboot="false"
+brand="bhyve"
+zonename="win"
+zonepath="/zones/win"
+
+cdrom="/tank/iso/Win10_22H2_Polish_x64v1.iso"
+
+type="windows"
+
+ram="6G"
+vcpus="2"
+
+dns-domain="win.local"
+resolvers=[
+  "192.168.1.93",
+  "1.1.1.1",
+  "9.9.9.9",
+]
+
+acpi="on"
+xhci="on"
+bootorder="cd"
+ip-type="exclusive"
+limitpriv="default"
+
+[capped-memory]
+# should match global "ram" key above
+physical="6G"
+swap="4G"
+
+[[net]]
+global-nic="e1000g0"
+physical="win0"
+allowed-address="192.168.1.97/24"
+defrouter="192.168.1.1"
+
+[bootdisk]
+blocksize="8K"
+path="tank/vm/win/root"
+size="70G"
+sparse="true"
+
+[vnc]
+enabled="on"

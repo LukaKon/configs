@@ -13,7 +13,7 @@ tmux send-keys -t $NAME:0 'hx .' C-m # run application in the first window
 tmux new-window -t $NAME:1 -n 'console tools'
 
 # split second window into panes
-tmux split-window -h -p 60 # create vertical split (70% left)
+tmux split-window -h -p 70 # create vertical split (70% left)
 tmux split-window -v -p 50 # split right pane horizontally (50% of remaining)
 
 # naming panes
