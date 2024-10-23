@@ -3,7 +3,10 @@ brand="bhyve"
 zonename="win"
 zonepath="/zones/win"
 
-cdrom="/tank/iso/Win10_22H2_Polish_x64v1.iso"
+cdrom=[
+  "/tank/iso/Win10_22H2_Polish_x64v1.iso"
+  "/tank/iso/virtio-win-0.1.262.iso"
+]
 
 type="windows"
 
