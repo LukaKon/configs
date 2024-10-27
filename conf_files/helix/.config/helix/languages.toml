@@ -20,14 +20,8 @@ args = ["--stdio"]
 [[language]]
 name = "python"
 # auto-format = true
-
-[language.formatter.black]
-command = "black"
-args = ["--line-length=80", "-"]
-
-[language.formatter.isort]
-command = "isort"
-args = ["--profile", "black", "-"]
+formatter = { command = "black", args = ["--line-length=80", "-"]}
+ # {command = "isort", args = ["--profile", "black", "-"] }
 
 [[language]]
 name = "html"
