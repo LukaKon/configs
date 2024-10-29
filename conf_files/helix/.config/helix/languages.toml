@@ -21,7 +21,7 @@ args = ["--stdio"]
 name = "python"
 # auto-format = true
 # formatter = { command = "bash", args = ["-c", "isort --profile black - | black --quiet --line-length=80", "-"]}
- {command = "black", args = ["--quite", "--line-length=80", "-"] }
+formatter = { command = "black", args = ["--quite", "--line-length=80", "-"] }
  # {command = "isort", args = ["--profile", "black", "-"] }
 
 [[language]]
