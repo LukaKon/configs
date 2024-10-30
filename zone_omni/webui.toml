@@ -1,5 +1,5 @@
 autoboot="true"
-brand="lipkg"
+brand="pkgsrc"
 zonename="webui"
 zonepath="/zones/webui"
 
