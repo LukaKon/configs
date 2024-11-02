@@ -20,14 +20,8 @@ args = ["--stdio"]
 [[language]]
 name = "python"
 # auto-format = true
-
-[formatter.black]
-command = "black"
-args = ["--quiet", "-"]
-
-[formatter.isort]
-command = "isort"
-args = ["--profile", "black", "--quiet", "--line-length 80", "--multi-line 3", "--force-grid-wrap 2", "--trailing-comma true", "-"]
+# formatter = {command = "sh", args = ["-c", "isort --profile black --quiet --line-length 80 --multi-line 3 --force-grid-wrap 2 --trailing-comma true - | black --quiet -"]}
+formatter = {command = "sh", args = ["-c", "isort --profile black --quiet --line-length 80 --force-grid-wrap 2 - | black --quiet -"]}
 
 [[language]]
 name = "html"
