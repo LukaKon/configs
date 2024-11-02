@@ -27,7 +27,7 @@ args = ["--quiet", "-"]
 
 [formatter.isort]
 command = "isort"
-args = ["--profile", "black", "--quiet", "--skip-glob '**/migrations/* **/env/*", "--line-length 80", "--multi-line 3", "--force-grid-wrap 2", "--trailing-comma true", "-"]
+args = ["--profile", "black", "--quiet", "--line-length 80", "--multi-line 3", "--force-grid-wrap 2", "--trailing-comma true", "-"]
 
 [[language]]
 name = "html"
