@@ -1,15 +1,16 @@
 autoboot="true"
 brand="bhyve"
-zonename="kinoite"
-zonepath="/zones/kinoite"
+zonename="fedora"
+zonepath="/zones/fedora"
 
-cdrom="/export/iso/Fedora-Kinoite-ostree-x86_64-40-1.14.iso"
+cdrom="/tank/iso/.iso"
 
-ram="6G"
+ram="4G"
 vcpus="2"
 
-dns-domain="kinoite.local"
+dns-domain="fedora.local"
 resolvers=[
+  "192.168.1.105",
   "1.1.1.1",
   "9.9.9.9",
 ]
@@ -23,18 +24,18 @@ limitpriv="default"
 
 [capped-memory]
 # should match global "ram" key above
-physical="6G"
+physical="4G"
 swap="2G"
 
 [[net]]
 global-nic="e1000g0"
-physical="kinoite0"
-allowed-address="192.168.1.89/24"
+physical="fedora0"
+allowed-address="192.168.1.83/24"
 defrouter="192.168.1.1"
 
 [bootdisk]
 blocksize="8K"
-path="rpool/vm/kinoite/root"
+path="tank/vm/fedora/root"
 size="30G"
 sparse="false"
 
