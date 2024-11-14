@@ -19,3 +19,4 @@
 	directory = /mnt/conf/configs
 	directory = /mnt/conf/nix_conf/.git
 	directory = /mnt/export/configs
+	directory = /mnt/export/dev/qmk_firm
