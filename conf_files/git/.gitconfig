@@ -20,3 +20,4 @@
 	directory = /mnt/conf/nix_conf/.git
 	directory = /mnt/export/configs
 	directory = /mnt/export/dev/qmk_firm
+	directory = /mnt/dev/rust/yewdux_start
