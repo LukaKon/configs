@@ -21,3 +21,7 @@
 	directory = /mnt/export/configs
 	directory = /mnt/export/dev/qmk_firm
 	directory = /mnt/dev/rust/yewdux_start
+	directory = /mnt/dev/rust/yew_style
+	directory = /mnt/dev/rust/yew/yew_style
+	directory = /mnt/dev/rust/yew/yew_callback
+	directory = /mnt/dev/rust/yew/yew_forms

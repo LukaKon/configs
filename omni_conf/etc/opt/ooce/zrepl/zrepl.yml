@@ -16,15 +16,17 @@ jobs:
       "rpool/swap": false,
       "data<": true,
       "store<": true,
+      "tank<": true,
       }
     snapshotting:
       type: periodic
-      interval: 15m
+      interval: 45m
       prefix: zrepl_
+      timestamp_format: human
     pruning:
       keep:
       - type: grid
-        grid: 1x1h(keep=all) | 24x1h | 14x1d
+        grid: 1x1h(keep=all) | 3x1h | 7x1d
         regex: "^zrepl_.*"
       - type: regex
         negate: true
@@ -43,7 +45,10 @@ jobs:
     send:
       encrypted: false
     snapshotting:
-      type: manual
+      prefix: zrepl_rpool_
+      type: periodic
+      interval: 20m
+      timestamp_format: human
     replication:
       protection:
         initial: guarantee_resumability
@@ -55,7 +60,7 @@ jobs:
       # retain 
       keep_receiver:
       - type: grid
-        grid: 1x1h(keep=all) | 24x1h | 360x1d
+        grid: 1x1h(keep=all) | 3x1h | 7x1d
         regex: "^zrepl_.*"
       - type: regex
         negate: true
@@ -63,7 +68,7 @@ jobs:
 
   - name: bck_sink_omni
     type: sink
-    root_fs: "backup/zrepl/omni"
+    root_fs: "backup/omni"
     serve:
       type: local
       listener_name: bck_sink_omni
@@ -82,7 +87,11 @@ jobs:
     send:
       encrypted: false
     snapshotting:
-      type: manual
+      # type: manual
+      prefix: zrepl_data_
+      type: periodic
+      interval: 10m
+      timestamp_format: human
     replication:
       protection:
         initial: guarantee_resumability
@@ -93,7 +102,7 @@ jobs:
         regex: ".*"
       keep_receiver:
       - type: grid
-        grid: 1x1h(keep=all) | 24x1h | 360x1d
+        grid: 1x1h(keep=all) | 3x1h(keep=1) | 7x1d(keep=2)
         regex: "^zrepl_.*"
       - type: regex
         negate: true
@@ -101,7 +110,7 @@ jobs:
 
   - name: bck_sink_data
     type: sink
-    root_fs: "backup/zrepl/data"
+    root_fs: "backup/data"
     serve:
       type: local
       listener_name: bck_sink_data
@@ -119,7 +128,11 @@ jobs:
     send:
       encrypted: false
     snapshotting:
-      type: manual
+      prefix: zrepl_store_
+      # type: manual
+      type: periodic
+      interval: 20m
+      timestamp_format: human
     replication:
       protection:
         initial: guarantee_resumability
@@ -130,7 +143,7 @@ jobs:
         regex: ".*"
       keep_receiver:
       - type: grid
-        grid: 1x1h(keep=all) | 24x1h | 360x1d
+        grid: 1x1h(keep=all) | 3x1h(keep=1) | 10x1d(keep=1)
         regex: "^zrepl_.*"
       - type: regex
         negate: true
@@ -138,7 +151,47 @@ jobs:
 
   - name: bck_sink_store
     type: sink
-    root_fs: "backup/zrepl/store"
+    root_fs: "backup/store"
     serve:
       type: local
       listener_name: bck_sink_store
+
+  - name: push_tank_to_bck
+    type: push
+    connect:
+      type: local
+      listener_name: bck_sink_tank
+      client_identity: omni
+    filesystems: {
+      "tank<": true,
+      }
+    send:
+      encrypted: false
+    snapshotting:
+      prefix: zrepl_tank_
+      # type: manual
+      type: periodic
+      interval: 1h
+      timestamp_format: human
+    replication:
+      protection:
+        initial: guarantee_resumability
+        incremental: guarantee_incremental
+    pruning:
+      keep_sender:
+      - type: regex
+        regex: ".*"
+      keep_receiver:
+      - type: grid
+        grid: 1x1h(keep=all) | 1x1h | 1x1d(keep=1)
+        regex: "^zrepl_.*"
+      - type: regex
+        negate: true
+        regex: "^zrepl_.*"
+
+  - name: bck_sink_tank
+    type: sink
+    root_fs: "backup/tank"
+    serve:
+      type: local
+      listener_name: bck_sink_tank
