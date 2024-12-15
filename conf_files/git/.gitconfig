@@ -27,3 +27,8 @@
 	directory = /mnt/dev/rust/yew/yew_forms
 	directory = /code/phot
 	directory = /code/photo
+	directory = /mnt/dev/rust/yew/yew_context_hook
+	directory = /mnt/dev/rust/yew/yew_use_effect_hook
+	directory = /mnt/dev/rust/yew/yew_router
+	directory = /mnt/dev/rust/yew/yewdux
+	directory = /mnt/dev/rust/yew/yew_yewdux
