@@ -25,3 +25,5 @@
 	directory = /mnt/dev/rust/yew/yew_style
 	directory = /mnt/dev/rust/yew/yew_callback
 	directory = /mnt/dev/rust/yew/yew_forms
+	directory = /code/phot
+	directory = /code/photo
