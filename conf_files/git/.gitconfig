@@ -32,3 +32,4 @@
 	directory = /mnt/dev/rust/yew/yew_router
 	directory = /mnt/dev/rust/yew/yewdux
 	directory = /mnt/dev/rust/yew/yew_yewdux
+	directory = /code/rust/dep_test

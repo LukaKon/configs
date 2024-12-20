@@ -16,7 +16,7 @@ tmux new-window -t $NAME:1 -n 'proc/disk'
 
 # split second window into panes
 tmux split-window -h # create vertical split (70% left)
-# tmux split-window -v -p 50 # split right pane horizontally (50% of remaining)
+tmux split-window -v -p 50 # split right pane horizontally (50% of remaining)
 
 # naming panes
 tmux select-pane -t $NAME:1.0
