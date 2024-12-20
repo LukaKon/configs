@@ -4,8 +4,8 @@ zonename="win"
 zonepath="/zones/win"
 
 cdrom=[
-  "/tank/iso/Win10_22H2_Polish_x64v1.iso"
-  "/tank/iso/virtio-win-0.1.262.iso"
+  "/tank/iso/Win10_22H2_Polish_x64v1.iso",
+  "/tank/iso/virtio-win-0.1.262.iso",
 ]
 
 type="windows"
@@ -13,9 +13,9 @@ type="windows"
 ram="6G"
 vcpus="2"
 
-dns-domain="win.local"
+dns-domain="home.lan"
 resolvers=[
-  "192.168.1.93",
+  "192.168.1.99",
   "1.1.1.1",
   "9.9.9.9",
 ]
@@ -40,7 +40,7 @@ defrouter="192.168.1.1"
 [bootdisk]
 blocksize="8K"
 path="tank/vm/win/root"
-size="70G"
+size="100G"
 sparse="true"
 
 [vnc]
