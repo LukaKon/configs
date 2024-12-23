@@ -30,8 +30,11 @@ tmux send-keys -t $NAME:1.0 'prstat -Z' C-m
 # sleep 10
 # tmux send-keys -t $NAME:1.1 'zpool iostat -v 2' C-m
 
+tmux new-window -t $NAME:2 -n 'zrepl'
+tmux send-keys -t $NAME:2.0 'pfexec zrepl status'
+
 # set first tab active
-tmux select-window -t $NAME:0
+tmux select-window -t $NAME:1
 
 # attach to the session
 tmux attach-session -t $NAME
