@@ -13,7 +13,6 @@ save_to_clipboard=true
 hide_when_typing = true
 
 [cursor]
-# style = "Beam" 
 vi_mode_style = "Block"
 
 [colors.vi_mode_cursor]
