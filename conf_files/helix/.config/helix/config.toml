@@ -5,6 +5,7 @@ auto-format = false
 auto-info = true
 line-number = "relative"
 cursorline = true
+end-of-line-diagnostics = "hint"
 scrolloff = 5
 color-modes = true
 idle-timeout = 300
@@ -19,6 +20,10 @@ rulers = [80, 100]
 display-messages = true
 display-inlay-hints = true
 auto-signature-help = true
+
+[editor.inline-diagnostics]
+cursor-line = "error"
+other-lines = "error"
 
 [editor.gutters]
 layout = [
