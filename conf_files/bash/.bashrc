@@ -20,7 +20,7 @@ function yy() {
 	rm -f -- "$tmp"
 }
 
-       
+
 export FZF_DEFAULT_OPTS="--layout reverse --height=50% --extended --multi --cycle --border rounded --prompt='▶' --pointer='' --marker='' --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54"
 
 export FZF_DEFAULT_COMMAND='fd . --exclude .git --exclude node_modules --exclude target --hidden'
@@ -53,9 +53,6 @@ alias fcd="cd (fd . --type directory --hidden --exclude .cache --exclude .git --
 
 # X11
 alias xx='xinit'
-
-# zellij
-alias z='zellij'
 
 # tmux
 alias t='tmux'
@@ -127,6 +124,7 @@ doas mount -t nfs 192.168.1.103:/export/coding /mnt/dev"
 alias nas="doas mount -t nfs 192.168.1.112:/volume2/export /mnt/nas"
 alias um="doas umount /mnt/nas /mnt/photos /mnt/dev /mnt/exports"
 . "$HOME/.cargo/env"
+
 ### bling.sh source start
 test -f /usr/share/ublue-os/aurora-cli/bling.sh && source /usr/share/ublue-os/aurora-cli/bling.sh
 ### bling.sh source end
