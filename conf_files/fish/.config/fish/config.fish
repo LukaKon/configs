@@ -106,6 +106,9 @@ alias ba="doas bastille"
 alias pot="doas pot"
 alias vm="doas vm"
 alias po="doas podman"
+# toolbox
+alias tc="toolbox create"
+alias te="toolbox enter"
 
 # bat
 alias bat="bat -p --color always --theme gruvbox-dark"

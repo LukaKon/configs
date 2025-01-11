@@ -127,3 +127,6 @@ doas mount -t nfs 192.168.1.103:/export/coding /mnt/dev"
 alias nas="doas mount -t nfs 192.168.1.112:/volume2/export /mnt/nas"
 alias um="doas umount /mnt/nas /mnt/photos /mnt/dev /mnt/exports"
 . "$HOME/.cargo/env"
+### bling.sh source start
+test -f /usr/share/ublue-os/aurora-cli/bling.sh && source /usr/share/ublue-os/aurora-cli/bling.sh
+### bling.sh source end
