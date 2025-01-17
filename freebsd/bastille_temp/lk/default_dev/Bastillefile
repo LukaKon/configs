@@ -22,6 +22,8 @@ PKG starship
 PKG eza
 PKG bat
 PKG lazygit
+PKG tmux
+PKG yazi
 # PKG xstow
 
 # set hostname

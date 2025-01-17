@@ -35,5 +35,6 @@
 	directory = /code/rust/dep_test
 	directory = /mnt/coding/photo
 	directory = /mnt/dev/LaTeX/CV
+	directory = /var/mnt/coding/ai
 [credential]
 	helper = store

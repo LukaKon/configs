@@ -53,9 +53,6 @@ alias fcd="cd (fd . --type directory --hidden --exclude .cache --exclude .git --
 # X11
 alias xx='xinit'
 
-# zellij
-alias ze='zellij'
-
 # tmux
 alias t='tmux new -s (pwd | sed "s/.*\///g")'
 
@@ -96,7 +93,6 @@ alias cong="py /home/lk/nix_conf/scripts/git_conf.py"
 
 # programs
 alias lgi="lazygit"
-alias gt="gitui"
 # docker
 alias ldo="lazydocker"
 alias dc="docker container"
