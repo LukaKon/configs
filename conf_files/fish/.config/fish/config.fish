@@ -55,6 +55,7 @@ alias xx='xinit'
 
 # tmux
 alias t='tmux new -s (pwd | sed "s/.*\///g")'
+alias tm='tmux'
 
 # nix flake
 alias f='nix develop --command fish'
@@ -103,8 +104,13 @@ alias pot="doas pot"
 alias vm="doas vm"
 alias po="doas podman"
 # toolbox
+alias tb="toolbox"
 alias tc="toolbox create"
 alias te="toolbox enter"
+# distrobox
+alias db="distrobox"
+alias dc="distrobox create"
+alias de="distrobox enter"
 
 # bat
 alias bat="bat -p --color always --theme gruvbox-dark"
