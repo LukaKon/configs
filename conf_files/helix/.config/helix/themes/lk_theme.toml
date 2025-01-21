@@ -8,4 +8,5 @@ inherits = "gruvbox"
 "ui.cursor.match" = { bg = "white", modifiers = ["reversed"] }
 "ui.cursorline.secondary" = "blue"
 
-"comment" = { fg = "cyan", modifiers = ["italic", "dim"]}
+# "comment" = { fg = "cyan", modifiers = ["italic", "dim"]}
+"comment" = { fg = "cyan", modifiers = ["italic", ]}
