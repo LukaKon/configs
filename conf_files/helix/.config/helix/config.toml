@@ -23,7 +23,7 @@ auto-signature-help = true
 
 [editor.inline-diagnostics]
 cursor-line = "error"
-other-lines = "error"
+other-lines = "warning"
 
 [editor.gutters]
 layout = [
@@ -95,7 +95,7 @@ separator = "|"
 [editor.indent-guides]
 render = true
 character = ""
-# character = "┆" # defauly "|"
+# character = "┆" # defaulty "|"
 
 [keys.normal]
 "X" = "extend_line_above"
