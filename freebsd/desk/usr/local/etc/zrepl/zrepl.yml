@@ -1,0 +1,60 @@
+# zrepl main configuration file.
+# For documentation, refer to https://zrepl.github.io/
+#
+global:
+  logging:
+    - type: "stdout"
+      level:  "error"
+      format: "human"
+    - type: "syslog"
+      level:  "info"
+      format: "logfmt"
+  # monitoring:
+  #   - type: prometheus
+  #     listen: ":8888"
+
+jobs:
+  - name: snapjob
+    type: snap
+    filesystems: {
+      "zroot<": true,
+      "zroot/var/tmp": false,
+      "data<": true,
+      "store<": true,
+      "tank<": true,
+      }
+    snapshotting:
+      type: periodic
+      interval: 15m
+      prefix: zrepl_
+      timestamp_format: human
+    pruning:
+      keep:
+      - type: grid
+        grid: 1x1h(keep=all) | 3x1h | 7x1d
+        regex: "^zrepl_.*"
+      - type: regex
+        negate: true
+        regex: "^zrepl_.*"
+
+  # - name: backup_photo
+  #   type: push
+  #   connect:
+  #     type: tcp
+  #     address: 192.168.1.105:8881
+  #   filesystems:
+  #     "store/media/photos<": true
+  #   snapshotting:
+  #     type: periodic
+  #     prefix: zrepl_photo_
+  #     interval: 1h
+  #     timestamp_format: human
+  #   pruning:
+  #     keep_sender:
+  #     - type: not_replicated
+  #     - type: last_n
+  #       count: 10
+  #     keep_receiver:
+  #     - type: grid
+  #       grid: 1x1h(keep=all) | 24x1h | 30x1d | 6x30d
+  #       regex: "^zrepl_"
