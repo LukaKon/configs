@@ -22,7 +22,6 @@ font-tex-gyre-termes-math
 fzf
 gimp
 git
-gitui
 google-fonts
 gwenview
 helix
