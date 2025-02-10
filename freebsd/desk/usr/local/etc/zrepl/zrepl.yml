@@ -9,9 +9,6 @@ global:
     - type: "syslog"
       level:  "info"
       format: "logfmt"
-  # monitoring:
-  #   - type: prometheus
-  #     listen: ":8888"
 
 jobs:
   - name: snapjob
@@ -19,6 +16,8 @@ jobs:
     filesystems: {
       "zroot<": true,
       "zroot/var/tmp": false,
+      "zroot/var/mail": false,
+      "zroot/ROOT": false,
       "data<": true,
       "store<": true,
       "tank<": true,
@@ -36,6 +35,48 @@ jobs:
       - type: regex
         negate: true
         regex: "^zrepl_.*"
+
+  - name: data_push
+    type: push
+    connect:
+      type: local
+      listener_name: data_sink
+      client_identity: free
+    filesystems: {
+      "data<": true,
+      "data/coding": true,
+      "data/export": false,
+      "data/SWAP": false,
+      }
+    send:
+      encrypted: false
+    snapshotting:
+      prefix: zrepl_data_
+      type: periodic
+      interval: 20m
+      timestamp_format: human
+    replication:
+      protection:
+        initial: guarantee_resumability
+        incremental: guarantee_incremental
+    pruning:
+      keep_sender:
+      - type: regex
+        regex: ".*"
+      keep_receiver:
+      - type: grid
+        grid: 2x1h(keep=all) | 3x1h | 7x1d
+        regex: "^zrepl_.*"
+      - type: regex
+        negate: true
+        regex: "^zrepl_.*"
+  
+  - name: data_sink
+    type: sink
+    root_fs: "store/backup/data"
+    serve:
+      type: local
+      listener_name: data_sink
 
   # - name: backup_photo
   #   type: push
