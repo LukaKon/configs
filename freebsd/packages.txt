@@ -1,3 +1,4 @@
+0ad
 alacritty
 bastille
 bat
@@ -5,12 +6,12 @@ bhyve-firmware
 blender
 cpu-microcode-intel
 cpu-microcode-rc
+czkawka
 darktable
 digikam
 doas
 dolphin
 eza
-falkon-qtonly
 feh
 fira
 firacode
@@ -27,6 +28,7 @@ gwenview
 helix
 iridium-browser
 kate
+kdeconnect-kde
 kdiff3
 kget
 kompare
@@ -44,7 +46,6 @@ nvidia-driver
 nvidia-settings
 nvidia-xconfig
 okular
-ollama
 picom
 pkg
 podman
@@ -60,10 +61,12 @@ starship
 tigervnc-viewer
 tmux
 ubuntu-font
+veloren-weekly
 vm-bhyve
 webcamd
 webfonts
 wget
+widelands
 xorg
 xstow
 xwallpaper
@@ -71,4 +74,3 @@ yazi
 ytfzf
 znapzend
 zrepl
-ztop

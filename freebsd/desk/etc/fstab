@@ -1,0 +1,6 @@
+# Device		Mountpoint	FStype	Options		Dump	Pass#
+/dev/gpt/efiboot0		/boot/efi	msdosfs	rw		2	2
+/dev/ada1p2		none	swap	sw		0	0
+
+# additional SWAP
+/dev/zvol/data/SWAP		none	swap	sw		0	0

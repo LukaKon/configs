@@ -1,6 +1,6 @@
 # zrepl main configuration file.
 # For documentation, refer to https://zrepl.github.io/
-#
+
 global:
   logging:
     - type: "stdout"
@@ -24,13 +24,13 @@ jobs:
       }
     snapshotting:
       type: periodic
-      interval: 15m
+      interval: 20m
       prefix: zrepl_
       timestamp_format: human
     pruning:
       keep:
       - type: grid
-        grid: 1x1h(keep=all) | 3x1h | 7x1d
+        grid: 6x1h(keep=all) | 3x1h | 7x1d
         regex: "^zrepl_.*"
       - type: regex
         negate: true
@@ -51,7 +51,7 @@ jobs:
     send:
       encrypted: false
     snapshotting:
-      prefix: zrepl_data_
+      prefix: zrepl_
       type: periodic
       interval: 20m
       timestamp_format: human
@@ -65,7 +65,7 @@ jobs:
         regex: ".*"
       keep_receiver:
       - type: grid
-        grid: 2x1h(keep=all) | 3x1h | 7x1d
+        grid: 6x1h(keep=all) | 4x1h | 7x1d | 10x30d
         regex: "^zrepl_.*"
       - type: regex
         negate: true
