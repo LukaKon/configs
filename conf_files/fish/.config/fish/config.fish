@@ -126,7 +126,7 @@ alias ytv="ytfzf --show-thumbnails --thumb-viewer=chafa --preview-side=right"
 
 # ssh
 alias dsh="ssh -i ~/.ssh/lap"
-alias fu="dsh lk@192.168.1.103"
+alias fu="dsh admin@192.168.1.103"
 alias na="dsh lk@192.168.1.112"
 
 # NFS
