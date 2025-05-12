@@ -1,20 +1,22 @@
 autoboot="true"
 brand="bhyve"
-zonename="serv"
-zonepath="/zones/serv"
+zonename="aur"
+zonepath="/zones/aur"
 
-cdrom="/tank/iso/latest-nixos-gnome-x86_64-linux.iso"
-ram="4G"
-vcpus="2"
+cdrom="/tank/iso/aurora-dx-stable.iso"
+
+ram="5G"
+vcpus="3"
 
 dns-domain="home.lan"
 resolvers=[
+  "192.168.1.99",
   "1.1.1.1",
   "9.9.9.9",
 ]
 
 acpi="on"
-# xhci="on"
+xhci="on"
 bootorder="cd"
 ip-type="exclusive"
 limitpriv="default"
@@ -22,19 +24,20 @@ limitpriv="default"
 [capped-memory]
 # should match global "ram" key above
 physical="4G"
-swap="2G"
+swap="4G"
 
 [[net]]
 global-nic="e1000g0"
-physical="serv0"
-allowed-address="192.168.1.90/24"
+physical="aur0"
+allowed-address="192.168.1.84/24"
 defrouter="192.168.1.1"
 
 [bootdisk]
 blocksize="8K"
-path="tank/vm/serv/root"
-size="20G"
+path="tank/vm/aur/root"
+size="80G"
 sparse="false"
 
 [vnc]
 enabled="on"
+# unix="/tmp/vm.vnc"

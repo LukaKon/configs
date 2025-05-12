@@ -3,12 +3,12 @@ brand="bhyve"
 zonename="pihole"
 zonepath="/zones/pihole"
 
-cdrom="/export/iso/debian-12.5.0-amd64-netinst.iso"
+cdrom="/tank/iso/debian-12.10.0-amd64-netinst.iso"
 
 ram="2G"
 vcpus="1"
 
-dns-domain="pihole.local"
+dns-domain="home.lan"
 resolvers=[
   "1.1.1.1",
   "9.9.9.9",
@@ -27,12 +27,12 @@ swap="1G"
 [[net]]
 global-nic="e1000g0"
 physical="pihole0"
-allowed-address="192.168.1.80/24"
+allowed-address="192.168.1.99/24"
 defrouter="192.168.1.1"
 
 [bootdisk]
 blocksize="8K"
-path="rpool/vm/pihole/root"
+path="tank/vm/pihole/root"
 size="6G"
 sparse="false"
 
