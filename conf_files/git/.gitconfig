@@ -37,5 +37,6 @@
 	directory = /mnt/dev/LaTeX/CV
 	directory = /var/mnt/coding/ai
 	directory = /var/mnt/dev/ansible/
+	directory = /var/mnt/code/photo
 [credential]
 	helper = store
