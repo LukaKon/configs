@@ -89,18 +89,12 @@ alias lt="eza --tree --level=3 -a --color=auto --icons=auto"
 alias py3="python3.11"
 alias py="python"
 
-# backup config files to git
-alias cong="py /home/lk/nix_conf/scripts/git_conf.py"
-
 # programs
 alias lgi="lazygit"
 # docker
 alias ldo="lazydocker"
 alias dc="docker container"
 # freebsd
-alias ap="doas appjail"
-alias ba="doas bastille"
-alias pot="doas pot"
 alias vm="doas vm"
 alias po="doas podman"
 # toolbox
