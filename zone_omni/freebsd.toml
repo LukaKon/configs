@@ -38,6 +38,12 @@ path="tank/vm/freebsd/root"
 size="30G"
 sparse="true"
 
+[[disk]]
+blocksize="8K"
+path="tank/freexrdp"
+size="30G"
+sparse="true"
+
 [vnc]
 # needed for installation
 enabled="on"

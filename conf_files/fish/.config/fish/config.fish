@@ -97,6 +97,7 @@ alias dc="docker container"
 # freebsd
 alias vm="doas vm"
 alias po="doas podman"
+alias ba="doas bastille"
 # toolbox
 alias tb="toolbox"
 alias tc="toolbox create"

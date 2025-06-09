@@ -23,8 +23,9 @@ PKG eza
 PKG bat
 PKG lazygit
 PKG tmux
-PKG yazi
-# PKG xstow
+# PKG yazi
+PKG mc
+PKG xstow
 
 # set hostname
 CMD hostname ${hostname}
@@ -39,7 +40,7 @@ CMD echo "permit nopass :wheel">>/usr/local/etc/doas.conf
 CMD echo doas
 
 # copy config files
-MOUNT /data/home/lk/configs/conf_files /configs nullfs rw  0 0
+MOUNT /home/lk/configs/conf_files /configs nullfs rw  0 0
 CMD mkdir -p /home/${user}/.config
 CMD chown -R ${user}:${user} /home/${user}/.config
 CMD ln -sf /configs/fish/.config/fish /home/${user}/.config/
