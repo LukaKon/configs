@@ -38,5 +38,6 @@
 	directory = /var/mnt/coding/ai
 	directory = /var/mnt/dev/ansible/
 	directory = /var/mnt/code/photo
+	directory = /var/mnt/code/ansible
 [credential]
 	helper = store
