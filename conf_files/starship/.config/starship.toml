@@ -26,7 +26,7 @@ disabled = false
 [localip]
 ssh_only = true
 style = 'bold #ffaa00'
-format = '@[$localipv4]($style)'
+format = '@[$localipv4 ]($style)'
 disabled = false
 
 [time]
@@ -45,19 +45,20 @@ show_always = true
 
 [hostname]
 ssh_only = false
-ssh_symbol = 'ssh'
+# ssh_symbol = 'ssh'
 style = 'bold #22EB39'
-format = '[$ssh_symbol $hostname]($style)'
+# format = '[$ssh_symbol $hostname]($style)'
+format = '[$hostname ]($style)'
 
-[os]
-style = 'red'
-disabled = false
-format = ' [$symbol]($style) '
+# [os]
+# style = 'red'
+# disabled = false
+# format = ' [$symbol]($style) '
 
-[os.symbols]
-FreeBSD = 'FBSD'
-NixOS = 'NIX'
-Fedora = 'FED'
+# [os.symbols]
+# FreeBSD = 'FBSD'
+# NixOS = 'NIX'
+# Fedora = 'FED'
 
 [directory]
 truncation_length = 1
@@ -75,7 +76,7 @@ style = 'bold dimmed green'
 format = '[$symbol${ram}]($style) '
 
 [git_branch]
-symbol = 'git '
+symbol = 'git:'
 # ignore_branches = ['master', 'main']
 format = '[$symbol$branch(:$remote_branch)]($style) '
 
