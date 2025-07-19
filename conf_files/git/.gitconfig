@@ -40,5 +40,6 @@
 	directory = /var/mnt/code/photo
 	directory = /var/mnt/code/ansible
 	directory = /var/mnt/code/python/3dgeo
+	directory = /var/mnt/dev/python/BARTEK
 [credential]
 	helper = store
