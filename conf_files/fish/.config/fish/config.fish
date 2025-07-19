@@ -125,7 +125,7 @@ alias fu="dsh admin@192.168.1.103"
 alias na="dsh lk@192.168.1.112"
 
 # NFS
-alias nas="doas mount -t nfs 192.168.1.112:/volume1/export /mnt/nas"
+alias nas="doas mount -t nfs 192.168.1.112:/volume2/export /mnt/nas"
 
 ### SET MANPAGER
 ### Uncomment only one of these!
