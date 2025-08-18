@@ -8,3 +8,5 @@ export MANPATH=/opt/local/man:$MANPATH
 
 source ~/.bashrc
 . "$HOME/.cargo/env"
+
+. "$HOME/.local/share/../bin/env"

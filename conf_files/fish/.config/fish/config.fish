@@ -54,8 +54,8 @@ alias fcd="cd (fd . --type directory --hidden --exclude .cache --exclude .git --
 alias xx='xinit'
 
 # tmux
-alias t='tmux new -s (pwd | sed "s/.*\///g")'
-alias tm='tmux'
+alias tm='tmux new -s (pwd | sed "s/.*\///g")'
+alias t='tmux'
 
 # nix flake
 alias f='nix develop --command fish'

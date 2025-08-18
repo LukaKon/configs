@@ -128,3 +128,5 @@ alias um="doas umount /mnt/nas /mnt/photos /mnt/dev /mnt/exports"
 ### bling.sh source start
 test -f /usr/share/ublue-os/aurora-cli/bling.sh && source /usr/share/ublue-os/aurora-cli/bling.sh
 ### bling.sh source end
+
+. "$HOME/.local/share/../bin/env"
