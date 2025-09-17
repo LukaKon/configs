@@ -1,41 +1,42 @@
-autoboot="false"
+autoboot="true"
 brand="bhyve"
-zonename="suse"
-zonepath="/zones/suse"
+zonename="linux"
+zonepath="/zones/linux"
 
-cdrom="/tank/iso/agama-installer-Leap.x86_64-Leap.iso"
+cdrom="/data/iso/.iso"
 
-ram="5G"
-vcpus="3"
+ram="4G"
+vcpus="2"
 
-dns-domain="suse.lan"
+dns-domain="linux.local"
 resolvers=[
+  "192.168.1.104",
   "192.168.1.99",
   "1.1.1.1",
-  "9.9.9.9",
 ]
 
 acpi="on"
 xhci="on"
+# type="windows"
 bootorder="cd"
 ip-type="exclusive"
 limitpriv="default"
 
 [capped-memory]
 # should match global "ram" key above
-physical="5G"
+physical="4G"
 swap="2G"
 
 [[net]]
 global-nic="e1000g0"
-physical="suse0"
+physical="linux0"
 allowed-address="192.168.1.83/24"
 defrouter="192.168.1.1"
 
 [bootdisk]
 blocksize="8K"
-path="tank/vm/suse/root"
-size="80G"
+path="tank/vm/linux/root"
+size="30G"
 sparse="false"
 
 [vnc]
