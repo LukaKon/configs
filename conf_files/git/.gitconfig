@@ -41,6 +41,7 @@
 	directory = /var/mnt/code/ansible
 	directory = /var/mnt/code/python/3dgeo
 	directory = /var/mnt/dev/python/BARTEK
+	directory = /var/home/lk/localdev/photo
 [credential]
 	helper = store
 [filter "lfs"]
