@@ -42,3 +42,5 @@ sparse="false"
 [vnc]
 enabled="on"
 # unix="/tmp/vm.vnc"
+w=1920
+h=1080
