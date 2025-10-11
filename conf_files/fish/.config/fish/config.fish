@@ -85,15 +85,10 @@ alias lsi="eza --long --header --changed --total-size --git --icons=auto --color
 alias ll="eza --long --header --group --changed --git --icons=auto --color=auto --all"
 alias lt="eza --tree --level=3 -a --color=auto --icons=auto"
 
-# python
-alias py3="python3.11"
-alias py="python"
-
 # programs
 alias lgi="lazygit"
 # docker
 alias ldo="lazydocker"
-alias dc="docker container"
 # freebsd
 alias vm="doas vm"
 alias po="doas podman"
@@ -119,13 +114,6 @@ alias cs="~/configs/scripts/cht.sh"
 alias ytm="ytfzf -m --show-thumbnails --thumb-viewer=chafa --preview-side=right"
 alias ytv="ytfzf --show-thumbnails --thumb-viewer=chafa --preview-side=right"
 
-# ssh
-alias dsh="ssh -i ~/.ssh/local"
-alias fu="dsh admin@192.168.1.103"
-alias na="dsh lk@192.168.1.112"
-
-# NFS
-alias nas="doas mount -t nfs 192.168.1.112:/volume2/export /mnt/nas"
 
 ### SET MANPAGER
 ### Uncomment only one of these!
