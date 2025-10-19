@@ -29,6 +29,39 @@ $env.config.history = {
   isolation: true
 }
 
+alias ll = ls --all --long
+alias lsi = ls --all --long --du
+
+alias t = tmux
+
+
+# git
+alias gs = git status -s
+alias ga = git add
+alias gc = git commit
+alias gp = git push
+alias gpull = git pull
+alias gb = git branch
+alias gch = git checkout
+alias gm = git merge
+alias gf = git fetch
+alias glog = git log --graph --pretty = oneline --abbrev-commit
+
+# term
+# alias reboot="doas reboot"
+alias reboot = doas init 6
+alias poff = doas poweroff
+alias g = glances
+
+# programs
+alias lgi = lazygit
+# freebsd
+alias vm = doas vm
+alias ba = doas bastille
+
+# bat
+alias bat = bat -p --color always --theme gruvbox-dark
+
 $env.config.show_banner = false
 
 mkdir ($nu.data-dir | path join "vendor/autoload")

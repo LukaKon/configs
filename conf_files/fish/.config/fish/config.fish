@@ -51,7 +51,7 @@ alias fcd="cd (fd . --type directory --hidden --exclude .cache --exclude .git --
 ### ALIASES
 
 # X11
-alias xx='xinit'
+alias xx='startx'
 
 # tmux
 alias tm='tmux new -s (pwd | sed "s/.*\///g")'
