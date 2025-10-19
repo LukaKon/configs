@@ -17,7 +17,7 @@
 # options using:
 #     config nu --doc | nu-highlight | less -R
 #
-# 
+ 
 
 $env.config.buffer_editor = "hx"
 $env.config.edit_mode = "vi"
