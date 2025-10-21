@@ -34,7 +34,6 @@ alias lsi = ls --all --long --du
 
 alias t = tmux
 
-
 # git
 alias gs = git status -s
 alias ga = git add
