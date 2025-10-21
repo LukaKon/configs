@@ -42,6 +42,7 @@
 	directory = /var/mnt/code/python/3dgeo
 	directory = /var/mnt/dev/python/BARTEK
 	directory = /var/home/lk/localdev/photo
+	directory = /var/mnt/code/LaTeX/CV
 [credential]
 	helper = store
 [filter "lfs"]
