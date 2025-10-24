@@ -14,7 +14,7 @@ SYSRC postgresql_enable=YES
 
 CMD if [ ! -e /var/db/postgres/data${PG_VERSION} ];then service postgresql initdb; service postgresql start; fi
 
-CMD echo 'host    all             all             all                     scram-sha-256' >> /var/db/postgres/data${PG_VERSION}/pg_hba.conf
+CMD echo 'host    all             all             all                     trust' >> /var/db/postgres/data${PG_VERSION}/pg_hba.conf
 
 SERVICE postgresql restart
 
