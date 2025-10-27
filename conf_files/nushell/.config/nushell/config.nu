@@ -57,6 +57,7 @@ alias lgi = lazygit
 # freebsd
 alias vm = doas vm
 alias ba = doas bastille
+alias bls = doas bastille list all
 
 # bat
 alias bat = bat -p --color always --theme gruvbox-dark
