@@ -1,0 +1,41 @@
+ARG hostname=dev
+ARG user=lk
+ARG group=${user}
+ARG uid=1001
+ARG gid=${uid}
+
+SYSRC sshd_enable=YES
+SYSRC sendmail_enable=NONE
+
+SERVICE sshd start
+
+# set hostname
+CMD hostname ${hostname}
+CMD hostname
+
+# pkg
+PKG doas
+PKG fish
+
+# create group
+CMD pw groupadd ${group} -g ${gid}
+
+# create user
+CMD echo "${user}" | pw user add -n ${user} -u ${uid} -g ${group} -G wheel -w yes -d /home/${user} -s /usr/local/bin/fish -m -h 0
+CMD id ${user} 
+
+# configure 'doas'
+CMD echo "permit nopass :wheel">>/usr/local/etc/doas.conf
+CMD echo doas
+
+# copy config files
+MOUNT /home/${user}/configs/conf_files /configs nullfs rw  0 0
+
+# copy ssh key for git
+CMD mkdir /home/${user}/.ssh 
+CP /home/lk/.ssh/id_ed25519 /home/${user}/.ssh/
+CP /home/lk/.ssh/id_ed25519.pub /home/${user}/.ssh/
+CMD chown -R ${user}:${user} /home/${user}/.ssh
+
+CMD pkg autoremove -y
+CMD pkg clean -y
