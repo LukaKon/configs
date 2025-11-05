@@ -47,7 +47,6 @@ alias gf = git fetch
 alias glog = git log --graph --pretty = oneline --abbrev-commit
 
 # term
-# alias reboot="doas reboot"
 alias reboot = doas init 6
 alias poff = doas poweroff
 alias g = glances
