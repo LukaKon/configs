@@ -1,0 +1,15 @@
+PKG git-lite
+PKG rsync
+PKG curl
+PKG helix
+PKG fzf fd-find
+PKG starship
+PKG eza
+PKG bat
+PKG lazygit
+PKG tmux
+PKG mc
+PKG xstow
+
+CMD pkg autoremove
+CMD pkg clean
