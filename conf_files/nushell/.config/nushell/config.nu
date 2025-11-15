@@ -56,6 +56,7 @@ alias lgi = lazygit
 # freebsd
 alias vm = doas vm
 alias ba = doas bastille
+alias bal = doas bastille list
 alias bls = doas bastille list all
 
 # bat

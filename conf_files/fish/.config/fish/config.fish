@@ -93,6 +93,7 @@ alias ldo="lazydocker"
 alias vm="doas vm"
 alias po="doas podman"
 alias ba="doas bastille"
+alias bal="doas bastille list"
 alias bls="doas bastille list all"
 # toolbox
 alias tb="toolbox"
