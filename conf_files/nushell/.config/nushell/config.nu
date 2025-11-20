@@ -50,6 +50,7 @@ alias glog = git log --graph --pretty = oneline --abbrev-commit
 alias reboot = doas init 6
 alias poff = doas poweroff
 alias g = glances
+alias py = python3
 
 # programs
 alias lgi = lazygit
