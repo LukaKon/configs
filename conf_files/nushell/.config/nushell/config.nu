@@ -59,6 +59,8 @@ alias vm = doas vm
 alias ba = doas bastille
 alias bal = doas bastille list
 alias bls = doas bastille list all
+alias ap = doas appjail
+alias apl = appjail jail list
 
 # bat
 alias bat = bat -p --color always --theme gruvbox-dark

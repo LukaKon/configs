@@ -96,6 +96,8 @@ alias po="doas podman"
 alias ba="doas bastille"
 alias bal="doas bastille list"
 alias bls="doas bastille list all"
+alias ap="doas appjail"
+alias apl="appjail jail list"
 # toolbox
 alias tb="toolbox"
 alias tc="toolbox create"
