@@ -12,16 +12,13 @@
 # External interface to use. Run `route -n get default | grep interface` to find out
 # which interface you are currently using.
 #
-# EXT_IF=jext
-# ON_IF=jext
-EXT_IF=wlan0
-ON_IF=wlan0
+#EXT_IF=
 
 #
 # If you configure AppJail to use DNS, you may want to create the file below and
 # put the DNS server address in it.
 #
-DEFAULT_RESOLV_CONF=/usr/local/etc/appjail/resolv.conf
+#DEFAULT_RESOLV_CONF=/usr/local/etc/appjail/resolv.conf
 #
 # Prefer to use shorter domain names.
 #
@@ -45,16 +42,16 @@ SHORTEN_DOMAIN_NAMES=1
 # Please don't enable or disable this parameter after running AppJail.
 # See "BUGS/Don't mix ZFS and non-ZFS file systems!" in appjail-tutorial(7).
 #
-ENABLE_ZFS=1
+#ENABLE_ZFS=1
 #
 # ZFS pool name to use. Run `zpool list -o name` to see what pools you have on
 # your system.
 #
-ZPOOL=rpool
+#ZPOOL=zroot
 #
 # AppJail will use ${ZPOOL}/${ZROOTFS} as its root.
 #
-ZROOTFS=appjail
+#ZROOTFS=appjail
 
 #
 # Disable the debug level.
@@ -64,9 +61,8 @@ ZROOTFS=appjail
 #
 # Default architecture and version used by some operations.
 #
-FREEBSD_ARCH=amd64
-IMAGE_ARCH=amd64
-FREEBSD_VERSION=14.3-RELEASE
+#FREEBSD_ARCH=
+#FREEBSD_VERSION=
 
 #
 # Location of the hooks that will be executed before and after the main command is
@@ -80,5 +76,3 @@ FREEBSD_VERSION=14.3-RELEASE
 #
 TAR_XZ_ARGS="--xz --options xz:threads=0"
 TAR_ZSTD_ARGS="--zstd --options zstd:threads=0"
-
-USE_TIMEZONE=Europe/Warsaw
