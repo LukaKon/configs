@@ -1,0 +1,4 @@
+STAGE cmd
+
+CMD echo "Hello from jail!"
+CMD ls -lah

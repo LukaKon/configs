@@ -1,0 +1,7 @@
+ARG interface
+ARG ruleset
+
+OPTION bridge=iface:${interface} xclock
+OPTION dhcp=sb_xclock
+OPTION mount_devfs
+OPTION devfs_ruleset=${ruleset}
