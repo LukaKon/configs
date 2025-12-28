@@ -1,3 +1,0 @@
-OPTION x11
-OPTION copydir=files
-OPTION file=/etc/rc.conf
