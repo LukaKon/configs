@@ -1,0 +1,16 @@
+INCLUDE network.makejail
+INCLUDE options.makejail
+
+PKG --jexec --upgrade
+PKG --jexec --autoremove
+PKG --jexec --clean
+PKG redis
+
+SYSRC redis_enable=YES
+
+CMD sed -i '' \
+  -e 's/^bind 127\.0\.0\.1 -::1/bind 0.0.0.0/' \
+  -e 's/^protected-mode yes/protected-mode no/' \
+  /usr/local/etc/redis.conf
+
+SERVICE redis start
