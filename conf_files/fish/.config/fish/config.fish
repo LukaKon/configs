@@ -97,6 +97,7 @@ alias ba="doas bastille"
 alias bal="doas bastille list"
 alias bls="doas bastille list all"
 alias ap="doas appjail"
+alias apc="doas appjail-config"
 alias apl="appjail jail list status name type version ports network_ip4 ip4"
 alias anl="appjail network list"
 # toolbox

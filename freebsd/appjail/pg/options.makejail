@@ -1,0 +1,6 @@
+OPTION start
+OPTION mount_devfs
+OPTION resolv_conf
+OPTION tzdata
+OPTION overwrite
+OPTION template=pg.conf

@@ -1,0 +1,46 @@
+# STAGE apply
+
+# OPTION start
+# OPTION mount_devfs
+# OPTION resolv_conf
+# OPTION tzdata
+# OPTION overwrite
+INCLUDE network.makejail
+INCLUDE options.makejail
+
+SET sysvmsg
+SET sysvsem
+SET sysvshm
+
+ARG version=17
+ARG user=admin
+ARG password=password
+ARG db=database
+
+PKG --jexec --upgrade
+PKG --jexec --autoremove
+PKG --jexec --clean
+PKG postgresql${version}-server
+PKG postgresql${version}-contrib
+PKG sudo
+
+SYSRC postgresql_enable=YES
+
+# initialise db
+CMD if [ ! -e /var/db/postgres/data${version} ];then service postgresql initdb; service postgresql start; fi
+
+# setting up config files
+CMD echo "host    ${db}    ${user}    192.168.1.0/24    password" >> /var/db/postgres/data${version}/pg_hba.conf
+
+CMD sed -i.bak "s/#listen_addresses = 'localhost'/listen_addresses = '*'/" /var/db/postgres/data${version}/postgresql.conf
+
+# restart service
+SERVICE postgresql restart
+
+# create database
+CMD sudo -u postgres psql -c "CREATE DATABASE ${db}"
+
+# create user
+CMD sudo -u postgres psql -c "CREATE USER ${user} WITH ENCRYPTED PASSWORD '${password}'"
+CMD sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE ${db} TO ${user}"
+CMD sudo -u postgres psql -c "ALTER DATABASE ${db} OWNER TO ${user}"
