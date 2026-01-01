@@ -1,16 +1,9 @@
-# STAGE apply
-
-# OPTION start
-# OPTION mount_devfs
-# OPTION resolv_conf
-# OPTION tzdata
-# OPTION overwrite
 INCLUDE network.makejail
 INCLUDE options.makejail
 
-SET sysvmsg
-SET sysvsem
-SET sysvshm
+# SET sysvmsg
+# SET sysvsem
+# SET sysvshm
 
 ARG version=17
 ARG user=admin

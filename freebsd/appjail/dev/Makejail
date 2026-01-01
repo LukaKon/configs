@@ -1,0 +1,52 @@
+ARG user=lk
+ARG group=lk
+ARG uid=1001
+ARG gid=1001
+ARG hostname=dev
+
+INCLUDE network.makejail
+INCLUDE options.makejail
+
+SYSRC sshd_enable=YES
+
+SERVICE sshd start
+
+CMD hostname ${hostname}
+
+CMD pkg upgrade -y
+
+PKG doas
+PKG fish
+# PKG starship
+# PKG tmux
+# PKG helix
+# PKG git-lite
+# PKG fzf fd-find
+# PKG eza
+# PKG bat
+# PKG rsync
+# PKG curl
+# PKG lazygit
+# PKG xstow
+
+CMD pkg autoremove -y
+CMD pkg clean -y
+
+CMD echo "CREATE GROUP"
+CMD pw groupadd ${group} -g ${gid}
+CMD echo "END"
+
+CMD echo "CREATE USER"
+CMD "${user}" | pw user add -n ${user} -u ${uid} -g ${group} -G wheel -w yes -d /home/${user} -s /usr/local/bin/fish -m -h 0
+CMD echo "END"
+
+CMD echo "DOAS"
+CMD echo "permit nopass :wheel" >> /usr/local/etc/doas.conf
+CMD echo "END"
+
+CMD echo "MOUNT"
+MOUNT /data/code /home/${user}/code
+MOUNT /home/admin/configs /home/${user}/configs ro
+
+CMD pkg autoremove -y
+CMD pkg clean -y
