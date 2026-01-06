@@ -43,9 +43,9 @@ set -gx FZF_DEFAULT_OPTS "--layout reverse --height=50% --extended --multi --cyc
 
 set -gx FZF_DEFAULT_COMMAND 'fd . --exclude .git --exclude node_modules --exclude target --hidden'
 
-alias ff="fzf --multi --layout reverse --border rounded --border-label '| Find and edit file |' --border-label-pos 5 --preview-window right --preview 'bat -n --color=always {}' --bind 'enter:execute($EDITOR {})'"
+# alias ff="fzf --multi --layout reverse --border rounded --border-label '| Find and edit file |' --border-label-pos 5 --preview-window right --preview 'bat -n --color=always {}' --bind 'enter:execute($EDITOR {})'"
 
-alias fcd="cd (fd . --type directory --hidden --exclude .cache --exclude .git --exclude node_modules | fzf --height=70% --border-label '| Find Directory |' --preview='eza --tree --level=1 -a --color auto --icons {}')"
+# alias fcd="cd (fd . --type directory --hidden --exclude .cache --exclude .git --exclude node_modules | fzf --height=70% --border-label '| Find Directory |' --preview='eza --tree --level=1 -a --color auto --icons {}')"
 
 ### ALIASES
 
@@ -57,11 +57,11 @@ alias tm='tmux new -s (pwd | sed "s/.*\///g")'
 alias t='tmux'
 
 # nix flake
-alias f='nix develop --command fish'
+# alias f='nix develop --command fish'
 
 # internal screen on/off
-alias soff="xrandr --output eDP-1 --off"
-alias son="xrandr --output eDP-1 --auto"
+# alias soff="xrandr --output eDP-1 --off"
+# alias son="xrandr --output eDP-1 --auto"
 
 # git
 alias gs="git status -s"
@@ -80,7 +80,7 @@ alias glog="git log --graph --pretty=oneline --abbrev-commit"
 alias py="python3"
 alias reboot="doas init 6"
 alias poff="doas poweroff"
-alias g="glances"
+# alias g="glances"
 alias lsi="eza --long --header --changed --total-size --git --icons=auto --color=auto --all"
 alias ll="eza --long --header --group --changed --git --icons=auto --color=auto --all"
 alias lt="eza --tree --level=3 -a --color=auto --icons=auto"
@@ -92,34 +92,34 @@ alias lgi="lazygit"
 alias ldo="lazydocker"
 # freebsd
 alias vm="doas vm"
-alias po="doas podman"
-alias ba="doas bastille"
-alias bal="doas bastille list"
-alias bls="doas bastille list all"
+# alias po="doas podman"
+# alias ba="doas bastille"
+# alias bal="doas bastille list"
+# alias bls="doas bastille list all"
 alias ap="doas appjail"
 alias apc="doas appjail-config"
 alias apl="appjail jail list status name type version ports network_ip4 ip4"
 alias anl="appjail network list"
 # toolbox
-alias tb="toolbox"
-alias tc="toolbox create"
-alias te="toolbox enter"
+# alias tb="toolbox"
+# alias tc="toolbox create"
+# alias te="toolbox enter"
 # distrobox
-alias db="distrobox"
-alias dc="distrobox create"
-alias de="distrobox enter"
+# alias db="distrobox"
+# alias dc="distrobox create"
+# alias de="distrobox enter"
 
 # bat
 alias bat="bat -p --color always --theme gruvbox-dark"
 
 # weather
-alias wt="curl wttr.in"
+# alias wt="curl wttr.in"
 # cheat sheet
-alias cs="~/configs/scripts/cht.sh"
+# alias cs="~/configs/scripts/cht.sh"
 
 # ytfzf
-alias ytm="ytfzf -m --show-thumbnails --thumb-viewer=chafa --preview-side=right"
-alias ytv="ytfzf --show-thumbnails --thumb-viewer=chafa --preview-side=right"
+# alias ytm="ytfzf -m --show-thumbnails --thumb-viewer=chafa --preview-side=right"
+# alias ytv="ytfzf --show-thumbnails --thumb-viewer=chafa --preview-side=right"
 
 
 ### SET MANPAGER
