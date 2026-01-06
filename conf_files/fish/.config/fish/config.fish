@@ -84,6 +84,7 @@ alias g="glances"
 alias lsi="eza --long --header --changed --total-size --git --icons=auto --color=auto --all"
 alias ll="eza --long --header --group --changed --git --icons=auto --color=auto --all"
 alias lt="eza --tree --level=3 -a --color=auto --icons=auto"
+alias b="btm --battery --theme gruvbox --network_use_log --enable_cache_memory"
 
 # programs
 alias lgi="lazygit"
