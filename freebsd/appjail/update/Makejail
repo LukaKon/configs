@@ -1,0 +1,5 @@
+STAGE apply
+
+CMD pkg upgrade -y
+CMD pkg autoremove -y
+CMD pkg clean -y

@@ -3,17 +3,17 @@ set fish_greeting # Supresses fish's intro message
 # set TERM "xterm-256color"                         # Sets the terminal type
 
 ### PROMPT
-function starship_transient_prompt_func
-  starship module character
-end
-starship init fish | source
-enable_transience
+# function starship_transient_prompt_func
+#   starship module character
+# end
+# starship init fish | source
+# enable_transience
 
-function starship_transient_rprompt_func
-  starship module time
-end
-starship init fish | source
-enable_transience
+# function starship_transient_rprompt_func
+#   starship module time
+# end
+# starship init fish | source
+# enable_transience
 
 fzf --fish | source
 
@@ -35,8 +35,7 @@ set -g theme_hide_hostname no
 set -g theme_hostname always
 
 set -gx EDITOR hx
-set -gx BROWSER firefox
-# set -gx BROWSER librewolf
+set -gx BROWSER waterfox
 set -gx DISPLAY :0
 
 # fzf

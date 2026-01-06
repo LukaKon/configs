@@ -11,11 +11,11 @@ ARG password=password
 ARG db=database
 
 PKG --jexec --upgrade
-PKG --jexec --autoremove
-PKG --jexec --clean
 PKG postgresql${version}-server
 PKG postgresql${version}-contrib
 PKG sudo
+PKG --jexec --autoremove
+PKG --jexec --clean
 
 SYSRC postgresql_enable=YES
 

@@ -2,9 +2,9 @@ INCLUDE network.makejail
 INCLUDE options.makejail
 
 PKG --jexec --upgrade
+PKG redis
 PKG --jexec --autoremove
 PKG --jexec --clean
-PKG redis
 
 SYSRC redis_enable=YES
 

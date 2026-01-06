@@ -1,7 +1,7 @@
-ARG user=lk
-ARG group=lk
+ARG user=dev
+ARG group=${user}
 ARG uid=1001
-ARG gid=1001
+ARG gid=${uid}
 ARG hostname=dev
 
 INCLUDE network.makejail
@@ -13,40 +13,35 @@ SERVICE sshd start
 
 CMD hostname ${hostname}
 
+CMD echo "UID $uid GID $gid"
+
 CMD pkg upgrade -y
 
 PKG doas
 PKG fish
-# PKG starship
-# PKG tmux
-# PKG helix
-# PKG git-lite
-# PKG fzf fd-find
-# PKG eza
-# PKG bat
-# PKG rsync
-# PKG curl
-# PKG lazygit
-# PKG xstow
+PKG starship
+PKG tmux
+PKG helix
+PKG git-lite
+PKG fzf fd-find
+PKG eza
+PKG bat
+PKG rsync
+PKG curl
+PKG lazygit
+PKG xstow
 
 CMD pkg autoremove -y
 CMD pkg clean -y
 
-CMD echo "CREATE GROUP"
 CMD pw groupadd ${group} -g ${gid}
-CMD echo "END"
 
-CMD echo "CREATE USER"
-CMD "${user}" | pw user add -n ${user} -u ${uid} -g ${group} -G wheel -w yes -d /home/${user} -s /usr/local/bin/fish -m -h 0
-CMD echo "END"
+CMD pw user add -n ${user} -u ${uid} -g ${group} -G wheel -w yes -d /home/${user} -s /usr/local/bin/fish -m -h -
 
-CMD echo "DOAS"
 CMD echo "permit nopass :wheel" >> /usr/local/etc/doas.conf
-CMD echo "END"
 
-CMD echo "MOUNT"
-MOUNT /data/code /home/${user}/code
-MOUNT /home/admin/configs /home/${user}/configs ro
+MOUNT /data/code /home/${user}/dev
+MOUNT /home/admin/configs /home/${user}/configs nullfs ro
 
 CMD pkg autoremove -y
 CMD pkg clean -y
