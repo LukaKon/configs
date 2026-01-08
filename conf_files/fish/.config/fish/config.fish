@@ -24,8 +24,24 @@ set -g theme_display_user yes
 set -g theme_hide_hostname no
 set -g theme_hostname always
 
+# Gruvbox Dark Fish colors
+set -g fish_color_normal        ebddb2  # fg9
+set -g fish_color_command       fabd2f  # fg2
+set -g fish_color_keyword       fb4934  # fg0
+set -g fish_color_quote         8ec07c  # fg5
+set -g fish_color_redirection   fabd2f
+set -g fish_color_end           8ec07c
+set -g fish_color_error         fb4934
+set -g fish_color_param         83a598  # fg3
+set -g fish_color_comment       928374
+set -g fish_color_selection     504945
+set -g fish_color_search_match  --background=3c3836
+set -g fish_color_operator      fe8019  # fg6
+set -g fish_color_escape        d3869b  # fg4
+set -g fish_color_autosuggestion 665c54
+
 set -gx EDITOR hx
-set -gx BROWSER waterfox
+set -gx BROWSER librewolf
 set -gx DISPLAY :0
 
 # fzf

@@ -1,55 +1,48 @@
-function fish_prompt
-        set -l last_status $status
+function fish_prompt --description 'Gruvbox Dark one-line prompt'
+    # Gruvbox Dark colors
+    set normal (set_color normal)
+    set bold (set_color --bold)
+    set fg0  (set_color fb4934)  # Red
+    set fg1  (set_color b8bb26)  # Green  
+    set fg2  (set_color fabd2f)  # Yellow
+    set fg3  (set_color 83a598)  # Aqua
+    set fg4  (set_color d3869b)  # Purple
+    set fg5  (set_color 8ec07c)  # Green2
+    set fg6  (set_color fe8019)  # Orange
+    set fg9  (set_color ebddb2)  # Light fg
+
+    # Czas (FreeBSD)
+    # printf '%s' $fg3(date "+%H:%M:%S") $normal ' '
     
-        set -l normal (set_color normal)
-        set -l usercolor (set_color $fish_color_user)
+    # User@Host - POPRAWIONE
+    printf '%s' $bold$fg9$USER$normal '@' $fg5(hostname | cut -d. -f1) ' '
     
-        set -l delim \U25BA
-        # If we don't have unicode use a simpler delimiter
-        string match -qi "*.utf-8" -- $LANG $LC_CTYPE $LC_ALL; or set delim ">"
+    # SSH IP
+    if set -q SSH_CONNECTION
+        set ssh_ip (echo $SSH_CONNECTION | awk '{print $3}')
+        printf '%s' $fg3"[$ssh_ip] "
+    end
     
-        fish_is_root_user; and set delim "#"
+    # Exit status
+    if test $status -ne 0
+        printf '%s' $fg0"✘$status "
+    else
+        printf '%s' $fg1'✔ '
+    end
     
-        set -l cwd (set_color $fish_color_cwd)
-        if command -sq cksum
-                # randomized cwd color
-                # We hash the physical PWD and turn that into a color. That means directories (usually) get different colors,
-                # but every directory always gets the same color. It's deterministic.
-                # We use cksum because 1. it's fast, 2. it's in POSIX, so it should be available everywhere.
-                set -l shas (pwd -P | cksum | string split -f1 ' ' | math --base=hex | string sub -s 3 | string pad -c 0 -w 6 | string match -ra ..)
-                set -l col 0x$shas[1..3]
-        
-                # If the (simplified idea of) luminance is below 120 (out of 255), add some more.
-                # (this runs at most twice because we add 60)
-                while test (math 0.2126 x $col[1] + 0.7152 x $col[2] + 0.0722 x $col[3]) -lt 120
-                        set col[1] (math --base=hex "min(255, $col[1] + 60)")
-                        set col[2] (math --base=hex "min(255, $col[2] + 60)")
-                        set col[3] (math --base=hex "min(255, $col[3] + 60)")
-                end
-                set -l col (string replace 0x '' $col | string pad -c 0 -w 2 | string join "")
-        
-                set cwd (set_color $col)
-        end
+    # Katalog + Git
+    printf '%s' $fg2(prompt_pwd)
+    if git rev-parse --git-dir > /dev/null 2>&1
+        set git_branch (git symbolic-ref --short HEAD 2>/dev/null; or git rev-parse --short HEAD)
+        set git_status (git status --porcelain 2>/dev/null | wc -l)
+        printf ' ' $fg4"git:" $fg3"($git_branch)"
+        test $git_status -gt 0 && printf ' ' $fg6"●"
+    end
     
-        # Prompt status only if it's not 0
-        set -l prompt_status
-        test $last_status -ne 0; and set prompt_status (set_color $fish_color_status)"[$last_status]$normal"
+    # CMD duration
+    if test "$CMD_DURATION -gt 2000"
+        printf '%s%s%.1fs' $fg0 '⏱' (math "$CMD_DURATION / 1000")
+    end
     
-        # Only show host if in SSH or container
-        # Store this in a global variable because it's slow and unchanging
-        if not set -q prompt_host
-                set -g prompt_host ""
-                if set -q SSH_TTY
-                        or begin
-                                command -sq systemd-detect-virt
-                                and systemd-detect-virt -q
-                        end
-                        set prompt_host $usercolor$USER$normal@(set_color $fish_color_host)$hostname$normal":"
-                end
-        end
-    
-        # Shorten pwd if prompt is too long
-        set -l pwd (prompt_pwd)
-    
-        echo -n -s $prompt_host $cwd $pwd $normal $prompt_status $delim
+    printf '%s' $normal ' > '
 end
