@@ -1,90 +1,55 @@
 function fish_prompt
-        set -l __last_command_exit_status $status
+        set -l last_status $status
     
-        if not set -q -g __fish_arrow_functions_defined
-                set -g __fish_arrow_functions_defined
-                function _git_branch_name
-                        set -l branch (git symbolic-ref --quiet HEAD 2>/dev/null)
-                        if set -q branch[1]
-                                echo (string replace -r '^refs/heads/' '' $branch)
-                        else
-                                echo (git rev-parse --short HEAD 2>/dev/null)
-                        end
-                end
-        
-                function _is_git_dirty
-                        not command git diff-index --cached --quiet HEAD -- &>/dev/null
-                        or not command git diff --no-ext-diff --quiet --exit-code &>/dev/null
-                end
-        
-                function _is_git_repo
-                        type -q git
-                        or return 1
-                        git rev-parse --git-dir >/dev/null 2>&1
-                end
-        
-                function _hg_branch_name
-                        echo (hg branch 2>/dev/null)
-                end
-        
-                function _is_hg_dirty
-                        set -l stat (hg status -mard 2>/dev/null)
-                        test -n "$stat"
-                end
-        
-                function _is_hg_repo
-                        fish_print_hg_root >/dev/null
-                end
-        
-                function _repo_branch_name
-                        _$argv[1]_branch_name
-                end
-        
-                function _is_repo_dirty
-                        _is_$argv[1]_dirty
-                end
-        
-                function _repo_type
-                        if _is_hg_repo
-                                echo hg
-                                return 0
-                        else if _is_git_repo
-                                echo git
-                                return 0
-                        end
-                        return 1
-                end
-        end
-    
-        set -l cyan (set_color -o cyan)
-        set -l yellow (set_color -o yellow)
-        set -l red (set_color -o red)
-        set -l green (set_color -o green)
-        set -l blue (set_color -o blue)
         set -l normal (set_color normal)
+        set -l usercolor (set_color $fish_color_user)
     
-        set -l arrow_color "$green"
-        if test $__last_command_exit_status != 0
-                set arrow_color "$red"
-        end
+        set -l delim \U25BA
+        # If we don't have unicode use a simpler delimiter
+        string match -qi "*.utf-8" -- $LANG $LC_CTYPE $LC_ALL; or set delim ">"
     
-        set -l arrow "$arrow_color➜ "
-        if fish_is_root_user
-                set arrow "$arrow_color# "
-        end
+        fish_is_root_user; and set delim "#"
     
-        set -l cwd $cyan(prompt_pwd | path basename)
-    
-        set -l repo_info
-        if set -l repo_type (_repo_type)
-                set -l repo_branch $red(_repo_branch_name $repo_type)
-                set repo_info "$blue $repo_type:($repo_branch$blue)"
+        set -l cwd (set_color $fish_color_cwd)
+        if command -sq cksum
+                # randomized cwd color
+                # We hash the physical PWD and turn that into a color. That means directories (usually) get different colors,
+                # but every directory always gets the same color. It's deterministic.
+                # We use cksum because 1. it's fast, 2. it's in POSIX, so it should be available everywhere.
+                set -l shas (pwd -P | cksum | string split -f1 ' ' | math --base=hex | string sub -s 3 | string pad -c 0 -w 6 | string match -ra ..)
+                set -l col 0x$shas[1..3]
         
-                if _is_repo_dirty $repo_type
-                        set -l dirty "$yellow ✗"
-                        set repo_info "$repo_info$dirty"
+                # If the (simplified idea of) luminance is below 120 (out of 255), add some more.
+                # (this runs at most twice because we add 60)
+                while test (math 0.2126 x $col[1] + 0.7152 x $col[2] + 0.0722 x $col[3]) -lt 120
+                        set col[1] (math --base=hex "min(255, $col[1] + 60)")
+                        set col[2] (math --base=hex "min(255, $col[2] + 60)")
+                        set col[3] (math --base=hex "min(255, $col[3] + 60)")
+                end
+                set -l col (string replace 0x '' $col | string pad -c 0 -w 2 | string join "")
+        
+                set cwd (set_color $col)
+        end
+    
+        # Prompt status only if it's not 0
+        set -l prompt_status
+        test $last_status -ne 0; and set prompt_status (set_color $fish_color_status)"[$last_status]$normal"
+    
+        # Only show host if in SSH or container
+        # Store this in a global variable because it's slow and unchanging
+        if not set -q prompt_host
+                set -g prompt_host ""
+                if set -q SSH_TTY
+                        or begin
+                                command -sq systemd-detect-virt
+                                and systemd-detect-virt -q
+                        end
+                        set prompt_host $usercolor$USER$normal@(set_color $fish_color_host)$hostname$normal":"
                 end
         end
     
-        echo -n -s $arrow ' '$cwd $repo_info $normal ' '
+        # Shorten pwd if prompt is too long
+        set -l pwd (prompt_pwd)
+    
+        echo -n -s $prompt_host $cwd $pwd $normal $prompt_status $delim
 end

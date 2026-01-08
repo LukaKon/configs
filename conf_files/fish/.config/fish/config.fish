@@ -17,16 +17,6 @@ set fish_greeting # Supresses fish's intro message
 
 fzf --fish | source
 
-# yazi - file explorer
-function yy
-	set tmp (mktemp -t "yazi-cwd.XXXXXX")
-	yazi $argv --cwd-file="$tmp"
-	if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-		cd -- "$cwd"
-	end
-	rm -f -- "$tmp"
-end
-
 # theme
 set -g theme_color_scheme terminal-dark
 set -g fish_prompt_pwd_dir_length 1
@@ -92,6 +82,7 @@ alias lgi="lazygit"
 alias ldo="lazydocker"
 # freebsd
 alias vm="doas vm"
+alias vml="doas vm list"
 # alias po="doas podman"
 # alias ba="doas bastille"
 # alias bal="doas bastille list"

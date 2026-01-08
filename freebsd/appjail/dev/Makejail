@@ -13,13 +13,10 @@ SERVICE sshd start
 
 CMD hostname ${hostname}
 
-CMD echo "UID $uid GID $gid"
-
-CMD pkg upgrade -y
+PKG --jexec --upgrade
 
 PKG doas
 PKG fish
-PKG starship
 PKG tmux
 PKG helix
 PKG git-lite
@@ -31,8 +28,8 @@ PKG curl
 PKG lazygit
 PKG xstow
 
-CMD pkg autoremove -y
-CMD pkg clean -y
+PKG --jexec --autoremove
+PKG --jexec --clean
 
 CMD pw groupadd ${group} -g ${gid}
 
@@ -42,6 +39,3 @@ CMD echo "permit nopass :wheel" >> /usr/local/etc/doas.conf
 
 MOUNT /data/code /home/${user}/dev
 MOUNT /home/admin/configs /home/${user}/configs nullfs ro
-
-CMD pkg autoremove -y
-CMD pkg clean -y
