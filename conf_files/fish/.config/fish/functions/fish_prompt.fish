@@ -1,4 +1,6 @@
 function fish_prompt
+    set -l last_status $status
+
     set -l normal (set_color normal)
     set -l bold (set_color --bold)
     set -l fg0 (set_color fb4934) # Red
@@ -10,21 +12,13 @@ function fish_prompt
     set -l fg6 (set_color fe8019) # Orange
     set -l fg9 (set_color ebddb2) # Light fg
 
-    set -l last_status $status
-
     set -l delim $fg6" > "$normal
     fish_is_root_user; and set delim $fg0" # "$normal
 
     set -l prompt_status #$fg5" ok"
     # TODO: not working when $status is greater than 0
-    test $last_status -ne 0; and set prompt_status $fg0" [$last_status]"$normal
-
-    # switch $last_status
-    #     case 0
-    #         set prompt_status $fg5" ok"
-    #     case '*'
-    #         set prompt_status $fg0" [$last_status] "$normal
-    # end
+    # test $last_status -ne 0; and set prompt_status $fg0" [$last_status]"$normal
+    test $last_status -ne 0; and set prompt_status $fg0" X"$normal
 
     # SSH IP
     if set -q SSH_CONNECTION
