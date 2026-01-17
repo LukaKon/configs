@@ -1,0 +1,10 @@
+ARG if=jext0
+ARG ip=99
+ARG ruleset
+
+# OPTION alias=${if}
+# OPTION ip=192.168.1.${ip}/24
+OPTION bridge=iface:${if} xclock
+OPTION dhcp=sb_xclock
+OPTION mount_devfs
+OPTION devfs_ruleset=${ruleset}

@@ -1,0 +1,84 @@
+_parse_args()
+{
+    local arg
+    for arg in "$@"; do
+        printf "<%s> " "${arg}"
+    done
+    echo
+}
+
+precreate()
+{
+    echo -n "precreate args: "
+    _parse_args "$@"
+}
+
+create()
+{
+	echo "CREATE!"
+    echo -n "create args: "
+    _parse_args "$@"
+}
+
+postcreate()
+{
+    echo -n "postcreate args: "
+    _parse_args "$@"
+}
+
+prestart()
+{
+	echo "PRESTART!"
+    echo -n "prestart args: "
+    _parse_args "$@"
+}
+
+start()
+{
+	echo "START!"
+    echo -n "start args: "
+    _parse_args "$@"
+}
+
+poststart()
+{
+    echo -n "poststart args: "
+    _parse_args "$@"
+}
+
+precmd()
+{
+    echo -n "precmd args: "
+    _parse_args "$@"
+}
+
+cmd()
+{
+    echo -n "cmd args: "
+    _parse_args "$@"
+	jexec -l "${APPJAIL_JAILNAME}" sh -c 'ls -lah /'
+}
+
+postcmd()
+{
+    echo -n "postcmd args: "
+    _parse_args "$@"
+}
+
+prestop()
+{
+    echo -n "prestop args: "
+    _parse_args "$@"
+}
+
+stop()
+{
+    echo -n "stop args: "
+    _parse_args "$@"
+}
+
+poststop()
+{
+    echo -n "poststop args: "
+    _parse_args "$@"
+}

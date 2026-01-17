@@ -16,9 +16,8 @@ function fish_prompt
     fish_is_root_user; and set delim $fg0" # "$normal
 
     set -l prompt_status #$fg5" ok"
-    # TODO: not working when $status is greater than 0
     # test $last_status -ne 0; and set prompt_status $fg0" [$last_status]"$normal
-    test $last_status -ne 0; and set prompt_status $fg0" X"$normal
+    test $last_status -ne 0; and set prompt_status $bold$fg0" X"$normal
 
     # SSH IP
     if set -q SSH_CONNECTION
@@ -32,7 +31,7 @@ function fish_prompt
 
     # Shorten pwd if prompt is too long
     # set -l pwd " "$fg6(prompt_pwd)
-    set -l pwd $fg6" ("(basename $PWD)")"
+    set -l pwd $bold$fg6" ("(basename $PWD)")"
 
     echo -n -s $prompt_host $ssh_ip $pwd $normal $prompt_status $delim
 end

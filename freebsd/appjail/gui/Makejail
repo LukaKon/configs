@@ -1,0 +1,7 @@
+INCLUDE options/options.makejail
+INCLUDE options/network.makejail
+INCLUDE options/x11.makejail
+INCLUDE xclock/Makejail
+
+# See `Makejail and Initscripts`
+STOP
