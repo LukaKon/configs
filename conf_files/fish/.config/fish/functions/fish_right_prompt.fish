@@ -37,7 +37,7 @@ function fish_right_prompt
         set -q VIRTUAL_ENV_DISABLE_PROMPT
         or set -g VIRTUAL_ENV_DISABLE_PROMPT true
         set -q VIRTUAL_ENV
-        and set -l venv $fg4(string replace -r '.*/' '' -- "$VIRTUAL_ENV")$normal
+        and set -l venv $fg4(string replace -r '.*/' '' -- "$VIRTUAL_ENV ")$normal
 
         echo -n -s $duration $venv $vcs $time
 end
