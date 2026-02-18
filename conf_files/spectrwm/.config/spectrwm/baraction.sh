@@ -3,8 +3,18 @@
 
 # ## DISK
 hdd() {
-  hdd="$(df -h | awk 'NR==4{print $3, $5}')"
-  echo -e "HDD: $hdd"
+  # hdd="$(df -h | awk 'NR==4{print $3, $5}')"
+  output=$(zpool iostat)
+  rpool_line=$(echo "$output" | grep "rpool")
+  rpool_read=$(echo "$rpool_line" | awk '{print $5}')
+  rpool_write=$(echo "$rpool_line" | awk '{print $6}')
+
+  data_line=$(echo "$output" | grep "data")
+  data_read=$(echo "$data_line" | awk '{print $5}')
+  data_write=$(echo "$data_line" | awk '{print $6}')
+
+  hdd="RP: $rpool_read/$rpool_write DP: $data_read/$data_write "
+  echo -e "$hdd"
 }
 
 # ## RAM
@@ -44,8 +54,7 @@ SLEEP_SEC=3  # set bar_delay = 5 in /etc/spectrwm.conf
 # So I would love to add more functions to this script but it makes the 
 # echo output too long to display correctly.
 while :; do
-    echo "$(cpu) $(mem) $(bat) $(hdd)"
-    # echo "$(bat)"
+    echo "$(cpu)|$(mem)|$(bat)|$(hdd)"
 
 	sleep $SLEEP_SEC
 done
