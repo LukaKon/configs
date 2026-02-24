@@ -29,6 +29,8 @@ $env.config.history = {
   isolation: true
 }
 
+alias xx = startx
+
 alias ll = ls --all --long
 alias lsi = ls --all --long --du
 
@@ -49,23 +51,35 @@ alias glog = git log --graph --pretty = oneline --abbrev-commit
 # term
 alias reboot = doas init 6
 alias poff = doas poweroff
-alias g = glances
 alias py = python3
+
+alias lsi = eza --long --header --changed --total-size --git --icons=auto --color=auto --all
+alias ll = eza --long --header --group --changed --git --icons=auto --color=auto --all
+alias lt = eza --tree --level=3 -a --color=auto --icons=auto
+alias b = btm --battery --theme gruvbox --network_use_log --enable_cache_memory
 
 # programs
 alias lgi = lazygit
+# docker
+alias ldo = lazydocker
 # freebsd
 alias vm = doas vm
-alias ba = doas bastille
-alias bal = doas bastille list
-alias bls = doas bastille list all
+alias vml = doas vm list
+# alias ba = doas bastille
+# alias bal = doas bastille list
+# alias bls = doas bastille list all
 alias ap = doas appjail
-alias apl = appjail jail list
+alias apc = doas appjail-config
+alias apl = appjail jail list status name type version ports network_ip4 ip4
+alias anl = appjail network list
+
+# bat
+alias bat = bat -p --color always --theme gruvbox-dark
+
+# programs
+alias lgi = lazygit
 
 # bat
 alias bat = bat -p --color always --theme gruvbox-dark
 
 $env.config.show_banner = false
-
-mkdir ($nu.data-dir | path join "vendor/autoload")
-starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
