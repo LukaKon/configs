@@ -1,0 +1,4 @@
+[config]
+zfs_enabled = true
+zpool = "rpool"
+dataset = "blackship"
