@@ -99,7 +99,6 @@ alias ldo="lazydocker"
 # freebsd
 alias vm="doas vm"
 alias vml="doas vm list"
-# alias po="doas podman"
 # alias ba="doas bastille"
 # alias bal="doas bastille list"
 # alias bls="doas bastille list all"
@@ -107,14 +106,6 @@ alias ap="doas appjail"
 alias apc="doas appjail-config"
 alias apl="appjail jail list status name type version ports network_ip4 ip4"
 alias anl="appjail network list"
-# toolbox
-# alias tb="toolbox"
-# alias tc="toolbox create"
-# alias te="toolbox enter"
-# distrobox
-# alias db="distrobox"
-# alias dc="distrobox create"
-# alias de="distrobox enter"
 
 # bat
 alias bat="bat -p --color always --theme gruvbox-dark"

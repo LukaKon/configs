@@ -35,6 +35,7 @@ alias ll = ls --all --long
 alias lsi = ls --all --long --du
 
 alias t = tmux
+alias b = btm --battery --theme gruvbox --network_use_log --enable_cache_memory
 
 # git
 alias gs = git status -s

@@ -54,7 +54,7 @@ SLEEP_SEC=3  # set bar_delay = 5 in /etc/spectrwm.conf
 # So I would love to add more functions to this script but it makes the 
 # echo output too long to display correctly.
 while :; do
-    echo "$(cpu)|$(mem)|$(bat)|$(hdd)"
+    echo "$(cpu)|$(mem)|$(bat)"
 
 	sleep $SLEEP_SEC
 done
